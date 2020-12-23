@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Manuscript extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Manuscript'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A book, document, or piece of music written by hand rather than typed or printed.'
+        static _rdfs_label = 'Manuscript'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Manuscript')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

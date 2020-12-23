@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Askpublicnewsarticle extends window.Cloudouble.Element.elements.Newsarticle {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AskPublicNewsArticle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.'
+        static _rdfs_label = 'AskPublicNewsArticle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AskPublicNewsArticle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

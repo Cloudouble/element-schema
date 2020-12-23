@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Voteaction extends window.Cloudouble.Element.elements.Chooseaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VoteAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of expressing a preference from a fixed\/finite\/structured set of choices\/options.'
+        static _rdfs_label = 'VoteAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('candidate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VoteAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            candidate($this, value) { return $this.__helperValidateAttribute($this, value, 'candidate') }
+        
+    }
+</script>

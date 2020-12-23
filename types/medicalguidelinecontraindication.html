@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalguidelinecontraindication extends window.Cloudouble.Element.elements.Medicalguideline {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalGuidelineContraindication'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.'
+        static _rdfs_label = 'MedicalGuidelineContraindication'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalGuidelineContraindication')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Theaterevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TheaterEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Event type: Theater performance.'
+        static _rdfs_label = 'TheaterEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TheaterEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

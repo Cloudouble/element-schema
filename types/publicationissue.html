@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Publicationissue extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PublicationIssue'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/09\/schemaorg-support-for-bibliographic_2.html).'
+        static _rdfs_label = 'PublicationIssue'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('issueNumber', 'pageEnd', 'pageStart', 'pagination')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PublicationIssue')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            issueNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'issueNumber') }
+        get issuenumber() { return this.issueNumber }
+        set issuenumber(value) { this.issueNumber = value }
+
+            pageEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'pageEnd') }
+        get pageend() { return this.pageEnd }
+        set pageend(value) { this.pageEnd = value }
+
+            pageStart($this, value) { return $this.__helperValidateAttribute($this, value, 'pageStart') }
+        get pagestart() { return this.pageStart }
+        set pagestart(value) { this.pageStart = value }
+
+            pagination($this, value) { return $this.__helperValidateAttribute($this, value, 'pagination') }
+        
+    }
+</script>

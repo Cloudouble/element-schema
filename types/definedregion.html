@@ -1,0 +1,69 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Definedregion extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DefinedRegion'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
+
+Examples: a delivery destination when shopping. Region where regional pricing is configured.
+
+Requirement 1:
+Country: US
+States: "NY", "CA"
+
+Requirement 2:
+Country: US
+PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}
+{ [12345, 12345], [78945, 78945], }
+Region = state, canton, prefecture, autonomous community...
+'
+        static _rdfs_label = 'DefinedRegion'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('addressCountry', 'addressRegion', 'postalCode', 'postalCodePrefix', 'postalCodeRange')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DefinedRegion')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        get addresscountry() { return this.addressCountry }
+        set addresscountry(value) { this.addressCountry = value }
+
+            addressRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'addressRegion') }
+        get addressregion() { return this.addressRegion }
+        set addressregion(value) { this.addressRegion = value }
+
+            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        get postalcode() { return this.postalCode }
+        set postalcode(value) { this.postalCode = value }
+
+            postalCodePrefix($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodePrefix') }
+        get postalcodeprefix() { return this.postalCodePrefix }
+        set postalcodeprefix(value) { this.postalCodePrefix = value }
+
+            postalCodeRange($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeRange') }
+        get postalcoderange() { return this.postalCodeRange }
+        set postalcoderange(value) { this.postalCodeRange = value }
+        
+    }
+</script>

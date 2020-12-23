@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Healthplanformulary extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HealthPlanFormulary'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'For a given health insurance plan, the specification for costs and coverage of prescription drugs. '
+        static _rdfs_label = 'HealthPlanFormulary'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HealthPlanFormulary')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            healthPlanCostSharing($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCostSharing') }
+        get healthplancostsharing() { return this.healthPlanCostSharing }
+        set healthplancostsharing(value) { this.healthPlanCostSharing = value }
+
+            healthPlanDrugTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugTier') }
+        get healthplandrugtier() { return this.healthPlanDrugTier }
+        set healthplandrugtier(value) { this.healthPlanDrugTier = value }
+
+            offersPrescriptionByMail($this, value) { return $this.__helperValidateAttribute($this, value, 'offersPrescriptionByMail') }
+        get offersprescriptionbymail() { return this.offersPrescriptionByMail }
+        set offersprescriptionbymail(value) { this.offersPrescriptionByMail = value }
+        
+    }
+</script>

@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Compoundpricespecification extends window.Cloudouble.Element.elements.Pricespecification {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CompoundPriceSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").'
+        static _rdfs_label = 'CompoundPriceSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('priceComponent', 'priceType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CompoundPriceSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            priceComponent($this, value) { return $this.__helperValidateAttribute($this, value, 'priceComponent') }
+        get pricecomponent() { return this.priceComponent }
+        set pricecomponent(value) { this.priceComponent = value }
+
+            priceType($this, value) { return $this.__helperValidateAttribute($this, value, 'priceType') }
+        get pricetype() { return this.priceType }
+        set pricetype(value) { this.priceType = value }
+        
+    }
+</script>

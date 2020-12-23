@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Geoshape extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:GeoShape'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude\/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.'
+        static _rdfs_label = 'GeoShape'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('GeoShape')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+
+            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        get addresscountry() { return this.addressCountry }
+        set addresscountry(value) { this.addressCountry = value }
+
+            box($this, value) { return $this.__helperValidateAttribute($this, value, 'box') }
+
+            circle($this, value) { return $this.__helperValidateAttribute($this, value, 'circle') }
+
+            elevation($this, value) { return $this.__helperValidateAttribute($this, value, 'elevation') }
+
+            line($this, value) { return $this.__helperValidateAttribute($this, value, 'line') }
+
+            polygon($this, value) { return $this.__helperValidateAttribute($this, value, 'polygon') }
+
+            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        get postalcode() { return this.postalCode }
+        set postalcode(value) { this.postalCode = value }
+        
+    }
+</script>

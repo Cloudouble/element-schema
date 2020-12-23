@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Linkrole extends window.Cloudouble.Element.elements.Role {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LinkRole'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A Role that represents a Web link e.g. as expressed via the \'url\' property. Its linkRelationship property can indicate URL-based and plain textual link types e.g. those in IANA link registry or others such as \'amphtml\'. This structure provides a placeholder where details from HTML\'s link element can be represented outside of HTML, e.g. in JSON-LD feeds.'
+        static _rdfs_label = 'LinkRole'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('inLanguage', 'linkRelationship')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LinkRole')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            linkRelationship($this, value) { return $this.__helperValidateAttribute($this, value, 'linkRelationship') }
+        get linkrelationship() { return this.linkRelationship }
+        set linkrelationship(value) { this.linkRelationship = value }
+        
+    }
+</script>

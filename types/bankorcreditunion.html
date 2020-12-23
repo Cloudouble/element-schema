@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Bankorcreditunion extends window.Cloudouble.Element.elements.Financialservice {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BankOrCreditUnion'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Bank or credit union.'
+        static _rdfs_label = 'BankOrCreditUnion'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BankOrCreditUnion')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

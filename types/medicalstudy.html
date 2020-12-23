@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalstudy extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalStudy'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID.'
+        static _rdfs_label = 'MedicalStudy'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('healthCondition', 'sponsor', 'status', 'studyLocation', 'studySubject')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalStudy')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            healthCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'healthCondition') }
+        get healthcondition() { return this.healthCondition }
+        set healthcondition(value) { this.healthCondition = value }
+
+            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+
+            status($this, value) { return $this.__helperValidateAttribute($this, value, 'status') }
+
+            studyLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'studyLocation') }
+        get studylocation() { return this.studyLocation }
+        set studylocation(value) { this.studyLocation = value }
+
+            studySubject($this, value) { return $this.__helperValidateAttribute($this, value, 'studySubject') }
+        get studysubject() { return this.studySubject }
+        set studysubject(value) { this.studySubject = value }
+        
+    }
+</script>

@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Enginespecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EngineSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.'
+        static _rdfs_label = 'EngineSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EngineSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            engineDisplacement($this, value) { return $this.__helperValidateAttribute($this, value, 'engineDisplacement') }
+        get enginedisplacement() { return this.engineDisplacement }
+        set enginedisplacement(value) { this.engineDisplacement = value }
+
+            enginePower($this, value) { return $this.__helperValidateAttribute($this, value, 'enginePower') }
+        get enginepower() { return this.enginePower }
+        set enginepower(value) { this.enginePower = value }
+
+            engineType($this, value) { return $this.__helperValidateAttribute($this, value, 'engineType') }
+        get enginetype() { return this.engineType }
+        set enginetype(value) { this.engineType = value }
+
+            fuelType($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelType') }
+        get fueltype() { return this.fuelType }
+        set fueltype(value) { this.fuelType = value }
+
+            torque($this, value) { return $this.__helperValidateAttribute($this, value, 'torque') }
+        
+    }
+</script>

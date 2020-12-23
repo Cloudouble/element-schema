@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Substance extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Substance'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.'
+        static _rdfs_label = 'Substance'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('activeIngredient', 'maximumIntake')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Substance')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        get activeingredient() { return this.activeIngredient }
+        set activeingredient(value) { this.activeIngredient = value }
+
+            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        get maximumintake() { return this.maximumIntake }
+        set maximumintake(value) { this.maximumIntake = value }
+        
+    }
+</script>

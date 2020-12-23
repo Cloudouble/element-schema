@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Thesis extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Thesis'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.'
+        static _rdfs_label = 'Thesis'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('inSupportOf')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Thesis')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            inSupportOf($this, value) { return $this.__helperValidateAttribute($this, value, 'inSupportOf') }
+        get insupportof() { return this.inSupportOf }
+        set insupportof(value) { this.inSupportOf = value }
+        
+    }
+</script>

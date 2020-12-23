@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Schooldistrict extends window.Cloudouble.Element.elements.Administrativearea {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SchoolDistrict'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A School District is an administrative area for the administration of schools.'
+        static _rdfs_label = 'SchoolDistrict'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SchoolDistrict')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

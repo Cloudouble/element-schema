@@ -1,0 +1,90 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalcondition extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalCondition'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.'
+        static _rdfs_label = 'MedicalCondition'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalCondition')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            associatedAnatomy($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedAnatomy') }
+        get associatedanatomy() { return this.associatedAnatomy }
+        set associatedanatomy(value) { this.associatedAnatomy = value }
+
+            differentialDiagnosis($this, value) { return $this.__helperValidateAttribute($this, value, 'differentialDiagnosis') }
+        get differentialdiagnosis() { return this.differentialDiagnosis }
+        set differentialdiagnosis(value) { this.differentialDiagnosis = value }
+
+            drug($this, value) { return $this.__helperValidateAttribute($this, value, 'drug') }
+
+            epidemiology($this, value) { return $this.__helperValidateAttribute($this, value, 'epidemiology') }
+
+            expectedPrognosis($this, value) { return $this.__helperValidateAttribute($this, value, 'expectedPrognosis') }
+        get expectedprognosis() { return this.expectedPrognosis }
+        set expectedprognosis(value) { this.expectedPrognosis = value }
+
+            naturalProgression($this, value) { return $this.__helperValidateAttribute($this, value, 'naturalProgression') }
+        get naturalprogression() { return this.naturalProgression }
+        set naturalprogression(value) { this.naturalProgression = value }
+
+            pathophysiology($this, value) { return $this.__helperValidateAttribute($this, value, 'pathophysiology') }
+
+            possibleComplication($this, value) { return $this.__helperValidateAttribute($this, value, 'possibleComplication') }
+        get possiblecomplication() { return this.possibleComplication }
+        set possiblecomplication(value) { this.possibleComplication = value }
+
+            possibleTreatment($this, value) { return $this.__helperValidateAttribute($this, value, 'possibleTreatment') }
+        get possibletreatment() { return this.possibleTreatment }
+        set possibletreatment(value) { this.possibleTreatment = value }
+
+            primaryPrevention($this, value) { return $this.__helperValidateAttribute($this, value, 'primaryPrevention') }
+        get primaryprevention() { return this.primaryPrevention }
+        set primaryprevention(value) { this.primaryPrevention = value }
+
+            riskFactor($this, value) { return $this.__helperValidateAttribute($this, value, 'riskFactor') }
+        get riskfactor() { return this.riskFactor }
+        set riskfactor(value) { this.riskFactor = value }
+
+            secondaryPrevention($this, value) { return $this.__helperValidateAttribute($this, value, 'secondaryPrevention') }
+        get secondaryprevention() { return this.secondaryPrevention }
+        set secondaryprevention(value) { this.secondaryPrevention = value }
+
+            signOrSymptom($this, value) { return $this.__helperValidateAttribute($this, value, 'signOrSymptom') }
+        get signorsymptom() { return this.signOrSymptom }
+        set signorsymptom(value) { this.signOrSymptom = value }
+
+            stage($this, value) { return $this.__helperValidateAttribute($this, value, 'stage') }
+
+            status($this, value) { return $this.__helperValidateAttribute($this, value, 'status') }
+
+            typicalTest($this, value) { return $this.__helperValidateAttribute($this, value, 'typicalTest') }
+        get typicaltest() { return this.typicalTest }
+        set typicaltest(value) { this.typicalTest = value }
+        
+    }
+</script>

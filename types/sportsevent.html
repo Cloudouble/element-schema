@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sportsevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SportsEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Event type: Sports event.'
+        static _rdfs_label = 'SportsEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('awayTeam', 'competitor', 'homeTeam', 'sport')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SportsEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            awayTeam($this, value) { return $this.__helperValidateAttribute($this, value, 'awayTeam') }
+        get awayteam() { return this.awayTeam }
+        set awayteam(value) { this.awayTeam = value }
+
+            competitor($this, value) { return $this.__helperValidateAttribute($this, value, 'competitor') }
+
+            homeTeam($this, value) { return $this.__helperValidateAttribute($this, value, 'homeTeam') }
+        get hometeam() { return this.homeTeam }
+        set hometeam(value) { this.homeTeam = value }
+
+            sport($this, value) { return $this.__helperValidateAttribute($this, value, 'sport') }
+        
+    }
+</script>

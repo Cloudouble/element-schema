@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Rentaction extends window.Cloudouble.Element.elements.Tradeaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RentAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.'
+        static _rdfs_label = 'RentAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('landlord', 'realEstateAgent')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RentAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            landlord($this, value) { return $this.__helperValidateAttribute($this, value, 'landlord') }
+
+            realEstateAgent($this, value) { return $this.__helperValidateAttribute($this, value, 'realEstateAgent') }
+        get realestateagent() { return this.realEstateAgent }
+        set realestateagent(value) { this.realEstateAgent = value }
+        
+    }
+</script>

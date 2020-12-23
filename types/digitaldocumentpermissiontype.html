@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Digitaldocumentpermissiontype extends window.Cloudouble.Element.elements.Enumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DigitalDocumentPermissionType'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A type of permission which can be granted for accessing a digital document.'
+        static _rdfs_label = 'DigitalDocumentPermissionType'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DigitalDocumentPermissionType')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

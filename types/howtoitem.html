@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Howtoitem extends window.Cloudouble.Element.elements.Listitem {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HowToItem'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An item used as either a tool or supply when performing the instructions for how to to achieve a result.'
+        static _rdfs_label = 'HowToItem'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('requiredQuantity')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HowToItem')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            requiredQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredQuantity') }
+        get requiredquantity() { return this.requiredQuantity }
+        set requiredquantity(value) { this.requiredQuantity = value }
+        
+    }
+</script>

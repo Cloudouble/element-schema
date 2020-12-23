@@ -1,0 +1,114 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Order extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Order'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.'
+        static _rdfs_label = 'Order'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acceptedOffer', 'billingAddress', 'broker', 'confirmationNumber', 'customer', 'discount', 'discountCode', 'discountCurrency', 'isGift', 'merchant', 'orderDate', 'orderDelivery', 'orderNumber', 'orderStatus', 'orderedItem', 'partOfInvoice', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentUrl', 'seller')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Order')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acceptedOffer($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptedOffer') }
+        get acceptedoffer() { return this.acceptedOffer }
+        set acceptedoffer(value) { this.acceptedOffer = value }
+
+            billingAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'billingAddress') }
+        get billingaddress() { return this.billingAddress }
+        set billingaddress(value) { this.billingAddress = value }
+
+            broker($this, value) { return $this.__helperValidateAttribute($this, value, 'broker') }
+
+            confirmationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'confirmationNumber') }
+        get confirmationnumber() { return this.confirmationNumber }
+        set confirmationnumber(value) { this.confirmationNumber = value }
+
+            customer($this, value) { return $this.__helperValidateAttribute($this, value, 'customer') }
+
+            discount($this, value) { return $this.__helperValidateAttribute($this, value, 'discount') }
+
+            discountCode($this, value) { return $this.__helperValidateAttribute($this, value, 'discountCode') }
+        get discountcode() { return this.discountCode }
+        set discountcode(value) { this.discountCode = value }
+
+            discountCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'discountCurrency') }
+        get discountcurrency() { return this.discountCurrency }
+        set discountcurrency(value) { this.discountCurrency = value }
+
+            isGift($this, value) { return $this.__helperValidateAttribute($this, value, 'isGift') }
+        get isgift() { return this.isGift }
+        set isgift(value) { this.isGift = value }
+
+            merchant($this, value) { return $this.__helperValidateAttribute($this, value, 'merchant') }
+
+            orderDate($this, value) { return $this.__helperValidateAttribute($this, value, 'orderDate') }
+        get orderdate() { return this.orderDate }
+        set orderdate(value) { this.orderDate = value }
+
+            orderDelivery($this, value) { return $this.__helperValidateAttribute($this, value, 'orderDelivery') }
+        get orderdelivery() { return this.orderDelivery }
+        set orderdelivery(value) { this.orderDelivery = value }
+
+            orderNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'orderNumber') }
+        get ordernumber() { return this.orderNumber }
+        set ordernumber(value) { this.orderNumber = value }
+
+            orderStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'orderStatus') }
+        get orderstatus() { return this.orderStatus }
+        set orderstatus(value) { this.orderStatus = value }
+
+            orderedItem($this, value) { return $this.__helperValidateAttribute($this, value, 'orderedItem') }
+        get ordereditem() { return this.orderedItem }
+        set ordereditem(value) { this.orderedItem = value }
+
+            partOfInvoice($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfInvoice') }
+        get partofinvoice() { return this.partOfInvoice }
+        set partofinvoice(value) { this.partOfInvoice = value }
+
+            paymentDue($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentDue') }
+        get paymentdue() { return this.paymentDue }
+        set paymentdue(value) { this.paymentDue = value }
+
+            paymentDueDate($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentDueDate') }
+        get paymentduedate() { return this.paymentDueDate }
+        set paymentduedate(value) { this.paymentDueDate = value }
+
+            paymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentMethod') }
+        get paymentmethod() { return this.paymentMethod }
+        set paymentmethod(value) { this.paymentMethod = value }
+
+            paymentMethodId($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentMethodId') }
+        get paymentmethodid() { return this.paymentMethodId }
+        set paymentmethodid(value) { this.paymentMethodId = value }
+
+            paymentUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentUrl') }
+        get paymenturl() { return this.paymentUrl }
+        set paymenturl(value) { this.paymentUrl = value }
+
+            seller($this, value) { return $this.__helperValidateAttribute($this, value, 'seller') }
+        
+    }
+</script>

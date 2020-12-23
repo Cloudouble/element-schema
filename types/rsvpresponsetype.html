@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Rsvpresponsetype extends window.Cloudouble.Element.elements.Enumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RsvpResponseType'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.'
+        static _rdfs_label = 'RsvpResponseType'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RsvpResponseType')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

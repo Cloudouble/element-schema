@@ -1,0 +1,190 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Vehicle extends window.Cloudouble.Element.elements.Product {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Vehicle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.'
+        static _rdfs_label = 'Vehicle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accelerationTime', 'bodyType', 'callSign', 'cargoVolume', 'dateVehicleFirstRegistered', 'driveWheelConfiguration', 'emissionsCO2', 'fuelCapacity', 'fuelConsumption', 'fuelEfficiency', 'fuelType', 'knownVehicleDamages', 'meetsEmissionStandard', 'mileageFromOdometer', 'modelDate', 'numberOfAirbags', 'numberOfAxles', 'numberOfDoors', 'numberOfForwardGears', 'numberOfPreviousOwners', 'payload', 'productionDate', 'purchaseDate', 'seatingCapacity', 'speed', 'steeringPosition', 'stupidProperty', 'tongueWeight', 'trailerWeight', 'vehicleConfiguration', 'vehicleEngine', 'vehicleIdentificationNumber', 'vehicleInteriorColor', 'vehicleInteriorType', 'vehicleModelDate', 'vehicleSeatingCapacity', 'vehicleSpecialUsage', 'vehicleTransmission', 'weightTotal', 'wheelbase')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Vehicle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accelerationTime($this, value) { return $this.__helperValidateAttribute($this, value, 'accelerationTime') }
+        get accelerationtime() { return this.accelerationTime }
+        set accelerationtime(value) { this.accelerationTime = value }
+
+            bodyType($this, value) { return $this.__helperValidateAttribute($this, value, 'bodyType') }
+        get bodytype() { return this.bodyType }
+        set bodytype(value) { this.bodyType = value }
+
+            callSign($this, value) { return $this.__helperValidateAttribute($this, value, 'callSign') }
+        get callsign() { return this.callSign }
+        set callsign(value) { this.callSign = value }
+
+            cargoVolume($this, value) { return $this.__helperValidateAttribute($this, value, 'cargoVolume') }
+        get cargovolume() { return this.cargoVolume }
+        set cargovolume(value) { this.cargoVolume = value }
+
+            dateVehicleFirstRegistered($this, value) { return $this.__helperValidateAttribute($this, value, 'dateVehicleFirstRegistered') }
+        get datevehiclefirstregistered() { return this.dateVehicleFirstRegistered }
+        set datevehiclefirstregistered(value) { this.dateVehicleFirstRegistered = value }
+
+            driveWheelConfiguration($this, value) { return $this.__helperValidateAttribute($this, value, 'driveWheelConfiguration') }
+        get drivewheelconfiguration() { return this.driveWheelConfiguration }
+        set drivewheelconfiguration(value) { this.driveWheelConfiguration = value }
+
+            emissionsCO2($this, value) { return $this.__helperValidateAttribute($this, value, 'emissionsCO2') }
+        get emissionsco2() { return this.emissionsCO2 }
+        set emissionsco2(value) { this.emissionsCO2 = value }
+
+            fuelCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelCapacity') }
+        get fuelcapacity() { return this.fuelCapacity }
+        set fuelcapacity(value) { this.fuelCapacity = value }
+
+            fuelConsumption($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelConsumption') }
+        get fuelconsumption() { return this.fuelConsumption }
+        set fuelconsumption(value) { this.fuelConsumption = value }
+
+            fuelEfficiency($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelEfficiency') }
+        get fuelefficiency() { return this.fuelEfficiency }
+        set fuelefficiency(value) { this.fuelEfficiency = value }
+
+            fuelType($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelType') }
+        get fueltype() { return this.fuelType }
+        set fueltype(value) { this.fuelType = value }
+
+            knownVehicleDamages($this, value) { return $this.__helperValidateAttribute($this, value, 'knownVehicleDamages') }
+        get knownvehicledamages() { return this.knownVehicleDamages }
+        set knownvehicledamages(value) { this.knownVehicleDamages = value }
+
+            meetsEmissionStandard($this, value) { return $this.__helperValidateAttribute($this, value, 'meetsEmissionStandard') }
+        get meetsemissionstandard() { return this.meetsEmissionStandard }
+        set meetsemissionstandard(value) { this.meetsEmissionStandard = value }
+
+            mileageFromOdometer($this, value) { return $this.__helperValidateAttribute($this, value, 'mileageFromOdometer') }
+        get mileagefromodometer() { return this.mileageFromOdometer }
+        set mileagefromodometer(value) { this.mileageFromOdometer = value }
+
+            modelDate($this, value) { return $this.__helperValidateAttribute($this, value, 'modelDate') }
+        get modeldate() { return this.modelDate }
+        set modeldate(value) { this.modelDate = value }
+
+            numberOfAirbags($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAirbags') }
+        get numberofairbags() { return this.numberOfAirbags }
+        set numberofairbags(value) { this.numberOfAirbags = value }
+
+            numberOfAxles($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAxles') }
+        get numberofaxles() { return this.numberOfAxles }
+        set numberofaxles(value) { this.numberOfAxles = value }
+
+            numberOfDoors($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfDoors') }
+        get numberofdoors() { return this.numberOfDoors }
+        set numberofdoors(value) { this.numberOfDoors = value }
+
+            numberOfForwardGears($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfForwardGears') }
+        get numberofforwardgears() { return this.numberOfForwardGears }
+        set numberofforwardgears(value) { this.numberOfForwardGears = value }
+
+            numberOfPreviousOwners($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPreviousOwners') }
+        get numberofpreviousowners() { return this.numberOfPreviousOwners }
+        set numberofpreviousowners(value) { this.numberOfPreviousOwners = value }
+
+            payload($this, value) { return $this.__helperValidateAttribute($this, value, 'payload') }
+
+            productionDate($this, value) { return $this.__helperValidateAttribute($this, value, 'productionDate') }
+        get productiondate() { return this.productionDate }
+        set productiondate(value) { this.productionDate = value }
+
+            purchaseDate($this, value) { return $this.__helperValidateAttribute($this, value, 'purchaseDate') }
+        get purchasedate() { return this.purchaseDate }
+        set purchasedate(value) { this.purchaseDate = value }
+
+            seatingCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'seatingCapacity') }
+        get seatingcapacity() { return this.seatingCapacity }
+        set seatingcapacity(value) { this.seatingCapacity = value }
+
+            speed($this, value) { return $this.__helperValidateAttribute($this, value, 'speed') }
+
+            steeringPosition($this, value) { return $this.__helperValidateAttribute($this, value, 'steeringPosition') }
+        get steeringposition() { return this.steeringPosition }
+        set steeringposition(value) { this.steeringPosition = value }
+
+            stupidProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'stupidProperty') }
+        get stupidproperty() { return this.stupidProperty }
+        set stupidproperty(value) { this.stupidProperty = value }
+
+            tongueWeight($this, value) { return $this.__helperValidateAttribute($this, value, 'tongueWeight') }
+        get tongueweight() { return this.tongueWeight }
+        set tongueweight(value) { this.tongueWeight = value }
+
+            trailerWeight($this, value) { return $this.__helperValidateAttribute($this, value, 'trailerWeight') }
+        get trailerweight() { return this.trailerWeight }
+        set trailerweight(value) { this.trailerWeight = value }
+
+            vehicleConfiguration($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleConfiguration') }
+        get vehicleconfiguration() { return this.vehicleConfiguration }
+        set vehicleconfiguration(value) { this.vehicleConfiguration = value }
+
+            vehicleEngine($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleEngine') }
+        get vehicleengine() { return this.vehicleEngine }
+        set vehicleengine(value) { this.vehicleEngine = value }
+
+            vehicleIdentificationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleIdentificationNumber') }
+        get vehicleidentificationnumber() { return this.vehicleIdentificationNumber }
+        set vehicleidentificationnumber(value) { this.vehicleIdentificationNumber = value }
+
+            vehicleInteriorColor($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleInteriorColor') }
+        get vehicleinteriorcolor() { return this.vehicleInteriorColor }
+        set vehicleinteriorcolor(value) { this.vehicleInteriorColor = value }
+
+            vehicleInteriorType($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleInteriorType') }
+        get vehicleinteriortype() { return this.vehicleInteriorType }
+        set vehicleinteriortype(value) { this.vehicleInteriorType = value }
+
+            vehicleModelDate($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleModelDate') }
+        get vehiclemodeldate() { return this.vehicleModelDate }
+        set vehiclemodeldate(value) { this.vehicleModelDate = value }
+
+            vehicleSeatingCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleSeatingCapacity') }
+        get vehicleseatingcapacity() { return this.vehicleSeatingCapacity }
+        set vehicleseatingcapacity(value) { this.vehicleSeatingCapacity = value }
+
+            vehicleSpecialUsage($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleSpecialUsage') }
+        get vehiclespecialusage() { return this.vehicleSpecialUsage }
+        set vehiclespecialusage(value) { this.vehicleSpecialUsage = value }
+
+            vehicleTransmission($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleTransmission') }
+        get vehicletransmission() { return this.vehicleTransmission }
+        set vehicletransmission(value) { this.vehicleTransmission = value }
+
+            weightTotal($this, value) { return $this.__helperValidateAttribute($this, value, 'weightTotal') }
+        get weighttotal() { return this.weightTotal }
+        set weighttotal(value) { this.weightTotal = value }
+
+            wheelbase($this, value) { return $this.__helperValidateAttribute($this, value, 'wheelbase') }
+        
+    }
+</script>

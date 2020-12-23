@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Recommendeddoseschedule extends window.Cloudouble.Element.elements.Doseschedule {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RecommendedDoseSchedule'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A recommended dosing schedule for a drug or supplement as prescribed or recommended by an authority or by the drug\/supplement\'s manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.'
+        static _rdfs_label = 'RecommendedDoseSchedule'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RecommendedDoseSchedule')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

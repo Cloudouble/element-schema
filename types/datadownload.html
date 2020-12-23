@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Datadownload extends window.Cloudouble.Element.elements.Mediaobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DataDownload'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A dataset in downloadable form.'
+        static _rdfs_label = 'DataDownload'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('measurementTechnique')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DataDownload')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            measurementTechnique($this, value) { return $this.__helperValidateAttribute($this, value, 'measurementTechnique') }
+        get measurementtechnique() { return this.measurementTechnique }
+        set measurementtechnique(value) { this.measurementTechnique = value }
+        
+    }
+</script>

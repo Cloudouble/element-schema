@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Mortgageloan extends window.Cloudouble.Element.elements.Loanorcredit {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MortgageLoan'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)'
+        static _rdfs_label = 'MortgageLoan'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('domiciledMortgage', 'loanMortgageMandateAmount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MortgageLoan')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            domiciledMortgage($this, value) { return $this.__helperValidateAttribute($this, value, 'domiciledMortgage') }
+        get domiciledmortgage() { return this.domiciledMortgage }
+        set domiciledmortgage(value) { this.domiciledMortgage = value }
+
+            loanMortgageMandateAmount($this, value) { return $this.__helperValidateAttribute($this, value, 'loanMortgageMandateAmount') }
+        get loanmortgagemandateamount() { return this.loanMortgageMandateAmount }
+        set loanmortgagemandateamount(value) { this.loanMortgageMandateAmount = value }
+        
+    }
+</script>

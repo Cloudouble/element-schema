@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Ddxelement extends window.Cloudouble.Element.elements.Medicalintangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DDxElement'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.'
+        static _rdfs_label = 'DDxElement'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('diagnosis', 'distinguishingSign')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DDxElement')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            diagnosis($this, value) { return $this.__helperValidateAttribute($this, value, 'diagnosis') }
+
+            distinguishingSign($this, value) { return $this.__helperValidateAttribute($this, value, 'distinguishingSign') }
+        get distinguishingsign() { return this.distinguishingSign }
+        set distinguishingsign(value) { this.distinguishingSign = value }
+        
+    }
+</script>

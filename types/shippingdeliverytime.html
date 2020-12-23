@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Shippingdeliverytime extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ShippingDeliveryTime'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'ShippingDeliveryTime provides various pieces of information about delivery times for shipping.'
+        static _rdfs_label = 'ShippingDeliveryTime'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('businessDays', 'cutoffTime', 'handlingTime', 'transitTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ShippingDeliveryTime')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            businessDays($this, value) { return $this.__helperValidateAttribute($this, value, 'businessDays') }
+        get businessdays() { return this.businessDays }
+        set businessdays(value) { this.businessDays = value }
+
+            cutoffTime($this, value) { return $this.__helperValidateAttribute($this, value, 'cutoffTime') }
+        get cutofftime() { return this.cutoffTime }
+        set cutofftime(value) { this.cutoffTime = value }
+
+            handlingTime($this, value) { return $this.__helperValidateAttribute($this, value, 'handlingTime') }
+        get handlingtime() { return this.handlingTime }
+        set handlingtime(value) { this.handlingTime = value }
+
+            transitTime($this, value) { return $this.__helperValidateAttribute($this, value, 'transitTime') }
+        get transittime() { return this.transitTime }
+        set transittime(value) { this.transitTime = value }
+        
+    }
+</script>

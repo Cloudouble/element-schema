@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Mediagallery extends window.Cloudouble.Element.elements.Collectionpage {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MediaGallery'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.'
+        static _rdfs_label = 'MediaGallery'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MediaGallery')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

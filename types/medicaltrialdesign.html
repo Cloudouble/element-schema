@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaltrialdesign extends window.Cloudouble.Element.elements.Medicalenumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalTrialDesign'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Design models for medical trials. Enumerated type.'
+        static _rdfs_label = 'MedicalTrialDesign'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalTrialDesign')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

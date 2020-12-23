@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Podcastepisode extends window.Cloudouble.Element.elements.Episode {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PodcastEpisode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A single episode of a podcast series.'
+        static _rdfs_label = 'PodcastEpisode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PodcastEpisode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

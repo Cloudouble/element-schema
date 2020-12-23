@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Audience extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Audience'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Intended audience for an item, i.e. the group for whom the item was created.'
+        static _rdfs_label = 'Audience'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('audienceType', 'geographicArea')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Audience')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            audienceType($this, value) { return $this.__helperValidateAttribute($this, value, 'audienceType') }
+        get audiencetype() { return this.audienceType }
+        set audiencetype(value) { this.audienceType = value }
+
+            geographicArea($this, value) { return $this.__helperValidateAttribute($this, value, 'geographicArea') }
+        get geographicarea() { return this.geographicArea }
+        set geographicarea(value) { this.geographicArea = value }
+        
+    }
+</script>

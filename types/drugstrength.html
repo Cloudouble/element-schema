@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Drugstrength extends window.Cloudouble.Element.elements.Medicalintangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DrugStrength'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A specific strength in which a medical drug is available in a specific country.'
+        static _rdfs_label = 'DrugStrength'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DrugStrength')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        get activeingredient() { return this.activeIngredient }
+        set activeingredient(value) { this.activeIngredient = value }
+
+            availableIn($this, value) { return $this.__helperValidateAttribute($this, value, 'availableIn') }
+        get availablein() { return this.availableIn }
+        set availablein(value) { this.availableIn = value }
+
+            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        get maximumintake() { return this.maximumIntake }
+        set maximumintake(value) { this.maximumIntake = value }
+
+            strengthUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'strengthUnit') }
+        get strengthunit() { return this.strengthUnit }
+        set strengthunit(value) { this.strengthUnit = value }
+
+            strengthValue($this, value) { return $this.__helperValidateAttribute($this, value, 'strengthValue') }
+        get strengthvalue() { return this.strengthValue }
+        set strengthvalue(value) { this.strengthValue = value }
+        
+    }
+</script>

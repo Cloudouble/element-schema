@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalwebpage extends window.Cloudouble.Element.elements.Webpage {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalWebPage'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A web page that provides medical information.'
+        static _rdfs_label = 'MedicalWebPage'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('aspect', 'medicalAudience')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalWebPage')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            aspect($this, value) { return $this.__helperValidateAttribute($this, value, 'aspect') }
+
+            medicalAudience($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalAudience') }
+        get medicalaudience() { return this.medicalAudience }
+        set medicalaudience(value) { this.medicalAudience = value }
+        
+    }
+</script>

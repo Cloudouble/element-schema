@@ -1,0 +1,141 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Schemadatatypes extends window.Cloudouble.Element.elements.Base {
+
+        static True = function(value, allow=undefined) {
+            var retval = {datatype: 'True', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(value) : !!value
+            retval.coerced = true
+            if (!retval.valid) {
+                retval.message = `True values with an allow list must have a raw value matching an option in the allow list`
+            }
+            return retval
+        }
+
+        static False = function(value, allow=undefined) {
+            var retval = {datatype: 'False', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(value) : !value
+            retval.coerced = false
+            if (!retval.valid) {
+                retval.message = `False values with an allow list must have a raw value matching an option in the allow list`
+            }
+            return retval
+        }
+
+        static ['Boolean'] = function(value, allow=undefined) {
+            var retval = {datatype: 'Boolean', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(value) : true
+            retval.coerced = !!value
+            if (!retval.valid) {
+                retval.message = `Boolean values with an allow list must have a raw value matching an option in the allow list`
+            }
+            return retval
+        }
+
+        static DateTime = function(value, allow=undefined) {
+            var retval = {datatype: 'DateTime', value: value, coerced: undefined, valid: undefined, message: undefined}
+            
+            return retval
+        }
+
+        static ['Date'] = function(value, allow=undefined) {
+            var retval = {datatype: 'Date', value: value, coerced: undefined, valid: undefined, message: undefined}
+            
+            return retval
+        }
+
+        static Time = function(value, allow=undefined) {
+            var retval = {datatype: 'Time', value: value, coerced: undefined, valid: undefined, message: undefined}
+            
+            return retval
+        }
+
+        static Integer = function(value, allow=undefined) {
+            var retval = {datatype: 'Integer', value: value, coerced: undefined, valid: undefined, message: undefined}
+            var floatVal = parseFloat(value)
+            var intVal = parseInt(value)
+            retval.valid = !Number.isNaN(floatVal) && (intVal == floatVal)
+            if (retval.valid) {
+                retval.coerced = intVal
+            } else {
+                retval.message = `Integer values must be able to be cast to a Integer without a change in their value`
+            }
+            return retval
+        }
+
+        static Float = function(value, allow=undefined) {
+            var retval = {datatype: 'Float', value: value, coerced: undefined, valid: undefined, message: undefined}
+            var floatVal = parseFloat(value)
+            retval.valid = !Number.isNaN(floatVal)
+            if (retval.valid) {
+                retval.coerced = floatVal
+            } else {
+                retval.message = `Float values must be able to be cast to a Float`
+            }
+            return retval
+        }
+
+        static ['Number'] = function(value, allow=undefined) {
+            var retval = {datatype: 'Number', value: value, coerced: undefined, valid: undefined, message: undefined}
+            var floatVal = parseFloat(value)
+            retval.valid = !Number.isNaN(floatVal)
+            if (retval.valid) {
+                var intVal = parseInt(value)
+                retval.coerced = floatVal == intVal ? intVal : floatVal
+            } else {
+                retval.message = `Number values must be able to be cast to a Float or Integer number`
+            }
+            return retval
+        }
+
+        static XPathType = function(value, allow=undefined) {
+            var retval = {datatype: 'XPathType', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.coerced = String(value)
+            retval.valid = typeof value == 'string'
+            if (!retval.valid) {
+                retval.message = `XPathType values must be strings not ${typeof value}`
+            }
+            return retval
+        }
+
+        static CssSelectorType = function(value, allow=undefined) {
+            var retval = {datatype: 'CssSelectorType', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.coerced = String(value)
+            retval.valid = typeof value == 'string'
+            if (!retval.valid) {
+                retval.message = `CssSelectorType values must be strings not ${typeof value}`
+            }
+            return retval
+        }
+
+        static URL = function(value, allow=undefined) {
+            var retval = {datatype: 'URL', value: value, coerced: undefined, valid: undefined, message: undefined}
+            var string_value = String(value)
+            retval.valid = (new RegExp('^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?')).test(string_value)
+            retval.coerced = retval.valid ? string_value : `https:\/\/${string_value.replace('https:\/\/', '').replace('http:\/\/', '')}`
+            if (!retval.valid) {
+                retval.message = `URL values should conform to the Regular Expression ${'^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?'}`
+            }
+            return retval
+        }
+
+        static Text = function(value, allow=undefined) {
+            var retval = {datatype: 'Text', value: value, coerced: undefined, valid: undefined, message: undefined}
+            retval.coerced = String(value)
+            retval.valid = typeof value == 'string'
+            if (!retval.valid) {
+                retval.message = `Text values must be strings not ${typeof value}`
+            }
+            return retval
+        }
+
+    }
+</script>

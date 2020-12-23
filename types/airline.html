@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Airline extends window.Cloudouble.Element.elements.Organization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Airline'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An organization that provides flights for passengers.'
+        static _rdfs_label = 'Airline'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('boardingPolicy', 'iataCode')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Airline')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            boardingPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'boardingPolicy') }
+        get boardingpolicy() { return this.boardingPolicy }
+        set boardingpolicy(value) { this.boardingPolicy = value }
+
+            iataCode($this, value) { return $this.__helperValidateAttribute($this, value, 'iataCode') }
+        get iatacode() { return this.iataCode }
+        set iatacode(value) { this.iataCode = value }
+        
+    }
+</script>

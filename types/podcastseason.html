@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Podcastseason extends window.Cloudouble.Element.elements.Creativeworkseason {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PodcastSeason'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.'
+        static _rdfs_label = 'PodcastSeason'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PodcastSeason')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

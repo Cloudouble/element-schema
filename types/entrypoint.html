@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Entrypoint extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EntryPoint'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An entry point, within some Web-based protocol.'
+        static _rdfs_label = 'EntryPoint'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionApplication', 'actionPlatform', 'application', 'contentType', 'encodingType', 'httpMethod', 'urlTemplate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EntryPoint')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionApplication($this, value) { return $this.__helperValidateAttribute($this, value, 'actionApplication') }
+        get actionapplication() { return this.actionApplication }
+        set actionapplication(value) { this.actionApplication = value }
+
+            actionPlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'actionPlatform') }
+        get actionplatform() { return this.actionPlatform }
+        set actionplatform(value) { this.actionPlatform = value }
+
+            application($this, value) { return $this.__helperValidateAttribute($this, value, 'application') }
+
+            contentType($this, value) { return $this.__helperValidateAttribute($this, value, 'contentType') }
+        get contenttype() { return this.contentType }
+        set contenttype(value) { this.contentType = value }
+
+            encodingType($this, value) { return $this.__helperValidateAttribute($this, value, 'encodingType') }
+        get encodingtype() { return this.encodingType }
+        set encodingtype(value) { this.encodingType = value }
+
+            httpMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'httpMethod') }
+        get httpmethod() { return this.httpMethod }
+        set httpmethod(value) { this.httpMethod = value }
+
+            urlTemplate($this, value) { return $this.__helperValidateAttribute($this, value, 'urlTemplate') }
+        get urltemplate() { return this.urlTemplate }
+        set urltemplate(value) { this.urlTemplate = value }
+        
+    }
+</script>

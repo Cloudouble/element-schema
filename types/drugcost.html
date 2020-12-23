@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Drugcost extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DrugCost'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema\'s markup.'
+        static _rdfs_label = 'DrugCost'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DrugCost')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            applicableLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'applicableLocation') }
+        get applicablelocation() { return this.applicableLocation }
+        set applicablelocation(value) { this.applicableLocation = value }
+
+            costCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'costCategory') }
+        get costcategory() { return this.costCategory }
+        set costcategory(value) { this.costCategory = value }
+
+            costCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'costCurrency') }
+        get costcurrency() { return this.costCurrency }
+        set costcurrency(value) { this.costCurrency = value }
+
+            costOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'costOrigin') }
+        get costorigin() { return this.costOrigin }
+        set costorigin(value) { this.costOrigin = value }
+
+            costPerUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'costPerUnit') }
+        get costperunit() { return this.costPerUnit }
+        set costperunit(value) { this.costPerUnit = value }
+
+            drugUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'drugUnit') }
+        get drugunit() { return this.drugUnit }
+        set drugunit(value) { this.drugUnit = value }
+        
+    }
+</script>

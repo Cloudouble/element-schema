@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Hypertocentry extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HyperTocEntry'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A HyperToEntry is an item within a [[HyperToc]], which represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. The media object itself is indicated using [[associatedMedia]]. Each section of interest within that content can be described with a [[HyperTocEntry]], with associated [[startOffset]] and [[endOffset]]. When several entries are all from the same file, [[associatedMedia]] is used on the overarching [[HyperTocEntry]]; if the content has been split into multiple files, they can be referenced using [[associatedMedia]] on each [[HyperTocEntry]].'
+        static _rdfs_label = 'HyperTocEntry'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('associatedMedia', 'tocContinuation', 'utterances')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HyperTocEntry')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            associatedMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedMedia') }
+        get associatedmedia() { return this.associatedMedia }
+        set associatedmedia(value) { this.associatedMedia = value }
+
+            tocContinuation($this, value) { return $this.__helperValidateAttribute($this, value, 'tocContinuation') }
+        get toccontinuation() { return this.tocContinuation }
+        set toccontinuation(value) { this.tocContinuation = value }
+
+            utterances($this, value) { return $this.__helperValidateAttribute($this, value, 'utterances') }
+        
+    }
+</script>

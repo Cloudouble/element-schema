@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Ignoreaction extends window.Cloudouble.Element.elements.Assessaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:IgnoreAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of intentionally disregarding the object. An agent ignores an object.'
+        static _rdfs_label = 'IgnoreAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('IgnoreAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

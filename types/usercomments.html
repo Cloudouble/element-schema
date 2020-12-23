@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Usercomments extends window.Cloudouble.Element.elements.Userinteraction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:UserComments'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].'
+        static _rdfs_label = 'UserComments'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('UserComments')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            commentText($this, value) { return $this.__helperValidateAttribute($this, value, 'commentText') }
+        get commenttext() { return this.commentText }
+        set commenttext(value) { this.commentText = value }
+
+            commentTime($this, value) { return $this.__helperValidateAttribute($this, value, 'commentTime') }
+        get commenttime() { return this.commentTime }
+        set commenttime(value) { this.commentTime = value }
+
+            creator($this, value) { return $this.__helperValidateAttribute($this, value, 'creator') }
+
+            discusses($this, value) { return $this.__helperValidateAttribute($this, value, 'discusses') }
+
+            replyToUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'replyToUrl') }
+        get replytourl() { return this.replyToUrl }
+        set replytourl(value) { this.replyToUrl = value }
+        
+    }
+</script>

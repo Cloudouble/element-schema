@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Traintrip extends window.Cloudouble.Element.elements.Trip {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TrainTrip'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A trip on a commercial train line.'
+        static _rdfs_label = 'TrainTrip'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('arrivalPlatform', 'arrivalStation', 'departurePlatform', 'departureStation', 'trainName', 'trainNumber')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TrainTrip')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            arrivalPlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalPlatform') }
+        get arrivalplatform() { return this.arrivalPlatform }
+        set arrivalplatform(value) { this.arrivalPlatform = value }
+
+            arrivalStation($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalStation') }
+        get arrivalstation() { return this.arrivalStation }
+        set arrivalstation(value) { this.arrivalStation = value }
+
+            departurePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'departurePlatform') }
+        get departureplatform() { return this.departurePlatform }
+        set departureplatform(value) { this.departurePlatform = value }
+
+            departureStation($this, value) { return $this.__helperValidateAttribute($this, value, 'departureStation') }
+        get departurestation() { return this.departureStation }
+        set departurestation(value) { this.departureStation = value }
+
+            trainName($this, value) { return $this.__helperValidateAttribute($this, value, 'trainName') }
+        get trainname() { return this.trainName }
+        set trainname(value) { this.trainName = value }
+
+            trainNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'trainNumber') }
+        get trainnumber() { return this.trainNumber }
+        set trainnumber(value) { this.trainNumber = value }
+        
+    }
+</script>

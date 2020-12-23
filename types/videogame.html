@@ -1,0 +1,70 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Videogame extends window.Cloudouble.Element.elements.Softwareapplication {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VideoGame'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.'
+        static _rdfs_label = 'VideoGame'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VideoGame')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            cheatCode($this, value) { return $this.__helperValidateAttribute($this, value, 'cheatCode') }
+        get cheatcode() { return this.cheatCode }
+        set cheatcode(value) { this.cheatCode = value }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            gamePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'gamePlatform') }
+        get gameplatform() { return this.gamePlatform }
+        set gameplatform(value) { this.gamePlatform = value }
+
+            gameServer($this, value) { return $this.__helperValidateAttribute($this, value, 'gameServer') }
+        get gameserver() { return this.gameServer }
+        set gameserver(value) { this.gameServer = value }
+
+            gameTip($this, value) { return $this.__helperValidateAttribute($this, value, 'gameTip') }
+        get gametip() { return this.gameTip }
+        set gametip(value) { this.gameTip = value }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            playMode($this, value) { return $this.__helperValidateAttribute($this, value, 'playMode') }
+        get playmode() { return this.playMode }
+        set playmode(value) { this.playMode = value }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

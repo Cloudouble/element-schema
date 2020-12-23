@@ -1,0 +1,41 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class 3dmodel extends window.Cloudouble.Element.elements.Mediaobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:3DModel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A 3D model represents some kind of 3D content, which may have [[encoding]]s in one or more [[MediaObject]]s. Many 3D formats are available (e.g. see [Wikipedia](https:\/\/en.wikipedia.org\/wiki\/Category:3D_graphics_file_formats)); specific encoding formats can be represented using the [[encodingFormat]] property applied to the relevant [[MediaObject]]. For the
+case of a single file published after Zip compression, the convention of appending \'+zip\' to the [[encodingFormat]] can be used. Geospatial, AR\/VR, artistic\/animation, gaming, engineering and scientific content can all be represented using [[3DModel]].'
+        static _rdfs_label = '3DModel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('isResizable')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('3DModel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            isResizable($this, value) { return $this.__helperValidateAttribute($this, value, 'isResizable') }
+        get isresizable() { return this.isResizable }
+        set isresizable(value) { this.isResizable = value }
+        
+    }
+</script>

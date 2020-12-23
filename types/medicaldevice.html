@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaldevice extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalDevice'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any object used in a medical capacity, such as to diagnose or treat a patient.'
+        static _rdfs_label = 'MedicalDevice'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalDevice')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            adverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'adverseOutcome') }
+        get adverseoutcome() { return this.adverseOutcome }
+        set adverseoutcome(value) { this.adverseOutcome = value }
+
+            contraindication($this, value) { return $this.__helperValidateAttribute($this, value, 'contraindication') }
+
+            postOp($this, value) { return $this.__helperValidateAttribute($this, value, 'postOp') }
+        get postop() { return this.postOp }
+        set postop(value) { this.postOp = value }
+
+            preOp($this, value) { return $this.__helperValidateAttribute($this, value, 'preOp') }
+        get preop() { return this.preOp }
+        set preop(value) { this.preOp = value }
+
+            procedure($this, value) { return $this.__helperValidateAttribute($this, value, 'procedure') }
+
+            seriousAdverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'seriousAdverseOutcome') }
+        get seriousadverseoutcome() { return this.seriousAdverseOutcome }
+        set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }
+        
+    }
+</script>

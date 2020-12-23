@@ -1,0 +1,156 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Product extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Product'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.'
+        static _rdfs_label = 'Product'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalProperty', 'aggregateRating', 'audience', 'award', 'awards', 'brand', 'category', 'color', 'depth', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'hasEnergyConsumptionDetails', 'hasMerchantReturnPolicy', 'hasProductReturnPolicy', 'height', 'inProductGroupWithID', 'isAccessoryOrSparePartFor', 'isConsumableFor', 'isRelatedTo', 'isSimilarTo', 'isVariantOf', 'itemCondition', 'logo', 'manufacturer', 'material', 'model', 'mpn', 'nsn', 'offers', 'pattern', 'productID', 'productionDate', 'purchaseDate', 'releaseDate', 'review', 'reviews', 'size', 'sku', 'slogan', 'weight', 'width')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Product')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalProperty') }
+        get additionalproperty() { return this.additionalProperty }
+        set additionalproperty(value) { this.additionalProperty = value }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+
+            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+
+            awards($this, value) { return $this.__helperValidateAttribute($this, value, 'awards') }
+
+            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            color($this, value) { return $this.__helperValidateAttribute($this, value, 'color') }
+
+            depth($this, value) { return $this.__helperValidateAttribute($this, value, 'depth') }
+
+            gtin($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin') }
+
+            gtin12($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin12') }
+
+            gtin13($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin13') }
+
+            gtin14($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin14') }
+
+            gtin8($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin8') }
+
+            hasEnergyConsumptionDetails($this, value) { return $this.__helperValidateAttribute($this, value, 'hasEnergyConsumptionDetails') }
+        get hasenergyconsumptiondetails() { return this.hasEnergyConsumptionDetails }
+        set hasenergyconsumptiondetails(value) { this.hasEnergyConsumptionDetails = value }
+
+            hasMerchantReturnPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMerchantReturnPolicy') }
+        get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
+        set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
+
+            hasProductReturnPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'hasProductReturnPolicy') }
+        get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
+        set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
+
+            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+
+            inProductGroupWithID($this, value) { return $this.__helperValidateAttribute($this, value, 'inProductGroupWithID') }
+        get inproductgroupwithid() { return this.inProductGroupWithID }
+        set inproductgroupwithid(value) { this.inProductGroupWithID = value }
+
+            isAccessoryOrSparePartFor($this, value) { return $this.__helperValidateAttribute($this, value, 'isAccessoryOrSparePartFor') }
+        get isaccessoryorsparepartfor() { return this.isAccessoryOrSparePartFor }
+        set isaccessoryorsparepartfor(value) { this.isAccessoryOrSparePartFor = value }
+
+            isConsumableFor($this, value) { return $this.__helperValidateAttribute($this, value, 'isConsumableFor') }
+        get isconsumablefor() { return this.isConsumableFor }
+        set isconsumablefor(value) { this.isConsumableFor = value }
+
+            isRelatedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isRelatedTo') }
+        get isrelatedto() { return this.isRelatedTo }
+        set isrelatedto(value) { this.isRelatedTo = value }
+
+            isSimilarTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isSimilarTo') }
+        get issimilarto() { return this.isSimilarTo }
+        set issimilarto(value) { this.isSimilarTo = value }
+
+            isVariantOf($this, value) { return $this.__helperValidateAttribute($this, value, 'isVariantOf') }
+        get isvariantof() { return this.isVariantOf }
+        set isvariantof(value) { this.isVariantOf = value }
+
+            itemCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'itemCondition') }
+        get itemcondition() { return this.itemCondition }
+        set itemcondition(value) { this.itemCondition = value }
+
+            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+
+            manufacturer($this, value) { return $this.__helperValidateAttribute($this, value, 'manufacturer') }
+
+            material($this, value) { return $this.__helperValidateAttribute($this, value, 'material') }
+
+            model($this, value) { return $this.__helperValidateAttribute($this, value, 'model') }
+
+            mpn($this, value) { return $this.__helperValidateAttribute($this, value, 'mpn') }
+
+            nsn($this, value) { return $this.__helperValidateAttribute($this, value, 'nsn') }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            pattern($this, value) { return $this.__helperValidateAttribute($this, value, 'pattern') }
+
+            productID($this, value) { return $this.__helperValidateAttribute($this, value, 'productID') }
+        get productid() { return this.productID }
+        set productid(value) { this.productID = value }
+
+            productionDate($this, value) { return $this.__helperValidateAttribute($this, value, 'productionDate') }
+        get productiondate() { return this.productionDate }
+        set productiondate(value) { this.productionDate = value }
+
+            purchaseDate($this, value) { return $this.__helperValidateAttribute($this, value, 'purchaseDate') }
+        get purchasedate() { return this.purchaseDate }
+        set purchasedate(value) { this.purchaseDate = value }
+
+            releaseDate($this, value) { return $this.__helperValidateAttribute($this, value, 'releaseDate') }
+        get releasedate() { return this.releaseDate }
+        set releasedate(value) { this.releaseDate = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            reviews($this, value) { return $this.__helperValidateAttribute($this, value, 'reviews') }
+
+            size($this, value) { return $this.__helperValidateAttribute($this, value, 'size') }
+
+            sku($this, value) { return $this.__helperValidateAttribute($this, value, 'sku') }
+
+            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+
+            weight($this, value) { return $this.__helperValidateAttribute($this, value, 'weight') }
+
+            width($this, value) { return $this.__helperValidateAttribute($this, value, 'width') }
+        
+    }
+</script>

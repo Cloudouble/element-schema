@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Musicrecording extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MusicRecording'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A music recording (track), usually a single song.'
+        static _rdfs_label = 'MusicRecording'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('byArtist', 'duration', 'inAlbum', 'inPlaylist', 'isrcCode', 'recordingOf')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MusicRecording')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            byArtist($this, value) { return $this.__helperValidateAttribute($this, value, 'byArtist') }
+        get byartist() { return this.byArtist }
+        set byartist(value) { this.byArtist = value }
+
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            inAlbum($this, value) { return $this.__helperValidateAttribute($this, value, 'inAlbum') }
+        get inalbum() { return this.inAlbum }
+        set inalbum(value) { this.inAlbum = value }
+
+            inPlaylist($this, value) { return $this.__helperValidateAttribute($this, value, 'inPlaylist') }
+        get inplaylist() { return this.inPlaylist }
+        set inplaylist(value) { this.inPlaylist = value }
+
+            isrcCode($this, value) { return $this.__helperValidateAttribute($this, value, 'isrcCode') }
+        get isrccode() { return this.isrcCode }
+        set isrccode(value) { this.isrcCode = value }
+
+            recordingOf($this, value) { return $this.__helperValidateAttribute($this, value, 'recordingOf') }
+        get recordingof() { return this.recordingOf }
+        set recordingof(value) { this.recordingOf = value }
+        
+    }
+</script>

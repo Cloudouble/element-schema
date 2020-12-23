@@ -1,0 +1,156 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Event extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Event'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.'
+        static _rdfs_label = 'Event'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Event')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            about($this, value) { return $this.__helperValidateAttribute($this, value, 'about') }
+
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            attendee($this, value) { return $this.__helperValidateAttribute($this, value, 'attendee') }
+
+            attendees($this, value) { return $this.__helperValidateAttribute($this, value, 'attendees') }
+
+            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+
+            composer($this, value) { return $this.__helperValidateAttribute($this, value, 'composer') }
+
+            contributor($this, value) { return $this.__helperValidateAttribute($this, value, 'contributor') }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            doorTime($this, value) { return $this.__helperValidateAttribute($this, value, 'doorTime') }
+        get doortime() { return this.doorTime }
+        set doortime(value) { this.doorTime = value }
+
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            eventAttendanceMode($this, value) { return $this.__helperValidateAttribute($this, value, 'eventAttendanceMode') }
+        get eventattendancemode() { return this.eventAttendanceMode }
+        set eventattendancemode(value) { this.eventAttendanceMode = value }
+
+            eventSchedule($this, value) { return $this.__helperValidateAttribute($this, value, 'eventSchedule') }
+        get eventschedule() { return this.eventSchedule }
+        set eventschedule(value) { this.eventSchedule = value }
+
+            eventStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'eventStatus') }
+        get eventstatus() { return this.eventStatus }
+        set eventstatus(value) { this.eventStatus = value }
+
+            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            isAccessibleForFree($this, value) { return $this.__helperValidateAttribute($this, value, 'isAccessibleForFree') }
+        get isaccessibleforfree() { return this.isAccessibleForFree }
+        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
+
+            location($this, value) { return $this.__helperValidateAttribute($this, value, 'location') }
+
+            maximumAttendeeCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumAttendeeCapacity') }
+        get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
+        set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
+
+            maximumPhysicalAttendeeCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumPhysicalAttendeeCapacity') }
+        get maximumphysicalattendeecapacity() { return this.maximumPhysicalAttendeeCapacity }
+        set maximumphysicalattendeecapacity(value) { this.maximumPhysicalAttendeeCapacity = value }
+
+            maximumVirtualAttendeeCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumVirtualAttendeeCapacity') }
+        get maximumvirtualattendeecapacity() { return this.maximumVirtualAttendeeCapacity }
+        set maximumvirtualattendeecapacity(value) { this.maximumVirtualAttendeeCapacity = value }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            organizer($this, value) { return $this.__helperValidateAttribute($this, value, 'organizer') }
+
+            performer($this, value) { return $this.__helperValidateAttribute($this, value, 'performer') }
+
+            performers($this, value) { return $this.__helperValidateAttribute($this, value, 'performers') }
+
+            previousStartDate($this, value) { return $this.__helperValidateAttribute($this, value, 'previousStartDate') }
+        get previousstartdate() { return this.previousStartDate }
+        set previousstartdate(value) { this.previousStartDate = value }
+
+            recordedIn($this, value) { return $this.__helperValidateAttribute($this, value, 'recordedIn') }
+        get recordedin() { return this.recordedIn }
+        set recordedin(value) { this.recordedIn = value }
+
+            remainingAttendeeCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'remainingAttendeeCapacity') }
+        get remainingattendeecapacity() { return this.remainingAttendeeCapacity }
+        set remainingattendeecapacity(value) { this.remainingAttendeeCapacity = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+
+            subEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'subEvent') }
+        get subevent() { return this.subEvent }
+        set subevent(value) { this.subEvent = value }
+
+            subEvents($this, value) { return $this.__helperValidateAttribute($this, value, 'subEvents') }
+        get subevents() { return this.subEvents }
+        set subevents(value) { this.subEvents = value }
+
+            superEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'superEvent') }
+        get superevent() { return this.superEvent }
+        set superevent(value) { this.superEvent = value }
+
+            translator($this, value) { return $this.__helperValidateAttribute($this, value, 'translator') }
+
+            typicalAgeRange($this, value) { return $this.__helperValidateAttribute($this, value, 'typicalAgeRange') }
+        get typicalagerange() { return this.typicalAgeRange }
+        set typicalagerange(value) { this.typicalAgeRange = value }
+
+            workFeatured($this, value) { return $this.__helperValidateAttribute($this, value, 'workFeatured') }
+        get workfeatured() { return this.workFeatured }
+        set workfeatured(value) { this.workFeatured = value }
+
+            workPerformed($this, value) { return $this.__helperValidateAttribute($this, value, 'workPerformed') }
+        get workperformed() { return this.workPerformed }
+        set workperformed(value) { this.workPerformed = value }
+        
+    }
+</script>

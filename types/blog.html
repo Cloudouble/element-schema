@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Blog extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Blog'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A blog.'
+        static _rdfs_label = 'Blog'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('blogPost', 'blogPosts', 'issn')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Blog')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            blogPost($this, value) { return $this.__helperValidateAttribute($this, value, 'blogPost') }
+        get blogpost() { return this.blogPost }
+        set blogpost(value) { this.blogPost = value }
+
+            blogPosts($this, value) { return $this.__helperValidateAttribute($this, value, 'blogPosts') }
+        get blogposts() { return this.blogPosts }
+        set blogposts(value) { this.blogPosts = value }
+
+            issn($this, value) { return $this.__helperValidateAttribute($this, value, 'issn') }
+        
+    }
+</script>

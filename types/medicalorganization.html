@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalorganization extends window.Cloudouble.Element.elements.Organization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalOrganization'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical organization (physical or not), such as hospital, institution or clinic.'
+        static _rdfs_label = 'MedicalOrganization'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalOrganization')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            healthPlanNetworkId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkId') }
+        get healthplannetworkid() { return this.healthPlanNetworkId }
+        set healthplannetworkid(value) { this.healthPlanNetworkId = value }
+
+            isAcceptingNewPatients($this, value) { return $this.__helperValidateAttribute($this, value, 'isAcceptingNewPatients') }
+        get isacceptingnewpatients() { return this.isAcceptingNewPatients }
+        set isacceptingnewpatients(value) { this.isAcceptingNewPatients = value }
+
+            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        get medicalspecialty() { return this.medicalSpecialty }
+        set medicalspecialty(value) { this.medicalSpecialty = value }
+        
+    }
+</script>

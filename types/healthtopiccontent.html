@@ -1,0 +1,41 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Healthtopiccontent extends window.Cloudouble.Element.elements.Webcontent {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HealthTopicContent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = '[[HealthTopicContent]] is [[WebContent]] that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of [[WebContent]] (and hence [[HealthTopicContent]]) can be related using [[hasPart]] \/ [[isPartOf]] where there is some kind of content hierarchy, and their content described with [[about]] and [[mentions]] e.g. building upon the existing [[MedicalCondition]] vocabulary.
+  '
+        static _rdfs_label = 'HealthTopicContent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hasHealthAspect')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HealthTopicContent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hasHealthAspect($this, value) { return $this.__helperValidateAttribute($this, value, 'hasHealthAspect') }
+        get hashealthaspect() { return this.hasHealthAspect }
+        set hashealthaspect(value) { this.hasHealthAspect = value }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Stupidtype extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:StupidType'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A StupidType for testing.'
+        static _rdfs_label = 'StupidType'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('stupidProperty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('StupidType')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            stupidProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'stupidProperty') }
+        get stupidproperty() { return this.stupidProperty }
+        set stupidproperty(value) { this.stupidProperty = value }
+        
+    }
+</script>

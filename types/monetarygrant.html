@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Monetarygrant extends window.Cloudouble.Element.elements.Grant {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MonetaryGrant'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A monetary grant.'
+        static _rdfs_label = 'MonetaryGrant'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amount', 'funder')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MonetaryGrant')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+
+            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+        
+    }
+</script>

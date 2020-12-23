@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Defenceestablishment extends window.Cloudouble.Element.elements.Governmentbuilding {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DefenceEstablishment'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A defence establishment, such as an army or navy base.'
+        static _rdfs_label = 'DefenceEstablishment'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DefenceEstablishment')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

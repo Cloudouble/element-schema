@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Qualitativevalue extends window.Cloudouble.Element.elements.Enumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:QualitativeValue'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A predefined value for a product characteristic, e.g. the power cord plug type \'US\' or the garment sizes \'S\', \'M\', \'L\', and \'XL\'.'
+        static _rdfs_label = 'QualitativeValue'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalProperty', 'equal', 'greater', 'greaterOrEqual', 'lesser', 'lesserOrEqual', 'nonEqual', 'valueReference')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('QualitativeValue')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalProperty') }
+        get additionalproperty() { return this.additionalProperty }
+        set additionalproperty(value) { this.additionalProperty = value }
+
+            equal($this, value) { return $this.__helperValidateAttribute($this, value, 'equal') }
+
+            greater($this, value) { return $this.__helperValidateAttribute($this, value, 'greater') }
+
+            greaterOrEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'greaterOrEqual') }
+        get greaterorequal() { return this.greaterOrEqual }
+        set greaterorequal(value) { this.greaterOrEqual = value }
+
+            lesser($this, value) { return $this.__helperValidateAttribute($this, value, 'lesser') }
+
+            lesserOrEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'lesserOrEqual') }
+        get lesserorequal() { return this.lesserOrEqual }
+        set lesserorequal(value) { this.lesserOrEqual = value }
+
+            nonEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'nonEqual') }
+        get nonequal() { return this.nonEqual }
+        set nonequal(value) { this.nonEqual = value }
+
+            valueReference($this, value) { return $this.__helperValidateAttribute($this, value, 'valueReference') }
+        get valuereference() { return this.valueReference }
+        set valuereference(value) { this.valueReference = value }
+        
+    }
+</script>

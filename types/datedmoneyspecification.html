@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Datedmoneyspecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DatedMoneySpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee\'s salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended'
+        static _rdfs_label = 'DatedMoneySpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amount', 'currency', 'endDate', 'startDate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DatedMoneySpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+
+            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+        
+    }
+</script>

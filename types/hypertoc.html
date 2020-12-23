@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Hypertoc extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HyperToc'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A HyperToc represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. Items in the table of contents are indicated using the [[tocEntry]] property, and typed [[HyperTocEntry]]. For cases where the same larger work is split into multiple files, [[associatedMedia]] can be used on individual [[HyperTocEntry]] items.'
+        static _rdfs_label = 'HyperToc'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('associatedMedia', 'tocEntry')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HyperToc')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            associatedMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedMedia') }
+        get associatedmedia() { return this.associatedMedia }
+        set associatedmedia(value) { this.associatedMedia = value }
+
+            tocEntry($this, value) { return $this.__helperValidateAttribute($this, value, 'tocEntry') }
+        get tocentry() { return this.tocEntry }
+        set tocentry(value) { this.tocEntry = value }
+        
+    }
+</script>

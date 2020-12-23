@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Hospital extends window.Cloudouble.Element.elements.Emergencyservice {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Hospital'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A hospital.'
+        static _rdfs_label = 'Hospital'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availableService', 'healthcareReportingData', 'medicalSpecialty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Hospital')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availableService($this, value) { return $this.__helperValidateAttribute($this, value, 'availableService') }
+        get availableservice() { return this.availableService }
+        set availableservice(value) { this.availableService = value }
+
+            healthcareReportingData($this, value) { return $this.__helperValidateAttribute($this, value, 'healthcareReportingData') }
+        get healthcarereportingdata() { return this.healthcareReportingData }
+        set healthcarereportingdata(value) { this.healthcareReportingData = value }
+
+            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        get medicalspecialty() { return this.medicalSpecialty }
+        set medicalspecialty(value) { this.medicalSpecialty = value }
+        
+    }
+</script>

@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Rentalcarreservation extends window.Cloudouble.Element.elements.Reservation {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RentalCarReservation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.'
+        static _rdfs_label = 'RentalCarReservation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('dropoffLocation', 'dropoffTime', 'pickupLocation', 'pickupTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RentalCarReservation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            dropoffLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'dropoffLocation') }
+        get dropofflocation() { return this.dropoffLocation }
+        set dropofflocation(value) { this.dropoffLocation = value }
+
+            dropoffTime($this, value) { return $this.__helperValidateAttribute($this, value, 'dropoffTime') }
+        get dropofftime() { return this.dropoffTime }
+        set dropofftime(value) { this.dropoffTime = value }
+
+            pickupLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupLocation') }
+        get pickuplocation() { return this.pickupLocation }
+        set pickuplocation(value) { this.pickupLocation = value }
+
+            pickupTime($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupTime') }
+        get pickuptime() { return this.pickupTime }
+        set pickuptime(value) { this.pickupTime = value }
+        
+    }
+</script>

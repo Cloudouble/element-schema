@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Reviewaction extends window.Cloudouble.Element.elements.Assessaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ReviewAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.'
+        static _rdfs_label = 'ReviewAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('resultReview')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ReviewAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            resultReview($this, value) { return $this.__helperValidateAttribute($this, value, 'resultReview') }
+        get resultreview() { return this.resultReview }
+        set resultreview(value) { this.resultReview = value }
+        
+    }
+</script>

@@ -1,0 +1,70 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Creativeworkseason extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CreativeWorkSeason'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A media season e.g. tv, radio, video game etc.'
+        static _rdfs_label = 'CreativeWorkSeason'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'director', 'endDate', 'episode', 'episodes', 'numberOfEpisodes', 'partOfSeries', 'productionCompany', 'seasonNumber', 'startDate', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CreativeWorkSeason')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            episode($this, value) { return $this.__helperValidateAttribute($this, value, 'episode') }
+
+            episodes($this, value) { return $this.__helperValidateAttribute($this, value, 'episodes') }
+
+            numberOfEpisodes($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfEpisodes') }
+        get numberofepisodes() { return this.numberOfEpisodes }
+        set numberofepisodes(value) { this.numberOfEpisodes = value }
+
+            partOfSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeries') }
+        get partofseries() { return this.partOfSeries }
+        set partofseries(value) { this.partOfSeries = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            seasonNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'seasonNumber') }
+        get seasonnumber() { return this.seasonNumber }
+        set seasonnumber(value) { this.seasonNumber = value }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

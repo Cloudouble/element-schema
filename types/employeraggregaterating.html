@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Employeraggregaterating extends window.Cloudouble.Element.elements.Aggregaterating {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EmployerAggregateRating'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An aggregate rating of an Organization related to its role as an employer.'
+        static _rdfs_label = 'EmployerAggregateRating'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EmployerAggregateRating')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

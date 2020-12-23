@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Achieveaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AchieveAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.'
+        static _rdfs_label = 'AchieveAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AchieveAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

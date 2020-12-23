@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Productcollection extends window.Cloudouble.Element.elements.Product {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ProductCollection'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].'
+        static _rdfs_label = 'ProductCollection'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('includesObject')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ProductCollection')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            includesObject($this, value) { return $this.__helperValidateAttribute($this, value, 'includesObject') }
+        get includesobject() { return this.includesObject }
+        set includesobject(value) { this.includesObject = value }
+        
+    }
+</script>

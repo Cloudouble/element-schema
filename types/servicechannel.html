@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Servicechannel extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ServiceChannel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A means for accessing a service, e.g. a government office location, web site, or phone number.'
+        static _rdfs_label = 'ServiceChannel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availableLanguage', 'processingTime', 'providesService', 'serviceLocation', 'servicePhone', 'servicePostalAddress', 'serviceSmsNumber', 'serviceUrl')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ServiceChannel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availableLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'availableLanguage') }
+        get availablelanguage() { return this.availableLanguage }
+        set availablelanguage(value) { this.availableLanguage = value }
+
+            processingTime($this, value) { return $this.__helperValidateAttribute($this, value, 'processingTime') }
+        get processingtime() { return this.processingTime }
+        set processingtime(value) { this.processingTime = value }
+
+            providesService($this, value) { return $this.__helperValidateAttribute($this, value, 'providesService') }
+        get providesservice() { return this.providesService }
+        set providesservice(value) { this.providesService = value }
+
+            serviceLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceLocation') }
+        get servicelocation() { return this.serviceLocation }
+        set servicelocation(value) { this.serviceLocation = value }
+
+            servicePhone($this, value) { return $this.__helperValidateAttribute($this, value, 'servicePhone') }
+        get servicephone() { return this.servicePhone }
+        set servicephone(value) { this.servicePhone = value }
+
+            servicePostalAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'servicePostalAddress') }
+        get servicepostaladdress() { return this.servicePostalAddress }
+        set servicepostaladdress(value) { this.servicePostalAddress = value }
+
+            serviceSmsNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceSmsNumber') }
+        get servicesmsnumber() { return this.serviceSmsNumber }
+        set servicesmsnumber(value) { this.serviceSmsNumber = value }
+
+            serviceUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceUrl') }
+        get serviceurl() { return this.serviceUrl }
+        set serviceurl(value) { this.serviceUrl = value }
+        
+    }
+</script>

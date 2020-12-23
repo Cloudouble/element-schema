@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Howtotool extends window.Cloudouble.Element.elements.Howtoitem {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HowToTool'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A tool used (but not consumed) when performing instructions for how to achieve a result.'
+        static _rdfs_label = 'HowToTool'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HowToTool')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Joint extends window.Cloudouble.Element.elements.Anatomicalstructure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Joint'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The anatomical location at which two or more bones make contact.'
+        static _rdfs_label = 'Joint'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('biomechnicalClass', 'functionalClass', 'structuralClass')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Joint')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            biomechnicalClass($this, value) { return $this.__helperValidateAttribute($this, value, 'biomechnicalClass') }
+        get biomechnicalclass() { return this.biomechnicalClass }
+        set biomechnicalclass(value) { this.biomechnicalClass = value }
+
+            functionalClass($this, value) { return $this.__helperValidateAttribute($this, value, 'functionalClass') }
+        get functionalclass() { return this.functionalClass }
+        set functionalclass(value) { this.functionalClass = value }
+
+            structuralClass($this, value) { return $this.__helperValidateAttribute($this, value, 'structuralClass') }
+        get structuralclass() { return this.structuralClass }
+        set structuralclass(value) { this.structuralClass = value }
+        
+    }
+</script>

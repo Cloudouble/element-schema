@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Game extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Game'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.'
+        static _rdfs_label = 'Game'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Game')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            characterAttribute($this, value) { return $this.__helperValidateAttribute($this, value, 'characterAttribute') }
+        get characterattribute() { return this.characterAttribute }
+        set characterattribute(value) { this.characterAttribute = value }
+
+            gameItem($this, value) { return $this.__helperValidateAttribute($this, value, 'gameItem') }
+        get gameitem() { return this.gameItem }
+        set gameitem(value) { this.gameItem = value }
+
+            gameLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'gameLocation') }
+        get gamelocation() { return this.gameLocation }
+        set gamelocation(value) { this.gameLocation = value }
+
+            numberOfPlayers($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPlayers') }
+        get numberofplayers() { return this.numberOfPlayers }
+        set numberofplayers(value) { this.numberOfPlayers = value }
+
+            quest($this, value) { return $this.__helperValidateAttribute($this, value, 'quest') }
+        
+    }
+</script>

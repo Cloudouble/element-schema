@@ -1,0 +1,66 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Episode extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Episode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A media episode (e.g. TV, radio, video game) which can be part of a series or season.'
+        static _rdfs_label = 'Episode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'director', 'directors', 'episodeNumber', 'musicBy', 'partOfSeason', 'partOfSeries', 'productionCompany', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Episode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            episodeNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'episodeNumber') }
+        get episodenumber() { return this.episodeNumber }
+        set episodenumber(value) { this.episodeNumber = value }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            partOfSeason($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeason') }
+        get partofseason() { return this.partOfSeason }
+        set partofseason(value) { this.partOfSeason = value }
+
+            partOfSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeries') }
+        get partofseries() { return this.partOfSeries }
+        set partofseries(value) { this.partOfSeries = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

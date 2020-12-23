@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Discussionforumposting extends window.Cloudouble.Element.elements.Socialmediaposting {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DiscussionForumPosting'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A posting to a discussion forum.'
+        static _rdfs_label = 'DiscussionForumPosting'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DiscussionForumPosting')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

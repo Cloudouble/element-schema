@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Consumeaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ConsumeAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of ingesting information\/resources\/food.'
+        static _rdfs_label = 'ConsumeAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionAccessibilityRequirement', 'expectsAcceptanceOf')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ConsumeAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionAccessibilityRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'actionAccessibilityRequirement') }
+        get actionaccessibilityrequirement() { return this.actionAccessibilityRequirement }
+        set actionaccessibilityrequirement(value) { this.actionAccessibilityRequirement = value }
+
+            expectsAcceptanceOf($this, value) { return $this.__helperValidateAttribute($this, value, 'expectsAcceptanceOf') }
+        get expectsacceptanceof() { return this.expectsAcceptanceOf }
+        set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
+        
+    }
+</script>

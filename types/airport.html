@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Airport extends window.Cloudouble.Element.elements.Civicstructure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Airport'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An airport.'
+        static _rdfs_label = 'Airport'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('iataCode', 'icaoCode')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Airport')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            iataCode($this, value) { return $this.__helperValidateAttribute($this, value, 'iataCode') }
+        get iatacode() { return this.iataCode }
+        set iatacode(value) { this.iataCode = value }
+
+            icaoCode($this, value) { return $this.__helperValidateAttribute($this, value, 'icaoCode') }
+        get icaocode() { return this.icaoCode }
+        set icaocode(value) { this.icaoCode = value }
+        
+    }
+</script>

@@ -1,0 +1,92 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Invoice extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Invoice'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A statement of the money due for goods or services; a bill.'
+        static _rdfs_label = 'Invoice'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Invoice')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accountId($this, value) { return $this.__helperValidateAttribute($this, value, 'accountId') }
+        get accountid() { return this.accountId }
+        set accountid(value) { this.accountId = value }
+
+            billingPeriod($this, value) { return $this.__helperValidateAttribute($this, value, 'billingPeriod') }
+        get billingperiod() { return this.billingPeriod }
+        set billingperiod(value) { this.billingPeriod = value }
+
+            broker($this, value) { return $this.__helperValidateAttribute($this, value, 'broker') }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            confirmationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'confirmationNumber') }
+        get confirmationnumber() { return this.confirmationNumber }
+        set confirmationnumber(value) { this.confirmationNumber = value }
+
+            customer($this, value) { return $this.__helperValidateAttribute($this, value, 'customer') }
+
+            minimumPaymentDue($this, value) { return $this.__helperValidateAttribute($this, value, 'minimumPaymentDue') }
+        get minimumpaymentdue() { return this.minimumPaymentDue }
+        set minimumpaymentdue(value) { this.minimumPaymentDue = value }
+
+            paymentDue($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentDue') }
+        get paymentdue() { return this.paymentDue }
+        set paymentdue(value) { this.paymentDue = value }
+
+            paymentDueDate($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentDueDate') }
+        get paymentduedate() { return this.paymentDueDate }
+        set paymentduedate(value) { this.paymentDueDate = value }
+
+            paymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentMethod') }
+        get paymentmethod() { return this.paymentMethod }
+        set paymentmethod(value) { this.paymentMethod = value }
+
+            paymentMethodId($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentMethodId') }
+        get paymentmethodid() { return this.paymentMethodId }
+        set paymentmethodid(value) { this.paymentMethodId = value }
+
+            paymentStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentStatus') }
+        get paymentstatus() { return this.paymentStatus }
+        set paymentstatus(value) { this.paymentStatus = value }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            referencesOrder($this, value) { return $this.__helperValidateAttribute($this, value, 'referencesOrder') }
+        get referencesorder() { return this.referencesOrder }
+        set referencesorder(value) { this.referencesOrder = value }
+
+            scheduledPaymentDate($this, value) { return $this.__helperValidateAttribute($this, value, 'scheduledPaymentDate') }
+        get scheduledpaymentdate() { return this.scheduledPaymentDate }
+        set scheduledpaymentdate(value) { this.scheduledPaymentDate = value }
+
+            totalPaymentDue($this, value) { return $this.__helperValidateAttribute($this, value, 'totalPaymentDue') }
+        get totalpaymentdue() { return this.totalPaymentDue }
+        set totalpaymentdue(value) { this.totalPaymentDue = value }
+        
+    }
+</script>

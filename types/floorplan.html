@@ -1,0 +1,84 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Floorplan extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:FloorPlan'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual\/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https:\/\/en.wikipedia.org\/wiki\/Floor_plan)) can be indicated using [[image]]. '
+        static _rdfs_label = 'FloorPlan'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amenityFeature', 'floorSize', 'isPlanForApartment', 'layoutImage', 'numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'petsAllowed')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('FloorPlan')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amenityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'amenityFeature') }
+        get amenityfeature() { return this.amenityFeature }
+        set amenityfeature(value) { this.amenityFeature = value }
+
+            floorSize($this, value) { return $this.__helperValidateAttribute($this, value, 'floorSize') }
+        get floorsize() { return this.floorSize }
+        set floorsize(value) { this.floorSize = value }
+
+            isPlanForApartment($this, value) { return $this.__helperValidateAttribute($this, value, 'isPlanForApartment') }
+        get isplanforapartment() { return this.isPlanForApartment }
+        set isplanforapartment(value) { this.isPlanForApartment = value }
+
+            layoutImage($this, value) { return $this.__helperValidateAttribute($this, value, 'layoutImage') }
+        get layoutimage() { return this.layoutImage }
+        set layoutimage(value) { this.layoutImage = value }
+
+            numberOfAccommodationUnits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAccommodationUnits') }
+        get numberofaccommodationunits() { return this.numberOfAccommodationUnits }
+        set numberofaccommodationunits(value) { this.numberOfAccommodationUnits = value }
+
+            numberOfAvailableAccommodationUnits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAvailableAccommodationUnits') }
+        get numberofavailableaccommodationunits() { return this.numberOfAvailableAccommodationUnits }
+        set numberofavailableaccommodationunits(value) { this.numberOfAvailableAccommodationUnits = value }
+
+            numberOfBathroomsTotal($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBathroomsTotal') }
+        get numberofbathroomstotal() { return this.numberOfBathroomsTotal }
+        set numberofbathroomstotal(value) { this.numberOfBathroomsTotal = value }
+
+            numberOfBedrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBedrooms') }
+        get numberofbedrooms() { return this.numberOfBedrooms }
+        set numberofbedrooms(value) { this.numberOfBedrooms = value }
+
+            numberOfFullBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfFullBathrooms') }
+        get numberoffullbathrooms() { return this.numberOfFullBathrooms }
+        set numberoffullbathrooms(value) { this.numberOfFullBathrooms = value }
+
+            numberOfPartialBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPartialBathrooms') }
+        get numberofpartialbathrooms() { return this.numberOfPartialBathrooms }
+        set numberofpartialbathrooms(value) { this.numberOfPartialBathrooms = value }
+
+            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        get numberofrooms() { return this.numberOfRooms }
+        set numberofrooms(value) { this.numberOfRooms = value }
+
+            petsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'petsAllowed') }
+        get petsallowed() { return this.petsAllowed }
+        set petsallowed(value) { this.petsAllowed = value }
+        
+    }
+</script>

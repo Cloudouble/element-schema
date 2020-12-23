@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Answer extends window.Cloudouble.Element.elements.Comment {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Answer'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An answer offered to a question; perhaps correct, perhaps opinionated or wrong.'
+        static _rdfs_label = 'Answer'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('answerExplanation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Answer')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            answerExplanation($this, value) { return $this.__helperValidateAttribute($this, value, 'answerExplanation') }
+        get answerexplanation() { return this.answerExplanation }
+        set answerexplanation(value) { this.answerExplanation = value }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Educationalaudience extends window.Cloudouble.Element.elements.Audience {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EducationalAudience'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An EducationalAudience.'
+        static _rdfs_label = 'EducationalAudience'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('educationalRole')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EducationalAudience')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            educationalRole($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalRole') }
+        get educationalrole() { return this.educationalRole }
+        set educationalrole(value) { this.educationalRole = value }
+        
+    }
+</script>

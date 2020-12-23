@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Orderaction extends window.Cloudouble.Element.elements.Tradeaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OrderAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An agent orders an object\/product\/service to be delivered\/sent.'
+        static _rdfs_label = 'OrderAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('deliveryMethod')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OrderAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            deliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryMethod') }
+        get deliverymethod() { return this.deliveryMethod }
+        set deliverymethod(value) { this.deliveryMethod = value }
+        
+    }
+</script>

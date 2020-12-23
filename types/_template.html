@@ -1,0 +1,37 @@
+<style>
+:host {{
+    contain: content;
+}}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class {rdfslabel__capitalized} extends window.Cloudouble.Element.elements.{rdfssubclassof_id_capitalized_no_schemaprefix} {{
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '{release}'
+        static __id = '{_id}'
+        static __type = '{_type}'
+        static _rdfs_comment = '{rdfscomment}'
+        static _rdfs_label = '{rdfslabel}'
+
+        static get observedAttributes() {{
+            return (super.observedAttributes || []).concat({properties_list_comma})
+        }}
+        
+        constructor() {{
+            super()
+            this.__setRenderer('{rdfslabel}')
+        }}
+        
+        connectedCallback() {{
+            super.connectedCallback()
+        }}
+        
+        {properties_list_getters}
+        
+    }}
+</script>

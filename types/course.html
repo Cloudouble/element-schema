@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Course extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Course'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A description of an educational course which may be offered as distinct instances at which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and\/or creative works which aims to build knowledge, competence or ability of learners.'
+        static _rdfs_label = 'Course'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('courseCode', 'coursePrerequisites', 'educationalCredentialAwarded', 'hasCourseInstance', 'numberOfCredits', 'occupationalCredentialAwarded')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Course')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            courseCode($this, value) { return $this.__helperValidateAttribute($this, value, 'courseCode') }
+        get coursecode() { return this.courseCode }
+        set coursecode(value) { this.courseCode = value }
+
+            coursePrerequisites($this, value) { return $this.__helperValidateAttribute($this, value, 'coursePrerequisites') }
+        get courseprerequisites() { return this.coursePrerequisites }
+        set courseprerequisites(value) { this.coursePrerequisites = value }
+
+            educationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalCredentialAwarded') }
+        get educationalcredentialawarded() { return this.educationalCredentialAwarded }
+        set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
+
+            hasCourseInstance($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCourseInstance') }
+        get hascourseinstance() { return this.hasCourseInstance }
+        set hascourseinstance(value) { this.hasCourseInstance = value }
+
+            numberOfCredits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfCredits') }
+        get numberofcredits() { return this.numberOfCredits }
+        set numberofcredits(value) { this.numberOfCredits = value }
+
+            occupationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCredentialAwarded') }
+        get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
+        set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Class extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Class'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A class, also often called a \'Type\'; equivalent to rdfs:Class.'
+        static _rdfs_label = 'Class'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('supersededBy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Class')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            supersededBy($this, value) { return $this.__helperValidateAttribute($this, value, 'supersededBy') }
+        get supersededby() { return this.supersededBy }
+        set supersededby(value) { this.supersededBy = value }
+        
+    }
+</script>

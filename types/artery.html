@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Artery extends window.Cloudouble.Element.elements.Vessel {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Artery'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A type of blood vessel that specifically carries blood away from the heart.'
+        static _rdfs_label = 'Artery'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('arterialBranch', 'supplyTo')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Artery')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            arterialBranch($this, value) { return $this.__helperValidateAttribute($this, value, 'arterialBranch') }
+        get arterialbranch() { return this.arterialBranch }
+        set arterialbranch(value) { this.arterialBranch = value }
+
+            supplyTo($this, value) { return $this.__helperValidateAttribute($this, value, 'supplyTo') }
+        get supplyto() { return this.supplyTo }
+        set supplyto(value) { this.supplyTo = value }
+        
+    }
+</script>

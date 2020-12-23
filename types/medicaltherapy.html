@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaltherapy extends window.Cloudouble.Element.elements.Therapeuticprocedure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalTherapy'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.'
+        static _rdfs_label = 'MedicalTherapy'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('contraindication', 'duplicateTherapy', 'seriousAdverseOutcome')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalTherapy')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            contraindication($this, value) { return $this.__helperValidateAttribute($this, value, 'contraindication') }
+
+            duplicateTherapy($this, value) { return $this.__helperValidateAttribute($this, value, 'duplicateTherapy') }
+        get duplicatetherapy() { return this.duplicateTherapy }
+        set duplicatetherapy(value) { this.duplicateTherapy = value }
+
+            seriousAdverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'seriousAdverseOutcome') }
+        get seriousadverseoutcome() { return this.seriousAdverseOutcome }
+        set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }
+        
+    }
+</script>

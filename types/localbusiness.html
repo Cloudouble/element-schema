@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Localbusiness extends window.Cloudouble.Element.elements.Organization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LocalBusiness'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.'
+        static _rdfs_label = 'LocalBusiness'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LocalBusiness')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            branchOf($this, value) { return $this.__helperValidateAttribute($this, value, 'branchOf') }
+        get branchof() { return this.branchOf }
+        set branchof(value) { this.branchOf = value }
+
+            currenciesAccepted($this, value) { return $this.__helperValidateAttribute($this, value, 'currenciesAccepted') }
+        get currenciesaccepted() { return this.currenciesAccepted }
+        set currenciesaccepted(value) { this.currenciesAccepted = value }
+
+            openingHours($this, value) { return $this.__helperValidateAttribute($this, value, 'openingHours') }
+        get openinghours() { return this.openingHours }
+        set openinghours(value) { this.openingHours = value }
+
+            paymentAccepted($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentAccepted') }
+        get paymentaccepted() { return this.paymentAccepted }
+        set paymentaccepted(value) { this.paymentAccepted = value }
+
+            priceRange($this, value) { return $this.__helperValidateAttribute($this, value, 'priceRange') }
+        get pricerange() { return this.priceRange }
+        set pricerange(value) { this.priceRange = value }
+        
+    }
+</script>

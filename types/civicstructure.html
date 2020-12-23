@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Civicstructure extends window.Cloudouble.Element.elements.Place {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CivicStructure'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A public structure, such as a town hall or concert hall.'
+        static _rdfs_label = 'CivicStructure'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('openingHours')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CivicStructure')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            openingHours($this, value) { return $this.__helperValidateAttribute($this, value, 'openingHours') }
+        get openinghours() { return this.openingHours }
+        set openinghours(value) { this.openingHours = value }
+        
+    }
+</script>

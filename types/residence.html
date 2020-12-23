@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Residence extends window.Cloudouble.Element.elements.Place {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Residence'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The place where a person lives.'
+        static _rdfs_label = 'Residence'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accommodationFloorPlan')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Residence')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accommodationFloorPlan($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationFloorPlan') }
+        get accommodationfloorplan() { return this.accommodationFloorPlan }
+        set accommodationfloorplan(value) { this.accommodationFloorPlan = value }
+        
+    }
+</script>

@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Bustrip extends window.Cloudouble.Element.elements.Trip {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BusTrip'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A trip on a commercial bus line.'
+        static _rdfs_label = 'BusTrip'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('arrivalBusStop', 'busName', 'busNumber', 'departureBusStop')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BusTrip')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            arrivalBusStop($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalBusStop') }
+        get arrivalbusstop() { return this.arrivalBusStop }
+        set arrivalbusstop(value) { this.arrivalBusStop = value }
+
+            busName($this, value) { return $this.__helperValidateAttribute($this, value, 'busName') }
+        get busname() { return this.busName }
+        set busname(value) { this.busName = value }
+
+            busNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'busNumber') }
+        get busnumber() { return this.busNumber }
+        set busnumber(value) { this.busNumber = value }
+
+            departureBusStop($this, value) { return $this.__helperValidateAttribute($this, value, 'departureBusStop') }
+        get departurebusstop() { return this.departureBusStop }
+        set departurebusstop(value) { this.departureBusStop = value }
+        
+    }
+</script>

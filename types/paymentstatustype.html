@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Paymentstatustype extends window.Cloudouble.Element.elements.Statusenumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PaymentStatusType'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A specific payment status. For example, PaymentDue, PaymentComplete, etc.'
+        static _rdfs_label = 'PaymentStatusType'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PaymentStatusType')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

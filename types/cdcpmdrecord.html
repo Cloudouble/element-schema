@@ -1,0 +1,107 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Cdcpmdrecord extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CDCPMDRecord'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A CDCPMDRecord is a data structure representing a record in a CDC tabular data format
+      used for hospital data reporting. See [documentation](\/docs\/cdc-covid.html) for details, and the linked CDC materials for authoritative
+      definitions used as the source here.
+      '
+        static _rdfs_label = 'CDCPMDRecord'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CDCPMDRecord')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            cvdCollectionDate($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdCollectionDate') }
+        get cvdcollectiondate() { return this.cvdCollectionDate }
+        set cvdcollectiondate(value) { this.cvdCollectionDate = value }
+
+            cvdFacilityCounty($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdFacilityCounty') }
+        get cvdfacilitycounty() { return this.cvdFacilityCounty }
+        set cvdfacilitycounty(value) { this.cvdFacilityCounty = value }
+
+            cvdFacilityId($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdFacilityId') }
+        get cvdfacilityid() { return this.cvdFacilityId }
+        set cvdfacilityid(value) { this.cvdFacilityId = value }
+
+            cvdNumBeds($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumBeds') }
+        get cvdnumbeds() { return this.cvdNumBeds }
+        set cvdnumbeds(value) { this.cvdNumBeds = value }
+
+            cvdNumBedsOcc($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumBedsOcc') }
+        get cvdnumbedsocc() { return this.cvdNumBedsOcc }
+        set cvdnumbedsocc(value) { this.cvdNumBedsOcc = value }
+
+            cvdNumC19Died($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19Died') }
+        get cvdnumc19died() { return this.cvdNumC19Died }
+        set cvdnumc19died(value) { this.cvdNumC19Died = value }
+
+            cvdNumC19HOPats($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19HOPats') }
+        get cvdnumc19hopats() { return this.cvdNumC19HOPats }
+        set cvdnumc19hopats(value) { this.cvdNumC19HOPats = value }
+
+            cvdNumC19HospPats($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19HospPats') }
+        get cvdnumc19hosppats() { return this.cvdNumC19HospPats }
+        set cvdnumc19hosppats(value) { this.cvdNumC19HospPats = value }
+
+            cvdNumC19MechVentPats($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19MechVentPats') }
+        get cvdnumc19mechventpats() { return this.cvdNumC19MechVentPats }
+        set cvdnumc19mechventpats(value) { this.cvdNumC19MechVentPats = value }
+
+            cvdNumC19OFMechVentPats($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19OFMechVentPats') }
+        get cvdnumc19ofmechventpats() { return this.cvdNumC19OFMechVentPats }
+        set cvdnumc19ofmechventpats(value) { this.cvdNumC19OFMechVentPats = value }
+
+            cvdNumC19OverflowPats($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumC19OverflowPats') }
+        get cvdnumc19overflowpats() { return this.cvdNumC19OverflowPats }
+        set cvdnumc19overflowpats(value) { this.cvdNumC19OverflowPats = value }
+
+            cvdNumICUBeds($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumICUBeds') }
+        get cvdnumicubeds() { return this.cvdNumICUBeds }
+        set cvdnumicubeds(value) { this.cvdNumICUBeds = value }
+
+            cvdNumICUBedsOcc($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumICUBedsOcc') }
+        get cvdnumicubedsocc() { return this.cvdNumICUBedsOcc }
+        set cvdnumicubedsocc(value) { this.cvdNumICUBedsOcc = value }
+
+            cvdNumTotBeds($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumTotBeds') }
+        get cvdnumtotbeds() { return this.cvdNumTotBeds }
+        set cvdnumtotbeds(value) { this.cvdNumTotBeds = value }
+
+            cvdNumVent($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumVent') }
+        get cvdnumvent() { return this.cvdNumVent }
+        set cvdnumvent(value) { this.cvdNumVent = value }
+
+            cvdNumVentUse($this, value) { return $this.__helperValidateAttribute($this, value, 'cvdNumVentUse') }
+        get cvdnumventuse() { return this.cvdNumVentUse }
+        set cvdnumventuse(value) { this.cvdNumVentUse = value }
+
+            datePosted($this, value) { return $this.__helperValidateAttribute($this, value, 'datePosted') }
+        get dateposted() { return this.datePosted }
+        set dateposted(value) { this.datePosted = value }
+        
+    }
+</script>

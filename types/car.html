@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Car extends window.Cloudouble.Element.elements.Vehicle {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Car'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A car is a wheeled, self-powered motor vehicle used for transportation.'
+        static _rdfs_label = 'Car'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acrissCode', 'roofLoad')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Car')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acrissCode($this, value) { return $this.__helperValidateAttribute($this, value, 'acrissCode') }
+        get acrisscode() { return this.acrissCode }
+        set acrisscode(value) { this.acrissCode = value }
+
+            roofLoad($this, value) { return $this.__helperValidateAttribute($this, value, 'roofLoad') }
+        get roofload() { return this.roofLoad }
+        set roofload(value) { this.roofLoad = value }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Enumeration extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Enumeration'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Lists or enumerations—for example, a list of cuisines or music genres, etc.'
+        static _rdfs_label = 'Enumeration'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('supersededBy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Enumeration')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            supersededBy($this, value) { return $this.__helperValidateAttribute($this, value, 'supersededBy') }
+        get supersededby() { return this.supersededBy }
+        set supersededby(value) { this.supersededBy = value }
+        
+    }
+</script>

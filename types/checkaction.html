@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Checkaction extends window.Cloudouble.Element.elements.Findaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CheckAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An agent inspects, determines, investigates, inquires, or examines an object\'s accuracy, quality, condition, or state.'
+        static _rdfs_label = 'CheckAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CheckAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

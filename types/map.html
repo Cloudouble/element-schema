@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Map extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Map'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A map.'
+        static _rdfs_label = 'Map'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('mapType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Map')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            mapType($this, value) { return $this.__helperValidateAttribute($this, value, 'mapType') }
+        get maptype() { return this.mapType }
+        set maptype(value) { this.mapType = value }
+        
+    }
+</script>

@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Advertisercontentarticle extends window.Cloudouble.Element.elements.Article {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AdvertiserContentArticle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https:\/\/en.wikipedia.org\/wiki\/Advertorial), sponsored content, native advertising and other paid content.'
+        static _rdfs_label = 'AdvertiserContentArticle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AdvertiserContentArticle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

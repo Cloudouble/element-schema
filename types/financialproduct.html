@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Financialproduct extends window.Cloudouble.Element.elements.Service {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:FinancialProduct'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.'
+        static _rdfs_label = 'FinancialProduct'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('annualPercentageRate', 'feesAndCommissionsSpecification', 'interestRate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('FinancialProduct')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            annualPercentageRate($this, value) { return $this.__helperValidateAttribute($this, value, 'annualPercentageRate') }
+        get annualpercentagerate() { return this.annualPercentageRate }
+        set annualpercentagerate(value) { this.annualPercentageRate = value }
+
+            feesAndCommissionsSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'feesAndCommissionsSpecification') }
+        get feesandcommissionsspecification() { return this.feesAndCommissionsSpecification }
+        set feesandcommissionsspecification(value) { this.feesAndCommissionsSpecification = value }
+
+            interestRate($this, value) { return $this.__helperValidateAttribute($this, value, 'interestRate') }
+        get interestrate() { return this.interestRate }
+        set interestrate(value) { this.interestRate = value }
+        
+    }
+</script>

@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Receiveaction extends window.Cloudouble.Element.elements.Transferaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ReceiveAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of physically\/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).'
+        static _rdfs_label = 'ReceiveAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('deliveryMethod', 'sender')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ReceiveAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            deliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryMethod') }
+        get deliverymethod() { return this.deliveryMethod }
+        set deliverymethod(value) { this.deliveryMethod = value }
+
+            sender($this, value) { return $this.__helperValidateAttribute($this, value, 'sender') }
+        
+    }
+</script>

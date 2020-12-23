@@ -1,0 +1,148 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Demand extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Demand'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.'
+        static _rdfs_label = 'Demand'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Demand')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acceptedPaymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptedPaymentMethod') }
+        get acceptedpaymentmethod() { return this.acceptedPaymentMethod }
+        set acceptedpaymentmethod(value) { this.acceptedPaymentMethod = value }
+
+            advanceBookingRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'advanceBookingRequirement') }
+        get advancebookingrequirement() { return this.advanceBookingRequirement }
+        set advancebookingrequirement(value) { this.advanceBookingRequirement = value }
+
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            availability($this, value) { return $this.__helperValidateAttribute($this, value, 'availability') }
+
+            availabilityEnds($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityEnds') }
+        get availabilityends() { return this.availabilityEnds }
+        set availabilityends(value) { this.availabilityEnds = value }
+
+            availabilityStarts($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityStarts') }
+        get availabilitystarts() { return this.availabilityStarts }
+        set availabilitystarts(value) { this.availabilityStarts = value }
+
+            availableAtOrFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'availableAtOrFrom') }
+        get availableatorfrom() { return this.availableAtOrFrom }
+        set availableatorfrom(value) { this.availableAtOrFrom = value }
+
+            availableDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'availableDeliveryMethod') }
+        get availabledeliverymethod() { return this.availableDeliveryMethod }
+        set availabledeliverymethod(value) { this.availableDeliveryMethod = value }
+
+            businessFunction($this, value) { return $this.__helperValidateAttribute($this, value, 'businessFunction') }
+        get businessfunction() { return this.businessFunction }
+        set businessfunction(value) { this.businessFunction = value }
+
+            deliveryLeadTime($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryLeadTime') }
+        get deliveryleadtime() { return this.deliveryLeadTime }
+        set deliveryleadtime(value) { this.deliveryLeadTime = value }
+
+            eligibleCustomerType($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleCustomerType') }
+        get eligiblecustomertype() { return this.eligibleCustomerType }
+        set eligiblecustomertype(value) { this.eligibleCustomerType = value }
+
+            eligibleDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleDuration') }
+        get eligibleduration() { return this.eligibleDuration }
+        set eligibleduration(value) { this.eligibleDuration = value }
+
+            eligibleQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleQuantity') }
+        get eligiblequantity() { return this.eligibleQuantity }
+        set eligiblequantity(value) { this.eligibleQuantity = value }
+
+            eligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleRegion') }
+        get eligibleregion() { return this.eligibleRegion }
+        set eligibleregion(value) { this.eligibleRegion = value }
+
+            eligibleTransactionVolume($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleTransactionVolume') }
+        get eligibletransactionvolume() { return this.eligibleTransactionVolume }
+        set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
+
+            gtin($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin') }
+
+            gtin12($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin12') }
+
+            gtin13($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin13') }
+
+            gtin14($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin14') }
+
+            gtin8($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin8') }
+
+            includesObject($this, value) { return $this.__helperValidateAttribute($this, value, 'includesObject') }
+        get includesobject() { return this.includesObject }
+        set includesobject(value) { this.includesObject = value }
+
+            ineligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'ineligibleRegion') }
+        get ineligibleregion() { return this.ineligibleRegion }
+        set ineligibleregion(value) { this.ineligibleRegion = value }
+
+            inventoryLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'inventoryLevel') }
+        get inventorylevel() { return this.inventoryLevel }
+        set inventorylevel(value) { this.inventoryLevel = value }
+
+            itemCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'itemCondition') }
+        get itemcondition() { return this.itemCondition }
+        set itemcondition(value) { this.itemCondition = value }
+
+            itemOffered($this, value) { return $this.__helperValidateAttribute($this, value, 'itemOffered') }
+        get itemoffered() { return this.itemOffered }
+        set itemoffered(value) { this.itemOffered = value }
+
+            mpn($this, value) { return $this.__helperValidateAttribute($this, value, 'mpn') }
+
+            priceSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'priceSpecification') }
+        get pricespecification() { return this.priceSpecification }
+        set pricespecification(value) { this.priceSpecification = value }
+
+            seller($this, value) { return $this.__helperValidateAttribute($this, value, 'seller') }
+
+            serialNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'serialNumber') }
+        get serialnumber() { return this.serialNumber }
+        set serialnumber(value) { this.serialNumber = value }
+
+            sku($this, value) { return $this.__helperValidateAttribute($this, value, 'sku') }
+
+            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        get validfrom() { return this.validFrom }
+        set validfrom(value) { this.validFrom = value }
+
+            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        get validthrough() { return this.validThrough }
+        set validthrough(value) { this.validThrough = value }
+
+            warranty($this, value) { return $this.__helperValidateAttribute($this, value, 'warranty') }
+        
+    }
+</script>

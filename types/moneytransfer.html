@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Moneytransfer extends window.Cloudouble.Element.elements.Transferaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MoneyTransfer'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of transferring money from one place to another place. This may occur electronically or physically.'
+        static _rdfs_label = 'MoneyTransfer'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amount', 'beneficiaryBank')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MoneyTransfer')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+
+            beneficiaryBank($this, value) { return $this.__helperValidateAttribute($this, value, 'beneficiaryBank') }
+        get beneficiarybank() { return this.beneficiaryBank }
+        set beneficiarybank(value) { this.beneficiaryBank = value }
+        
+    }
+</script>

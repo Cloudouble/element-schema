@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Exerciseplan extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ExercisePlan'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.'
+        static _rdfs_label = 'ExercisePlan'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ExercisePlan')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            activityDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'activityDuration') }
+        get activityduration() { return this.activityDuration }
+        set activityduration(value) { this.activityDuration = value }
+
+            activityFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'activityFrequency') }
+        get activityfrequency() { return this.activityFrequency }
+        set activityfrequency(value) { this.activityFrequency = value }
+
+            additionalVariable($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalVariable') }
+        get additionalvariable() { return this.additionalVariable }
+        set additionalvariable(value) { this.additionalVariable = value }
+
+            exerciseType($this, value) { return $this.__helperValidateAttribute($this, value, 'exerciseType') }
+        get exercisetype() { return this.exerciseType }
+        set exercisetype(value) { this.exerciseType = value }
+
+            intensity($this, value) { return $this.__helperValidateAttribute($this, value, 'intensity') }
+
+            repetitions($this, value) { return $this.__helperValidateAttribute($this, value, 'repetitions') }
+
+            restPeriods($this, value) { return $this.__helperValidateAttribute($this, value, 'restPeriods') }
+        get restperiods() { return this.restPeriods }
+        set restperiods(value) { this.restPeriods = value }
+
+            workload($this, value) { return $this.__helperValidateAttribute($this, value, 'workload') }
+        
+    }
+</script>

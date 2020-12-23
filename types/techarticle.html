@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Techarticle extends window.Cloudouble.Element.elements.Article {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TechArticle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.'
+        static _rdfs_label = 'TechArticle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('dependencies', 'proficiencyLevel')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TechArticle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            dependencies($this, value) { return $this.__helperValidateAttribute($this, value, 'dependencies') }
+
+            proficiencyLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'proficiencyLevel') }
+        get proficiencylevel() { return this.proficiencyLevel }
+        set proficiencylevel(value) { this.proficiencyLevel = value }
+        
+    }
+</script>

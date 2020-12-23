@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Videoobject extends window.Cloudouble.Element.elements.Mediaobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VideoObject'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A video file.'
+        static _rdfs_label = 'VideoObject'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VideoObject')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            thumbnail($this, value) { return $this.__helperValidateAttribute($this, value, 'thumbnail') }
+
+            transcript($this, value) { return $this.__helperValidateAttribute($this, value, 'transcript') }
+
+            videoFrameSize($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFrameSize') }
+        get videoframesize() { return this.videoFrameSize }
+        set videoframesize(value) { this.videoFrameSize = value }
+
+            videoQuality($this, value) { return $this.__helperValidateAttribute($this, value, 'videoQuality') }
+        get videoquality() { return this.videoQuality }
+        set videoquality(value) { this.videoQuality = value }
+        
+    }
+</script>

@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Itemlistordertype extends window.Cloudouble.Element.elements.Enumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ItemListOrderType'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.'
+        static _rdfs_label = 'ItemListOrderType'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ItemListOrderType')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

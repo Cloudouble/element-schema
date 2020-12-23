@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Agreeaction extends window.Cloudouble.Element.elements.Reactaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AgreeAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of expressing a consistency of opinion with the object. An agent agrees to\/about an object (a proposition, topic or theme) with participants.'
+        static _rdfs_label = 'AgreeAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AgreeAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

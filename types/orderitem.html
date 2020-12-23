@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Orderitem extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OrderItem'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An order item is a line of an order. It includes the quantity and shipping details of a bought offer.'
+        static _rdfs_label = 'OrderItem'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OrderItem')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            orderDelivery($this, value) { return $this.__helperValidateAttribute($this, value, 'orderDelivery') }
+        get orderdelivery() { return this.orderDelivery }
+        set orderdelivery(value) { this.orderDelivery = value }
+
+            orderItemNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'orderItemNumber') }
+        get orderitemnumber() { return this.orderItemNumber }
+        set orderitemnumber(value) { this.orderItemNumber = value }
+
+            orderItemStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'orderItemStatus') }
+        get orderitemstatus() { return this.orderItemStatus }
+        set orderitemstatus(value) { this.orderItemStatus = value }
+
+            orderQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'orderQuantity') }
+        get orderquantity() { return this.orderQuantity }
+        set orderquantity(value) { this.orderQuantity = value }
+
+            orderedItem($this, value) { return $this.__helperValidateAttribute($this, value, 'orderedItem') }
+        get ordereditem() { return this.orderedItem }
+        set ordereditem(value) { this.orderedItem = value }
+        
+    }
+</script>

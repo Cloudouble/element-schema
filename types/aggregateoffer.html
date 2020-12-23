@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Aggregateoffer extends window.Cloudouble.Element.elements.Offer {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AggregateOffer'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http:\/\/purl.org\/goodrelations\/v1#Sell if businessFunction is not explicitly defined.'
+        static _rdfs_label = 'AggregateOffer'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('highPrice', 'lowPrice', 'offerCount', 'offers')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AggregateOffer')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            highPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'highPrice') }
+        get highprice() { return this.highPrice }
+        set highprice(value) { this.highPrice = value }
+
+            lowPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'lowPrice') }
+        get lowprice() { return this.lowPrice }
+        set lowprice(value) { this.lowPrice = value }
+
+            offerCount($this, value) { return $this.__helperValidateAttribute($this, value, 'offerCount') }
+        get offercount() { return this.offerCount }
+        set offercount(value) { this.offerCount = value }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+        
+    }
+</script>

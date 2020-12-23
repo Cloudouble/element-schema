@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Cookaction extends window.Cloudouble.Element.elements.Createaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CookAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of producing\/preparing food.'
+        static _rdfs_label = 'CookAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('foodEstablishment', 'foodEvent', 'recipe')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CookAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            foodEstablishment($this, value) { return $this.__helperValidateAttribute($this, value, 'foodEstablishment') }
+        get foodestablishment() { return this.foodEstablishment }
+        set foodestablishment(value) { this.foodEstablishment = value }
+
+            foodEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'foodEvent') }
+        get foodevent() { return this.foodEvent }
+        set foodevent(value) { this.foodEvent = value }
+
+            recipe($this, value) { return $this.__helperValidateAttribute($this, value, 'recipe') }
+        
+    }
+</script>

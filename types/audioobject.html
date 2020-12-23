@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Audioobject extends window.Cloudouble.Element.elements.Mediaobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AudioObject'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An audio file.'
+        static _rdfs_label = 'AudioObject'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('caption', 'transcript')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AudioObject')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+
+            transcript($this, value) { return $this.__helperValidateAttribute($this, value, 'transcript') }
+        
+    }
+</script>

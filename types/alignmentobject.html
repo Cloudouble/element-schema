@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Alignmentobject extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AlignmentObject'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An intangible item that describes an alignment between a learning resource and a node in an educational framework.
+
+Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.'
+        static _rdfs_label = 'AlignmentObject'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AlignmentObject')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            alignmentType($this, value) { return $this.__helperValidateAttribute($this, value, 'alignmentType') }
+        get alignmenttype() { return this.alignmentType }
+        set alignmenttype(value) { this.alignmentType = value }
+
+            educationalFramework($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalFramework') }
+        get educationalframework() { return this.educationalFramework }
+        set educationalframework(value) { this.educationalFramework = value }
+
+            targetDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'targetDescription') }
+        get targetdescription() { return this.targetDescription }
+        set targetdescription(value) { this.targetDescription = value }
+
+            targetName($this, value) { return $this.__helperValidateAttribute($this, value, 'targetName') }
+        get targetname() { return this.targetName }
+        set targetname(value) { this.targetName = value }
+
+            targetUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'targetUrl') }
+        get targeturl() { return this.targetUrl }
+        set targeturl(value) { this.targetUrl = value }
+        
+    }
+</script>

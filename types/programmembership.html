@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Programmembership extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ProgramMembership'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.'
+        static _rdfs_label = 'ProgramMembership'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ProgramMembership')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hostingOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'hostingOrganization') }
+        get hostingorganization() { return this.hostingOrganization }
+        set hostingorganization(value) { this.hostingOrganization = value }
+
+            member($this, value) { return $this.__helperValidateAttribute($this, value, 'member') }
+
+            members($this, value) { return $this.__helperValidateAttribute($this, value, 'members') }
+
+            membershipNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'membershipNumber') }
+        get membershipnumber() { return this.membershipNumber }
+        set membershipnumber(value) { this.membershipNumber = value }
+
+            membershipPointsEarned($this, value) { return $this.__helperValidateAttribute($this, value, 'membershipPointsEarned') }
+        get membershippointsearned() { return this.membershipPointsEarned }
+        set membershippointsearned(value) { this.membershipPointsEarned = value }
+
+            programName($this, value) { return $this.__helperValidateAttribute($this, value, 'programName') }
+        get programname() { return this.programName }
+        set programname(value) { this.programName = value }
+        
+    }
+</script>

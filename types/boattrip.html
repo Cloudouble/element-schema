@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Boattrip extends window.Cloudouble.Element.elements.Trip {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BoatTrip'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A trip on a commercial ferry line.'
+        static _rdfs_label = 'BoatTrip'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('arrivalBoatTerminal', 'departureBoatTerminal')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BoatTrip')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            arrivalBoatTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalBoatTerminal') }
+        get arrivalboatterminal() { return this.arrivalBoatTerminal }
+        set arrivalboatterminal(value) { this.arrivalBoatTerminal = value }
+
+            departureBoatTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'departureBoatTerminal') }
+        get departureboatterminal() { return this.departureBoatTerminal }
+        set departureboatterminal(value) { this.departureBoatTerminal = value }
+        
+    }
+</script>

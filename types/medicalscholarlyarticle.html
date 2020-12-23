@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalscholarlyarticle extends window.Cloudouble.Element.elements.Scholarlyarticle {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalScholarlyArticle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A scholarly article in the medical domain.'
+        static _rdfs_label = 'MedicalScholarlyArticle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('publicationType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalScholarlyArticle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            publicationType($this, value) { return $this.__helperValidateAttribute($this, value, 'publicationType') }
+        get publicationtype() { return this.publicationType }
+        set publicationtype(value) { this.publicationType = value }
+        
+    }
+</script>

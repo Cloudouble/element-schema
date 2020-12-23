@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Musicalbum extends window.Cloudouble.Element.elements.Musicplaylist {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MusicAlbum'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A collection of music tracks.'
+        static _rdfs_label = 'MusicAlbum'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('albumProductionType', 'albumRelease', 'albumReleaseType', 'byArtist')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MusicAlbum')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            albumProductionType($this, value) { return $this.__helperValidateAttribute($this, value, 'albumProductionType') }
+        get albumproductiontype() { return this.albumProductionType }
+        set albumproductiontype(value) { this.albumProductionType = value }
+
+            albumRelease($this, value) { return $this.__helperValidateAttribute($this, value, 'albumRelease') }
+        get albumrelease() { return this.albumRelease }
+        set albumrelease(value) { this.albumRelease = value }
+
+            albumReleaseType($this, value) { return $this.__helperValidateAttribute($this, value, 'albumReleaseType') }
+        get albumreleasetype() { return this.albumReleaseType }
+        set albumreleasetype(value) { this.albumReleaseType = value }
+
+            byArtist($this, value) { return $this.__helperValidateAttribute($this, value, 'byArtist') }
+        get byartist() { return this.byArtist }
+        set byartist(value) { this.byArtist = value }
+        
+    }
+</script>

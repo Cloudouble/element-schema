@@ -1,0 +1,69 @@
+<style>
+:host {
+    contain: content;
+}
+:host [itemscope] {
+    display: block;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Microdata extends window.Cloudouble.Element.elements.Schemarender {
+        
+        static __editmode(root, value) {
+            root.querySelectorAll('[itemprop]').forEach(propertyElement => {
+                propertyElement.setAttribute('__editmode', value)
+                typeof propertyElement.__helperSetEditMode == 'function' ? propertyElement.__helperSetEditMode(value) : null
+            })
+        }
+        
+        static __matchAttributeElement(attributeName, attributeValue, expectedAttributeTag, containerElement) {
+            var root = containerElement.constructor.__useShadow ? containerElement.shadowRoot : containerElement
+            var matchedElements= []
+	        if (attributeValue && typeof attributeValue == 'object' && attributeValue.constructor.name == 'Array') {
+	            attributeValue.forEach((v, i) => {
+                    var matchedElement = root.querySelector(`${expectedAttributeTag}[itemprop="${attributeName}"][data-index="${i}"]`)
+                    if (!matchedElement) {
+                        matchedElement = document.createElement(expectedAttributeTag)
+                        matchedElement.setAttribute('itemprop', attributeName)
+                        matchedElement.setAttribute('data-index', i)
+                        root.append(matchedElement)
+                    }
+                    matchedElements.push(matchedElement)
+	            })
+	            Array.from(root.querySelectorAll(`${expectedAttributeTag}[itemprop="${attributeName}"]`)).forEach(indexElement => {
+	                if (indexElement.getAttribute('data-index') >= attributeValue.length) {
+	                    indexElement.remove()
+	                }
+	            })
+	        } else {
+                var matchedElement = root.querySelector(`${expectedAttributeTag}[itemprop="${attributeName}"]`)
+                if (matchedElement) {
+                    matchedElements.push(matchedElement)
+                } else {
+                    matchedElement = document.createElement(expectedAttributeTag)
+                    matchedElement.setAttribute('itemprop', attributeName)
+                    root.append(matchedElement)
+                    matchedElements.push(matchedElement)
+                }
+	        }
+            return matchedElements
+        }
+        
+        static Schema(element, model, asAttribute=undefined) {
+            if (typeof model == 'object') {
+                element.setAttribute('itemscope', '')
+                if (model.itemid) {
+                    element.setAttribute('itemid', model.itemid)
+                }
+            }
+            element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
+            return element
+        }
+        
+
+    }
+</script>

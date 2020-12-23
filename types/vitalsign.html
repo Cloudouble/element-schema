@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Vitalsign extends window.Cloudouble.Element.elements.Medicalsign {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VitalSign'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Vital signs are measures of various physiological functions in order to assess the most basic body functions.'
+        static _rdfs_label = 'VitalSign'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VitalSign')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalcause extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalCause'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The causative agent(s) that are responsible for the pathophysiologic process that eventually results in a medical condition, symptom or sign. In this schema, unless otherwise specified this is meant to be the proximate cause of the medical condition, symptom or sign. The proximate cause is defined as the causative agent that most directly results in the medical condition, symptom or sign. For example, the HIV virus could be considered a cause of AIDS. Or in a diagnostic context, if a patient fell and sustained a hip fracture and two days later sustained a pulmonary embolism which eventuated in a cardiac arrest, the cause of the cardiac arrest (the proximate cause) would be the pulmonary embolism and not the fall. Medical causes can include cardiovascular, chemical, dermatologic, endocrine, environmental, gastroenterologic, genetic, hematologic, gynecologic, iatrogenic, infectious, musculoskeletal, neurologic, nutritional, obstetric, oncologic, otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic, toxic, traumatic, or urologic causes; medical conditions can be causes as well.'
+        static _rdfs_label = 'MedicalCause'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('causeOf')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalCause')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            causeOf($this, value) { return $this.__helperValidateAttribute($this, value, 'causeOf') }
+        get causeof() { return this.causeOf }
+        set causeof(value) { this.causeOf = value }
+        
+    }
+</script>

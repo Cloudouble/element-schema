@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Movieseries extends window.Cloudouble.Element.elements.Creativeworkseries {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MovieSeries'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A series of movies. Included movies can be indicated with the hasPart property.'
+        static _rdfs_label = 'MovieSeries'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MovieSeries')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

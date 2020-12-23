@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Updateaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:UpdateAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of managing by changing\/editing the state of the object.'
+        static _rdfs_label = 'UpdateAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('collection', 'targetCollection')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('UpdateAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            collection($this, value) { return $this.__helperValidateAttribute($this, value, 'collection') }
+
+            targetCollection($this, value) { return $this.__helperValidateAttribute($this, value, 'targetCollection') }
+        get targetcollection() { return this.targetCollection }
+        set targetcollection(value) { this.targetCollection = value }
+        
+    }
+</script>

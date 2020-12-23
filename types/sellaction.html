@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sellaction extends window.Cloudouble.Element.elements.Tradeaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SellAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.'
+        static _rdfs_label = 'SellAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('buyer', 'warrantyPromise')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SellAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            buyer($this, value) { return $this.__helperValidateAttribute($this, value, 'buyer') }
+
+            warrantyPromise($this, value) { return $this.__helperValidateAttribute($this, value, 'warrantyPromise') }
+        get warrantypromise() { return this.warrantyPromise }
+        set warrantypromise(value) { this.warrantyPromise = value }
+        
+    }
+</script>

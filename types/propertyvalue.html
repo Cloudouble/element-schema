@@ -1,0 +1,67 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Propertyvalue extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PropertyValue'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A property-value pair, e.g. representing a feature of a product or place. Use the \'name\' property for the name of the property. If there is an additional human-readable version of the value, put that into the \'description\' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
+    '
+        static _rdfs_label = 'PropertyValue'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PropertyValue')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        get maxvalue() { return this.maxValue }
+        set maxvalue(value) { this.maxValue = value }
+
+            measurementTechnique($this, value) { return $this.__helperValidateAttribute($this, value, 'measurementTechnique') }
+        get measurementtechnique() { return this.measurementTechnique }
+        set measurementtechnique(value) { this.measurementTechnique = value }
+
+            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        get minvalue() { return this.minValue }
+        set minvalue(value) { this.minValue = value }
+
+            propertyID($this, value) { return $this.__helperValidateAttribute($this, value, 'propertyID') }
+        get propertyid() { return this.propertyID }
+        set propertyid(value) { this.propertyID = value }
+
+            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        get unitcode() { return this.unitCode }
+        set unitcode(value) { this.unitCode = value }
+
+            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        get unittext() { return this.unitText }
+        set unittext(value) { this.unitText = value }
+
+            value($this, value) { return $this.__helperValidateAttribute($this, value, 'value') }
+
+            valueReference($this, value) { return $this.__helperValidateAttribute($this, value, 'valueReference') }
+        get valuereference() { return this.valueReference }
+        set valuereference(value) { this.valueReference = value }
+        
+    }
+</script>

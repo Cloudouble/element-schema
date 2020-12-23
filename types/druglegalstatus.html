@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Druglegalstatus extends window.Cloudouble.Element.elements.Medicalintangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DrugLegalStatus'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The legal availability status of a medical drug.'
+        static _rdfs_label = 'DrugLegalStatus'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('applicableLocation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DrugLegalStatus')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            applicableLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'applicableLocation') }
+        get applicablelocation() { return this.applicableLocation }
+        set applicablelocation(value) { this.applicableLocation = value }
+        
+    }
+</script>

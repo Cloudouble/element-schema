@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Courseinstance extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CourseInstance'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.'
+        static _rdfs_label = 'CourseInstance'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('courseMode', 'courseWorkload', 'instructor')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CourseInstance')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            courseMode($this, value) { return $this.__helperValidateAttribute($this, value, 'courseMode') }
+        get coursemode() { return this.courseMode }
+        set coursemode(value) { this.courseMode = value }
+
+            courseWorkload($this, value) { return $this.__helperValidateAttribute($this, value, 'courseWorkload') }
+        get courseworkload() { return this.courseWorkload }
+        set courseworkload(value) { this.courseWorkload = value }
+
+            instructor($this, value) { return $this.__helperValidateAttribute($this, value, 'instructor') }
+        
+    }
+</script>

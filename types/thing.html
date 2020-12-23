@@ -1,0 +1,74 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Thing extends window.Cloudouble.Element.elements.Schema {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Thing'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The most generic type of item.'
+        static _rdfs_label = 'Thing'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Thing')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalType($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalType') }
+        get additionaltype() { return this.additionalType }
+        set additionaltype(value) { this.additionalType = value }
+
+            alternateName($this, value) { return $this.__helperValidateAttribute($this, value, 'alternateName') }
+        get alternatename() { return this.alternateName }
+        set alternatename(value) { this.alternateName = value }
+
+            description($this, value) { return $this.__helperValidateAttribute($this, value, 'description') }
+
+            disambiguatingDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'disambiguatingDescription') }
+        get disambiguatingdescription() { return this.disambiguatingDescription }
+        set disambiguatingdescription(value) { this.disambiguatingDescription = value }
+
+            identifier($this, value) { return $this.__helperValidateAttribute($this, value, 'identifier') }
+
+            image($this, value) { return $this.__helperValidateAttribute($this, value, 'image') }
+
+            mainEntityOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'mainEntityOfPage') }
+        get mainentityofpage() { return this.mainEntityOfPage }
+        set mainentityofpage(value) { this.mainEntityOfPage = value }
+
+            name($this, value) { return $this.__helperValidateAttribute($this, value, 'name') }
+
+            potentialAction($this, value) { return $this.__helperValidateAttribute($this, value, 'potentialAction') }
+        get potentialaction() { return this.potentialAction }
+        set potentialaction(value) { this.potentialAction = value }
+
+            sameAs($this, value) { return $this.__helperValidateAttribute($this, value, 'sameAs') }
+        get sameas() { return this.sameAs }
+        set sameas(value) { this.sameAs = value }
+
+            subjectOf($this, value) { return $this.__helperValidateAttribute($this, value, 'subjectOf') }
+        get subjectof() { return this.subjectOf }
+        set subjectof(value) { this.subjectOf = value }
+
+            url($this, value) { return $this.__helperValidateAttribute($this, value, 'url') }
+        
+    }
+</script>

@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Property extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Property'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.'
+        static _rdfs_label = 'Property'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('domainIncludes', 'inverseOf', 'rangeIncludes', 'supersededBy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Property')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            domainIncludes($this, value) { return $this.__helperValidateAttribute($this, value, 'domainIncludes') }
+        get domainincludes() { return this.domainIncludes }
+        set domainincludes(value) { this.domainIncludes = value }
+
+            inverseOf($this, value) { return $this.__helperValidateAttribute($this, value, 'inverseOf') }
+        get inverseof() { return this.inverseOf }
+        set inverseof(value) { this.inverseOf = value }
+
+            rangeIncludes($this, value) { return $this.__helperValidateAttribute($this, value, 'rangeIncludes') }
+        get rangeincludes() { return this.rangeIncludes }
+        set rangeincludes(value) { this.rangeIncludes = value }
+
+            supersededBy($this, value) { return $this.__helperValidateAttribute($this, value, 'supersededBy') }
+        get supersededby() { return this.supersededBy }
+        set supersededby(value) { this.supersededBy = value }
+        
+    }
+</script>

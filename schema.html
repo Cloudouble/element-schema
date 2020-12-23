@@ -1,0 +1,268 @@
+<style>
+:host {
+    contain: content;
+}
+:host([__editmode="true"]) slot {
+    display: none;
+}
+:host(:not([__editmode="true"])) .editmode {
+    display: none;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global CustomEvent showdown */
+    class Schema extends window.Cloudouble.Element.elements.Base {
+        
+        static __release
+        static __prefix = window.Cloudouble.Element.prefix
+        static __context = 'https:\/\/schema.org\/'
+        static _rdfs_label = 'Schema'
+        
+        static __coreTypes = ['thing', 'intangible', 'class', 'datatype', 'pronounceabletext']
+        static __useShadow = false
+        static __validatorName = 'Schemavalidators'
+        static __propertiesMap = {}
+        static __datatypesDefinition = 'Schemadatatypes'
+        static __themeName = 'Schematheme'
+        static __renderName = 'Schemarender'
+        
+        static __markdownConverter
+
+        static __initialise(path, prefix=null, basetypes=[], renderArgs=[], themeArgs=[], themeElements=[], options={}) {
+            var staticThis = this
+            prefix = prefix || this.__prefix
+            return window.Cloudouble.Element.loadJSON(`types\/properties.json`).then(r => {
+                staticThis.__propertiesMap = r
+            }).then(() => {
+        		return window.Cloudouble.Element.load(['schemadatatypes', 'schemavalidators', 'schemarender', 'schematheme'], path, prefix).then(() => {
+                    var loadTypes = Array.from(new Set(Object.keys(window.Cloudouble.Element.elements.Schemadatatypes).map(m => m.toLowerCase()).concat(staticThis.__coreTypes, basetypes)))
+        		    return window.Cloudouble.Element.load(loadTypes, `${path}\/types`, prefix).then(() => {
+        		        if (typeof renderArgs == 'string') {
+        		            renderArgs = [renderArgs]
+        		        }
+        		        renderArgs[0] = renderArgs[0] || 'Schemarender'
+        		        renderArgs[1] = renderArgs[1] || path
+        		        renderArgs[2] = renderArgs[2] || prefix
+        		        var p = !window.Cloudouble.Element.elements[renderArgs[0]] ? window.Cloudouble.Element.load([renderArgs[0].toLowerCase()], renderArgs[1], renderArgs[2]) : Promise.resolve(true)
+        		        return p.then(() => {
+            		        if (typeof themeArgs == 'string') {
+            		            themeArgs = [themeArgs]
+            		        }
+            		        themeArgs[0] = themeArgs[0] || 'Schematheme'
+            		        themeArgs[1] = themeArgs[1] || path
+            		        themeArgs[2] = themeArgs[2] || prefix
+            		        themeElements = themeElements && typeof themeElements == 'object' && themeElements.constructor.name == 'Array' && themeElements.length ? themeElements : []
+            		        var p = !window.Cloudouble.Element.elements[themeArgs[0]] ? window.Cloudouble.Element.load([themeArgs[0].toLowerCase()].concat(themeElements), themeArgs[1], themeArgs[2]) : Promise.resolve(true)
+            		        return p.then(() => {
+            		            return staticThis.__activate(renderArgs[0], themeArgs[0], options.__useShadow, options)
+            		        })
+        		        })
+        		    })
+        		})
+            })
+        }
+
+        static __activate(renderName, themeName, useShadow=true, options={}) {
+            this.__renderName = window.Cloudouble.Element.elements[renderName] ? renderName : this.__renderName
+            this.__themeName = window.Cloudouble.Element.elements[themeName] ? themeName : this.__themeName
+            this.__useShadow = !!useShadow
+            if (options && typeof options == 'object') {
+                Object.keys(options).forEach(option => {
+                    this[option] = options[option]
+                })
+            }
+	    	document.body.addEventListener('attributeSet', event => {
+	    		if (event.detail && event.detail.element && event.detail.asType) {
+	    		    var expectedAttributeTag = window.Cloudouble.Element.elements[this.__themeName] && window.Cloudouble.Element.elements[this.__themeName][event.detail.asType]
+	    		            && window.Cloudouble.Element.elements[window.Cloudouble.Element.elements[this.__themeName][event.detail.asType]]
+	    		        ? `${window.Cloudouble.Element.elements[window.Cloudouble.Element.elements[this.__themeName][event.detail.asType]].__prefix}-${window.Cloudouble.Element.elements[this.__themeName][event.detail.asType].toLowerCase()}`
+	    		        : `${this.__prefix}-${event.detail.asType.toLowerCase()}`
+	    		    var attributeElements = []
+	                if (window.Cloudouble.Element.elements[this.__renderName] && typeof window.Cloudouble.Element.elements[this.__renderName].__matchAttributeElement == 'function') {
+                        attributeElements = window.Cloudouble.Element.elements[this.__renderName].__matchAttributeElement(event.detail.attribute, event.detail.value, expectedAttributeTag, event.detail.element)
+                    }
+                    attributeElements.forEach((attributeElement, index) => {
+        		        var editmodeValue = event.detail.element.getAttribute('__editmode')
+        		        if (editmodeValue) {
+            		        attributeElement.setAttribute('__editmode', editmodeValue)
+                            attributeElement.__helperSetEditMode(editmodeValue)
+        		        }
+        		        var indexValue = event.detail.value && typeof event.detail.value == 'object' && event.detail.value.constructor.name == 'Array' && attributeElements.length == event.detail.value 
+        		            ? event.detail.value[index] : event.detail.value
+    		            if (attributeElement.__model != indexValue) {
+        	    		    attributeElement.__load(indexValue, {asAttributeName: event.detail.attribute, asAttributeOf: event.detail.element})
+    		            }
+    	    		    attributeElement.addEventListener('modelLoad', loadEvent => {
+    	    		        if (event.detail.element.__model && typeof event.detail.element.__model == 'object') {
+    	    		            if (JSON.stringify(event.detail.element.__model[event.detail.attribute]) != JSON.stringify(loadEvent.detail.model)) {
+        	    		            event.detail.element.__model[event.detail.attribute] = loadEvent.detail.model
+        	    		            event.detail.element.__load(event.detail.element.__model, true)
+    	    		            }
+    	    		        }
+    	    		    })
+                    })
+	    		}
+	    	})
+	    	document.body.addEventListener('modelLoad', event => {
+        		if (event.detail && event.detail.element && typeof event.detail.element.__renderer == 'object' && event.detail.element.__renderer.constructor && event.detail.element.__renderer.constructor.name == 'Array') {
+                    event.detail.element.__renderer.forEach(renderFunction => typeof renderFunction == 'function' ? renderFunction(event.detail.element, event.detail.element.__model, event.detail.asAttribute) : null)
+        		}
+	    	})
+	    	document.body.addEventListener('attributeTypeError', event => {
+	    	})
+	    	document.body.addEventListener('attributeValidationError', event => {
+	    	})
+        }
+        
+        static __propertyValidatorMap
+        static __helperBuildPropertyValidatorMap() {
+            this.propertyValidatorMap = {}
+            Object.entries((this.__validators || {})._map || {}).forEach(entry => {
+                entry[1].forEach(v => {
+                    this.propertyValidatorMap[v] = entry[0]
+                })
+            })
+        }
+        
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('data-context', 'data-type', 'itemtype', 'itemscope', '__editmode', 'content')
+        }
+        
+        __model
+        __renderType = 'Schema'
+        __renderPath = []
+        __renderer = []
+        constructor() {
+            super()
+            this.__setRenderer('Schema')
+        }
+        
+        __setRenderer(renderType) {
+            if (window.Cloudouble.Element.elements[this.constructor.__renderName] 
+                && typeof window.Cloudouble.Element.elements[this.constructor.__renderName][renderType] == 'function' 
+                && !this.__renderPath.includes(renderType)) {
+                this.__renderType = renderType
+                this.__renderPath.push(renderType)
+                this.__renderer = this.__renderPath.map(t => window.Cloudouble.Element.elements[this.constructor.__renderName][t])
+            }
+            return this
+        }
+        
+        get __dataTypes() {
+            return window.Cloudouble.Element.elements[this.constructor.__datatypesDefinition]
+        } 
+        
+        get __properties() {
+            return this.constructor.__propertiesMap
+        } 
+        
+        get __validators() {
+            return window.Cloudouble.Element.elements[this.constructor.__validatorName]
+        }
+        
+        connectedCallback() {
+            var $this = this
+            if (!$this['data-context']) {
+                $this['data-context'] = $this.constructor.__context
+            }
+            if (!$this['data-type']) {
+                $this['data-type'] = $this.constructor._rdfs_label
+            }
+        }
+        
+        __helperValidateAttribute($this, value, attribute) {
+            var thisType
+            var types = ($this.__properties[attribute] || {}).types || []
+            if (typeof value == 'object' && types.includes(value['@type'])) {
+                thisType = value['@type']
+            } else if (types.some(t => thisType = $this.__dataTypes[t] && $this.__dataTypes[t](value).valid ? t : thisType)) {
+                thisType = thisType
+            }
+            var attributeSetDetail = {attribute: attribute, value: value, element: $this, asType: thisType}
+            if (thisType) {
+                if (!$this.constructor.__propertyValidatorMap) {
+                    $this.constructor.__helperBuildPropertyValidatorMap()
+                }
+                if ($this.constructor.__propertyValidatorMap && $this.constructor.__propertyValidatorMap[attribute]) {
+                    attributeSetDetail.validation = $this.__validators[$this.constructor.__propertyValidatorMap[attribute]](attribute, value)
+                    if (!attributeSetDetail.validation.valid) {
+                        $this.dispatchEvent(new CustomEvent('attributeValidationError', {detail: attributeSetDetail}))
+                        document.body.dispatchEvent(new CustomEvent('attributeValidationError', {detail: attributeSetDetail}))
+                    }
+                }
+            } else {
+                attributeSetDetail.error = {message: `${attribute} needs to be of type: ${types.join(' or ')} and that type needs to exist`}
+                $this.dispatchEvent(new CustomEvent('attributeTypeError', {detail: attributeSetDetail}))
+                document.body.dispatchEvent(new CustomEvent('attributeTypeError', {detail: attributeSetDetail}))
+            }
+            $this.dispatchEvent(new CustomEvent('attributeSet', {detail: attributeSetDetail}))
+            document.body.dispatchEvent(new CustomEvent('attributeSet', {detail: attributeSetDetail}))
+            return value
+        }
+        
+        __helperSetEditMode(editmodeValue) {
+            //override this to customise how the transition to and from editmode is handled
+        }
+
+        __load(value, asAttributeOrBottomUp=undefined) {
+            var $this = this
+            var bottomUp = asAttributeOrBottomUp === true
+            var asAttribute = bottomUp ? undefined : (asAttributeOrBottomUp && typeof asAttributeOrBottomUp == 'object' ? asAttributeOrBottomUp : undefined)
+            if (value && typeof value == 'object') {
+        	    Object.keys(value).forEach(k => {
+        	        var h = k.replace('@', 'data-')
+        	        if ($this[h] != value[k]) {
+            	        $this[h] = value[k]
+        	        }
+        	    })
+        	    if (value['@type'] && value['@type']!== $this.constructor._rdfs_label) {
+        	        var modelLoadErrorDetail = {
+                        model: value,
+                        message: `The given content needs to be of type ${$this.constructor._rdfs_label} instead of the given type ${value['@type']}`, 
+                        asAttribute: asAttribute, 
+                        bottomUp: bottomUp
+                    }
+                    $this.dispatchEvent(new CustomEvent('modelLoadError', {detail: modelLoadErrorDetail}))
+                    document.body.dispatchEvent(new CustomEvent('modelLoadError', {detail: {...modelLoadErrorDetail, ...{element: $this}}}))
+        	    }
+            } else {
+                var displayValue = String(([null, undefined]).includes(value) ? '' : value)
+                if (typeof $this.__dataTypes[$this.constructor._rdfs_label] == 'function') {
+                    $this.setAttribute('content', displayValue)
+                }
+            }
+            $this.__model = value
+            $this.dispatchEvent(new CustomEvent('modelLoad', {detail: {model: value, asAttribute: asAttribute, bottomUp: bottomUp}}))
+            document.body.dispatchEvent(new CustomEvent('modelLoad', {detail: {model: value, element: $this, asAttribute: asAttribute, bottomUp: bottomUp}}))
+            return value
+        }
+        
+        __editmode($this, value) {
+            var root = $this.constructor.__useShadow ? $this.shadowRoot : $this
+            if ($this.constructor.__renderName && window.Cloudouble.Element.elements[$this.constructor.__renderName] 
+                && window.Cloudouble.Element.elements[$this.constructor.__renderName].__editmode
+                && typeof window.Cloudouble.Element.elements[$this.constructor.__renderName].__editmode == 'function') {
+                window.Cloudouble.Element.elements[$this.constructor.__renderName].__editmode(root, value)
+            }
+            return value
+        }
+        
+        content($this, value) {
+            var inputs = ([]).concat(Array.from($this.shadowRoot.querySelectorAll('input')), Array.from($this.shadowRoot.querySelectorAll('textarea')), Array.from($this.shadowRoot.querySelectorAll('select')))
+            if (inputs.length == 1) {
+                inputs[0].value = value
+            }
+            if (typeof value != 'object') {
+                $this.innerHTML = value
+            } else {
+                $this.innerHTML = ''
+            }
+            return value
+        }
+        
+        
+    }
+</script>

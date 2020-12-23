@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Investmentordeposit extends window.Cloudouble.Element.elements.Financialproduct {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:InvestmentOrDeposit'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.'
+        static _rdfs_label = 'InvestmentOrDeposit'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('InvestmentOrDeposit')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Solvemathaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SolveMathAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The action that takes in a math expression and directs users to a page potentially capable of solving\/simplifying that expression.'
+        static _rdfs_label = 'SolveMathAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('eduQuestionType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SolveMathAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            eduQuestionType($this, value) { return $this.__helperValidateAttribute($this, value, 'eduQuestionType') }
+        get eduquestiontype() { return this.eduQuestionType }
+        set eduquestiontype(value) { this.eduQuestionType = value }
+        
+    }
+</script>

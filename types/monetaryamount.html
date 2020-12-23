@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Monetaryamount extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MonetaryAmount'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc.'
+        static _rdfs_label = 'MonetaryAmount'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('currency', 'maxValue', 'minValue', 'validFrom', 'validThrough', 'value')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MonetaryAmount')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+
+            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        get maxvalue() { return this.maxValue }
+        set maxvalue(value) { this.maxValue = value }
+
+            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        get minvalue() { return this.minValue }
+        set minvalue(value) { this.minValue = value }
+
+            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        get validfrom() { return this.validFrom }
+        set validfrom(value) { this.validFrom = value }
+
+            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        get validthrough() { return this.validThrough }
+        set validthrough(value) { this.validThrough = value }
+
+            value($this, value) { return $this.__helperValidateAttribute($this, value, 'value') }
+        
+    }
+</script>

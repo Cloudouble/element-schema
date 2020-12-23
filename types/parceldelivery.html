@@ -1,0 +1,80 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Parceldelivery extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ParcelDelivery'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The delivery of a parcel either via the postal service or a commercial service.'
+        static _rdfs_label = 'ParcelDelivery'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ParcelDelivery')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            carrier($this, value) { return $this.__helperValidateAttribute($this, value, 'carrier') }
+
+            deliveryAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryAddress') }
+        get deliveryaddress() { return this.deliveryAddress }
+        set deliveryaddress(value) { this.deliveryAddress = value }
+
+            deliveryStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryStatus') }
+        get deliverystatus() { return this.deliveryStatus }
+        set deliverystatus(value) { this.deliveryStatus = value }
+
+            expectedArrivalFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'expectedArrivalFrom') }
+        get expectedarrivalfrom() { return this.expectedArrivalFrom }
+        set expectedarrivalfrom(value) { this.expectedArrivalFrom = value }
+
+            expectedArrivalUntil($this, value) { return $this.__helperValidateAttribute($this, value, 'expectedArrivalUntil') }
+        get expectedarrivaluntil() { return this.expectedArrivalUntil }
+        set expectedarrivaluntil(value) { this.expectedArrivalUntil = value }
+
+            hasDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDeliveryMethod') }
+        get hasdeliverymethod() { return this.hasDeliveryMethod }
+        set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
+
+            itemShipped($this, value) { return $this.__helperValidateAttribute($this, value, 'itemShipped') }
+        get itemshipped() { return this.itemShipped }
+        set itemshipped(value) { this.itemShipped = value }
+
+            originAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'originAddress') }
+        get originaddress() { return this.originAddress }
+        set originaddress(value) { this.originAddress = value }
+
+            partOfOrder($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfOrder') }
+        get partoforder() { return this.partOfOrder }
+        set partoforder(value) { this.partOfOrder = value }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            trackingNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'trackingNumber') }
+        get trackingnumber() { return this.trackingNumber }
+        set trackingnumber(value) { this.trackingNumber = value }
+
+            trackingUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'trackingUrl') }
+        get trackingurl() { return this.trackingUrl }
+        set trackingurl(value) { this.trackingUrl = value }
+        
+    }
+</script>

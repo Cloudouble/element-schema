@@ -1,0 +1,100 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Accommodation extends window.Cloudouble.Element.elements.Place {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Accommodation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
+For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
+<br \/><br \/>
+See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>.
+'
+        static _rdfs_label = 'Accommodation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accommodationCategory', 'accommodationFloorPlan', 'amenityFeature', 'floorLevel', 'floorSize', 'leaseLength', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'permittedUsage', 'petsAllowed', 'tourBookingPage', 'yearBuilt')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Accommodation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accommodationCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationCategory') }
+        get accommodationcategory() { return this.accommodationCategory }
+        set accommodationcategory(value) { this.accommodationCategory = value }
+
+            accommodationFloorPlan($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationFloorPlan') }
+        get accommodationfloorplan() { return this.accommodationFloorPlan }
+        set accommodationfloorplan(value) { this.accommodationFloorPlan = value }
+
+            amenityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'amenityFeature') }
+        get amenityfeature() { return this.amenityFeature }
+        set amenityfeature(value) { this.amenityFeature = value }
+
+            floorLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'floorLevel') }
+        get floorlevel() { return this.floorLevel }
+        set floorlevel(value) { this.floorLevel = value }
+
+            floorSize($this, value) { return $this.__helperValidateAttribute($this, value, 'floorSize') }
+        get floorsize() { return this.floorSize }
+        set floorsize(value) { this.floorSize = value }
+
+            leaseLength($this, value) { return $this.__helperValidateAttribute($this, value, 'leaseLength') }
+        get leaselength() { return this.leaseLength }
+        set leaselength(value) { this.leaseLength = value }
+
+            numberOfBathroomsTotal($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBathroomsTotal') }
+        get numberofbathroomstotal() { return this.numberOfBathroomsTotal }
+        set numberofbathroomstotal(value) { this.numberOfBathroomsTotal = value }
+
+            numberOfBedrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBedrooms') }
+        get numberofbedrooms() { return this.numberOfBedrooms }
+        set numberofbedrooms(value) { this.numberOfBedrooms = value }
+
+            numberOfFullBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfFullBathrooms') }
+        get numberoffullbathrooms() { return this.numberOfFullBathrooms }
+        set numberoffullbathrooms(value) { this.numberOfFullBathrooms = value }
+
+            numberOfPartialBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPartialBathrooms') }
+        get numberofpartialbathrooms() { return this.numberOfPartialBathrooms }
+        set numberofpartialbathrooms(value) { this.numberOfPartialBathrooms = value }
+
+            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        get numberofrooms() { return this.numberOfRooms }
+        set numberofrooms(value) { this.numberOfRooms = value }
+
+            permittedUsage($this, value) { return $this.__helperValidateAttribute($this, value, 'permittedUsage') }
+        get permittedusage() { return this.permittedUsage }
+        set permittedusage(value) { this.permittedUsage = value }
+
+            petsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'petsAllowed') }
+        get petsallowed() { return this.petsAllowed }
+        set petsallowed(value) { this.petsAllowed = value }
+
+            tourBookingPage($this, value) { return $this.__helperValidateAttribute($this, value, 'tourBookingPage') }
+        get tourbookingpage() { return this.tourBookingPage }
+        set tourbookingpage(value) { this.tourBookingPage = value }
+
+            yearBuilt($this, value) { return $this.__helperValidateAttribute($this, value, 'yearBuilt') }
+        get yearbuilt() { return this.yearBuilt }
+        set yearbuilt(value) { this.yearBuilt = value }
+        
+    }
+</script>

@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Observation extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Observation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube "measure properties", as in the [lifeExpectancy example](https:\/\/www.w3.org\/TR\/vocab-data-cube\/#dsd-example)).
+See also [[StatisticalPopulation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.
+  '
+        static _rdfs_label = 'Observation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('marginOfError', 'measuredProperty', 'measuredValue', 'observationDate', 'observedNode')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Observation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            marginOfError($this, value) { return $this.__helperValidateAttribute($this, value, 'marginOfError') }
+        get marginoferror() { return this.marginOfError }
+        set marginoferror(value) { this.marginOfError = value }
+
+            measuredProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'measuredProperty') }
+        get measuredproperty() { return this.measuredProperty }
+        set measuredproperty(value) { this.measuredProperty = value }
+
+            measuredValue($this, value) { return $this.__helperValidateAttribute($this, value, 'measuredValue') }
+        get measuredvalue() { return this.measuredValue }
+        set measuredvalue(value) { this.measuredValue = value }
+
+            observationDate($this, value) { return $this.__helperValidateAttribute($this, value, 'observationDate') }
+        get observationdate() { return this.observationDate }
+        set observationdate(value) { this.observationDate = value }
+
+            observedNode($this, value) { return $this.__helperValidateAttribute($this, value, 'observedNode') }
+        get observednode() { return this.observedNode }
+        set observednode(value) { this.observedNode = value }
+        
+    }
+</script>

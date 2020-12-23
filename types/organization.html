@@ -1,0 +1,238 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Organization extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Organization'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An organization such as a school, NGO, corporation, club, etc.'
+        static _rdfs_label = 'Organization'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Organization')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionableFeedbackPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'actionableFeedbackPolicy') }
+        get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
+        set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
+
+            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            alumni($this, value) { return $this.__helperValidateAttribute($this, value, 'alumni') }
+
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+
+            awards($this, value) { return $this.__helperValidateAttribute($this, value, 'awards') }
+
+            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+
+            contactPoint($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoint') }
+        get contactpoint() { return this.contactPoint }
+        set contactpoint(value) { this.contactPoint = value }
+
+            contactPoints($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoints') }
+        get contactpoints() { return this.contactPoints }
+        set contactpoints(value) { this.contactPoints = value }
+
+            correctionsPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'correctionsPolicy') }
+        get correctionspolicy() { return this.correctionsPolicy }
+        set correctionspolicy(value) { this.correctionsPolicy = value }
+
+            department($this, value) { return $this.__helperValidateAttribute($this, value, 'department') }
+
+            dissolutionDate($this, value) { return $this.__helperValidateAttribute($this, value, 'dissolutionDate') }
+        get dissolutiondate() { return this.dissolutionDate }
+        set dissolutiondate(value) { this.dissolutionDate = value }
+
+            diversityPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'diversityPolicy') }
+        get diversitypolicy() { return this.diversityPolicy }
+        set diversitypolicy(value) { this.diversityPolicy = value }
+
+            diversityStaffingReport($this, value) { return $this.__helperValidateAttribute($this, value, 'diversityStaffingReport') }
+        get diversitystaffingreport() { return this.diversityStaffingReport }
+        set diversitystaffingreport(value) { this.diversityStaffingReport = value }
+
+            duns($this, value) { return $this.__helperValidateAttribute($this, value, 'duns') }
+
+            email($this, value) { return $this.__helperValidateAttribute($this, value, 'email') }
+
+            employee($this, value) { return $this.__helperValidateAttribute($this, value, 'employee') }
+
+            employees($this, value) { return $this.__helperValidateAttribute($this, value, 'employees') }
+
+            ethicsPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'ethicsPolicy') }
+        get ethicspolicy() { return this.ethicsPolicy }
+        set ethicspolicy(value) { this.ethicsPolicy = value }
+
+            event($this, value) { return $this.__helperValidateAttribute($this, value, 'event') }
+
+            events($this, value) { return $this.__helperValidateAttribute($this, value, 'events') }
+
+            faxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'faxNumber') }
+        get faxnumber() { return this.faxNumber }
+        set faxnumber(value) { this.faxNumber = value }
+
+            founder($this, value) { return $this.__helperValidateAttribute($this, value, 'founder') }
+
+            founders($this, value) { return $this.__helperValidateAttribute($this, value, 'founders') }
+
+            foundingDate($this, value) { return $this.__helperValidateAttribute($this, value, 'foundingDate') }
+        get foundingdate() { return this.foundingDate }
+        set foundingdate(value) { this.foundingDate = value }
+
+            foundingLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'foundingLocation') }
+        get foundinglocation() { return this.foundingLocation }
+        set foundinglocation(value) { this.foundingLocation = value }
+
+            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+
+            globalLocationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'globalLocationNumber') }
+        get globallocationnumber() { return this.globalLocationNumber }
+        set globallocationnumber(value) { this.globalLocationNumber = value }
+
+            hasCredential($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCredential') }
+        get hascredential() { return this.hasCredential }
+        set hascredential(value) { this.hasCredential = value }
+
+            hasMerchantReturnPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMerchantReturnPolicy') }
+        get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
+        set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
+
+            hasOfferCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOfferCatalog') }
+        get hasoffercatalog() { return this.hasOfferCatalog }
+        set hasoffercatalog(value) { this.hasOfferCatalog = value }
+
+            hasPOS($this, value) { return $this.__helperValidateAttribute($this, value, 'hasPOS') }
+        get haspos() { return this.hasPOS }
+        set haspos(value) { this.hasPOS = value }
+
+            hasProductReturnPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'hasProductReturnPolicy') }
+        get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
+        set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
+
+            interactionStatistic($this, value) { return $this.__helperValidateAttribute($this, value, 'interactionStatistic') }
+        get interactionstatistic() { return this.interactionStatistic }
+        set interactionstatistic(value) { this.interactionStatistic = value }
+
+            isicV4($this, value) { return $this.__helperValidateAttribute($this, value, 'isicV4') }
+        get isicv4() { return this.isicV4 }
+        set isicv4(value) { this.isicV4 = value }
+
+            knowsAbout($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsAbout') }
+        get knowsabout() { return this.knowsAbout }
+        set knowsabout(value) { this.knowsAbout = value }
+
+            knowsLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsLanguage') }
+        get knowslanguage() { return this.knowsLanguage }
+        set knowslanguage(value) { this.knowsLanguage = value }
+
+            legalName($this, value) { return $this.__helperValidateAttribute($this, value, 'legalName') }
+        get legalname() { return this.legalName }
+        set legalname(value) { this.legalName = value }
+
+            leiCode($this, value) { return $this.__helperValidateAttribute($this, value, 'leiCode') }
+        get leicode() { return this.leiCode }
+        set leicode(value) { this.leiCode = value }
+
+            location($this, value) { return $this.__helperValidateAttribute($this, value, 'location') }
+
+            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+
+            makesOffer($this, value) { return $this.__helperValidateAttribute($this, value, 'makesOffer') }
+        get makesoffer() { return this.makesOffer }
+        set makesoffer(value) { this.makesOffer = value }
+
+            member($this, value) { return $this.__helperValidateAttribute($this, value, 'member') }
+
+            memberOf($this, value) { return $this.__helperValidateAttribute($this, value, 'memberOf') }
+        get memberof() { return this.memberOf }
+        set memberof(value) { this.memberOf = value }
+
+            members($this, value) { return $this.__helperValidateAttribute($this, value, 'members') }
+
+            naics($this, value) { return $this.__helperValidateAttribute($this, value, 'naics') }
+
+            nonprofitStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'nonprofitStatus') }
+        get nonprofitstatus() { return this.nonprofitStatus }
+        set nonprofitstatus(value) { this.nonprofitStatus = value }
+
+            numberOfEmployees($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfEmployees') }
+        get numberofemployees() { return this.numberOfEmployees }
+        set numberofemployees(value) { this.numberOfEmployees = value }
+
+            ownershipFundingInfo($this, value) { return $this.__helperValidateAttribute($this, value, 'ownershipFundingInfo') }
+        get ownershipfundinginfo() { return this.ownershipFundingInfo }
+        set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
+
+            owns($this, value) { return $this.__helperValidateAttribute($this, value, 'owns') }
+
+            parentOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'parentOrganization') }
+        get parentorganization() { return this.parentOrganization }
+        set parentorganization(value) { this.parentOrganization = value }
+
+            publishingPrinciples($this, value) { return $this.__helperValidateAttribute($this, value, 'publishingPrinciples') }
+        get publishingprinciples() { return this.publishingPrinciples }
+        set publishingprinciples(value) { this.publishingPrinciples = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            reviews($this, value) { return $this.__helperValidateAttribute($this, value, 'reviews') }
+
+            seeks($this, value) { return $this.__helperValidateAttribute($this, value, 'seeks') }
+
+            serviceArea($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceArea') }
+        get servicearea() { return this.serviceArea }
+        set servicearea(value) { this.serviceArea = value }
+
+            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+
+            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+
+            subOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'subOrganization') }
+        get suborganization() { return this.subOrganization }
+        set suborganization(value) { this.subOrganization = value }
+
+            taxID($this, value) { return $this.__helperValidateAttribute($this, value, 'taxID') }
+        get taxid() { return this.taxID }
+        set taxid(value) { this.taxID = value }
+
+            telephone($this, value) { return $this.__helperValidateAttribute($this, value, 'telephone') }
+
+            unnamedSourcesPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'unnamedSourcesPolicy') }
+        get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
+        set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
+
+            vatID($this, value) { return $this.__helperValidateAttribute($this, value, 'vatID') }
+        get vatid() { return this.vatID }
+        set vatid(value) { this.vatID = value }
+        
+    }
+</script>

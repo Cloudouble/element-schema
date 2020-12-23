@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sitenavigationelement extends window.Cloudouble.Element.elements.Webpageelement {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SiteNavigationElement'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A navigation element of the page.'
+        static _rdfs_label = 'SiteNavigationElement'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SiteNavigationElement')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Webapplication extends window.Cloudouble.Element.elements.Softwareapplication {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WebApplication'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Web applications.'
+        static _rdfs_label = 'WebApplication'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('browserRequirements')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WebApplication')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            browserRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'browserRequirements') }
+        get browserrequirements() { return this.browserRequirements }
+        set browserrequirements(value) { this.browserRequirements = value }
+        
+    }
+</script>

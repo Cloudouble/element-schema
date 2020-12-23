@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Deliveryevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DeliveryEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An event involving the delivery of an item.'
+        static _rdfs_label = 'DeliveryEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accessCode', 'availableFrom', 'availableThrough', 'hasDeliveryMethod')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DeliveryEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accessCode($this, value) { return $this.__helperValidateAttribute($this, value, 'accessCode') }
+        get accesscode() { return this.accessCode }
+        set accesscode(value) { this.accessCode = value }
+
+            availableFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'availableFrom') }
+        get availablefrom() { return this.availableFrom }
+        set availablefrom(value) { this.availableFrom = value }
+
+            availableThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'availableThrough') }
+        get availablethrough() { return this.availableThrough }
+        set availablethrough(value) { this.availableThrough = value }
+
+            hasDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDeliveryMethod') }
+        get hasdeliverymethod() { return this.hasDeliveryMethod }
+        set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
+        
+    }
+</script>

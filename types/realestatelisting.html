@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Realestatelisting extends window.Cloudouble.Element.elements.Webpage {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RealEstateListing'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).
+  The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
+  '
+        static _rdfs_label = 'RealEstateListing'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('datePosted', 'leaseLength')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RealEstateListing')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            datePosted($this, value) { return $this.__helperValidateAttribute($this, value, 'datePosted') }
+        get dateposted() { return this.datePosted }
+        set dateposted(value) { this.datePosted = value }
+
+            leaseLength($this, value) { return $this.__helperValidateAttribute($this, value, 'leaseLength') }
+        get leaselength() { return this.leaseLength }
+        set leaselength(value) { this.leaseLength = value }
+        
+    }
+</script>

@@ -1,0 +1,64 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Action extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Action'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument\/role.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/04\/announcing-schemaorg-actions.html) and [Actions overview document](https:\/\/schema.org\/docs\/actions.html).'
+        static _rdfs_label = 'Action'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Action')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'actionStatus') }
+        get actionstatus() { return this.actionStatus }
+        set actionstatus(value) { this.actionStatus = value }
+
+            agent($this, value) { return $this.__helperValidateAttribute($this, value, 'agent') }
+
+            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        get endtime() { return this.endTime }
+        set endtime(value) { this.endTime = value }
+
+            error($this, value) { return $this.__helperValidateAttribute($this, value, 'error') }
+
+            instrument($this, value) { return $this.__helperValidateAttribute($this, value, 'instrument') }
+
+            location($this, value) { return $this.__helperValidateAttribute($this, value, 'location') }
+
+            object($this, value) { return $this.__helperValidateAttribute($this, value, 'object') }
+
+            participant($this, value) { return $this.__helperValidateAttribute($this, value, 'participant') }
+
+            result($this, value) { return $this.__helperValidateAttribute($this, value, 'result') }
+
+            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        get starttime() { return this.startTime }
+        set starttime(value) { this.startTime = value }
+
+            target($this, value) { return $this.__helperValidateAttribute($this, value, 'target') }
+        
+    }
+</script>

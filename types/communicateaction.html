@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Communicateaction extends window.Cloudouble.Element.elements.Interactaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CommunicateAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.'
+        static _rdfs_label = 'CommunicateAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('about', 'inLanguage', 'language', 'recipient')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CommunicateAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            about($this, value) { return $this.__helperValidateAttribute($this, value, 'about') }
+
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            language($this, value) { return $this.__helperValidateAttribute($this, value, 'language') }
+
+            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        
+    }
+</script>

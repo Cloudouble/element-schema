@@ -1,0 +1,64 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Howtodirection extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HowToDirection'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A direction indicating a single action to do in the instructions for how to achieve a result.'
+        static _rdfs_label = 'HowToDirection'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('afterMedia', 'beforeMedia', 'duringMedia', 'performTime', 'prepTime', 'supply', 'tool', 'totalTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HowToDirection')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            afterMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'afterMedia') }
+        get aftermedia() { return this.afterMedia }
+        set aftermedia(value) { this.afterMedia = value }
+
+            beforeMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'beforeMedia') }
+        get beforemedia() { return this.beforeMedia }
+        set beforemedia(value) { this.beforeMedia = value }
+
+            duringMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'duringMedia') }
+        get duringmedia() { return this.duringMedia }
+        set duringmedia(value) { this.duringMedia = value }
+
+            performTime($this, value) { return $this.__helperValidateAttribute($this, value, 'performTime') }
+        get performtime() { return this.performTime }
+        set performtime(value) { this.performTime = value }
+
+            prepTime($this, value) { return $this.__helperValidateAttribute($this, value, 'prepTime') }
+        get preptime() { return this.prepTime }
+        set preptime(value) { this.prepTime = value }
+
+            supply($this, value) { return $this.__helperValidateAttribute($this, value, 'supply') }
+
+            tool($this, value) { return $this.__helperValidateAttribute($this, value, 'tool') }
+
+            totalTime($this, value) { return $this.__helperValidateAttribute($this, value, 'totalTime') }
+        get totaltime() { return this.totalTime }
+        set totaltime(value) { this.totalTime = value }
+        
+    }
+</script>

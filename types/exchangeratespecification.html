@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Exchangeratespecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ExchangeRateSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured value representing exchange rate.'
+        static _rdfs_label = 'ExchangeRateSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('currency', 'currentExchangeRate', 'exchangeRateSpread')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ExchangeRateSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+
+            currentExchangeRate($this, value) { return $this.__helperValidateAttribute($this, value, 'currentExchangeRate') }
+        get currentexchangerate() { return this.currentExchangeRate }
+        set currentexchangerate(value) { this.currentExchangeRate = value }
+
+            exchangeRateSpread($this, value) { return $this.__helperValidateAttribute($this, value, 'exchangeRateSpread') }
+        get exchangeratespread() { return this.exchangeRateSpread }
+        set exchangeratespread(value) { this.exchangeRateSpread = value }
+        
+    }
+</script>

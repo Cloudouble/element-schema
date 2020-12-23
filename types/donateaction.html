@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Donateaction extends window.Cloudouble.Element.elements.Tradeaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DonateAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of providing goods, services, or money without compensation, often for philanthropic reasons.'
+        static _rdfs_label = 'DonateAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('recipient')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DonateAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        
+    }
+</script>

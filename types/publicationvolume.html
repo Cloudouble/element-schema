@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Publicationvolume extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PublicationVolume'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/09\/schemaorg-support-for-bibliographic_2.html).'
+        static _rdfs_label = 'PublicationVolume'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('pageEnd', 'pageStart', 'pagination', 'volumeNumber')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PublicationVolume')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            pageEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'pageEnd') }
+        get pageend() { return this.pageEnd }
+        set pageend(value) { this.pageEnd = value }
+
+            pageStart($this, value) { return $this.__helperValidateAttribute($this, value, 'pageStart') }
+        get pagestart() { return this.pageStart }
+        set pagestart(value) { this.pageStart = value }
+
+            pagination($this, value) { return $this.__helperValidateAttribute($this, value, 'pagination') }
+
+            volumeNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'volumeNumber') }
+        get volumenumber() { return this.volumeNumber }
+        set volumenumber(value) { this.volumeNumber = value }
+        
+    }
+</script>

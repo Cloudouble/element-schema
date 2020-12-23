@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Role extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Role'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Represents additional information about a relationship or property. For example a Role can be used to say that a \'member\' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person\'s \'actor\' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like \'member\' or \'actor\'.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/06\/introducing-role.html).'
+        static _rdfs_label = 'Role'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('endDate', 'namedPosition', 'roleName', 'startDate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Role')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            namedPosition($this, value) { return $this.__helperValidateAttribute($this, value, 'namedPosition') }
+        get namedposition() { return this.namedPosition }
+        set namedposition(value) { this.namedPosition = value }
+
+            roleName($this, value) { return $this.__helperValidateAttribute($this, value, 'roleName') }
+        get rolename() { return this.roleName }
+        set rolename(value) { this.roleName = value }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+        
+    }
+</script>

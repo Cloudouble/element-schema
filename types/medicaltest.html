@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaltest extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalTest'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any medical test, typically performed for diagnostic purposes.'
+        static _rdfs_label = 'MedicalTest'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalTest')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            affectedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'affectedBy') }
+        get affectedby() { return this.affectedBy }
+        set affectedby(value) { this.affectedBy = value }
+
+            normalRange($this, value) { return $this.__helperValidateAttribute($this, value, 'normalRange') }
+        get normalrange() { return this.normalRange }
+        set normalrange(value) { this.normalRange = value }
+
+            signDetected($this, value) { return $this.__helperValidateAttribute($this, value, 'signDetected') }
+        get signdetected() { return this.signDetected }
+        set signdetected(value) { this.signDetected = value }
+
+            usedToDiagnose($this, value) { return $this.__helperValidateAttribute($this, value, 'usedToDiagnose') }
+        get usedtodiagnose() { return this.usedToDiagnose }
+        set usedtodiagnose(value) { this.usedToDiagnose = value }
+
+            usesDevice($this, value) { return $this.__helperValidateAttribute($this, value, 'usesDevice') }
+        get usesdevice() { return this.usesDevice }
+        set usesdevice(value) { this.usesDevice = value }
+        
+    }
+</script>

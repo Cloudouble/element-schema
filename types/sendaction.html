@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sendaction extends window.Cloudouble.Element.elements.Transferaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SendAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of physically\/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I\'m not necessarily giving it to you).'
+        static _rdfs_label = 'SendAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('deliveryMethod', 'recipient')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SendAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            deliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryMethod') }
+        get deliverymethod() { return this.deliveryMethod }
+        set deliverymethod(value) { this.deliveryMethod = value }
+
+            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        
+    }
+</script>

@@ -1,0 +1,80 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Propertyvaluespecification extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PropertyValueSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A Property value specification.'
+        static _rdfs_label = 'PropertyValueSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('defaultValue', 'maxValue', 'minValue', 'multipleValues', 'readonlyValue', 'stepValue', 'valueMaxLength', 'valueMinLength', 'valueName', 'valuePattern', 'valueRequired')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PropertyValueSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            defaultValue($this, value) { return $this.__helperValidateAttribute($this, value, 'defaultValue') }
+        get defaultvalue() { return this.defaultValue }
+        set defaultvalue(value) { this.defaultValue = value }
+
+            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        get maxvalue() { return this.maxValue }
+        set maxvalue(value) { this.maxValue = value }
+
+            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        get minvalue() { return this.minValue }
+        set minvalue(value) { this.minValue = value }
+
+            multipleValues($this, value) { return $this.__helperValidateAttribute($this, value, 'multipleValues') }
+        get multiplevalues() { return this.multipleValues }
+        set multiplevalues(value) { this.multipleValues = value }
+
+            readonlyValue($this, value) { return $this.__helperValidateAttribute($this, value, 'readonlyValue') }
+        get readonlyvalue() { return this.readonlyValue }
+        set readonlyvalue(value) { this.readonlyValue = value }
+
+            stepValue($this, value) { return $this.__helperValidateAttribute($this, value, 'stepValue') }
+        get stepvalue() { return this.stepValue }
+        set stepvalue(value) { this.stepValue = value }
+
+            valueMaxLength($this, value) { return $this.__helperValidateAttribute($this, value, 'valueMaxLength') }
+        get valuemaxlength() { return this.valueMaxLength }
+        set valuemaxlength(value) { this.valueMaxLength = value }
+
+            valueMinLength($this, value) { return $this.__helperValidateAttribute($this, value, 'valueMinLength') }
+        get valueminlength() { return this.valueMinLength }
+        set valueminlength(value) { this.valueMinLength = value }
+
+            valueName($this, value) { return $this.__helperValidateAttribute($this, value, 'valueName') }
+        get valuename() { return this.valueName }
+        set valuename(value) { this.valueName = value }
+
+            valuePattern($this, value) { return $this.__helperValidateAttribute($this, value, 'valuePattern') }
+        get valuepattern() { return this.valuePattern }
+        set valuepattern(value) { this.valuePattern = value }
+
+            valueRequired($this, value) { return $this.__helperValidateAttribute($this, value, 'valueRequired') }
+        get valuerequired() { return this.valueRequired }
+        set valuerequired(value) { this.valueRequired = value }
+        
+    }
+</script>

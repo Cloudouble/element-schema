@@ -1,0 +1,76 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Broadcastservice extends window.Cloudouble.Element.elements.Service {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BroadcastService'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A delivery service through which content is provided via broadcast over the air or online.'
+        static _rdfs_label = 'BroadcastService'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('area', 'broadcastAffiliateOf', 'broadcastDisplayName', 'broadcastFrequency', 'broadcastTimezone', 'broadcaster', 'callSign', 'hasBroadcastChannel', 'inLanguage', 'parentService', 'videoFormat')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BroadcastService')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            area($this, value) { return $this.__helperValidateAttribute($this, value, 'area') }
+
+            broadcastAffiliateOf($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastAffiliateOf') }
+        get broadcastaffiliateof() { return this.broadcastAffiliateOf }
+        set broadcastaffiliateof(value) { this.broadcastAffiliateOf = value }
+
+            broadcastDisplayName($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastDisplayName') }
+        get broadcastdisplayname() { return this.broadcastDisplayName }
+        set broadcastdisplayname(value) { this.broadcastDisplayName = value }
+
+            broadcastFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastFrequency') }
+        get broadcastfrequency() { return this.broadcastFrequency }
+        set broadcastfrequency(value) { this.broadcastFrequency = value }
+
+            broadcastTimezone($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastTimezone') }
+        get broadcasttimezone() { return this.broadcastTimezone }
+        set broadcasttimezone(value) { this.broadcastTimezone = value }
+
+            broadcaster($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcaster') }
+
+            callSign($this, value) { return $this.__helperValidateAttribute($this, value, 'callSign') }
+        get callsign() { return this.callSign }
+        set callsign(value) { this.callSign = value }
+
+            hasBroadcastChannel($this, value) { return $this.__helperValidateAttribute($this, value, 'hasBroadcastChannel') }
+        get hasbroadcastchannel() { return this.hasBroadcastChannel }
+        set hasbroadcastchannel(value) { this.hasBroadcastChannel = value }
+
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            parentService($this, value) { return $this.__helperValidateAttribute($this, value, 'parentService') }
+        get parentservice() { return this.parentService }
+        set parentservice(value) { this.parentService = value }
+
+            videoFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFormat') }
+        get videoformat() { return this.videoFormat }
+        set videoformat(value) { this.videoFormat = value }
+        
+    }
+</script>

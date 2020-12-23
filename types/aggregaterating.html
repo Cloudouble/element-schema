@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Aggregaterating extends window.Cloudouble.Element.elements.Rating {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AggregateRating'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The average rating based on multiple ratings or reviews.'
+        static _rdfs_label = 'AggregateRating'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('itemReviewed', 'ratingCount', 'reviewCount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AggregateRating')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            itemReviewed($this, value) { return $this.__helperValidateAttribute($this, value, 'itemReviewed') }
+        get itemreviewed() { return this.itemReviewed }
+        set itemreviewed(value) { this.itemReviewed = value }
+
+            ratingCount($this, value) { return $this.__helperValidateAttribute($this, value, 'ratingCount') }
+        get ratingcount() { return this.ratingCount }
+        set ratingcount(value) { this.ratingCount = value }
+
+            reviewCount($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewCount') }
+        get reviewcount() { return this.reviewCount }
+        set reviewcount(value) { this.reviewCount = value }
+        
+    }
+</script>

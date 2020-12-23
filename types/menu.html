@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Menu extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Menu'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured representation of food or drink items available from a FoodEstablishment.'
+        static _rdfs_label = 'Menu'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hasMenuItem', 'hasMenuSection')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Menu')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hasMenuItem($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuItem') }
+        get hasmenuitem() { return this.hasMenuItem }
+        set hasmenuitem(value) { this.hasMenuItem = value }
+
+            hasMenuSection($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuSection') }
+        get hasmenusection() { return this.hasMenuSection }
+        set hasmenusection(value) { this.hasMenuSection = value }
+        
+    }
+</script>

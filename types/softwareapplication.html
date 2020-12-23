@@ -1,0 +1,124 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Softwareapplication extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SoftwareApplication'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A software application.'
+        static _rdfs_label = 'SoftwareApplication'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('applicationCategory', 'applicationSubCategory', 'applicationSuite', 'availableOnDevice', 'countriesNotSupported', 'countriesSupported', 'device', 'downloadUrl', 'featureList', 'fileSize', 'installUrl', 'memoryRequirements', 'operatingSystem', 'permissions', 'processorRequirements', 'releaseNotes', 'requirements', 'screenshot', 'softwareAddOn', 'softwareHelp', 'softwareRequirements', 'softwareVersion', 'storageRequirements', 'supportingData')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SoftwareApplication')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            applicationCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationCategory') }
+        get applicationcategory() { return this.applicationCategory }
+        set applicationcategory(value) { this.applicationCategory = value }
+
+            applicationSubCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationSubCategory') }
+        get applicationsubcategory() { return this.applicationSubCategory }
+        set applicationsubcategory(value) { this.applicationSubCategory = value }
+
+            applicationSuite($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationSuite') }
+        get applicationsuite() { return this.applicationSuite }
+        set applicationsuite(value) { this.applicationSuite = value }
+
+            availableOnDevice($this, value) { return $this.__helperValidateAttribute($this, value, 'availableOnDevice') }
+        get availableondevice() { return this.availableOnDevice }
+        set availableondevice(value) { this.availableOnDevice = value }
+
+            countriesNotSupported($this, value) { return $this.__helperValidateAttribute($this, value, 'countriesNotSupported') }
+        get countriesnotsupported() { return this.countriesNotSupported }
+        set countriesnotsupported(value) { this.countriesNotSupported = value }
+
+            countriesSupported($this, value) { return $this.__helperValidateAttribute($this, value, 'countriesSupported') }
+        get countriessupported() { return this.countriesSupported }
+        set countriessupported(value) { this.countriesSupported = value }
+
+            device($this, value) { return $this.__helperValidateAttribute($this, value, 'device') }
+
+            downloadUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'downloadUrl') }
+        get downloadurl() { return this.downloadUrl }
+        set downloadurl(value) { this.downloadUrl = value }
+
+            featureList($this, value) { return $this.__helperValidateAttribute($this, value, 'featureList') }
+        get featurelist() { return this.featureList }
+        set featurelist(value) { this.featureList = value }
+
+            fileSize($this, value) { return $this.__helperValidateAttribute($this, value, 'fileSize') }
+        get filesize() { return this.fileSize }
+        set filesize(value) { this.fileSize = value }
+
+            installUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'installUrl') }
+        get installurl() { return this.installUrl }
+        set installurl(value) { this.installUrl = value }
+
+            memoryRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'memoryRequirements') }
+        get memoryrequirements() { return this.memoryRequirements }
+        set memoryrequirements(value) { this.memoryRequirements = value }
+
+            operatingSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'operatingSystem') }
+        get operatingsystem() { return this.operatingSystem }
+        set operatingsystem(value) { this.operatingSystem = value }
+
+            permissions($this, value) { return $this.__helperValidateAttribute($this, value, 'permissions') }
+
+            processorRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'processorRequirements') }
+        get processorrequirements() { return this.processorRequirements }
+        set processorrequirements(value) { this.processorRequirements = value }
+
+            releaseNotes($this, value) { return $this.__helperValidateAttribute($this, value, 'releaseNotes') }
+        get releasenotes() { return this.releaseNotes }
+        set releasenotes(value) { this.releaseNotes = value }
+
+            requirements($this, value) { return $this.__helperValidateAttribute($this, value, 'requirements') }
+
+            screenshot($this, value) { return $this.__helperValidateAttribute($this, value, 'screenshot') }
+
+            softwareAddOn($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareAddOn') }
+        get softwareaddon() { return this.softwareAddOn }
+        set softwareaddon(value) { this.softwareAddOn = value }
+
+            softwareHelp($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareHelp') }
+        get softwarehelp() { return this.softwareHelp }
+        set softwarehelp(value) { this.softwareHelp = value }
+
+            softwareRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareRequirements') }
+        get softwarerequirements() { return this.softwareRequirements }
+        set softwarerequirements(value) { this.softwareRequirements = value }
+
+            softwareVersion($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareVersion') }
+        get softwareversion() { return this.softwareVersion }
+        set softwareversion(value) { this.softwareVersion = value }
+
+            storageRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'storageRequirements') }
+        get storagerequirements() { return this.storageRequirements }
+        set storagerequirements(value) { this.storageRequirements = value }
+
+            supportingData($this, value) { return $this.__helperValidateAttribute($this, value, 'supportingData') }
+        get supportingdata() { return this.supportingData }
+        set supportingdata(value) { this.supportingData = value }
+        
+    }
+</script>

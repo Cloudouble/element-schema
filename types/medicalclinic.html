@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalclinic extends window.Cloudouble.Element.elements.Medicalbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalClinic'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and\/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.'
+        static _rdfs_label = 'MedicalClinic'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availableService', 'medicalSpecialty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalClinic')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availableService($this, value) { return $this.__helperValidateAttribute($this, value, 'availableService') }
+        get availableservice() { return this.availableService }
+        set availableservice(value) { this.availableService = value }
+
+            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        get medicalspecialty() { return this.medicalSpecialty }
+        set medicalspecialty(value) { this.medicalSpecialty = value }
+        
+    }
+</script>

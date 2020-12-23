@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Quantitativevalue extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:QuantitativeValue'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = ' A point value or interval for product characteristics and other purposes.'
+        static _rdfs_label = 'QuantitativeValue'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('QuantitativeValue')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalProperty') }
+        get additionalproperty() { return this.additionalProperty }
+        set additionalproperty(value) { this.additionalProperty = value }
+
+            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        get maxvalue() { return this.maxValue }
+        set maxvalue(value) { this.maxValue = value }
+
+            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        get minvalue() { return this.minValue }
+        set minvalue(value) { this.minValue = value }
+
+            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        get unitcode() { return this.unitCode }
+        set unitcode(value) { this.unitCode = value }
+
+            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        get unittext() { return this.unitText }
+        set unittext(value) { this.unitText = value }
+
+            value($this, value) { return $this.__helperValidateAttribute($this, value, 'value') }
+
+            valueReference($this, value) { return $this.__helperValidateAttribute($this, value, 'valueReference') }
+        get valuereference() { return this.valueReference }
+        set valuereference(value) { this.valueReference = value }
+        
+    }
+</script>

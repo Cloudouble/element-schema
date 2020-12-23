@@ -1,0 +1,128 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Educationaloccupationalprogram extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EducationalOccupationalProgram'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).'
+        static _rdfs_label = 'EducationalOccupationalProgram'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EducationalOccupationalProgram')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            applicationDeadline($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationDeadline') }
+        get applicationdeadline() { return this.applicationDeadline }
+        set applicationdeadline(value) { this.applicationDeadline = value }
+
+            applicationStartDate($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationStartDate') }
+        get applicationstartdate() { return this.applicationStartDate }
+        set applicationstartdate(value) { this.applicationStartDate = value }
+
+            dayOfWeek($this, value) { return $this.__helperValidateAttribute($this, value, 'dayOfWeek') }
+        get dayofweek() { return this.dayOfWeek }
+        set dayofweek(value) { this.dayOfWeek = value }
+
+            educationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalCredentialAwarded') }
+        get educationalcredentialawarded() { return this.educationalCredentialAwarded }
+        set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
+
+            educationalProgramMode($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalProgramMode') }
+        get educationalprogrammode() { return this.educationalProgramMode }
+        set educationalprogrammode(value) { this.educationalProgramMode = value }
+
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            financialAidEligible($this, value) { return $this.__helperValidateAttribute($this, value, 'financialAidEligible') }
+        get financialaideligible() { return this.financialAidEligible }
+        set financialaideligible(value) { this.financialAidEligible = value }
+
+            hasCourse($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCourse') }
+        get hascourse() { return this.hasCourse }
+        set hascourse(value) { this.hasCourse = value }
+
+            maximumEnrollment($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumEnrollment') }
+        get maximumenrollment() { return this.maximumEnrollment }
+        set maximumenrollment(value) { this.maximumEnrollment = value }
+
+            numberOfCredits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfCredits') }
+        get numberofcredits() { return this.numberOfCredits }
+        set numberofcredits(value) { this.numberOfCredits = value }
+
+            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        get occupationalcategory() { return this.occupationalCategory }
+        set occupationalcategory(value) { this.occupationalCategory = value }
+
+            occupationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCredentialAwarded') }
+        get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
+        set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            programPrerequisites($this, value) { return $this.__helperValidateAttribute($this, value, 'programPrerequisites') }
+        get programprerequisites() { return this.programPrerequisites }
+        set programprerequisites(value) { this.programPrerequisites = value }
+
+            programType($this, value) { return $this.__helperValidateAttribute($this, value, 'programType') }
+        get programtype() { return this.programType }
+        set programtype(value) { this.programType = value }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            salaryUponCompletion($this, value) { return $this.__helperValidateAttribute($this, value, 'salaryUponCompletion') }
+        get salaryuponcompletion() { return this.salaryUponCompletion }
+        set salaryuponcompletion(value) { this.salaryUponCompletion = value }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+
+            termDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'termDuration') }
+        get termduration() { return this.termDuration }
+        set termduration(value) { this.termDuration = value }
+
+            termsPerYear($this, value) { return $this.__helperValidateAttribute($this, value, 'termsPerYear') }
+        get termsperyear() { return this.termsPerYear }
+        set termsperyear(value) { this.termsPerYear = value }
+
+            timeOfDay($this, value) { return $this.__helperValidateAttribute($this, value, 'timeOfDay') }
+        get timeofday() { return this.timeOfDay }
+        set timeofday(value) { this.timeOfDay = value }
+
+            timeToComplete($this, value) { return $this.__helperValidateAttribute($this, value, 'timeToComplete') }
+        get timetocomplete() { return this.timeToComplete }
+        set timetocomplete(value) { this.timeToComplete = value }
+
+            trainingSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'trainingSalary') }
+        get trainingsalary() { return this.trainingSalary }
+        set trainingsalary(value) { this.trainingSalary = value }
+
+            typicalCreditsPerTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'typicalCreditsPerTerm') }
+        get typicalcreditsperterm() { return this.typicalCreditsPerTerm }
+        set typicalcreditsperterm(value) { this.typicalCreditsPerTerm = value }
+        
+    }
+</script>

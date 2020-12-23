@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalguideline extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalGuideline'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any recommendation made by a standard society (e.g. ACC\/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.'
+        static _rdfs_label = 'MedicalGuideline'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalGuideline')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            evidenceLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'evidenceLevel') }
+        get evidencelevel() { return this.evidenceLevel }
+        set evidencelevel(value) { this.evidenceLevel = value }
+
+            evidenceOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'evidenceOrigin') }
+        get evidenceorigin() { return this.evidenceOrigin }
+        set evidenceorigin(value) { this.evidenceOrigin = value }
+
+            guidelineDate($this, value) { return $this.__helperValidateAttribute($this, value, 'guidelineDate') }
+        get guidelinedate() { return this.guidelineDate }
+        set guidelinedate(value) { this.guidelineDate = value }
+
+            guidelineSubject($this, value) { return $this.__helperValidateAttribute($this, value, 'guidelineSubject') }
+        get guidelinesubject() { return this.guidelineSubject }
+        set guidelinesubject(value) { this.guidelineSubject = value }
+        
+    }
+</script>

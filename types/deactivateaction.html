@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Deactivateaction extends window.Cloudouble.Element.elements.Controlaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DeactivateAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).'
+        static _rdfs_label = 'DeactivateAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DeactivateAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

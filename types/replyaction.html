@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Replyaction extends window.Cloudouble.Element.elements.Communicateaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ReplyAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of responding to a question\/message asked\/sent by the object. Related to [[AskAction]]\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.'
+        static _rdfs_label = 'ReplyAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('resultComment')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ReplyAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            resultComment($this, value) { return $this.__helperValidateAttribute($this, value, 'resultComment') }
+        get resultcomment() { return this.resultComment }
+        set resultcomment(value) { this.resultComment = value }
+        
+    }
+</script>

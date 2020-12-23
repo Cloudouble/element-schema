@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Drivewheelconfigurationvalue extends window.Cloudouble.Element.elements.Qualitativevalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DriveWheelConfigurationValue'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A value indicating which roadwheels will receive torque.'
+        static _rdfs_label = 'DriveWheelConfigurationValue'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DriveWheelConfigurationValue')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

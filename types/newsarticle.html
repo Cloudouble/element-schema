@@ -1,0 +1,57 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Newsarticle extends window.Cloudouble.Element.elements.Article {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:NewsArticle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.
+
+A more detailed overview of [schema.org News markup](\/docs\/news.html) is also available.
+'
+        static _rdfs_label = 'NewsArticle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('dateline', 'printColumn', 'printEdition', 'printPage', 'printSection')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('NewsArticle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            dateline($this, value) { return $this.__helperValidateAttribute($this, value, 'dateline') }
+
+            printColumn($this, value) { return $this.__helperValidateAttribute($this, value, 'printColumn') }
+        get printcolumn() { return this.printColumn }
+        set printcolumn(value) { this.printColumn = value }
+
+            printEdition($this, value) { return $this.__helperValidateAttribute($this, value, 'printEdition') }
+        get printedition() { return this.printEdition }
+        set printedition(value) { this.printEdition = value }
+
+            printPage($this, value) { return $this.__helperValidateAttribute($this, value, 'printPage') }
+        get printpage() { return this.printPage }
+        set printpage(value) { this.printPage = value }
+
+            printSection($this, value) { return $this.__helperValidateAttribute($this, value, 'printSection') }
+        get printsection() { return this.printSection }
+        set printsection(value) { this.printSection = value }
+        
+    }
+</script>

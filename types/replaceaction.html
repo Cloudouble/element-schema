@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Replaceaction extends window.Cloudouble.Element.elements.Updateaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ReplaceAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of editing a recipient by replacing an old object with a new object.'
+        static _rdfs_label = 'ReplaceAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('replacee', 'replacer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ReplaceAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            replacee($this, value) { return $this.__helperValidateAttribute($this, value, 'replacee') }
+
+            replacer($this, value) { return $this.__helperValidateAttribute($this, value, 'replacer') }
+        
+    }
+</script>

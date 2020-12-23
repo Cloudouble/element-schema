@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Definedtermset extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DefinedTermSet'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.'
+        static _rdfs_label = 'DefinedTermSet'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hasDefinedTerm')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DefinedTermSet')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hasDefinedTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDefinedTerm') }
+        get hasdefinedterm() { return this.hasDefinedTerm }
+        set hasdefinedterm(value) { this.hasDefinedTerm = value }
+        
+    }
+</script>

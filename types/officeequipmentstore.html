@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Officeequipmentstore extends window.Cloudouble.Element.elements.Store {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OfficeEquipmentStore'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An office equipment store.'
+        static _rdfs_label = 'OfficeEquipmentStore'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OfficeEquipmentStore')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Howtosupply extends window.Cloudouble.Element.elements.Howtoitem {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HowToSupply'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A supply consumed when performing the instructions for how to achieve a result.'
+        static _rdfs_label = 'HowToSupply'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('estimatedCost')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HowToSupply')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            estimatedCost($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatedCost') }
+        get estimatedcost() { return this.estimatedCost }
+        set estimatedcost(value) { this.estimatedCost = value }
+        
+    }
+</script>

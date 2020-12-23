@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Review extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Review'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A review of an item - for example, of a restaurant, movie, or store.'
+        static _rdfs_label = 'Review'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('itemReviewed', 'reviewAspect', 'reviewBody', 'reviewRating')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Review')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            itemReviewed($this, value) { return $this.__helperValidateAttribute($this, value, 'itemReviewed') }
+        get itemreviewed() { return this.itemReviewed }
+        set itemreviewed(value) { this.itemReviewed = value }
+
+            reviewAspect($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewAspect') }
+        get reviewaspect() { return this.reviewAspect }
+        set reviewaspect(value) { this.reviewAspect = value }
+
+            reviewBody($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewBody') }
+        get reviewbody() { return this.reviewBody }
+        set reviewbody(value) { this.reviewBody = value }
+
+            reviewRating($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewRating') }
+        get reviewrating() { return this.reviewRating }
+        set reviewrating(value) { this.reviewRating = value }
+        
+    }
+</script>

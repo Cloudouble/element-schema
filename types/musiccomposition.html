@@ -1,0 +1,70 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Musiccomposition extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MusicComposition'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A musical composition.'
+        static _rdfs_label = 'MusicComposition'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MusicComposition')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            composer($this, value) { return $this.__helperValidateAttribute($this, value, 'composer') }
+
+            firstPerformance($this, value) { return $this.__helperValidateAttribute($this, value, 'firstPerformance') }
+        get firstperformance() { return this.firstPerformance }
+        set firstperformance(value) { this.firstPerformance = value }
+
+            includedComposition($this, value) { return $this.__helperValidateAttribute($this, value, 'includedComposition') }
+        get includedcomposition() { return this.includedComposition }
+        set includedcomposition(value) { this.includedComposition = value }
+
+            iswcCode($this, value) { return $this.__helperValidateAttribute($this, value, 'iswcCode') }
+        get iswccode() { return this.iswcCode }
+        set iswccode(value) { this.iswcCode = value }
+
+            lyricist($this, value) { return $this.__helperValidateAttribute($this, value, 'lyricist') }
+
+            lyrics($this, value) { return $this.__helperValidateAttribute($this, value, 'lyrics') }
+
+            musicArrangement($this, value) { return $this.__helperValidateAttribute($this, value, 'musicArrangement') }
+        get musicarrangement() { return this.musicArrangement }
+        set musicarrangement(value) { this.musicArrangement = value }
+
+            musicCompositionForm($this, value) { return $this.__helperValidateAttribute($this, value, 'musicCompositionForm') }
+        get musiccompositionform() { return this.musicCompositionForm }
+        set musiccompositionform(value) { this.musicCompositionForm = value }
+
+            musicalKey($this, value) { return $this.__helperValidateAttribute($this, value, 'musicalKey') }
+        get musicalkey() { return this.musicalKey }
+        set musicalkey(value) { this.musicalKey = value }
+
+            recordedAs($this, value) { return $this.__helperValidateAttribute($this, value, 'recordedAs') }
+        get recordedas() { return this.recordedAs }
+        set recordedas(value) { this.recordedAs = value }
+        
+    }
+</script>

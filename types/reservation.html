@@ -1,0 +1,84 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Reservation extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Reservation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].'
+        static _rdfs_label = 'Reservation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Reservation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            bookingAgent($this, value) { return $this.__helperValidateAttribute($this, value, 'bookingAgent') }
+        get bookingagent() { return this.bookingAgent }
+        set bookingagent(value) { this.bookingAgent = value }
+
+            bookingTime($this, value) { return $this.__helperValidateAttribute($this, value, 'bookingTime') }
+        get bookingtime() { return this.bookingTime }
+        set bookingtime(value) { this.bookingTime = value }
+
+            broker($this, value) { return $this.__helperValidateAttribute($this, value, 'broker') }
+
+            modifiedTime($this, value) { return $this.__helperValidateAttribute($this, value, 'modifiedTime') }
+        get modifiedtime() { return this.modifiedTime }
+        set modifiedtime(value) { this.modifiedTime = value }
+
+            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        get pricecurrency() { return this.priceCurrency }
+        set pricecurrency(value) { this.priceCurrency = value }
+
+            programMembershipUsed($this, value) { return $this.__helperValidateAttribute($this, value, 'programMembershipUsed') }
+        get programmembershipused() { return this.programMembershipUsed }
+        set programmembershipused(value) { this.programMembershipUsed = value }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            reservationFor($this, value) { return $this.__helperValidateAttribute($this, value, 'reservationFor') }
+        get reservationfor() { return this.reservationFor }
+        set reservationfor(value) { this.reservationFor = value }
+
+            reservationId($this, value) { return $this.__helperValidateAttribute($this, value, 'reservationId') }
+        get reservationid() { return this.reservationId }
+        set reservationid(value) { this.reservationId = value }
+
+            reservationStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'reservationStatus') }
+        get reservationstatus() { return this.reservationStatus }
+        set reservationstatus(value) { this.reservationStatus = value }
+
+            reservedTicket($this, value) { return $this.__helperValidateAttribute($this, value, 'reservedTicket') }
+        get reservedticket() { return this.reservedTicket }
+        set reservedticket(value) { this.reservedTicket = value }
+
+            totalPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'totalPrice') }
+        get totalprice() { return this.totalPrice }
+        set totalprice(value) { this.totalPrice = value }
+
+            underName($this, value) { return $this.__helperValidateAttribute($this, value, 'underName') }
+        get undername() { return this.underName }
+        set undername(value) { this.underName = value }
+        
+    }
+</script>

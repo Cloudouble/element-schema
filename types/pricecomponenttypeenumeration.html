@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Pricecomponenttypeenumeration extends window.Cloudouble.Element.elements.Enumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PriceComponentTypeEnumeration'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Enumerates different price components that together make up the total price for an offered product.'
+        static _rdfs_label = 'PriceComponentTypeEnumeration'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PriceComponentTypeEnumeration')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

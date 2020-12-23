@@ -1,0 +1,18 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Schemarender extends window.Cloudouble.Element.elements.Base {
+        
+        static Schema(element, model, asAttribute=undefined) {
+            return element
+        }
+
+    }
+</script>

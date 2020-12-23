@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Seabodyofwater extends window.Cloudouble.Element.elements.Bodyofwater {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SeaBodyOfWater'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A sea (for example, the Caspian sea).'
+        static _rdfs_label = 'SeaBodyOfWater'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SeaBodyOfWater')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Liveblogposting extends window.Cloudouble.Element.elements.Blogposting {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LiveBlogPosting'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.'
+        static _rdfs_label = 'LiveBlogPosting'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('coverageEndTime', 'coverageStartTime', 'liveBlogUpdate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LiveBlogPosting')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            coverageEndTime($this, value) { return $this.__helperValidateAttribute($this, value, 'coverageEndTime') }
+        get coverageendtime() { return this.coverageEndTime }
+        set coverageendtime(value) { this.coverageEndTime = value }
+
+            coverageStartTime($this, value) { return $this.__helperValidateAttribute($this, value, 'coverageStartTime') }
+        get coveragestarttime() { return this.coverageStartTime }
+        set coveragestarttime(value) { this.coverageStartTime = value }
+
+            liveBlogUpdate($this, value) { return $this.__helperValidateAttribute($this, value, 'liveBlogUpdate') }
+        get liveblogupdate() { return this.liveBlogUpdate }
+        set liveblogupdate(value) { this.liveBlogUpdate = value }
+        
+    }
+</script>

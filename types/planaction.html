@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Planaction extends window.Cloudouble.Element.elements.Organizeaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PlanAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of planning the execution of an event\/task\/action\/reservation\/plan to a future date.'
+        static _rdfs_label = 'PlanAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('scheduledTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PlanAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            scheduledTime($this, value) { return $this.__helperValidateAttribute($this, value, 'scheduledTime') }
+        get scheduledtime() { return this.scheduledTime }
+        set scheduledtime(value) { this.scheduledTime = value }
+        
+    }
+</script>

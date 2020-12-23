@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Patient extends window.Cloudouble.Element.elements.Person {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Patient'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A patient is any person recipient of health care services.'
+        static _rdfs_label = 'Patient'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('diagnosis', 'drug', 'healthCondition')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Patient')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            diagnosis($this, value) { return $this.__helperValidateAttribute($this, value, 'diagnosis') }
+
+            drug($this, value) { return $this.__helperValidateAttribute($this, value, 'drug') }
+
+            healthCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'healthCondition') }
+        get healthcondition() { return this.healthCondition }
+        set healthcondition(value) { this.healthCondition = value }
+        
+    }
+</script>

@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Unitpricespecification extends window.Cloudouble.Element.elements.Pricespecification {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:UnitPriceSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The price asked for a given offer by the respective organization or person.'
+        static _rdfs_label = 'UnitPriceSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('UnitPriceSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            billingDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'billingDuration') }
+        get billingduration() { return this.billingDuration }
+        set billingduration(value) { this.billingDuration = value }
+
+            billingIncrement($this, value) { return $this.__helperValidateAttribute($this, value, 'billingIncrement') }
+        get billingincrement() { return this.billingIncrement }
+        set billingincrement(value) { this.billingIncrement = value }
+
+            billingStart($this, value) { return $this.__helperValidateAttribute($this, value, 'billingStart') }
+        get billingstart() { return this.billingStart }
+        set billingstart(value) { this.billingStart = value }
+
+            priceComponentType($this, value) { return $this.__helperValidateAttribute($this, value, 'priceComponentType') }
+        get pricecomponenttype() { return this.priceComponentType }
+        set pricecomponenttype(value) { this.priceComponentType = value }
+
+            priceType($this, value) { return $this.__helperValidateAttribute($this, value, 'priceType') }
+        get pricetype() { return this.priceType }
+        set pricetype(value) { this.priceType = value }
+
+            referenceQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'referenceQuantity') }
+        get referencequantity() { return this.referenceQuantity }
+        set referencequantity(value) { this.referenceQuantity = value }
+
+            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        get unitcode() { return this.unitCode }
+        set unitcode(value) { this.unitCode = value }
+
+            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        get unittext() { return this.unitText }
+        set unittext(value) { this.unitText = value }
+        
+    }
+</script>

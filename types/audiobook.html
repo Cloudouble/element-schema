@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Audiobook extends window.Cloudouble.Element.elements.Audioobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Audiobook'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An audiobook.'
+        static _rdfs_label = 'Audiobook'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('duration', 'readBy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Audiobook')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            readBy($this, value) { return $this.__helperValidateAttribute($this, value, 'readBy') }
+        get readby() { return this.readBy }
+        set readby(value) { this.readBy = value }
+        
+    }
+</script>

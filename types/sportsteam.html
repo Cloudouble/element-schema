@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sportsteam extends window.Cloudouble.Element.elements.Sportsorganization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SportsTeam'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Organization: Sports team.'
+        static _rdfs_label = 'SportsTeam'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('athlete', 'coach', 'gender')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SportsTeam')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            athlete($this, value) { return $this.__helperValidateAttribute($this, value, 'athlete') }
+
+            coach($this, value) { return $this.__helperValidateAttribute($this, value, 'coach') }
+
+            gender($this, value) { return $this.__helperValidateAttribute($this, value, 'gender') }
+        
+    }
+</script>

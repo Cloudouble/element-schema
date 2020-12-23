@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Loanorcredit extends window.Cloudouble.Element.elements.Financialproduct {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LoanOrCredit'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.'
+        static _rdfs_label = 'LoanOrCredit'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LoanOrCredit')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+
+            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+
+            gracePeriod($this, value) { return $this.__helperValidateAttribute($this, value, 'gracePeriod') }
+        get graceperiod() { return this.gracePeriod }
+        set graceperiod(value) { this.gracePeriod = value }
+
+            loanRepaymentForm($this, value) { return $this.__helperValidateAttribute($this, value, 'loanRepaymentForm') }
+        get loanrepaymentform() { return this.loanRepaymentForm }
+        set loanrepaymentform(value) { this.loanRepaymentForm = value }
+
+            loanTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'loanTerm') }
+        get loanterm() { return this.loanTerm }
+        set loanterm(value) { this.loanTerm = value }
+
+            loanType($this, value) { return $this.__helperValidateAttribute($this, value, 'loanType') }
+        get loantype() { return this.loanType }
+        set loantype(value) { this.loanType = value }
+
+            recourseLoan($this, value) { return $this.__helperValidateAttribute($this, value, 'recourseLoan') }
+        get recourseloan() { return this.recourseLoan }
+        set recourseloan(value) { this.recourseLoan = value }
+
+            renegotiableLoan($this, value) { return $this.__helperValidateAttribute($this, value, 'renegotiableLoan') }
+        get renegotiableloan() { return this.renegotiableLoan }
+        set renegotiableloan(value) { this.renegotiableLoan = value }
+
+            requiredCollateral($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredCollateral') }
+        get requiredcollateral() { return this.requiredCollateral }
+        set requiredcollateral(value) { this.requiredCollateral = value }
+        
+    }
+</script>

@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Merchantreturnpolicy extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MerchantReturnPolicy'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].'
+        static _rdfs_label = 'MerchantReturnPolicy'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MerchantReturnPolicy')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            inStoreReturnsOffered($this, value) { return $this.__helperValidateAttribute($this, value, 'inStoreReturnsOffered') }
+        get instorereturnsoffered() { return this.inStoreReturnsOffered }
+        set instorereturnsoffered(value) { this.inStoreReturnsOffered = value }
+
+            merchantReturnDays($this, value) { return $this.__helperValidateAttribute($this, value, 'merchantReturnDays') }
+        get merchantreturndays() { return this.merchantReturnDays }
+        set merchantreturndays(value) { this.merchantReturnDays = value }
+
+            merchantReturnLink($this, value) { return $this.__helperValidateAttribute($this, value, 'merchantReturnLink') }
+        get merchantreturnlink() { return this.merchantReturnLink }
+        set merchantreturnlink(value) { this.merchantReturnLink = value }
+
+            refundType($this, value) { return $this.__helperValidateAttribute($this, value, 'refundType') }
+        get refundtype() { return this.refundType }
+        set refundtype(value) { this.refundType = value }
+
+            returnFees($this, value) { return $this.__helperValidateAttribute($this, value, 'returnFees') }
+        get returnfees() { return this.returnFees }
+        set returnfees(value) { this.returnFees = value }
+
+            returnPolicyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'returnPolicyCategory') }
+        get returnpolicycategory() { return this.returnPolicyCategory }
+        set returnpolicycategory(value) { this.returnPolicyCategory = value }
+        
+    }
+</script>

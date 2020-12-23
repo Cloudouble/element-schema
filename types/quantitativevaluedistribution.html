@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Quantitativevaluedistribution extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:QuantitativeValueDistribution'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A statistical distribution of values.'
+        static _rdfs_label = 'QuantitativeValueDistribution'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('QuantitativeValueDistribution')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            median($this, value) { return $this.__helperValidateAttribute($this, value, 'median') }
+
+            percentile10($this, value) { return $this.__helperValidateAttribute($this, value, 'percentile10') }
+
+            percentile25($this, value) { return $this.__helperValidateAttribute($this, value, 'percentile25') }
+
+            percentile75($this, value) { return $this.__helperValidateAttribute($this, value, 'percentile75') }
+
+            percentile90($this, value) { return $this.__helperValidateAttribute($this, value, 'percentile90') }
+        
+    }
+</script>

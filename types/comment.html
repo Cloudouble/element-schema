@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Comment extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Comment'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A comment on an item - for example, a comment on a blog post. The comment\'s content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.'
+        static _rdfs_label = 'Comment'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('downvoteCount', 'parentItem', 'upvoteCount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Comment')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            downvoteCount($this, value) { return $this.__helperValidateAttribute($this, value, 'downvoteCount') }
+        get downvotecount() { return this.downvoteCount }
+        set downvotecount(value) { this.downvoteCount = value }
+
+            parentItem($this, value) { return $this.__helperValidateAttribute($this, value, 'parentItem') }
+        get parentitem() { return this.parentItem }
+        set parentitem(value) { this.parentItem = value }
+
+            upvoteCount($this, value) { return $this.__helperValidateAttribute($this, value, 'upvoteCount') }
+        get upvotecount() { return this.upvoteCount }
+        set upvotecount(value) { this.upvoteCount = value }
+        
+    }
+</script>

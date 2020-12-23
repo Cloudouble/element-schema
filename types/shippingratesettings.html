@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Shippingratesettings extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ShippingRateSettings'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified\/referenced) by their different values for [[shippingLabel]].'
+        static _rdfs_label = 'ShippingRateSettings'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ShippingRateSettings')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            doesNotShip($this, value) { return $this.__helperValidateAttribute($this, value, 'doesNotShip') }
+        get doesnotship() { return this.doesNotShip }
+        set doesnotship(value) { this.doesNotShip = value }
+
+            freeShippingThreshold($this, value) { return $this.__helperValidateAttribute($this, value, 'freeShippingThreshold') }
+        get freeshippingthreshold() { return this.freeShippingThreshold }
+        set freeshippingthreshold(value) { this.freeShippingThreshold = value }
+
+            isUnlabelledFallback($this, value) { return $this.__helperValidateAttribute($this, value, 'isUnlabelledFallback') }
+        get isunlabelledfallback() { return this.isUnlabelledFallback }
+        set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
+
+            shippingDestination($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDestination') }
+        get shippingdestination() { return this.shippingDestination }
+        set shippingdestination(value) { this.shippingDestination = value }
+
+            shippingLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingLabel') }
+        get shippinglabel() { return this.shippingLabel }
+        set shippinglabel(value) { this.shippingLabel = value }
+
+            shippingRate($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingRate') }
+        get shippingrate() { return this.shippingRate }
+        set shippingrate(value) { this.shippingRate = value }
+        
+    }
+</script>

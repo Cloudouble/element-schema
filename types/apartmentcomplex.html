@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Apartmentcomplex extends window.Cloudouble.Element.elements.Residence {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ApartmentComplex'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Residence type: Apartment complex.'
+        static _rdfs_label = 'ApartmentComplex'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBedrooms', 'petsAllowed', 'tourBookingPage')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ApartmentComplex')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            numberOfAccommodationUnits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAccommodationUnits') }
+        get numberofaccommodationunits() { return this.numberOfAccommodationUnits }
+        set numberofaccommodationunits(value) { this.numberOfAccommodationUnits = value }
+
+            numberOfAvailableAccommodationUnits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAvailableAccommodationUnits') }
+        get numberofavailableaccommodationunits() { return this.numberOfAvailableAccommodationUnits }
+        set numberofavailableaccommodationunits(value) { this.numberOfAvailableAccommodationUnits = value }
+
+            numberOfBedrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBedrooms') }
+        get numberofbedrooms() { return this.numberOfBedrooms }
+        set numberofbedrooms(value) { this.numberOfBedrooms = value }
+
+            petsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'petsAllowed') }
+        get petsallowed() { return this.petsAllowed }
+        set petsallowed(value) { this.petsAllowed = value }
+
+            tourBookingPage($this, value) { return $this.__helperValidateAttribute($this, value, 'tourBookingPage') }
+        get tourbookingpage() { return this.tourBookingPage }
+        set tourbookingpage(value) { this.tourBookingPage = value }
+        
+    }
+</script>

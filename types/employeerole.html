@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Employeerole extends window.Cloudouble.Element.elements.Organizationrole {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EmployeeRole'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A subclass of OrganizationRole used to describe employee relationships.'
+        static _rdfs_label = 'EmployeeRole'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('baseSalary', 'salaryCurrency')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EmployeeRole')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            baseSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'baseSalary') }
+        get basesalary() { return this.baseSalary }
+        set basesalary(value) { this.baseSalary = value }
+
+            salaryCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'salaryCurrency') }
+        get salarycurrency() { return this.salaryCurrency }
+        set salarycurrency(value) { this.salaryCurrency = value }
+        
+    }
+</script>

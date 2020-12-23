@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Duration extends window.Cloudouble.Element.elements.Quantity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Duration'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Quantity: Duration (use [ISO 8601 duration format](http:\/\/en.wikipedia.org\/wiki\/ISO_8601)).'
+        static _rdfs_label = 'Duration'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Duration')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

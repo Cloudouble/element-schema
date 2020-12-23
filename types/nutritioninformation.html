@@ -1,0 +1,82 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Nutritioninformation extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:NutritionInformation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Nutritional information about the recipe.'
+        static _rdfs_label = 'NutritionInformation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('NutritionInformation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            calories($this, value) { return $this.__helperValidateAttribute($this, value, 'calories') }
+
+            carbohydrateContent($this, value) { return $this.__helperValidateAttribute($this, value, 'carbohydrateContent') }
+        get carbohydratecontent() { return this.carbohydrateContent }
+        set carbohydratecontent(value) { this.carbohydrateContent = value }
+
+            cholesterolContent($this, value) { return $this.__helperValidateAttribute($this, value, 'cholesterolContent') }
+        get cholesterolcontent() { return this.cholesterolContent }
+        set cholesterolcontent(value) { this.cholesterolContent = value }
+
+            fatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'fatContent') }
+        get fatcontent() { return this.fatContent }
+        set fatcontent(value) { this.fatContent = value }
+
+            fiberContent($this, value) { return $this.__helperValidateAttribute($this, value, 'fiberContent') }
+        get fibercontent() { return this.fiberContent }
+        set fibercontent(value) { this.fiberContent = value }
+
+            proteinContent($this, value) { return $this.__helperValidateAttribute($this, value, 'proteinContent') }
+        get proteincontent() { return this.proteinContent }
+        set proteincontent(value) { this.proteinContent = value }
+
+            saturatedFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'saturatedFatContent') }
+        get saturatedfatcontent() { return this.saturatedFatContent }
+        set saturatedfatcontent(value) { this.saturatedFatContent = value }
+
+            servingSize($this, value) { return $this.__helperValidateAttribute($this, value, 'servingSize') }
+        get servingsize() { return this.servingSize }
+        set servingsize(value) { this.servingSize = value }
+
+            sodiumContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sodiumContent') }
+        get sodiumcontent() { return this.sodiumContent }
+        set sodiumcontent(value) { this.sodiumContent = value }
+
+            sugarContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sugarContent') }
+        get sugarcontent() { return this.sugarContent }
+        set sugarcontent(value) { this.sugarContent = value }
+
+            transFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'transFatContent') }
+        get transfatcontent() { return this.transFatContent }
+        set transfatcontent(value) { this.transFatContent = value }
+
+            unsaturatedFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'unsaturatedFatContent') }
+        get unsaturatedfatcontent() { return this.unsaturatedFatContent }
+        set unsaturatedfatcontent(value) { this.unsaturatedFatContent = value }
+        
+    }
+</script>

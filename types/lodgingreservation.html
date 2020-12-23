@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Lodgingreservation extends window.Cloudouble.Element.elements.Reservation {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LodgingReservation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.'
+        static _rdfs_label = 'LodgingReservation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('checkinTime', 'checkoutTime', 'lodgingUnitDescription', 'lodgingUnitType', 'numAdults', 'numChildren')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LodgingReservation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            checkinTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkinTime') }
+        get checkintime() { return this.checkinTime }
+        set checkintime(value) { this.checkinTime = value }
+
+            checkoutTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkoutTime') }
+        get checkouttime() { return this.checkoutTime }
+        set checkouttime(value) { this.checkoutTime = value }
+
+            lodgingUnitDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'lodgingUnitDescription') }
+        get lodgingunitdescription() { return this.lodgingUnitDescription }
+        set lodgingunitdescription(value) { this.lodgingUnitDescription = value }
+
+            lodgingUnitType($this, value) { return $this.__helperValidateAttribute($this, value, 'lodgingUnitType') }
+        get lodgingunittype() { return this.lodgingUnitType }
+        set lodgingunittype(value) { this.lodgingUnitType = value }
+
+            numAdults($this, value) { return $this.__helperValidateAttribute($this, value, 'numAdults') }
+        get numadults() { return this.numAdults }
+        set numadults(value) { this.numAdults = value }
+
+            numChildren($this, value) { return $this.__helperValidateAttribute($this, value, 'numChildren') }
+        get numchildren() { return this.numChildren }
+        set numchildren(value) { this.numChildren = value }
+        
+    }
+</script>

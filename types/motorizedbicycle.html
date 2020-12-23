@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Motorizedbicycle extends window.Cloudouble.Element.elements.Vehicle {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MotorizedBicycle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.'
+        static _rdfs_label = 'MotorizedBicycle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MotorizedBicycle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

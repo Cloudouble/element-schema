@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Muscle extends window.Cloudouble.Element.elements.Anatomicalstructure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Muscle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.'
+        static _rdfs_label = 'Muscle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Muscle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            antagonist($this, value) { return $this.__helperValidateAttribute($this, value, 'antagonist') }
+
+            bloodSupply($this, value) { return $this.__helperValidateAttribute($this, value, 'bloodSupply') }
+        get bloodsupply() { return this.bloodSupply }
+        set bloodsupply(value) { this.bloodSupply = value }
+
+            insertion($this, value) { return $this.__helperValidateAttribute($this, value, 'insertion') }
+
+            muscleAction($this, value) { return $this.__helperValidateAttribute($this, value, 'muscleAction') }
+        get muscleaction() { return this.muscleAction }
+        set muscleaction(value) { this.muscleAction = value }
+
+            nerve($this, value) { return $this.__helperValidateAttribute($this, value, 'nerve') }
+        
+    }
+</script>

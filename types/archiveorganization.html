@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Archiveorganization extends window.Cloudouble.Element.elements.Localbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ArchiveOrganization'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.'
+        static _rdfs_label = 'ArchiveOrganization'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('archiveHeld')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ArchiveOrganization')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            archiveHeld($this, value) { return $this.__helperValidateAttribute($this, value, 'archiveHeld') }
+        get archiveheld() { return this.archiveHeld }
+        set archiveheld(value) { this.archiveHeld = value }
+        
+    }
+</script>

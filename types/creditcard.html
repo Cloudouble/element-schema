@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Creditcard extends window.Cloudouble.Element.elements.Paymentcard {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CreditCard'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A card payment method of a particular brand or name.  Used to mark up a particular payment method and\/or the financial product\/service that supplies the card account.\n\nCommonly used values:\n\n* http:\/\/purl.org\/goodrelations\/v1#AmericanExpress\n* http:\/\/purl.org\/goodrelations\/v1#DinersClub\n* http:\/\/purl.org\/goodrelations\/v1#Discover\n* http:\/\/purl.org\/goodrelations\/v1#JCB\n* http:\/\/purl.org\/goodrelations\/v1#MasterCard\n* http:\/\/purl.org\/goodrelations\/v1#VISA
+       '
+        static _rdfs_label = 'CreditCard'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CreditCard')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

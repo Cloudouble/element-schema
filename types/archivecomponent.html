@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Archivecomponent extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ArchiveComponent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.'
+        static _rdfs_label = 'ArchiveComponent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('holdingArchive', 'itemLocation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ArchiveComponent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            holdingArchive($this, value) { return $this.__helperValidateAttribute($this, value, 'holdingArchive') }
+        get holdingarchive() { return this.holdingArchive }
+        set holdingarchive(value) { this.holdingArchive = value }
+
+            itemLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'itemLocation') }
+        get itemlocation() { return this.itemLocation }
+        set itemlocation(value) { this.itemLocation = value }
+        
+    }
+</script>

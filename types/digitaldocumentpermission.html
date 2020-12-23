@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Digitaldocumentpermission extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DigitalDocumentPermission'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A permission for a particular person or group to access a particular file.'
+        static _rdfs_label = 'DigitalDocumentPermission'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('grantee', 'permissionType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DigitalDocumentPermission')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            grantee($this, value) { return $this.__helperValidateAttribute($this, value, 'grantee') }
+
+            permissionType($this, value) { return $this.__helperValidateAttribute($this, value, 'permissionType') }
+        get permissiontype() { return this.permissionType }
+        set permissiontype(value) { this.permissionType = value }
+        
+    }
+</script>

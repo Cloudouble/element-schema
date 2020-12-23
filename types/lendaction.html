@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Lendaction extends window.Cloudouble.Element.elements.Transferaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LendAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.\n\nRelated actions:\n\n* [[BorrowAction]]: Reciprocal of LendAction.'
+        static _rdfs_label = 'LendAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('borrower')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LendAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            borrower($this, value) { return $this.__helperValidateAttribute($this, value, 'borrower') }
+        
+    }
+</script>

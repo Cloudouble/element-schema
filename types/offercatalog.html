@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Offercatalog extends window.Cloudouble.Element.elements.Itemlist {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OfferCatalog'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An OfferCatalog is an ItemList that contains related Offers and\/or further OfferCatalogs that are offeredBy the same provider.'
+        static _rdfs_label = 'OfferCatalog'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OfferCatalog')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

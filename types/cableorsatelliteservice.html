@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Cableorsatelliteservice extends window.Cloudouble.Element.elements.Service {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CableOrSatelliteService'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A service which provides access to media programming like TV or radio. Access may be via cable or satellite.'
+        static _rdfs_label = 'CableOrSatelliteService'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CableOrSatelliteService')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Theatergroup extends window.Cloudouble.Element.elements.Performinggroup {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TheaterGroup'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.'
+        static _rdfs_label = 'TheaterGroup'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TheaterGroup')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalconditionstage extends window.Cloudouble.Element.elements.Medicalintangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalConditionStage'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A stage of a medical condition, such as \'Stage IIIa\'.'
+        static _rdfs_label = 'MedicalConditionStage'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('stageAsNumber', 'subStageSuffix')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalConditionStage')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            stageAsNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'stageAsNumber') }
+        get stageasnumber() { return this.stageAsNumber }
+        set stageasnumber(value) { this.stageAsNumber = value }
+
+            subStageSuffix($this, value) { return $this.__helperValidateAttribute($this, value, 'subStageSuffix') }
+        get substagesuffix() { return this.subStageSuffix }
+        set substagesuffix(value) { this.subStageSuffix = value }
+        
+    }
+</script>

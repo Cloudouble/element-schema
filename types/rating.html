@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Rating extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Rating'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+        static _rdfs_label = 'Rating'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('author', 'bestRating', 'ratingExplanation', 'ratingValue', 'reviewAspect', 'worstRating')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Rating')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            author($this, value) { return $this.__helperValidateAttribute($this, value, 'author') }
+
+            bestRating($this, value) { return $this.__helperValidateAttribute($this, value, 'bestRating') }
+        get bestrating() { return this.bestRating }
+        set bestrating(value) { this.bestRating = value }
+
+            ratingExplanation($this, value) { return $this.__helperValidateAttribute($this, value, 'ratingExplanation') }
+        get ratingexplanation() { return this.ratingExplanation }
+        set ratingexplanation(value) { this.ratingExplanation = value }
+
+            ratingValue($this, value) { return $this.__helperValidateAttribute($this, value, 'ratingValue') }
+        get ratingvalue() { return this.ratingValue }
+        set ratingvalue(value) { this.ratingValue = value }
+
+            reviewAspect($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewAspect') }
+        get reviewaspect() { return this.reviewAspect }
+        set reviewaspect(value) { this.reviewAspect = value }
+
+            worstRating($this, value) { return $this.__helperValidateAttribute($this, value, 'worstRating') }
+        get worstrating() { return this.worstRating }
+        set worstrating(value) { this.worstRating = value }
+        
+    }
+</script>

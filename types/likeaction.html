@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Likeaction extends window.Cloudouble.Element.elements.Reactaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LikeAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.'
+        static _rdfs_label = 'LikeAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LikeAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

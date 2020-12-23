@@ -1,0 +1,70 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Webpage extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WebPage'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb<\/code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.'
+        static _rdfs_label = 'WebPage'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WebPage')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            breadcrumb($this, value) { return $this.__helperValidateAttribute($this, value, 'breadcrumb') }
+
+            lastReviewed($this, value) { return $this.__helperValidateAttribute($this, value, 'lastReviewed') }
+        get lastreviewed() { return this.lastReviewed }
+        set lastreviewed(value) { this.lastReviewed = value }
+
+            mainContentOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'mainContentOfPage') }
+        get maincontentofpage() { return this.mainContentOfPage }
+        set maincontentofpage(value) { this.mainContentOfPage = value }
+
+            primaryImageOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'primaryImageOfPage') }
+        get primaryimageofpage() { return this.primaryImageOfPage }
+        set primaryimageofpage(value) { this.primaryImageOfPage = value }
+
+            relatedLink($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedLink') }
+        get relatedlink() { return this.relatedLink }
+        set relatedlink(value) { this.relatedLink = value }
+
+            reviewedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewedBy') }
+        get reviewedby() { return this.reviewedBy }
+        set reviewedby(value) { this.reviewedBy = value }
+
+            significantLink($this, value) { return $this.__helperValidateAttribute($this, value, 'significantLink') }
+        get significantlink() { return this.significantLink }
+        set significantlink(value) { this.significantLink = value }
+
+            significantLinks($this, value) { return $this.__helperValidateAttribute($this, value, 'significantLinks') }
+        get significantlinks() { return this.significantLinks }
+        set significantlinks(value) { this.significantLinks = value }
+
+            speakable($this, value) { return $this.__helperValidateAttribute($this, value, 'speakable') }
+
+            specialty($this, value) { return $this.__helperValidateAttribute($this, value, 'specialty') }
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Lymphaticvessel extends window.Cloudouble.Element.elements.Vessel {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LymphaticVessel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.'
+        static _rdfs_label = 'LymphaticVessel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('originatesFrom', 'regionDrained', 'runsTo')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LymphaticVessel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            originatesFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'originatesFrom') }
+        get originatesfrom() { return this.originatesFrom }
+        set originatesfrom(value) { this.originatesFrom = value }
+
+            regionDrained($this, value) { return $this.__helperValidateAttribute($this, value, 'regionDrained') }
+        get regiondrained() { return this.regionDrained }
+        set regiondrained(value) { this.regionDrained = value }
+
+            runsTo($this, value) { return $this.__helperValidateAttribute($this, value, 'runsTo') }
+        get runsto() { return this.runsTo }
+        set runsto(value) { this.runsTo = value }
+        
+    }
+</script>

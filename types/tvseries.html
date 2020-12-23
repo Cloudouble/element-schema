@@ -1,0 +1,78 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Tvseries extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TVSeries'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'CreativeWorkSeries dedicated to TV broadcast and associated online delivery.'
+        static _rdfs_label = 'TVSeries'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'containsSeason', 'countryOfOrigin', 'director', 'directors', 'episode', 'episodes', 'musicBy', 'numberOfEpisodes', 'numberOfSeasons', 'productionCompany', 'season', 'seasons', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TVSeries')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            containsSeason($this, value) { return $this.__helperValidateAttribute($this, value, 'containsSeason') }
+        get containsseason() { return this.containsSeason }
+        set containsseason(value) { this.containsSeason = value }
+
+            countryOfOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'countryOfOrigin') }
+        get countryoforigin() { return this.countryOfOrigin }
+        set countryoforigin(value) { this.countryOfOrigin = value }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            episode($this, value) { return $this.__helperValidateAttribute($this, value, 'episode') }
+
+            episodes($this, value) { return $this.__helperValidateAttribute($this, value, 'episodes') }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            numberOfEpisodes($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfEpisodes') }
+        get numberofepisodes() { return this.numberOfEpisodes }
+        set numberofepisodes(value) { this.numberOfEpisodes = value }
+
+            numberOfSeasons($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfSeasons') }
+        get numberofseasons() { return this.numberOfSeasons }
+        set numberofseasons(value) { this.numberOfSeasons = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            season($this, value) { return $this.__helperValidateAttribute($this, value, 'season') }
+
+            seasons($this, value) { return $this.__helperValidateAttribute($this, value, 'seasons') }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

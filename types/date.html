@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Date extends window.Cloudouble.Element.elements.Datatype {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Date'
+        static __type = 'schema:DataType'
+        static _rdfs_comment = 'A date value in [ISO 8601 date format](http:\/\/en.wikipedia.org\/wiki\/ISO_8601).'
+        static _rdfs_label = 'Date'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Date')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

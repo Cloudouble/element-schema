@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalprocedure extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalProcedure'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.'
+        static _rdfs_label = 'MedicalProcedure'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalProcedure')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            bodyLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'bodyLocation') }
+        get bodylocation() { return this.bodyLocation }
+        set bodylocation(value) { this.bodyLocation = value }
+
+            followup($this, value) { return $this.__helperValidateAttribute($this, value, 'followup') }
+
+            howPerformed($this, value) { return $this.__helperValidateAttribute($this, value, 'howPerformed') }
+        get howperformed() { return this.howPerformed }
+        set howperformed(value) { this.howPerformed = value }
+
+            preparation($this, value) { return $this.__helperValidateAttribute($this, value, 'preparation') }
+
+            procedureType($this, value) { return $this.__helperValidateAttribute($this, value, 'procedureType') }
+        get proceduretype() { return this.procedureType }
+        set proceduretype(value) { this.procedureType = value }
+
+            status($this, value) { return $this.__helperValidateAttribute($this, value, 'status') }
+        
+    }
+</script>

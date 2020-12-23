@@ -1,0 +1,78 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Newsmediaorganization extends window.Cloudouble.Element.elements.Organization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:NewsMediaOrganization'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A News\/Media organization such as a newspaper or TV station.'
+        static _rdfs_label = 'NewsMediaOrganization'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionableFeedbackPolicy', 'correctionsPolicy', 'diversityPolicy', 'diversityStaffingReport', 'ethicsPolicy', 'masthead', 'missionCoveragePrioritiesPolicy', 'noBylinesPolicy', 'ownershipFundingInfo', 'unnamedSourcesPolicy', 'verificationFactCheckingPolicy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('NewsMediaOrganization')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionableFeedbackPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'actionableFeedbackPolicy') }
+        get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
+        set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
+
+            correctionsPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'correctionsPolicy') }
+        get correctionspolicy() { return this.correctionsPolicy }
+        set correctionspolicy(value) { this.correctionsPolicy = value }
+
+            diversityPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'diversityPolicy') }
+        get diversitypolicy() { return this.diversityPolicy }
+        set diversitypolicy(value) { this.diversityPolicy = value }
+
+            diversityStaffingReport($this, value) { return $this.__helperValidateAttribute($this, value, 'diversityStaffingReport') }
+        get diversitystaffingreport() { return this.diversityStaffingReport }
+        set diversitystaffingreport(value) { this.diversityStaffingReport = value }
+
+            ethicsPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'ethicsPolicy') }
+        get ethicspolicy() { return this.ethicsPolicy }
+        set ethicspolicy(value) { this.ethicsPolicy = value }
+
+            masthead($this, value) { return $this.__helperValidateAttribute($this, value, 'masthead') }
+
+            missionCoveragePrioritiesPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'missionCoveragePrioritiesPolicy') }
+        get missioncoverageprioritiespolicy() { return this.missionCoveragePrioritiesPolicy }
+        set missioncoverageprioritiespolicy(value) { this.missionCoveragePrioritiesPolicy = value }
+
+            noBylinesPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'noBylinesPolicy') }
+        get nobylinespolicy() { return this.noBylinesPolicy }
+        set nobylinespolicy(value) { this.noBylinesPolicy = value }
+
+            ownershipFundingInfo($this, value) { return $this.__helperValidateAttribute($this, value, 'ownershipFundingInfo') }
+        get ownershipfundinginfo() { return this.ownershipFundingInfo }
+        set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
+
+            unnamedSourcesPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'unnamedSourcesPolicy') }
+        get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
+        set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
+
+            verificationFactCheckingPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'verificationFactCheckingPolicy') }
+        get verificationfactcheckingpolicy() { return this.verificationFactCheckingPolicy }
+        set verificationfactcheckingpolicy(value) { this.verificationFactCheckingPolicy = value }
+        
+    }
+</script>

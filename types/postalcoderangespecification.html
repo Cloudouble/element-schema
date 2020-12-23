@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Postalcoderangespecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PostalCodeRangeSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Indicates a range of postalcodes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.'
+        static _rdfs_label = 'PostalCodeRangeSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('postalCodeBegin', 'postalCodeEnd')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PostalCodeRangeSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            postalCodeBegin($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeBegin') }
+        get postalcodebegin() { return this.postalCodeBegin }
+        set postalcodebegin(value) { this.postalCodeBegin = value }
+
+            postalCodeEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeEnd') }
+        get postalcodeend() { return this.postalCodeEnd }
+        set postalcodeend(value) { this.postalCodeEnd = value }
+        
+    }
+</script>

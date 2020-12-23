@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Reservationpackage extends window.Cloudouble.Element.elements.Reservation {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ReservationPackage'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A group of multiple reservations with common values for all sub-reservations.'
+        static _rdfs_label = 'ReservationPackage'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('subReservation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ReservationPackage')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            subReservation($this, value) { return $this.__helperValidateAttribute($this, value, 'subReservation') }
+        get subreservation() { return this.subReservation }
+        set subreservation(value) { this.subReservation = value }
+        
+    }
+</script>

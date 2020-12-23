@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Collection extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Collection'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A collection of items e.g. creative works or products.'
+        static _rdfs_label = 'Collection'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('collectionSize')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Collection')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            collectionSize($this, value) { return $this.__helperValidateAttribute($this, value, 'collectionSize') }
+        get collectionsize() { return this.collectionSize }
+        set collectionsize(value) { this.collectionSize = value }
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Menuitem extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MenuItem'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A food or drink item listed in a menu or menu section.'
+        static _rdfs_label = 'MenuItem'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('menuAddOn', 'nutrition', 'offers', 'suitableForDiet')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MenuItem')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            menuAddOn($this, value) { return $this.__helperValidateAttribute($this, value, 'menuAddOn') }
+        get menuaddon() { return this.menuAddOn }
+        set menuaddon(value) { this.menuAddOn = value }
+
+            nutrition($this, value) { return $this.__helperValidateAttribute($this, value, 'nutrition') }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            suitableForDiet($this, value) { return $this.__helperValidateAttribute($this, value, 'suitableForDiet') }
+        get suitablefordiet() { return this.suitableForDiet }
+        set suitablefordiet(value) { this.suitableForDiet = value }
+        
+    }
+</script>

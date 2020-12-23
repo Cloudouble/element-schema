@@ -1,0 +1,90 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Flight extends window.Cloudouble.Element.elements.Trip {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Flight'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An airline flight.'
+        static _rdfs_label = 'Flight'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Flight')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            aircraft($this, value) { return $this.__helperValidateAttribute($this, value, 'aircraft') }
+
+            arrivalAirport($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalAirport') }
+        get arrivalairport() { return this.arrivalAirport }
+        set arrivalairport(value) { this.arrivalAirport = value }
+
+            arrivalGate($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalGate') }
+        get arrivalgate() { return this.arrivalGate }
+        set arrivalgate(value) { this.arrivalGate = value }
+
+            arrivalTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalTerminal') }
+        get arrivalterminal() { return this.arrivalTerminal }
+        set arrivalterminal(value) { this.arrivalTerminal = value }
+
+            boardingPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'boardingPolicy') }
+        get boardingpolicy() { return this.boardingPolicy }
+        set boardingpolicy(value) { this.boardingPolicy = value }
+
+            carrier($this, value) { return $this.__helperValidateAttribute($this, value, 'carrier') }
+
+            departureAirport($this, value) { return $this.__helperValidateAttribute($this, value, 'departureAirport') }
+        get departureairport() { return this.departureAirport }
+        set departureairport(value) { this.departureAirport = value }
+
+            departureGate($this, value) { return $this.__helperValidateAttribute($this, value, 'departureGate') }
+        get departuregate() { return this.departureGate }
+        set departuregate(value) { this.departureGate = value }
+
+            departureTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'departureTerminal') }
+        get departureterminal() { return this.departureTerminal }
+        set departureterminal(value) { this.departureTerminal = value }
+
+            estimatedFlightDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatedFlightDuration') }
+        get estimatedflightduration() { return this.estimatedFlightDuration }
+        set estimatedflightduration(value) { this.estimatedFlightDuration = value }
+
+            flightDistance($this, value) { return $this.__helperValidateAttribute($this, value, 'flightDistance') }
+        get flightdistance() { return this.flightDistance }
+        set flightdistance(value) { this.flightDistance = value }
+
+            flightNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'flightNumber') }
+        get flightnumber() { return this.flightNumber }
+        set flightnumber(value) { this.flightNumber = value }
+
+            mealService($this, value) { return $this.__helperValidateAttribute($this, value, 'mealService') }
+        get mealservice() { return this.mealService }
+        set mealservice(value) { this.mealService = value }
+
+            seller($this, value) { return $this.__helperValidateAttribute($this, value, 'seller') }
+
+            webCheckinTime($this, value) { return $this.__helperValidateAttribute($this, value, 'webCheckinTime') }
+        get webcheckintime() { return this.webCheckinTime }
+        set webcheckintime(value) { this.webCheckinTime = value }
+        
+    }
+</script>

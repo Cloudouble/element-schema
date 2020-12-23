@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Question extends window.Cloudouble.Element.elements.Comment {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Question'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.'
+        static _rdfs_label = 'Question'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acceptedAnswer', 'answerCount', 'eduQuestionType', 'suggestedAnswer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Question')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acceptedAnswer($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptedAnswer') }
+        get acceptedanswer() { return this.acceptedAnswer }
+        set acceptedanswer(value) { this.acceptedAnswer = value }
+
+            answerCount($this, value) { return $this.__helperValidateAttribute($this, value, 'answerCount') }
+        get answercount() { return this.answerCount }
+        set answercount(value) { this.answerCount = value }
+
+            eduQuestionType($this, value) { return $this.__helperValidateAttribute($this, value, 'eduQuestionType') }
+        get eduquestiontype() { return this.eduQuestionType }
+        set eduquestiontype(value) { this.eduQuestionType = value }
+
+            suggestedAnswer($this, value) { return $this.__helperValidateAttribute($this, value, 'suggestedAnswer') }
+        get suggestedanswer() { return this.suggestedAnswer }
+        set suggestedanswer(value) { this.suggestedAnswer = value }
+        
+    }
+</script>

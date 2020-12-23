@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Podcastseries extends window.Cloudouble.Element.elements.Creativeworkseries {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PodcastSeries'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A podcast is an episodic series of digital audio or video files which a user can download and listen to.'
+        static _rdfs_label = 'PodcastSeries'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('webFeed')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PodcastSeries')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            webFeed($this, value) { return $this.__helperValidateAttribute($this, value, 'webFeed') }
+        get webfeed() { return this.webFeed }
+        set webfeed(value) { this.webFeed = value }
+        
+    }
+</script>

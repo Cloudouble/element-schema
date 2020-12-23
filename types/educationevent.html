@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Educationevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EducationEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Event type: Education event.'
+        static _rdfs_label = 'EducationEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('assesses', 'educationalLevel', 'teaches')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EducationEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            assesses($this, value) { return $this.__helperValidateAttribute($this, value, 'assesses') }
+
+            educationalLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalLevel') }
+        get educationallevel() { return this.educationalLevel }
+        set educationallevel(value) { this.educationalLevel = value }
+
+            teaches($this, value) { return $this.__helperValidateAttribute($this, value, 'teaches') }
+        
+    }
+</script>

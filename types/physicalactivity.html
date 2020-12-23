@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Physicalactivity extends window.Cloudouble.Element.elements.Lifestylemodification {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PhysicalActivity'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.'
+        static _rdfs_label = 'PhysicalActivity'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('associatedAnatomy', 'category', 'epidemiology', 'pathophysiology')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PhysicalActivity')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            associatedAnatomy($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedAnatomy') }
+        get associatedanatomy() { return this.associatedAnatomy }
+        set associatedanatomy(value) { this.associatedAnatomy = value }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            epidemiology($this, value) { return $this.__helperValidateAttribute($this, value, 'epidemiology') }
+
+            pathophysiology($this, value) { return $this.__helperValidateAttribute($this, value, 'pathophysiology') }
+        
+    }
+</script>

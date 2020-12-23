@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Chooseaction extends window.Cloudouble.Element.elements.Assessaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ChooseAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of expressing a preference from a set of options or a large or unbounded set of choices\/options.'
+        static _rdfs_label = 'ChooseAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actionOption', 'option')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ChooseAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actionOption($this, value) { return $this.__helperValidateAttribute($this, value, 'actionOption') }
+        get actionoption() { return this.actionOption }
+        set actionoption(value) { this.actionOption = value }
+
+            option($this, value) { return $this.__helperValidateAttribute($this, value, 'option') }
+        
+    }
+</script>

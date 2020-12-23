@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Diagnosticprocedure extends window.Cloudouble.Element.elements.Medicalprocedure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DiagnosticProcedure'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.'
+        static _rdfs_label = 'DiagnosticProcedure'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DiagnosticProcedure')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

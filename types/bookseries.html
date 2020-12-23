@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Bookseries extends window.Cloudouble.Element.elements.Creativeworkseries {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BookSeries'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A series of books. Included books can be indicated with the hasPart property.'
+        static _rdfs_label = 'BookSeries'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BookSeries')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

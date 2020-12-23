@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Individualproduct extends window.Cloudouble.Element.elements.Product {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:IndividualProduct'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A single, identifiable product instance (e.g. a laptop with a particular serial number).'
+        static _rdfs_label = 'IndividualProduct'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('serialNumber')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('IndividualProduct')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            serialNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'serialNumber') }
+        get serialnumber() { return this.serialNumber }
+        set serialnumber(value) { this.serialNumber = value }
+        
+    }
+</script>

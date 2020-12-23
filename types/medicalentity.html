@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalentity extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalEntity'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The most generic type of entity related to health and the practice of medicine.'
+        static _rdfs_label = 'MedicalEntity'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalEntity')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            code($this, value) { return $this.__helperValidateAttribute($this, value, 'code') }
+
+            guideline($this, value) { return $this.__helperValidateAttribute($this, value, 'guideline') }
+
+            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        get legalstatus() { return this.legalStatus }
+        set legalstatus(value) { this.legalStatus = value }
+
+            medicineSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'medicineSystem') }
+        get medicinesystem() { return this.medicineSystem }
+        set medicinesystem(value) { this.medicineSystem = value }
+
+            recognizingAuthority($this, value) { return $this.__helperValidateAttribute($this, value, 'recognizingAuthority') }
+        get recognizingauthority() { return this.recognizingAuthority }
+        set recognizingauthority(value) { this.recognizingAuthority = value }
+
+            relevantSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'relevantSpecialty') }
+        get relevantspecialty() { return this.relevantSpecialty }
+        set relevantspecialty(value) { this.relevantSpecialty = value }
+
+            study($this, value) { return $this.__helperValidateAttribute($this, value, 'study') }
+        
+    }
+</script>

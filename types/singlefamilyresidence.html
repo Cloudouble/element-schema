@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Singlefamilyresidence extends window.Cloudouble.Element.elements.House {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SingleFamilyResidence'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Residence type: Single-family home.'
+        static _rdfs_label = 'SingleFamilyResidence'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('numberOfRooms', 'occupancy')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SingleFamilyResidence')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        get numberofrooms() { return this.numberOfRooms }
+        set numberofrooms(value) { this.numberOfRooms = value }
+
+            occupancy($this, value) { return $this.__helperValidateAttribute($this, value, 'occupancy') }
+        
+    }
+</script>

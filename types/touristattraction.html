@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Touristattraction extends window.Cloudouble.Element.elements.Place {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TouristAttraction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)'
+        static _rdfs_label = 'TouristAttraction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availableLanguage', 'touristType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TouristAttraction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availableLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'availableLanguage') }
+        get availablelanguage() { return this.availableLanguage }
+        set availablelanguage(value) { this.availableLanguage = value }
+
+            touristType($this, value) { return $this.__helperValidateAttribute($this, value, 'touristType') }
+        get touristtype() { return this.touristType }
+        set touristtype(value) { this.touristType = value }
+        
+    }
+</script>

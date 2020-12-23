@@ -1,0 +1,45 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Touristdestination extends window.Cloudouble.Element.elements.Place {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TouristDestination'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A tourist destination. In principle any [[Place]] can be a [[TouristDestination]] from a [[City]], [[Region]] or [[Country]] to an [[AmusementPark]] or [[Hotel]]. This Type can be used on its own to describe a general [[TouristDestination]], or be used as an [[additionalType]] to add tourist relevant properties to any other [[Place]].  A [[TouristDestination]] is defined as a [[Place]] that contains, or is colocated with, one or more [[TouristAttraction]]s, often linked by a similar theme or interest to a particular [[touristType]]. The [UNWTO](http:\/\/www2.unwto.org\/) defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.
+  (See examples below).'
+        static _rdfs_label = 'TouristDestination'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('includesAttraction', 'touristType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TouristDestination')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            includesAttraction($this, value) { return $this.__helperValidateAttribute($this, value, 'includesAttraction') }
+        get includesattraction() { return this.includesAttraction }
+        set includesattraction(value) { this.includesAttraction = value }
+
+            touristType($this, value) { return $this.__helperValidateAttribute($this, value, 'touristType') }
+        get touristtype() { return this.touristType }
+        set touristtype(value) { this.touristType = value }
+        
+    }
+</script>

@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Vein extends window.Cloudouble.Element.elements.Vessel {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Vein'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A type of blood vessel that specifically carries blood to the heart.'
+        static _rdfs_label = 'Vein'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('drainsTo', 'regionDrained', 'tributary')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Vein')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            drainsTo($this, value) { return $this.__helperValidateAttribute($this, value, 'drainsTo') }
+        get drainsto() { return this.drainsTo }
+        set drainsto(value) { this.drainsTo = value }
+
+            regionDrained($this, value) { return $this.__helperValidateAttribute($this, value, 'regionDrained') }
+        get regiondrained() { return this.regionDrained }
+        set regiondrained(value) { this.regionDrained = value }
+
+            tributary($this, value) { return $this.__helperValidateAttribute($this, value, 'tributary') }
+        
+    }
+</script>

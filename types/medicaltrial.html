@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaltrial extends window.Cloudouble.Element.elements.Medicalstudy {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalTrial'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical trial is a type of medical study that uses scientific process used to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and\/or control groups.'
+        static _rdfs_label = 'MedicalTrial'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('trialDesign')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalTrial')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            trialDesign($this, value) { return $this.__helperValidateAttribute($this, value, 'trialDesign') }
+        get trialdesign() { return this.trialDesign }
+        set trialdesign(value) { this.trialDesign = value }
+        
+    }
+</script>

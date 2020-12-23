@@ -1,0 +1,72 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Recipe extends window.Cloudouble.Element.elements.Howto {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Recipe'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.'
+        static _rdfs_label = 'Recipe'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Recipe')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            cookTime($this, value) { return $this.__helperValidateAttribute($this, value, 'cookTime') }
+        get cooktime() { return this.cookTime }
+        set cooktime(value) { this.cookTime = value }
+
+            cookingMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'cookingMethod') }
+        get cookingmethod() { return this.cookingMethod }
+        set cookingmethod(value) { this.cookingMethod = value }
+
+            ingredients($this, value) { return $this.__helperValidateAttribute($this, value, 'ingredients') }
+
+            nutrition($this, value) { return $this.__helperValidateAttribute($this, value, 'nutrition') }
+
+            recipeCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeCategory') }
+        get recipecategory() { return this.recipeCategory }
+        set recipecategory(value) { this.recipeCategory = value }
+
+            recipeCuisine($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeCuisine') }
+        get recipecuisine() { return this.recipeCuisine }
+        set recipecuisine(value) { this.recipeCuisine = value }
+
+            recipeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeIngredient') }
+        get recipeingredient() { return this.recipeIngredient }
+        set recipeingredient(value) { this.recipeIngredient = value }
+
+            recipeInstructions($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeInstructions') }
+        get recipeinstructions() { return this.recipeInstructions }
+        set recipeinstructions(value) { this.recipeInstructions = value }
+
+            recipeYield($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeYield') }
+        get recipeyield() { return this.recipeYield }
+        set recipeyield(value) { this.recipeYield = value }
+
+            suitableForDiet($this, value) { return $this.__helperValidateAttribute($this, value, 'suitableForDiet') }
+        get suitablefordiet() { return this.suitableForDiet }
+        set suitablefordiet(value) { this.suitableForDiet = value }
+        
+    }
+</script>

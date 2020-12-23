@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Rsvpaction extends window.Cloudouble.Element.elements.Informaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RsvpAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of notifying an event organizer as to whether you expect to attend the event.'
+        static _rdfs_label = 'RsvpAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalNumberOfGuests', 'comment', 'rsvpResponse')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RsvpAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalNumberOfGuests($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalNumberOfGuests') }
+        get additionalnumberofguests() { return this.additionalNumberOfGuests }
+        set additionalnumberofguests(value) { this.additionalNumberOfGuests = value }
+
+            comment($this, value) { return $this.__helperValidateAttribute($this, value, 'comment') }
+
+            rsvpResponse($this, value) { return $this.__helperValidateAttribute($this, value, 'rsvpResponse') }
+        get rsvpresponse() { return this.rsvpResponse }
+        set rsvpresponse(value) { this.rsvpResponse = value }
+        
+    }
+</script>

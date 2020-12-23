@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Website extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WebSite'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.'
+        static _rdfs_label = 'WebSite'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('issn')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WebSite')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            issn($this, value) { return $this.__helperValidateAttribute($this, value, 'issn') }
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Performaction extends window.Cloudouble.Element.elements.Playaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PerformAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of participating in performance arts.'
+        static _rdfs_label = 'PerformAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('entertainmentBusiness')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PerformAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            entertainmentBusiness($this, value) { return $this.__helperValidateAttribute($this, value, 'entertainmentBusiness') }
+        get entertainmentbusiness() { return this.entertainmentBusiness }
+        set entertainmentbusiness(value) { this.entertainmentBusiness = value }
+        
+    }
+</script>

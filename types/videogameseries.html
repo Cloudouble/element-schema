@@ -1,0 +1,104 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Videogameseries extends window.Cloudouble.Element.elements.Creativeworkseries {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VideoGameSeries'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A video game series.'
+        static _rdfs_label = 'VideoGameSeries'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VideoGameSeries')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            characterAttribute($this, value) { return $this.__helperValidateAttribute($this, value, 'characterAttribute') }
+        get characterattribute() { return this.characterAttribute }
+        set characterattribute(value) { this.characterAttribute = value }
+
+            cheatCode($this, value) { return $this.__helperValidateAttribute($this, value, 'cheatCode') }
+        get cheatcode() { return this.cheatCode }
+        set cheatcode(value) { this.cheatCode = value }
+
+            containsSeason($this, value) { return $this.__helperValidateAttribute($this, value, 'containsSeason') }
+        get containsseason() { return this.containsSeason }
+        set containsseason(value) { this.containsSeason = value }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            episode($this, value) { return $this.__helperValidateAttribute($this, value, 'episode') }
+
+            episodes($this, value) { return $this.__helperValidateAttribute($this, value, 'episodes') }
+
+            gameItem($this, value) { return $this.__helperValidateAttribute($this, value, 'gameItem') }
+        get gameitem() { return this.gameItem }
+        set gameitem(value) { this.gameItem = value }
+
+            gameLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'gameLocation') }
+        get gamelocation() { return this.gameLocation }
+        set gamelocation(value) { this.gameLocation = value }
+
+            gamePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'gamePlatform') }
+        get gameplatform() { return this.gamePlatform }
+        set gameplatform(value) { this.gamePlatform = value }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            numberOfEpisodes($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfEpisodes') }
+        get numberofepisodes() { return this.numberOfEpisodes }
+        set numberofepisodes(value) { this.numberOfEpisodes = value }
+
+            numberOfPlayers($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPlayers') }
+        get numberofplayers() { return this.numberOfPlayers }
+        set numberofplayers(value) { this.numberOfPlayers = value }
+
+            numberOfSeasons($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfSeasons') }
+        get numberofseasons() { return this.numberOfSeasons }
+        set numberofseasons(value) { this.numberOfSeasons = value }
+
+            playMode($this, value) { return $this.__helperValidateAttribute($this, value, 'playMode') }
+        get playmode() { return this.playMode }
+        set playmode(value) { this.playMode = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            quest($this, value) { return $this.__helperValidateAttribute($this, value, 'quest') }
+
+            season($this, value) { return $this.__helperValidateAttribute($this, value, 'season') }
+
+            seasons($this, value) { return $this.__helperValidateAttribute($this, value, 'seasons') }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

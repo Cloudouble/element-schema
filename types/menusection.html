@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Menusection extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MenuSection'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A sub-grouping of food or drink items in a menu. E.g. courses (such as \'Dinner\', \'Breakfast\', etc.), specific type of dishes (such as \'Meat\', \'Vegan\', \'Drinks\', etc.), or some other classification made by the menu provider.'
+        static _rdfs_label = 'MenuSection'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hasMenuItem', 'hasMenuSection')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MenuSection')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hasMenuItem($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuItem') }
+        get hasmenuitem() { return this.hasMenuItem }
+        set hasmenuitem(value) { this.hasMenuItem = value }
+
+            hasMenuSection($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuSection') }
+        get hasmenusection() { return this.hasMenuSection }
+        set hasmenusection(value) { this.hasMenuSection = value }
+        
+    }
+</script>

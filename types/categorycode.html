@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Categorycode extends window.Cloudouble.Element.elements.Definedterm {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CategoryCode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A Category Code.'
+        static _rdfs_label = 'CategoryCode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('codeValue', 'inCodeSet')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CategoryCode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            codeValue($this, value) { return $this.__helperValidateAttribute($this, value, 'codeValue') }
+        get codevalue() { return this.codeValue }
+        set codevalue(value) { this.codeValue = value }
+
+            inCodeSet($this, value) { return $this.__helperValidateAttribute($this, value, 'inCodeSet') }
+        get incodeset() { return this.inCodeSet }
+        set incodeset(value) { this.inCodeSet = value }
+        
+    }
+</script>

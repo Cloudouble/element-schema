@@ -1,0 +1,152 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Drug extends window.Cloudouble.Element.elements.Substance {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Drug'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them.'
+        static _rdfs_label = 'Drug'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Drug')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        get activeingredient() { return this.activeIngredient }
+        set activeingredient(value) { this.activeIngredient = value }
+
+            administrationRoute($this, value) { return $this.__helperValidateAttribute($this, value, 'administrationRoute') }
+        get administrationroute() { return this.administrationRoute }
+        set administrationroute(value) { this.administrationRoute = value }
+
+            alcoholWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'alcoholWarning') }
+        get alcoholwarning() { return this.alcoholWarning }
+        set alcoholwarning(value) { this.alcoholWarning = value }
+
+            availableStrength($this, value) { return $this.__helperValidateAttribute($this, value, 'availableStrength') }
+        get availablestrength() { return this.availableStrength }
+        set availablestrength(value) { this.availableStrength = value }
+
+            breastfeedingWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'breastfeedingWarning') }
+        get breastfeedingwarning() { return this.breastfeedingWarning }
+        set breastfeedingwarning(value) { this.breastfeedingWarning = value }
+
+            clincalPharmacology($this, value) { return $this.__helperValidateAttribute($this, value, 'clincalPharmacology') }
+        get clincalpharmacology() { return this.clincalPharmacology }
+        set clincalpharmacology(value) { this.clincalPharmacology = value }
+
+            clinicalPharmacology($this, value) { return $this.__helperValidateAttribute($this, value, 'clinicalPharmacology') }
+        get clinicalpharmacology() { return this.clinicalPharmacology }
+        set clinicalpharmacology(value) { this.clinicalPharmacology = value }
+
+            dosageForm($this, value) { return $this.__helperValidateAttribute($this, value, 'dosageForm') }
+        get dosageform() { return this.dosageForm }
+        set dosageform(value) { this.dosageForm = value }
+
+            doseSchedule($this, value) { return $this.__helperValidateAttribute($this, value, 'doseSchedule') }
+        get doseschedule() { return this.doseSchedule }
+        set doseschedule(value) { this.doseSchedule = value }
+
+            drugClass($this, value) { return $this.__helperValidateAttribute($this, value, 'drugClass') }
+        get drugclass() { return this.drugClass }
+        set drugclass(value) { this.drugClass = value }
+
+            drugUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'drugUnit') }
+        get drugunit() { return this.drugUnit }
+        set drugunit(value) { this.drugUnit = value }
+
+            foodWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'foodWarning') }
+        get foodwarning() { return this.foodWarning }
+        set foodwarning(value) { this.foodWarning = value }
+
+            includedInHealthInsurancePlan($this, value) { return $this.__helperValidateAttribute($this, value, 'includedInHealthInsurancePlan') }
+        get includedinhealthinsuranceplan() { return this.includedInHealthInsurancePlan }
+        set includedinhealthinsuranceplan(value) { this.includedInHealthInsurancePlan = value }
+
+            interactingDrug($this, value) { return $this.__helperValidateAttribute($this, value, 'interactingDrug') }
+        get interactingdrug() { return this.interactingDrug }
+        set interactingdrug(value) { this.interactingDrug = value }
+
+            isAvailableGenerically($this, value) { return $this.__helperValidateAttribute($this, value, 'isAvailableGenerically') }
+        get isavailablegenerically() { return this.isAvailableGenerically }
+        set isavailablegenerically(value) { this.isAvailableGenerically = value }
+
+            isProprietary($this, value) { return $this.__helperValidateAttribute($this, value, 'isProprietary') }
+        get isproprietary() { return this.isProprietary }
+        set isproprietary(value) { this.isProprietary = value }
+
+            labelDetails($this, value) { return $this.__helperValidateAttribute($this, value, 'labelDetails') }
+        get labeldetails() { return this.labelDetails }
+        set labeldetails(value) { this.labelDetails = value }
+
+            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        get legalstatus() { return this.legalStatus }
+        set legalstatus(value) { this.legalStatus = value }
+
+            manufacturer($this, value) { return $this.__helperValidateAttribute($this, value, 'manufacturer') }
+
+            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        get maximumintake() { return this.maximumIntake }
+        set maximumintake(value) { this.maximumIntake = value }
+
+            mechanismOfAction($this, value) { return $this.__helperValidateAttribute($this, value, 'mechanismOfAction') }
+        get mechanismofaction() { return this.mechanismOfAction }
+        set mechanismofaction(value) { this.mechanismOfAction = value }
+
+            nonProprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'nonProprietaryName') }
+        get nonproprietaryname() { return this.nonProprietaryName }
+        set nonproprietaryname(value) { this.nonProprietaryName = value }
+
+            overdosage($this, value) { return $this.__helperValidateAttribute($this, value, 'overdosage') }
+
+            pregnancyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'pregnancyCategory') }
+        get pregnancycategory() { return this.pregnancyCategory }
+        set pregnancycategory(value) { this.pregnancyCategory = value }
+
+            pregnancyWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'pregnancyWarning') }
+        get pregnancywarning() { return this.pregnancyWarning }
+        set pregnancywarning(value) { this.pregnancyWarning = value }
+
+            prescribingInfo($this, value) { return $this.__helperValidateAttribute($this, value, 'prescribingInfo') }
+        get prescribinginfo() { return this.prescribingInfo }
+        set prescribinginfo(value) { this.prescribingInfo = value }
+
+            prescriptionStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'prescriptionStatus') }
+        get prescriptionstatus() { return this.prescriptionStatus }
+        set prescriptionstatus(value) { this.prescriptionStatus = value }
+
+            proprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'proprietaryName') }
+        get proprietaryname() { return this.proprietaryName }
+        set proprietaryname(value) { this.proprietaryName = value }
+
+            relatedDrug($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedDrug') }
+        get relateddrug() { return this.relatedDrug }
+        set relateddrug(value) { this.relatedDrug = value }
+
+            rxcui($this, value) { return $this.__helperValidateAttribute($this, value, 'rxcui') }
+
+            warning($this, value) { return $this.__helperValidateAttribute($this, value, 'warning') }
+        
+    }
+</script>

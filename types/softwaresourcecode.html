@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Softwaresourcecode extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SoftwareSourceCode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.'
+        static _rdfs_label = 'SoftwareSourceCode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SoftwareSourceCode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            codeRepository($this, value) { return $this.__helperValidateAttribute($this, value, 'codeRepository') }
+        get coderepository() { return this.codeRepository }
+        set coderepository(value) { this.codeRepository = value }
+
+            codeSampleType($this, value) { return $this.__helperValidateAttribute($this, value, 'codeSampleType') }
+        get codesampletype() { return this.codeSampleType }
+        set codesampletype(value) { this.codeSampleType = value }
+
+            programmingLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'programmingLanguage') }
+        get programminglanguage() { return this.programmingLanguage }
+        set programminglanguage(value) { this.programmingLanguage = value }
+
+            runtime($this, value) { return $this.__helperValidateAttribute($this, value, 'runtime') }
+
+            runtimePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'runtimePlatform') }
+        get runtimeplatform() { return this.runtimePlatform }
+        set runtimeplatform(value) { this.runtimePlatform = value }
+
+            sampleType($this, value) { return $this.__helperValidateAttribute($this, value, 'sampleType') }
+        get sampletype() { return this.sampleType }
+        set sampletype(value) { this.sampleType = value }
+
+            targetProduct($this, value) { return $this.__helperValidateAttribute($this, value, 'targetProduct') }
+        get targetproduct() { return this.targetProduct }
+        set targetproduct(value) { this.targetProduct = value }
+        
+    }
+</script>

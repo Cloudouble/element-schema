@@ -1,0 +1,72 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Contactpoint extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ContactPoint'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A contact point&#x2014;for example, a Customer Complaints department.'
+        static _rdfs_label = 'ContactPoint'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ContactPoint')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            availableLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'availableLanguage') }
+        get availablelanguage() { return this.availableLanguage }
+        set availablelanguage(value) { this.availableLanguage = value }
+
+            contactOption($this, value) { return $this.__helperValidateAttribute($this, value, 'contactOption') }
+        get contactoption() { return this.contactOption }
+        set contactoption(value) { this.contactOption = value }
+
+            contactType($this, value) { return $this.__helperValidateAttribute($this, value, 'contactType') }
+        get contacttype() { return this.contactType }
+        set contacttype(value) { this.contactType = value }
+
+            email($this, value) { return $this.__helperValidateAttribute($this, value, 'email') }
+
+            faxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'faxNumber') }
+        get faxnumber() { return this.faxNumber }
+        set faxnumber(value) { this.faxNumber = value }
+
+            hoursAvailable($this, value) { return $this.__helperValidateAttribute($this, value, 'hoursAvailable') }
+        get hoursavailable() { return this.hoursAvailable }
+        set hoursavailable(value) { this.hoursAvailable = value }
+
+            productSupported($this, value) { return $this.__helperValidateAttribute($this, value, 'productSupported') }
+        get productsupported() { return this.productSupported }
+        set productsupported(value) { this.productSupported = value }
+
+            serviceArea($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceArea') }
+        get servicearea() { return this.serviceArea }
+        set servicearea(value) { this.serviceArea = value }
+
+            telephone($this, value) { return $this.__helperValidateAttribute($this, value, 'telephone') }
+        
+    }
+</script>

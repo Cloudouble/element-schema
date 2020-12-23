@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Ticket extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Ticket'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Used to describe a ticket to an event, a flight, a bus ride, etc.'
+        static _rdfs_label = 'Ticket'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('dateIssued', 'issuedBy', 'priceCurrency', 'ticketNumber', 'ticketToken', 'ticketedSeat', 'totalPrice', 'underName')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Ticket')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            dateIssued($this, value) { return $this.__helperValidateAttribute($this, value, 'dateIssued') }
+        get dateissued() { return this.dateIssued }
+        set dateissued(value) { this.dateIssued = value }
+
+            issuedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'issuedBy') }
+        get issuedby() { return this.issuedBy }
+        set issuedby(value) { this.issuedBy = value }
+
+            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        get pricecurrency() { return this.priceCurrency }
+        set pricecurrency(value) { this.priceCurrency = value }
+
+            ticketNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'ticketNumber') }
+        get ticketnumber() { return this.ticketNumber }
+        set ticketnumber(value) { this.ticketNumber = value }
+
+            ticketToken($this, value) { return $this.__helperValidateAttribute($this, value, 'ticketToken') }
+        get tickettoken() { return this.ticketToken }
+        set tickettoken(value) { this.ticketToken = value }
+
+            ticketedSeat($this, value) { return $this.__helperValidateAttribute($this, value, 'ticketedSeat') }
+        get ticketedseat() { return this.ticketedSeat }
+        set ticketedseat(value) { this.ticketedSeat = value }
+
+            totalPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'totalPrice') }
+        get totalprice() { return this.totalPrice }
+        set totalprice(value) { this.totalPrice = value }
+
+            underName($this, value) { return $this.__helperValidateAttribute($this, value, 'underName') }
+        get undername() { return this.underName }
+        set undername(value) { this.underName = value }
+        
+    }
+</script>

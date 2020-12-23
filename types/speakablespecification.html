@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Speakablespecification extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SpeakableSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A SpeakableSpecification indicates (typically via [[xpath]] or [[cssSelector]]) sections of a document that are highlighted as particularly [[speakable]]. Instances of this type are expected to be used primarily as values of the [[speakable]] property.'
+        static _rdfs_label = 'SpeakableSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('cssSelector', 'xpath')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SpeakableSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            cssSelector($this, value) { return $this.__helperValidateAttribute($this, value, 'cssSelector') }
+        get cssselector() { return this.cssSelector }
+        set cssselector(value) { this.cssSelector = value }
+
+            xpath($this, value) { return $this.__helperValidateAttribute($this, value, 'xpath') }
+        
+    }
+</script>

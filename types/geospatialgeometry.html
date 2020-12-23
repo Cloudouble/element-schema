@@ -1,0 +1,76 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Geospatialgeometry extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:GeospatialGeometry'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = '(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.'
+        static _rdfs_label = 'GeospatialGeometry'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('GeospatialGeometry')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            geoContains($this, value) { return $this.__helperValidateAttribute($this, value, 'geoContains') }
+        get geocontains() { return this.geoContains }
+        set geocontains(value) { this.geoContains = value }
+
+            geoCoveredBy($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCoveredBy') }
+        get geocoveredby() { return this.geoCoveredBy }
+        set geocoveredby(value) { this.geoCoveredBy = value }
+
+            geoCovers($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCovers') }
+        get geocovers() { return this.geoCovers }
+        set geocovers(value) { this.geoCovers = value }
+
+            geoCrosses($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCrosses') }
+        get geocrosses() { return this.geoCrosses }
+        set geocrosses(value) { this.geoCrosses = value }
+
+            geoDisjoint($this, value) { return $this.__helperValidateAttribute($this, value, 'geoDisjoint') }
+        get geodisjoint() { return this.geoDisjoint }
+        set geodisjoint(value) { this.geoDisjoint = value }
+
+            geoEquals($this, value) { return $this.__helperValidateAttribute($this, value, 'geoEquals') }
+        get geoequals() { return this.geoEquals }
+        set geoequals(value) { this.geoEquals = value }
+
+            geoIntersects($this, value) { return $this.__helperValidateAttribute($this, value, 'geoIntersects') }
+        get geointersects() { return this.geoIntersects }
+        set geointersects(value) { this.geoIntersects = value }
+
+            geoOverlaps($this, value) { return $this.__helperValidateAttribute($this, value, 'geoOverlaps') }
+        get geooverlaps() { return this.geoOverlaps }
+        set geooverlaps(value) { this.geoOverlaps = value }
+
+            geoTouches($this, value) { return $this.__helperValidateAttribute($this, value, 'geoTouches') }
+        get geotouches() { return this.geoTouches }
+        set geotouches(value) { this.geoTouches = value }
+
+            geoWithin($this, value) { return $this.__helperValidateAttribute($this, value, 'geoWithin') }
+        get geowithin() { return this.geoWithin }
+        set geowithin(value) { this.geoWithin = value }
+        
+    }
+</script>

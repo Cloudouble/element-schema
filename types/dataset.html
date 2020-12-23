@@ -1,0 +1,66 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Dataset extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Dataset'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A body of structured information describing some topic(s) of interest.'
+        static _rdfs_label = 'Dataset'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Dataset')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            catalog($this, value) { return $this.__helperValidateAttribute($this, value, 'catalog') }
+
+            datasetTimeInterval($this, value) { return $this.__helperValidateAttribute($this, value, 'datasetTimeInterval') }
+        get datasettimeinterval() { return this.datasetTimeInterval }
+        set datasettimeinterval(value) { this.datasetTimeInterval = value }
+
+            distribution($this, value) { return $this.__helperValidateAttribute($this, value, 'distribution') }
+
+            includedDataCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'includedDataCatalog') }
+        get includeddatacatalog() { return this.includedDataCatalog }
+        set includeddatacatalog(value) { this.includedDataCatalog = value }
+
+            includedInDataCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'includedInDataCatalog') }
+        get includedindatacatalog() { return this.includedInDataCatalog }
+        set includedindatacatalog(value) { this.includedInDataCatalog = value }
+
+            issn($this, value) { return $this.__helperValidateAttribute($this, value, 'issn') }
+
+            measurementTechnique($this, value) { return $this.__helperValidateAttribute($this, value, 'measurementTechnique') }
+        get measurementtechnique() { return this.measurementTechnique }
+        set measurementtechnique(value) { this.measurementTechnique = value }
+
+            variableMeasured($this, value) { return $this.__helperValidateAttribute($this, value, 'variableMeasured') }
+        get variablemeasured() { return this.variableMeasured }
+        set variablemeasured(value) { this.variableMeasured = value }
+
+            variablesMeasured($this, value) { return $this.__helperValidateAttribute($this, value, 'variablesMeasured') }
+        get variablesmeasured() { return this.variablesMeasured }
+        set variablesmeasured(value) { this.variablesMeasured = value }
+        
+    }
+</script>

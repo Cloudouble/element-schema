@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Transferaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TransferAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of transferring\/moving (abstract or concrete) animate or inanimate objects from one place to another.'
+        static _rdfs_label = 'TransferAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('fromLocation', 'toLocation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TransferAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            fromLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'fromLocation') }
+        get fromlocation() { return this.fromLocation }
+        set fromlocation(value) { this.fromLocation = value }
+
+            toLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'toLocation') }
+        get tolocation() { return this.toLocation }
+        set tolocation(value) { this.toLocation = value }
+        
+    }
+</script>

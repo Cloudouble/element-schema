@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Paymentservice extends window.Cloudouble.Element.elements.Financialproduct {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PaymentService'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A Service to transfer funds from a person or organization to a beneficiary person or organization.'
+        static _rdfs_label = 'PaymentService'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PaymentService')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

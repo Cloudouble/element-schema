@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Locationfeaturespecification extends window.Cloudouble.Element.elements.Propertyvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LocationFeatureSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.'
+        static _rdfs_label = 'LocationFeatureSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hoursAvailable', 'validFrom', 'validThrough')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LocationFeatureSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hoursAvailable($this, value) { return $this.__helperValidateAttribute($this, value, 'hoursAvailable') }
+        get hoursavailable() { return this.hoursAvailable }
+        set hoursavailable(value) { this.hoursAvailable = value }
+
+            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        get validfrom() { return this.validFrom }
+        set validfrom(value) { this.validFrom = value }
+
+            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        get validthrough() { return this.validThrough }
+        set validthrough(value) { this.validThrough = value }
+        
+    }
+</script>

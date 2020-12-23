@@ -1,0 +1,60 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Postaladdress extends window.Cloudouble.Element.elements.Contactpoint {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PostalAddress'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The mailing address.'
+        static _rdfs_label = 'PostalAddress'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('addressCountry', 'addressLocality', 'addressRegion', 'postOfficeBoxNumber', 'postalCode', 'streetAddress')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PostalAddress')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        get addresscountry() { return this.addressCountry }
+        set addresscountry(value) { this.addressCountry = value }
+
+            addressLocality($this, value) { return $this.__helperValidateAttribute($this, value, 'addressLocality') }
+        get addresslocality() { return this.addressLocality }
+        set addresslocality(value) { this.addressLocality = value }
+
+            addressRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'addressRegion') }
+        get addressregion() { return this.addressRegion }
+        set addressregion(value) { this.addressRegion = value }
+
+            postOfficeBoxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'postOfficeBoxNumber') }
+        get postofficeboxnumber() { return this.postOfficeBoxNumber }
+        set postofficeboxnumber(value) { this.postOfficeBoxNumber = value }
+
+            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        get postalcode() { return this.postalCode }
+        set postalcode(value) { this.postalCode = value }
+
+            streetAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'streetAddress') }
+        get streetaddress() { return this.streetAddress }
+        set streetaddress(value) { this.streetAddress = value }
+        
+    }
+</script>

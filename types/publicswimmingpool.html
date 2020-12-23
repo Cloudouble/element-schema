@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Publicswimmingpool extends window.Cloudouble.Element.elements.Sportsactivitylocation {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PublicSwimmingPool'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A public swimming pool.'
+        static _rdfs_label = 'PublicSwimmingPool'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PublicSwimmingPool')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

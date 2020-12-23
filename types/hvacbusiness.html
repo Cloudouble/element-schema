@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Hvacbusiness extends window.Cloudouble.Element.elements.Homeandconstructionbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HVACBusiness'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A business that provide Heating, Ventilation and Air Conditioning services.'
+        static _rdfs_label = 'HVACBusiness'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HVACBusiness')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

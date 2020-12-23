@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Webapi extends window.Cloudouble.Element.elements.Service {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WebAPI'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An application programming interface accessible over Web\/Internet technologies.'
+        static _rdfs_label = 'WebAPI'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('documentation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WebAPI')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            documentation($this, value) { return $this.__helperValidateAttribute($this, value, 'documentation') }
+        
+    }
+</script>

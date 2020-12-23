@@ -1,0 +1,76 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Offershippingdetails extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OfferShippingDetails'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'OfferShippingDetails represents information about shipping destinations.
+
+Multiple of these entities can be used to represent different shipping rates for different destinations:
+
+One entity for Alaska\/Hawaii. A different one for continental US.A different one for all France.
+
+Multiple of these entities can be used to represent different shipping costs and delivery times.
+
+Two entities that are identical but differ in rate and time:
+
+e.g. Cheaper and slower: $5 in 5-7days
+or Fast and expensive: $15 in 1-2 days
+'
+        static _rdfs_label = 'OfferShippingDetails'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OfferShippingDetails')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            deliveryTime($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryTime') }
+        get deliverytime() { return this.deliveryTime }
+        set deliverytime(value) { this.deliveryTime = value }
+
+            doesNotShip($this, value) { return $this.__helperValidateAttribute($this, value, 'doesNotShip') }
+        get doesnotship() { return this.doesNotShip }
+        set doesnotship(value) { this.doesNotShip = value }
+
+            shippingDestination($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDestination') }
+        get shippingdestination() { return this.shippingDestination }
+        set shippingdestination(value) { this.shippingDestination = value }
+
+            shippingLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingLabel') }
+        get shippinglabel() { return this.shippingLabel }
+        set shippinglabel(value) { this.shippingLabel = value }
+
+            shippingRate($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingRate') }
+        get shippingrate() { return this.shippingRate }
+        set shippingrate(value) { this.shippingRate = value }
+
+            shippingSettingsLink($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingSettingsLink') }
+        get shippingsettingslink() { return this.shippingSettingsLink }
+        set shippingsettingslink(value) { this.shippingSettingsLink = value }
+
+            transitTimeLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'transitTimeLabel') }
+        get transittimelabel() { return this.transitTimeLabel }
+        set transittimelabel(value) { this.transitTimeLabel = value }
+        
+    }
+</script>

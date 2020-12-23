@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Occupation extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Occupation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A profession, may involve prolonged training and\/or a formal qualification.'
+        static _rdfs_label = 'Occupation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('educationRequirements', 'estimatedSalary', 'experienceRequirements', 'occupationLocation', 'occupationalCategory', 'qualifications', 'responsibilities', 'skills')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Occupation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            educationRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'educationRequirements') }
+        get educationrequirements() { return this.educationRequirements }
+        set educationrequirements(value) { this.educationRequirements = value }
+
+            estimatedSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatedSalary') }
+        get estimatedsalary() { return this.estimatedSalary }
+        set estimatedsalary(value) { this.estimatedSalary = value }
+
+            experienceRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'experienceRequirements') }
+        get experiencerequirements() { return this.experienceRequirements }
+        set experiencerequirements(value) { this.experienceRequirements = value }
+
+            occupationLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationLocation') }
+        get occupationlocation() { return this.occupationLocation }
+        set occupationlocation(value) { this.occupationLocation = value }
+
+            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        get occupationalcategory() { return this.occupationalCategory }
+        set occupationalcategory(value) { this.occupationalCategory = value }
+
+            qualifications($this, value) { return $this.__helperValidateAttribute($this, value, 'qualifications') }
+
+            responsibilities($this, value) { return $this.__helperValidateAttribute($this, value, 'responsibilities') }
+
+            skills($this, value) { return $this.__helperValidateAttribute($this, value, 'skills') }
+        
+    }
+</script>

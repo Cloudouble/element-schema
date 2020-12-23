@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Surgicalprocedure extends window.Cloudouble.Element.elements.Medicalprocedure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SurgicalProcedure'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.'
+        static _rdfs_label = 'SurgicalProcedure'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SurgicalProcedure')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

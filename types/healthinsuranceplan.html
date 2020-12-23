@@ -1,0 +1,72 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Healthinsuranceplan extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HealthInsurancePlan'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A US-style health insurance plan, including PPOs, EPOs, and HMOs. '
+        static _rdfs_label = 'HealthInsurancePlan'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HealthInsurancePlan')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            benefitsSummaryUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'benefitsSummaryUrl') }
+        get benefitssummaryurl() { return this.benefitsSummaryUrl }
+        set benefitssummaryurl(value) { this.benefitsSummaryUrl = value }
+
+            contactPoint($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoint') }
+        get contactpoint() { return this.contactPoint }
+        set contactpoint(value) { this.contactPoint = value }
+
+            healthPlanDrugOption($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugOption') }
+        get healthplandrugoption() { return this.healthPlanDrugOption }
+        set healthplandrugoption(value) { this.healthPlanDrugOption = value }
+
+            healthPlanDrugTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugTier') }
+        get healthplandrugtier() { return this.healthPlanDrugTier }
+        set healthplandrugtier(value) { this.healthPlanDrugTier = value }
+
+            healthPlanId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanId') }
+        get healthplanid() { return this.healthPlanId }
+        set healthplanid(value) { this.healthPlanId = value }
+
+            healthPlanMarketingUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanMarketingUrl') }
+        get healthplanmarketingurl() { return this.healthPlanMarketingUrl }
+        set healthplanmarketingurl(value) { this.healthPlanMarketingUrl = value }
+
+            includesHealthPlanFormulary($this, value) { return $this.__helperValidateAttribute($this, value, 'includesHealthPlanFormulary') }
+        get includeshealthplanformulary() { return this.includesHealthPlanFormulary }
+        set includeshealthplanformulary(value) { this.includesHealthPlanFormulary = value }
+
+            includesHealthPlanNetwork($this, value) { return $this.__helperValidateAttribute($this, value, 'includesHealthPlanNetwork') }
+        get includeshealthplannetwork() { return this.includesHealthPlanNetwork }
+        set includeshealthplannetwork(value) { this.includesHealthPlanNetwork = value }
+
+            usesHealthPlanIdStandard($this, value) { return $this.__helperValidateAttribute($this, value, 'usesHealthPlanIdStandard') }
+        get useshealthplanidstandard() { return this.usesHealthPlanIdStandard }
+        set useshealthplanidstandard(value) { this.usesHealthPlanIdStandard = value }
+        
+    }
+</script>

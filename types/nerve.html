@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Nerve extends window.Cloudouble.Element.elements.Anatomicalstructure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Nerve'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.'
+        static _rdfs_label = 'Nerve'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('branch', 'nerveMotor', 'sensoryUnit', 'sourcedFrom')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Nerve')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            branch($this, value) { return $this.__helperValidateAttribute($this, value, 'branch') }
+
+            nerveMotor($this, value) { return $this.__helperValidateAttribute($this, value, 'nerveMotor') }
+        get nervemotor() { return this.nerveMotor }
+        set nervemotor(value) { this.nerveMotor = value }
+
+            sensoryUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'sensoryUnit') }
+        get sensoryunit() { return this.sensoryUnit }
+        set sensoryunit(value) { this.sensoryUnit = value }
+
+            sourcedFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'sourcedFrom') }
+        get sourcedfrom() { return this.sourcedFrom }
+        set sourcedfrom(value) { this.sourcedFrom = value }
+        
+    }
+</script>

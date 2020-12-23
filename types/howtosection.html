@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Howtosection extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HowToSection'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).'
+        static _rdfs_label = 'HowToSection'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('steps')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HowToSection')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            steps($this, value) { return $this.__helperValidateAttribute($this, value, 'steps') }
+        
+    }
+</script>

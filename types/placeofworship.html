@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Placeofworship extends window.Cloudouble.Element.elements.Civicstructure {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PlaceOfWorship'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Place of worship, such as a church, synagogue, or mosque.'
+        static _rdfs_label = 'PlaceOfWorship'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PlaceOfWorship')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

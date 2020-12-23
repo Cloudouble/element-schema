@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Tvepisode extends window.Cloudouble.Element.elements.Episode {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TVEpisode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A TV episode which can be part of a series or season.'
+        static _rdfs_label = 'TVEpisode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TVEpisode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            countryOfOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'countryOfOrigin') }
+        get countryoforigin() { return this.countryOfOrigin }
+        set countryoforigin(value) { this.countryOfOrigin = value }
+
+            partOfTVSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfTVSeries') }
+        get partoftvseries() { return this.partOfTVSeries }
+        set partoftvseries(value) { this.partOfTVSeries = value }
+
+            subtitleLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'subtitleLanguage') }
+        get subtitlelanguage() { return this.subtitleLanguage }
+        set subtitlelanguage(value) { this.subtitleLanguage = value }
+
+            titleEIDR($this, value) { return $this.__helperValidateAttribute($this, value, 'titleEIDR') }
+        get titleeidr() { return this.titleEIDR }
+        set titleeidr(value) { this.titleEIDR = value }
+        
+    }
+</script>

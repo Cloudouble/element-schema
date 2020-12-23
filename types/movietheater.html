@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Movietheater extends window.Cloudouble.Element.elements.Entertainmentbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MovieTheater'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A movie theater.'
+        static _rdfs_label = 'MovieTheater'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('screenCount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MovieTheater')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            screenCount($this, value) { return $this.__helperValidateAttribute($this, value, 'screenCount') }
+        get screencount() { return this.screenCount }
+        set screencount(value) { this.screenCount = value }
+        
+    }
+</script>

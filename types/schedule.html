@@ -1,0 +1,88 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Schedule extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Schedule'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.
+      This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
+      have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.'
+        static _rdfs_label = 'Schedule'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Schedule')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            byDay($this, value) { return $this.__helperValidateAttribute($this, value, 'byDay') }
+        get byday() { return this.byDay }
+        set byday(value) { this.byDay = value }
+
+            byMonth($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonth') }
+        get bymonth() { return this.byMonth }
+        set bymonth(value) { this.byMonth = value }
+
+            byMonthDay($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonthDay') }
+        get bymonthday() { return this.byMonthDay }
+        set bymonthday(value) { this.byMonthDay = value }
+
+            byMonthWeek($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonthWeek') }
+        get bymonthweek() { return this.byMonthWeek }
+        set bymonthweek(value) { this.byMonthWeek = value }
+
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        get enddate() { return this.endDate }
+        set enddate(value) { this.endDate = value }
+
+            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        get endtime() { return this.endTime }
+        set endtime(value) { this.endTime = value }
+
+            exceptDate($this, value) { return $this.__helperValidateAttribute($this, value, 'exceptDate') }
+        get exceptdate() { return this.exceptDate }
+        set exceptdate(value) { this.exceptDate = value }
+
+            repeatCount($this, value) { return $this.__helperValidateAttribute($this, value, 'repeatCount') }
+        get repeatcount() { return this.repeatCount }
+        set repeatcount(value) { this.repeatCount = value }
+
+            repeatFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'repeatFrequency') }
+        get repeatfrequency() { return this.repeatFrequency }
+        set repeatfrequency(value) { this.repeatFrequency = value }
+
+            scheduleTimezone($this, value) { return $this.__helperValidateAttribute($this, value, 'scheduleTimezone') }
+        get scheduletimezone() { return this.scheduleTimezone }
+        set scheduletimezone(value) { this.scheduleTimezone = value }
+
+            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        get startdate() { return this.startDate }
+        set startdate(value) { this.startDate = value }
+
+            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        get starttime() { return this.startTime }
+        set starttime(value) { this.startTime = value }
+        
+    }
+</script>

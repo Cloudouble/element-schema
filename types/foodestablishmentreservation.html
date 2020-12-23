@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Foodestablishmentreservation extends window.Cloudouble.Element.elements.Reservation {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:FoodEstablishmentReservation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.'
+        static _rdfs_label = 'FoodEstablishmentReservation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('endTime', 'partySize', 'startTime')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('FoodEstablishmentReservation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        get endtime() { return this.endTime }
+        set endtime(value) { this.endTime = value }
+
+            partySize($this, value) { return $this.__helperValidateAttribute($this, value, 'partySize') }
+        get partysize() { return this.partySize }
+        set partysize(value) { this.partySize = value }
+
+            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        get starttime() { return this.startTime }
+        set starttime(value) { this.startTime = value }
+        
+    }
+</script>

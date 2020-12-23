@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Radioseason extends window.Cloudouble.Element.elements.Creativeworkseason {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RadioSeason'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Season dedicated to radio broadcast and associated online delivery.'
+        static _rdfs_label = 'RadioSeason'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RadioSeason')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

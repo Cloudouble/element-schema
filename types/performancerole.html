@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Performancerole extends window.Cloudouble.Element.elements.Role {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PerformanceRole'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.'
+        static _rdfs_label = 'PerformanceRole'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('characterName')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PerformanceRole')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            characterName($this, value) { return $this.__helperValidateAttribute($this, value, 'characterName') }
+        get charactername() { return this.characterName }
+        set charactername(value) { this.characterName = value }
+        
+    }
+</script>

@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Amradiochannel extends window.Cloudouble.Element.elements.Radiochannel {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AMRadioChannel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A radio channel that uses AM.'
+        static _rdfs_label = 'AMRadioChannel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AMRadioChannel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Productmodel extends window.Cloudouble.Element.elements.Product {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ProductModel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A datasheet or vendor specification of a product (in the sense of a prototypical description).'
+        static _rdfs_label = 'ProductModel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('isVariantOf', 'predecessorOf', 'successorOf')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ProductModel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            isVariantOf($this, value) { return $this.__helperValidateAttribute($this, value, 'isVariantOf') }
+        get isvariantof() { return this.isVariantOf }
+        set isvariantof(value) { this.isVariantOf = value }
+
+            predecessorOf($this, value) { return $this.__helperValidateAttribute($this, value, 'predecessorOf') }
+        get predecessorof() { return this.predecessorOf }
+        set predecessorof(value) { this.predecessorOf = value }
+
+            successorOf($this, value) { return $this.__helperValidateAttribute($this, value, 'successorOf') }
+        get successorof() { return this.successorOf }
+        set successorof(value) { this.successorOf = value }
+        
+    }
+</script>

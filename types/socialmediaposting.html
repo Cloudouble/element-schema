@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Socialmediaposting extends window.Cloudouble.Element.elements.Article {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SocialMediaPosting'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A post to a social media platform, including blog posts, tweets, Facebook posts, etc.'
+        static _rdfs_label = 'SocialMediaPosting'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('sharedContent')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SocialMediaPosting')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            sharedContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sharedContent') }
+        get sharedcontent() { return this.sharedContent }
+        set sharedcontent(value) { this.sharedContent = value }
+        
+    }
+</script>

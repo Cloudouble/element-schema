@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Informaction extends window.Cloudouble.Element.elements.Communicateaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:InformAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of notifying someone of information pertinent to them, with no expectation of a response.'
+        static _rdfs_label = 'InformAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('event')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('InformAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            event($this, value) { return $this.__helperValidateAttribute($this, value, 'event') }
+        
+    }
+</script>

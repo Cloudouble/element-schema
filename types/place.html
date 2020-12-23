@@ -1,0 +1,182 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Place extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Place'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Entities that have a somewhat fixed, physical extension.'
+        static _rdfs_label = 'Place'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Place')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalProperty') }
+        get additionalproperty() { return this.additionalProperty }
+        set additionalproperty(value) { this.additionalProperty = value }
+
+            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            amenityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'amenityFeature') }
+        get amenityfeature() { return this.amenityFeature }
+        set amenityfeature(value) { this.amenityFeature = value }
+
+            branchCode($this, value) { return $this.__helperValidateAttribute($this, value, 'branchCode') }
+        get branchcode() { return this.branchCode }
+        set branchcode(value) { this.branchCode = value }
+
+            containedIn($this, value) { return $this.__helperValidateAttribute($this, value, 'containedIn') }
+        get containedin() { return this.containedIn }
+        set containedin(value) { this.containedIn = value }
+
+            containedInPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'containedInPlace') }
+        get containedinplace() { return this.containedInPlace }
+        set containedinplace(value) { this.containedInPlace = value }
+
+            containsPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'containsPlace') }
+        get containsplace() { return this.containsPlace }
+        set containsplace(value) { this.containsPlace = value }
+
+            event($this, value) { return $this.__helperValidateAttribute($this, value, 'event') }
+
+            events($this, value) { return $this.__helperValidateAttribute($this, value, 'events') }
+
+            faxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'faxNumber') }
+        get faxnumber() { return this.faxNumber }
+        set faxnumber(value) { this.faxNumber = value }
+
+            geo($this, value) { return $this.__helperValidateAttribute($this, value, 'geo') }
+
+            geoContains($this, value) { return $this.__helperValidateAttribute($this, value, 'geoContains') }
+        get geocontains() { return this.geoContains }
+        set geocontains(value) { this.geoContains = value }
+
+            geoCoveredBy($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCoveredBy') }
+        get geocoveredby() { return this.geoCoveredBy }
+        set geocoveredby(value) { this.geoCoveredBy = value }
+
+            geoCovers($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCovers') }
+        get geocovers() { return this.geoCovers }
+        set geocovers(value) { this.geoCovers = value }
+
+            geoCrosses($this, value) { return $this.__helperValidateAttribute($this, value, 'geoCrosses') }
+        get geocrosses() { return this.geoCrosses }
+        set geocrosses(value) { this.geoCrosses = value }
+
+            geoDisjoint($this, value) { return $this.__helperValidateAttribute($this, value, 'geoDisjoint') }
+        get geodisjoint() { return this.geoDisjoint }
+        set geodisjoint(value) { this.geoDisjoint = value }
+
+            geoEquals($this, value) { return $this.__helperValidateAttribute($this, value, 'geoEquals') }
+        get geoequals() { return this.geoEquals }
+        set geoequals(value) { this.geoEquals = value }
+
+            geoIntersects($this, value) { return $this.__helperValidateAttribute($this, value, 'geoIntersects') }
+        get geointersects() { return this.geoIntersects }
+        set geointersects(value) { this.geoIntersects = value }
+
+            geoOverlaps($this, value) { return $this.__helperValidateAttribute($this, value, 'geoOverlaps') }
+        get geooverlaps() { return this.geoOverlaps }
+        set geooverlaps(value) { this.geoOverlaps = value }
+
+            geoTouches($this, value) { return $this.__helperValidateAttribute($this, value, 'geoTouches') }
+        get geotouches() { return this.geoTouches }
+        set geotouches(value) { this.geoTouches = value }
+
+            geoWithin($this, value) { return $this.__helperValidateAttribute($this, value, 'geoWithin') }
+        get geowithin() { return this.geoWithin }
+        set geowithin(value) { this.geoWithin = value }
+
+            globalLocationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'globalLocationNumber') }
+        get globallocationnumber() { return this.globalLocationNumber }
+        set globallocationnumber(value) { this.globalLocationNumber = value }
+
+            hasDriveThroughService($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDriveThroughService') }
+        get hasdrivethroughservice() { return this.hasDriveThroughService }
+        set hasdrivethroughservice(value) { this.hasDriveThroughService = value }
+
+            hasMap($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMap') }
+        get hasmap() { return this.hasMap }
+        set hasmap(value) { this.hasMap = value }
+
+            isAccessibleForFree($this, value) { return $this.__helperValidateAttribute($this, value, 'isAccessibleForFree') }
+        get isaccessibleforfree() { return this.isAccessibleForFree }
+        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
+
+            isicV4($this, value) { return $this.__helperValidateAttribute($this, value, 'isicV4') }
+        get isicv4() { return this.isicV4 }
+        set isicv4(value) { this.isicV4 = value }
+
+            latitude($this, value) { return $this.__helperValidateAttribute($this, value, 'latitude') }
+
+            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+
+            longitude($this, value) { return $this.__helperValidateAttribute($this, value, 'longitude') }
+
+            map($this, value) { return $this.__helperValidateAttribute($this, value, 'map') }
+
+            maps($this, value) { return $this.__helperValidateAttribute($this, value, 'maps') }
+
+            maximumAttendeeCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumAttendeeCapacity') }
+        get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
+        set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
+
+            openingHoursSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'openingHoursSpecification') }
+        get openinghoursspecification() { return this.openingHoursSpecification }
+        set openinghoursspecification(value) { this.openingHoursSpecification = value }
+
+            photo($this, value) { return $this.__helperValidateAttribute($this, value, 'photo') }
+
+            photos($this, value) { return $this.__helperValidateAttribute($this, value, 'photos') }
+
+            publicAccess($this, value) { return $this.__helperValidateAttribute($this, value, 'publicAccess') }
+        get publicaccess() { return this.publicAccess }
+        set publicaccess(value) { this.publicAccess = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            reviews($this, value) { return $this.__helperValidateAttribute($this, value, 'reviews') }
+
+            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+
+            smokingAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'smokingAllowed') }
+        get smokingallowed() { return this.smokingAllowed }
+        set smokingallowed(value) { this.smokingAllowed = value }
+
+            specialOpeningHoursSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'specialOpeningHoursSpecification') }
+        get specialopeninghoursspecification() { return this.specialOpeningHoursSpecification }
+        set specialopeninghoursspecification(value) { this.specialOpeningHoursSpecification = value }
+
+            telephone($this, value) { return $this.__helperValidateAttribute($this, value, 'telephone') }
+
+            tourBookingPage($this, value) { return $this.__helperValidateAttribute($this, value, 'tourBookingPage') }
+        get tourbookingpage() { return this.tourBookingPage }
+        set tourbookingpage(value) { this.tourBookingPage = value }
+        
+    }
+</script>

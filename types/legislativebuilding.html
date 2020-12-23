@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Legislativebuilding extends window.Cloudouble.Element.elements.Governmentbuilding {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LegislativeBuilding'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A legislative building&#x2014;for example, the state capitol.'
+        static _rdfs_label = 'LegislativeBuilding'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LegislativeBuilding')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

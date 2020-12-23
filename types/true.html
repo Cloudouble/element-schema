@@ -1,0 +1,34 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class True extends window.Cloudouble.Element.elements.Boolean {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __id = 'schema:True'
+        static __type = 'schema:Boolean'
+        static _rdfs_comment = 'The boolean value true.'
+        static _rdfs_label = 'True'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('True')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+    }
+</script>

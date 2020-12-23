@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalriskscore extends window.Cloudouble.Element.elements.Medicalriskestimator {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalRiskScore'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.'
+        static _rdfs_label = 'MedicalRiskScore'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('algorithm')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalRiskScore')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            algorithm($this, value) { return $this.__helperValidateAttribute($this, value, 'algorithm') }
+        
+    }
+</script>

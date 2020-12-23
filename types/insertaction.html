@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Insertaction extends window.Cloudouble.Element.elements.Addaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:InsertAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of adding at a specific location in an ordered collection.'
+        static _rdfs_label = 'InsertAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('toLocation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('InsertAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            toLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'toLocation') }
+        get tolocation() { return this.toLocation }
+        set tolocation(value) { this.toLocation = value }
+        
+    }
+</script>

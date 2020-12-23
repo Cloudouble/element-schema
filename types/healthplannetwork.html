@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Healthplannetwork extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:HealthPlanNetwork'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A US-style health insurance plan network. '
+        static _rdfs_label = 'HealthPlanNetwork'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('healthPlanCostSharing', 'healthPlanNetworkId', 'healthPlanNetworkTier')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('HealthPlanNetwork')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            healthPlanCostSharing($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCostSharing') }
+        get healthplancostsharing() { return this.healthPlanCostSharing }
+        set healthplancostsharing(value) { this.healthPlanCostSharing = value }
+
+            healthPlanNetworkId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkId') }
+        get healthplannetworkid() { return this.healthPlanNetworkId }
+        set healthplannetworkid(value) { this.healthPlanNetworkId = value }
+
+            healthPlanNetworkTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkTier') }
+        get healthplannetworktier() { return this.healthPlanNetworkTier }
+        set healthplannetworktier(value) { this.healthPlanNetworkTier = value }
+        
+    }
+</script>

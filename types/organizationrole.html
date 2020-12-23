@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Organizationrole extends window.Cloudouble.Element.elements.Role {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OrganizationRole'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A subclass of Role used to describe roles within organizations.'
+        static _rdfs_label = 'OrganizationRole'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('numberedPosition')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OrganizationRole')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            numberedPosition($this, value) { return $this.__helperValidateAttribute($this, value, 'numberedPosition') }
+        get numberedposition() { return this.numberedPosition }
+        set numberedposition(value) { this.numberedPosition = value }
+        
+    }
+</script>

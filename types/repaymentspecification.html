@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Repaymentspecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:RepaymentSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured value representing repayment.'
+        static _rdfs_label = 'RepaymentSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('downPayment', 'earlyPrepaymentPenalty', 'loanPaymentAmount', 'loanPaymentFrequency', 'numberOfLoanPayments')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('RepaymentSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            downPayment($this, value) { return $this.__helperValidateAttribute($this, value, 'downPayment') }
+        get downpayment() { return this.downPayment }
+        set downpayment(value) { this.downPayment = value }
+
+            earlyPrepaymentPenalty($this, value) { return $this.__helperValidateAttribute($this, value, 'earlyPrepaymentPenalty') }
+        get earlyprepaymentpenalty() { return this.earlyPrepaymentPenalty }
+        set earlyprepaymentpenalty(value) { this.earlyPrepaymentPenalty = value }
+
+            loanPaymentAmount($this, value) { return $this.__helperValidateAttribute($this, value, 'loanPaymentAmount') }
+        get loanpaymentamount() { return this.loanPaymentAmount }
+        set loanpaymentamount(value) { this.loanPaymentAmount = value }
+
+            loanPaymentFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'loanPaymentFrequency') }
+        get loanpaymentfrequency() { return this.loanPaymentFrequency }
+        set loanpaymentfrequency(value) { this.loanPaymentFrequency = value }
+
+            numberOfLoanPayments($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfLoanPayments') }
+        get numberofloanpayments() { return this.numberOfLoanPayments }
+        set numberofloanpayments(value) { this.numberOfLoanPayments = value }
+        
+    }
+</script>

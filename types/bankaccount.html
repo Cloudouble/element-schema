@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Bankaccount extends window.Cloudouble.Element.elements.Financialproduct {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BankAccount'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest.'
+        static _rdfs_label = 'BankAccount'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('accountMinimumInflow', 'accountOverdraftLimit', 'bankAccountType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BankAccount')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            accountMinimumInflow($this, value) { return $this.__helperValidateAttribute($this, value, 'accountMinimumInflow') }
+        get accountminimuminflow() { return this.accountMinimumInflow }
+        set accountminimuminflow(value) { this.accountMinimumInflow = value }
+
+            accountOverdraftLimit($this, value) { return $this.__helperValidateAttribute($this, value, 'accountOverdraftLimit') }
+        get accountoverdraftlimit() { return this.accountOverdraftLimit }
+        set accountoverdraftlimit(value) { this.accountOverdraftLimit = value }
+
+            bankAccountType($this, value) { return $this.__helperValidateAttribute($this, value, 'bankAccountType') }
+        get bankaccounttype() { return this.bankAccountType }
+        set bankaccounttype(value) { this.bankAccountType = value }
+        
+    }
+</script>

@@ -1,0 +1,66 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Lodgingbusiness extends window.Cloudouble.Element.elements.Localbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:LodgingBusiness'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A lodging business, such as a motel, hotel, or inn.'
+        static _rdfs_label = 'LodgingBusiness'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amenityFeature', 'audience', 'availableLanguage', 'checkinTime', 'checkoutTime', 'numberOfRooms', 'petsAllowed', 'starRating')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('LodgingBusiness')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amenityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'amenityFeature') }
+        get amenityfeature() { return this.amenityFeature }
+        set amenityfeature(value) { this.amenityFeature = value }
+
+            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+
+            availableLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'availableLanguage') }
+        get availablelanguage() { return this.availableLanguage }
+        set availablelanguage(value) { this.availableLanguage = value }
+
+            checkinTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkinTime') }
+        get checkintime() { return this.checkinTime }
+        set checkintime(value) { this.checkinTime = value }
+
+            checkoutTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkoutTime') }
+        get checkouttime() { return this.checkoutTime }
+        set checkouttime(value) { this.checkoutTime = value }
+
+            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        get numberofrooms() { return this.numberOfRooms }
+        set numberofrooms(value) { this.numberOfRooms = value }
+
+            petsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'petsAllowed') }
+        get petsallowed() { return this.petsAllowed }
+        set petsallowed(value) { this.petsAllowed = value }
+
+            starRating($this, value) { return $this.__helperValidateAttribute($this, value, 'starRating') }
+        get starrating() { return this.starRating }
+        set starrating(value) { this.starRating = value }
+        
+    }
+</script>

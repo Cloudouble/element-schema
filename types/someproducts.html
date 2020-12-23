@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Someproducts extends window.Cloudouble.Element.elements.Product {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SomeProducts'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A placeholder for multiple similar products of the same kind.'
+        static _rdfs_label = 'SomeProducts'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('inventoryLevel')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SomeProducts')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            inventoryLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'inventoryLevel') }
+        get inventorylevel() { return this.inventoryLevel }
+        set inventorylevel(value) { this.inventoryLevel = value }
+        
+    }
+</script>

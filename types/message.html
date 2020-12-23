@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Message extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Message'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A single message from a sender to one or more organizations or people.'
+        static _rdfs_label = 'Message'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Message')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            bccRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'bccRecipient') }
+        get bccrecipient() { return this.bccRecipient }
+        set bccrecipient(value) { this.bccRecipient = value }
+
+            ccRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'ccRecipient') }
+        get ccrecipient() { return this.ccRecipient }
+        set ccrecipient(value) { this.ccRecipient = value }
+
+            dateRead($this, value) { return $this.__helperValidateAttribute($this, value, 'dateRead') }
+        get dateread() { return this.dateRead }
+        set dateread(value) { this.dateRead = value }
+
+            dateReceived($this, value) { return $this.__helperValidateAttribute($this, value, 'dateReceived') }
+        get datereceived() { return this.dateReceived }
+        set datereceived(value) { this.dateReceived = value }
+
+            dateSent($this, value) { return $this.__helperValidateAttribute($this, value, 'dateSent') }
+        get datesent() { return this.dateSent }
+        set datesent(value) { this.dateSent = value }
+
+            messageAttachment($this, value) { return $this.__helperValidateAttribute($this, value, 'messageAttachment') }
+        get messageattachment() { return this.messageAttachment }
+        set messageattachment(value) { this.messageAttachment = value }
+
+            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+
+            sender($this, value) { return $this.__helperValidateAttribute($this, value, 'sender') }
+
+            toRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'toRecipient') }
+        get torecipient() { return this.toRecipient }
+        set torecipient(value) { this.toRecipient = value }
+        
+    }
+</script>

@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Deliverychargespecification extends window.Cloudouble.Element.elements.Pricespecification {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DeliveryChargeSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The price for the delivery of an offer using a particular delivery method.'
+        static _rdfs_label = 'DeliveryChargeSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DeliveryChargeSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            appliesToDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'appliesToDeliveryMethod') }
+        get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
+        set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
+
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            eligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleRegion') }
+        get eligibleregion() { return this.eligibleRegion }
+        set eligibleregion(value) { this.eligibleRegion = value }
+
+            ineligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'ineligibleRegion') }
+        get ineligibleregion() { return this.ineligibleRegion }
+        set ineligibleregion(value) { this.ineligibleRegion = value }
+        
+    }
+</script>

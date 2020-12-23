@@ -1,0 +1,380 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Creativework extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:CreativeWork'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The most generic kind of creative work, including books, movies, photographs, software programs, etc.'
+        static _rdfs_label = 'CreativeWork'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('about', 'abstract', 'accessMode', 'accessModeSufficient', 'accessibilityAPI', 'accessibilityControl', 'accessibilityFeature', 'accessibilityHazard', 'accessibilitySummary', 'accountablePerson', 'acquireLicensePage', 'aggregateRating', 'alternativeHeadline', 'assesses', 'associatedMedia', 'audience', 'audio', 'author', 'award', 'awards', 'character', 'citation', 'comment', 'commentCount', 'conditionsOfAccess', 'contentLocation', 'contentRating', 'contentReferenceTime', 'contributor', 'copyrightHolder', 'copyrightNotice', 'copyrightYear', 'correction', 'creativeWorkStatus', 'creator', 'creditText', 'dateCreated', 'dateModified', 'datePublished', 'discussionUrl', 'editEIDR', 'editor', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'encoding', 'encodingFormat', 'encodings', 'exampleOfWork', 'expires', 'fileFormat', 'funder', 'genre', 'hasPart', 'headline', 'inLanguage', 'interactionStatistic', 'interactivityType', 'isAccessibleForFree', 'isBasedOn', 'isBasedOnUrl', 'isFamilyFriendly', 'isPartOf', 'keywords', 'learningResourceType', 'license', 'locationCreated', 'mainEntity', 'maintainer', 'material', 'materialExtent', 'mentions', 'offers', 'pattern', 'position', 'producer', 'provider', 'publication', 'publisher', 'publisherImprint', 'publishingPrinciples', 'recordedAt', 'releasedEvent', 'review', 'reviews', 'schemaVersion', 'sdDatePublished', 'sdLicense', 'sdPublisher', 'size', 'sourceOrganization', 'spatial', 'spatialCoverage', 'sponsor', 'teaches', 'temporal', 'temporalCoverage', 'text', 'thumbnailUrl', 'timeRequired', 'translationOfWork', 'translator', 'typicalAgeRange', 'usageInfo', 'version', 'video', 'workExample', 'workTranslation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('CreativeWork')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            about($this, value) { return $this.__helperValidateAttribute($this, value, 'about') }
+
+            abstract($this, value) { return $this.__helperValidateAttribute($this, value, 'abstract') }
+
+            accessMode($this, value) { return $this.__helperValidateAttribute($this, value, 'accessMode') }
+        get accessmode() { return this.accessMode }
+        set accessmode(value) { this.accessMode = value }
+
+            accessModeSufficient($this, value) { return $this.__helperValidateAttribute($this, value, 'accessModeSufficient') }
+        get accessmodesufficient() { return this.accessModeSufficient }
+        set accessmodesufficient(value) { this.accessModeSufficient = value }
+
+            accessibilityAPI($this, value) { return $this.__helperValidateAttribute($this, value, 'accessibilityAPI') }
+        get accessibilityapi() { return this.accessibilityAPI }
+        set accessibilityapi(value) { this.accessibilityAPI = value }
+
+            accessibilityControl($this, value) { return $this.__helperValidateAttribute($this, value, 'accessibilityControl') }
+        get accessibilitycontrol() { return this.accessibilityControl }
+        set accessibilitycontrol(value) { this.accessibilityControl = value }
+
+            accessibilityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'accessibilityFeature') }
+        get accessibilityfeature() { return this.accessibilityFeature }
+        set accessibilityfeature(value) { this.accessibilityFeature = value }
+
+            accessibilityHazard($this, value) { return $this.__helperValidateAttribute($this, value, 'accessibilityHazard') }
+        get accessibilityhazard() { return this.accessibilityHazard }
+        set accessibilityhazard(value) { this.accessibilityHazard = value }
+
+            accessibilitySummary($this, value) { return $this.__helperValidateAttribute($this, value, 'accessibilitySummary') }
+        get accessibilitysummary() { return this.accessibilitySummary }
+        set accessibilitysummary(value) { this.accessibilitySummary = value }
+
+            accountablePerson($this, value) { return $this.__helperValidateAttribute($this, value, 'accountablePerson') }
+        get accountableperson() { return this.accountablePerson }
+        set accountableperson(value) { this.accountablePerson = value }
+
+            acquireLicensePage($this, value) { return $this.__helperValidateAttribute($this, value, 'acquireLicensePage') }
+        get acquirelicensepage() { return this.acquireLicensePage }
+        set acquirelicensepage(value) { this.acquireLicensePage = value }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            alternativeHeadline($this, value) { return $this.__helperValidateAttribute($this, value, 'alternativeHeadline') }
+        get alternativeheadline() { return this.alternativeHeadline }
+        set alternativeheadline(value) { this.alternativeHeadline = value }
+
+            assesses($this, value) { return $this.__helperValidateAttribute($this, value, 'assesses') }
+
+            associatedMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedMedia') }
+        get associatedmedia() { return this.associatedMedia }
+        set associatedmedia(value) { this.associatedMedia = value }
+
+            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+
+            audio($this, value) { return $this.__helperValidateAttribute($this, value, 'audio') }
+
+            author($this, value) { return $this.__helperValidateAttribute($this, value, 'author') }
+
+            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+
+            awards($this, value) { return $this.__helperValidateAttribute($this, value, 'awards') }
+
+            character($this, value) { return $this.__helperValidateAttribute($this, value, 'character') }
+
+            citation($this, value) { return $this.__helperValidateAttribute($this, value, 'citation') }
+
+            comment($this, value) { return $this.__helperValidateAttribute($this, value, 'comment') }
+
+            commentCount($this, value) { return $this.__helperValidateAttribute($this, value, 'commentCount') }
+        get commentcount() { return this.commentCount }
+        set commentcount(value) { this.commentCount = value }
+
+            conditionsOfAccess($this, value) { return $this.__helperValidateAttribute($this, value, 'conditionsOfAccess') }
+        get conditionsofaccess() { return this.conditionsOfAccess }
+        set conditionsofaccess(value) { this.conditionsOfAccess = value }
+
+            contentLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'contentLocation') }
+        get contentlocation() { return this.contentLocation }
+        set contentlocation(value) { this.contentLocation = value }
+
+            contentRating($this, value) { return $this.__helperValidateAttribute($this, value, 'contentRating') }
+        get contentrating() { return this.contentRating }
+        set contentrating(value) { this.contentRating = value }
+
+            contentReferenceTime($this, value) { return $this.__helperValidateAttribute($this, value, 'contentReferenceTime') }
+        get contentreferencetime() { return this.contentReferenceTime }
+        set contentreferencetime(value) { this.contentReferenceTime = value }
+
+            contributor($this, value) { return $this.__helperValidateAttribute($this, value, 'contributor') }
+
+            copyrightHolder($this, value) { return $this.__helperValidateAttribute($this, value, 'copyrightHolder') }
+        get copyrightholder() { return this.copyrightHolder }
+        set copyrightholder(value) { this.copyrightHolder = value }
+
+            copyrightNotice($this, value) { return $this.__helperValidateAttribute($this, value, 'copyrightNotice') }
+        get copyrightnotice() { return this.copyrightNotice }
+        set copyrightnotice(value) { this.copyrightNotice = value }
+
+            copyrightYear($this, value) { return $this.__helperValidateAttribute($this, value, 'copyrightYear') }
+        get copyrightyear() { return this.copyrightYear }
+        set copyrightyear(value) { this.copyrightYear = value }
+
+            correction($this, value) { return $this.__helperValidateAttribute($this, value, 'correction') }
+
+            creativeWorkStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'creativeWorkStatus') }
+        get creativeworkstatus() { return this.creativeWorkStatus }
+        set creativeworkstatus(value) { this.creativeWorkStatus = value }
+
+            creator($this, value) { return $this.__helperValidateAttribute($this, value, 'creator') }
+
+            creditText($this, value) { return $this.__helperValidateAttribute($this, value, 'creditText') }
+        get credittext() { return this.creditText }
+        set credittext(value) { this.creditText = value }
+
+            dateCreated($this, value) { return $this.__helperValidateAttribute($this, value, 'dateCreated') }
+        get datecreated() { return this.dateCreated }
+        set datecreated(value) { this.dateCreated = value }
+
+            dateModified($this, value) { return $this.__helperValidateAttribute($this, value, 'dateModified') }
+        get datemodified() { return this.dateModified }
+        set datemodified(value) { this.dateModified = value }
+
+            datePublished($this, value) { return $this.__helperValidateAttribute($this, value, 'datePublished') }
+        get datepublished() { return this.datePublished }
+        set datepublished(value) { this.datePublished = value }
+
+            discussionUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'discussionUrl') }
+        get discussionurl() { return this.discussionUrl }
+        set discussionurl(value) { this.discussionUrl = value }
+
+            editEIDR($this, value) { return $this.__helperValidateAttribute($this, value, 'editEIDR') }
+        get editeidr() { return this.editEIDR }
+        set editeidr(value) { this.editEIDR = value }
+
+            editor($this, value) { return $this.__helperValidateAttribute($this, value, 'editor') }
+
+            educationalAlignment($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalAlignment') }
+        get educationalalignment() { return this.educationalAlignment }
+        set educationalalignment(value) { this.educationalAlignment = value }
+
+            educationalLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalLevel') }
+        get educationallevel() { return this.educationalLevel }
+        set educationallevel(value) { this.educationalLevel = value }
+
+            educationalUse($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalUse') }
+        get educationaluse() { return this.educationalUse }
+        set educationaluse(value) { this.educationalUse = value }
+
+            encoding($this, value) { return $this.__helperValidateAttribute($this, value, 'encoding') }
+
+            encodingFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'encodingFormat') }
+        get encodingformat() { return this.encodingFormat }
+        set encodingformat(value) { this.encodingFormat = value }
+
+            encodings($this, value) { return $this.__helperValidateAttribute($this, value, 'encodings') }
+
+            exampleOfWork($this, value) { return $this.__helperValidateAttribute($this, value, 'exampleOfWork') }
+        get exampleofwork() { return this.exampleOfWork }
+        set exampleofwork(value) { this.exampleOfWork = value }
+
+            expires($this, value) { return $this.__helperValidateAttribute($this, value, 'expires') }
+
+            fileFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'fileFormat') }
+        get fileformat() { return this.fileFormat }
+        set fileformat(value) { this.fileFormat = value }
+
+            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+
+            genre($this, value) { return $this.__helperValidateAttribute($this, value, 'genre') }
+
+            hasPart($this, value) { return $this.__helperValidateAttribute($this, value, 'hasPart') }
+        get haspart() { return this.hasPart }
+        set haspart(value) { this.hasPart = value }
+
+            headline($this, value) { return $this.__helperValidateAttribute($this, value, 'headline') }
+
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            interactionStatistic($this, value) { return $this.__helperValidateAttribute($this, value, 'interactionStatistic') }
+        get interactionstatistic() { return this.interactionStatistic }
+        set interactionstatistic(value) { this.interactionStatistic = value }
+
+            interactivityType($this, value) { return $this.__helperValidateAttribute($this, value, 'interactivityType') }
+        get interactivitytype() { return this.interactivityType }
+        set interactivitytype(value) { this.interactivityType = value }
+
+            isAccessibleForFree($this, value) { return $this.__helperValidateAttribute($this, value, 'isAccessibleForFree') }
+        get isaccessibleforfree() { return this.isAccessibleForFree }
+        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
+
+            isBasedOn($this, value) { return $this.__helperValidateAttribute($this, value, 'isBasedOn') }
+        get isbasedon() { return this.isBasedOn }
+        set isbasedon(value) { this.isBasedOn = value }
+
+            isBasedOnUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'isBasedOnUrl') }
+        get isbasedonurl() { return this.isBasedOnUrl }
+        set isbasedonurl(value) { this.isBasedOnUrl = value }
+
+            isFamilyFriendly($this, value) { return $this.__helperValidateAttribute($this, value, 'isFamilyFriendly') }
+        get isfamilyfriendly() { return this.isFamilyFriendly }
+        set isfamilyfriendly(value) { this.isFamilyFriendly = value }
+
+            isPartOf($this, value) { return $this.__helperValidateAttribute($this, value, 'isPartOf') }
+        get ispartof() { return this.isPartOf }
+        set ispartof(value) { this.isPartOf = value }
+
+            keywords($this, value) { return $this.__helperValidateAttribute($this, value, 'keywords') }
+
+            learningResourceType($this, value) { return $this.__helperValidateAttribute($this, value, 'learningResourceType') }
+        get learningresourcetype() { return this.learningResourceType }
+        set learningresourcetype(value) { this.learningResourceType = value }
+
+            license($this, value) { return $this.__helperValidateAttribute($this, value, 'license') }
+
+            locationCreated($this, value) { return $this.__helperValidateAttribute($this, value, 'locationCreated') }
+        get locationcreated() { return this.locationCreated }
+        set locationcreated(value) { this.locationCreated = value }
+
+            mainEntity($this, value) { return $this.__helperValidateAttribute($this, value, 'mainEntity') }
+        get mainentity() { return this.mainEntity }
+        set mainentity(value) { this.mainEntity = value }
+
+            maintainer($this, value) { return $this.__helperValidateAttribute($this, value, 'maintainer') }
+
+            material($this, value) { return $this.__helperValidateAttribute($this, value, 'material') }
+
+            materialExtent($this, value) { return $this.__helperValidateAttribute($this, value, 'materialExtent') }
+        get materialextent() { return this.materialExtent }
+        set materialextent(value) { this.materialExtent = value }
+
+            mentions($this, value) { return $this.__helperValidateAttribute($this, value, 'mentions') }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            pattern($this, value) { return $this.__helperValidateAttribute($this, value, 'pattern') }
+
+            position($this, value) { return $this.__helperValidateAttribute($this, value, 'position') }
+
+            producer($this, value) { return $this.__helperValidateAttribute($this, value, 'producer') }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            publication($this, value) { return $this.__helperValidateAttribute($this, value, 'publication') }
+
+            publisher($this, value) { return $this.__helperValidateAttribute($this, value, 'publisher') }
+
+            publisherImprint($this, value) { return $this.__helperValidateAttribute($this, value, 'publisherImprint') }
+        get publisherimprint() { return this.publisherImprint }
+        set publisherimprint(value) { this.publisherImprint = value }
+
+            publishingPrinciples($this, value) { return $this.__helperValidateAttribute($this, value, 'publishingPrinciples') }
+        get publishingprinciples() { return this.publishingPrinciples }
+        set publishingprinciples(value) { this.publishingPrinciples = value }
+
+            recordedAt($this, value) { return $this.__helperValidateAttribute($this, value, 'recordedAt') }
+        get recordedat() { return this.recordedAt }
+        set recordedat(value) { this.recordedAt = value }
+
+            releasedEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'releasedEvent') }
+        get releasedevent() { return this.releasedEvent }
+        set releasedevent(value) { this.releasedEvent = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            reviews($this, value) { return $this.__helperValidateAttribute($this, value, 'reviews') }
+
+            schemaVersion($this, value) { return $this.__helperValidateAttribute($this, value, 'schemaVersion') }
+        get schemaversion() { return this.schemaVersion }
+        set schemaversion(value) { this.schemaVersion = value }
+
+            sdDatePublished($this, value) { return $this.__helperValidateAttribute($this, value, 'sdDatePublished') }
+        get sddatepublished() { return this.sdDatePublished }
+        set sddatepublished(value) { this.sdDatePublished = value }
+
+            sdLicense($this, value) { return $this.__helperValidateAttribute($this, value, 'sdLicense') }
+        get sdlicense() { return this.sdLicense }
+        set sdlicense(value) { this.sdLicense = value }
+
+            sdPublisher($this, value) { return $this.__helperValidateAttribute($this, value, 'sdPublisher') }
+        get sdpublisher() { return this.sdPublisher }
+        set sdpublisher(value) { this.sdPublisher = value }
+
+            size($this, value) { return $this.__helperValidateAttribute($this, value, 'size') }
+
+            sourceOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'sourceOrganization') }
+        get sourceorganization() { return this.sourceOrganization }
+        set sourceorganization(value) { this.sourceOrganization = value }
+
+            spatial($this, value) { return $this.__helperValidateAttribute($this, value, 'spatial') }
+
+            spatialCoverage($this, value) { return $this.__helperValidateAttribute($this, value, 'spatialCoverage') }
+        get spatialcoverage() { return this.spatialCoverage }
+        set spatialcoverage(value) { this.spatialCoverage = value }
+
+            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+
+            teaches($this, value) { return $this.__helperValidateAttribute($this, value, 'teaches') }
+
+            temporal($this, value) { return $this.__helperValidateAttribute($this, value, 'temporal') }
+
+            temporalCoverage($this, value) { return $this.__helperValidateAttribute($this, value, 'temporalCoverage') }
+        get temporalcoverage() { return this.temporalCoverage }
+        set temporalcoverage(value) { this.temporalCoverage = value }
+
+            text($this, value) { return $this.__helperValidateAttribute($this, value, 'text') }
+
+            thumbnailUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'thumbnailUrl') }
+        get thumbnailurl() { return this.thumbnailUrl }
+        set thumbnailurl(value) { this.thumbnailUrl = value }
+
+            timeRequired($this, value) { return $this.__helperValidateAttribute($this, value, 'timeRequired') }
+        get timerequired() { return this.timeRequired }
+        set timerequired(value) { this.timeRequired = value }
+
+            translationOfWork($this, value) { return $this.__helperValidateAttribute($this, value, 'translationOfWork') }
+        get translationofwork() { return this.translationOfWork }
+        set translationofwork(value) { this.translationOfWork = value }
+
+            translator($this, value) { return $this.__helperValidateAttribute($this, value, 'translator') }
+
+            typicalAgeRange($this, value) { return $this.__helperValidateAttribute($this, value, 'typicalAgeRange') }
+        get typicalagerange() { return this.typicalAgeRange }
+        set typicalagerange(value) { this.typicalAgeRange = value }
+
+            usageInfo($this, value) { return $this.__helperValidateAttribute($this, value, 'usageInfo') }
+        get usageinfo() { return this.usageInfo }
+        set usageinfo(value) { this.usageInfo = value }
+
+            version($this, value) { return $this.__helperValidateAttribute($this, value, 'version') }
+
+            video($this, value) { return $this.__helperValidateAttribute($this, value, 'video') }
+
+            workExample($this, value) { return $this.__helperValidateAttribute($this, value, 'workExample') }
+        get workexample() { return this.workExample }
+        set workexample(value) { this.workExample = value }
+
+            workTranslation($this, value) { return $this.__helperValidateAttribute($this, value, 'workTranslation') }
+        get worktranslation() { return this.workTranslation }
+        set worktranslation(value) { this.workTranslation = value }
+        
+    }
+</script>

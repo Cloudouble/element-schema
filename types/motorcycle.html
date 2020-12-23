@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Motorcycle extends window.Cloudouble.Element.elements.Vehicle {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Motorcycle'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.'
+        static _rdfs_label = 'Motorcycle'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Motorcycle')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

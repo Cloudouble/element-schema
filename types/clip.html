@@ -1,0 +1,72 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Clip extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Clip'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A short TV or radio program or a segment\/part of a program.'
+        static _rdfs_label = 'Clip'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'clipNumber', 'director', 'directors', 'endOffset', 'musicBy', 'partOfEpisode', 'partOfSeason', 'partOfSeries', 'startOffset')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Clip')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            clipNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'clipNumber') }
+        get clipnumber() { return this.clipNumber }
+        set clipnumber(value) { this.clipNumber = value }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            endOffset($this, value) { return $this.__helperValidateAttribute($this, value, 'endOffset') }
+        get endoffset() { return this.endOffset }
+        set endoffset(value) { this.endOffset = value }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            partOfEpisode($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfEpisode') }
+        get partofepisode() { return this.partOfEpisode }
+        set partofepisode(value) { this.partOfEpisode = value }
+
+            partOfSeason($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeason') }
+        get partofseason() { return this.partOfSeason }
+        set partofseason(value) { this.partOfSeason = value }
+
+            partOfSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeries') }
+        get partofseries() { return this.partOfSeries }
+        set partofseries(value) { this.partOfSeries = value }
+
+            startOffset($this, value) { return $this.__helperValidateAttribute($this, value, 'startOffset') }
+        get startoffset() { return this.startOffset }
+        set startoffset(value) { this.startOffset = value }
+        
+    }
+</script>

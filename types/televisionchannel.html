@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Televisionchannel extends window.Cloudouble.Element.elements.Broadcastchannel {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TelevisionChannel'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.'
+        static _rdfs_label = 'TelevisionChannel'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TelevisionChannel')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

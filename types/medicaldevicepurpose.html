@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicaldevicepurpose extends window.Cloudouble.Element.elements.Medicalenumeration {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalDevicePurpose'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Categories of medical devices, organized by the purpose or intended use of the device.'
+        static _rdfs_label = 'MedicalDevicePurpose'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalDevicePurpose')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

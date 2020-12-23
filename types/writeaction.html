@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Writeaction extends window.Cloudouble.Element.elements.Createaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WriteAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of authoring written creative content.'
+        static _rdfs_label = 'WriteAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('inLanguage', 'language')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WriteAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        get inlanguage() { return this.inLanguage }
+        set inlanguage(value) { this.inLanguage = value }
+
+            language($this, value) { return $this.__helperValidateAttribute($this, value, 'language') }
+        
+    }
+</script>

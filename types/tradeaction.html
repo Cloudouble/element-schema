@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Tradeaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TradeAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.'
+        static _rdfs_label = 'TradeAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('price', 'priceCurrency', 'priceSpecification')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TradeAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            price($this, value) { return $this.__helperValidateAttribute($this, value, 'price') }
+
+            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        get pricecurrency() { return this.priceCurrency }
+        set pricecurrency(value) { this.priceCurrency = value }
+
+            priceSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'priceSpecification') }
+        get pricespecification() { return this.priceSpecification }
+        set pricespecification(value) { this.priceSpecification = value }
+        
+    }
+</script>

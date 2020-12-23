@@ -1,0 +1,184 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Offer extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Offer'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http:\/\/purl.org\/goodrelations\/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http:\/\/www.gs1.org\/barcodes\/technical\/idkeys\/gtin)-related fields, see [Check Digit calculator](http:\/\/www.gs1.org\/barcodes\/support\/check_digit_calculator) and [validation guide](http:\/\/www.gs1us.org\/resources\/standards\/gtin-validation-guide) from [GS1](http:\/\/www.gs1.org\/).'
+        static _rdfs_label = 'Offer'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acceptedPaymentMethod', 'addOn', 'advanceBookingRequirement', 'aggregateRating', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'category', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'leaseLength', 'mpn', 'offeredBy', 'price', 'priceCurrency', 'priceSpecification', 'priceValidUntil', 'review', 'reviews', 'seller', 'serialNumber', 'shippingDetails', 'sku', 'validFrom', 'validThrough', 'warranty')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Offer')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acceptedPaymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptedPaymentMethod') }
+        get acceptedpaymentmethod() { return this.acceptedPaymentMethod }
+        set acceptedpaymentmethod(value) { this.acceptedPaymentMethod = value }
+
+            addOn($this, value) { return $this.__helperValidateAttribute($this, value, 'addOn') }
+        get addon() { return this.addOn }
+        set addon(value) { this.addOn = value }
+
+            advanceBookingRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'advanceBookingRequirement') }
+        get advancebookingrequirement() { return this.advanceBookingRequirement }
+        set advancebookingrequirement(value) { this.advanceBookingRequirement = value }
+
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            availability($this, value) { return $this.__helperValidateAttribute($this, value, 'availability') }
+
+            availabilityEnds($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityEnds') }
+        get availabilityends() { return this.availabilityEnds }
+        set availabilityends(value) { this.availabilityEnds = value }
+
+            availabilityStarts($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityStarts') }
+        get availabilitystarts() { return this.availabilityStarts }
+        set availabilitystarts(value) { this.availabilityStarts = value }
+
+            availableAtOrFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'availableAtOrFrom') }
+        get availableatorfrom() { return this.availableAtOrFrom }
+        set availableatorfrom(value) { this.availableAtOrFrom = value }
+
+            availableDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'availableDeliveryMethod') }
+        get availabledeliverymethod() { return this.availableDeliveryMethod }
+        set availabledeliverymethod(value) { this.availableDeliveryMethod = value }
+
+            businessFunction($this, value) { return $this.__helperValidateAttribute($this, value, 'businessFunction') }
+        get businessfunction() { return this.businessFunction }
+        set businessfunction(value) { this.businessFunction = value }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            deliveryLeadTime($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryLeadTime') }
+        get deliveryleadtime() { return this.deliveryLeadTime }
+        set deliveryleadtime(value) { this.deliveryLeadTime = value }
+
+            eligibleCustomerType($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleCustomerType') }
+        get eligiblecustomertype() { return this.eligibleCustomerType }
+        set eligiblecustomertype(value) { this.eligibleCustomerType = value }
+
+            eligibleDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleDuration') }
+        get eligibleduration() { return this.eligibleDuration }
+        set eligibleduration(value) { this.eligibleDuration = value }
+
+            eligibleQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleQuantity') }
+        get eligiblequantity() { return this.eligibleQuantity }
+        set eligiblequantity(value) { this.eligibleQuantity = value }
+
+            eligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleRegion') }
+        get eligibleregion() { return this.eligibleRegion }
+        set eligibleregion(value) { this.eligibleRegion = value }
+
+            eligibleTransactionVolume($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleTransactionVolume') }
+        get eligibletransactionvolume() { return this.eligibleTransactionVolume }
+        set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
+
+            gtin($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin') }
+
+            gtin12($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin12') }
+
+            gtin13($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin13') }
+
+            gtin14($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin14') }
+
+            gtin8($this, value) { return $this.__helperValidateAttribute($this, value, 'gtin8') }
+
+            includesObject($this, value) { return $this.__helperValidateAttribute($this, value, 'includesObject') }
+        get includesobject() { return this.includesObject }
+        set includesobject(value) { this.includesObject = value }
+
+            ineligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'ineligibleRegion') }
+        get ineligibleregion() { return this.ineligibleRegion }
+        set ineligibleregion(value) { this.ineligibleRegion = value }
+
+            inventoryLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'inventoryLevel') }
+        get inventorylevel() { return this.inventoryLevel }
+        set inventorylevel(value) { this.inventoryLevel = value }
+
+            itemCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'itemCondition') }
+        get itemcondition() { return this.itemCondition }
+        set itemcondition(value) { this.itemCondition = value }
+
+            itemOffered($this, value) { return $this.__helperValidateAttribute($this, value, 'itemOffered') }
+        get itemoffered() { return this.itemOffered }
+        set itemoffered(value) { this.itemOffered = value }
+
+            leaseLength($this, value) { return $this.__helperValidateAttribute($this, value, 'leaseLength') }
+        get leaselength() { return this.leaseLength }
+        set leaselength(value) { this.leaseLength = value }
+
+            mpn($this, value) { return $this.__helperValidateAttribute($this, value, 'mpn') }
+
+            offeredBy($this, value) { return $this.__helperValidateAttribute($this, value, 'offeredBy') }
+        get offeredby() { return this.offeredBy }
+        set offeredby(value) { this.offeredBy = value }
+
+            price($this, value) { return $this.__helperValidateAttribute($this, value, 'price') }
+
+            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        get pricecurrency() { return this.priceCurrency }
+        set pricecurrency(value) { this.priceCurrency = value }
+
+            priceSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'priceSpecification') }
+        get pricespecification() { return this.priceSpecification }
+        set pricespecification(value) { this.priceSpecification = value }
+
+            priceValidUntil($this, value) { return $this.__helperValidateAttribute($this, value, 'priceValidUntil') }
+        get pricevaliduntil() { return this.priceValidUntil }
+        set pricevaliduntil(value) { this.priceValidUntil = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            reviews($this, value) { return $this.__helperValidateAttribute($this, value, 'reviews') }
+
+            seller($this, value) { return $this.__helperValidateAttribute($this, value, 'seller') }
+
+            serialNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'serialNumber') }
+        get serialnumber() { return this.serialNumber }
+        set serialnumber(value) { this.serialNumber = value }
+
+            shippingDetails($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDetails') }
+        get shippingdetails() { return this.shippingDetails }
+        set shippingdetails(value) { this.shippingDetails = value }
+
+            sku($this, value) { return $this.__helperValidateAttribute($this, value, 'sku') }
+
+            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        get validfrom() { return this.validFrom }
+        set validfrom(value) { this.validFrom = value }
+
+            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        get validthrough() { return this.validThrough }
+        set validthrough(value) { this.validThrough = value }
+
+            warranty($this, value) { return $this.__helperValidateAttribute($this, value, 'warranty') }
+        
+    }
+</script>

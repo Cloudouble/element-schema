@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Book extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Book'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A book.'
+        static _rdfs_label = 'Book'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Book')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            abridged($this, value) { return $this.__helperValidateAttribute($this, value, 'abridged') }
+
+            bookEdition($this, value) { return $this.__helperValidateAttribute($this, value, 'bookEdition') }
+        get bookedition() { return this.bookEdition }
+        set bookedition(value) { this.bookEdition = value }
+
+            bookFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'bookFormat') }
+        get bookformat() { return this.bookFormat }
+        set bookformat(value) { this.bookFormat = value }
+
+            illustrator($this, value) { return $this.__helperValidateAttribute($this, value, 'illustrator') }
+
+            isbn($this, value) { return $this.__helperValidateAttribute($this, value, 'isbn') }
+
+            numberOfPages($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPages') }
+        get numberofpages() { return this.numberOfPages }
+        set numberofpages(value) { this.numberOfPages = value }
+        
+    }
+</script>

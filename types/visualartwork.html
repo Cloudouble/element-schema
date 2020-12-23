@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Visualartwork extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:VisualArtwork'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A work of art that is primarily visual in character.'
+        static _rdfs_label = 'VisualArtwork'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('VisualArtwork')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            artEdition($this, value) { return $this.__helperValidateAttribute($this, value, 'artEdition') }
+        get artedition() { return this.artEdition }
+        set artedition(value) { this.artEdition = value }
+
+            artMedium($this, value) { return $this.__helperValidateAttribute($this, value, 'artMedium') }
+        get artmedium() { return this.artMedium }
+        set artmedium(value) { this.artMedium = value }
+
+            artform($this, value) { return $this.__helperValidateAttribute($this, value, 'artform') }
+
+            artist($this, value) { return $this.__helperValidateAttribute($this, value, 'artist') }
+
+            artworkSurface($this, value) { return $this.__helperValidateAttribute($this, value, 'artworkSurface') }
+        get artworksurface() { return this.artworkSurface }
+        set artworksurface(value) { this.artworkSurface = value }
+
+            colorist($this, value) { return $this.__helperValidateAttribute($this, value, 'colorist') }
+
+            depth($this, value) { return $this.__helperValidateAttribute($this, value, 'depth') }
+
+            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+
+            inker($this, value) { return $this.__helperValidateAttribute($this, value, 'inker') }
+
+            letterer($this, value) { return $this.__helperValidateAttribute($this, value, 'letterer') }
+
+            penciler($this, value) { return $this.__helperValidateAttribute($this, value, 'penciler') }
+
+            surface($this, value) { return $this.__helperValidateAttribute($this, value, 'surface') }
+
+            width($this, value) { return $this.__helperValidateAttribute($this, value, 'width') }
+        
+    }
+</script>

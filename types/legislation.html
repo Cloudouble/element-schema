@@ -1,0 +1,86 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Legislation extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Legislation'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).'
+        static _rdfs_label = 'Legislation'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Legislation')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            jurisdiction($this, value) { return $this.__helperValidateAttribute($this, value, 'jurisdiction') }
+
+            legislationApplies($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationApplies') }
+        get legislationapplies() { return this.legislationApplies }
+        set legislationapplies(value) { this.legislationApplies = value }
+
+            legislationChanges($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationChanges') }
+        get legislationchanges() { return this.legislationChanges }
+        set legislationchanges(value) { this.legislationChanges = value }
+
+            legislationConsolidates($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationConsolidates') }
+        get legislationconsolidates() { return this.legislationConsolidates }
+        set legislationconsolidates(value) { this.legislationConsolidates = value }
+
+            legislationDate($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationDate') }
+        get legislationdate() { return this.legislationDate }
+        set legislationdate(value) { this.legislationDate = value }
+
+            legislationDateVersion($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationDateVersion') }
+        get legislationdateversion() { return this.legislationDateVersion }
+        set legislationdateversion(value) { this.legislationDateVersion = value }
+
+            legislationIdentifier($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationIdentifier') }
+        get legislationidentifier() { return this.legislationIdentifier }
+        set legislationidentifier(value) { this.legislationIdentifier = value }
+
+            legislationJurisdiction($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationJurisdiction') }
+        get legislationjurisdiction() { return this.legislationJurisdiction }
+        set legislationjurisdiction(value) { this.legislationJurisdiction = value }
+
+            legislationLegalForce($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationLegalForce') }
+        get legislationlegalforce() { return this.legislationLegalForce }
+        set legislationlegalforce(value) { this.legislationLegalForce = value }
+
+            legislationPassedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationPassedBy') }
+        get legislationpassedby() { return this.legislationPassedBy }
+        set legislationpassedby(value) { this.legislationPassedBy = value }
+
+            legislationResponsible($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationResponsible') }
+        get legislationresponsible() { return this.legislationResponsible }
+        set legislationresponsible(value) { this.legislationResponsible = value }
+
+            legislationTransposes($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationTransposes') }
+        get legislationtransposes() { return this.legislationTransposes }
+        set legislationtransposes(value) { this.legislationTransposes = value }
+
+            legislationType($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationType') }
+        get legislationtype() { return this.legislationType }
+        set legislationtype(value) { this.legislationType = value }
+        
+    }
+</script>

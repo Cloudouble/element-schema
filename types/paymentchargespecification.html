@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Paymentchargespecification extends window.Cloudouble.Element.elements.Pricespecification {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PaymentChargeSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The costs of settling the payment using a particular payment method.'
+        static _rdfs_label = 'PaymentChargeSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('appliesToDeliveryMethod', 'appliesToPaymentMethod')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PaymentChargeSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            appliesToDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'appliesToDeliveryMethod') }
+        get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
+        set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
+
+            appliesToPaymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'appliesToPaymentMethod') }
+        get appliestopaymentmethod() { return this.appliesToPaymentMethod }
+        set appliestopaymentmethod(value) { this.appliesToPaymentMethod = value }
+        
+    }
+</script>

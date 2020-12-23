@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Ownershipinfo extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OwnershipInfo'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured value providing information about when a certain organization or person owned a certain product.'
+        static _rdfs_label = 'OwnershipInfo'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acquiredFrom', 'ownedFrom', 'ownedThrough', 'typeOfGood')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OwnershipInfo')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acquiredFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'acquiredFrom') }
+        get acquiredfrom() { return this.acquiredFrom }
+        set acquiredfrom(value) { this.acquiredFrom = value }
+
+            ownedFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'ownedFrom') }
+        get ownedfrom() { return this.ownedFrom }
+        set ownedfrom(value) { this.ownedFrom = value }
+
+            ownedThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'ownedThrough') }
+        get ownedthrough() { return this.ownedThrough }
+        set ownedthrough(value) { this.ownedThrough = value }
+
+            typeOfGood($this, value) { return $this.__helperValidateAttribute($this, value, 'typeOfGood') }
+        get typeofgood() { return this.typeOfGood }
+        set typeofgood(value) { this.typeOfGood = value }
+        
+    }
+</script>

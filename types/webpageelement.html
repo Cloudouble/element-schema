@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Webpageelement extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WebPageElement'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A web page element, like a table or an image.'
+        static _rdfs_label = 'WebPageElement'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('cssSelector', 'xpath')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WebPageElement')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            cssSelector($this, value) { return $this.__helperValidateAttribute($this, value, 'cssSelector') }
+        get cssselector() { return this.cssSelector }
+        set cssselector(value) { this.cssSelector = value }
+
+            xpath($this, value) { return $this.__helperValidateAttribute($this, value, 'xpath') }
+        
+    }
+</script>

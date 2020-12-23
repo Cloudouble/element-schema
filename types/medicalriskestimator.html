@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Medicalriskestimator extends window.Cloudouble.Element.elements.Medicalentity {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MedicalRiskEstimator'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Any rule set or interactive tool for estimating the risk of developing a complication or condition.'
+        static _rdfs_label = 'MedicalRiskEstimator'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('estimatesRiskOf', 'includedRiskFactor')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MedicalRiskEstimator')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            estimatesRiskOf($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatesRiskOf') }
+        get estimatesriskof() { return this.estimatesRiskOf }
+        set estimatesriskof(value) { this.estimatesRiskOf = value }
+
+            includedRiskFactor($this, value) { return $this.__helperValidateAttribute($this, value, 'includedRiskFactor') }
+        get includedriskfactor() { return this.includedRiskFactor }
+        set includedriskfactor(value) { this.includedRiskFactor = value }
+        
+    }
+</script>

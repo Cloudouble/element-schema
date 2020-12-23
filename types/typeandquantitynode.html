@@ -1,0 +1,56 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Typeandquantitynode extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:TypeAndQuantityNode'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.'
+        static _rdfs_label = 'TypeAndQuantityNode'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('TypeAndQuantityNode')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            amountOfThisGood($this, value) { return $this.__helperValidateAttribute($this, value, 'amountOfThisGood') }
+        get amountofthisgood() { return this.amountOfThisGood }
+        set amountofthisgood(value) { this.amountOfThisGood = value }
+
+            businessFunction($this, value) { return $this.__helperValidateAttribute($this, value, 'businessFunction') }
+        get businessfunction() { return this.businessFunction }
+        set businessfunction(value) { this.businessFunction = value }
+
+            typeOfGood($this, value) { return $this.__helperValidateAttribute($this, value, 'typeOfGood') }
+        get typeofgood() { return this.typeOfGood }
+        set typeofgood(value) { this.typeOfGood = value }
+
+            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        get unitcode() { return this.unitCode }
+        set unitcode(value) { this.unitCode = value }
+
+            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        get unittext() { return this.unitText }
+        set unittext(value) { this.unitText = value }
+        
+    }
+</script>

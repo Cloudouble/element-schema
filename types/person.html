@@ -1,0 +1,230 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Person extends window.Cloudouble.Element.elements.Thing {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Person'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A person (alive, dead, undead, or fictional).'
+        static _rdfs_label = 'Person'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('additionalName', 'address', 'affiliation', 'alumniOf', 'award', 'awards', 'birthDate', 'birthPlace', 'brand', 'callSign', 'children', 'colleague', 'colleagues', 'contactPoint', 'contactPoints', 'deathDate', 'deathPlace', 'duns', 'email', 'familyName', 'faxNumber', 'follows', 'funder', 'gender', 'givenName', 'globalLocationNumber', 'hasCredential', 'hasOccupation', 'hasOfferCatalog', 'hasPOS', 'height', 'homeLocation', 'honorificPrefix', 'honorificSuffix', 'interactionStatistic', 'isicV4', 'jobTitle', 'knows', 'knowsAbout', 'knowsLanguage', 'makesOffer', 'memberOf', 'naics', 'nationality', 'netWorth', 'owns', 'parent', 'parents', 'performerIn', 'publishingPrinciples', 'relatedTo', 'seeks', 'sibling', 'siblings', 'sponsor', 'spouse', 'taxID', 'telephone', 'vatID', 'weight', 'workLocation', 'worksFor')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Person')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            additionalName($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalName') }
+        get additionalname() { return this.additionalName }
+        set additionalname(value) { this.additionalName = value }
+
+            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+
+            affiliation($this, value) { return $this.__helperValidateAttribute($this, value, 'affiliation') }
+
+            alumniOf($this, value) { return $this.__helperValidateAttribute($this, value, 'alumniOf') }
+        get alumniof() { return this.alumniOf }
+        set alumniof(value) { this.alumniOf = value }
+
+            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+
+            awards($this, value) { return $this.__helperValidateAttribute($this, value, 'awards') }
+
+            birthDate($this, value) { return $this.__helperValidateAttribute($this, value, 'birthDate') }
+        get birthdate() { return this.birthDate }
+        set birthdate(value) { this.birthDate = value }
+
+            birthPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'birthPlace') }
+        get birthplace() { return this.birthPlace }
+        set birthplace(value) { this.birthPlace = value }
+
+            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+
+            callSign($this, value) { return $this.__helperValidateAttribute($this, value, 'callSign') }
+        get callsign() { return this.callSign }
+        set callsign(value) { this.callSign = value }
+
+            children($this, value) { return $this.__helperValidateAttribute($this, value, 'children') }
+
+            colleague($this, value) { return $this.__helperValidateAttribute($this, value, 'colleague') }
+
+            colleagues($this, value) { return $this.__helperValidateAttribute($this, value, 'colleagues') }
+
+            contactPoint($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoint') }
+        get contactpoint() { return this.contactPoint }
+        set contactpoint(value) { this.contactPoint = value }
+
+            contactPoints($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoints') }
+        get contactpoints() { return this.contactPoints }
+        set contactpoints(value) { this.contactPoints = value }
+
+            deathDate($this, value) { return $this.__helperValidateAttribute($this, value, 'deathDate') }
+        get deathdate() { return this.deathDate }
+        set deathdate(value) { this.deathDate = value }
+
+            deathPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'deathPlace') }
+        get deathplace() { return this.deathPlace }
+        set deathplace(value) { this.deathPlace = value }
+
+            duns($this, value) { return $this.__helperValidateAttribute($this, value, 'duns') }
+
+            email($this, value) { return $this.__helperValidateAttribute($this, value, 'email') }
+
+            familyName($this, value) { return $this.__helperValidateAttribute($this, value, 'familyName') }
+        get familyname() { return this.familyName }
+        set familyname(value) { this.familyName = value }
+
+            faxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'faxNumber') }
+        get faxnumber() { return this.faxNumber }
+        set faxnumber(value) { this.faxNumber = value }
+
+            follows($this, value) { return $this.__helperValidateAttribute($this, value, 'follows') }
+
+            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+
+            gender($this, value) { return $this.__helperValidateAttribute($this, value, 'gender') }
+
+            givenName($this, value) { return $this.__helperValidateAttribute($this, value, 'givenName') }
+        get givenname() { return this.givenName }
+        set givenname(value) { this.givenName = value }
+
+            globalLocationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'globalLocationNumber') }
+        get globallocationnumber() { return this.globalLocationNumber }
+        set globallocationnumber(value) { this.globalLocationNumber = value }
+
+            hasCredential($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCredential') }
+        get hascredential() { return this.hasCredential }
+        set hascredential(value) { this.hasCredential = value }
+
+            hasOccupation($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOccupation') }
+        get hasoccupation() { return this.hasOccupation }
+        set hasoccupation(value) { this.hasOccupation = value }
+
+            hasOfferCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOfferCatalog') }
+        get hasoffercatalog() { return this.hasOfferCatalog }
+        set hasoffercatalog(value) { this.hasOfferCatalog = value }
+
+            hasPOS($this, value) { return $this.__helperValidateAttribute($this, value, 'hasPOS') }
+        get haspos() { return this.hasPOS }
+        set haspos(value) { this.hasPOS = value }
+
+            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+
+            homeLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'homeLocation') }
+        get homelocation() { return this.homeLocation }
+        set homelocation(value) { this.homeLocation = value }
+
+            honorificPrefix($this, value) { return $this.__helperValidateAttribute($this, value, 'honorificPrefix') }
+        get honorificprefix() { return this.honorificPrefix }
+        set honorificprefix(value) { this.honorificPrefix = value }
+
+            honorificSuffix($this, value) { return $this.__helperValidateAttribute($this, value, 'honorificSuffix') }
+        get honorificsuffix() { return this.honorificSuffix }
+        set honorificsuffix(value) { this.honorificSuffix = value }
+
+            interactionStatistic($this, value) { return $this.__helperValidateAttribute($this, value, 'interactionStatistic') }
+        get interactionstatistic() { return this.interactionStatistic }
+        set interactionstatistic(value) { this.interactionStatistic = value }
+
+            isicV4($this, value) { return $this.__helperValidateAttribute($this, value, 'isicV4') }
+        get isicv4() { return this.isicV4 }
+        set isicv4(value) { this.isicV4 = value }
+
+            jobTitle($this, value) { return $this.__helperValidateAttribute($this, value, 'jobTitle') }
+        get jobtitle() { return this.jobTitle }
+        set jobtitle(value) { this.jobTitle = value }
+
+            knows($this, value) { return $this.__helperValidateAttribute($this, value, 'knows') }
+
+            knowsAbout($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsAbout') }
+        get knowsabout() { return this.knowsAbout }
+        set knowsabout(value) { this.knowsAbout = value }
+
+            knowsLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsLanguage') }
+        get knowslanguage() { return this.knowsLanguage }
+        set knowslanguage(value) { this.knowsLanguage = value }
+
+            makesOffer($this, value) { return $this.__helperValidateAttribute($this, value, 'makesOffer') }
+        get makesoffer() { return this.makesOffer }
+        set makesoffer(value) { this.makesOffer = value }
+
+            memberOf($this, value) { return $this.__helperValidateAttribute($this, value, 'memberOf') }
+        get memberof() { return this.memberOf }
+        set memberof(value) { this.memberOf = value }
+
+            naics($this, value) { return $this.__helperValidateAttribute($this, value, 'naics') }
+
+            nationality($this, value) { return $this.__helperValidateAttribute($this, value, 'nationality') }
+
+            netWorth($this, value) { return $this.__helperValidateAttribute($this, value, 'netWorth') }
+        get networth() { return this.netWorth }
+        set networth(value) { this.netWorth = value }
+
+            owns($this, value) { return $this.__helperValidateAttribute($this, value, 'owns') }
+
+            parent($this, value) { return $this.__helperValidateAttribute($this, value, 'parent') }
+
+            parents($this, value) { return $this.__helperValidateAttribute($this, value, 'parents') }
+
+            performerIn($this, value) { return $this.__helperValidateAttribute($this, value, 'performerIn') }
+        get performerin() { return this.performerIn }
+        set performerin(value) { this.performerIn = value }
+
+            publishingPrinciples($this, value) { return $this.__helperValidateAttribute($this, value, 'publishingPrinciples') }
+        get publishingprinciples() { return this.publishingPrinciples }
+        set publishingprinciples(value) { this.publishingPrinciples = value }
+
+            relatedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedTo') }
+        get relatedto() { return this.relatedTo }
+        set relatedto(value) { this.relatedTo = value }
+
+            seeks($this, value) { return $this.__helperValidateAttribute($this, value, 'seeks') }
+
+            sibling($this, value) { return $this.__helperValidateAttribute($this, value, 'sibling') }
+
+            siblings($this, value) { return $this.__helperValidateAttribute($this, value, 'siblings') }
+
+            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+
+            spouse($this, value) { return $this.__helperValidateAttribute($this, value, 'spouse') }
+
+            taxID($this, value) { return $this.__helperValidateAttribute($this, value, 'taxID') }
+        get taxid() { return this.taxID }
+        set taxid(value) { this.taxID = value }
+
+            telephone($this, value) { return $this.__helperValidateAttribute($this, value, 'telephone') }
+
+            vatID($this, value) { return $this.__helperValidateAttribute($this, value, 'vatID') }
+        get vatid() { return this.vatID }
+        set vatid(value) { this.vatID = value }
+
+            weight($this, value) { return $this.__helperValidateAttribute($this, value, 'weight') }
+
+            workLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'workLocation') }
+        get worklocation() { return this.workLocation }
+        set worklocation(value) { this.workLocation = value }
+
+            worksFor($this, value) { return $this.__helperValidateAttribute($this, value, 'worksFor') }
+        get worksfor() { return this.worksFor }
+        set worksfor(value) { this.worksFor = value }
+        
+    }
+</script>

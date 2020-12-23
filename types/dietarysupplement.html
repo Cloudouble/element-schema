@@ -1,0 +1,78 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Dietarysupplement extends window.Cloudouble.Element.elements.Substance {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DietarySupplement'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.'
+        static _rdfs_label = 'DietarySupplement'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DietarySupplement')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        get activeingredient() { return this.activeIngredient }
+        set activeingredient(value) { this.activeIngredient = value }
+
+            isProprietary($this, value) { return $this.__helperValidateAttribute($this, value, 'isProprietary') }
+        get isproprietary() { return this.isProprietary }
+        set isproprietary(value) { this.isProprietary = value }
+
+            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        get legalstatus() { return this.legalStatus }
+        set legalstatus(value) { this.legalStatus = value }
+
+            manufacturer($this, value) { return $this.__helperValidateAttribute($this, value, 'manufacturer') }
+
+            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        get maximumintake() { return this.maximumIntake }
+        set maximumintake(value) { this.maximumIntake = value }
+
+            mechanismOfAction($this, value) { return $this.__helperValidateAttribute($this, value, 'mechanismOfAction') }
+        get mechanismofaction() { return this.mechanismOfAction }
+        set mechanismofaction(value) { this.mechanismOfAction = value }
+
+            nonProprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'nonProprietaryName') }
+        get nonproprietaryname() { return this.nonProprietaryName }
+        set nonproprietaryname(value) { this.nonProprietaryName = value }
+
+            proprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'proprietaryName') }
+        get proprietaryname() { return this.proprietaryName }
+        set proprietaryname(value) { this.proprietaryName = value }
+
+            recommendedIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'recommendedIntake') }
+        get recommendedintake() { return this.recommendedIntake }
+        set recommendedintake(value) { this.recommendedIntake = value }
+
+            safetyConsideration($this, value) { return $this.__helperValidateAttribute($this, value, 'safetyConsideration') }
+        get safetyconsideration() { return this.safetyConsideration }
+        set safetyconsideration(value) { this.safetyConsideration = value }
+
+            targetPopulation($this, value) { return $this.__helperValidateAttribute($this, value, 'targetPopulation') }
+        get targetpopulation() { return this.targetPopulation }
+        set targetpopulation(value) { this.targetPopulation = value }
+        
+    }
+</script>

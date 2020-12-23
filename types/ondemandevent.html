@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Ondemandevent extends window.Cloudouble.Element.elements.Publicationevent {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:OnDemandEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.'
+        static _rdfs_label = 'OnDemandEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('OnDemandEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

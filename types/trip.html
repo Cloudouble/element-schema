@@ -1,0 +1,58 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Trip extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Trip'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A trip or journey. An itinerary of visits to one or more places.'
+        static _rdfs_label = 'Trip'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('arrivalTime', 'departureTime', 'itinerary', 'offers', 'partOfTrip', 'provider', 'subTrip')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Trip')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            arrivalTime($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalTime') }
+        get arrivaltime() { return this.arrivalTime }
+        set arrivaltime(value) { this.arrivalTime = value }
+
+            departureTime($this, value) { return $this.__helperValidateAttribute($this, value, 'departureTime') }
+        get departuretime() { return this.departureTime }
+        set departuretime(value) { this.departureTime = value }
+
+            itinerary($this, value) { return $this.__helperValidateAttribute($this, value, 'itinerary') }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            partOfTrip($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfTrip') }
+        get partoftrip() { return this.partOfTrip }
+        set partoftrip(value) { this.partOfTrip = value }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            subTrip($this, value) { return $this.__helperValidateAttribute($this, value, 'subTrip') }
+        get subtrip() { return this.subTrip }
+        set subtrip(value) { this.subTrip = value }
+        
+    }
+</script>

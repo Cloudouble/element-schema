@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Searchaction extends window.Cloudouble.Element.elements.Action {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SearchAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.'
+        static _rdfs_label = 'SearchAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('query')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SearchAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            query($this, value) { return $this.__helperValidateAttribute($this, value, 'query') }
+        
+    }
+</script>

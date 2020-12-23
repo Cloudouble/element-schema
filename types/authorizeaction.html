@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Authorizeaction extends window.Cloudouble.Element.elements.Allocateaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:AuthorizeAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of granting permission to an object.'
+        static _rdfs_label = 'AuthorizeAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('recipient')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('AuthorizeAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        
+    }
+</script>

@@ -1,0 +1,96 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Mediaobject extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MediaObject'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject\'s).'
+        static _rdfs_label = 'MediaObject'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MediaObject')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            associatedArticle($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedArticle') }
+        get associatedarticle() { return this.associatedArticle }
+        set associatedarticle(value) { this.associatedArticle = value }
+
+            bitrate($this, value) { return $this.__helperValidateAttribute($this, value, 'bitrate') }
+
+            contentSize($this, value) { return $this.__helperValidateAttribute($this, value, 'contentSize') }
+        get contentsize() { return this.contentSize }
+        set contentsize(value) { this.contentSize = value }
+
+            contentUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'contentUrl') }
+        get contenturl() { return this.contentUrl }
+        set contenturl(value) { this.contentUrl = value }
+
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            embedUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'embedUrl') }
+        get embedurl() { return this.embedUrl }
+        set embedurl(value) { this.embedUrl = value }
+
+            encodesCreativeWork($this, value) { return $this.__helperValidateAttribute($this, value, 'encodesCreativeWork') }
+        get encodescreativework() { return this.encodesCreativeWork }
+        set encodescreativework(value) { this.encodesCreativeWork = value }
+
+            encodingFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'encodingFormat') }
+        get encodingformat() { return this.encodingFormat }
+        set encodingformat(value) { this.encodingFormat = value }
+
+            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        get endtime() { return this.endTime }
+        set endtime(value) { this.endTime = value }
+
+            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+
+            playerType($this, value) { return $this.__helperValidateAttribute($this, value, 'playerType') }
+        get playertype() { return this.playerType }
+        set playertype(value) { this.playerType = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            regionsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'regionsAllowed') }
+        get regionsallowed() { return this.regionsAllowed }
+        set regionsallowed(value) { this.regionsAllowed = value }
+
+            requiresSubscription($this, value) { return $this.__helperValidateAttribute($this, value, 'requiresSubscription') }
+        get requiressubscription() { return this.requiresSubscription }
+        set requiressubscription(value) { this.requiresSubscription = value }
+
+            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        get starttime() { return this.startTime }
+        set starttime(value) { this.startTime = value }
+
+            uploadDate($this, value) { return $this.__helperValidateAttribute($this, value, 'uploadDate') }
+        get uploaddate() { return this.uploadDate }
+        set uploaddate(value) { this.uploadDate = value }
+
+            width($this, value) { return $this.__helperValidateAttribute($this, value, 'width') }
+        
+    }
+</script>

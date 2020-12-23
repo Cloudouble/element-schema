@@ -1,0 +1,110 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Service extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Service'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A service provided by an organization, e.g. delivery service, print services, etc.'
+        static _rdfs_label = 'Service'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Service')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        get aggregaterating() { return this.aggregateRating }
+        set aggregaterating(value) { this.aggregateRating = value }
+
+            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        get areaserved() { return this.areaServed }
+        set areaserved(value) { this.areaServed = value }
+
+            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+
+            availableChannel($this, value) { return $this.__helperValidateAttribute($this, value, 'availableChannel') }
+        get availablechannel() { return this.availableChannel }
+        set availablechannel(value) { this.availableChannel = value }
+
+            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+
+            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+
+            broker($this, value) { return $this.__helperValidateAttribute($this, value, 'broker') }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            hasOfferCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOfferCatalog') }
+        get hasoffercatalog() { return this.hasOfferCatalog }
+        set hasoffercatalog(value) { this.hasOfferCatalog = value }
+
+            hoursAvailable($this, value) { return $this.__helperValidateAttribute($this, value, 'hoursAvailable') }
+        get hoursavailable() { return this.hoursAvailable }
+        set hoursavailable(value) { this.hoursAvailable = value }
+
+            isRelatedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isRelatedTo') }
+        get isrelatedto() { return this.isRelatedTo }
+        set isrelatedto(value) { this.isRelatedTo = value }
+
+            isSimilarTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isSimilarTo') }
+        get issimilarto() { return this.isSimilarTo }
+        set issimilarto(value) { this.isSimilarTo = value }
+
+            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+
+            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+
+            produces($this, value) { return $this.__helperValidateAttribute($this, value, 'produces') }
+
+            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+
+            providerMobility($this, value) { return $this.__helperValidateAttribute($this, value, 'providerMobility') }
+        get providermobility() { return this.providerMobility }
+        set providermobility(value) { this.providerMobility = value }
+
+            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+
+            serviceArea($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceArea') }
+        get servicearea() { return this.serviceArea }
+        set servicearea(value) { this.serviceArea = value }
+
+            serviceAudience($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceAudience') }
+        get serviceaudience() { return this.serviceAudience }
+        set serviceaudience(value) { this.serviceAudience = value }
+
+            serviceOutput($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceOutput') }
+        get serviceoutput() { return this.serviceOutput }
+        set serviceoutput(value) { this.serviceOutput = value }
+
+            serviceType($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceType') }
+        get servicetype() { return this.serviceType }
+        set servicetype(value) { this.serviceType = value }
+
+            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+
+            termsOfService($this, value) { return $this.__helperValidateAttribute($this, value, 'termsOfService') }
+        get termsofservice() { return this.termsOfService }
+        set termsofservice(value) { this.termsOfService = value }
+        
+    }
+</script>

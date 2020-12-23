@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Musicplaylist extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MusicPlaylist'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A collection of music tracks in playlist form.'
+        static _rdfs_label = 'MusicPlaylist'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('numTracks', 'track', 'tracks')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MusicPlaylist')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            numTracks($this, value) { return $this.__helperValidateAttribute($this, value, 'numTracks') }
+        get numtracks() { return this.numTracks }
+        set numtracks(value) { this.numTracks = value }
+
+            track($this, value) { return $this.__helperValidateAttribute($this, value, 'track') }
+
+            tracks($this, value) { return $this.__helperValidateAttribute($this, value, 'tracks') }
+        
+    }
+</script>

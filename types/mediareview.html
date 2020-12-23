@@ -1,0 +1,42 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Mediareview extends window.Cloudouble.Element.elements.Review {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MediaReview'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = '(editorial work in progress, this definition is incomplete and unreviewed)
+    A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
+    For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types.'
+        static _rdfs_label = 'MediaReview'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('mediaAuthenticityCategory')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MediaReview')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            mediaAuthenticityCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'mediaAuthenticityCategory') }
+        get mediaauthenticitycategory() { return this.mediaAuthenticityCategory }
+        set mediaauthenticitycategory(value) { this.mediaAuthenticityCategory = value }
+        
+    }
+</script>

@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Infectiousdisease extends window.Cloudouble.Element.elements.Medicalcondition {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:InfectiousDisease'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.'
+        static _rdfs_label = 'InfectiousDisease'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('infectiousAgent', 'infectiousAgentClass', 'transmissionMethod')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('InfectiousDisease')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            infectiousAgent($this, value) { return $this.__helperValidateAttribute($this, value, 'infectiousAgent') }
+        get infectiousagent() { return this.infectiousAgent }
+        set infectiousagent(value) { this.infectiousAgent = value }
+
+            infectiousAgentClass($this, value) { return $this.__helperValidateAttribute($this, value, 'infectiousAgentClass') }
+        get infectiousagentclass() { return this.infectiousAgentClass }
+        set infectiousagentclass(value) { this.infectiousAgentClass = value }
+
+            transmissionMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'transmissionMethod') }
+        get transmissionmethod() { return this.transmissionMethod }
+        set transmissionmethod(value) { this.transmissionMethod = value }
+        
+    }
+</script>

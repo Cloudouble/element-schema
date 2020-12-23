@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Endorseaction extends window.Cloudouble.Element.elements.Reactaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:EndorseAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An agent approves\/certifies\/likes\/supports\/sanction an object.'
+        static _rdfs_label = 'EndorseAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('endorsee')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('EndorseAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            endorsee($this, value) { return $this.__helperValidateAttribute($this, value, 'endorsee') }
+        
+    }
+</script>

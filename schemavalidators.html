@@ -1,0 +1,33 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Schemavalidators extends window.Cloudouble.Element.elements.Base {
+
+        static _map = {
+            markupTypes: ['speechToTextMarkup']
+        }
+
+        static markupTypes(attribute, value, allow=undefined) {
+            var retval = {attribute: attribute, value: value, coerced: undefined, valid: undefined, message: undefined}
+            var validMarkups = ['SSML', 'STML', 'IPA', 'TTS', 'PLS', 'SRGS', 'SISR', 'SABLE', 'JSML']
+            retval.valid = validMarkups.includes(value)
+            if (!retval.valid) {
+                retval.message = 'Markup type acronyms should be in uppercase'
+                if (validMarkups.map(m => m.toLowerCase()).includes(value.toLowerCase())) {
+                    retval.coerced = value.toUpperCase()
+                } else {
+                    retval.message = `Markup type needs to be one of: ${validMarkups.join(', ')}`
+                }
+            }
+            return retval
+        }
+
+    }
+</script>

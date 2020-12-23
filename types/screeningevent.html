@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Screeningevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ScreeningEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A screening of a movie or other video.'
+        static _rdfs_label = 'ScreeningEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('subtitleLanguage', 'videoFormat', 'workPresented')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ScreeningEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            subtitleLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'subtitleLanguage') }
+        get subtitlelanguage() { return this.subtitleLanguage }
+        set subtitlelanguage(value) { this.subtitleLanguage = value }
+
+            videoFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFormat') }
+        get videoformat() { return this.videoFormat }
+        set videoformat(value) { this.videoFormat = value }
+
+            workPresented($this, value) { return $this.__helperValidateAttribute($this, value, 'workPresented') }
+        get workpresented() { return this.workPresented }
+        set workpresented(value) { this.workPresented = value }
+        
+    }
+</script>

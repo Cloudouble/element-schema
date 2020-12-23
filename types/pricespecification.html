@@ -1,0 +1,70 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Pricespecification extends window.Cloudouble.Element.elements.Structuredvalue {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PriceSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.'
+        static _rdfs_label = 'PriceSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PriceSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            eligibleQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleQuantity') }
+        get eligiblequantity() { return this.eligibleQuantity }
+        set eligiblequantity(value) { this.eligibleQuantity = value }
+
+            eligibleTransactionVolume($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleTransactionVolume') }
+        get eligibletransactionvolume() { return this.eligibleTransactionVolume }
+        set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
+
+            maxPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'maxPrice') }
+        get maxprice() { return this.maxPrice }
+        set maxprice(value) { this.maxPrice = value }
+
+            minPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'minPrice') }
+        get minprice() { return this.minPrice }
+        set minprice(value) { this.minPrice = value }
+
+            price($this, value) { return $this.__helperValidateAttribute($this, value, 'price') }
+
+            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        get pricecurrency() { return this.priceCurrency }
+        set pricecurrency(value) { this.priceCurrency = value }
+
+            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        get validfrom() { return this.validFrom }
+        set validfrom(value) { this.validFrom = value }
+
+            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        get validthrough() { return this.validThrough }
+        set validthrough(value) { this.validThrough = value }
+
+            valueAddedTaxIncluded($this, value) { return $this.__helperValidateAttribute($this, value, 'valueAddedTaxIncluded') }
+        get valueaddedtaxincluded() { return this.valueAddedTaxIncluded }
+        set valueaddedtaxincluded(value) { this.valueAddedTaxIncluded = value }
+        
+    }
+</script>

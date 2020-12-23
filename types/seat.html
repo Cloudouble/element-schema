@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Seat extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Seat'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Used to describe a seat, such as a reserved seat in an event reservation.'
+        static _rdfs_label = 'Seat'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('seatNumber', 'seatRow', 'seatSection', 'seatingType')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Seat')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            seatNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'seatNumber') }
+        get seatnumber() { return this.seatNumber }
+        set seatnumber(value) { this.seatNumber = value }
+
+            seatRow($this, value) { return $this.__helperValidateAttribute($this, value, 'seatRow') }
+        get seatrow() { return this.seatRow }
+        set seatrow(value) { this.seatRow = value }
+
+            seatSection($this, value) { return $this.__helperValidateAttribute($this, value, 'seatSection') }
+        get seatsection() { return this.seatSection }
+        set seatsection(value) { this.seatSection = value }
+
+            seatingType($this, value) { return $this.__helperValidateAttribute($this, value, 'seatingType') }
+        get seatingtype() { return this.seatingType }
+        set seatingtype(value) { this.seatingType = value }
+        
+    }
+</script>

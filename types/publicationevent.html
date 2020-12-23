@@ -1,0 +1,46 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Publicationevent extends window.Cloudouble.Element.elements.Event {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PublicationEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book\/journal publication via a variety of delivery media.'
+        static _rdfs_label = 'PublicationEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('free', 'publishedBy', 'publishedOn')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PublicationEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            free($this, value) { return $this.__helperValidateAttribute($this, value, 'free') }
+
+            publishedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'publishedBy') }
+        get publishedby() { return this.publishedBy }
+        set publishedby(value) { this.publishedBy = value }
+
+            publishedOn($this, value) { return $this.__helperValidateAttribute($this, value, 'publishedOn') }
+        get publishedon() { return this.publishedOn }
+        set publishedon(value) { this.publishedOn = value }
+        
+    }
+</script>

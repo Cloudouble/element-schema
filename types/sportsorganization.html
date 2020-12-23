@@ -1,0 +1,38 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Sportsorganization extends window.Cloudouble.Element.elements.Organization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:SportsOrganization'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.'
+        static _rdfs_label = 'SportsOrganization'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('sport')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('SportsOrganization')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            sport($this, value) { return $this.__helperValidateAttribute($this, value, 'sport') }
+        
+    }
+</script>

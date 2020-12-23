@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Workbasedprogram extends window.Cloudouble.Element.elements.Educationaloccupationalprogram {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:WorkBasedProgram'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A program with both an educational and employment component. Typically based at a workplace and structured around work-based learning, with the aim of instilling competencies related to an occupation. WorkBasedProgram is used to distinguish programs such as apprenticeships from school, college or other classroom based educational programs.'
+        static _rdfs_label = 'WorkBasedProgram'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('occupationalCategory', 'trainingSalary')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('WorkBasedProgram')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        get occupationalcategory() { return this.occupationalCategory }
+        set occupationalcategory(value) { this.occupationalCategory = value }
+
+            trainingSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'trainingSalary') }
+        get trainingsalary() { return this.trainingSalary }
+        set trainingsalary(value) { this.trainingSalary = value }
+        
+    }
+</script>

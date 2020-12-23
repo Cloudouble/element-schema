@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Digitaldocument extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DigitalDocument'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An electronic file or document.'
+        static _rdfs_label = 'DigitalDocument'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('hasDigitalDocumentPermission')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DigitalDocument')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            hasDigitalDocumentPermission($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDigitalDocumentPermission') }
+        get hasdigitaldocumentpermission() { return this.hasDigitalDocumentPermission }
+        set hasdigitaldocumentpermission(value) { this.hasDigitalDocumentPermission = value }
+        
+    }
+</script>

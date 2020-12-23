@@ -1,0 +1,50 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Datafeeditem extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DataFeedItem'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A single item within a larger data feed.'
+        static _rdfs_label = 'DataFeedItem'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('dateCreated', 'dateDeleted', 'dateModified', 'item')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DataFeedItem')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            dateCreated($this, value) { return $this.__helperValidateAttribute($this, value, 'dateCreated') }
+        get datecreated() { return this.dateCreated }
+        set datecreated(value) { this.dateCreated = value }
+
+            dateDeleted($this, value) { return $this.__helperValidateAttribute($this, value, 'dateDeleted') }
+        get datedeleted() { return this.dateDeleted }
+        set datedeleted(value) { this.dateDeleted = value }
+
+            dateModified($this, value) { return $this.__helperValidateAttribute($this, value, 'dateModified') }
+        get datemodified() { return this.dateModified }
+        set datemodified(value) { this.dateModified = value }
+
+            item($this, value) { return $this.__helperValidateAttribute($this, value, 'item') }
+        
+    }
+</script>

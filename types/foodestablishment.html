@@ -1,0 +1,54 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Foodestablishment extends window.Cloudouble.Element.elements.Localbusiness {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:FoodEstablishment'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A food-related business.'
+        static _rdfs_label = 'FoodEstablishment'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('FoodEstablishment')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            acceptsReservations($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptsReservations') }
+        get acceptsreservations() { return this.acceptsReservations }
+        set acceptsreservations(value) { this.acceptsReservations = value }
+
+            hasMenu($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenu') }
+        get hasmenu() { return this.hasMenu }
+        set hasmenu(value) { this.hasMenu = value }
+
+            menu($this, value) { return $this.__helperValidateAttribute($this, value, 'menu') }
+
+            servesCuisine($this, value) { return $this.__helperValidateAttribute($this, value, 'servesCuisine') }
+        get servescuisine() { return this.servesCuisine }
+        set servescuisine(value) { this.servesCuisine = value }
+
+            starRating($this, value) { return $this.__helperValidateAttribute($this, value, 'starRating') }
+        get starrating() { return this.starRating }
+        set starrating(value) { this.starRating = value }
+        
+    }
+</script>

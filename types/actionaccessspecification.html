@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Actionaccessspecification extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ActionAccessSpecification'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A set of requirements that a must be fulfilled in order to perform an Action.'
+        static _rdfs_label = 'ActionAccessSpecification'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ActionAccessSpecification')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availabilityEnds($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityEnds') }
+        get availabilityends() { return this.availabilityEnds }
+        set availabilityends(value) { this.availabilityEnds = value }
+
+            availabilityStarts($this, value) { return $this.__helperValidateAttribute($this, value, 'availabilityStarts') }
+        get availabilitystarts() { return this.availabilityStarts }
+        set availabilitystarts(value) { this.availabilityStarts = value }
+
+            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+
+            eligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibleRegion') }
+        get eligibleregion() { return this.eligibleRegion }
+        set eligibleregion(value) { this.eligibleRegion = value }
+
+            expectsAcceptanceOf($this, value) { return $this.__helperValidateAttribute($this, value, 'expectsAcceptanceOf') }
+        get expectsacceptanceof() { return this.expectsAcceptanceOf }
+        set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
+
+            ineligibleRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'ineligibleRegion') }
+        get ineligibleregion() { return this.ineligibleRegion }
+        set ineligibleregion(value) { this.ineligibleRegion = value }
+
+            requiresSubscription($this, value) { return $this.__helperValidateAttribute($this, value, 'requiresSubscription') }
+        get requiressubscription() { return this.requiresSubscription }
+        set requiressubscription(value) { this.requiresSubscription = value }
+        
+    }
+</script>

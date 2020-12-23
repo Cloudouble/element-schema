@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Middleschool extends window.Cloudouble.Element.elements.Educationalorganization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:MiddleSchool'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A middle school (typically for children aged around 11-14, although this varies somewhat).'
+        static _rdfs_label = 'MiddleSchool'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('MiddleSchool')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

@@ -1,0 +1,68 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Movie extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Movie'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A movie.'
+        static _rdfs_label = 'Movie'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('actor', 'actors', 'countryOfOrigin', 'director', 'directors', 'duration', 'musicBy', 'productionCompany', 'subtitleLanguage', 'titleEIDR', 'trailer')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Movie')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+
+            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+
+            countryOfOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'countryOfOrigin') }
+        get countryoforigin() { return this.countryOfOrigin }
+        set countryoforigin(value) { this.countryOfOrigin = value }
+
+            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+
+            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+
+            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+
+            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        get musicby() { return this.musicBy }
+        set musicby(value) { this.musicBy = value }
+
+            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        get productioncompany() { return this.productionCompany }
+        set productioncompany(value) { this.productionCompany = value }
+
+            subtitleLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'subtitleLanguage') }
+        get subtitlelanguage() { return this.subtitleLanguage }
+        set subtitlelanguage(value) { this.subtitleLanguage = value }
+
+            titleEIDR($this, value) { return $this.__helperValidateAttribute($this, value, 'titleEIDR') }
+        get titleeidr() { return this.titleEIDR }
+        set titleeidr(value) { this.titleEIDR = value }
+
+            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        
+    }
+</script>

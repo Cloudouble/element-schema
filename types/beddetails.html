@@ -1,0 +1,44 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Beddetails extends window.Cloudouble.Element.elements.Intangible {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BedDetails'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).'
+        static _rdfs_label = 'BedDetails'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('numberOfBeds', 'typeOfBed')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BedDetails')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            numberOfBeds($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBeds') }
+        get numberofbeds() { return this.numberOfBeds }
+        set numberofbeds(value) { this.numberOfBeds = value }
+
+            typeOfBed($this, value) { return $this.__helperValidateAttribute($this, value, 'typeOfBed') }
+        get typeofbed() { return this.typeOfBed }
+        set typeofbed(value) { this.typeOfBed = value }
+        
+    }
+</script>

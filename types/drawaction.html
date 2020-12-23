@@ -1,0 +1,37 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Drawaction extends window.Cloudouble.Element.elements.Createaction {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DrawAction'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'The act of producing a visual\/graphical representation of an object, typically with a pen\/pencil and paper as instruments.'
+        static _rdfs_label = 'DrawAction'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat()
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DrawAction')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+        
+    }
+</script>

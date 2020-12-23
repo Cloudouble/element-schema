@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Broadcastevent extends window.Cloudouble.Element.elements.Publicationevent {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:BroadcastEvent'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An over the air or online broadcast event.'
+        static _rdfs_label = 'BroadcastEvent'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('BroadcastEvent')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            broadcastOfEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastOfEvent') }
+        get broadcastofevent() { return this.broadcastOfEvent }
+        set broadcastofevent(value) { this.broadcastOfEvent = value }
+
+            isLiveBroadcast($this, value) { return $this.__helperValidateAttribute($this, value, 'isLiveBroadcast') }
+        get islivebroadcast() { return this.isLiveBroadcast }
+        set islivebroadcast(value) { this.isLiveBroadcast = value }
+
+            subtitleLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'subtitleLanguage') }
+        get subtitlelanguage() { return this.subtitleLanguage }
+        set subtitlelanguage(value) { this.subtitleLanguage = value }
+
+            videoFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFormat') }
+        get videoformat() { return this.videoFormat }
+        set videoformat(value) { this.videoFormat = value }
+        
+    }
+</script>

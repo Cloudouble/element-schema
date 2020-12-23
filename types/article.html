@@ -1,0 +1,62 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Article extends window.Cloudouble.Element.elements.Creativework {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:Article'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/09\/schemaorg-support-for-bibliographic_2.html).'
+        static _rdfs_label = 'Article'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('articleBody', 'articleSection', 'backstory', 'pageEnd', 'pageStart', 'pagination', 'speakable', 'wordCount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('Article')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            articleBody($this, value) { return $this.__helperValidateAttribute($this, value, 'articleBody') }
+        get articlebody() { return this.articleBody }
+        set articlebody(value) { this.articleBody = value }
+
+            articleSection($this, value) { return $this.__helperValidateAttribute($this, value, 'articleSection') }
+        get articlesection() { return this.articleSection }
+        set articlesection(value) { this.articleSection = value }
+
+            backstory($this, value) { return $this.__helperValidateAttribute($this, value, 'backstory') }
+
+            pageEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'pageEnd') }
+        get pageend() { return this.pageEnd }
+        set pageend(value) { this.pageEnd = value }
+
+            pageStart($this, value) { return $this.__helperValidateAttribute($this, value, 'pageStart') }
+        get pagestart() { return this.pageStart }
+        set pagestart(value) { this.pageStart = value }
+
+            pagination($this, value) { return $this.__helperValidateAttribute($this, value, 'pagination') }
+
+            speakable($this, value) { return $this.__helperValidateAttribute($this, value, 'speakable') }
+
+            wordCount($this, value) { return $this.__helperValidateAttribute($this, value, 'wordCount') }
+        get wordcount() { return this.wordCount }
+        set wordcount(value) { this.wordCount = value }
+        
+    }
+</script>

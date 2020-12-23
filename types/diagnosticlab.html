@@ -1,0 +1,40 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Diagnosticlab extends window.Cloudouble.Element.elements.Medicalorganization {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:DiagnosticLab'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A medical laboratory that offers on-site or off-site diagnostic services.'
+        static _rdfs_label = 'DiagnosticLab'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('availableTest')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('DiagnosticLab')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            availableTest($this, value) { return $this.__helperValidateAttribute($this, value, 'availableTest') }
+        get availabletest() { return this.availableTest }
+        set availabletest(value) { this.availableTest = value }
+        
+    }
+</script>

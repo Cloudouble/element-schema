@@ -1,0 +1,48 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Imageobject extends window.Cloudouble.Element.elements.Mediaobject {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:ImageObject'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'An image file.'
+        static _rdfs_label = 'ImageObject'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('caption', 'exifData', 'representativeOfPage', 'thumbnail')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('ImageObject')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+
+            exifData($this, value) { return $this.__helperValidateAttribute($this, value, 'exifData') }
+        get exifdata() { return this.exifData }
+        set exifdata(value) { this.exifData = value }
+
+            representativeOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'representativeOfPage') }
+        get representativeofpage() { return this.representativeOfPage }
+        set representativeofpage(value) { this.representativeOfPage = value }
+
+            thumbnail($this, value) { return $this.__helperValidateAttribute($this, value, 'thumbnail') }
+        
+    }
+</script>

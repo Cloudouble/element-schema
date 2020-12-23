@@ -1,0 +1,52 @@
+<style>
+:host {
+    contain: content;
+}
+</style>
+<template>
+    <slot></slot>
+</template>
+<script>
+    /* global */
+    class Paymentcard extends window.Cloudouble.Element.elements.Paymentmethod {
+
+        static __prefix = window.Cloudouble.Element.prefix
+        
+        static __release = '11.01'
+        static __id = 'schema:PaymentCard'
+        static __type = 'rdfs:Class'
+        static _rdfs_comment = 'A payment method using a credit, debit, store or other card to associate the payment with an account.'
+        static _rdfs_label = 'PaymentCard'
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount')
+        }
+        
+        constructor() {
+            super()
+            this.__setRenderer('PaymentCard')
+        }
+        
+        connectedCallback() {
+            super.connectedCallback()
+        }
+        
+        
+            cashBack($this, value) { return $this.__helperValidateAttribute($this, value, 'cashBack') }
+        get cashback() { return this.cashBack }
+        set cashback(value) { this.cashBack = value }
+
+            contactlessPayment($this, value) { return $this.__helperValidateAttribute($this, value, 'contactlessPayment') }
+        get contactlesspayment() { return this.contactlessPayment }
+        set contactlesspayment(value) { this.contactlessPayment = value }
+
+            floorLimit($this, value) { return $this.__helperValidateAttribute($this, value, 'floorLimit') }
+        get floorlimit() { return this.floorLimit }
+        set floorlimit(value) { this.floorLimit = value }
+
+            monthlyMinimumRepaymentAmount($this, value) { return $this.__helperValidateAttribute($this, value, 'monthlyMinimumRepaymentAmount') }
+        get monthlyminimumrepaymentamount() { return this.monthlyMinimumRepaymentAmount }
+        set monthlyminimumrepaymentamount(value) { this.monthlyMinimumRepaymentAmount = value }
+        
+    }
+</script>

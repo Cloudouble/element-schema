@@ -42,19 +42,50 @@
 
         static DateTime = function(value, allow=undefined) {
             var retval = {datatype: 'DateTime', value: value, coerced: undefined, valid: undefined, message: undefined}
-            
+            var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
+            retval.valid = regex.test(String(value))
+            retval.coerced = (new Date(Date.parse(String(value)))).toJSON() || undefined
+            if (!retval.valid) {
+                retval.message = `DateTime values must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]`
+            }
             return retval
         }
 
         static ['Date'] = function(value, allow=undefined) {
             var retval = {datatype: 'Date', value: value, coerced: undefined, valid: undefined, message: undefined}
-            
+            var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])$/
+            retval.valid = regex.test(String(value))
+            retval.coerced = (new Date(Date.parse(String(value)))).toJSON() || undefined
+            if (retval.coerced) {
+                retval.coerced = retval.coerced.split('T').shift()
+            }
+            if (!retval.valid) {
+                retval.message = `Date values must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DD`
+            }
             return retval
         }
 
         static Time = function(value, allow=undefined) {
             var retval = {datatype: 'Time', value: value, coerced: undefined, valid: undefined, message: undefined}
-            
+            var regex = /^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
+            retval.valid = regex.test(String(value))
+            retval.coerced = retval.valid ? value : String(value).toLowerCase().replace(/[^0-9\:apmz]/g, '')
+            if (!retval.valid) {
+                var d = new Date()
+                var coercedSplit = retval.coerced.split(':')
+                var hours = coercedSplit.shift()
+                hours = retval.coerced.indexOf('pm') > -1 ? hours + 12 : hours + 0
+                hours = hours > 23 ? 0 : hours
+                d.setHours(hours)
+                var minutes = coercedSplit.shift()
+                d.setMinutes(minutes ? parseInt(minutes, 10) || 0 : 0)
+                var seconds = coercedSplit.shift()
+                d.setMinutes(seconds ? parseInt(seconds, 10) || 0 : 0)
+                var millseconds = parseInt(retval.coerced.split(':').pop()) || 0
+                d.setMilliseconds(millseconds ? parseInt(millseconds, 10) || 0 : 0)
+                retval.coerced = d.toJSON().split('T').pop() 
+                retval.message = `Time values must be a parseable time string ideally in ISO8601 DateTime format hh:mm:ss[Z|(+|-)hh:mm]`
+            }
             return retval
         }
 

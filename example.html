@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>schema test page</title>
+  <style>
+      
+  </style>
+</head>
+<body>
+  <noscript>element requires javascript enabled</noscript>
+  
+  <element-button icon="home">Click Here!</element-button>
+  
+  <script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.5.0/element.min.js"></script>
+  <script src="schema.js"></script>
+  <script>
+      window.LiveElement.Element.load('example-build.json').then(() => {
+        console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
+        
+      })
+  </script>
+</body>
+</html>

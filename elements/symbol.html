@@ -1,0 +1,55 @@
+<style>
+:host {
+    contain: content;
+    display: inline-block;
+}
+
+:host element-icon {
+    vertical-align: middle;
+    margin-right: 0.2em;
+}
+</style>
+<template>
+    <span><slot></slot></span>
+</template>
+<script>
+    /* global */
+    class Symbol extends window.LiveElement.Element.elements.HTMLElement {
+
+        constructor() {
+            super()
+        }
+
+        static get observedAttributes() {
+            return (super.observedAttributes || []).concat('icon', 'name')
+        }
+
+        name($this, value) {
+            return (value ? value : $this.innerText).replace('[^a-zA-Z0-9\-]+', '-').toLowerCase()
+        }
+
+        icon($this, value) {
+            var iconNode
+            if (value && typeof value === 'string') {
+                iconNode = $this.shadowRoot.querySelector('element-icon')
+                if (!iconNode) {
+                    iconNode = document.createElement('element-icon')
+                    $this.shadowRoot.prepend(iconNode)
+                }
+                if ((value.slice(0,8) == 'https:\/\/') || (value.slice(0,5) == 'data:')) {
+                    $this.setAttribute('style', `background-image: url(${value}); background-size: cover; border-radius: 100%;`)
+                    iconNode.innerHTML = ''
+                } else {
+                    iconNode.innerHTML = value
+                }
+                return value
+            } else {
+                iconNode = $this.shadowRoot.querySelector('element-icon')
+                if (iconNode) {
+                    iconNode.remove()
+                }
+            }
+        }
+
+    }
+</script>

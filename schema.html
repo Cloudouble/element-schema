@@ -25,7 +25,6 @@
         static __useShadow = false
         static __validatorName = 'Schemavalidators'
         static __propertiesMap = {}
-        static __datatypesDefinition = 'Schemadatatypes'
         static __themeName = 'Schematheme'
         static __renderName = 'Schemarender'
         
@@ -37,8 +36,8 @@
             return window.Cloudouble.Element.loadJSON(`types\/properties.json`).then(r => {
                 staticThis.__propertiesMap = r
             }).then(() => {
-        		return window.Cloudouble.Element.load(['schemadatatypes', 'schemavalidators', 'schemarender', 'schematheme'], path, prefix).then(() => {
-                    var loadTypes = Array.from(new Set(Object.keys(window.Cloudouble.Element.elements.Schemadatatypes).map(m => m.toLowerCase()).concat(staticThis.__coreTypes, basetypes)))
+        		return window.Cloudouble.Element.load(['schemavalidators', 'schemarender', 'schematheme'], path, prefix).then(() => {
+                    var loadTypes = Array.from(new Set(Object.keys(window.LiveElement.Schema.DataTypes).map(m => m.toLowerCase()).concat(staticThis.__coreTypes, basetypes)))
         		    return window.Cloudouble.Element.load(loadTypes, `${path}\/types`, prefix).then(() => {
         		        if (typeof renderArgs == 'string') {
         		            renderArgs = [renderArgs]
@@ -151,10 +150,6 @@
             return this
         }
         
-        get __dataTypes() {
-            return window.Cloudouble.Element.elements[this.constructor.__datatypesDefinition]
-        } 
-        
         get __properties() {
             return this.constructor.__propertiesMap
         } 
@@ -171,6 +166,10 @@
             if (!$this['data-type']) {
                 $this['data-type'] = $this.constructor._rdfs_label
             }
+        }
+        
+        __validate() {
+            
         }
         
         __helperValidateAttribute($this, value, attribute) {
@@ -230,7 +229,7 @@
         	    }
             } else {
                 var displayValue = String(([null, undefined]).includes(value) ? '' : value)
-                if (typeof $this.__dataTypes[$this.constructor._rdfs_label] == 'function') {
+                if ($this.constructor._rdfs_label && window.LiveElement.Schema.DataTypes.includes($this.constructor._rdfs_label)) {
                     $this.setAttribute('content', displayValue)
                 }
             }

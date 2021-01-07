@@ -1,15 +1,16 @@
 window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
-    DataType: {configurable: false, enumerable: true, writable: false, value: class DataType {
+    DataTypes: {configurable: false, enumerable: true, writable: true, value: ["True", "False", "Boolean", "DateTime", "Date", "Time", "Integer", "Float", "Number", "XPathType", "CssSelectorType", "URL"]}
+    /*DataType: {configurable: false, enumerable: true, writable: false, value: class DataType {
         constructor(input, allow) {
             this.input = input
         }
         toString() { return String(this.value) }
         valueOf() { return this.value }
-    }} 
+    }}*/ 
 })
 
-
+/*
 window.LiveElement.Schema.DataTypes = window.LiveElement.Schema.DataTypes || Object.defineProperties({}, {
     True: {configurable: false, enumerable: true, writable: false, value: class True extends window.LiveElement.Schema.DataType {
         constructor(input, allow) {
@@ -182,4 +183,4 @@ window.LiveElement.Schema.DataTypes = window.LiveElement.Schema.DataTypes || Obj
             Object.freeze(this)
         }
     }}
-})
+})*/

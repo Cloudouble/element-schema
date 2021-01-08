@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Movie extends window.Cloudouble.Element.elements.CreativeWork {
+    class Movie extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Movie'
@@ -101,7 +101,7 @@
 
         duration($this, value) {
 			var property = {
-				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				parent: $this,
 				property: "duration",
 				release: "11.01",
@@ -145,7 +145,7 @@
 
         subtitleLanguage($this, value) {
 			var property = {
-				comment: "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				parent: $this,
 				property: "subtitleLanguage",
 				release: "11.01",
@@ -161,7 +161,7 @@
 
         titleEIDR($this, value) {
 			var property = {
-				comment: "An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
+				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing at the most general\\/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
 				parent: $this,
 				property: "titleEIDR",
 				release: "11.01",
@@ -177,7 +177,7 @@
 
         trailer($this, value) {
 			var property = {
-				comment: "The trailer of a movie or tv/radio series, season, episode, etc.",
+				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
 				parent: $this,
 				property: "trailer",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class PronounceableText extends window.Cloudouble.Element.elements.Text {
+    class PronounceableText extends window.LiveElement.Element.elements.Text {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:PronounceableText'
@@ -34,7 +34,7 @@
         
         inLanguage($this, value) {
 			var property = {
-				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
 				parent: $this,
 				property: "inLanguage",
 				release: "11.01",
@@ -50,7 +50,7 @@
 
         phoneticText($this, value) {
 			var property = {
-				comment: "Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /\u02c8hju\u02d0st\u0259n/.",
+				comment: "Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: \\/\u02c8hju\u02d0st\u0259n\\/.",
 				parent: $this,
 				property: "phoneticText",
 				release: "11.01",
@@ -65,7 +65,7 @@
 
         speechToTextMarkup($this, value) {
 			var property = {
-				comment: "Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).",
+				comment: "Form of markup used. eg. [SSML](https:\\/\\/www.w3.org\\/TR\\/speech-synthesis11) or [IPA](https:\\/\\/www.wikidata.org\\/wiki\\/Property:P898).",
 				parent: $this,
 				property: "speechToTextMarkup",
 				release: "11.01",

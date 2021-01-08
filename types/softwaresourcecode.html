@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class SoftwareSourceCode extends window.Cloudouble.Element.elements.CreativeWork {
+    class SoftwareSourceCode extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:SoftwareSourceCode'
@@ -123,7 +123,7 @@
 
         targetProduct($this, value) {
 			var property = {
-				comment: "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
+				comment: "Target Operating System \\/ Product to which the code applies.  If applies to several versions, just the product name can be used.",
 				parent: $this,
 				property: "targetProduct",
 				release: "11.01",

@@ -7,50 +7,6 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}
 })
 
-
-document.body.addEventListener('attributeSet', event => {
-	if (event.detail && event.detail.element && event.detail.asType) {
-	    var expectedAttributeTag = window.Cloudouble.Element.elements[window.LiveElement.Schema.ThemeName] && window.Cloudouble.Element.elements[window.LiveElement.Schema.ThemeName][event.detail.asType]
-	            && window.Cloudouble.Element.elements[window.Cloudouble.Element.elements[window.LiveElement.Schema.ThemeName][event.detail.asType]]
-	        ? `${window.Cloudouble.Element.elements[window.Cloudouble.Element.elements[window.LiveElement.Schema.ThemeName][event.detail.asType]].__prefix}-${window.Cloudouble.Element.elements[window.LiveElement.Schema.ThemeName][event.detail.asType].toLowerCase()}`
-	        : `${this.__prefix}-${event.detail.asType.toLowerCase()}`
-	    var attributeElements = []
-        if (window.Cloudouble.Element.elements[window.LiveElement.Schema.RenderName] && typeof window.Cloudouble.Element.elements[window.LiveElement.Schema.RenderName].__matchAttributeElement == 'function') {
-            attributeElements = window.Cloudouble.Element.elements[window.LiveElement.Schema.RenderName].__matchAttributeElement(event.detail.attribute, event.detail.value, expectedAttributeTag, event.detail.element)
-        }
-        attributeElements.forEach((attributeElement, index) => {
-	        var editmodeValue = event.detail.element.getAttribute('__editmode')
-	        if (editmodeValue) {
-		        attributeElement.setAttribute('__editmode', editmodeValue)
-                attributeElement.__helperSetEditMode(editmodeValue)
-	        }
-	        var indexValue = event.detail.value && typeof event.detail.value == 'object' && event.detail.value.constructor.name == 'Array' && attributeElements.length == event.detail.value 
-	            ? event.detail.value[index] : event.detail.value
-            if (attributeElement.__model != indexValue) {
-    		    attributeElement.__load(indexValue, {asAttributeName: event.detail.attribute, asAttributeOf: event.detail.element})
-            }
-		    attributeElement.addEventListener('modelLoad', loadEvent => {
-		        if (event.detail.element.__model && typeof event.detail.element.__model == 'object') {
-		            if (JSON.stringify(event.detail.element.__model[event.detail.attribute]) != JSON.stringify(loadEvent.detail.model)) {
-    		            event.detail.element.__model[event.detail.attribute] = loadEvent.detail.model
-    		            event.detail.element.__load(event.detail.element.__model, true)
-		            }
-		        }
-		    })
-        })
-	}
-})
-document.body.addEventListener('modelLoad', event => {
-	if (event.detail && event.detail.element && typeof event.detail.element.__renderer == 'object' && event.detail.element.__renderer.constructor && event.detail.element.__renderer.constructor.name == 'Array') {
-        event.detail.element.__renderer.forEach(renderFunction => typeof renderFunction == 'function' ? renderFunction(event.detail.element, event.detail.element.__model, event.detail.asAttribute) : null)
-	}
-})
-document.body.addEventListener('attributeTypeError', event => {
-})
-document.body.addEventListener('attributeValidationError', event => {
-})
-
-
 /*
 window.LiveElement.Schema.DataTypes = window.LiveElement.Schema.DataTypes || Object.defineProperties({}, {
     True: {configurable: false, enumerable: true, writable: false, value: class True extends window.LiveElement.Schema.DataType {

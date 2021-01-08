@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Question extends window.Cloudouble.Element.elements.Comment {
+    class Question extends window.LiveElement.Element.elements.Comment {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Question'
@@ -34,7 +34,7 @@
         
         acceptedAnswer($this, value) {
 			var property = {
-				comment: "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
+				comment: "The answer(s) that has been accepted as best, typically on a Question\\/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and\\/or the view of the Question author.",
 				parent: $this,
 				property: "acceptedAnswer",
 				release: "11.01",
@@ -80,7 +80,7 @@
 
         suggestedAnswer($this, value) {
 			var property = {
-				comment: "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
+				comment: "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question\\/Answer site.",
 				parent: $this,
 				property: "suggestedAnswer",
 				release: "11.01",

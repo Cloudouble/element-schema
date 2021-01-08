@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class CDCPMDRecord extends window.Cloudouble.Element.elements.StructuredValue {
+    class CDCPMDRecord extends window.LiveElement.Element.elements.StructuredValue {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:CDCPMDRecord'
@@ -170,7 +170,7 @@
 
         cvdNumC19OFMechVentPats($this, value) {
 			var property = {
-				comment: "numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
+				comment: "numc19ofmechventpats - ED\\/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
 				parent: $this,
 				property: "cvdNumC19OFMechVentPats",
 				release: "11.01",
@@ -185,7 +185,7 @@
 
         cvdNumC19OverflowPats($this, value) {
 			var property = {
-				comment: "numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
+				comment: "numc19overflowpats - ED\\/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
 				parent: $this,
 				property: "cvdNumC19OverflowPats",
 				release: "11.01",

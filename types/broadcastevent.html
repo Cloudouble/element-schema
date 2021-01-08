@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class BroadcastEvent extends window.Cloudouble.Element.elements.PublicationEvent {
+    class BroadcastEvent extends window.LiveElement.Element.elements.PublicationEvent {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:BroadcastEvent'
@@ -64,7 +64,7 @@
 
         subtitleLanguage($this, value) {
 			var property = {
-				comment: "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				parent: $this,
 				property: "subtitleLanguage",
 				release: "11.01",

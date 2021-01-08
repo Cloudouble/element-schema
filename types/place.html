@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Place extends window.Cloudouble.Element.elements.Thing {
+    class Place extends window.LiveElement.Element.elements.Thing {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Place'
@@ -34,7 +34,7 @@
         
         additionalProperty($this, value) {
 			var property = {
-				comment: "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+				comment: "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https:\\/\\/schema.org\\/width, https:\\/\\/schema.org\\/color, https:\\/\\/schema.org\\/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property\\/value mechanism.\n",
 				parent: $this,
 				property: "additionalProperty",
 				release: "11.01",
@@ -93,7 +93,7 @@
 
         branchCode($this, value) {
 			var property = {
-				comment: "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.\n      ",
+				comment: "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http:\\/\\/www.starbucks.co.uk\\/store-locator\\/etc\\/detail\\/3047 the code \"3047\" is a branchCode for a particular branch.\n      ",
 				parent: $this,
 				property: "branchCode",
 				release: "11.01",
@@ -208,7 +208,7 @@
 
         geoContains($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoContains",
 				release: "11.01",
@@ -224,7 +224,7 @@
 
         geoCoveredBy($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoCoveredBy",
 				release: "11.01",
@@ -240,7 +240,7 @@
 
         geoCovers($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoCovers",
 				release: "11.01",
@@ -256,7 +256,7 @@
 
         geoCrosses($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoCrosses",
 				release: "11.01",
@@ -272,7 +272,7 @@
 
         geoDisjoint($this, value) {
 			var property = {
-				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))",
+				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM))",
 				parent: $this,
 				property: "geoDisjoint",
 				release: "11.01",
@@ -288,7 +288,7 @@
 
         geoEquals($this, value) {
 			var property = {
-				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM). \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
 				parent: $this,
 				property: "geoEquals",
 				release: "11.01",
@@ -304,7 +304,7 @@
 
         geoIntersects($this, value) {
 			var property = {
-				comment: "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoIntersects",
 				release: "11.01",
@@ -320,7 +320,7 @@
 
         geoOverlaps($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoOverlaps",
 				release: "11.01",
@@ -336,7 +336,7 @@
 
         geoTouches($this, value) {
 			var property = {
-				comment: "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )",
+				comment: "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM) )",
 				parent: $this,
 				property: "geoTouches",
 				release: "11.01",
@@ -352,7 +352,7 @@
 
         geoWithin($this, value) {
 			var property = {
-				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).",
+				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
 				parent: $this,
 				property: "geoWithin",
 				release: "11.01",
@@ -368,7 +368,7 @@
 
         globalLocationNumber($this, value) {
 			var property = {
-				comment: "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+				comment: "The [Global Location Number](http:\\/\\/www.gs1.org\\/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 				parent: $this,
 				property: "globalLocationNumber",
 				release: "11.01",
@@ -444,7 +444,7 @@
 
         latitude($this, value) {
 			var property = {
-				comment: "The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
+				comment: "The latitude of a location. For example ```37.42242``` ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)).",
 				parent: $this,
 				property: "latitude",
 				release: "11.01",
@@ -472,7 +472,7 @@
 
         longitude($this, value) {
 			var property = {
-				comment: "The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).",
+				comment: "The longitude of a location. For example ```-122.08585``` ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)).",
 				parent: $this,
 				property: "longitude",
 				release: "11.01",

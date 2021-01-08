@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Order extends window.Cloudouble.Element.elements.Intangible {
+    class Order extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Order'
@@ -136,7 +136,7 @@
 
         discountCurrency($this, value) {
 			var property = {
-				comment: "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				comment: "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
 				parent: $this,
 				property: "discountCurrency",
 				release: "11.01",
@@ -349,7 +349,7 @@
 
         seller($this, value) {
 			var property = {
-				comment: "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				parent: $this,
 				property: "seller",
 				release: "11.01",

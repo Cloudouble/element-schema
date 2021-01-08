@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Observation extends window.Cloudouble.Element.elements.Intangible {
+    class Observation extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Observation'
@@ -49,7 +49,7 @@
 
         measuredProperty($this, value) {
 			var property = {
-				comment: "The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).",
+				comment: "The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https:\\/\\/www.gs1.org\\/voc\\/?show=properties).",
 				parent: $this,
 				property: "measuredProperty",
 				release: "11.01",

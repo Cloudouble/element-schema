@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class MedicalDevice extends window.Cloudouble.Element.elements.MedicalEntity {
+    class MedicalDevice extends window.LiveElement.Element.elements.MedicalEntity {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:MedicalDevice'
@@ -34,7 +34,7 @@
         
         adverseOutcome($this, value) {
 			var property = {
-				comment: "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
+				comment: "A possible complication and\\/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
 				parent: $this,
 				property: "adverseOutcome",
 				release: "11.01",
@@ -63,7 +63,7 @@
 
         postOp($this, value) {
 			var property = {
-				comment: "A description of the postoperative procedures, care, and/or followups for this device.",
+				comment: "A description of the postoperative procedures, care, and\\/or followups for this device.",
 				parent: $this,
 				property: "postOp",
 				release: "11.01",
@@ -93,7 +93,7 @@
 
         procedure($this, value) {
 			var property = {
-				comment: "A description of the procedure involved in setting up, using, and/or installing the device.",
+				comment: "A description of the procedure involved in setting up, using, and\\/or installing the device.",
 				parent: $this,
 				property: "procedure",
 				release: "11.01",
@@ -106,7 +106,7 @@
 
         seriousAdverseOutcome($this, value) {
 			var property = {
-				comment: "A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
+				comment: "A possible serious complication and\\/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
 				parent: $this,
 				property: "seriousAdverseOutcome",
 				release: "11.01",

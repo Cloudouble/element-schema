@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class SoftwareApplication extends window.Cloudouble.Element.elements.CreativeWork {
+    class SoftwareApplication extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:SoftwareApplication'
@@ -81,7 +81,7 @@
 
         availableOnDevice($this, value) {
 			var property = {
-				comment: "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
+				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
 				parent: $this,
 				property: "availableOnDevice",
 				release: "11.01",
@@ -126,7 +126,7 @@
 
         device($this, value) {
 			var property = {
-				comment: "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
+				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
 				parent: $this,
 				property: "device",
 				release: "11.01",
@@ -170,7 +170,7 @@
 
         fileSize($this, value) {
 			var property = {
-				comment: "Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
+				comment: "Size of the application \\/ package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
 				parent: $this,
 				property: "fileSize",
 				release: "11.01",

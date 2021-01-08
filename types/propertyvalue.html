@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class PropertyValue extends window.Cloudouble.Element.elements.StructuredValue {
+    class PropertyValue extends window.LiveElement.Element.elements.StructuredValue {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:PropertyValue'
@@ -96,7 +96,7 @@
 
         unitCode($this, value) {
 			var property = {
-				comment: "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+				comment: "The unit of measurement given using the UN\\/CEFACT Common Code (3 characters) or a URL. Other codes than the UN\\/CEFACT Common Code may be used with a prefix followed by a colon.",
 				parent: $this,
 				property: "unitCode",
 				release: "11.01",
@@ -112,7 +112,7 @@
 
         unitText($this, value) {
 			var property = {
-				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode<\\/a>.",
 				parent: $this,
 				property: "unitText",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Recipe extends window.Cloudouble.Element.elements.HowTo {
+    class Recipe extends window.LiveElement.Element.elements.HowTo {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Recipe'
@@ -34,7 +34,7 @@
         
         cookTime($this, value) {
 			var property = {
-				comment: "The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+				comment: "The time it takes to actually cook the dish, in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				parent: $this,
 				property: "cookTime",
 				release: "11.01",
@@ -135,7 +135,7 @@
 
         recipeInstructions($this, value) {
 			var property = {
-				comment: "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+				comment: "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and\\/or HowToSection items.",
 				parent: $this,
 				property: "recipeInstructions",
 				release: "11.01",

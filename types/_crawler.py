@@ -51,12 +51,14 @@ for index, datatype in enumerate([d for d in graph if (
     subclassof = datatype['rdfs:subClassOf']['@id'].split(':')[-1] if datatype.get('rdfs:subClassOf') and type(datatype['rdfs:subClassOf']) is dict else (datatype['rdfs:subClassOf'][0]['@id'].split(':')[-1] if datatype.get('rdfs:subClassOf') and type(datatype['rdfs:subClassOf']) is list else None)
     _type = datatype['@type'] if datatype.get('@type') and type(datatype['@type']) is str else ('schema:DataType' if datatype.get('@type') and type(datatype['@type']) is list and 'schema:DataType' in datatype['@type'] else 'rdfs:Class')
     if subclassof is None:
-        subclassof = 'Datatype' if _type == 'schema:DataType' else  'Schema'
+        subclassof = 'DataType' if _type == 'schema:DataType' else  'Schema'
     rdfslabel = datatype['rdfs:label'] if type(datatype['rdfs:label']) is str else (datatype['rdfs:label'].get('@value') if type(datatype['rdfs:label']) is dict else None)
     rdfscomment = datatype['rdfs:comment'] if type(datatype['rdfs:comment']) is str else (datatype['rdfs:comment'].get('@value') if type(datatype['rdfs:comment']) is dict else None)
     if rdfslabel and rdfscomment:
         digits_map = {'0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'}
         properties_dict = {property_name: {'parent': '$this', 'property': property_name, **properties.get(property_name, {})} for property_name in properties_list}
+        for property_name, property_dict in properties_dict.items():
+            property_dict['comment'] = property_dict.get('comment', '').replace('/', '\/')
         return_statements = {property_name: ' || '.join(['new window.LiveElement.Element.elements.{}(value, property)'.format(t) for t in property_dict.get('types', [])]) for property_name, property_dict in properties_dict.items()}
         class_file_properties = {
             'release': release, 

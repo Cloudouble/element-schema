@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class NewsMediaOrganization extends window.Cloudouble.Element.elements.Organization {
+    class NewsMediaOrganization extends window.LiveElement.Element.elements.Organization {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:NewsMediaOrganization'
@@ -160,7 +160,7 @@
 
         ownershipFundingInfo($this, value) {
 			var property = {
-				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news\\/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
 				parent: $this,
 				property: "ownershipFundingInfo",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class MedicalStudy extends window.Cloudouble.Element.elements.MedicalEntity {
+    class MedicalStudy extends window.LiveElement.Element.elements.MedicalEntity {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:MedicalStudy'
@@ -78,7 +78,7 @@
 
         studyLocation($this, value) {
 			var property = {
-				comment: "The location in which the study is taking/took place.",
+				comment: "The location in which the study is taking\\/took place.",
 				parent: $this,
 				property: "studyLocation",
 				release: "11.01",

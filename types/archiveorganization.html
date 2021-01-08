@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class ArchiveOrganization extends window.Cloudouble.Element.elements.LocalBusiness {
+    class ArchiveOrganization extends window.LiveElement.Element.elements.LocalBusiness {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:ArchiveOrganization'
@@ -34,7 +34,7 @@
         
         archiveHeld($this, value) {
 			var property = {
-				comment: "Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
+				comment: "Collection, [fonds](https:\\/\\/en.wikipedia.org\\/wiki\\/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
 				parent: $this,
 				property: "archiveHeld",
 				release: "11.01",

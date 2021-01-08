@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class SellAction extends window.Cloudouble.Element.elements.TradeAction {
+    class SellAction extends window.LiveElement.Element.elements.TradeAction {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:SellAction'
@@ -34,7 +34,7 @@
         
         buyer($this, value) {
 			var property = {
-				comment: "A sub property of participant. The participant/person/organization that bought the object.",
+				comment: "A sub property of participant. The participant\\/person\\/organization that bought the object.",
 				parent: $this,
 				property: "buyer",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Flight extends window.Cloudouble.Element.elements.Trip {
+    class Flight extends window.LiveElement.Element.elements.Trip {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Flight'
@@ -228,7 +228,7 @@
 
         seller($this, value) {
 			var property = {
-				comment: "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				parent: $this,
 				property: "seller",
 				release: "11.01",

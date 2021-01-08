@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class VideoGame extends window.Cloudouble.Element.elements.SoftwareApplication {
+    class VideoGame extends window.LiveElement.Element.elements.SoftwareApplication {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:VideoGame'
@@ -101,7 +101,7 @@
 
         gamePlatform($this, value) {
 			var property = {
-				comment: "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+				comment: "The electronic systems used to play <a href=\"http:\\/\\/en.wikipedia.org\\/wiki\\/Category:Video_game_platforms\">video games<\\/a>.",
 				parent: $this,
 				property: "gamePlatform",
 				release: "11.01",
@@ -179,7 +179,7 @@
 
         trailer($this, value) {
 			var property = {
-				comment: "The trailer of a movie or tv/radio series, season, episode, etc.",
+				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
 				parent: $this,
 				property: "trailer",
 				release: "11.01",

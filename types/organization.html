@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Organization extends window.Cloudouble.Element.elements.Thing {
+    class Organization extends window.LiveElement.Element.elements.Thing {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Organization'
@@ -435,7 +435,7 @@
 
         globalLocationNumber($this, value) {
 			var property = {
-				comment: "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+				comment: "The [Global Location Number](http:\\/\\/www.gs1.org\\/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 				parent: $this,
 				property: "globalLocationNumber",
 				release: "11.01",
@@ -572,7 +572,7 @@
 
         knowsLanguage($this, value) {
 			var property = {
-				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading\\/writing\\/speaking\\/signing here. Use language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				parent: $this,
 				property: "knowsLanguage",
 				release: "11.01",
@@ -750,7 +750,7 @@
 
         ownershipFundingInfo($this, value) {
 			var property = {
-				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
+				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news\\/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
 				parent: $this,
 				property: "ownershipFundingInfo",
 				release: "11.01",
@@ -911,7 +911,7 @@
 
         taxID($this, value) {
 			var property = {
-				comment: "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+				comment: "The Tax \\/ Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF\\/NIF in Spain.",
 				parent: $this,
 				property: "taxID",
 				release: "11.01",

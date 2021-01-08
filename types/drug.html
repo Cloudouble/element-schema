@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Drug extends window.Cloudouble.Element.elements.Substance {
+    class Drug extends window.LiveElement.Element.elements.Substance {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Drug'
@@ -34,7 +34,7 @@
         
         activeIngredient($this, value) {
 			var property = {
-				comment: "An active ingredient, typically chemical compounds and/or biologic substances.",
+				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				parent: $this,
 				property: "activeIngredient",
 				release: "11.01",
@@ -139,7 +139,7 @@
 
         dosageForm($this, value) {
 			var property = {
-				comment: "A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.",
+				comment: "A dosage form in which this drug\\/supplement is available, e.g. 'tablet', 'suspension', 'injection'.",
 				parent: $this,
 				property: "dosageForm",
 				release: "11.01",
@@ -259,7 +259,7 @@
 
         isProprietary($this, value) {
 			var property = {
-				comment: "True if this item's name is a proprietary/brand name (vs. generic name).",
+				comment: "True if this item's name is a proprietary\\/brand name (vs. generic name).",
 				parent: $this,
 				property: "isProprietary",
 				release: "11.01",

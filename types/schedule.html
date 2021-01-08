@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Schedule extends window.Cloudouble.Element.elements.Intangible {
+    class Schedule extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Schedule'
@@ -95,7 +95,7 @@
 
         duration($this, value) {
 			var property = {
-				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				parent: $this,
 				property: "duration",
 				release: "11.01",
@@ -108,7 +108,7 @@
 
         endDate($this, value) {
 			var property = {
-				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "endDate",
 				release: "11.01",
@@ -124,7 +124,7 @@
 
         endTime($this, value) {
 			var property = {
-				comment: "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				comment: "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate\\/endDate instead of startTime\\/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
 				parent: $this,
 				property: "endTime",
 				release: "11.01",
@@ -202,7 +202,7 @@
 
         startDate($this, value) {
 			var property = {
-				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "startDate",
 				release: "11.01",
@@ -218,7 +218,7 @@
 
         startTime($this, value) {
 			var property = {
-				comment: "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				comment: "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate\\/endDate instead of startTime\\/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
 				parent: $this,
 				property: "startTime",
 				release: "11.01",

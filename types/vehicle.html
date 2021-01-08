@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Vehicle extends window.Cloudouble.Element.elements.Product {
+    class Vehicle extends window.LiveElement.Element.elements.Product {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Vehicle'
@@ -34,7 +34,7 @@
         
         accelerationTime($this, value) {
 			var property = {
-				comment: "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.\\n\\nTypical unit code(s): SEC for seconds\\n\\n* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.",
+				comment: "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.\\n\\nTypical unit code(s): SEC for seconds\\n\\n* Note: There are unfortunately no standard unit codes for seconds\\/0..100 km\\/h or seconds\\/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km\\/h to specify the reference speeds.",
 				parent: $this,
 				property: "accelerationTime",
 				release: "11.01",
@@ -66,7 +66,7 @@
 
         callSign($this, value) {
 			var property = {
-				comment: "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+				comment: "A [callsign](https:\\/\\/en.wikipedia.org\\/wiki\\/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
 				parent: $this,
 				property: "callSign",
 				release: "11.01",
@@ -81,7 +81,7 @@
 
         cargoVolume($this, value) {
 			var property = {
-				comment: "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\\n\\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\\n\\nNote: You can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				comment: "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\\n\\nTypical unit code(s): LTR for liters, FTQ for cubic foot\\/feet\\n\\nNote: You can use [[minValue]] and [[maxValue]] to indicate ranges.",
 				parent: $this,
 				property: "cargoVolume",
 				release: "11.01",
@@ -127,7 +127,7 @@
 
         emissionsCO2($this, value) {
 			var property = {
-				comment: "The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put \"g/km\" into the unitText property of that value, since there is no UN/CEFACT Common Code for \"g/km\".",
+				comment: "The CO2 emissions in g\\/km. When used in combination with a QuantitativeValue, put \"g\\/km\" into the unitText property of that value, since there is no UN\\/CEFACT Common Code for \"g\\/km\".",
 				parent: $this,
 				property: "emissionsCO2",
 				release: "11.01",
@@ -142,7 +142,7 @@
 
         fuelCapacity($this, value) {
 			var property = {
-				comment: "The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.\\n\\nTypical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).",
+				comment: "The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.\\n\\nTypical unit code(s): LTR for liters, GLL of US gallons, GLI for UK \\/ imperial gallons, AMH for ampere-hours (for electrical vehicles).",
 				parent: $this,
 				property: "fuelCapacity",
 				release: "11.01",
@@ -157,7 +157,7 @@
 
         fuelConsumption($this, value) {
 			var property = {
-				comment: "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\\n\\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel consumption to another value.",
+				comment: "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\\n\\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L\\/100 km.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km\\/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel consumption to another value.",
 				parent: $this,
 				property: "fuelConsumption",
 				release: "11.01",
@@ -172,7 +172,7 @@
 
         fuelEfficiency($this, value) {
 			var property = {
-				comment: "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\\n\\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel economy to another value.",
+				comment: "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km\\/L).\\n\\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km\\/L.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km\\/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel economy to another value.",
 				parent: $this,
 				property: "fuelEfficiency",
 				release: "11.01",
@@ -405,7 +405,7 @@
 
         speed($this, value) {
 			var property = {
-				comment: "The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.\\n\\nTypical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\\n\\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.",
+				comment: "The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.\\n\\nTypical unit code(s): KMH for km\\/h, HM for mile per hour (0.447 04 m\\/s), KNT for knot\\n\\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.",
 				parent: $this,
 				property: "speed",
 				release: "11.01",
@@ -632,7 +632,7 @@
 
         wheelbase($this, value) {
 			var property = {
-				comment: "The distance between the centers of the front and rear wheels.\\n\\nTypical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet",
+				comment: "The distance between the centers of the front and rear wheels.\\n\\nTypical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot\\/feet",
 				parent: $this,
 				property: "wheelbase",
 				release: "11.01",

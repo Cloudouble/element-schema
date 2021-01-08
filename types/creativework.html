@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class CreativeWork extends window.Cloudouble.Element.elements.Thing {
+    class CreativeWork extends window.LiveElement.Element.elements.Thing {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:CreativeWork'
@@ -90,7 +90,7 @@
 
         accessibilityAPI($this, value) {
 			var property = {
-				comment: "Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).",
+				comment: "Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
 				parent: $this,
 				property: "accessibilityAPI",
 				release: "11.01",
@@ -105,7 +105,7 @@
 
         accessibilityControl($this, value) {
 			var property = {
-				comment: "Identifies input methods that are sufficient to fully control the described resource ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).",
+				comment: "Identifies input methods that are sufficient to fully control the described resource ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
 				parent: $this,
 				property: "accessibilityControl",
 				release: "11.01",
@@ -120,7 +120,7 @@
 
         accessibilityFeature($this, value) {
 			var property = {
-				comment: "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).",
+				comment: "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
 				parent: $this,
 				property: "accessibilityFeature",
 				release: "11.01",
@@ -135,7 +135,7 @@
 
         accessibilityHazard($this, value) {
 			var property = {
-				comment: "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)).",
+				comment: "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
 				parent: $this,
 				property: "accessibilityHazard",
 				release: "11.01",
@@ -530,7 +530,7 @@
 
         creator($this, value) {
 			var property = {
-				comment: "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+				comment: "The creator\\/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
 				parent: $this,
 				property: "creator",
 				release: "11.01",
@@ -544,7 +544,7 @@
 
         creditText($this, value) {
 			var property = {
-				comment: "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.",
+				comment: "Text that can be used to credit person(s) and\\/or organization(s) associated with a published Creative Work.",
 				parent: $this,
 				property: "creditText",
 				release: "11.01",
@@ -591,7 +591,7 @@
 
         datePublished($this, value) {
 			var property = {
-				comment: "Date of first broadcast/publication.",
+				comment: "Date of first broadcast\\/publication.",
 				parent: $this,
 				property: "datePublished",
 				release: "11.01",
@@ -622,7 +622,7 @@
 
         editEIDR($this, value) {
 			var property = {
-				comment: "An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" whose [[titleEIDR]] is \"10.5240/7EC7-228A-510A-053E-CBB8-J\", has several edits e.g. \"10.5240/1F2A-E1C5-680A-14C6-E76B-I\" and \"10.5240/8A35-3BEE-6497-5D12-9E4F-3\".\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
+				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit \\/ edition for a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" whose [[titleEIDR]] is \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\", has several edits e.g. \"10.5240\\/1F2A-E1C5-680A-14C6-E76B-I\" and \"10.5240\\/8A35-3BEE-6497-5D12-9E4F-3\".\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
 				parent: $this,
 				property: "editEIDR",
 				release: "11.01",
@@ -712,7 +712,7 @@
 
         encodingFormat($this, value) {
 			var property = {
-				comment: "Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
+				comment: "Media type typically expressed using a MIME format (see [IANA site](http:\\/\\/www.iana.org\\/assignments\\/media-types\\/media-types.xhtml) and [MDN reference](https:\\/\\/developer.mozilla.org\\/en-US\\/docs\\/Web\\/HTTP\\/Basics_of_HTTP\\/MIME_types)) e.g. application\\/zip for a SoftwareApplication binary, audio\\/mpeg for .mp3 etc.).\n\nIn cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia\\/Wikidata entry.",
 				parent: $this,
 				property: "encodingFormat",
 				release: "11.01",
@@ -741,7 +741,7 @@
 
         exampleOfWork($this, value) {
 			var property = {
-				comment: "A creative work that this work is an example/instance/realization/derivation of.",
+				comment: "A creative work that this work is an example\\/instance\\/realization\\/derivation of.",
 				parent: $this,
 				property: "exampleOfWork",
 				release: "11.01",
@@ -769,7 +769,7 @@
 
         fileFormat($this, value) {
 			var property = {
-				comment: "Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
+				comment: "Media type, typically MIME format (see [IANA site](http:\\/\\/www.iana.org\\/assignments\\/media-types\\/media-types.xhtml)) of the content e.g. application\\/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
 				parent: $this,
 				property: "fileFormat",
 				release: "11.01",
@@ -841,7 +841,7 @@
 
         inLanguage($this, value) {
 			var property = {
-				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
 				parent: $this,
 				property: "inLanguage",
 				release: "11.01",
@@ -919,7 +919,7 @@
 
         isBasedOnUrl($this, value) {
 			var property = {
-				comment: "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.",
+				comment: "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http:\\/\\/example.com\\/great-multiplication-intro.html.",
 				parent: $this,
 				property: "isBasedOnUrl",
 				release: "11.01",
@@ -1042,7 +1042,7 @@
 
         maintainer($this, value) {
 			var property = {
-				comment: "A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.\n      ",
+				comment: "A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and\\/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.\n      ",
 				parent: $this,
 				property: "maintainer",
 				release: "11.01",
@@ -1142,7 +1142,7 @@
 
         producer($this, value) {
 			var property = {
-				comment: "The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).",
+				comment: "The person or organization who produced the work (e.g. music album, movie, tv\\/radio series etc.).",
 				parent: $this,
 				property: "producer",
 				release: "11.01",
@@ -1284,7 +1284,7 @@
 
         schemaVersion($this, value) {
 			var property = {
-				comment: "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as https://schema.org/version/2.0/ if precise indication of schema version was required by some application. ",
+				comment: "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as https:\\/\\/schema.org\\/version\\/2.0\\/ if precise indication of schema version was required by some application. ",
 				parent: $this,
 				property: "schemaVersion",
 				release: "11.01",
@@ -1300,7 +1300,7 @@
 
         sdDatePublished($this, value) {
 			var property = {
-				comment: "Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]",
+				comment: "Indicates the date on which the current structured data was generated \\/ published. Typically used alongside [[sdPublisher]]",
 				parent: $this,
 				property: "sdDatePublished",
 				release: "11.01",
@@ -1347,7 +1347,7 @@
 
         size($this, value) {
 			var property = {
-				comment: "A standardized size of a product or creative work, often simplifying richer information into a simple textual string, either through referring to named sizes or (in the case of product markup), by adopting conventional simplifications. Use of QuantitativeValue with a unitCode or unitText can add more structure; in other cases, the /width, /height, /depth and /weight properties may be more applicable. ",
+				comment: "A standardized size of a product or creative work, often simplifying richer information into a simple textual string, either through referring to named sizes or (in the case of product markup), by adopting conventional simplifications. Use of QuantitativeValue with a unitCode or unitText can add more structure; in other cases, the \\/width, \\/height, \\/depth and \\/weight properties may be more applicable. ",
 				parent: $this,
 				property: "size",
 				release: "11.01",
@@ -1447,7 +1447,7 @@
 
         temporalCoverage($this, value) {
 			var property = {
-				comment: "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939/1945\".\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
+				comment: "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601#Time_intervals). In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011\\/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939\\/1945\".\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11\\/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
 				parent: $this,
 				property: "temporalCoverage",
 				release: "11.01",
@@ -1595,7 +1595,7 @@
 
         workExample($this, value) {
 			var property = {
-				comment: "Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.",
+				comment: "Example\\/instance\\/realization\\/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.",
 				parent: $this,
 				property: "workExample",
 				release: "11.01",

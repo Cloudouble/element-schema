@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class EmployeeRole extends window.Cloudouble.Element.elements.OrganizationRole {
+    class EmployeeRole extends window.LiveElement.Element.elements.OrganizationRole {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:EmployeeRole'
@@ -51,7 +51,7 @@
 
         salaryCurrency($this, value) {
 			var property = {
-				comment: "The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.",
+				comment: "The currency (coded using [ISO 4217](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) ) used for the main salary information in this job posting or for this employee.",
 				parent: $this,
 				property: "salaryCurrency",
 				release: "11.01",

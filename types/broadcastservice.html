@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class BroadcastService extends window.Cloudouble.Element.elements.Service {
+    class BroadcastService extends window.LiveElement.Element.elements.Service {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:BroadcastService'
@@ -93,7 +93,7 @@
 
         broadcastTimezone($this, value) {
 			var property = {
-				comment: "The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts",
+				comment: "The timezone in [ISO 8601 format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601) for which the service bases its broadcasts",
 				parent: $this,
 				property: "broadcastTimezone",
 				release: "11.01",
@@ -121,7 +121,7 @@
 
         callSign($this, value) {
 			var property = {
-				comment: "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+				comment: "A [callsign](https:\\/\\/en.wikipedia.org\\/wiki\\/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
 				parent: $this,
 				property: "callSign",
 				release: "11.01",
@@ -151,7 +151,7 @@
 
         inLanguage($this, value) {
 			var property = {
-				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
 				parent: $this,
 				property: "inLanguage",
 				release: "11.01",

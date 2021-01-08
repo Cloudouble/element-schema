@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class RadioSeries extends window.Cloudouble.Element.elements.CreativeWorkSeries {
+    class RadioSeries extends window.LiveElement.Element.elements.CreativeWorkSeries {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:RadioSeries'
@@ -114,7 +114,7 @@
 
         episodes($this, value) {
 			var property = {
-				comment: "An episode of a TV/radio series or season.",
+				comment: "An episode of a TV\\/radio series or season.",
 				parent: $this,
 				property: "episodes",
 				release: "11.01",
@@ -215,7 +215,7 @@
 
         trailer($this, value) {
 			var property = {
-				comment: "The trailer of a movie or tv/radio series, season, episode, etc.",
+				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
 				parent: $this,
 				property: "trailer",
 				release: "11.01",

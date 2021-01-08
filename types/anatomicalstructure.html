@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class AnatomicalStructure extends window.Cloudouble.Element.elements.MedicalEntity {
+    class AnatomicalStructure extends window.LiveElement.Element.elements.MedicalEntity {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:AnatomicalStructure'
@@ -79,7 +79,7 @@
 
         diagram($this, value) {
 			var property = {
-				comment: "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+				comment: "An image containing a diagram that illustrates the structure and\\/or its component substructures and\\/or connections with other structures.",
 				parent: $this,
 				property: "diagram",
 				release: "11.01",

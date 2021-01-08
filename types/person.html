@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Person extends window.Cloudouble.Element.elements.Thing {
+    class Person extends window.LiveElement.Element.elements.Thing {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Person'
@@ -63,7 +63,7 @@
 
         affiliation($this, value) {
 			var property = {
-				comment: "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+				comment: "An organization that this person is affiliated with. For example, a school\\/university, a club, or a team.",
 				parent: $this,
 				property: "affiliation",
 				release: "11.01",
@@ -162,7 +162,7 @@
 
         callSign($this, value) {
 			var property = {
-				comment: "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+				comment: "A [callsign](https:\\/\\/en.wikipedia.org\\/wiki\\/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
 				parent: $this,
 				property: "callSign",
 				release: "11.01",
@@ -360,7 +360,7 @@
 
         gender($this, value) {
 			var property = {
-				comment: "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+				comment: "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https:\\/\\/schema.org\\/Male and https:\\/\\/schema.org\\/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
 				parent: $this,
 				property: "gender",
 				release: "11.01",
@@ -389,7 +389,7 @@
 
         globalLocationNumber($this, value) {
 			var property = {
-				comment: "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+				comment: "The [Global Location Number](http:\\/\\/www.gs1.org\\/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 				parent: $this,
 				property: "globalLocationNumber",
 				release: "11.01",
@@ -494,7 +494,7 @@
 
         honorificPrefix($this, value) {
 			var property = {
-				comment: "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+				comment: "An honorific prefix preceding a Person's name such as Dr\\/Mrs\\/Mr.",
 				parent: $this,
 				property: "honorificPrefix",
 				release: "11.01",
@@ -509,7 +509,7 @@
 
         honorificSuffix($this, value) {
 			var property = {
-				comment: "An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.",
+				comment: "An honorific suffix following a Person's name such as M.D. \\/PhD\\/MSCSW.",
 				parent: $this,
 				property: "honorificSuffix",
 				release: "11.01",
@@ -570,7 +570,7 @@
 
         knows($this, value) {
 			var property = {
-				comment: "The most generic bi-directional social/work relation.",
+				comment: "The most generic bi-directional social\\/work relation.",
 				parent: $this,
 				property: "knows",
 				release: "11.01",
@@ -600,7 +600,7 @@
 
         knowsLanguage($this, value) {
 			var property = {
-				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading\\/writing\\/speaking\\/signing here. Use language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				parent: $this,
 				property: "knowsLanguage",
 				release: "11.01",
@@ -841,7 +841,7 @@
 
         taxID($this, value) {
 			var property = {
-				comment: "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+				comment: "The Tax \\/ Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF\\/NIF in Spain.",
 				parent: $this,
 				property: "taxID",
 				release: "11.01",

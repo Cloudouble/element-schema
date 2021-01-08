@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Seat extends window.Cloudouble.Element.elements.Intangible {
+    class Seat extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Seat'
@@ -79,7 +79,7 @@
 
         seatingType($this, value) {
 			var property = {
-				comment: "The type/class of the seat.",
+				comment: "The type\\/class of the seat.",
 				parent: $this,
 				property: "seatingType",
 				release: "11.01",

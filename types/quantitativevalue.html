@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class QuantitativeValue extends window.Cloudouble.Element.elements.StructuredValue {
+    class QuantitativeValue extends window.LiveElement.Element.elements.StructuredValue {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:QuantitativeValue'
@@ -34,7 +34,7 @@
         
         additionalProperty($this, value) {
 			var property = {
-				comment: "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+				comment: "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https:\\/\\/schema.org\\/width, https:\\/\\/schema.org\\/color, https:\\/\\/schema.org\\/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property\\/value mechanism.\n",
 				parent: $this,
 				property: "additionalProperty",
 				release: "11.01",
@@ -79,7 +79,7 @@
 
         unitCode($this, value) {
 			var property = {
-				comment: "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+				comment: "The unit of measurement given using the UN\\/CEFACT Common Code (3 characters) or a URL. Other codes than the UN\\/CEFACT Common Code may be used with a prefix followed by a colon.",
 				parent: $this,
 				property: "unitCode",
 				release: "11.01",
@@ -95,7 +95,7 @@
 
         unitText($this, value) {
 			var property = {
-				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode<\\/a>.",
 				parent: $this,
 				property: "unitText",
 				release: "11.01",

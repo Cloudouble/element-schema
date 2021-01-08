@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Message extends window.Cloudouble.Element.elements.CreativeWork {
+    class Message extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Message'
@@ -68,7 +68,7 @@
 
         dateRead($this, value) {
 			var property = {
-				comment: "The date/time at which the message has been read by the recipient if a single recipient exists.",
+				comment: "The date\\/time at which the message has been read by the recipient if a single recipient exists.",
 				parent: $this,
 				property: "dateRead",
 				release: "11.01",
@@ -84,7 +84,7 @@
 
         dateReceived($this, value) {
 			var property = {
-				comment: "The date/time the message was received if a single recipient exists.",
+				comment: "The date\\/time the message was received if a single recipient exists.",
 				parent: $this,
 				property: "dateReceived",
 				release: "11.01",
@@ -99,7 +99,7 @@
 
         dateSent($this, value) {
 			var property = {
-				comment: "The date/time at which the message was sent.",
+				comment: "The date\\/time at which the message was sent.",
 				parent: $this,
 				property: "dateSent",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class GeoShape extends window.Cloudouble.Element.elements.StructuredValue {
+    class GeoShape extends window.LiveElement.Element.elements.StructuredValue {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:GeoShape'
@@ -48,7 +48,7 @@
 
         addressCountry($this, value) {
 			var property = {
-				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_3166-1).",
 				parent: $this,
 				property: "addressCountry",
 				release: "11.01",
@@ -90,7 +90,7 @@
 
         elevation($this, value) {
 			var property = {
-				comment: "The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+				comment: "The elevation of a location ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
 				parent: $this,
 				property: "elevation",
 				release: "11.01",

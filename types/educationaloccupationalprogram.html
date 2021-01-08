@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class EducationalOccupationalProgram extends window.Cloudouble.Element.elements.Intangible {
+    class EducationalOccupationalProgram extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:EducationalOccupationalProgram'
@@ -96,7 +96,7 @@
 
         educationalProgramMode($this, value) {
 			var property = {
-				comment: "Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+				comment: "Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or a URL reference to a term from a controlled vocabulary (e.g. https:\\/\\/ceds.ed.gov\\/element\\/001311#Asynchronous ).",
 				parent: $this,
 				property: "educationalProgramMode",
 				release: "11.01",
@@ -112,7 +112,7 @@
 
         endDate($this, value) {
 			var property = {
-				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "endDate",
 				release: "11.01",
@@ -144,7 +144,7 @@
 
         hasCourse($this, value) {
 			var property = {
-				comment: "A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.",
+				comment: "A course or class that is one of the learning opportunities that constitute an educational \\/ occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.",
 				parent: $this,
 				property: "hasCourse",
 				release: "11.01",
@@ -190,7 +190,7 @@
 
         occupationalCategory($this, value) {
 			var property = {
-				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http:\\/\\/www.onetcenter.org\\/taxonomy.html), [ISCO-08](https:\\/\\/www.ilo.org\\/public\\/english\\/bureau\\/stat\\/isco\\/isco08\\/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
 				parent: $this,
 				property: "occupationalCategory",
 				release: "11.01",
@@ -300,7 +300,7 @@
 
         startDate($this, value) {
 			var property = {
-				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "startDate",
 				release: "11.01",

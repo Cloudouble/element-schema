@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Diet extends window.Cloudouble.Element.elements.CreativeWork {
+    class Diet extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Diet'
@@ -34,7 +34,7 @@
         
         dietFeatures($this, value) {
 			var property = {
-				comment: "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.",
+				comment: "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations\\/deviations from the USDA or other regulatory body's approved dietary guidelines.",
 				parent: $this,
 				property: "dietFeatures",
 				release: "11.01",

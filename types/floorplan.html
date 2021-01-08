@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class FloorPlan extends window.Cloudouble.Element.elements.Intangible {
+    class FloorPlan extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:FloorPlan'
@@ -125,7 +125,7 @@
 
         numberOfBathroomsTotal($this, value) {
 			var property = {
-				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
+				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
 				parent: $this,
 				property: "numberOfBathroomsTotal",
 				release: "11.01",
@@ -156,7 +156,7 @@
 
         numberOfFullBathrooms($this, value) {
 			var property = {
-				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).",
+				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsFull+Field).",
 				parent: $this,
 				property: "numberOfFullBathrooms",
 				release: "11.01",
@@ -171,7 +171,7 @@
 
         numberOfPartialBathrooms($this, value) {
 			var property = {
-				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). ",
+				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsPartial+Field). ",
 				parent: $this,
 				property: "numberOfPartialBathrooms",
 				release: "11.01",

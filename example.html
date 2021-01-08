@@ -14,12 +14,26 @@
   
   <element-button icon="home">Click Here!</element-button>
   
-  <script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.5.0/element.min.js"></script>
+  <element-schema>Schema</element-schema>
+  
+  <!--<script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.5.0/element.min.js"></script>-->
+  <script src="element.js"></script>
   <script src="schema.js"></script>
   <script>
       window.LiveElement.Element.load('example-build.json').then(() => {
-        console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
-        
+        window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema`
+        window.LiveElement.Element.load(['Schema'], `https://${window.location.hostname}/_static/schema`).then(() => {
+          
+          window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema/types`
+          window.LiveElement.Element.load(
+            ['Thing', 'Intangible', 'Class', 'DataType', 'Text', 'True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL', 'PronounceableText'], 
+            `https://${window.location.hostname}/_static/schema/types`).then(() => {
+              
+            console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
+            
+          })
+
+        })
       })
   </script>
 </body>

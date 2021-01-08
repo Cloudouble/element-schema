@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class FlightReservation extends window.Cloudouble.Element.elements.Reservation {
+    class FlightReservation extends window.LiveElement.Element.elements.Reservation {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:FlightReservation'
@@ -34,7 +34,7 @@
         
         boardingGroup($this, value) {
 			var property = {
-				comment: "The airline-specific indicator of boarding order / preference.",
+				comment: "The airline-specific indicator of boarding order \\/ preference.",
 				parent: $this,
 				property: "boardingGroup",
 				release: "11.01",

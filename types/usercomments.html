@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class UserComments extends window.Cloudouble.Element.elements.UserInteraction {
+    class UserComments extends window.LiveElement.Element.elements.UserInteraction {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:UserComments'
@@ -65,7 +65,7 @@
 
         creator($this, value) {
 			var property = {
-				comment: "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+				comment: "The creator\\/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
 				parent: $this,
 				property: "creator",
 				release: "11.01",

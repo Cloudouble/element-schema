@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class DrugStrength extends window.Cloudouble.Element.elements.MedicalIntangible {
+    class DrugStrength extends window.LiveElement.Element.elements.MedicalIntangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:DrugStrength'
@@ -34,7 +34,7 @@
         
         activeIngredient($this, value) {
 			var property = {
-				comment: "An active ingredient, typically chemical compounds and/or biologic substances.",
+				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				parent: $this,
 				property: "activeIngredient",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class CookAction extends window.Cloudouble.Element.elements.CreateAction {
+    class CookAction extends window.LiveElement.Element.elements.CreateAction {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:CookAction'
@@ -65,7 +65,7 @@
 
         recipe($this, value) {
 			var property = {
-				comment: "A sub property of instrument. The recipe/instructions used to perform the action.",
+				comment: "A sub property of instrument. The recipe\\/instructions used to perform the action.",
 				parent: $this,
 				property: "recipe",
 				release: "11.01",

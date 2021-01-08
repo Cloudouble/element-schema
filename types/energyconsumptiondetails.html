@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class EnergyConsumptionDetails extends window.Cloudouble.Element.elements.Intangible {
+    class EnergyConsumptionDetails extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:EnergyConsumptionDetails'
@@ -64,7 +64,7 @@
 
         hasEnergyEfficiencyCategory($this, value) {
 			var property = {
-				comment: "Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard",
+				comment: "Defines the energy efficiency Category (which could be either a rating out of range of values or a yes\\/no certification) for a product according to an international energy efficiency standard",
 				parent: $this,
 				property: "hasEnergyEfficiencyCategory",
 				release: "11.01",

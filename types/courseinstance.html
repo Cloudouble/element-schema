@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class CourseInstance extends window.Cloudouble.Element.elements.Event {
+    class CourseInstance extends window.LiveElement.Element.elements.Event {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:CourseInstance'
@@ -34,7 +34,7 @@
         
         courseMode($this, value) {
 			var property = {
-				comment: "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+				comment: "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https:\\/\\/ceds.ed.gov\\/element\\/001311#Asynchronous ).",
 				parent: $this,
 				property: "courseMode",
 				release: "11.01",

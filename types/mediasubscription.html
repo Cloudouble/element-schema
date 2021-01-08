@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class MediaSubscription extends window.Cloudouble.Element.elements.Intangible {
+    class MediaSubscription extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:MediaSubscription'
@@ -34,7 +34,7 @@
         
         authenticator($this, value) {
 			var property = {
-				comment: "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.",
+				comment: "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable\\/satellite provider to authenticate your subscription before playing media.",
 				parent: $this,
 				property: "authenticator",
 				release: "11.01",

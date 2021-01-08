@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Legislation extends window.Cloudouble.Element.elements.CreativeWork {
+    class Legislation extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Legislation'
@@ -48,7 +48,7 @@
 
         legislationApplies($this, value) {
 			var property = {
-				comment: "Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href=\"/legislationTransposes\">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state \"applies\" the consolidated version of the European Directive implemented in it.",
+				comment: "Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href=\"\\/legislationTransposes\">legislationTransposes<\\/a> property. For example an informative consolidated law of a European Union's member state \"applies\" the consolidated version of the European Directive implemented in it.",
 				parent: $this,
 				property: "legislationApplies",
 				release: "11.01",
@@ -63,7 +63,7 @@
 
         legislationChanges($this, value) {
 			var property = {
-				comment: "Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href=\"/legislationConsolidates\">legislationConsolidates</a> property.",
+				comment: "Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href=\"\\/legislationConsolidates\">legislationConsolidates<\\/a> property.",
 				parent: $this,
 				property: "legislationChanges",
 				release: "11.01",
@@ -123,7 +123,7 @@
 
         legislationIdentifier($this, value) {
 			var property = {
-				comment: "An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.",
+				comment: "An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL\\/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.",
 				parent: $this,
 				property: "legislationIdentifier",
 				release: "11.01",
@@ -186,7 +186,7 @@
 
         legislationResponsible($this, value) {
 			var property = {
-				comment: "An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.",
+				comment: "An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is\\/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.",
 				parent: $this,
 				property: "legislationResponsible",
 				release: "11.01",

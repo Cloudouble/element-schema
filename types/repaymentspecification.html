@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class RepaymentSpecification extends window.Cloudouble.Element.elements.StructuredValue {
+    class RepaymentSpecification extends window.LiveElement.Element.elements.StructuredValue {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:RepaymentSpecification'
@@ -34,7 +34,7 @@
         
         downPayment($this, value) {
 			var property = {
-				comment: "a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.",
+				comment: "a type of payment made in cash during the onset of the purchase of an expensive good\\/service. The payment typically represents only a percentage of the full purchase price.",
 				parent: $this,
 				property: "downPayment",
 				release: "11.01",

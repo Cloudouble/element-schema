@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class EndorseAction extends window.Cloudouble.Element.elements.ReactAction {
+    class EndorseAction extends window.LiveElement.Element.elements.ReactAction {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:EndorseAction'
@@ -34,7 +34,7 @@
         
         endorsee($this, value) {
 			var property = {
-				comment: "A sub property of participant. The person/organization being supported.",
+				comment: "A sub property of participant. The person\\/organization being supported.",
 				parent: $this,
 				property: "endorsee",
 				release: "11.01",

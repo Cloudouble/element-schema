@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class APIReference extends window.Cloudouble.Element.elements.TechArticle {
+    class APIReference extends window.LiveElement.Element.elements.TechArticle {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:APIReference'
@@ -47,7 +47,7 @@
 
         assemblyVersion($this, value) {
 			var property = {
-				comment: "Associated product/technology version. e.g., .NET Framework 4.5.",
+				comment: "Associated product\\/technology version. e.g., .NET Framework 4.5.",
 				parent: $this,
 				property: "assemblyVersion",
 				release: "11.01",

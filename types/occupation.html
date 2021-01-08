@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Occupation extends window.Cloudouble.Element.elements.Intangible {
+    class Occupation extends window.LiveElement.Element.elements.Intangible {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Occupation'
@@ -82,7 +82,7 @@
 
         occupationLocation($this, value) {
 			var property = {
-				comment: " The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
+				comment: " The region\\/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
 				parent: $this,
 				property: "occupationLocation",
 				release: "11.01",
@@ -97,7 +97,7 @@
 
         occupationalCategory($this, value) {
 			var property = {
-				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http:\\/\\/www.onetcenter.org\\/taxonomy.html), [ISCO-08](https:\\/\\/www.ilo.org\\/public\\/english\\/bureau\\/stat\\/isco\\/isco08\\/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
 				parent: $this,
 				property: "occupationalCategory",
 				release: "11.01",

@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class AggregateRating extends window.Cloudouble.Element.elements.Rating {
+    class AggregateRating extends window.LiveElement.Element.elements.Rating {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:AggregateRating'
@@ -34,7 +34,7 @@
         
         itemReviewed($this, value) {
 			var property = {
-				comment: "The item that is being reviewed/rated.",
+				comment: "The item that is being reviewed\\/rated.",
 				parent: $this,
 				property: "itemReviewed",
 				release: "11.01",

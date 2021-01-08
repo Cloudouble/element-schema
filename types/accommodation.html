@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Accommodation extends window.Cloudouble.Element.elements.Place {
+    class Accommodation extends window.LiveElement.Element.elements.Place {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Accommodation'
@@ -34,7 +34,7 @@
         
         accommodationCategory($this, value) {
 			var property = {
-				comment: "Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).",
+				comment: "Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/PropertySubType+Field), and [PropertyType](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/PropertyType+Field) fields  for suggested values).",
 				parent: $this,
 				property: "accommodationCategory",
 				release: "11.01",
@@ -79,7 +79,7 @@
 
         floorLevel($this, value) {
 			var property = {
-				comment: "The floor level for an [[Accommodation]] in a multi-storey building. Since counting\n  systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.",
+				comment: "The floor level for an [[Accommodation]] in a multi-storey building. Since counting\n  systems [vary internationally](https:\\/\\/en.wikipedia.org\\/wiki\\/Storey#Consecutive_number_floor_designations), the local system should be used where possible.",
 				parent: $this,
 				property: "floorLevel",
 				release: "11.01",
@@ -125,7 +125,7 @@
 
         numberOfBathroomsTotal($this, value) {
 			var property = {
-				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
+				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
 				parent: $this,
 				property: "numberOfBathroomsTotal",
 				release: "11.01",
@@ -156,7 +156,7 @@
 
         numberOfFullBathrooms($this, value) {
 			var property = {
-				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).",
+				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsFull+Field).",
 				parent: $this,
 				property: "numberOfFullBathrooms",
 				release: "11.01",
@@ -171,7 +171,7 @@
 
         numberOfPartialBathrooms($this, value) {
 			var property = {
-				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). ",
+				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsPartial+Field). ",
 				parent: $this,
 				property: "numberOfPartialBathrooms",
 				release: "11.01",
@@ -248,7 +248,7 @@
 
         yearBuilt($this, value) {
 			var property = {
-				comment: "The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). ",
+				comment: "The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/YearBuilt+Field). ",
 				parent: $this,
 				property: "yearBuilt",
 				release: "11.01",

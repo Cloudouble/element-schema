@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class WebPage extends window.Cloudouble.Element.elements.CreativeWork {
+    class WebPage extends window.LiveElement.Element.elements.CreativeWork {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:WebPage'
@@ -48,7 +48,7 @@
 
         lastReviewed($this, value) {
 			var property = {
-				comment: "Date on which the content on this web page was last reviewed for accuracy and/or completeness.",
+				comment: "Date on which the content on this web page was last reviewed for accuracy and\\/or completeness.",
 				parent: $this,
 				property: "lastReviewed",
 				release: "11.01",
@@ -108,7 +108,7 @@
 
         reviewedBy($this, value) {
 			var property = {
-				comment: "People or organizations that have reviewed the content on this web page for accuracy and/or completeness.",
+				comment: "People or organizations that have reviewed the content on this web page for accuracy and\\/or completeness.",
 				parent: $this,
 				property: "reviewedBy",
 				release: "11.01",

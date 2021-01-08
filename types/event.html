@@ -8,9 +8,9 @@
 </template>
 <script>
     /* global */
-    class Event extends window.Cloudouble.Element.elements.Thing {
+    class Event extends window.LiveElement.Element.elements.Thing {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Event'
@@ -173,7 +173,7 @@
 
         duration($this, value) {
 			var property = {
-				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				parent: $this,
 				property: "duration",
 				release: "11.01",
@@ -186,7 +186,7 @@
 
         endDate($this, value) {
 			var property = {
-				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "endDate",
 				release: "11.01",
@@ -261,7 +261,7 @@
 
         inLanguage($this, value) {
 			var property = {
-				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
 				parent: $this,
 				property: "inLanguage",
 				release: "11.01",
@@ -481,7 +481,7 @@
 
         startDate($this, value) {
 			var property = {
-				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
 				parent: $this,
 				property: "startDate",
 				release: "11.01",

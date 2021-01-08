@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Superficialanatomy extends window.Cloudouble.Element.elements.Medicalentity {
+    class SuperficialAnatomy extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,79 @@
         }
         
         
-            associatedPathophysiology($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedPathophysiology') }
+        associatedPathophysiology($this, value) {
+			var property = {
+				comment: "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+				parent: $this,
+				property: "associatedPathophysiology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get associatedpathophysiology() { return this.associatedPathophysiology }
         set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
-            relatedAnatomy($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedAnatomy') }
+        relatedAnatomy($this, value) {
+			var property = {
+				comment: "Anatomical systems or structures that relate to the superficial anatomy.",
+				parent: $this,
+				property: "relatedAnatomy",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure",
+					"AnatomicalSystem"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+		}
         get relatedanatomy() { return this.relatedAnatomy }
         set relatedanatomy(value) { this.relatedAnatomy = value }
 
-            relatedCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedCondition') }
+        relatedCondition($this, value) {
+			var property = {
+				comment: "A medical condition associated with this anatomy.",
+				parent: $this,
+				property: "relatedCondition",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get relatedcondition() { return this.relatedCondition }
         set relatedcondition(value) { this.relatedCondition = value }
 
-            relatedTherapy($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedTherapy') }
+        relatedTherapy($this, value) {
+			var property = {
+				comment: "A medical therapy related to this anatomy.",
+				parent: $this,
+				property: "relatedTherapy",
+				release: "11.01",
+				types: [
+					"MedicalTherapy"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+		}
         get relatedtherapy() { return this.relatedTherapy }
         set relatedtherapy(value) { this.relatedTherapy = value }
 
-            significance($this, value) { return $this.__helperValidateAttribute($this, value, 'significance') }
+        significance($this, value) {
+			var property = {
+				comment: "The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.",
+				parent: $this,
+				property: "significance",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Audioobject extends window.Cloudouble.Element.elements.Mediaobject {
+    class AudioObject extends window.Cloudouble.Element.elements.MediaObject {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,32 @@
         }
         
         
-            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+        caption($this, value) {
+			var property = {
+				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+				parent: $this,
+				property: "caption",
+				release: "11.01",
+				types: [
+					"Text",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
 
-            transcript($this, value) { return $this.__helperValidateAttribute($this, value, 'transcript') }
+        transcript($this, value) {
+			var property = {
+				comment: "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
+				parent: $this,
+				property: "transcript",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

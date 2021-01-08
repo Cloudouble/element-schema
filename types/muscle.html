@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Muscle extends window.Cloudouble.Element.elements.Anatomicalstructure {
+    class Muscle extends window.Cloudouble.Element.elements.AnatomicalStructure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,74 @@
         }
         
         
-            antagonist($this, value) { return $this.__helperValidateAttribute($this, value, 'antagonist') }
+        antagonist($this, value) {
+			var property = {
+				comment: "The muscle whose action counteracts the specified muscle.",
+				parent: $this,
+				property: "antagonist",
+				release: "11.01",
+				types: [
+					"Muscle"
+				]
+			};
+			return new window.LiveElement.Element.elements.Muscle(value, property) 
+		}
 
-            bloodSupply($this, value) { return $this.__helperValidateAttribute($this, value, 'bloodSupply') }
+        bloodSupply($this, value) {
+			var property = {
+				comment: "The blood vessel that carries blood from the heart to the muscle.",
+				parent: $this,
+				property: "bloodSupply",
+				release: "11.01",
+				types: [
+					"Vessel"
+				]
+			};
+			return new window.LiveElement.Element.elements.Vessel(value, property) 
+		}
         get bloodsupply() { return this.bloodSupply }
         set bloodsupply(value) { this.bloodSupply = value }
 
-            insertion($this, value) { return $this.__helperValidateAttribute($this, value, 'insertion') }
+        insertion($this, value) {
+			var property = {
+				comment: "The place of attachment of a muscle, or what the muscle moves.",
+				parent: $this,
+				property: "insertion",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
 
-            muscleAction($this, value) { return $this.__helperValidateAttribute($this, value, 'muscleAction') }
+        muscleAction($this, value) {
+			var property = {
+				comment: "The movement the muscle generates.",
+				parent: $this,
+				property: "muscleAction",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get muscleaction() { return this.muscleAction }
         set muscleaction(value) { this.muscleAction = value }
 
-            nerve($this, value) { return $this.__helperValidateAttribute($this, value, 'nerve') }
+        nerve($this, value) {
+			var property = {
+				comment: "The underlying innervation associated with the muscle.",
+				parent: $this,
+				property: "nerve",
+				release: "11.01",
+				types: [
+					"Nerve"
+				]
+			};
+			return new window.LiveElement.Element.elements.Nerve(value, property) 
+		}
         
     }
 </script>

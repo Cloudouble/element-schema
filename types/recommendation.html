@@ -32,7 +32,21 @@
         }
         
         
-            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+        category($this, value) {
+			var property = {
+				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+				parent: $this,
+				property: "category",
+				release: "11.01",
+				types: [
+					"Text",
+					"Thing",
+					"PhysicalActivityCategory",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         
     }
 </script>

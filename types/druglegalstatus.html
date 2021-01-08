@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Druglegalstatus extends window.Cloudouble.Element.elements.Medicalintangible {
+    class DrugLegalStatus extends window.Cloudouble.Element.elements.MedicalIntangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            applicableLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'applicableLocation') }
+        applicableLocation($this, value) {
+			var property = {
+				comment: "The location in which the status applies.",
+				parent: $this,
+				property: "applicableLocation",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get applicablelocation() { return this.applicableLocation }
         set applicablelocation(value) { this.applicableLocation = value }
         

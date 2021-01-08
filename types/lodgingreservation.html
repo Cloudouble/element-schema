@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Lodgingreservation extends window.Cloudouble.Element.elements.Reservation {
+    class LodgingReservation extends window.Cloudouble.Element.elements.Reservation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,98 @@
         }
         
         
-            checkinTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkinTime') }
+        checkinTime($this, value) {
+			var property = {
+				comment: "The earliest someone may check into a lodging establishment.",
+				parent: $this,
+				property: "checkinTime",
+				release: "11.01",
+				types: [
+					"Time",
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get checkintime() { return this.checkinTime }
         set checkintime(value) { this.checkinTime = value }
 
-            checkoutTime($this, value) { return $this.__helperValidateAttribute($this, value, 'checkoutTime') }
+        checkoutTime($this, value) {
+			var property = {
+				comment: "The latest someone may check out of a lodging establishment.",
+				parent: $this,
+				property: "checkoutTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get checkouttime() { return this.checkoutTime }
         set checkouttime(value) { this.checkoutTime = value }
 
-            lodgingUnitDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'lodgingUnitDescription') }
+        lodgingUnitDescription($this, value) {
+			var property = {
+				comment: "A full description of the lodging unit.",
+				parent: $this,
+				property: "lodgingUnitDescription",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get lodgingunitdescription() { return this.lodgingUnitDescription }
         set lodgingunitdescription(value) { this.lodgingUnitDescription = value }
 
-            lodgingUnitType($this, value) { return $this.__helperValidateAttribute($this, value, 'lodgingUnitType') }
+        lodgingUnitType($this, value) {
+			var property = {
+				comment: "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
+				parent: $this,
+				property: "lodgingUnitType",
+				release: "11.01",
+				types: [
+					"QualitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get lodgingunittype() { return this.lodgingUnitType }
         set lodgingunittype(value) { this.lodgingUnitType = value }
 
-            numAdults($this, value) { return $this.__helperValidateAttribute($this, value, 'numAdults') }
+        numAdults($this, value) {
+			var property = {
+				comment: "The number of adults staying in the unit.",
+				parent: $this,
+				property: "numAdults",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numadults() { return this.numAdults }
         set numadults(value) { this.numAdults = value }
 
-            numChildren($this, value) { return $this.__helperValidateAttribute($this, value, 'numChildren') }
+        numChildren($this, value) {
+			var property = {
+				comment: "The number of children staying in the unit.",
+				parent: $this,
+				property: "numChildren",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numchildren() { return this.numChildren }
         set numchildren(value) { this.numChildren = value }
         

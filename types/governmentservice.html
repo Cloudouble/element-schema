@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Governmentservice extends window.Cloudouble.Element.elements.Service {
+    class GovernmentService extends window.Cloudouble.Element.elements.Service {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,32 @@
         }
         
         
-            jurisdiction($this, value) { return $this.__helperValidateAttribute($this, value, 'jurisdiction') }
+        jurisdiction($this, value) {
+			var property = {
+				comment: "Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.",
+				parent: $this,
+				property: "jurisdiction",
+				release: "11.01",
+				types: [
+					"AdministrativeArea",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            serviceOperator($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceOperator') }
+        serviceOperator($this, value) {
+			var property = {
+				comment: "The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.",
+				parent: $this,
+				property: "serviceOperator",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get serviceoperator() { return this.serviceOperator }
         set serviceoperator(value) { this.serviceOperator = value }
         

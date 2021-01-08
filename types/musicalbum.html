@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Musicalbum extends window.Cloudouble.Element.elements.Musicplaylist {
+    class MusicAlbum extends window.Cloudouble.Element.elements.MusicPlaylist {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,64 @@
         }
         
         
-            albumProductionType($this, value) { return $this.__helperValidateAttribute($this, value, 'albumProductionType') }
+        albumProductionType($this, value) {
+			var property = {
+				comment: "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
+				parent: $this,
+				property: "albumProductionType",
+				release: "11.01",
+				types: [
+					"MusicAlbumProductionType"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbumProductionType(value, property) 
+		}
         get albumproductiontype() { return this.albumProductionType }
         set albumproductiontype(value) { this.albumProductionType = value }
 
-            albumRelease($this, value) { return $this.__helperValidateAttribute($this, value, 'albumRelease') }
+        albumRelease($this, value) {
+			var property = {
+				comment: "A release of this album.",
+				parent: $this,
+				property: "albumRelease",
+				release: "11.01",
+				types: [
+					"MusicRelease"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicRelease(value, property) 
+		}
         get albumrelease() { return this.albumRelease }
         set albumrelease(value) { this.albumRelease = value }
 
-            albumReleaseType($this, value) { return $this.__helperValidateAttribute($this, value, 'albumReleaseType') }
+        albumReleaseType($this, value) {
+			var property = {
+				comment: "The kind of release which this album is: single, EP or album.",
+				parent: $this,
+				property: "albumReleaseType",
+				release: "11.01",
+				types: [
+					"MusicAlbumReleaseType"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbumReleaseType(value, property) 
+		}
         get albumreleasetype() { return this.albumReleaseType }
         set albumreleasetype(value) { this.albumReleaseType = value }
 
-            byArtist($this, value) { return $this.__helperValidateAttribute($this, value, 'byArtist') }
+        byArtist($this, value) {
+			var property = {
+				comment: "The artist that performed this album or recording.",
+				parent: $this,
+				property: "byArtist",
+				release: "11.01",
+				types: [
+					"MusicGroup",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicGroup(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get byartist() { return this.byArtist }
         set byartist(value) { this.byArtist = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Mediaobject extends window.Cloudouble.Element.elements.Creativework {
+    class MediaObject extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,65 +32,258 @@
         }
         
         
-            associatedArticle($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedArticle') }
+        associatedArticle($this, value) {
+			var property = {
+				comment: "A NewsArticle associated with the Media Object.",
+				parent: $this,
+				property: "associatedArticle",
+				release: "11.01",
+				types: [
+					"NewsArticle"
+				]
+			};
+			return new window.LiveElement.Element.elements.NewsArticle(value, property) 
+		}
         get associatedarticle() { return this.associatedArticle }
         set associatedarticle(value) { this.associatedArticle = value }
 
-            bitrate($this, value) { return $this.__helperValidateAttribute($this, value, 'bitrate') }
+        bitrate($this, value) {
+			var property = {
+				comment: "The bitrate of the media object.",
+				parent: $this,
+				property: "bitrate",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            contentSize($this, value) { return $this.__helperValidateAttribute($this, value, 'contentSize') }
+        contentSize($this, value) {
+			var property = {
+				comment: "File size in (mega/kilo) bytes.",
+				parent: $this,
+				property: "contentSize",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get contentsize() { return this.contentSize }
         set contentsize(value) { this.contentSize = value }
 
-            contentUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'contentUrl') }
+        contentUrl($this, value) {
+			var property = {
+				comment: "Actual bytes of the media object, for example the image file or video file.",
+				parent: $this,
+				property: "contentUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get contenturl() { return this.contentUrl }
         set contenturl(value) { this.contentUrl = value }
 
-            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+        duration($this, value) {
+			var property = {
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "duration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
 
-            embedUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'embedUrl') }
+        embedUrl($this, value) {
+			var property = {
+				comment: "A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.",
+				parent: $this,
+				property: "embedUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get embedurl() { return this.embedUrl }
         set embedurl(value) { this.embedUrl = value }
 
-            encodesCreativeWork($this, value) { return $this.__helperValidateAttribute($this, value, 'encodesCreativeWork') }
+        encodesCreativeWork($this, value) {
+			var property = {
+				comment: "The CreativeWork encoded by this media object.",
+				parent: $this,
+				property: "encodesCreativeWork",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get encodescreativework() { return this.encodesCreativeWork }
         set encodescreativework(value) { this.encodesCreativeWork = value }
 
-            encodingFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'encodingFormat') }
+        encodingFormat($this, value) {
+			var property = {
+				comment: "Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).\n\nIn cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.",
+				parent: $this,
+				property: "encodingFormat",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get encodingformat() { return this.encodingFormat }
         set encodingformat(value) { this.encodingFormat = value }
 
-            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        endTime($this, value) {
+			var property = {
+				comment: "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				parent: $this,
+				property: "endTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get endtime() { return this.endTime }
         set endtime(value) { this.endTime = value }
 
-            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+        height($this, value) {
+			var property = {
+				comment: "The height of the item.",
+				parent: $this,
+				property: "height",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
 
-            playerType($this, value) { return $this.__helperValidateAttribute($this, value, 'playerType') }
+        playerType($this, value) {
+			var property = {
+				comment: "Player type required&#x2014;for example, Flash or Silverlight.",
+				parent: $this,
+				property: "playerType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get playertype() { return this.playerType }
         set playertype(value) { this.playerType = value }
 
-            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        productionCompany($this, value) {
+			var property = {
+				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+				parent: $this,
+				property: "productionCompany",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
 
-            regionsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'regionsAllowed') }
+        regionsAllowed($this, value) {
+			var property = {
+				comment: "The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).",
+				parent: $this,
+				property: "regionsAllowed",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get regionsallowed() { return this.regionsAllowed }
         set regionsallowed(value) { this.regionsAllowed = value }
 
-            requiresSubscription($this, value) { return $this.__helperValidateAttribute($this, value, 'requiresSubscription') }
+        requiresSubscription($this, value) {
+			var property = {
+				comment: "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
+				parent: $this,
+				property: "requiresSubscription",
+				release: "11.01",
+				types: [
+					"Boolean",
+					"MediaSubscription"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.MediaSubscription(value, property) 
+		}
         get requiressubscription() { return this.requiresSubscription }
         set requiressubscription(value) { this.requiresSubscription = value }
 
-            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        startTime($this, value) {
+			var property = {
+				comment: "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				parent: $this,
+				property: "startTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get starttime() { return this.startTime }
         set starttime(value) { this.startTime = value }
 
-            uploadDate($this, value) { return $this.__helperValidateAttribute($this, value, 'uploadDate') }
+        uploadDate($this, value) {
+			var property = {
+				comment: "Date when this media object was uploaded to this site.",
+				parent: $this,
+				property: "uploadDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get uploaddate() { return this.uploadDate }
         set uploaddate(value) { this.uploadDate = value }
 
-            width($this, value) { return $this.__helperValidateAttribute($this, value, 'width') }
+        width($this, value) {
+			var property = {
+				comment: "The width of the item.",
+				parent: $this,
+				property: "width",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
         
     }
 </script>

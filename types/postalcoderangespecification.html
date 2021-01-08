@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Postalcoderangespecification extends window.Cloudouble.Element.elements.Structuredvalue {
+    class PostalCodeRangeSpecification extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            postalCodeBegin($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeBegin') }
+        postalCodeBegin($this, value) {
+			var property = {
+				comment: "First postal code in a range (included).",
+				parent: $this,
+				property: "postalCodeBegin",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcodebegin() { return this.postalCodeBegin }
         set postalcodebegin(value) { this.postalCodeBegin = value }
 
-            postalCodeEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeEnd') }
+        postalCodeEnd($this, value) {
+			var property = {
+				comment: "Last postal code in the range (included). Needs to be after [[postalCodeBegin]].",
+				parent: $this,
+				property: "postalCodeEnd",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcodeend() { return this.postalCodeEnd }
         set postalcodeend(value) { this.postalCodeEnd = value }
         

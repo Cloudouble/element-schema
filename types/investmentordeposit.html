@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Investmentordeposit extends window.Cloudouble.Element.elements.Financialproduct {
+    class InvestmentOrDeposit extends window.Cloudouble.Element.elements.FinancialProduct {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        amount($this, value) {
+			var property = {
+				comment: "The amount of money.",
+				parent: $this,
+				property: "amount",
+				release: "11.01",
+				types: [
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         
     }
 </script>

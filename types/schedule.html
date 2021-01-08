@@ -15,9 +15,7 @@
         static __release = '11.01'
         static __id = 'schema:Schedule'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.
-      This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
-      have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.'
+        static _rdfs_comment = 'A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.'
         static _rdfs_label = 'Schedule'
 
         static get observedAttributes() {
@@ -34,53 +32,203 @@
         }
         
         
-            byDay($this, value) { return $this.__helperValidateAttribute($this, value, 'byDay') }
+        byDay($this, value) {
+			var property = {
+				comment: "Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules",
+				parent: $this,
+				property: "byDay",
+				release: "11.01",
+				types: [
+					"DayOfWeek",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DayOfWeek(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get byday() { return this.byDay }
         set byday(value) { this.byDay = value }
 
-            byMonth($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonth') }
+        byMonth($this, value) {
+			var property = {
+				comment: "Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.",
+				parent: $this,
+				property: "byMonth",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get bymonth() { return this.byMonth }
         set bymonth(value) { this.byMonth = value }
 
-            byMonthDay($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonthDay') }
+        byMonthDay($this, value) {
+			var property = {
+				comment: "Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.",
+				parent: $this,
+				property: "byMonthDay",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get bymonthday() { return this.byMonthDay }
         set bymonthday(value) { this.byMonthDay = value }
 
-            byMonthWeek($this, value) { return $this.__helperValidateAttribute($this, value, 'byMonthWeek') }
+        byMonthWeek($this, value) {
+			var property = {
+				comment: "Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.",
+				parent: $this,
+				property: "byMonthWeek",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get bymonthweek() { return this.byMonthWeek }
         set bymonthweek(value) { this.byMonthWeek = value }
 
-            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+        duration($this, value) {
+			var property = {
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "duration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
 
-            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        endDate($this, value) {
+			var property = {
+				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "endDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
-            endTime($this, value) { return $this.__helperValidateAttribute($this, value, 'endTime') }
+        endTime($this, value) {
+			var property = {
+				comment: "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				parent: $this,
+				property: "endTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get endtime() { return this.endTime }
         set endtime(value) { this.endTime = value }
 
-            exceptDate($this, value) { return $this.__helperValidateAttribute($this, value, 'exceptDate') }
+        exceptDate($this, value) {
+			var property = {
+				comment: "Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to\n      a [[Schedule]] to be specified. If an exception is specified as a [[DateTime]] then only the event that would have started at that specific date and time\n      should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be\n      excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.",
+				parent: $this,
+				property: "exceptDate",
+				release: "11.01",
+				types: [
+					"Date",
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get exceptdate() { return this.exceptDate }
         set exceptdate(value) { this.exceptDate = value }
 
-            repeatCount($this, value) { return $this.__helperValidateAttribute($this, value, 'repeatCount') }
+        repeatCount($this, value) {
+			var property = {
+				comment: "Defines the number of times a recurring [[Event]] will take place",
+				parent: $this,
+				property: "repeatCount",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get repeatcount() { return this.repeatCount }
         set repeatcount(value) { this.repeatCount = value }
 
-            repeatFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'repeatFrequency') }
+        repeatFrequency($this, value) {
+			var property = {
+				comment: "Defines the frequency at which [[Events]] will occur according to a schedule [[Schedule]]. The intervals between\n      events should be defined as a [[Duration]] of time.",
+				parent: $this,
+				property: "repeatFrequency",
+				release: "11.01",
+				types: [
+					"Duration",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get repeatfrequency() { return this.repeatFrequency }
         set repeatfrequency(value) { this.repeatFrequency = value }
 
-            scheduleTimezone($this, value) { return $this.__helperValidateAttribute($this, value, 'scheduleTimezone') }
+        scheduleTimezone($this, value) {
+			var property = {
+				comment: "Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.",
+				parent: $this,
+				property: "scheduleTimezone",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get scheduletimezone() { return this.scheduleTimezone }
         set scheduletimezone(value) { this.scheduleTimezone = value }
 
-            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        startDate($this, value) {
+			var property = {
+				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "startDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
 
-            startTime($this, value) { return $this.__helperValidateAttribute($this, value, 'startTime') }
+        startTime($this, value) {
+			var property = {
+				comment: "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+				parent: $this,
+				property: "startTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get starttime() { return this.startTime }
         set starttime(value) { this.startTime = value }
         

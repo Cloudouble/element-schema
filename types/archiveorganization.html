@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Archiveorganization extends window.Cloudouble.Element.elements.Localbusiness {
+    class ArchiveOrganization extends window.Cloudouble.Element.elements.LocalBusiness {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            archiveHeld($this, value) { return $this.__helperValidateAttribute($this, value, 'archiveHeld') }
+        archiveHeld($this, value) {
+			var property = {
+				comment: "Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
+				parent: $this,
+				property: "archiveHeld",
+				release: "11.01",
+				types: [
+					"ArchiveComponent"
+				]
+			};
+			return new window.LiveElement.Element.elements.ArchiveComponent(value, property) 
+		}
         get archiveheld() { return this.archiveHeld }
         set archiveheld(value) { this.archiveHeld = value }
         

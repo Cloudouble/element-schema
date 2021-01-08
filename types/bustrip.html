@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Bustrip extends window.Cloudouble.Element.elements.Trip {
+    class BusTrip extends window.Cloudouble.Element.elements.Trip {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,65 @@
         }
         
         
-            arrivalBusStop($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalBusStop') }
+        arrivalBusStop($this, value) {
+			var property = {
+				comment: "The stop or station from which the bus arrives.",
+				parent: $this,
+				property: "arrivalBusStop",
+				release: "11.01",
+				types: [
+					"BusStation",
+					"BusStop"
+				]
+			};
+			return new window.LiveElement.Element.elements.BusStation(value, property) || new window.LiveElement.Element.elements.BusStop(value, property) 
+		}
         get arrivalbusstop() { return this.arrivalBusStop }
         set arrivalbusstop(value) { this.arrivalBusStop = value }
 
-            busName($this, value) { return $this.__helperValidateAttribute($this, value, 'busName') }
+        busName($this, value) {
+			var property = {
+				comment: "The name of the bus (e.g. Bolt Express).",
+				parent: $this,
+				property: "busName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get busname() { return this.busName }
         set busname(value) { this.busName = value }
 
-            busNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'busNumber') }
+        busNumber($this, value) {
+			var property = {
+				comment: "The unique identifier for the bus.",
+				parent: $this,
+				property: "busNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get busnumber() { return this.busNumber }
         set busnumber(value) { this.busNumber = value }
 
-            departureBusStop($this, value) { return $this.__helperValidateAttribute($this, value, 'departureBusStop') }
+        departureBusStop($this, value) {
+			var property = {
+				comment: "The stop or station from which the bus departs.",
+				parent: $this,
+				property: "departureBusStop",
+				release: "11.01",
+				types: [
+					"BusStation",
+					"BusStop"
+				]
+			};
+			return new window.LiveElement.Element.elements.BusStation(value, property) || new window.LiveElement.Element.elements.BusStop(value, property) 
+		}
         get departurebusstop() { return this.departureBusStop }
         set departurebusstop(value) { this.departureBusStop = value }
         

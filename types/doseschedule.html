@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Doseschedule extends window.Cloudouble.Element.elements.Medicalintangible {
+    class DoseSchedule extends window.Cloudouble.Element.elements.MedicalIntangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,17 +32,62 @@
         }
         
         
-            doseUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'doseUnit') }
+        doseUnit($this, value) {
+			var property = {
+				comment: "The unit of the dose, e.g. 'mg'.",
+				parent: $this,
+				property: "doseUnit",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get doseunit() { return this.doseUnit }
         set doseunit(value) { this.doseUnit = value }
 
-            doseValue($this, value) { return $this.__helperValidateAttribute($this, value, 'doseValue') }
+        doseValue($this, value) {
+			var property = {
+				comment: "The value of the dose, e.g. 500.",
+				parent: $this,
+				property: "doseValue",
+				release: "11.01",
+				types: [
+					"QualitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get dosevalue() { return this.doseValue }
         set dosevalue(value) { this.doseValue = value }
 
-            frequency($this, value) { return $this.__helperValidateAttribute($this, value, 'frequency') }
+        frequency($this, value) {
+			var property = {
+				comment: "How often the dose is taken, e.g. 'daily'.",
+				parent: $this,
+				property: "frequency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            targetPopulation($this, value) { return $this.__helperValidateAttribute($this, value, 'targetPopulation') }
+        targetPopulation($this, value) {
+			var property = {
+				comment: "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+				parent: $this,
+				property: "targetPopulation",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get targetpopulation() { return this.targetPopulation }
         set targetpopulation(value) { this.targetPopulation = value }
         

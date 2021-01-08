@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Reviewaction extends window.Cloudouble.Element.elements.Assessaction {
+    class ReviewAction extends window.Cloudouble.Element.elements.AssessAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            resultReview($this, value) { return $this.__helperValidateAttribute($this, value, 'resultReview') }
+        resultReview($this, value) {
+			var property = {
+				comment: "A sub property of result. The review that resulted in the performing of the action.",
+				parent: $this,
+				property: "resultReview",
+				release: "11.01",
+				types: [
+					"Review"
+				]
+			};
+			return new window.LiveElement.Element.elements.Review(value, property) 
+		}
         get resultreview() { return this.resultReview }
         set resultreview(value) { this.resultReview = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Servicechannel extends window.Cloudouble.Element.elements.Intangible {
+    class ServiceChannel extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,35 +32,124 @@
         }
         
         
-            availableLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'availableLanguage') }
+        availableLanguage($this, value) {
+			var property = {
+				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]",
+				parent: $this,
+				property: "availableLanguage",
+				release: "11.01",
+				types: [
+					"Language",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
 
-            processingTime($this, value) { return $this.__helperValidateAttribute($this, value, 'processingTime') }
+        processingTime($this, value) {
+			var property = {
+				comment: "Estimated processing time for the service using this channel.",
+				parent: $this,
+				property: "processingTime",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get processingtime() { return this.processingTime }
         set processingtime(value) { this.processingTime = value }
 
-            providesService($this, value) { return $this.__helperValidateAttribute($this, value, 'providesService') }
+        providesService($this, value) {
+			var property = {
+				comment: "The service provided by this channel.",
+				parent: $this,
+				property: "providesService",
+				release: "11.01",
+				types: [
+					"Service"
+				]
+			};
+			return new window.LiveElement.Element.elements.Service(value, property) 
+		}
         get providesservice() { return this.providesService }
         set providesservice(value) { this.providesService = value }
 
-            serviceLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceLocation') }
+        serviceLocation($this, value) {
+			var property = {
+				comment: "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
+				parent: $this,
+				property: "serviceLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get servicelocation() { return this.serviceLocation }
         set servicelocation(value) { this.serviceLocation = value }
 
-            servicePhone($this, value) { return $this.__helperValidateAttribute($this, value, 'servicePhone') }
+        servicePhone($this, value) {
+			var property = {
+				comment: "The phone number to use to access the service.",
+				parent: $this,
+				property: "servicePhone",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get servicephone() { return this.servicePhone }
         set servicephone(value) { this.servicePhone = value }
 
-            servicePostalAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'servicePostalAddress') }
+        servicePostalAddress($this, value) {
+			var property = {
+				comment: "The address for accessing the service by mail.",
+				parent: $this,
+				property: "servicePostalAddress",
+				release: "11.01",
+				types: [
+					"PostalAddress"
+				]
+			};
+			return new window.LiveElement.Element.elements.PostalAddress(value, property) 
+		}
         get servicepostaladdress() { return this.servicePostalAddress }
         set servicepostaladdress(value) { this.servicePostalAddress = value }
 
-            serviceSmsNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceSmsNumber') }
+        serviceSmsNumber($this, value) {
+			var property = {
+				comment: "The number to access the service by text message.",
+				parent: $this,
+				property: "serviceSmsNumber",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get servicesmsnumber() { return this.serviceSmsNumber }
         set servicesmsnumber(value) { this.serviceSmsNumber = value }
 
-            serviceUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceUrl') }
+        serviceUrl($this, value) {
+			var property = {
+				comment: "The website to access the service.",
+				parent: $this,
+				property: "serviceUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get serviceurl() { return this.serviceUrl }
         set serviceurl(value) { this.serviceUrl = value }
         

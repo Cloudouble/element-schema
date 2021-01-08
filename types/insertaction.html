@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Insertaction extends window.Cloudouble.Element.elements.Addaction {
+    class InsertAction extends window.Cloudouble.Element.elements.AddAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            toLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'toLocation') }
+        toLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The final location of the object or the agent after the action.",
+				parent: $this,
+				property: "toLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }
         

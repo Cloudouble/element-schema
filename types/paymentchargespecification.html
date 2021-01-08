@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Paymentchargespecification extends window.Cloudouble.Element.elements.Pricespecification {
+    class PaymentChargeSpecification extends window.Cloudouble.Element.elements.PriceSpecification {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            appliesToDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'appliesToDeliveryMethod') }
+        appliesToDeliveryMethod($this, value) {
+			var property = {
+				comment: "The delivery method(s) to which the delivery charge or payment charge specification applies.",
+				parent: $this,
+				property: "appliesToDeliveryMethod",
+				release: "11.01",
+				types: [
+					"DeliveryMethod"
+				]
+			};
+			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+		}
         get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
         set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
 
-            appliesToPaymentMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'appliesToPaymentMethod') }
+        appliesToPaymentMethod($this, value) {
+			var property = {
+				comment: "The payment method(s) to which the payment charge specification applies.",
+				parent: $this,
+				property: "appliesToPaymentMethod",
+				release: "11.01",
+				types: [
+					"PaymentMethod"
+				]
+			};
+			return new window.LiveElement.Element.elements.PaymentMethod(value, property) 
+		}
         get appliestopaymentmethod() { return this.appliesToPaymentMethod }
         set appliestopaymentmethod(value) { this.appliesToPaymentMethod = value }
         

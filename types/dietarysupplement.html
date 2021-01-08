@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Dietarysupplement extends window.Cloudouble.Element.elements.Substance {
+    class DietarySupplement extends window.Cloudouble.Element.elements.Substance {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,45 +32,168 @@
         }
         
         
-            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        activeIngredient($this, value) {
+			var property = {
+				comment: "An active ingredient, typically chemical compounds and/or biologic substances.",
+				parent: $this,
+				property: "activeIngredient",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
 
-            isProprietary($this, value) { return $this.__helperValidateAttribute($this, value, 'isProprietary') }
+        isProprietary($this, value) {
+			var property = {
+				comment: "True if this item's name is a proprietary/brand name (vs. generic name).",
+				parent: $this,
+				property: "isProprietary",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isproprietary() { return this.isProprietary }
         set isproprietary(value) { this.isProprietary = value }
 
-            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        legalStatus($this, value) {
+			var property = {
+				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+				parent: $this,
+				property: "legalStatus",
+				release: "11.01",
+				types: [
+					"DrugLegalStatus",
+					"MedicalEnumeration",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugLegalStatus(value, property) || new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
 
-            manufacturer($this, value) { return $this.__helperValidateAttribute($this, value, 'manufacturer') }
+        manufacturer($this, value) {
+			var property = {
+				comment: "The manufacturer of the product.",
+				parent: $this,
+				property: "manufacturer",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        maximumIntake($this, value) {
+			var property = {
+				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+				parent: $this,
+				property: "maximumIntake",
+				release: "11.01",
+				types: [
+					"MaximumDoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.MaximumDoseSchedule(value, property) 
+		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
 
-            mechanismOfAction($this, value) { return $this.__helperValidateAttribute($this, value, 'mechanismOfAction') }
+        mechanismOfAction($this, value) {
+			var property = {
+				comment: "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
+				parent: $this,
+				property: "mechanismOfAction",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get mechanismofaction() { return this.mechanismOfAction }
         set mechanismofaction(value) { this.mechanismOfAction = value }
 
-            nonProprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'nonProprietaryName') }
+        nonProprietaryName($this, value) {
+			var property = {
+				comment: "The generic name of this drug or supplement.",
+				parent: $this,
+				property: "nonProprietaryName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get nonproprietaryname() { return this.nonProprietaryName }
         set nonproprietaryname(value) { this.nonProprietaryName = value }
 
-            proprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'proprietaryName') }
+        proprietaryName($this, value) {
+			var property = {
+				comment: "Proprietary name given to the diet plan, typically by its originator or creator.",
+				parent: $this,
+				property: "proprietaryName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get proprietaryname() { return this.proprietaryName }
         set proprietaryname(value) { this.proprietaryName = value }
 
-            recommendedIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'recommendedIntake') }
+        recommendedIntake($this, value) {
+			var property = {
+				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+				parent: $this,
+				property: "recommendedIntake",
+				release: "11.01",
+				types: [
+					"RecommendedDoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.RecommendedDoseSchedule(value, property) 
+		}
         get recommendedintake() { return this.recommendedIntake }
         set recommendedintake(value) { this.recommendedIntake = value }
 
-            safetyConsideration($this, value) { return $this.__helperValidateAttribute($this, value, 'safetyConsideration') }
+        safetyConsideration($this, value) {
+			var property = {
+				comment: "Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.",
+				parent: $this,
+				property: "safetyConsideration",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get safetyconsideration() { return this.safetyConsideration }
         set safetyconsideration(value) { this.safetyConsideration = value }
 
-            targetPopulation($this, value) { return $this.__helperValidateAttribute($this, value, 'targetPopulation') }
+        targetPopulation($this, value) {
+			var property = {
+				comment: "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
+				parent: $this,
+				property: "targetPopulation",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get targetpopulation() { return this.targetPopulation }
         set targetpopulation(value) { this.targetPopulation = value }
         

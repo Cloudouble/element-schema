@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Typeandquantitynode extends window.Cloudouble.Element.elements.Structuredvalue {
+    class TypeAndQuantityNode extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,80 @@
         }
         
         
-            amountOfThisGood($this, value) { return $this.__helperValidateAttribute($this, value, 'amountOfThisGood') }
+        amountOfThisGood($this, value) {
+			var property = {
+				comment: "The quantity of the goods included in the offer.",
+				parent: $this,
+				property: "amountOfThisGood",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get amountofthisgood() { return this.amountOfThisGood }
         set amountofthisgood(value) { this.amountOfThisGood = value }
 
-            businessFunction($this, value) { return $this.__helperValidateAttribute($this, value, 'businessFunction') }
+        businessFunction($this, value) {
+			var property = {
+				comment: "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+				parent: $this,
+				property: "businessFunction",
+				release: "11.01",
+				types: [
+					"BusinessFunction"
+				]
+			};
+			return new window.LiveElement.Element.elements.BusinessFunction(value, property) 
+		}
         get businessfunction() { return this.businessFunction }
         set businessfunction(value) { this.businessFunction = value }
 
-            typeOfGood($this, value) { return $this.__helperValidateAttribute($this, value, 'typeOfGood') }
+        typeOfGood($this, value) {
+			var property = {
+				comment: "The product that this structured value is referring to.",
+				parent: $this,
+				property: "typeOfGood",
+				release: "11.01",
+				types: [
+					"Service",
+					"Product"
+				]
+			};
+			return new window.LiveElement.Element.elements.Service(value, property) || new window.LiveElement.Element.elements.Product(value, property) 
+		}
         get typeofgood() { return this.typeOfGood }
         set typeofgood(value) { this.typeOfGood = value }
 
-            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        unitCode($this, value) {
+			var property = {
+				comment: "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+				parent: $this,
+				property: "unitCode",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get unitcode() { return this.unitCode }
         set unitcode(value) { this.unitCode = value }
 
-            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        unitText($this, value) {
+			var property = {
+				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+				parent: $this,
+				property: "unitText",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get unittext() { return this.unitText }
         set unittext(value) { this.unitText = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Orderitem extends window.Cloudouble.Element.elements.Intangible {
+    class OrderItem extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,80 @@
         }
         
         
-            orderDelivery($this, value) { return $this.__helperValidateAttribute($this, value, 'orderDelivery') }
+        orderDelivery($this, value) {
+			var property = {
+				comment: "The delivery of the parcel related to this order or order item.",
+				parent: $this,
+				property: "orderDelivery",
+				release: "11.01",
+				types: [
+					"ParcelDelivery"
+				]
+			};
+			return new window.LiveElement.Element.elements.ParcelDelivery(value, property) 
+		}
         get orderdelivery() { return this.orderDelivery }
         set orderdelivery(value) { this.orderDelivery = value }
 
-            orderItemNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'orderItemNumber') }
+        orderItemNumber($this, value) {
+			var property = {
+				comment: "The identifier of the order item.",
+				parent: $this,
+				property: "orderItemNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get orderitemnumber() { return this.orderItemNumber }
         set orderitemnumber(value) { this.orderItemNumber = value }
 
-            orderItemStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'orderItemStatus') }
+        orderItemStatus($this, value) {
+			var property = {
+				comment: "The current status of the order item.",
+				parent: $this,
+				property: "orderItemStatus",
+				release: "11.01",
+				types: [
+					"OrderStatus"
+				]
+			};
+			return new window.LiveElement.Element.elements.OrderStatus(value, property) 
+		}
         get orderitemstatus() { return this.orderItemStatus }
         set orderitemstatus(value) { this.orderItemStatus = value }
 
-            orderQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'orderQuantity') }
+        orderQuantity($this, value) {
+			var property = {
+				comment: "The number of the item ordered. If the property is not set, assume the quantity is one.",
+				parent: $this,
+				property: "orderQuantity",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get orderquantity() { return this.orderQuantity }
         set orderquantity(value) { this.orderQuantity = value }
 
-            orderedItem($this, value) { return $this.__helperValidateAttribute($this, value, 'orderedItem') }
+        orderedItem($this, value) {
+			var property = {
+				comment: "The item ordered.",
+				parent: $this,
+				property: "orderedItem",
+				release: "11.01",
+				types: [
+					"Product",
+					"OrderItem",
+					"Service"
+				]
+			};
+			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.OrderItem(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+		}
         get ordereditem() { return this.orderedItem }
         set ordereditem(value) { this.orderedItem = value }
         

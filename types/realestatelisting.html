@@ -8,16 +8,14 @@
 </template>
 <script>
     /* global */
-    class Realestatelisting extends window.Cloudouble.Element.elements.Webpage {
+    class RealEstateListing extends window.Cloudouble.Element.elements.WebPage {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:RealEstateListing'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).
-  The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
-  '
+        static _rdfs_comment = 'A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).   The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].   '
         static _rdfs_label = 'RealEstateListing'
 
         static get observedAttributes() {
@@ -34,11 +32,35 @@
         }
         
         
-            datePosted($this, value) { return $this.__helperValidateAttribute($this, value, 'datePosted') }
+        datePosted($this, value) {
+			var property = {
+				comment: "Publication date of an online listing.",
+				parent: $this,
+				property: "datePosted",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get dateposted() { return this.datePosted }
         set dateposted(value) { this.datePosted = value }
 
-            leaseLength($this, value) { return $this.__helperValidateAttribute($this, value, 'leaseLength') }
+        leaseLength($this, value) {
+			var property = {
+				comment: "Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.",
+				parent: $this,
+				property: "leaseLength",
+				release: "11.01",
+				types: [
+					"Duration",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get leaselength() { return this.leaseLength }
         set leaselength(value) { this.leaseLength = value }
         

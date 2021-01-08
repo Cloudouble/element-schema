@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Followaction extends window.Cloudouble.Element.elements.Interactaction {
+    class FollowAction extends window.Cloudouble.Element.elements.InteractAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            followee($this, value) { return $this.__helperValidateAttribute($this, value, 'followee') }
+        followee($this, value) {
+			var property = {
+				comment: "A sub property of object. The person or organization being followed.",
+				parent: $this,
+				property: "followee",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         
     }
 </script>

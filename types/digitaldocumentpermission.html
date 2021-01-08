@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Digitaldocumentpermission extends window.Cloudouble.Element.elements.Intangible {
+    class DigitalDocumentPermission extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,34 @@
         }
         
         
-            grantee($this, value) { return $this.__helperValidateAttribute($this, value, 'grantee') }
+        grantee($this, value) {
+			var property = {
+				comment: "The person, organization, contact point, or audience that has been granted this permission.",
+				parent: $this,
+				property: "grantee",
+				release: "11.01",
+				types: [
+					"Person",
+					"Audience",
+					"Organization",
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
 
-            permissionType($this, value) { return $this.__helperValidateAttribute($this, value, 'permissionType') }
+        permissionType($this, value) {
+			var property = {
+				comment: "The type of permission granted the person, organization, or audience.",
+				parent: $this,
+				property: "permissionType",
+				release: "11.01",
+				types: [
+					"DigitalDocumentPermissionType"
+				]
+			};
+			return new window.LiveElement.Element.elements.DigitalDocumentPermissionType(value, property) 
+		}
         get permissiontype() { return this.permissionType }
         set permissiontype(value) { this.permissionType = value }
         

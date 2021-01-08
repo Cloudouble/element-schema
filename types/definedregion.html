@@ -8,27 +8,14 @@
 </template>
 <script>
     /* global */
-    class Definedregion extends window.Cloudouble.Element.elements.Structuredvalue {
+    class DefinedRegion extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:DefinedRegion'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
-
-Examples: a delivery destination when shopping. Region where regional pricing is configured.
-
-Requirement 1:
-Country: US
-States: "NY", "CA"
-
-Requirement 2:
-Country: US
-PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]}
-{ [12345, 12345], [78945, 78945], }
-Region = state, canton, prefecture, autonomous community...
-'
+        static _rdfs_comment = 'A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.  Examples: a delivery destination when shopping. Region where regional pricing is configured.  Requirement 1: Country: US States: "NY", "CA"  Requirement 2: Country: US PostalCode Set: { [94000-94585], [97000, 97999], [13000, 13599]} { [12345, 12345], [78945, 78945], } Region = state, canton, prefecture, autonomous community... '
         static _rdfs_label = 'DefinedRegion'
 
         static get observedAttributes() {
@@ -45,23 +32,79 @@ Region = state, canton, prefecture, autonomous community...
         }
         
         
-            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        addressCountry($this, value) {
+			var property = {
+				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+				parent: $this,
+				property: "addressCountry",
+				release: "11.01",
+				types: [
+					"Country",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Country(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addresscountry() { return this.addressCountry }
         set addresscountry(value) { this.addressCountry = value }
 
-            addressRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'addressRegion') }
+        addressRegion($this, value) {
+			var property = {
+				comment: "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) ",
+				parent: $this,
+				property: "addressRegion",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addressregion() { return this.addressRegion }
         set addressregion(value) { this.addressRegion = value }
 
-            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        postalCode($this, value) {
+			var property = {
+				comment: "The postal code. For example, 94043.",
+				parent: $this,
+				property: "postalCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcode() { return this.postalCode }
         set postalcode(value) { this.postalCode = value }
 
-            postalCodePrefix($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodePrefix') }
+        postalCodePrefix($this, value) {
+			var property = {
+				comment: "A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.",
+				parent: $this,
+				property: "postalCodePrefix",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcodeprefix() { return this.postalCodePrefix }
         set postalcodeprefix(value) { this.postalCodePrefix = value }
 
-            postalCodeRange($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCodeRange') }
+        postalCodeRange($this, value) {
+			var property = {
+				comment: "A defined range of postal codes.",
+				parent: $this,
+				property: "postalCodeRange",
+				release: "11.01",
+				types: [
+					"PostalCodeRangeSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.PostalCodeRangeSpecification(value, property) 
+		}
         get postalcoderange() { return this.postalCodeRange }
         set postalcoderange(value) { this.postalCodeRange = value }
         

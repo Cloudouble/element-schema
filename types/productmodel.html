@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Productmodel extends window.Cloudouble.Element.elements.Product {
+    class ProductModel extends window.Cloudouble.Element.elements.Product {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            isVariantOf($this, value) { return $this.__helperValidateAttribute($this, value, 'isVariantOf') }
+        isVariantOf($this, value) {
+			var property = {
+				comment: "Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.",
+				parent: $this,
+				property: "isVariantOf",
+				release: "11.01",
+				types: [
+					"ProductGroup",
+					"ProductModel"
+				]
+			};
+			return new window.LiveElement.Element.elements.ProductGroup(value, property) || new window.LiveElement.Element.elements.ProductModel(value, property) 
+		}
         get isvariantof() { return this.isVariantOf }
         set isvariantof(value) { this.isVariantOf = value }
 
-            predecessorOf($this, value) { return $this.__helperValidateAttribute($this, value, 'predecessorOf') }
+        predecessorOf($this, value) {
+			var property = {
+				comment: "A pointer from a previous, often discontinued variant of the product to its newer variant.",
+				parent: $this,
+				property: "predecessorOf",
+				release: "11.01",
+				types: [
+					"ProductModel"
+				]
+			};
+			return new window.LiveElement.Element.elements.ProductModel(value, property) 
+		}
         get predecessorof() { return this.predecessorOf }
         set predecessorof(value) { this.predecessorOf = value }
 
-            successorOf($this, value) { return $this.__helperValidateAttribute($this, value, 'successorOf') }
+        successorOf($this, value) {
+			var property = {
+				comment: "A pointer from a newer variant of a product  to its previous, often discontinued predecessor.",
+				parent: $this,
+				property: "successorOf",
+				release: "11.01",
+				types: [
+					"ProductModel"
+				]
+			};
+			return new window.LiveElement.Element.elements.ProductModel(value, property) 
+		}
         get successorof() { return this.successorOf }
         set successorof(value) { this.successorOf = value }
         

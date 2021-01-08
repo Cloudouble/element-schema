@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Aggregateoffer extends window.Cloudouble.Element.elements.Offer {
+    class AggregateOffer extends window.Cloudouble.Element.elements.Offer {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,66 @@
         }
         
         
-            highPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'highPrice') }
+        highPrice($this, value) {
+			var property = {
+				comment: "The highest price of all offers available.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+				parent: $this,
+				property: "highPrice",
+				release: "11.01",
+				types: [
+					"Text",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get highprice() { return this.highPrice }
         set highprice(value) { this.highPrice = value }
 
-            lowPrice($this, value) { return $this.__helperValidateAttribute($this, value, 'lowPrice') }
+        lowPrice($this, value) {
+			var property = {
+				comment: "The lowest price of all offers available.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+				parent: $this,
+				property: "lowPrice",
+				release: "11.01",
+				types: [
+					"Text",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get lowprice() { return this.lowPrice }
         set lowprice(value) { this.lowPrice = value }
 
-            offerCount($this, value) { return $this.__helperValidateAttribute($this, value, 'offerCount') }
+        offerCount($this, value) {
+			var property = {
+				comment: "The number of offers for the product.",
+				parent: $this,
+				property: "offerCount",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get offercount() { return this.offerCount }
         set offercount(value) { this.offerCount = value }
 
-            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+        offers($this, value) {
+			var property = {
+				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+				parent: $this,
+				property: "offers",
+				release: "11.01",
+				types: [
+					"Demand",
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+		}
         
     }
 </script>

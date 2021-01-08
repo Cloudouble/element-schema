@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Rentalcarreservation extends window.Cloudouble.Element.elements.Reservation {
+    class RentalCarReservation extends window.Cloudouble.Element.elements.Reservation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,63 @@
         }
         
         
-            dropoffLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'dropoffLocation') }
+        dropoffLocation($this, value) {
+			var property = {
+				comment: "Where a rental car can be dropped off.",
+				parent: $this,
+				property: "dropoffLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get dropofflocation() { return this.dropoffLocation }
         set dropofflocation(value) { this.dropoffLocation = value }
 
-            dropoffTime($this, value) { return $this.__helperValidateAttribute($this, value, 'dropoffTime') }
+        dropoffTime($this, value) {
+			var property = {
+				comment: "When a rental car can be dropped off.",
+				parent: $this,
+				property: "dropoffTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get dropofftime() { return this.dropoffTime }
         set dropofftime(value) { this.dropoffTime = value }
 
-            pickupLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupLocation') }
+        pickupLocation($this, value) {
+			var property = {
+				comment: "Where a taxi will pick up a passenger or a rental car can be picked up.",
+				parent: $this,
+				property: "pickupLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get pickuplocation() { return this.pickupLocation }
         set pickuplocation(value) { this.pickupLocation = value }
 
-            pickupTime($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupTime') }
+        pickupTime($this, value) {
+			var property = {
+				comment: "When a taxi will pickup a passenger or a rental car can be picked up.",
+				parent: $this,
+				property: "pickupTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get pickuptime() { return this.pickupTime }
         set pickuptime(value) { this.pickupTime = value }
         

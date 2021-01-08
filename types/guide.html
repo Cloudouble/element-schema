@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Guide extends window.Cloudouble.Element.elements.Creativework {
+    class Guide extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            reviewAspect($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewAspect') }
+        reviewAspect($this, value) {
+			var property = {
+				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
+				parent: $this,
+				property: "reviewAspect",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Mobileapplication extends window.Cloudouble.Element.elements.Softwareapplication {
+    class MobileApplication extends window.Cloudouble.Element.elements.SoftwareApplication {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            carrierRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'carrierRequirements') }
+        carrierRequirements($this, value) {
+			var property = {
+				comment: "Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).",
+				parent: $this,
+				property: "carrierRequirements",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get carrierrequirements() { return this.carrierRequirements }
         set carrierrequirements(value) { this.carrierRequirements = value }
         

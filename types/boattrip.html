@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Boattrip extends window.Cloudouble.Element.elements.Trip {
+    class BoatTrip extends window.Cloudouble.Element.elements.Trip {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            arrivalBoatTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalBoatTerminal') }
+        arrivalBoatTerminal($this, value) {
+			var property = {
+				comment: "The terminal or port from which the boat arrives.",
+				parent: $this,
+				property: "arrivalBoatTerminal",
+				release: "11.01",
+				types: [
+					"BoatTerminal"
+				]
+			};
+			return new window.LiveElement.Element.elements.BoatTerminal(value, property) 
+		}
         get arrivalboatterminal() { return this.arrivalBoatTerminal }
         set arrivalboatterminal(value) { this.arrivalBoatTerminal = value }
 
-            departureBoatTerminal($this, value) { return $this.__helperValidateAttribute($this, value, 'departureBoatTerminal') }
+        departureBoatTerminal($this, value) {
+			var property = {
+				comment: "The terminal or port from which the boat departs.",
+				parent: $this,
+				property: "departureBoatTerminal",
+				release: "11.01",
+				types: [
+					"BoatTerminal"
+				]
+			};
+			return new window.LiveElement.Element.elements.BoatTerminal(value, property) 
+		}
         get departureboatterminal() { return this.departureBoatTerminal }
         set departureboatterminal(value) { this.departureBoatTerminal = value }
         

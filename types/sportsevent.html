@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Sportsevent extends window.Cloudouble.Element.elements.Event {
+    class SportsEvent extends window.Cloudouble.Element.elements.Event {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,17 +32,65 @@
         }
         
         
-            awayTeam($this, value) { return $this.__helperValidateAttribute($this, value, 'awayTeam') }
+        awayTeam($this, value) {
+			var property = {
+				comment: "The away team in a sports event.",
+				parent: $this,
+				property: "awayTeam",
+				release: "11.01",
+				types: [
+					"SportsTeam",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.SportsTeam(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get awayteam() { return this.awayTeam }
         set awayteam(value) { this.awayTeam = value }
 
-            competitor($this, value) { return $this.__helperValidateAttribute($this, value, 'competitor') }
+        competitor($this, value) {
+			var property = {
+				comment: "A competitor in a sports event.",
+				parent: $this,
+				property: "competitor",
+				release: "11.01",
+				types: [
+					"Person",
+					"SportsTeam"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.SportsTeam(value, property) 
+		}
 
-            homeTeam($this, value) { return $this.__helperValidateAttribute($this, value, 'homeTeam') }
+        homeTeam($this, value) {
+			var property = {
+				comment: "The home team in a sports event.",
+				parent: $this,
+				property: "homeTeam",
+				release: "11.01",
+				types: [
+					"SportsTeam",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.SportsTeam(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get hometeam() { return this.homeTeam }
         set hometeam(value) { this.homeTeam = value }
 
-            sport($this, value) { return $this.__helperValidateAttribute($this, value, 'sport') }
+        sport($this, value) {
+			var property = {
+				comment: "A type of sport (e.g. Baseball).",
+				parent: $this,
+				property: "sport",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

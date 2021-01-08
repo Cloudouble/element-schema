@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Jobposting extends window.Cloudouble.Element.elements.Intangible {
+    class JobPosting extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,129 +32,531 @@
         }
         
         
-            applicantLocationRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'applicantLocationRequirements') }
+        applicantLocationRequirements($this, value) {
+			var property = {
+				comment: "The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.",
+				parent: $this,
+				property: "applicantLocationRequirements",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get applicantlocationrequirements() { return this.applicantLocationRequirements }
         set applicantlocationrequirements(value) { this.applicantLocationRequirements = value }
 
-            applicationContact($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationContact') }
+        applicationContact($this, value) {
+			var property = {
+				comment: "Contact details for further information relevant to this job posting.",
+				parent: $this,
+				property: "applicationContact",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get applicationcontact() { return this.applicationContact }
         set applicationcontact(value) { this.applicationContact = value }
 
-            baseSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'baseSalary') }
+        baseSalary($this, value) {
+			var property = {
+				comment: "The base salary of the job or of an employee in an EmployeeRole.",
+				parent: $this,
+				property: "baseSalary",
+				release: "11.01",
+				types: [
+					"MonetaryAmount",
+					"Number",
+					"PriceSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) || new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+		}
         get basesalary() { return this.baseSalary }
         set basesalary(value) { this.baseSalary = value }
 
-            benefits($this, value) { return $this.__helperValidateAttribute($this, value, 'benefits') }
+        benefits($this, value) {
+			var property = {
+				comment: "Description of benefits associated with the job.",
+				parent: $this,
+				property: "benefits",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            datePosted($this, value) { return $this.__helperValidateAttribute($this, value, 'datePosted') }
+        datePosted($this, value) {
+			var property = {
+				comment: "Publication date of an online listing.",
+				parent: $this,
+				property: "datePosted",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get dateposted() { return this.datePosted }
         set dateposted(value) { this.datePosted = value }
 
-            educationRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'educationRequirements') }
+        educationRequirements($this, value) {
+			var property = {
+				comment: "Educational background needed for the position or Occupation.",
+				parent: $this,
+				property: "educationRequirements",
+				release: "11.01",
+				types: [
+					"Text",
+					"EducationalOccupationalCredential"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) 
+		}
         get educationrequirements() { return this.educationRequirements }
         set educationrequirements(value) { this.educationRequirements = value }
 
-            eligibilityToWorkRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'eligibilityToWorkRequirement') }
+        eligibilityToWorkRequirement($this, value) {
+			var property = {
+				comment: "The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.",
+				parent: $this,
+				property: "eligibilityToWorkRequirement",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get eligibilitytoworkrequirement() { return this.eligibilityToWorkRequirement }
         set eligibilitytoworkrequirement(value) { this.eligibilityToWorkRequirement = value }
 
-            employerOverview($this, value) { return $this.__helperValidateAttribute($this, value, 'employerOverview') }
+        employerOverview($this, value) {
+			var property = {
+				comment: "A description of the employer, career opportunities and work environment for this position.",
+				parent: $this,
+				property: "employerOverview",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get employeroverview() { return this.employerOverview }
         set employeroverview(value) { this.employerOverview = value }
 
-            employmentType($this, value) { return $this.__helperValidateAttribute($this, value, 'employmentType') }
+        employmentType($this, value) {
+			var property = {
+				comment: "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
+				parent: $this,
+				property: "employmentType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get employmenttype() { return this.employmentType }
         set employmenttype(value) { this.employmentType = value }
 
-            employmentUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'employmentUnit') }
+        employmentUnit($this, value) {
+			var property = {
+				comment: "Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.",
+				parent: $this,
+				property: "employmentUnit",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get employmentunit() { return this.employmentUnit }
         set employmentunit(value) { this.employmentUnit = value }
 
-            estimatedSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatedSalary') }
+        estimatedSalary($this, value) {
+			var property = {
+				comment: "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
+				parent: $this,
+				property: "estimatedSalary",
+				release: "11.01",
+				types: [
+					"MonetaryAmountDistribution",
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmountDistribution(value, property) || new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get estimatedsalary() { return this.estimatedSalary }
         set estimatedsalary(value) { this.estimatedSalary = value }
 
-            experienceRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'experienceRequirements') }
+        experienceRequirements($this, value) {
+			var property = {
+				comment: "Description of skills and experience needed for the position or Occupation.",
+				parent: $this,
+				property: "experienceRequirements",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get experiencerequirements() { return this.experienceRequirements }
         set experiencerequirements(value) { this.experienceRequirements = value }
 
-            hiringOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'hiringOrganization') }
+        hiringOrganization($this, value) {
+			var property = {
+				comment: "Organization offering the job position.",
+				parent: $this,
+				property: "hiringOrganization",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get hiringorganization() { return this.hiringOrganization }
         set hiringorganization(value) { this.hiringOrganization = value }
 
-            incentiveCompensation($this, value) { return $this.__helperValidateAttribute($this, value, 'incentiveCompensation') }
+        incentiveCompensation($this, value) {
+			var property = {
+				comment: "Description of bonus and commission compensation aspects of the job.",
+				parent: $this,
+				property: "incentiveCompensation",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get incentivecompensation() { return this.incentiveCompensation }
         set incentivecompensation(value) { this.incentiveCompensation = value }
 
-            incentives($this, value) { return $this.__helperValidateAttribute($this, value, 'incentives') }
+        incentives($this, value) {
+			var property = {
+				comment: "Description of bonus and commission compensation aspects of the job.",
+				parent: $this,
+				property: "incentives",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            industry($this, value) { return $this.__helperValidateAttribute($this, value, 'industry') }
+        industry($this, value) {
+			var property = {
+				comment: "The industry associated with the job position.",
+				parent: $this,
+				property: "industry",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            jobBenefits($this, value) { return $this.__helperValidateAttribute($this, value, 'jobBenefits') }
+        jobBenefits($this, value) {
+			var property = {
+				comment: "Description of benefits associated with the job.",
+				parent: $this,
+				property: "jobBenefits",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get jobbenefits() { return this.jobBenefits }
         set jobbenefits(value) { this.jobBenefits = value }
 
-            jobImmediateStart($this, value) { return $this.__helperValidateAttribute($this, value, 'jobImmediateStart') }
+        jobImmediateStart($this, value) {
+			var property = {
+				comment: "An indicator as to whether a position is available for an immediate start.",
+				parent: $this,
+				property: "jobImmediateStart",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get jobimmediatestart() { return this.jobImmediateStart }
         set jobimmediatestart(value) { this.jobImmediateStart = value }
 
-            jobLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'jobLocation') }
+        jobLocation($this, value) {
+			var property = {
+				comment: "A (typically single) geographic location associated with the job position.",
+				parent: $this,
+				property: "jobLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get joblocation() { return this.jobLocation }
         set joblocation(value) { this.jobLocation = value }
 
-            jobLocationType($this, value) { return $this.__helperValidateAttribute($this, value, 'jobLocationType') }
+        jobLocationType($this, value) {
+			var property = {
+				comment: "A description of the job location (e.g TELECOMMUTE for telecommute jobs).",
+				parent: $this,
+				property: "jobLocationType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get joblocationtype() { return this.jobLocationType }
         set joblocationtype(value) { this.jobLocationType = value }
 
-            jobStartDate($this, value) { return $this.__helperValidateAttribute($this, value, 'jobStartDate') }
+        jobStartDate($this, value) {
+			var property = {
+				comment: "The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.",
+				parent: $this,
+				property: "jobStartDate",
+				release: "11.01",
+				types: [
+					"Date",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get jobstartdate() { return this.jobStartDate }
         set jobstartdate(value) { this.jobStartDate = value }
 
-            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        occupationalCategory($this, value) {
+			var property = {
+				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+				parent: $this,
+				property: "occupationalCategory",
+				release: "11.01",
+				types: [
+					"CategoryCode",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.CategoryCode(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
 
-            physicalRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'physicalRequirement') }
+        physicalRequirement($this, value) {
+			var property = {
+				comment: "A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+				parent: $this,
+				property: "physicalRequirement",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get physicalrequirement() { return this.physicalRequirement }
         set physicalrequirement(value) { this.physicalRequirement = value }
 
-            qualifications($this, value) { return $this.__helperValidateAttribute($this, value, 'qualifications') }
+        qualifications($this, value) {
+			var property = {
+				comment: "Specific qualifications required for this role or Occupation.",
+				parent: $this,
+				property: "qualifications",
+				release: "11.01",
+				types: [
+					"EducationalOccupationalCredential",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            relevantOccupation($this, value) { return $this.__helperValidateAttribute($this, value, 'relevantOccupation') }
+        relevantOccupation($this, value) {
+			var property = {
+				comment: "The Occupation for the JobPosting.",
+				parent: $this,
+				property: "relevantOccupation",
+				release: "11.01",
+				types: [
+					"Occupation"
+				]
+			};
+			return new window.LiveElement.Element.elements.Occupation(value, property) 
+		}
         get relevantoccupation() { return this.relevantOccupation }
         set relevantoccupation(value) { this.relevantOccupation = value }
 
-            responsibilities($this, value) { return $this.__helperValidateAttribute($this, value, 'responsibilities') }
+        responsibilities($this, value) {
+			var property = {
+				comment: "Responsibilities associated with this role or Occupation.",
+				parent: $this,
+				property: "responsibilities",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            salaryCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'salaryCurrency') }
+        salaryCurrency($this, value) {
+			var property = {
+				comment: "The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.",
+				parent: $this,
+				property: "salaryCurrency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get salarycurrency() { return this.salaryCurrency }
         set salarycurrency(value) { this.salaryCurrency = value }
 
-            securityClearanceRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'securityClearanceRequirement') }
+        securityClearanceRequirement($this, value) {
+			var property = {
+				comment: "A description of any security clearance requirements of the job.",
+				parent: $this,
+				property: "securityClearanceRequirement",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get securityclearancerequirement() { return this.securityClearanceRequirement }
         set securityclearancerequirement(value) { this.securityClearanceRequirement = value }
 
-            sensoryRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'sensoryRequirement') }
+        sensoryRequirement($this, value) {
+			var property = {
+				comment: "A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.",
+				parent: $this,
+				property: "sensoryRequirement",
+				release: "11.01",
+				types: [
+					"URL",
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get sensoryrequirement() { return this.sensoryRequirement }
         set sensoryrequirement(value) { this.sensoryRequirement = value }
 
-            skills($this, value) { return $this.__helperValidateAttribute($this, value, 'skills') }
+        skills($this, value) {
+			var property = {
+				comment: "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
+				parent: $this,
+				property: "skills",
+				release: "11.01",
+				types: [
+					"Text",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
 
-            specialCommitments($this, value) { return $this.__helperValidateAttribute($this, value, 'specialCommitments') }
+        specialCommitments($this, value) {
+			var property = {
+				comment: "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
+				parent: $this,
+				property: "specialCommitments",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get specialcommitments() { return this.specialCommitments }
         set specialcommitments(value) { this.specialCommitments = value }
 
-            title($this, value) { return $this.__helperValidateAttribute($this, value, 'title') }
+        title($this, value) {
+			var property = {
+				comment: "The title of the job.",
+				parent: $this,
+				property: "title",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            totalJobOpenings($this, value) { return $this.__helperValidateAttribute($this, value, 'totalJobOpenings') }
+        totalJobOpenings($this, value) {
+			var property = {
+				comment: "The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.",
+				parent: $this,
+				property: "totalJobOpenings",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get totaljobopenings() { return this.totalJobOpenings }
         set totaljobopenings(value) { this.totalJobOpenings = value }
 
-            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        validThrough($this, value) {
+			var property = {
+				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+				parent: $this,
+				property: "validThrough",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
 
-            workHours($this, value) { return $this.__helperValidateAttribute($this, value, 'workHours') }
+        workHours($this, value) {
+			var property = {
+				comment: "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
+				parent: $this,
+				property: "workHours",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get workhours() { return this.workHours }
         set workhours(value) { this.workHours = value }
         

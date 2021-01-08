@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Mortgageloan extends window.Cloudouble.Element.elements.Loanorcredit {
+    class MortgageLoan extends window.Cloudouble.Element.elements.LoanOrCredit {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            domiciledMortgage($this, value) { return $this.__helperValidateAttribute($this, value, 'domiciledMortgage') }
+        domiciledMortgage($this, value) {
+			var property = {
+				comment: "Whether borrower is a resident of the jurisdiction where the property is located.",
+				parent: $this,
+				property: "domiciledMortgage",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get domiciledmortgage() { return this.domiciledMortgage }
         set domiciledmortgage(value) { this.domiciledMortgage = value }
 
-            loanMortgageMandateAmount($this, value) { return $this.__helperValidateAttribute($this, value, 'loanMortgageMandateAmount') }
+        loanMortgageMandateAmount($this, value) {
+			var property = {
+				comment: "Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.",
+				parent: $this,
+				property: "loanMortgageMandateAmount",
+				release: "11.01",
+				types: [
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get loanmortgagemandateamount() { return this.loanMortgageMandateAmount }
         set loanmortgagemandateamount(value) { this.loanMortgageMandateAmount = value }
         

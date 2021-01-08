@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Pathologytest extends window.Cloudouble.Element.elements.Medicaltest {
+    class PathologyTest extends window.Cloudouble.Element.elements.MedicalTest {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            tissueSample($this, value) { return $this.__helperValidateAttribute($this, value, 'tissueSample') }
+        tissueSample($this, value) {
+			var property = {
+				comment: "The type of tissue sample required for the test.",
+				parent: $this,
+				property: "tissueSample",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get tissuesample() { return this.tissueSample }
         set tissuesample(value) { this.tissueSample = value }
         

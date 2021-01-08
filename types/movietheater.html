@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Movietheater extends window.Cloudouble.Element.elements.Entertainmentbusiness {
+    class MovieTheater extends window.Cloudouble.Element.elements.EntertainmentBusiness {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            screenCount($this, value) { return $this.__helperValidateAttribute($this, value, 'screenCount') }
+        screenCount($this, value) {
+			var property = {
+				comment: "The number of screens in the movie theater.",
+				parent: $this,
+				property: "screenCount",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get screencount() { return this.screenCount }
         set screencount(value) { this.screenCount = value }
         

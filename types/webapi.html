@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Webapi extends window.Cloudouble.Element.elements.Service {
+    class WebAPI extends window.Cloudouble.Element.elements.Service {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            documentation($this, value) { return $this.__helperValidateAttribute($this, value, 'documentation') }
+        documentation($this, value) {
+			var property = {
+				comment: "Further documentation describing the Web API in more detail.",
+				parent: $this,
+				property: "documentation",
+				release: "11.01",
+				types: [
+					"URL",
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         
     }
 </script>

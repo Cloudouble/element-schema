@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Organizationrole extends window.Cloudouble.Element.elements.Role {
+    class OrganizationRole extends window.Cloudouble.Element.elements.Role {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            numberedPosition($this, value) { return $this.__helperValidateAttribute($this, value, 'numberedPosition') }
+        numberedPosition($this, value) {
+			var property = {
+				comment: "A number associated with a role in an organization, for example, the number on an athlete's jersey.",
+				parent: $this,
+				property: "numberedPosition",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberedposition() { return this.numberedPosition }
         set numberedposition(value) { this.numberedPosition = value }
         

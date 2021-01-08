@@ -15,9 +15,7 @@
         static __release = '11.01'
         static __id = 'schema:Observation'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube "measure properties", as in the [lifeExpectancy example](https:\/\/www.w3.org\/TR\/vocab-data-cube\/#dsd-example)).
-See also [[StatisticalPopulation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.
-  '
+        static _rdfs_comment = 'Instances of the class [[Observation]] are used to specify observations about an entity (which may or may not be an instance of a [[StatisticalPopulation]]), at a particular time. The principal properties of an [[Observation]] are [[observedNode]], [[measuredProperty]], [[measuredValue]] (or [[median]], etc.) and [[observationDate]] ([[measuredProperty]] properties can, but need not always, be W3C RDF Data Cube "measure properties", as in the [lifeExpectancy example](https:\/\/www.w3.org\/TR\/vocab-data-cube\/#dsd-example)). See also [[StatisticalPopulation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.   '
         static _rdfs_label = 'Observation'
 
         static get observedAttributes() {
@@ -34,23 +32,78 @@ See also [[StatisticalPopulation]], and the [data and datasets](\/docs\/data-and
         }
         
         
-            marginOfError($this, value) { return $this.__helperValidateAttribute($this, value, 'marginOfError') }
+        marginOfError($this, value) {
+			var property = {
+				comment: "A marginOfError for an [[Observation]].",
+				parent: $this,
+				property: "marginOfError",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get marginoferror() { return this.marginOfError }
         set marginoferror(value) { this.marginOfError = value }
 
-            measuredProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'measuredProperty') }
+        measuredProperty($this, value) {
+			var property = {
+				comment: "The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).",
+				parent: $this,
+				property: "measuredProperty",
+				release: "11.01",
+				types: [
+					"Property"
+				]
+			};
+			return new window.LiveElement.Element.elements.Property(value, property) 
+		}
         get measuredproperty() { return this.measuredProperty }
         set measuredproperty(value) { this.measuredProperty = value }
 
-            measuredValue($this, value) { return $this.__helperValidateAttribute($this, value, 'measuredValue') }
+        measuredValue($this, value) {
+			var property = {
+				comment: "The measuredValue of an [[Observation]].",
+				parent: $this,
+				property: "measuredValue",
+				release: "11.01",
+				types: [
+					"DataType"
+				]
+			};
+			return new window.LiveElement.Element.elements.DataType(value, property) 
+		}
         get measuredvalue() { return this.measuredValue }
         set measuredvalue(value) { this.measuredValue = value }
 
-            observationDate($this, value) { return $this.__helperValidateAttribute($this, value, 'observationDate') }
+        observationDate($this, value) {
+			var property = {
+				comment: "The observationDate of an [[Observation]].",
+				parent: $this,
+				property: "observationDate",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get observationdate() { return this.observationDate }
         set observationdate(value) { this.observationDate = value }
 
-            observedNode($this, value) { return $this.__helperValidateAttribute($this, value, 'observedNode') }
+        observedNode($this, value) {
+			var property = {
+				comment: "The observedNode of an [[Observation]], often a [[StatisticalPopulation]].",
+				parent: $this,
+				property: "observedNode",
+				release: "11.01",
+				types: [
+					"StatisticalPopulation"
+				]
+			};
+			return new window.LiveElement.Element.elements.StatisticalPopulation(value, property) 
+		}
         get observednode() { return this.observedNode }
         set observednode(value) { this.observedNode = value }
         

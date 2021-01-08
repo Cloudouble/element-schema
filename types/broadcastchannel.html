@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Broadcastchannel extends window.Cloudouble.Element.elements.Intangible {
+    class BroadcastChannel extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,25 +32,93 @@
         }
         
         
-            broadcastChannelId($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastChannelId') }
+        broadcastChannelId($this, value) {
+			var property = {
+				comment: "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
+				parent: $this,
+				property: "broadcastChannelId",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get broadcastchannelid() { return this.broadcastChannelId }
         set broadcastchannelid(value) { this.broadcastChannelId = value }
 
-            broadcastFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastFrequency') }
+        broadcastFrequency($this, value) {
+			var property = {
+				comment: "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
+				parent: $this,
+				property: "broadcastFrequency",
+				release: "11.01",
+				types: [
+					"Text",
+					"BroadcastFrequencySpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.BroadcastFrequencySpecification(value, property) 
+		}
         get broadcastfrequency() { return this.broadcastFrequency }
         set broadcastfrequency(value) { this.broadcastFrequency = value }
 
-            broadcastServiceTier($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastServiceTier') }
+        broadcastServiceTier($this, value) {
+			var property = {
+				comment: "The type of service required to have access to the channel (e.g. Standard or Premium).",
+				parent: $this,
+				property: "broadcastServiceTier",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get broadcastservicetier() { return this.broadcastServiceTier }
         set broadcastservicetier(value) { this.broadcastServiceTier = value }
 
-            genre($this, value) { return $this.__helperValidateAttribute($this, value, 'genre') }
+        genre($this, value) {
+			var property = {
+				comment: "Genre of the creative work, broadcast channel or group.",
+				parent: $this,
+				property: "genre",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            inBroadcastLineup($this, value) { return $this.__helperValidateAttribute($this, value, 'inBroadcastLineup') }
+        inBroadcastLineup($this, value) {
+			var property = {
+				comment: "The CableOrSatelliteService offering the channel.",
+				parent: $this,
+				property: "inBroadcastLineup",
+				release: "11.01",
+				types: [
+					"CableOrSatelliteService"
+				]
+			};
+			return new window.LiveElement.Element.elements.CableOrSatelliteService(value, property) 
+		}
         get inbroadcastlineup() { return this.inBroadcastLineup }
         set inbroadcastlineup(value) { this.inBroadcastLineup = value }
 
-            providesBroadcastService($this, value) { return $this.__helperValidateAttribute($this, value, 'providesBroadcastService') }
+        providesBroadcastService($this, value) {
+			var property = {
+				comment: "The BroadcastService offered on this channel.",
+				parent: $this,
+				property: "providesBroadcastService",
+				release: "11.01",
+				types: [
+					"BroadcastService"
+				]
+			};
+			return new window.LiveElement.Element.elements.BroadcastService(value, property) 
+		}
         get providesbroadcastservice() { return this.providesBroadcastService }
         set providesbroadcastservice(value) { this.providesBroadcastService = value }
         

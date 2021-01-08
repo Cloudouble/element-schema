@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Softwaresourcecode extends window.Cloudouble.Element.elements.Creativework {
+    class SoftwareSourceCode extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,29 +32,107 @@
         }
         
         
-            codeRepository($this, value) { return $this.__helperValidateAttribute($this, value, 'codeRepository') }
+        codeRepository($this, value) {
+			var property = {
+				comment: "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
+				parent: $this,
+				property: "codeRepository",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get coderepository() { return this.codeRepository }
         set coderepository(value) { this.codeRepository = value }
 
-            codeSampleType($this, value) { return $this.__helperValidateAttribute($this, value, 'codeSampleType') }
+        codeSampleType($this, value) {
+			var property = {
+				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
+				parent: $this,
+				property: "codeSampleType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get codesampletype() { return this.codeSampleType }
         set codesampletype(value) { this.codeSampleType = value }
 
-            programmingLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'programmingLanguage') }
+        programmingLanguage($this, value) {
+			var property = {
+				comment: "The computer programming language.",
+				parent: $this,
+				property: "programmingLanguage",
+				release: "11.01",
+				types: [
+					"Text",
+					"ComputerLanguage"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ComputerLanguage(value, property) 
+		}
         get programminglanguage() { return this.programmingLanguage }
         set programminglanguage(value) { this.programmingLanguage = value }
 
-            runtime($this, value) { return $this.__helperValidateAttribute($this, value, 'runtime') }
+        runtime($this, value) {
+			var property = {
+				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
+				parent: $this,
+				property: "runtime",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            runtimePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'runtimePlatform') }
+        runtimePlatform($this, value) {
+			var property = {
+				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
+				parent: $this,
+				property: "runtimePlatform",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get runtimeplatform() { return this.runtimePlatform }
         set runtimeplatform(value) { this.runtimePlatform = value }
 
-            sampleType($this, value) { return $this.__helperValidateAttribute($this, value, 'sampleType') }
+        sampleType($this, value) {
+			var property = {
+				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
+				parent: $this,
+				property: "sampleType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get sampletype() { return this.sampleType }
         set sampletype(value) { this.sampleType = value }
 
-            targetProduct($this, value) { return $this.__helperValidateAttribute($this, value, 'targetProduct') }
+        targetProduct($this, value) {
+			var property = {
+				comment: "Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.",
+				parent: $this,
+				property: "targetProduct",
+				release: "11.01",
+				types: [
+					"SoftwareApplication"
+				]
+			};
+			return new window.LiveElement.Element.elements.SoftwareApplication(value, property) 
+		}
         get targetproduct() { return this.targetProduct }
         set targetproduct(value) { this.targetProduct = value }
         

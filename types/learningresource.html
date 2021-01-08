@@ -8,18 +8,14 @@
 </template>
 <script>
     /* global */
-    class Learningresource extends window.Cloudouble.Element.elements.Creativework {
+    class LearningResource extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:LearningResource'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.
-
-[[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[Video]], [[Product]] etc.
-
-[[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.'
+        static _rdfs_comment = 'The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.  [[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[Video]], [[Product]] etc.  [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.'
         static _rdfs_label = 'LearningResource'
 
         static get observedAttributes() {
@@ -36,29 +32,114 @@
         }
         
         
-            assesses($this, value) { return $this.__helperValidateAttribute($this, value, 'assesses') }
+        assesses($this, value) {
+			var property = {
+				comment: "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
+				parent: $this,
+				property: "assesses",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            competencyRequired($this, value) { return $this.__helperValidateAttribute($this, value, 'competencyRequired') }
+        competencyRequired($this, value) {
+			var property = {
+				comment: "Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.",
+				parent: $this,
+				property: "competencyRequired",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get competencyrequired() { return this.competencyRequired }
         set competencyrequired(value) { this.competencyRequired = value }
 
-            educationalAlignment($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalAlignment') }
+        educationalAlignment($this, value) {
+			var property = {
+				comment: "An alignment to an established educational framework.\n\nThis property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.",
+				parent: $this,
+				property: "educationalAlignment",
+				release: "11.01",
+				types: [
+					"AlignmentObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.AlignmentObject(value, property) 
+		}
         get educationalalignment() { return this.educationalAlignment }
         set educationalalignment(value) { this.educationalAlignment = value }
 
-            educationalLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalLevel') }
+        educationalLevel($this, value) {
+			var property = {
+				comment: "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+				parent: $this,
+				property: "educationalLevel",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
 
-            educationalUse($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalUse') }
+        educationalUse($this, value) {
+			var property = {
+				comment: "The purpose of a work in the context of education; for example, 'assignment', 'group work'.",
+				parent: $this,
+				property: "educationalUse",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get educationaluse() { return this.educationalUse }
         set educationaluse(value) { this.educationalUse = value }
 
-            learningResourceType($this, value) { return $this.__helperValidateAttribute($this, value, 'learningResourceType') }
+        learningResourceType($this, value) {
+			var property = {
+				comment: "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+				parent: $this,
+				property: "learningResourceType",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get learningresourcetype() { return this.learningResourceType }
         set learningresourcetype(value) { this.learningResourceType = value }
 
-            teaches($this, value) { return $this.__helperValidateAttribute($this, value, 'teaches') }
+        teaches($this, value) {
+			var property = {
+				comment: "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+				parent: $this,
+				property: "teaches",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

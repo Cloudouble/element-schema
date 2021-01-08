@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Busorcoach extends window.Cloudouble.Element.elements.Vehicle {
+    class BusOrCoach extends window.Cloudouble.Element.elements.Vehicle {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            acrissCode($this, value) { return $this.__helperValidateAttribute($this, value, 'acrissCode') }
+        acrissCode($this, value) {
+			var property = {
+				comment: "The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.",
+				parent: $this,
+				property: "acrissCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get acrisscode() { return this.acrissCode }
         set acrisscode(value) { this.acrissCode = value }
 
-            roofLoad($this, value) { return $this.__helperValidateAttribute($this, value, 'roofLoad') }
+        roofLoad($this, value) {
+			var property = {
+				comment: "The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.\\n\\nTypical unit code(s): KGM for kilogram, LBR for pound\\n\\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]\\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "roofLoad",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get roofload() { return this.roofLoad }
         set roofload(value) { this.roofLoad = value }
         

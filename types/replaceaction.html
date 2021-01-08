@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Replaceaction extends window.Cloudouble.Element.elements.Updateaction {
+    class ReplaceAction extends window.Cloudouble.Element.elements.UpdateAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            replacee($this, value) { return $this.__helperValidateAttribute($this, value, 'replacee') }
+        replacee($this, value) {
+			var property = {
+				comment: "A sub property of object. The object that is being replaced.",
+				parent: $this,
+				property: "replacee",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
 
-            replacer($this, value) { return $this.__helperValidateAttribute($this, value, 'replacer') }
+        replacer($this, value) {
+			var property = {
+				comment: "A sub property of object. The object that replaces.",
+				parent: $this,
+				property: "replacer",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         
     }
 </script>

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Nutritioninformation extends window.Cloudouble.Element.elements.Structuredvalue {
+    class NutritionInformation extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,49 +32,181 @@
         }
         
         
-            calories($this, value) { return $this.__helperValidateAttribute($this, value, 'calories') }
+        calories($this, value) {
+			var property = {
+				comment: "The number of calories.",
+				parent: $this,
+				property: "calories",
+				release: "11.01",
+				types: [
+					"Energy"
+				]
+			};
+			return new window.LiveElement.Element.elements.Energy(value, property) 
+		}
 
-            carbohydrateContent($this, value) { return $this.__helperValidateAttribute($this, value, 'carbohydrateContent') }
+        carbohydrateContent($this, value) {
+			var property = {
+				comment: "The number of grams of carbohydrates.",
+				parent: $this,
+				property: "carbohydrateContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get carbohydratecontent() { return this.carbohydrateContent }
         set carbohydratecontent(value) { this.carbohydrateContent = value }
 
-            cholesterolContent($this, value) { return $this.__helperValidateAttribute($this, value, 'cholesterolContent') }
+        cholesterolContent($this, value) {
+			var property = {
+				comment: "The number of milligrams of cholesterol.",
+				parent: $this,
+				property: "cholesterolContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get cholesterolcontent() { return this.cholesterolContent }
         set cholesterolcontent(value) { this.cholesterolContent = value }
 
-            fatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'fatContent') }
+        fatContent($this, value) {
+			var property = {
+				comment: "The number of grams of fat.",
+				parent: $this,
+				property: "fatContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get fatcontent() { return this.fatContent }
         set fatcontent(value) { this.fatContent = value }
 
-            fiberContent($this, value) { return $this.__helperValidateAttribute($this, value, 'fiberContent') }
+        fiberContent($this, value) {
+			var property = {
+				comment: "The number of grams of fiber.",
+				parent: $this,
+				property: "fiberContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get fibercontent() { return this.fiberContent }
         set fibercontent(value) { this.fiberContent = value }
 
-            proteinContent($this, value) { return $this.__helperValidateAttribute($this, value, 'proteinContent') }
+        proteinContent($this, value) {
+			var property = {
+				comment: "The number of grams of protein.",
+				parent: $this,
+				property: "proteinContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get proteincontent() { return this.proteinContent }
         set proteincontent(value) { this.proteinContent = value }
 
-            saturatedFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'saturatedFatContent') }
+        saturatedFatContent($this, value) {
+			var property = {
+				comment: "The number of grams of saturated fat.",
+				parent: $this,
+				property: "saturatedFatContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get saturatedfatcontent() { return this.saturatedFatContent }
         set saturatedfatcontent(value) { this.saturatedFatContent = value }
 
-            servingSize($this, value) { return $this.__helperValidateAttribute($this, value, 'servingSize') }
+        servingSize($this, value) {
+			var property = {
+				comment: "The serving size, in terms of the number of volume or mass.",
+				parent: $this,
+				property: "servingSize",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get servingsize() { return this.servingSize }
         set servingsize(value) { this.servingSize = value }
 
-            sodiumContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sodiumContent') }
+        sodiumContent($this, value) {
+			var property = {
+				comment: "The number of milligrams of sodium.",
+				parent: $this,
+				property: "sodiumContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get sodiumcontent() { return this.sodiumContent }
         set sodiumcontent(value) { this.sodiumContent = value }
 
-            sugarContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sugarContent') }
+        sugarContent($this, value) {
+			var property = {
+				comment: "The number of grams of sugar.",
+				parent: $this,
+				property: "sugarContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get sugarcontent() { return this.sugarContent }
         set sugarcontent(value) { this.sugarContent = value }
 
-            transFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'transFatContent') }
+        transFatContent($this, value) {
+			var property = {
+				comment: "The number of grams of trans fat.",
+				parent: $this,
+				property: "transFatContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get transfatcontent() { return this.transFatContent }
         set transfatcontent(value) { this.transFatContent = value }
 
-            unsaturatedFatContent($this, value) { return $this.__helperValidateAttribute($this, value, 'unsaturatedFatContent') }
+        unsaturatedFatContent($this, value) {
+			var property = {
+				comment: "The number of grams of unsaturated fat.",
+				parent: $this,
+				property: "unsaturatedFatContent",
+				release: "11.01",
+				types: [
+					"Mass"
+				]
+			};
+			return new window.LiveElement.Element.elements.Mass(value, property) 
+		}
         get unsaturatedfatcontent() { return this.unsaturatedFatContent }
         set unsaturatedfatcontent(value) { this.unsaturatedFatContent = value }
         

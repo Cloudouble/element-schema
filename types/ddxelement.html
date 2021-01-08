@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Ddxelement extends window.Cloudouble.Element.elements.Medicalintangible {
+    class DDxElement extends window.Cloudouble.Element.elements.MedicalIntangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            diagnosis($this, value) { return $this.__helperValidateAttribute($this, value, 'diagnosis') }
+        diagnosis($this, value) {
+			var property = {
+				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+				parent: $this,
+				property: "diagnosis",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
 
-            distinguishingSign($this, value) { return $this.__helperValidateAttribute($this, value, 'distinguishingSign') }
+        distinguishingSign($this, value) {
+			var property = {
+				comment: "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.",
+				parent: $this,
+				property: "distinguishingSign",
+				release: "11.01",
+				types: [
+					"MedicalSignOrSymptom"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSignOrSymptom(value, property) 
+		}
         get distinguishingsign() { return this.distinguishingSign }
         set distinguishingsign(value) { this.distinguishingSign = value }
         

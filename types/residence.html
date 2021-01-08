@@ -32,7 +32,18 @@
         }
         
         
-            accommodationFloorPlan($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationFloorPlan') }
+        accommodationFloorPlan($this, value) {
+			var property = {
+				comment: "A floorplan of some [[Accommodation]].",
+				parent: $this,
+				property: "accommodationFloorPlan",
+				release: "11.01",
+				types: [
+					"FloorPlan"
+				]
+			};
+			return new window.LiveElement.Element.elements.FloorPlan(value, property) 
+		}
         get accommodationfloorplan() { return this.accommodationFloorPlan }
         set accommodationfloorplan(value) { this.accommodationFloorPlan = value }
         

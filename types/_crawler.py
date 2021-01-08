@@ -1,4 +1,4 @@
-import urllib.request, json
+import urllib.request, json, re
 
 release = '11.01'
 
@@ -15,6 +15,22 @@ with open('_feed.json', 'w') as file:
 
 with open('_template.html', 'r') as f:
     class_template = f.read()    
+    
+properties_list = [p for p in graph if (p.get('@type') and ((type(p['@type']) is str and p['@type'] == 'rdf:Property') or (type(p['@type']) is list and 'rdf:Property' in p['@type'])))]
+properties = {}
+for prop in properties_list:
+    rdfslabel = prop['rdfs:label'] if type(prop['rdfs:label']) is str else (prop['rdfs:label'].get('@value') if type(prop['rdfs:label']) is dict else None)
+    rdfscomment = prop['rdfs:comment'] if type(prop['rdfs:comment']) is str else (prop['rdfs:comment'].get('@value') if type(prop['rdfs:comment']) is dict else None)
+    range_includes = prop.get('schema:rangeIncludes', [])
+    range_includes = [range_includes] if range_includes and type(range_includes) is dict else range_includes
+    properties[rdfslabel] = {
+        'comment': rdfscomment, 
+        'types': [r.get('@id') for r in range_includes], 
+        'release': release
+    }
+    properties[rdfslabel]['types'] = [r for r in properties[rdfslabel]['types'] if r]
+    properties[rdfslabel]['types'] = [r.split(':')[-1] for r in properties[rdfslabel]['types']]
+    
     
 for index, datatype in enumerate([d for d in graph if (
         (d.get('@type') and type(d['@type']) is str and d['@type'] == 'rdfs:Class') or 
@@ -39,44 +55,35 @@ for index, datatype in enumerate([d for d in graph if (
     rdfslabel = datatype['rdfs:label'] if type(datatype['rdfs:label']) is str else (datatype['rdfs:label'].get('@value') if type(datatype['rdfs:label']) is dict else None)
     rdfscomment = datatype['rdfs:comment'] if type(datatype['rdfs:comment']) is str else (datatype['rdfs:comment'].get('@value') if type(datatype['rdfs:comment']) is dict else None)
     if rdfslabel and rdfscomment:
+        digits_map = {'0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'}
+        properties_dict = {property_name: {'parent': '$this', 'property': property_name, **properties.get(property_name, {})} for property_name in properties_list}
+        return_statements = {property_name: ' || '.join(['new window.LiveElement.Element.elements.{}(value, property)'.format(t) for t in property_dict.get('types', [])]) for property_name, property_dict in properties_dict.items()}
         class_file_properties = {
             'release': release, 
-            'rdfslabel__capitalized': rdfslabel.capitalize(), 
-            'rdfssubclassof_id_capitalized_no_schemaprefix': subclassof.capitalize(), 
+            'rdfslabel_safe': rdfslabel.replace(rdfslabel[0], digits_map.get(rdfslabel[0], 'X'), 1) if rdfslabel[0].isnumeric() else rdfslabel, 
+            'rdfssubclassof_id_safe_no_schemaprefix': subclassof.replace(subclassof[0], digits_map.get(subclassof[0], 'X'), 1) if subclassof[0].isnumeric() else subclassof, 
             '_id': datatype['@id'], 
             '_type': _type, 
-            'rdfscomment': rdfscomment.replace('/', '\/').replace("'", "\\'"), 
+            'rdfscomment': rdfscomment.replace('/', '\/').replace("'", "\\'").replace("\n", " "), 
             'rdfslabel': rdfslabel, 
             'properties_list_comma': json.dumps(properties_list)[1:-1].replace('"', "'"), 
             'properties_list_getters': '''
 '''.join(['''
-            {propertyName}($this, value) {{ return $this.__helperValidateAttribute($this, value, '{propertyName}') }}{getters}'''.format(
-                propertyName=propertyName, 
-                propertyName_lower=propertyName.lower(), 
+        {property_name}($this, value) {{\n\t\t\tvar property = {property_map};\n\t\t\treturn {return_statement} \n\t\t}}{getters}'''.format(
+                property_map=re.sub('"([^"]+)":', r"\1:", json.dumps(properties_dict.get(property_name, {}), sort_keys=True, indent="\t\t\t\t")).replace('"$this"', '$this'), 
+                return_statement=return_statements.get(property_name, 'undefined'), 
+                property_name=property_name, 
+                property_name_lower=property_name.lower(), 
                 getters='''
-        get {propertyName_lower}() {{ return this.{propertyName} }}
-        set {propertyName_lower}(value) {{ this.{propertyName} = value }}'''.format(propertyName_lower=propertyName.lower(), propertyName=propertyName) if propertyName.lower() != propertyName else ''
-            ) for propertyName in properties_list])
+        get {property_name_lower}() {{ return this.{property_name} }}
+        set {property_name_lower}(value) {{ this.{property_name} = value }}'''.format(property_name_lower=property_name.lower(), property_name=property_name) if property_name.lower() != property_name else ''
+            ).replace("\n};", "\n\t\t\t};").replace("\n\t\t\t\t\t\t\t\t", "\n\t\t\t\t\t") for property_name in properties_list])
         }
         class_file_text = class_template.format(**class_file_properties)
         with open('{}.html'.format(rdfslabel.lower()), 'w') as file:
             file.write(class_file_text)
 
-properties_list = [p for p in graph if (p.get('@type') and ((type(p['@type']) is str and p['@type'] == 'rdf:Property') or (type(p['@type']) is list and 'rdf:Property' in p['@type'])))]
-properties = {}
-for prop in properties_list:
-    rdfslabel = prop['rdfs:label'] if type(prop['rdfs:label']) is str else (prop['rdfs:label'].get('@value') if type(prop['rdfs:label']) is dict else None)
-    rdfscomment = prop['rdfs:comment'] if type(prop['rdfs:comment']) is str else (prop['rdfs:comment'].get('@value') if type(prop['rdfs:comment']) is dict else None)
-    range_includes = prop.get('schema:rangeIncludes', [])
-    range_includes = [range_includes] if range_includes and type(range_includes) is dict else range_includes
-    properties[rdfslabel] = {
-        'comment': rdfscomment, 
-        'types': [r.get('@id') for r in range_includes], 
-        'release': release
-    }
-    properties[rdfslabel]['types'] = [r for r in properties[rdfslabel]['types'] if r]
-    properties[rdfslabel]['types'] = [r.split(':')[-1] for r in properties[rdfslabel]['types']]
 
-with open('properties.json', 'w') as file:
-    file.write(json.dumps(properties, sort_keys=True, indent=4))
+#with open('properties.json', 'w') as file:
+    #file.write(json.dumps(properties, sort_keys=True, indent=4))
 

@@ -32,19 +32,65 @@
         }
         
         
-            acceptedAnswer($this, value) { return $this.__helperValidateAttribute($this, value, 'acceptedAnswer') }
+        acceptedAnswer($this, value) {
+			var property = {
+				comment: "The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.",
+				parent: $this,
+				property: "acceptedAnswer",
+				release: "11.01",
+				types: [
+					"Answer",
+					"ItemList"
+				]
+			};
+			return new window.LiveElement.Element.elements.Answer(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+		}
         get acceptedanswer() { return this.acceptedAnswer }
         set acceptedanswer(value) { this.acceptedAnswer = value }
 
-            answerCount($this, value) { return $this.__helperValidateAttribute($this, value, 'answerCount') }
+        answerCount($this, value) {
+			var property = {
+				comment: "The number of answers this question has received.",
+				parent: $this,
+				property: "answerCount",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get answercount() { return this.answerCount }
         set answercount(value) { this.answerCount = value }
 
-            eduQuestionType($this, value) { return $this.__helperValidateAttribute($this, value, 'eduQuestionType') }
+        eduQuestionType($this, value) {
+			var property = {
+				comment: "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+				parent: $this,
+				property: "eduQuestionType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get eduquestiontype() { return this.eduQuestionType }
         set eduquestiontype(value) { this.eduQuestionType = value }
 
-            suggestedAnswer($this, value) { return $this.__helperValidateAttribute($this, value, 'suggestedAnswer') }
+        suggestedAnswer($this, value) {
+			var property = {
+				comment: "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.",
+				parent: $this,
+				property: "suggestedAnswer",
+				release: "11.01",
+				types: [
+					"ItemList",
+					"Answer"
+				]
+			};
+			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Answer(value, property) 
+		}
         get suggestedanswer() { return this.suggestedAnswer }
         set suggestedanswer(value) { this.suggestedAnswer = value }
         

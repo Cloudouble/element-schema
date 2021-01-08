@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Liveblogposting extends window.Cloudouble.Element.elements.Blogposting {
+    class LiveBlogPosting extends window.Cloudouble.Element.elements.BlogPosting {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            coverageEndTime($this, value) { return $this.__helperValidateAttribute($this, value, 'coverageEndTime') }
+        coverageEndTime($this, value) {
+			var property = {
+				comment: "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
+				parent: $this,
+				property: "coverageEndTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get coverageendtime() { return this.coverageEndTime }
         set coverageendtime(value) { this.coverageEndTime = value }
 
-            coverageStartTime($this, value) { return $this.__helperValidateAttribute($this, value, 'coverageStartTime') }
+        coverageStartTime($this, value) {
+			var property = {
+				comment: "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
+				parent: $this,
+				property: "coverageStartTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get coveragestarttime() { return this.coverageStartTime }
         set coveragestarttime(value) { this.coverageStartTime = value }
 
-            liveBlogUpdate($this, value) { return $this.__helperValidateAttribute($this, value, 'liveBlogUpdate') }
+        liveBlogUpdate($this, value) {
+			var property = {
+				comment: "An update to the LiveBlog.",
+				parent: $this,
+				property: "liveBlogUpdate",
+				release: "11.01",
+				types: [
+					"BlogPosting"
+				]
+			};
+			return new window.LiveElement.Element.elements.BlogPosting(value, property) 
+		}
         get liveblogupdate() { return this.liveBlogUpdate }
         set liveblogupdate(value) { this.liveBlogUpdate = value }
         

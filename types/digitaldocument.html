@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Digitaldocument extends window.Cloudouble.Element.elements.Creativework {
+    class DigitalDocument extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            hasDigitalDocumentPermission($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDigitalDocumentPermission') }
+        hasDigitalDocumentPermission($this, value) {
+			var property = {
+				comment: "A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to \"public\".",
+				parent: $this,
+				property: "hasDigitalDocumentPermission",
+				release: "11.01",
+				types: [
+					"DigitalDocumentPermission"
+				]
+			};
+			return new window.LiveElement.Element.elements.DigitalDocumentPermission(value, property) 
+		}
         get hasdigitaldocumentpermission() { return this.hasDigitalDocumentPermission }
         set hasdigitaldocumentpermission(value) { this.hasDigitalDocumentPermission = value }
         

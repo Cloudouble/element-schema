@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Therapeuticprocedure extends window.Cloudouble.Element.elements.Medicalprocedure {
+    class TherapeuticProcedure extends window.Cloudouble.Element.elements.MedicalProcedure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            adverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'adverseOutcome') }
+        adverseOutcome($this, value) {
+			var property = {
+				comment: "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
+				parent: $this,
+				property: "adverseOutcome",
+				release: "11.01",
+				types: [
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get adverseoutcome() { return this.adverseOutcome }
         set adverseoutcome(value) { this.adverseOutcome = value }
 
-            doseSchedule($this, value) { return $this.__helperValidateAttribute($this, value, 'doseSchedule') }
+        doseSchedule($this, value) {
+			var property = {
+				comment: "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
+				parent: $this,
+				property: "doseSchedule",
+				release: "11.01",
+				types: [
+					"DoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.DoseSchedule(value, property) 
+		}
         get doseschedule() { return this.doseSchedule }
         set doseschedule(value) { this.doseSchedule = value }
 
-            drug($this, value) { return $this.__helperValidateAttribute($this, value, 'drug') }
+        drug($this, value) {
+			var property = {
+				comment: "Specifying a drug or medicine used in a medication procedure",
+				parent: $this,
+				property: "drug",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
         
     }
 </script>

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Howtoitem extends window.Cloudouble.Element.elements.Listitem {
+    class HowToItem extends window.Cloudouble.Element.elements.ListItem {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,20 @@
         }
         
         
-            requiredQuantity($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredQuantity') }
+        requiredQuantity($this, value) {
+			var property = {
+				comment: "The required quantity of the item(s).",
+				parent: $this,
+				property: "requiredQuantity",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Text",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get requiredquantity() { return this.requiredQuantity }
         set requiredquantity(value) { this.requiredQuantity = value }
         

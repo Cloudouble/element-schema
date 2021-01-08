@@ -32,7 +32,19 @@
         }
         
         
-            answerExplanation($this, value) { return $this.__helperValidateAttribute($this, value, 'answerExplanation') }
+        answerExplanation($this, value) {
+			var property = {
+				comment: "A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. ",
+				parent: $this,
+				property: "answerExplanation",
+				release: "11.01",
+				types: [
+					"Comment",
+					"WebContent"
+				]
+			};
+			return new window.LiveElement.Element.elements.Comment(value, property) || new window.LiveElement.Element.elements.WebContent(value, property) 
+		}
         get answerexplanation() { return this.answerExplanation }
         set answerexplanation(value) { this.answerExplanation = value }
         

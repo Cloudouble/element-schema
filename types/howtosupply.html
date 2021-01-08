@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Howtosupply extends window.Cloudouble.Element.elements.Howtoitem {
+    class HowToSupply extends window.Cloudouble.Element.elements.HowToItem {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            estimatedCost($this, value) { return $this.__helperValidateAttribute($this, value, 'estimatedCost') }
+        estimatedCost($this, value) {
+			var property = {
+				comment: "The estimated cost of the supply or supplies consumed when performing instructions.",
+				parent: $this,
+				property: "estimatedCost",
+				release: "11.01",
+				types: [
+					"Text",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get estimatedcost() { return this.estimatedCost }
         set estimatedcost(value) { this.estimatedCost = value }
         

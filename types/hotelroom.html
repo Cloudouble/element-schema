@@ -8,17 +8,14 @@
 </template>
 <script>
     /* global */
-    class Hotelroom extends window.Cloudouble.Element.elements.Room {
+    class HotelRoom extends window.Cloudouble.Element.elements.Room {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:HotelRoom'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A hotel room is a single room in a hotel.
-<br \/><br \/>
-See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>.
-'
+        static _rdfs_comment = 'A hotel room is a single room in a hotel. <br \/><br \/> See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>. '
         static _rdfs_label = 'HotelRoom'
 
         static get observedAttributes() {
@@ -35,9 +32,33 @@ See also the <a href="\/docs\/hotels.html">dedicated document on the use of sche
         }
         
         
-            bed($this, value) { return $this.__helperValidateAttribute($this, value, 'bed') }
+        bed($this, value) {
+			var property = {
+				comment: "The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.\n      If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.",
+				parent: $this,
+				property: "bed",
+				release: "11.01",
+				types: [
+					"BedType",
+					"BedDetails",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.BedType(value, property) || new window.LiveElement.Element.elements.BedDetails(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            occupancy($this, value) { return $this.__helperValidateAttribute($this, value, 'occupancy') }
+        occupancy($this, value) {
+			var property = {
+				comment: "The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).\nTypical unit code(s): C62 for person",
+				parent: $this,
+				property: "occupancy",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         
     }
 </script>

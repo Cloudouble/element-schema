@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Loanorcredit extends window.Cloudouble.Element.elements.Financialproduct {
+    class LoanOrCredit extends window.Cloudouble.Element.elements.FinancialProduct {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,35 +32,137 @@
         }
         
         
-            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        amount($this, value) {
+			var property = {
+				comment: "The amount of money.",
+				parent: $this,
+				property: "amount",
+				release: "11.01",
+				types: [
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
 
-            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+        currency($this, value) {
+			var property = {
+				comment: "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				parent: $this,
+				property: "currency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            gracePeriod($this, value) { return $this.__helperValidateAttribute($this, value, 'gracePeriod') }
+        gracePeriod($this, value) {
+			var property = {
+				comment: "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
+				parent: $this,
+				property: "gracePeriod",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get graceperiod() { return this.gracePeriod }
         set graceperiod(value) { this.gracePeriod = value }
 
-            loanRepaymentForm($this, value) { return $this.__helperValidateAttribute($this, value, 'loanRepaymentForm') }
+        loanRepaymentForm($this, value) {
+			var property = {
+				comment: "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
+				parent: $this,
+				property: "loanRepaymentForm",
+				release: "11.01",
+				types: [
+					"RepaymentSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.RepaymentSpecification(value, property) 
+		}
         get loanrepaymentform() { return this.loanRepaymentForm }
         set loanrepaymentform(value) { this.loanRepaymentForm = value }
 
-            loanTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'loanTerm') }
+        loanTerm($this, value) {
+			var property = {
+				comment: "The duration of the loan or credit agreement.",
+				parent: $this,
+				property: "loanTerm",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get loanterm() { return this.loanTerm }
         set loanterm(value) { this.loanTerm = value }
 
-            loanType($this, value) { return $this.__helperValidateAttribute($this, value, 'loanType') }
+        loanType($this, value) {
+			var property = {
+				comment: "The type of a loan or credit.",
+				parent: $this,
+				property: "loanType",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get loantype() { return this.loanType }
         set loantype(value) { this.loanType = value }
 
-            recourseLoan($this, value) { return $this.__helperValidateAttribute($this, value, 'recourseLoan') }
+        recourseLoan($this, value) {
+			var property = {
+				comment: "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
+				parent: $this,
+				property: "recourseLoan",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get recourseloan() { return this.recourseLoan }
         set recourseloan(value) { this.recourseLoan = value }
 
-            renegotiableLoan($this, value) { return $this.__helperValidateAttribute($this, value, 'renegotiableLoan') }
+        renegotiableLoan($this, value) {
+			var property = {
+				comment: "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+				parent: $this,
+				property: "renegotiableLoan",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get renegotiableloan() { return this.renegotiableLoan }
         set renegotiableloan(value) { this.renegotiableLoan = value }
 
-            requiredCollateral($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredCollateral') }
+        requiredCollateral($this, value) {
+			var property = {
+				comment: "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+				parent: $this,
+				property: "requiredCollateral",
+				release: "11.01",
+				types: [
+					"Thing",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get requiredcollateral() { return this.requiredCollateral }
         set requiredcollateral(value) { this.requiredCollateral = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Socialmediaposting extends window.Cloudouble.Element.elements.Article {
+    class SocialMediaPosting extends window.Cloudouble.Element.elements.Article {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            sharedContent($this, value) { return $this.__helperValidateAttribute($this, value, 'sharedContent') }
+        sharedContent($this, value) {
+			var property = {
+				comment: "A CreativeWork such as an image, video, or audio clip shared as part of this posting.",
+				parent: $this,
+				property: "sharedContent",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get sharedcontent() { return this.sharedContent }
         set sharedcontent(value) { this.sharedContent = value }
         

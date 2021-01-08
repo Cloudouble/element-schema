@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Stupidtype extends window.Cloudouble.Element.elements.Thing {
+    class StupidType extends window.Cloudouble.Element.elements.Thing {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            stupidProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'stupidProperty') }
+        stupidProperty($this, value) {
+			var property = {
+				comment: "This is a StupidProperty! - for testing only",
+				parent: $this,
+				property: "stupidProperty",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get stupidproperty() { return this.stupidProperty }
         set stupidproperty(value) { this.stupidProperty = value }
         

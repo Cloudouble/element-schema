@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Healthinsuranceplan extends window.Cloudouble.Element.elements.Intangible {
+    class HealthInsurancePlan extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,39 +32,139 @@
         }
         
         
-            benefitsSummaryUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'benefitsSummaryUrl') }
+        benefitsSummaryUrl($this, value) {
+			var property = {
+				comment: "The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.",
+				parent: $this,
+				property: "benefitsSummaryUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get benefitssummaryurl() { return this.benefitsSummaryUrl }
         set benefitssummaryurl(value) { this.benefitsSummaryUrl = value }
 
-            contactPoint($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoint') }
+        contactPoint($this, value) {
+			var property = {
+				comment: "A contact point for a person or organization.",
+				parent: $this,
+				property: "contactPoint",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
 
-            healthPlanDrugOption($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugOption') }
+        healthPlanDrugOption($this, value) {
+			var property = {
+				comment: "TODO.",
+				parent: $this,
+				property: "healthPlanDrugOption",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplandrugoption() { return this.healthPlanDrugOption }
         set healthplandrugoption(value) { this.healthPlanDrugOption = value }
 
-            healthPlanDrugTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugTier') }
+        healthPlanDrugTier($this, value) {
+			var property = {
+				comment: "The tier(s) of drugs offered by this formulary or insurance plan.",
+				parent: $this,
+				property: "healthPlanDrugTier",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplandrugtier() { return this.healthPlanDrugTier }
         set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
-            healthPlanId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanId') }
+        healthPlanId($this, value) {
+			var property = {
+				comment: "The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)",
+				parent: $this,
+				property: "healthPlanId",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplanid() { return this.healthPlanId }
         set healthplanid(value) { this.healthPlanId = value }
 
-            healthPlanMarketingUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanMarketingUrl') }
+        healthPlanMarketingUrl($this, value) {
+			var property = {
+				comment: "The URL that goes directly to the plan brochure for the specific standard plan or plan variation.",
+				parent: $this,
+				property: "healthPlanMarketingUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get healthplanmarketingurl() { return this.healthPlanMarketingUrl }
         set healthplanmarketingurl(value) { this.healthPlanMarketingUrl = value }
 
-            includesHealthPlanFormulary($this, value) { return $this.__helperValidateAttribute($this, value, 'includesHealthPlanFormulary') }
+        includesHealthPlanFormulary($this, value) {
+			var property = {
+				comment: "Formularies covered by this plan.",
+				parent: $this,
+				property: "includesHealthPlanFormulary",
+				release: "11.01",
+				types: [
+					"HealthPlanFormulary"
+				]
+			};
+			return new window.LiveElement.Element.elements.HealthPlanFormulary(value, property) 
+		}
         get includeshealthplanformulary() { return this.includesHealthPlanFormulary }
         set includeshealthplanformulary(value) { this.includesHealthPlanFormulary = value }
 
-            includesHealthPlanNetwork($this, value) { return $this.__helperValidateAttribute($this, value, 'includesHealthPlanNetwork') }
+        includesHealthPlanNetwork($this, value) {
+			var property = {
+				comment: "Networks covered by this plan.",
+				parent: $this,
+				property: "includesHealthPlanNetwork",
+				release: "11.01",
+				types: [
+					"HealthPlanNetwork"
+				]
+			};
+			return new window.LiveElement.Element.elements.HealthPlanNetwork(value, property) 
+		}
         get includeshealthplannetwork() { return this.includesHealthPlanNetwork }
         set includeshealthplannetwork(value) { this.includesHealthPlanNetwork = value }
 
-            usesHealthPlanIdStandard($this, value) { return $this.__helperValidateAttribute($this, value, 'usesHealthPlanIdStandard') }
+        usesHealthPlanIdStandard($this, value) {
+			var property = {
+				comment: "The standard for interpreting thePlan ID. The preferred is \"HIOS\". See the Centers for Medicare & Medicaid Services for more details.",
+				parent: $this,
+				property: "usesHealthPlanIdStandard",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get useshealthplanidstandard() { return this.usesHealthPlanIdStandard }
         set useshealthplanidstandard(value) { this.usesHealthPlanIdStandard = value }
         

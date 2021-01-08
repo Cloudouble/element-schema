@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Educationalaudience extends window.Cloudouble.Element.elements.Audience {
+    class EducationalAudience extends window.Cloudouble.Element.elements.Audience {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            educationalRole($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalRole') }
+        educationalRole($this, value) {
+			var property = {
+				comment: "An educationalRole of an EducationalAudience.",
+				parent: $this,
+				property: "educationalRole",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get educationalrole() { return this.educationalRole }
         set educationalrole(value) { this.educationalRole = value }
         

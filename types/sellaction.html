@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Sellaction extends window.Cloudouble.Element.elements.Tradeaction {
+    class SellAction extends window.Cloudouble.Element.elements.TradeAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            buyer($this, value) { return $this.__helperValidateAttribute($this, value, 'buyer') }
+        buyer($this, value) {
+			var property = {
+				comment: "A sub property of participant. The participant/person/organization that bought the object.",
+				parent: $this,
+				property: "buyer",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            warrantyPromise($this, value) { return $this.__helperValidateAttribute($this, value, 'warrantyPromise') }
+        warrantyPromise($this, value) {
+			var property = {
+				comment: "The warranty promise(s) included in the offer.",
+				parent: $this,
+				property: "warrantyPromise",
+				release: "11.01",
+				types: [
+					"WarrantyPromise"
+				]
+			};
+			return new window.LiveElement.Element.elements.WarrantyPromise(value, property) 
+		}
         get warrantypromise() { return this.warrantyPromise }
         set warrantypromise(value) { this.warrantyPromise = value }
         

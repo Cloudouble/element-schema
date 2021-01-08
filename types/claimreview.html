@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Claimreview extends window.Cloudouble.Element.elements.Review {
+    class ClaimReview extends window.Cloudouble.Element.elements.Review {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            claimReviewed($this, value) { return $this.__helperValidateAttribute($this, value, 'claimReviewed') }
+        claimReviewed($this, value) {
+			var property = {
+				comment: "A short summary of the specific claims reviewed in a ClaimReview.",
+				parent: $this,
+				property: "claimReviewed",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get claimreviewed() { return this.claimReviewed }
         set claimreviewed(value) { this.claimReviewed = value }
         

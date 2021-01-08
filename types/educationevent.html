@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Educationevent extends window.Cloudouble.Element.elements.Event {
+    class EducationEvent extends window.Cloudouble.Element.elements.Event {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,50 @@
         }
         
         
-            assesses($this, value) { return $this.__helperValidateAttribute($this, value, 'assesses') }
+        assesses($this, value) {
+			var property = {
+				comment: "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
+				parent: $this,
+				property: "assesses",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            educationalLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalLevel') }
+        educationalLevel($this, value) {
+			var property = {
+				comment: "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
+				parent: $this,
+				property: "educationalLevel",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
 
-            teaches($this, value) { return $this.__helperValidateAttribute($this, value, 'teaches') }
+        teaches($this, value) {
+			var property = {
+				comment: "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
+				parent: $this,
+				property: "teaches",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

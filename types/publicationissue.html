@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Publicationissue extends window.Cloudouble.Element.elements.Creativework {
+    class PublicationIssue extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,66 @@
         }
         
         
-            issueNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'issueNumber') }
+        issueNumber($this, value) {
+			var property = {
+				comment: "Identifies the issue of publication; for example, \"iii\" or \"2\".",
+				parent: $this,
+				property: "issueNumber",
+				release: "11.01",
+				types: [
+					"Text",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get issuenumber() { return this.issueNumber }
         set issuenumber(value) { this.issueNumber = value }
 
-            pageEnd($this, value) { return $this.__helperValidateAttribute($this, value, 'pageEnd') }
+        pageEnd($this, value) {
+			var property = {
+				comment: "The page on which the work ends; for example \"138\" or \"xvi\".",
+				parent: $this,
+				property: "pageEnd",
+				release: "11.01",
+				types: [
+					"Text",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get pageend() { return this.pageEnd }
         set pageend(value) { this.pageEnd = value }
 
-            pageStart($this, value) { return $this.__helperValidateAttribute($this, value, 'pageStart') }
+        pageStart($this, value) {
+			var property = {
+				comment: "The page on which the work starts; for example \"135\" or \"xiii\".",
+				parent: $this,
+				property: "pageStart",
+				release: "11.01",
+				types: [
+					"Integer",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get pagestart() { return this.pageStart }
         set pagestart(value) { this.pageStart = value }
 
-            pagination($this, value) { return $this.__helperValidateAttribute($this, value, 'pagination') }
+        pagination($this, value) {
+			var property = {
+				comment: "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+				parent: $this,
+				property: "pagination",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Planaction extends window.Cloudouble.Element.elements.Organizeaction {
+    class PlanAction extends window.Cloudouble.Element.elements.OrganizeAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            scheduledTime($this, value) { return $this.__helperValidateAttribute($this, value, 'scheduledTime') }
+        scheduledTime($this, value) {
+			var property = {
+				comment: "The time the object is scheduled to.",
+				parent: $this,
+				property: "scheduledTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get scheduledtime() { return this.scheduledTime }
         set scheduledtime(value) { this.scheduledTime = value }
         

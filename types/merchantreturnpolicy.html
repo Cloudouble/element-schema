@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Merchantreturnpolicy extends window.Cloudouble.Element.elements.Intangible {
+    class MerchantReturnPolicy extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,93 @@
         }
         
         
-            inStoreReturnsOffered($this, value) { return $this.__helperValidateAttribute($this, value, 'inStoreReturnsOffered') }
+        inStoreReturnsOffered($this, value) {
+			var property = {
+				comment: "Are in-store returns offered?",
+				parent: $this,
+				property: "inStoreReturnsOffered",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get instorereturnsoffered() { return this.inStoreReturnsOffered }
         set instorereturnsoffered(value) { this.inStoreReturnsOffered = value }
 
-            merchantReturnDays($this, value) { return $this.__helperValidateAttribute($this, value, 'merchantReturnDays') }
+        merchantReturnDays($this, value) {
+			var property = {
+				comment: "The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable.",
+				parent: $this,
+				property: "merchantReturnDays",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get merchantreturndays() { return this.merchantReturnDays }
         set merchantreturndays(value) { this.merchantReturnDays = value }
 
-            merchantReturnLink($this, value) { return $this.__helperValidateAttribute($this, value, 'merchantReturnLink') }
+        merchantReturnLink($this, value) {
+			var property = {
+				comment: "Indicates a Web page or service by URL, for product return.",
+				parent: $this,
+				property: "merchantReturnLink",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get merchantreturnlink() { return this.merchantReturnLink }
         set merchantreturnlink(value) { this.merchantReturnLink = value }
 
-            refundType($this, value) { return $this.__helperValidateAttribute($this, value, 'refundType') }
+        refundType($this, value) {
+			var property = {
+				comment: "A refundType, from an enumerated list.",
+				parent: $this,
+				property: "refundType",
+				release: "11.01",
+				types: [
+					"RefundTypeEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.RefundTypeEnumeration(value, property) 
+		}
         get refundtype() { return this.refundType }
         set refundtype(value) { this.refundType = value }
 
-            returnFees($this, value) { return $this.__helperValidateAttribute($this, value, 'returnFees') }
+        returnFees($this, value) {
+			var property = {
+				comment: "Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy",
+				parent: $this,
+				property: "returnFees",
+				release: "11.01",
+				types: [
+					"ReturnFeesEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.ReturnFeesEnumeration(value, property) 
+		}
         get returnfees() { return this.returnFees }
         set returnfees(value) { this.returnFees = value }
 
-            returnPolicyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'returnPolicyCategory') }
+        returnPolicyCategory($this, value) {
+			var property = {
+				comment: "A returnPolicyCategory expresses at most one of several enumerated kinds of return.",
+				parent: $this,
+				property: "returnPolicyCategory",
+				release: "11.01",
+				types: [
+					"MerchantReturnEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.MerchantReturnEnumeration(value, property) 
+		}
         get returnpolicycategory() { return this.returnPolicyCategory }
         set returnpolicycategory(value) { this.returnPolicyCategory = value }
         

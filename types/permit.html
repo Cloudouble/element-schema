@@ -32,31 +32,109 @@
         }
         
         
-            issuedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'issuedBy') }
+        issuedBy($this, value) {
+			var property = {
+				comment: "The organization issuing the ticket or permit.",
+				parent: $this,
+				property: "issuedBy",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get issuedby() { return this.issuedBy }
         set issuedby(value) { this.issuedBy = value }
 
-            issuedThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'issuedThrough') }
+        issuedThrough($this, value) {
+			var property = {
+				comment: "The service through with the permit was granted.",
+				parent: $this,
+				property: "issuedThrough",
+				release: "11.01",
+				types: [
+					"Service"
+				]
+			};
+			return new window.LiveElement.Element.elements.Service(value, property) 
+		}
         get issuedthrough() { return this.issuedThrough }
         set issuedthrough(value) { this.issuedThrough = value }
 
-            permitAudience($this, value) { return $this.__helperValidateAttribute($this, value, 'permitAudience') }
+        permitAudience($this, value) {
+			var property = {
+				comment: "The target audience for this permit.",
+				parent: $this,
+				property: "permitAudience",
+				release: "11.01",
+				types: [
+					"Audience"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) 
+		}
         get permitaudience() { return this.permitAudience }
         set permitaudience(value) { this.permitAudience = value }
 
-            validFor($this, value) { return $this.__helperValidateAttribute($this, value, 'validFor') }
+        validFor($this, value) {
+			var property = {
+				comment: "The duration of validity of a permit or similar thing.",
+				parent: $this,
+				property: "validFor",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get validfor() { return this.validFor }
         set validfor(value) { this.validFor = value }
 
-            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        validFrom($this, value) {
+			var property = {
+				comment: "The date when the item becomes valid.",
+				parent: $this,
+				property: "validFrom",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
-            validIn($this, value) { return $this.__helperValidateAttribute($this, value, 'validIn') }
+        validIn($this, value) {
+			var property = {
+				comment: "The geographic area where a permit or similar thing is valid.",
+				parent: $this,
+				property: "validIn",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get validin() { return this.validIn }
         set validin(value) { this.validIn = value }
 
-            validUntil($this, value) { return $this.__helperValidateAttribute($this, value, 'validUntil') }
+        validUntil($this, value) {
+			var property = {
+				comment: "The date when the item is no longer valid.",
+				parent: $this,
+				property: "validUntil",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validuntil() { return this.validUntil }
         set validuntil(value) { this.validUntil = value }
         

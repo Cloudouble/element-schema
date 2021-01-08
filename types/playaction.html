@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Playaction extends window.Cloudouble.Element.elements.Action {
+    class PlayAction extends window.Cloudouble.Element.elements.Action {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+        audience($this, value) {
+			var property = {
+				comment: "An intended audience, i.e. a group for whom something was created.",
+				parent: $this,
+				property: "audience",
+				release: "11.01",
+				types: [
+					"Audience"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) 
+		}
 
-            event($this, value) { return $this.__helperValidateAttribute($this, value, 'event') }
+        event($this, value) {
+			var property = {
+				comment: "Upcoming or past event associated with this place, organization, or action.",
+				parent: $this,
+				property: "event",
+				release: "11.01",
+				types: [
+					"Event"
+				]
+			};
+			return new window.LiveElement.Element.elements.Event(value, property) 
+		}
         
     }
 </script>

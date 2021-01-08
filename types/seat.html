@@ -32,19 +32,64 @@
         }
         
         
-            seatNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'seatNumber') }
+        seatNumber($this, value) {
+			var property = {
+				comment: "The location of the reserved seat (e.g., 27).",
+				parent: $this,
+				property: "seatNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get seatnumber() { return this.seatNumber }
         set seatnumber(value) { this.seatNumber = value }
 
-            seatRow($this, value) { return $this.__helperValidateAttribute($this, value, 'seatRow') }
+        seatRow($this, value) {
+			var property = {
+				comment: "The row location of the reserved seat (e.g., B).",
+				parent: $this,
+				property: "seatRow",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get seatrow() { return this.seatRow }
         set seatrow(value) { this.seatRow = value }
 
-            seatSection($this, value) { return $this.__helperValidateAttribute($this, value, 'seatSection') }
+        seatSection($this, value) {
+			var property = {
+				comment: "The section location of the reserved seat (e.g. Orchestra).",
+				parent: $this,
+				property: "seatSection",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get seatsection() { return this.seatSection }
         set seatsection(value) { this.seatSection = value }
 
-            seatingType($this, value) { return $this.__helperValidateAttribute($this, value, 'seatingType') }
+        seatingType($this, value) {
+			var property = {
+				comment: "The type/class of the seat.",
+				parent: $this,
+				property: "seatingType",
+				release: "11.01",
+				types: [
+					"QualitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get seatingtype() { return this.seatingType }
         set seatingtype(value) { this.seatingType = value }
         

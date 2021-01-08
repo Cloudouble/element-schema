@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Softwareapplication extends window.Cloudouble.Element.elements.Creativework {
+    class SoftwareApplication extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,91 +32,364 @@
         }
         
         
-            applicationCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationCategory') }
+        applicationCategory($this, value) {
+			var property = {
+				comment: "Type of software application, e.g. 'Game, Multimedia'.",
+				parent: $this,
+				property: "applicationCategory",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get applicationcategory() { return this.applicationCategory }
         set applicationcategory(value) { this.applicationCategory = value }
 
-            applicationSubCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationSubCategory') }
+        applicationSubCategory($this, value) {
+			var property = {
+				comment: "Subcategory of the application, e.g. 'Arcade Game'.",
+				parent: $this,
+				property: "applicationSubCategory",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get applicationsubcategory() { return this.applicationSubCategory }
         set applicationsubcategory(value) { this.applicationSubCategory = value }
 
-            applicationSuite($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationSuite') }
+        applicationSuite($this, value) {
+			var property = {
+				comment: "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
+				parent: $this,
+				property: "applicationSuite",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get applicationsuite() { return this.applicationSuite }
         set applicationsuite(value) { this.applicationSuite = value }
 
-            availableOnDevice($this, value) { return $this.__helperValidateAttribute($this, value, 'availableOnDevice') }
+        availableOnDevice($this, value) {
+			var property = {
+				comment: "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
+				parent: $this,
+				property: "availableOnDevice",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get availableondevice() { return this.availableOnDevice }
         set availableondevice(value) { this.availableOnDevice = value }
 
-            countriesNotSupported($this, value) { return $this.__helperValidateAttribute($this, value, 'countriesNotSupported') }
+        countriesNotSupported($this, value) {
+			var property = {
+				comment: "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+				parent: $this,
+				property: "countriesNotSupported",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get countriesnotsupported() { return this.countriesNotSupported }
         set countriesnotsupported(value) { this.countriesNotSupported = value }
 
-            countriesSupported($this, value) { return $this.__helperValidateAttribute($this, value, 'countriesSupported') }
+        countriesSupported($this, value) {
+			var property = {
+				comment: "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+				parent: $this,
+				property: "countriesSupported",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get countriessupported() { return this.countriesSupported }
         set countriessupported(value) { this.countriesSupported = value }
 
-            device($this, value) { return $this.__helperValidateAttribute($this, value, 'device') }
+        device($this, value) {
+			var property = {
+				comment: "Device required to run the application. Used in cases where a specific make/model is required to run the application.",
+				parent: $this,
+				property: "device",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            downloadUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'downloadUrl') }
+        downloadUrl($this, value) {
+			var property = {
+				comment: "If the file can be downloaded, URL to download the binary.",
+				parent: $this,
+				property: "downloadUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get downloadurl() { return this.downloadUrl }
         set downloadurl(value) { this.downloadUrl = value }
 
-            featureList($this, value) { return $this.__helperValidateAttribute($this, value, 'featureList') }
+        featureList($this, value) {
+			var property = {
+				comment: "Features or modules provided by this application (and possibly required by other applications).",
+				parent: $this,
+				property: "featureList",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get featurelist() { return this.featureList }
         set featurelist(value) { this.featureList = value }
 
-            fileSize($this, value) { return $this.__helperValidateAttribute($this, value, 'fileSize') }
+        fileSize($this, value) {
+			var property = {
+				comment: "Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
+				parent: $this,
+				property: "fileSize",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get filesize() { return this.fileSize }
         set filesize(value) { this.fileSize = value }
 
-            installUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'installUrl') }
+        installUrl($this, value) {
+			var property = {
+				comment: "URL at which the app may be installed, if different from the URL of the item.",
+				parent: $this,
+				property: "installUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get installurl() { return this.installUrl }
         set installurl(value) { this.installUrl = value }
 
-            memoryRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'memoryRequirements') }
+        memoryRequirements($this, value) {
+			var property = {
+				comment: "Minimum memory requirements.",
+				parent: $this,
+				property: "memoryRequirements",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get memoryrequirements() { return this.memoryRequirements }
         set memoryrequirements(value) { this.memoryRequirements = value }
 
-            operatingSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'operatingSystem') }
+        operatingSystem($this, value) {
+			var property = {
+				comment: "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
+				parent: $this,
+				property: "operatingSystem",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get operatingsystem() { return this.operatingSystem }
         set operatingsystem(value) { this.operatingSystem = value }
 
-            permissions($this, value) { return $this.__helperValidateAttribute($this, value, 'permissions') }
+        permissions($this, value) {
+			var property = {
+				comment: "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
+				parent: $this,
+				property: "permissions",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            processorRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'processorRequirements') }
+        processorRequirements($this, value) {
+			var property = {
+				comment: "Processor architecture required to run the application (e.g. IA64).",
+				parent: $this,
+				property: "processorRequirements",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get processorrequirements() { return this.processorRequirements }
         set processorrequirements(value) { this.processorRequirements = value }
 
-            releaseNotes($this, value) { return $this.__helperValidateAttribute($this, value, 'releaseNotes') }
+        releaseNotes($this, value) {
+			var property = {
+				comment: "Description of what changed in this version.",
+				parent: $this,
+				property: "releaseNotes",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get releasenotes() { return this.releaseNotes }
         set releasenotes(value) { this.releaseNotes = value }
 
-            requirements($this, value) { return $this.__helperValidateAttribute($this, value, 'requirements') }
+        requirements($this, value) {
+			var property = {
+				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
+				parent: $this,
+				property: "requirements",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            screenshot($this, value) { return $this.__helperValidateAttribute($this, value, 'screenshot') }
+        screenshot($this, value) {
+			var property = {
+				comment: "A link to a screenshot image of the app.",
+				parent: $this,
+				property: "screenshot",
+				release: "11.01",
+				types: [
+					"URL",
+					"ImageObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.ImageObject(value, property) 
+		}
 
-            softwareAddOn($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareAddOn') }
+        softwareAddOn($this, value) {
+			var property = {
+				comment: "Additional content for a software application.",
+				parent: $this,
+				property: "softwareAddOn",
+				release: "11.01",
+				types: [
+					"SoftwareApplication"
+				]
+			};
+			return new window.LiveElement.Element.elements.SoftwareApplication(value, property) 
+		}
         get softwareaddon() { return this.softwareAddOn }
         set softwareaddon(value) { this.softwareAddOn = value }
 
-            softwareHelp($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareHelp') }
+        softwareHelp($this, value) {
+			var property = {
+				comment: "Software application help.",
+				parent: $this,
+				property: "softwareHelp",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get softwarehelp() { return this.softwareHelp }
         set softwarehelp(value) { this.softwareHelp = value }
 
-            softwareRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareRequirements') }
+        softwareRequirements($this, value) {
+			var property = {
+				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
+				parent: $this,
+				property: "softwareRequirements",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get softwarerequirements() { return this.softwareRequirements }
         set softwarerequirements(value) { this.softwareRequirements = value }
 
-            softwareVersion($this, value) { return $this.__helperValidateAttribute($this, value, 'softwareVersion') }
+        softwareVersion($this, value) {
+			var property = {
+				comment: "Version of the software instance.",
+				parent: $this,
+				property: "softwareVersion",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get softwareversion() { return this.softwareVersion }
         set softwareversion(value) { this.softwareVersion = value }
 
-            storageRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'storageRequirements') }
+        storageRequirements($this, value) {
+			var property = {
+				comment: "Storage requirements (free space required).",
+				parent: $this,
+				property: "storageRequirements",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get storagerequirements() { return this.storageRequirements }
         set storagerequirements(value) { this.storageRequirements = value }
 
-            supportingData($this, value) { return $this.__helperValidateAttribute($this, value, 'supportingData') }
+        supportingData($this, value) {
+			var property = {
+				comment: "Supporting data for a SoftwareApplication.",
+				parent: $this,
+				property: "supportingData",
+				release: "11.01",
+				types: [
+					"DataFeed"
+				]
+			};
+			return new window.LiveElement.Element.elements.DataFeed(value, property) 
+		}
         get supportingdata() { return this.supportingData }
         set supportingdata(value) { this.supportingData = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Lymphaticvessel extends window.Cloudouble.Element.elements.Vessel {
+    class LymphaticVessel extends window.Cloudouble.Element.elements.Vessel {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            originatesFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'originatesFrom') }
+        originatesFrom($this, value) {
+			var property = {
+				comment: "The vasculature the lymphatic structure originates, or afferents, from.",
+				parent: $this,
+				property: "originatesFrom",
+				release: "11.01",
+				types: [
+					"Vessel"
+				]
+			};
+			return new window.LiveElement.Element.elements.Vessel(value, property) 
+		}
         get originatesfrom() { return this.originatesFrom }
         set originatesfrom(value) { this.originatesFrom = value }
 
-            regionDrained($this, value) { return $this.__helperValidateAttribute($this, value, 'regionDrained') }
+        regionDrained($this, value) {
+			var property = {
+				comment: "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
+				parent: $this,
+				property: "regionDrained",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure",
+					"AnatomicalSystem"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+		}
         get regiondrained() { return this.regionDrained }
         set regiondrained(value) { this.regionDrained = value }
 
-            runsTo($this, value) { return $this.__helperValidateAttribute($this, value, 'runsTo') }
+        runsTo($this, value) {
+			var property = {
+				comment: "The vasculature the lymphatic structure runs, or efferents, to.",
+				parent: $this,
+				property: "runsTo",
+				release: "11.01",
+				types: [
+					"Vessel"
+				]
+			};
+			return new window.LiveElement.Element.elements.Vessel(value, property) 
+		}
         get runsto() { return this.runsTo }
         set runsto(value) { this.runsTo = value }
         

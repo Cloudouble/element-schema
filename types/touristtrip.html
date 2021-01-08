@@ -8,15 +8,14 @@
 </template>
 <script>
     /* global */
-    class Touristtrip extends window.Cloudouble.Element.elements.Trip {
+    class TouristTrip extends window.Cloudouble.Element.elements.Trip {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:TouristTrip'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]\/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http:\/\/www2.unwto.org\/) defines tourism trip as the Trip taken by visitors.
-  (See examples below).'
+        static _rdfs_comment = 'A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]\/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http:\/\/www2.unwto.org\/) defines tourism trip as the Trip taken by visitors.   (See examples below).'
         static _rdfs_label = 'TouristTrip'
 
         static get observedAttributes() {
@@ -33,7 +32,19 @@
         }
         
         
-            touristType($this, value) { return $this.__helperValidateAttribute($this, value, 'touristType') }
+        touristType($this, value) {
+			var property = {
+				comment: "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. ",
+				parent: $this,
+				property: "touristType",
+				release: "11.01",
+				types: [
+					"Text",
+					"Audience"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Audience(value, property) 
+		}
         get touristtype() { return this.touristType }
         set touristtype(value) { this.touristType = value }
         

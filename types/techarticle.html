@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Techarticle extends window.Cloudouble.Element.elements.Article {
+    class TechArticle extends window.Cloudouble.Element.elements.Article {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            dependencies($this, value) { return $this.__helperValidateAttribute($this, value, 'dependencies') }
+        dependencies($this, value) {
+			var property = {
+				comment: "Prerequisites needed to fulfill steps in article.",
+				parent: $this,
+				property: "dependencies",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            proficiencyLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'proficiencyLevel') }
+        proficiencyLevel($this, value) {
+			var property = {
+				comment: "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
+				parent: $this,
+				property: "proficiencyLevel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get proficiencylevel() { return this.proficiencyLevel }
         set proficiencylevel(value) { this.proficiencyLevel = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalstudy extends window.Cloudouble.Element.elements.Medicalentity {
+    class MedicalStudy extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,77 @@
         }
         
         
-            healthCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'healthCondition') }
+        healthCondition($this, value) {
+			var property = {
+				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+				parent: $this,
+				property: "healthCondition",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
 
-            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+        sponsor($this, value) {
+			var property = {
+				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+				parent: $this,
+				property: "sponsor",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            status($this, value) { return $this.__helperValidateAttribute($this, value, 'status') }
+        status($this, value) {
+			var property = {
+				comment: "The status of the study (enumerated).",
+				parent: $this,
+				property: "status",
+				release: "11.01",
+				types: [
+					"Text",
+					"EventStatusType",
+					"MedicalStudyStatus"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.EventStatusType(value, property) || new window.LiveElement.Element.elements.MedicalStudyStatus(value, property) 
+		}
 
-            studyLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'studyLocation') }
+        studyLocation($this, value) {
+			var property = {
+				comment: "The location in which the study is taking/took place.",
+				parent: $this,
+				property: "studyLocation",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get studylocation() { return this.studyLocation }
         set studylocation(value) { this.studyLocation = value }
 
-            studySubject($this, value) { return $this.__helperValidateAttribute($this, value, 'studySubject') }
+        studySubject($this, value) {
+			var property = {
+				comment: "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
+				parent: $this,
+				property: "studySubject",
+				release: "11.01",
+				types: [
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get studysubject() { return this.studySubject }
         set studysubject(value) { this.studySubject = value }
         

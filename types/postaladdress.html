@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Postaladdress extends window.Cloudouble.Element.elements.Contactpoint {
+    class PostalAddress extends window.Cloudouble.Element.elements.ContactPoint {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,94 @@
         }
         
         
-            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        addressCountry($this, value) {
+			var property = {
+				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+				parent: $this,
+				property: "addressCountry",
+				release: "11.01",
+				types: [
+					"Country",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Country(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addresscountry() { return this.addressCountry }
         set addresscountry(value) { this.addressCountry = value }
 
-            addressLocality($this, value) { return $this.__helperValidateAttribute($this, value, 'addressLocality') }
+        addressLocality($this, value) {
+			var property = {
+				comment: "The locality in which the street address is, and which is in the region. For example, Mountain View.",
+				parent: $this,
+				property: "addressLocality",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addresslocality() { return this.addressLocality }
         set addresslocality(value) { this.addressLocality = value }
 
-            addressRegion($this, value) { return $this.__helperValidateAttribute($this, value, 'addressRegion') }
+        addressRegion($this, value) {
+			var property = {
+				comment: "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) ",
+				parent: $this,
+				property: "addressRegion",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addressregion() { return this.addressRegion }
         set addressregion(value) { this.addressRegion = value }
 
-            postOfficeBoxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'postOfficeBoxNumber') }
+        postOfficeBoxNumber($this, value) {
+			var property = {
+				comment: "The post office box number for PO box addresses.",
+				parent: $this,
+				property: "postOfficeBoxNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postofficeboxnumber() { return this.postOfficeBoxNumber }
         set postofficeboxnumber(value) { this.postOfficeBoxNumber = value }
 
-            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        postalCode($this, value) {
+			var property = {
+				comment: "The postal code. For example, 94043.",
+				parent: $this,
+				property: "postalCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcode() { return this.postalCode }
         set postalcode(value) { this.postalCode = value }
 
-            streetAddress($this, value) { return $this.__helperValidateAttribute($this, value, 'streetAddress') }
+        streetAddress($this, value) {
+			var property = {
+				comment: "The street address. For example, 1600 Amphitheatre Pkwy.",
+				parent: $this,
+				property: "streetAddress",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get streetaddress() { return this.streetAddress }
         set streetaddress(value) { this.streetAddress = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Videogame extends window.Cloudouble.Element.elements.Softwareapplication {
+    class VideoGame extends window.Cloudouble.Element.elements.SoftwareApplication {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,39 +32,163 @@
         }
         
         
-            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+        actor($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actor",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+        actors($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            cheatCode($this, value) { return $this.__helperValidateAttribute($this, value, 'cheatCode') }
+        cheatCode($this, value) {
+			var property = {
+				comment: "Cheat codes to the game.",
+				parent: $this,
+				property: "cheatCode",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get cheatcode() { return this.cheatCode }
         set cheatcode(value) { this.cheatCode = value }
 
-            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+        director($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "director",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+        directors($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "directors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            gamePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'gamePlatform') }
+        gamePlatform($this, value) {
+			var property = {
+				comment: "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+				parent: $this,
+				property: "gamePlatform",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL",
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         get gameplatform() { return this.gamePlatform }
         set gameplatform(value) { this.gamePlatform = value }
 
-            gameServer($this, value) { return $this.__helperValidateAttribute($this, value, 'gameServer') }
+        gameServer($this, value) {
+			var property = {
+				comment: "The server on which  it is possible to play the game.",
+				parent: $this,
+				property: "gameServer",
+				release: "11.01",
+				types: [
+					"GameServer"
+				]
+			};
+			return new window.LiveElement.Element.elements.GameServer(value, property) 
+		}
         get gameserver() { return this.gameServer }
         set gameserver(value) { this.gameServer = value }
 
-            gameTip($this, value) { return $this.__helperValidateAttribute($this, value, 'gameTip') }
+        gameTip($this, value) {
+			var property = {
+				comment: "Links to tips, tactics, etc.",
+				parent: $this,
+				property: "gameTip",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get gametip() { return this.gameTip }
         set gametip(value) { this.gameTip = value }
 
-            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        musicBy($this, value) {
+			var property = {
+				comment: "The composer of the soundtrack.",
+				parent: $this,
+				property: "musicBy",
+				release: "11.01",
+				types: [
+					"Person",
+					"MusicGroup"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
-            playMode($this, value) { return $this.__helperValidateAttribute($this, value, 'playMode') }
+        playMode($this, value) {
+			var property = {
+				comment: "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
+				parent: $this,
+				property: "playMode",
+				release: "11.01",
+				types: [
+					"GamePlayMode"
+				]
+			};
+			return new window.LiveElement.Element.elements.GamePlayMode(value, property) 
+		}
         get playmode() { return this.playMode }
         set playmode(value) { this.playMode = value }
 
-            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        trailer($this, value) {
+			var property = {
+				comment: "The trailer of a movie or tv/radio series, season, episode, etc.",
+				parent: $this,
+				property: "trailer",
+				release: "11.01",
+				types: [
+					"VideoObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.VideoObject(value, property) 
+		}
         
     }
 </script>

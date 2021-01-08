@@ -8,19 +8,14 @@
 </template>
 <script>
     /* global */
-    class Comicissue extends window.Cloudouble.Element.elements.Publicationissue {
+    class ComicIssue extends window.Cloudouble.Element.elements.PublicationIssue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:ComicIssue'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'Individual comic issues are serially published as
-    	part of a larger series. For the sake of consistency, even one-shot issues
-    	belong to a series comprised of a single issue. All comic issues can be
-    	uniquely identified by: the combination of the name and volume number of the
-    	series to which the issue belongs; the issue number; and the variant
-    	description of the issue (if any).'
+        static _rdfs_comment = 'Individual comic issues are serially published as     	part of a larger series. For the sake of consistency, even one-shot issues     	belong to a series comprised of a single issue. All comic issues can be     	uniquely identified by: the combination of the name and volume number of the     	series to which the issue belongs; the issue number; and the variant     	description of the issue (if any).'
         static _rdfs_label = 'ComicIssue'
 
         static get observedAttributes() {
@@ -37,17 +32,83 @@
         }
         
         
-            artist($this, value) { return $this.__helperValidateAttribute($this, value, 'artist') }
+        artist($this, value) {
+			var property = {
+				comment: "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+				parent: $this,
+				property: "artist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            colorist($this, value) { return $this.__helperValidateAttribute($this, value, 'colorist') }
+        colorist($this, value) {
+			var property = {
+				comment: "The individual who adds color to inked drawings.",
+				parent: $this,
+				property: "colorist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            inker($this, value) { return $this.__helperValidateAttribute($this, value, 'inker') }
+        inker($this, value) {
+			var property = {
+				comment: "The individual who traces over the pencil drawings in ink after pencils are complete.",
+				parent: $this,
+				property: "inker",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            letterer($this, value) { return $this.__helperValidateAttribute($this, value, 'letterer') }
+        letterer($this, value) {
+			var property = {
+				comment: "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+				parent: $this,
+				property: "letterer",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            penciler($this, value) { return $this.__helperValidateAttribute($this, value, 'penciler') }
+        penciler($this, value) {
+			var property = {
+				comment: "The individual who draws the primary narrative artwork.",
+				parent: $this,
+				property: "penciler",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            variantCover($this, value) { return $this.__helperValidateAttribute($this, value, 'variantCover') }
+        variantCover($this, value) {
+			var property = {
+				comment: "A description of the variant cover\n    \tfor the issue, if the issue is a variant printing. For example, \"Bryan Hitch\n    \tVariant Cover\" or \"2nd Printing Variant\".",
+				parent: $this,
+				property: "variantCover",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get variantcover() { return this.variantCover }
         set variantcover(value) { this.variantCover = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Definedtermset extends window.Cloudouble.Element.elements.Creativework {
+    class DefinedTermSet extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            hasDefinedTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDefinedTerm') }
+        hasDefinedTerm($this, value) {
+			var property = {
+				comment: "A Defined Term contained in this term set.",
+				parent: $this,
+				property: "hasDefinedTerm",
+				release: "11.01",
+				types: [
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get hasdefinedterm() { return this.hasDefinedTerm }
         set hasdefinedterm(value) { this.hasDefinedTerm = value }
         

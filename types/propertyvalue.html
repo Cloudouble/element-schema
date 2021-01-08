@@ -8,15 +8,14 @@
 </template>
 <script>
     /* global */
-    class Propertyvalue extends window.Cloudouble.Element.elements.Structuredvalue {
+    class PropertyValue extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:PropertyValue'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A property-value pair, e.g. representing a feature of a product or place. Use the \'name\' property for the name of the property. If there is an additional human-readable version of the value, put that into the \'description\' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
-    '
+        static _rdfs_comment = 'A property-value pair, e.g. representing a feature of a product or place. Use the \'name\' property for the name of the property. If there is an additional human-readable version of the value, put that into the \'description\' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.     '
         static _rdfs_label = 'PropertyValue'
 
         static get observedAttributes() {
@@ -33,33 +32,131 @@
         }
         
         
-            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        maxValue($this, value) {
+			var property = {
+				comment: "The upper value of some characteristic or property.",
+				parent: $this,
+				property: "maxValue",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get maxvalue() { return this.maxValue }
         set maxvalue(value) { this.maxValue = value }
 
-            measurementTechnique($this, value) { return $this.__helperValidateAttribute($this, value, 'measurementTechnique') }
+        measurementTechnique($this, value) {
+			var property = {
+				comment: "A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),\ncorresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.\n\nFor example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: \"mass spectrometry\" or \"nmr spectroscopy\" or \"colorimetry\" or \"immunofluorescence\".\n\nIf the [[variableMeasured]] is \"depression rating\", the [[measurementTechnique]] could be \"Zung Scale\" or \"HAM-D\" or \"Beck Depression Inventory\".\n\nIf there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].\n      ",
+				parent: $this,
+				property: "measurementTechnique",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get measurementtechnique() { return this.measurementTechnique }
         set measurementtechnique(value) { this.measurementTechnique = value }
 
-            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        minValue($this, value) {
+			var property = {
+				comment: "The lower value of some characteristic or property.",
+				parent: $this,
+				property: "minValue",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get minvalue() { return this.minValue }
         set minvalue(value) { this.minValue = value }
 
-            propertyID($this, value) { return $this.__helperValidateAttribute($this, value, 'propertyID') }
+        propertyID($this, value) {
+			var property = {
+				comment: "A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be\n(1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)\na URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).\nStandards bodies should promote a standard prefix for the identifiers of properties from their standards.",
+				parent: $this,
+				property: "propertyID",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get propertyid() { return this.propertyID }
         set propertyid(value) { this.propertyID = value }
 
-            unitCode($this, value) { return $this.__helperValidateAttribute($this, value, 'unitCode') }
+        unitCode($this, value) {
+			var property = {
+				comment: "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+				parent: $this,
+				property: "unitCode",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get unitcode() { return this.unitCode }
         set unitcode(value) { this.unitCode = value }
 
-            unitText($this, value) { return $this.__helperValidateAttribute($this, value, 'unitText') }
+        unitText($this, value) {
+			var property = {
+				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+				parent: $this,
+				property: "unitText",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get unittext() { return this.unitText }
         set unittext(value) { this.unitText = value }
 
-            value($this, value) { return $this.__helperValidateAttribute($this, value, 'value') }
+        value($this, value) {
+			var property = {
+				comment: "The value of the quantitative value or property value node.\\n\\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+				parent: $this,
+				property: "value",
+				release: "11.01",
+				types: [
+					"Number",
+					"StructuredValue",
+					"Boolean",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            valueReference($this, value) { return $this.__helperValidateAttribute($this, value, 'valueReference') }
+        valueReference($this, value) {
+			var property = {
+				comment: "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+				parent: $this,
+				property: "valueReference",
+				release: "11.01",
+				types: [
+					"StructuredValue",
+					"PropertyValue",
+					"QualitativeValue",
+					"QuantitativeValue",
+					"Enumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.PropertyValue(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Enumeration(value, property) 
+		}
         get valuereference() { return this.valueReference }
         set valuereference(value) { this.valueReference = value }
         

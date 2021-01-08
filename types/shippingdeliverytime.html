@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Shippingdeliverytime extends window.Cloudouble.Element.elements.Structuredvalue {
+    class ShippingDeliveryTime extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,63 @@
         }
         
         
-            businessDays($this, value) { return $this.__helperValidateAttribute($this, value, 'businessDays') }
+        businessDays($this, value) {
+			var property = {
+				comment: "Days of the week when the merchant typically operates, indicated via opening hours markup.",
+				parent: $this,
+				property: "businessDays",
+				release: "11.01",
+				types: [
+					"OpeningHoursSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.OpeningHoursSpecification(value, property) 
+		}
         get businessdays() { return this.businessDays }
         set businessdays(value) { this.businessDays = value }
 
-            cutoffTime($this, value) { return $this.__helperValidateAttribute($this, value, 'cutoffTime') }
+        cutoffTime($this, value) {
+			var property = {
+				comment: "Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. \"23:30:00-05:00\" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).",
+				parent: $this,
+				property: "cutoffTime",
+				release: "11.01",
+				types: [
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) 
+		}
         get cutofftime() { return this.cutoffTime }
         set cutofftime(value) { this.cutoffTime = value }
 
-            handlingTime($this, value) { return $this.__helperValidateAttribute($this, value, 'handlingTime') }
+        handlingTime($this, value) {
+			var property = {
+				comment: "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as \"d\"), i.e. only counting days when the business normally operates.",
+				parent: $this,
+				property: "handlingTime",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get handlingtime() { return this.handlingTime }
         set handlingtime(value) { this.handlingTime = value }
 
-            transitTime($this, value) { return $this.__helperValidateAttribute($this, value, 'transitTime') }
+        transitTime($this, value) {
+			var property = {
+				comment: "The typical delay the order has been sent for delivery and the goods reach the final customer. Typical properties: minValue, maxValue, unitCode (d for DAY).",
+				parent: $this,
+				property: "transitTime",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get transittime() { return this.transitTime }
         set transittime(value) { this.transitTime = value }
         

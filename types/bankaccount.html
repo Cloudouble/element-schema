@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Bankaccount extends window.Cloudouble.Element.elements.Financialproduct {
+    class BankAccount extends window.Cloudouble.Element.elements.FinancialProduct {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            accountMinimumInflow($this, value) { return $this.__helperValidateAttribute($this, value, 'accountMinimumInflow') }
+        accountMinimumInflow($this, value) {
+			var property = {
+				comment: "A minimum amount that has to be paid in every month.",
+				parent: $this,
+				property: "accountMinimumInflow",
+				release: "11.01",
+				types: [
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get accountminimuminflow() { return this.accountMinimumInflow }
         set accountminimuminflow(value) { this.accountMinimumInflow = value }
 
-            accountOverdraftLimit($this, value) { return $this.__helperValidateAttribute($this, value, 'accountOverdraftLimit') }
+        accountOverdraftLimit($this, value) {
+			var property = {
+				comment: "An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.",
+				parent: $this,
+				property: "accountOverdraftLimit",
+				release: "11.01",
+				types: [
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get accountoverdraftlimit() { return this.accountOverdraftLimit }
         set accountoverdraftlimit(value) { this.accountOverdraftLimit = value }
 
-            bankAccountType($this, value) { return $this.__helperValidateAttribute($this, value, 'bankAccountType') }
+        bankAccountType($this, value) {
+			var property = {
+				comment: "The type of a bank account.",
+				parent: $this,
+				property: "bankAccountType",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get bankaccounttype() { return this.bankAccountType }
         set bankaccounttype(value) { this.bankAccountType = value }
         

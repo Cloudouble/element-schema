@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Musicrelease extends window.Cloudouble.Element.elements.Musicplaylist {
+    class MusicRelease extends window.Cloudouble.Element.elements.MusicPlaylist {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,25 +32,92 @@
         }
         
         
-            catalogNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'catalogNumber') }
+        catalogNumber($this, value) {
+			var property = {
+				comment: "The catalog number for the release.",
+				parent: $this,
+				property: "catalogNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get catalognumber() { return this.catalogNumber }
         set catalognumber(value) { this.catalogNumber = value }
 
-            creditedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'creditedTo') }
+        creditedTo($this, value) {
+			var property = {
+				comment: "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
+				parent: $this,
+				property: "creditedTo",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get creditedto() { return this.creditedTo }
         set creditedto(value) { this.creditedTo = value }
 
-            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+        duration($this, value) {
+			var property = {
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "duration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
 
-            musicReleaseFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'musicReleaseFormat') }
+        musicReleaseFormat($this, value) {
+			var property = {
+				comment: "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
+				parent: $this,
+				property: "musicReleaseFormat",
+				release: "11.01",
+				types: [
+					"MusicReleaseFormatType"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicReleaseFormatType(value, property) 
+		}
         get musicreleaseformat() { return this.musicReleaseFormat }
         set musicreleaseformat(value) { this.musicReleaseFormat = value }
 
-            recordLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'recordLabel') }
+        recordLabel($this, value) {
+			var property = {
+				comment: "The label that issued the release.",
+				parent: $this,
+				property: "recordLabel",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get recordlabel() { return this.recordLabel }
         set recordlabel(value) { this.recordLabel = value }
 
-            releaseOf($this, value) { return $this.__helperValidateAttribute($this, value, 'releaseOf') }
+        releaseOf($this, value) {
+			var property = {
+				comment: "The album this is a release of.",
+				parent: $this,
+				property: "releaseOf",
+				release: "11.01",
+				types: [
+					"MusicAlbum"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+		}
         get releaseof() { return this.releaseOf }
         set releaseof(value) { this.releaseOf = value }
         

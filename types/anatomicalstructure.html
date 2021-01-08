@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Anatomicalstructure extends window.Cloudouble.Element.elements.Medicalentity {
+    class AnatomicalStructure extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,33 +32,121 @@
         }
         
         
-            associatedPathophysiology($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedPathophysiology') }
+        associatedPathophysiology($this, value) {
+			var property = {
+				comment: "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+				parent: $this,
+				property: "associatedPathophysiology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get associatedpathophysiology() { return this.associatedPathophysiology }
         set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
-            bodyLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'bodyLocation') }
+        bodyLocation($this, value) {
+			var property = {
+				comment: "Location in the body of the anatomical structure.",
+				parent: $this,
+				property: "bodyLocation",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get bodylocation() { return this.bodyLocation }
         set bodylocation(value) { this.bodyLocation = value }
 
-            connectedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'connectedTo') }
+        connectedTo($this, value) {
+			var property = {
+				comment: "Other anatomical structures to which this structure is connected.",
+				parent: $this,
+				property: "connectedTo",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
         get connectedto() { return this.connectedTo }
         set connectedto(value) { this.connectedTo = value }
 
-            diagram($this, value) { return $this.__helperValidateAttribute($this, value, 'diagram') }
+        diagram($this, value) {
+			var property = {
+				comment: "An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.",
+				parent: $this,
+				property: "diagram",
+				release: "11.01",
+				types: [
+					"ImageObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+		}
 
-            partOfSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSystem') }
+        partOfSystem($this, value) {
+			var property = {
+				comment: "The anatomical or organ system that this structure is part of.",
+				parent: $this,
+				property: "partOfSystem",
+				release: "11.01",
+				types: [
+					"AnatomicalSystem"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+		}
         get partofsystem() { return this.partOfSystem }
         set partofsystem(value) { this.partOfSystem = value }
 
-            relatedCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedCondition') }
+        relatedCondition($this, value) {
+			var property = {
+				comment: "A medical condition associated with this anatomy.",
+				parent: $this,
+				property: "relatedCondition",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get relatedcondition() { return this.relatedCondition }
         set relatedcondition(value) { this.relatedCondition = value }
 
-            relatedTherapy($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedTherapy') }
+        relatedTherapy($this, value) {
+			var property = {
+				comment: "A medical therapy related to this anatomy.",
+				parent: $this,
+				property: "relatedTherapy",
+				release: "11.01",
+				types: [
+					"MedicalTherapy"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+		}
         get relatedtherapy() { return this.relatedTherapy }
         set relatedtherapy(value) { this.relatedTherapy = value }
 
-            subStructure($this, value) { return $this.__helperValidateAttribute($this, value, 'subStructure') }
+        subStructure($this, value) {
+			var property = {
+				comment: "Component (sub-)structure(s) that comprise this anatomical structure.",
+				parent: $this,
+				property: "subStructure",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
         get substructure() { return this.subStructure }
         set substructure(value) { this.subStructure = value }
         

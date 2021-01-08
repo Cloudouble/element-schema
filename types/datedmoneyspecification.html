@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Datedmoneyspecification extends window.Cloudouble.Element.elements.Structuredvalue {
+    class DatedMoneySpecification extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,62 @@
         }
         
         
-            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        amount($this, value) {
+			var property = {
+				comment: "The amount of money.",
+				parent: $this,
+				property: "amount",
+				release: "11.01",
+				types: [
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
 
-            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+        currency($this, value) {
+			var property = {
+				comment: "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				parent: $this,
+				property: "currency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        endDate($this, value) {
+			var property = {
+				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "endDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
-            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        startDate($this, value) {
+			var property = {
+				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "startDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
         

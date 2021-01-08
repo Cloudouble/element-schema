@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Workbasedprogram extends window.Cloudouble.Element.elements.Educationaloccupationalprogram {
+    class WorkBasedProgram extends window.Cloudouble.Element.elements.EducationalOccupationalProgram {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,34 @@
         }
         
         
-            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        occupationalCategory($this, value) {
+			var property = {
+				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+				parent: $this,
+				property: "occupationalCategory",
+				release: "11.01",
+				types: [
+					"CategoryCode",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.CategoryCode(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
 
-            trainingSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'trainingSalary') }
+        trainingSalary($this, value) {
+			var property = {
+				comment: "The estimated salary earned while in the program.",
+				parent: $this,
+				property: "trainingSalary",
+				release: "11.01",
+				types: [
+					"MonetaryAmountDistribution"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmountDistribution(value, property) 
+		}
         get trainingsalary() { return this.trainingSalary }
         set trainingsalary(value) { this.trainingSalary = value }
         

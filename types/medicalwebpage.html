@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalwebpage extends window.Cloudouble.Element.elements.Webpage {
+    class MedicalWebPage extends window.Cloudouble.Element.elements.WebPage {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,32 @@
         }
         
         
-            aspect($this, value) { return $this.__helperValidateAttribute($this, value, 'aspect') }
+        aspect($this, value) {
+			var property = {
+				comment: "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.",
+				parent: $this,
+				property: "aspect",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            medicalAudience($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalAudience') }
+        medicalAudience($this, value) {
+			var property = {
+				comment: "Medical audience for page.",
+				parent: $this,
+				property: "medicalAudience",
+				release: "11.01",
+				types: [
+					"MedicalAudienceType",
+					"MedicalAudience"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalAudienceType(value, property) || new window.LiveElement.Element.elements.MedicalAudience(value, property) 
+		}
         get medicalaudience() { return this.medicalAudience }
         set medicalaudience(value) { this.medicalAudience = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Drugclass extends window.Cloudouble.Element.elements.Medicalentity {
+    class DrugClass extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            drug($this, value) { return $this.__helperValidateAttribute($this, value, 'drug') }
+        drug($this, value) {
+			var property = {
+				comment: "Specifying a drug or medicine used in a medication procedure",
+				parent: $this,
+				property: "drug",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
         
     }
 </script>

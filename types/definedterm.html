@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Definedterm extends window.Cloudouble.Element.elements.Intangible {
+    class DefinedTerm extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,34 @@
         }
         
         
-            inDefinedTermSet($this, value) { return $this.__helperValidateAttribute($this, value, 'inDefinedTermSet') }
+        inDefinedTermSet($this, value) {
+			var property = {
+				comment: "A [[DefinedTermSet]] that contains this term.",
+				parent: $this,
+				property: "inDefinedTermSet",
+				release: "11.01",
+				types: [
+					"DefinedTermSet",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTermSet(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get indefinedtermset() { return this.inDefinedTermSet }
         set indefinedtermset(value) { this.inDefinedTermSet = value }
 
-            termCode($this, value) { return $this.__helperValidateAttribute($this, value, 'termCode') }
+        termCode($this, value) {
+			var property = {
+				comment: "A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]",
+				parent: $this,
+				property: "termCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get termcode() { return this.termCode }
         set termcode(value) { this.termCode = value }
         

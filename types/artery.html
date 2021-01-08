@@ -32,11 +32,33 @@
         }
         
         
-            arterialBranch($this, value) { return $this.__helperValidateAttribute($this, value, 'arterialBranch') }
+        arterialBranch($this, value) {
+			var property = {
+				comment: "The branches that comprise the arterial structure.",
+				parent: $this,
+				property: "arterialBranch",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
         get arterialbranch() { return this.arterialBranch }
         set arterialbranch(value) { this.arterialBranch = value }
 
-            supplyTo($this, value) { return $this.__helperValidateAttribute($this, value, 'supplyTo') }
+        supplyTo($this, value) {
+			var property = {
+				comment: "The area to which the artery supplies blood.",
+				parent: $this,
+				property: "supplyTo",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
         get supplyto() { return this.supplyTo }
         set supplyto(value) { this.supplyTo = value }
         

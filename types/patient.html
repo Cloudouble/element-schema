@@ -32,11 +32,44 @@
         }
         
         
-            diagnosis($this, value) { return $this.__helperValidateAttribute($this, value, 'diagnosis') }
+        diagnosis($this, value) {
+			var property = {
+				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+				parent: $this,
+				property: "diagnosis",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
 
-            drug($this, value) { return $this.__helperValidateAttribute($this, value, 'drug') }
+        drug($this, value) {
+			var property = {
+				comment: "Specifying a drug or medicine used in a medication procedure",
+				parent: $this,
+				property: "drug",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
 
-            healthCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'healthCondition') }
+        healthCondition($this, value) {
+			var property = {
+				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+				parent: $this,
+				property: "healthCondition",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
         

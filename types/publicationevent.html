@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Publicationevent extends window.Cloudouble.Element.elements.Event {
+    class PublicationEvent extends window.Cloudouble.Element.elements.Event {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,47 @@
         }
         
         
-            free($this, value) { return $this.__helperValidateAttribute($this, value, 'free') }
+        free($this, value) {
+			var property = {
+				comment: "A flag to signal that the item, event, or place is accessible for free.",
+				parent: $this,
+				property: "free",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
 
-            publishedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'publishedBy') }
+        publishedBy($this, value) {
+			var property = {
+				comment: "An agent associated with the publication event.",
+				parent: $this,
+				property: "publishedBy",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get publishedby() { return this.publishedBy }
         set publishedby(value) { this.publishedBy = value }
 
-            publishedOn($this, value) { return $this.__helperValidateAttribute($this, value, 'publishedOn') }
+        publishedOn($this, value) {
+			var property = {
+				comment: "A broadcast service associated with the publication event.",
+				parent: $this,
+				property: "publishedOn",
+				release: "11.01",
+				types: [
+					"BroadcastService"
+				]
+			};
+			return new window.LiveElement.Element.elements.BroadcastService(value, property) 
+		}
         get publishedon() { return this.publishedOn }
         set publishedon(value) { this.publishedOn = value }
         

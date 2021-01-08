@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalorganization extends window.Cloudouble.Element.elements.Organization {
+    class MedicalOrganization extends window.Cloudouble.Element.elements.Organization {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            healthPlanNetworkId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkId') }
+        healthPlanNetworkId($this, value) {
+			var property = {
+				comment: "Name or unique ID of network. (Networks are often reused across different insurance plans).",
+				parent: $this,
+				property: "healthPlanNetworkId",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplannetworkid() { return this.healthPlanNetworkId }
         set healthplannetworkid(value) { this.healthPlanNetworkId = value }
 
-            isAcceptingNewPatients($this, value) { return $this.__helperValidateAttribute($this, value, 'isAcceptingNewPatients') }
+        isAcceptingNewPatients($this, value) {
+			var property = {
+				comment: "Whether the provider is accepting new patients.",
+				parent: $this,
+				property: "isAcceptingNewPatients",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isacceptingnewpatients() { return this.isAcceptingNewPatients }
         set isacceptingnewpatients(value) { this.isAcceptingNewPatients = value }
 
-            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        medicalSpecialty($this, value) {
+			var property = {
+				comment: "A medical specialty of the provider.",
+				parent: $this,
+				property: "medicalSpecialty",
+				release: "11.01",
+				types: [
+					"MedicalSpecialty"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Imageobject extends window.Cloudouble.Element.elements.Mediaobject {
+    class ImageObject extends window.Cloudouble.Element.elements.MediaObject {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,17 +32,63 @@
         }
         
         
-            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+        caption($this, value) {
+			var property = {
+				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+				parent: $this,
+				property: "caption",
+				release: "11.01",
+				types: [
+					"Text",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
 
-            exifData($this, value) { return $this.__helperValidateAttribute($this, value, 'exifData') }
+        exifData($this, value) {
+			var property = {
+				comment: "exif data for this object.",
+				parent: $this,
+				property: "exifData",
+				release: "11.01",
+				types: [
+					"PropertyValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.PropertyValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get exifdata() { return this.exifData }
         set exifdata(value) { this.exifData = value }
 
-            representativeOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'representativeOfPage') }
+        representativeOfPage($this, value) {
+			var property = {
+				comment: "Indicates whether this image is representative of the content of the page.",
+				parent: $this,
+				property: "representativeOfPage",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get representativeofpage() { return this.representativeOfPage }
         set representativeofpage(value) { this.representativeOfPage = value }
 
-            thumbnail($this, value) { return $this.__helperValidateAttribute($this, value, 'thumbnail') }
+        thumbnail($this, value) {
+			var property = {
+				comment: "Thumbnail image for an image or video.",
+				parent: $this,
+				property: "thumbnail",
+				release: "11.01",
+				types: [
+					"ImageObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+		}
         
     }
 </script>

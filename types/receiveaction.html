@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Receiveaction extends window.Cloudouble.Element.elements.Transferaction {
+    class ReceiveAction extends window.Cloudouble.Element.elements.TransferAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,35 @@
         }
         
         
-            deliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryMethod') }
+        deliveryMethod($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The method of delivery.",
+				parent: $this,
+				property: "deliveryMethod",
+				release: "11.01",
+				types: [
+					"DeliveryMethod"
+				]
+			};
+			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+		}
         get deliverymethod() { return this.deliveryMethod }
         set deliverymethod(value) { this.deliveryMethod = value }
 
-            sender($this, value) { return $this.__helperValidateAttribute($this, value, 'sender') }
+        sender($this, value) {
+			var property = {
+				comment: "A sub property of participant. The participant who is at the sending end of the action.",
+				parent: $this,
+				property: "sender",
+				release: "11.01",
+				types: [
+					"Audience",
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         
     }
 </script>

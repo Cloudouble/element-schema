@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Exerciseaction extends window.Cloudouble.Element.elements.Playaction {
+    class ExerciseAction extends window.Cloudouble.Element.elements.PlayAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,47 +32,190 @@
         }
         
         
-            course($this, value) { return $this.__helperValidateAttribute($this, value, 'course') }
+        course($this, value) {
+			var property = {
+				comment: "A sub property of location. The course where this action was taken.",
+				parent: $this,
+				property: "course",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
 
-            diet($this, value) { return $this.__helperValidateAttribute($this, value, 'diet') }
+        diet($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The diet used in this action.",
+				parent: $this,
+				property: "diet",
+				release: "11.01",
+				types: [
+					"Diet"
+				]
+			};
+			return new window.LiveElement.Element.elements.Diet(value, property) 
+		}
 
-            distance($this, value) { return $this.__helperValidateAttribute($this, value, 'distance') }
+        distance($this, value) {
+			var property = {
+				comment: "The distance travelled, e.g. exercising or travelling.",
+				parent: $this,
+				property: "distance",
+				release: "11.01",
+				types: [
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.Distance(value, property) 
+		}
 
-            exerciseCourse($this, value) { return $this.__helperValidateAttribute($this, value, 'exerciseCourse') }
+        exerciseCourse($this, value) {
+			var property = {
+				comment: "A sub property of location. The course where this action was taken.",
+				parent: $this,
+				property: "exerciseCourse",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get exercisecourse() { return this.exerciseCourse }
         set exercisecourse(value) { this.exerciseCourse = value }
 
-            exercisePlan($this, value) { return $this.__helperValidateAttribute($this, value, 'exercisePlan') }
+        exercisePlan($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The exercise plan used on this action.",
+				parent: $this,
+				property: "exercisePlan",
+				release: "11.01",
+				types: [
+					"ExercisePlan"
+				]
+			};
+			return new window.LiveElement.Element.elements.ExercisePlan(value, property) 
+		}
         get exerciseplan() { return this.exercisePlan }
         set exerciseplan(value) { this.exercisePlan = value }
 
-            exerciseRelatedDiet($this, value) { return $this.__helperValidateAttribute($this, value, 'exerciseRelatedDiet') }
+        exerciseRelatedDiet($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The diet used in this action.",
+				parent: $this,
+				property: "exerciseRelatedDiet",
+				release: "11.01",
+				types: [
+					"Diet"
+				]
+			};
+			return new window.LiveElement.Element.elements.Diet(value, property) 
+		}
         get exerciserelateddiet() { return this.exerciseRelatedDiet }
         set exerciserelateddiet(value) { this.exerciseRelatedDiet = value }
 
-            exerciseType($this, value) { return $this.__helperValidateAttribute($this, value, 'exerciseType') }
+        exerciseType($this, value) {
+			var property = {
+				comment: "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+				parent: $this,
+				property: "exerciseType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
 
-            fromLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'fromLocation') }
+        fromLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The original location of the object or the agent before the action.",
+				parent: $this,
+				property: "fromLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get fromlocation() { return this.fromLocation }
         set fromlocation(value) { this.fromLocation = value }
 
-            opponent($this, value) { return $this.__helperValidateAttribute($this, value, 'opponent') }
+        opponent($this, value) {
+			var property = {
+				comment: "A sub property of participant. The opponent on this action.",
+				parent: $this,
+				property: "opponent",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            sportsActivityLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'sportsActivityLocation') }
+        sportsActivityLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The sports activity location where this action occurred.",
+				parent: $this,
+				property: "sportsActivityLocation",
+				release: "11.01",
+				types: [
+					"SportsActivityLocation"
+				]
+			};
+			return new window.LiveElement.Element.elements.SportsActivityLocation(value, property) 
+		}
         get sportsactivitylocation() { return this.sportsActivityLocation }
         set sportsactivitylocation(value) { this.sportsActivityLocation = value }
 
-            sportsEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'sportsEvent') }
+        sportsEvent($this, value) {
+			var property = {
+				comment: "A sub property of location. The sports event where this action occurred.",
+				parent: $this,
+				property: "sportsEvent",
+				release: "11.01",
+				types: [
+					"SportsEvent"
+				]
+			};
+			return new window.LiveElement.Element.elements.SportsEvent(value, property) 
+		}
         get sportsevent() { return this.sportsEvent }
         set sportsevent(value) { this.sportsEvent = value }
 
-            sportsTeam($this, value) { return $this.__helperValidateAttribute($this, value, 'sportsTeam') }
+        sportsTeam($this, value) {
+			var property = {
+				comment: "A sub property of participant. The sports team that participated on this action.",
+				parent: $this,
+				property: "sportsTeam",
+				release: "11.01",
+				types: [
+					"SportsTeam"
+				]
+			};
+			return new window.LiveElement.Element.elements.SportsTeam(value, property) 
+		}
         get sportsteam() { return this.sportsTeam }
         set sportsteam(value) { this.sportsTeam = value }
 
-            toLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'toLocation') }
+        toLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The final location of the object or the agent after the action.",
+				parent: $this,
+				property: "toLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }
         

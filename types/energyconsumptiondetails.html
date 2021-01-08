@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Energyconsumptiondetails extends window.Cloudouble.Element.elements.Intangible {
+    class EnergyConsumptionDetails extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            energyEfficiencyScaleMax($this, value) { return $this.__helperValidateAttribute($this, value, 'energyEfficiencyScaleMax') }
+        energyEfficiencyScaleMax($this, value) {
+			var property = {
+				comment: "Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.",
+				parent: $this,
+				property: "energyEfficiencyScaleMax",
+				release: "11.01",
+				types: [
+					"EUEnergyEfficiencyEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.EUEnergyEfficiencyEnumeration(value, property) 
+		}
         get energyefficiencyscalemax() { return this.energyEfficiencyScaleMax }
         set energyefficiencyscalemax(value) { this.energyEfficiencyScaleMax = value }
 
-            energyEfficiencyScaleMin($this, value) { return $this.__helperValidateAttribute($this, value, 'energyEfficiencyScaleMin') }
+        energyEfficiencyScaleMin($this, value) {
+			var property = {
+				comment: "Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.",
+				parent: $this,
+				property: "energyEfficiencyScaleMin",
+				release: "11.01",
+				types: [
+					"EUEnergyEfficiencyEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.EUEnergyEfficiencyEnumeration(value, property) 
+		}
         get energyefficiencyscalemin() { return this.energyEfficiencyScaleMin }
         set energyefficiencyscalemin(value) { this.energyEfficiencyScaleMin = value }
 
-            hasEnergyEfficiencyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'hasEnergyEfficiencyCategory') }
+        hasEnergyEfficiencyCategory($this, value) {
+			var property = {
+				comment: "Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard",
+				parent: $this,
+				property: "hasEnergyEfficiencyCategory",
+				release: "11.01",
+				types: [
+					"EnergyEfficiencyEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.EnergyEfficiencyEnumeration(value, property) 
+		}
         get hasenergyefficiencycategory() { return this.hasEnergyEfficiencyCategory }
         set hasenergyefficiencycategory(value) { this.hasEnergyEfficiencyCategory = value }
         

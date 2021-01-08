@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Broadcastfrequencyspecification extends window.Cloudouble.Element.elements.Intangible {
+    class BroadcastFrequencySpecification extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,50 @@
         }
         
         
-            broadcastFrequencyValue($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastFrequencyValue') }
+        broadcastFrequencyValue($this, value) {
+			var property = {
+				comment: "The frequency in MHz for a particular broadcast.",
+				parent: $this,
+				property: "broadcastFrequencyValue",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get broadcastfrequencyvalue() { return this.broadcastFrequencyValue }
         set broadcastfrequencyvalue(value) { this.broadcastFrequencyValue = value }
 
-            broadcastSignalModulation($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastSignalModulation') }
+        broadcastSignalModulation($this, value) {
+			var property = {
+				comment: "The modulation (e.g. FM, AM, etc) used by a particular broadcast service",
+				parent: $this,
+				property: "broadcastSignalModulation",
+				release: "11.01",
+				types: [
+					"QualitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get broadcastsignalmodulation() { return this.broadcastSignalModulation }
         set broadcastsignalmodulation(value) { this.broadcastSignalModulation = value }
 
-            broadcastSubChannel($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastSubChannel') }
+        broadcastSubChannel($this, value) {
+			var property = {
+				comment: "The subchannel used for the broadcast.",
+				parent: $this,
+				property: "broadcastSubChannel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get broadcastsubchannel() { return this.broadcastSubChannel }
         set broadcastsubchannel(value) { this.broadcastSubChannel = value }
         

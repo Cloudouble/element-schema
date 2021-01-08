@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Webpage extends window.Cloudouble.Element.elements.Creativework {
+    class WebPage extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,39 +32,152 @@
         }
         
         
-            breadcrumb($this, value) { return $this.__helperValidateAttribute($this, value, 'breadcrumb') }
+        breadcrumb($this, value) {
+			var property = {
+				comment: "A set of links that can help a user understand and navigate a website hierarchy.",
+				parent: $this,
+				property: "breadcrumb",
+				release: "11.01",
+				types: [
+					"Text",
+					"BreadcrumbList"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.BreadcrumbList(value, property) 
+		}
 
-            lastReviewed($this, value) { return $this.__helperValidateAttribute($this, value, 'lastReviewed') }
+        lastReviewed($this, value) {
+			var property = {
+				comment: "Date on which the content on this web page was last reviewed for accuracy and/or completeness.",
+				parent: $this,
+				property: "lastReviewed",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get lastreviewed() { return this.lastReviewed }
         set lastreviewed(value) { this.lastReviewed = value }
 
-            mainContentOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'mainContentOfPage') }
+        mainContentOfPage($this, value) {
+			var property = {
+				comment: "Indicates if this web page element is the main subject of the page.",
+				parent: $this,
+				property: "mainContentOfPage",
+				release: "11.01",
+				types: [
+					"WebPageElement"
+				]
+			};
+			return new window.LiveElement.Element.elements.WebPageElement(value, property) 
+		}
         get maincontentofpage() { return this.mainContentOfPage }
         set maincontentofpage(value) { this.mainContentOfPage = value }
 
-            primaryImageOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'primaryImageOfPage') }
+        primaryImageOfPage($this, value) {
+			var property = {
+				comment: "Indicates the main image on the page.",
+				parent: $this,
+				property: "primaryImageOfPage",
+				release: "11.01",
+				types: [
+					"ImageObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+		}
         get primaryimageofpage() { return this.primaryImageOfPage }
         set primaryimageofpage(value) { this.primaryImageOfPage = value }
 
-            relatedLink($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedLink') }
+        relatedLink($this, value) {
+			var property = {
+				comment: "A link related to this web page, for example to other related web pages.",
+				parent: $this,
+				property: "relatedLink",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get relatedlink() { return this.relatedLink }
         set relatedlink(value) { this.relatedLink = value }
 
-            reviewedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'reviewedBy') }
+        reviewedBy($this, value) {
+			var property = {
+				comment: "People or organizations that have reviewed the content on this web page for accuracy and/or completeness.",
+				parent: $this,
+				property: "reviewedBy",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get reviewedby() { return this.reviewedBy }
         set reviewedby(value) { this.reviewedBy = value }
 
-            significantLink($this, value) { return $this.__helperValidateAttribute($this, value, 'significantLink') }
+        significantLink($this, value) {
+			var property = {
+				comment: "One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
+				parent: $this,
+				property: "significantLink",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get significantlink() { return this.significantLink }
         set significantlink(value) { this.significantLink = value }
 
-            significantLinks($this, value) { return $this.__helperValidateAttribute($this, value, 'significantLinks') }
+        significantLinks($this, value) {
+			var property = {
+				comment: "The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
+				parent: $this,
+				property: "significantLinks",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get significantlinks() { return this.significantLinks }
         set significantlinks(value) { this.significantLinks = value }
 
-            speakable($this, value) { return $this.__helperValidateAttribute($this, value, 'speakable') }
+        speakable($this, value) {
+			var property = {
+				comment: "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
+				parent: $this,
+				property: "speakable",
+				release: "11.01",
+				types: [
+					"URL",
+					"SpeakableSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.SpeakableSpecification(value, property) 
+		}
 
-            specialty($this, value) { return $this.__helperValidateAttribute($this, value, 'specialty') }
+        specialty($this, value) {
+			var property = {
+				comment: "One of the domain specialities to which this web page's content applies.",
+				parent: $this,
+				property: "specialty",
+				release: "11.01",
+				types: [
+					"Specialty"
+				]
+			};
+			return new window.LiveElement.Element.elements.Specialty(value, property) 
+		}
         
     }
 </script>

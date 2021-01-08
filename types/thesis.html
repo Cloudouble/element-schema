@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Thesis extends window.Cloudouble.Element.elements.Creativework {
+    class Thesis extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            inSupportOf($this, value) { return $this.__helperValidateAttribute($this, value, 'inSupportOf') }
+        inSupportOf($this, value) {
+			var property = {
+				comment: "Qualification, candidature, degree, application that Thesis supports.",
+				parent: $this,
+				property: "inSupportOf",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get insupportof() { return this.inSupportOf }
         set insupportof(value) { this.inSupportOf = value }
         

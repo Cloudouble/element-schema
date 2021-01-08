@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Clip extends window.Cloudouble.Element.elements.Creativework {
+    class Clip extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,39 +32,164 @@
         }
         
         
-            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+        actor($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actor",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+        actors($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            clipNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'clipNumber') }
+        clipNumber($this, value) {
+			var property = {
+				comment: "Position of the clip within an ordered group of clips.",
+				parent: $this,
+				property: "clipNumber",
+				release: "11.01",
+				types: [
+					"Text",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get clipnumber() { return this.clipNumber }
         set clipnumber(value) { this.clipNumber = value }
 
-            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+        director($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "director",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+        directors($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "directors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            endOffset($this, value) { return $this.__helperValidateAttribute($this, value, 'endOffset') }
+        endOffset($this, value) {
+			var property = {
+				comment: "The end time of the clip expressed as the number of seconds from the beginning of the work.",
+				parent: $this,
+				property: "endOffset",
+				release: "11.01",
+				types: [
+					"HyperTocEntry",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get endoffset() { return this.endOffset }
         set endoffset(value) { this.endOffset = value }
 
-            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        musicBy($this, value) {
+			var property = {
+				comment: "The composer of the soundtrack.",
+				parent: $this,
+				property: "musicBy",
+				release: "11.01",
+				types: [
+					"Person",
+					"MusicGroup"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
-            partOfEpisode($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfEpisode') }
+        partOfEpisode($this, value) {
+			var property = {
+				comment: "The episode to which this clip belongs.",
+				parent: $this,
+				property: "partOfEpisode",
+				release: "11.01",
+				types: [
+					"Episode"
+				]
+			};
+			return new window.LiveElement.Element.elements.Episode(value, property) 
+		}
         get partofepisode() { return this.partOfEpisode }
         set partofepisode(value) { this.partOfEpisode = value }
 
-            partOfSeason($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeason') }
+        partOfSeason($this, value) {
+			var property = {
+				comment: "The season to which this episode belongs.",
+				parent: $this,
+				property: "partOfSeason",
+				release: "11.01",
+				types: [
+					"CreativeWorkSeason"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWorkSeason(value, property) 
+		}
         get partofseason() { return this.partOfSeason }
         set partofseason(value) { this.partOfSeason = value }
 
-            partOfSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfSeries') }
+        partOfSeries($this, value) {
+			var property = {
+				comment: "The series to which this episode or season belongs.",
+				parent: $this,
+				property: "partOfSeries",
+				release: "11.01",
+				types: [
+					"CreativeWorkSeries"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWorkSeries(value, property) 
+		}
         get partofseries() { return this.partOfSeries }
         set partofseries(value) { this.partOfSeries = value }
 
-            startOffset($this, value) { return $this.__helperValidateAttribute($this, value, 'startOffset') }
+        startOffset($this, value) {
+			var property = {
+				comment: "The start time of the clip expressed as the number of seconds from the beginning of the work.",
+				parent: $this,
+				property: "startOffset",
+				release: "11.01",
+				types: [
+					"HyperTocEntry",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get startoffset() { return this.startOffset }
         set startoffset(value) { this.startOffset = value }
         

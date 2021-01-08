@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Audiobook extends window.Cloudouble.Element.elements.Audioobject {
+    class Audiobook extends window.Cloudouble.Element.elements.AudioObject {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+        duration($this, value) {
+			var property = {
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "duration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
 
-            readBy($this, value) { return $this.__helperValidateAttribute($this, value, 'readBy') }
+        readBy($this, value) {
+			var property = {
+				comment: "A person who reads (performs) the audiobook.",
+				parent: $this,
+				property: "readBy",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get readby() { return this.readBy }
         set readby(value) { this.readBy = value }
         

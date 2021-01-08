@@ -32,25 +32,107 @@
         }
         
         
-            arrivalTime($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalTime') }
+        arrivalTime($this, value) {
+			var property = {
+				comment: "The expected arrival time.",
+				parent: $this,
+				property: "arrivalTime",
+				release: "11.01",
+				types: [
+					"Time",
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get arrivaltime() { return this.arrivalTime }
         set arrivaltime(value) { this.arrivalTime = value }
 
-            departureTime($this, value) { return $this.__helperValidateAttribute($this, value, 'departureTime') }
+        departureTime($this, value) {
+			var property = {
+				comment: "The expected departure time.",
+				parent: $this,
+				property: "departureTime",
+				release: "11.01",
+				types: [
+					"Time",
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get departuretime() { return this.departureTime }
         set departuretime(value) { this.departureTime = value }
 
-            itinerary($this, value) { return $this.__helperValidateAttribute($this, value, 'itinerary') }
+        itinerary($this, value) {
+			var property = {
+				comment: "Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).",
+				parent: $this,
+				property: "itinerary",
+				release: "11.01",
+				types: [
+					"ItemList",
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+		}
 
-            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+        offers($this, value) {
+			var property = {
+				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+				parent: $this,
+				property: "offers",
+				release: "11.01",
+				types: [
+					"Demand",
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+		}
 
-            partOfTrip($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfTrip') }
+        partOfTrip($this, value) {
+			var property = {
+				comment: "Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.",
+				parent: $this,
+				property: "partOfTrip",
+				release: "11.01",
+				types: [
+					"Trip"
+				]
+			};
+			return new window.LiveElement.Element.elements.Trip(value, property) 
+		}
         get partoftrip() { return this.partOfTrip }
         set partoftrip(value) { this.partOfTrip = value }
 
-            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+        provider($this, value) {
+			var property = {
+				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+				parent: $this,
+				property: "provider",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            subTrip($this, value) { return $this.__helperValidateAttribute($this, value, 'subTrip') }
+        subTrip($this, value) {
+			var property = {
+				comment: "Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.",
+				parent: $this,
+				property: "subTrip",
+				release: "11.01",
+				types: [
+					"Trip"
+				]
+			};
+			return new window.LiveElement.Element.elements.Trip(value, property) 
+		}
         get subtrip() { return this.subTrip }
         set subtrip(value) { this.subTrip = value }
         

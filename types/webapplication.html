@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Webapplication extends window.Cloudouble.Element.elements.Softwareapplication {
+    class WebApplication extends window.Cloudouble.Element.elements.SoftwareApplication {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            browserRequirements($this, value) { return $this.__helperValidateAttribute($this, value, 'browserRequirements') }
+        browserRequirements($this, value) {
+			var property = {
+				comment: "Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.",
+				parent: $this,
+				property: "browserRequirements",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get browserrequirements() { return this.browserRequirements }
         set browserrequirements(value) { this.browserRequirements = value }
         

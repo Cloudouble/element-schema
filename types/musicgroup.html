@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Musicgroup extends window.Cloudouble.Element.elements.Performinggroup {
+    class MusicGroup extends window.Cloudouble.Element.elements.PerformingGroup {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,87 @@
         }
         
         
-            album($this, value) { return $this.__helperValidateAttribute($this, value, 'album') }
+        album($this, value) {
+			var property = {
+				comment: "A music album.",
+				parent: $this,
+				property: "album",
+				release: "11.01",
+				types: [
+					"MusicAlbum"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+		}
 
-            albums($this, value) { return $this.__helperValidateAttribute($this, value, 'albums') }
+        albums($this, value) {
+			var property = {
+				comment: "A collection of music albums.",
+				parent: $this,
+				property: "albums",
+				release: "11.01",
+				types: [
+					"MusicAlbum"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+		}
 
-            genre($this, value) { return $this.__helperValidateAttribute($this, value, 'genre') }
+        genre($this, value) {
+			var property = {
+				comment: "Genre of the creative work, broadcast channel or group.",
+				parent: $this,
+				property: "genre",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            musicGroupMember($this, value) { return $this.__helperValidateAttribute($this, value, 'musicGroupMember') }
+        musicGroupMember($this, value) {
+			var property = {
+				comment: "A member of a music group&#x2014;for example, John, Paul, George, or Ringo.",
+				parent: $this,
+				property: "musicGroupMember",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get musicgroupmember() { return this.musicGroupMember }
         set musicgroupmember(value) { this.musicGroupMember = value }
 
-            track($this, value) { return $this.__helperValidateAttribute($this, value, 'track') }
+        track($this, value) {
+			var property = {
+				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
+				parent: $this,
+				property: "track",
+				release: "11.01",
+				types: [
+					"MusicRecording",
+					"ItemList"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicRecording(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+		}
 
-            tracks($this, value) { return $this.__helperValidateAttribute($this, value, 'tracks') }
+        tracks($this, value) {
+			var property = {
+				comment: "A music recording (track)&#x2014;usually a single song.",
+				parent: $this,
+				property: "tracks",
+				release: "11.01",
+				types: [
+					"MusicRecording"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicRecording(value, property) 
+		}
         
     }
 </script>

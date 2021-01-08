@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Categorycode extends window.Cloudouble.Element.elements.Definedterm {
+    class CategoryCode extends window.Cloudouble.Element.elements.DefinedTerm {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,34 @@
         }
         
         
-            codeValue($this, value) { return $this.__helperValidateAttribute($this, value, 'codeValue') }
+        codeValue($this, value) {
+			var property = {
+				comment: "A short textual code that uniquely identifies the value.",
+				parent: $this,
+				property: "codeValue",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get codevalue() { return this.codeValue }
         set codevalue(value) { this.codeValue = value }
 
-            inCodeSet($this, value) { return $this.__helperValidateAttribute($this, value, 'inCodeSet') }
+        inCodeSet($this, value) {
+			var property = {
+				comment: "A [[CategoryCodeSet]] that contains this category code.",
+				parent: $this,
+				property: "inCodeSet",
+				release: "11.01",
+				types: [
+					"CategoryCodeSet",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.CategoryCodeSet(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get incodeset() { return this.inCodeSet }
         set incodeset(value) { this.inCodeSet = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Taxireservation extends window.Cloudouble.Element.elements.Reservation {
+    class TaxiReservation extends window.Cloudouble.Element.elements.Reservation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            partySize($this, value) { return $this.__helperValidateAttribute($this, value, 'partySize') }
+        partySize($this, value) {
+			var property = {
+				comment: "Number of people the reservation should accommodate.",
+				parent: $this,
+				property: "partySize",
+				release: "11.01",
+				types: [
+					"Integer",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get partysize() { return this.partySize }
         set partysize(value) { this.partySize = value }
 
-            pickupLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupLocation') }
+        pickupLocation($this, value) {
+			var property = {
+				comment: "Where a taxi will pick up a passenger or a rental car can be picked up.",
+				parent: $this,
+				property: "pickupLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get pickuplocation() { return this.pickupLocation }
         set pickuplocation(value) { this.pickupLocation = value }
 
-            pickupTime($this, value) { return $this.__helperValidateAttribute($this, value, 'pickupTime') }
+        pickupTime($this, value) {
+			var property = {
+				comment: "When a taxi will pickup a passenger or a rental car can be picked up.",
+				parent: $this,
+				property: "pickupTime",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get pickuptime() { return this.pickupTime }
         set pickuptime(value) { this.pickupTime = value }
         

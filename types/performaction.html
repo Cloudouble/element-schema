@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Performaction extends window.Cloudouble.Element.elements.Playaction {
+    class PerformAction extends window.Cloudouble.Element.elements.PlayAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            entertainmentBusiness($this, value) { return $this.__helperValidateAttribute($this, value, 'entertainmentBusiness') }
+        entertainmentBusiness($this, value) {
+			var property = {
+				comment: "A sub property of location. The entertainment business where the action occurred.",
+				parent: $this,
+				property: "entertainmentBusiness",
+				release: "11.01",
+				types: [
+					"EntertainmentBusiness"
+				]
+			};
+			return new window.LiveElement.Element.elements.EntertainmentBusiness(value, property) 
+		}
         get entertainmentbusiness() { return this.entertainmentBusiness }
         set entertainmentbusiness(value) { this.entertainmentBusiness = value }
         

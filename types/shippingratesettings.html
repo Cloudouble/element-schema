@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Shippingratesettings extends window.Cloudouble.Element.elements.Structuredvalue {
+    class ShippingRateSettings extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,94 @@
         }
         
         
-            doesNotShip($this, value) { return $this.__helperValidateAttribute($this, value, 'doesNotShip') }
+        doesNotShip($this, value) {
+			var property = {
+				comment: "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+				parent: $this,
+				property: "doesNotShip",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get doesnotship() { return this.doesNotShip }
         set doesnotship(value) { this.doesNotShip = value }
 
-            freeShippingThreshold($this, value) { return $this.__helperValidateAttribute($this, value, 'freeShippingThreshold') }
+        freeShippingThreshold($this, value) {
+			var property = {
+				comment: "A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].",
+				parent: $this,
+				property: "freeShippingThreshold",
+				release: "11.01",
+				types: [
+					"DeliveryChargeSpecification",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.DeliveryChargeSpecification(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get freeshippingthreshold() { return this.freeShippingThreshold }
         set freeshippingthreshold(value) { this.freeShippingThreshold = value }
 
-            isUnlabelledFallback($this, value) { return $this.__helperValidateAttribute($this, value, 'isUnlabelledFallback') }
+        isUnlabelledFallback($this, value) {
+			var property = {
+				comment: "This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.",
+				parent: $this,
+				property: "isUnlabelledFallback",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isunlabelledfallback() { return this.isUnlabelledFallback }
         set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
 
-            shippingDestination($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDestination') }
+        shippingDestination($this, value) {
+			var property = {
+				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
+				parent: $this,
+				property: "shippingDestination",
+				release: "11.01",
+				types: [
+					"DefinedRegion"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedRegion(value, property) 
+		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
 
-            shippingLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingLabel') }
+        shippingLabel($this, value) {
+			var property = {
+				comment: "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+				parent: $this,
+				property: "shippingLabel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get shippinglabel() { return this.shippingLabel }
         set shippinglabel(value) { this.shippingLabel = value }
 
-            shippingRate($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingRate') }
+        shippingRate($this, value) {
+			var property = {
+				comment: "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+				parent: $this,
+				property: "shippingRate",
+				release: "11.01",
+				types: [
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get shippingrate() { return this.shippingRate }
         set shippingrate(value) { this.shippingRate = value }
         

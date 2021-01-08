@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Traintrip extends window.Cloudouble.Element.elements.Trip {
+    class TrainTrip extends window.Cloudouble.Element.elements.Trip {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,93 @@
         }
         
         
-            arrivalPlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalPlatform') }
+        arrivalPlatform($this, value) {
+			var property = {
+				comment: "The platform where the train arrives.",
+				parent: $this,
+				property: "arrivalPlatform",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get arrivalplatform() { return this.arrivalPlatform }
         set arrivalplatform(value) { this.arrivalPlatform = value }
 
-            arrivalStation($this, value) { return $this.__helperValidateAttribute($this, value, 'arrivalStation') }
+        arrivalStation($this, value) {
+			var property = {
+				comment: "The station where the train trip ends.",
+				parent: $this,
+				property: "arrivalStation",
+				release: "11.01",
+				types: [
+					"TrainStation"
+				]
+			};
+			return new window.LiveElement.Element.elements.TrainStation(value, property) 
+		}
         get arrivalstation() { return this.arrivalStation }
         set arrivalstation(value) { this.arrivalStation = value }
 
-            departurePlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'departurePlatform') }
+        departurePlatform($this, value) {
+			var property = {
+				comment: "The platform from which the train departs.",
+				parent: $this,
+				property: "departurePlatform",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get departureplatform() { return this.departurePlatform }
         set departureplatform(value) { this.departurePlatform = value }
 
-            departureStation($this, value) { return $this.__helperValidateAttribute($this, value, 'departureStation') }
+        departureStation($this, value) {
+			var property = {
+				comment: "The station from which the train departs.",
+				parent: $this,
+				property: "departureStation",
+				release: "11.01",
+				types: [
+					"TrainStation"
+				]
+			};
+			return new window.LiveElement.Element.elements.TrainStation(value, property) 
+		}
         get departurestation() { return this.departureStation }
         set departurestation(value) { this.departureStation = value }
 
-            trainName($this, value) { return $this.__helperValidateAttribute($this, value, 'trainName') }
+        trainName($this, value) {
+			var property = {
+				comment: "The name of the train (e.g. The Orient Express).",
+				parent: $this,
+				property: "trainName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get trainname() { return this.trainName }
         set trainname(value) { this.trainName = value }
 
-            trainNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'trainNumber') }
+        trainNumber($this, value) {
+			var property = {
+				comment: "The unique identifier for the train.",
+				parent: $this,
+				property: "trainNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get trainnumber() { return this.trainNumber }
         set trainnumber(value) { this.trainNumber = value }
         

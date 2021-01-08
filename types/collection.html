@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Collection extends window.Cloudouble.Element.elements.Creativework {
+    class Collection extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            collectionSize($this, value) { return $this.__helperValidateAttribute($this, value, 'collectionSize') }
+        collectionSize($this, value) {
+			var property = {
+				comment: "The number of items in the [[Collection]].",
+				parent: $this,
+				property: "collectionSize",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get collectionsize() { return this.collectionSize }
         set collectionsize(value) { this.collectionSize = value }
         

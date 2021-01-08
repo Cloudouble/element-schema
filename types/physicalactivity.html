@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Physicalactivity extends window.Cloudouble.Element.elements.Lifestylemodification {
+    class PhysicalActivity extends window.Cloudouble.Element.elements.LifestyleModification {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,64 @@
         }
         
         
-            associatedAnatomy($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedAnatomy') }
+        associatedAnatomy($this, value) {
+			var property = {
+				comment: "The anatomy of the underlying organ system or structures associated with this entity.",
+				parent: $this,
+				property: "associatedAnatomy",
+				release: "11.01",
+				types: [
+					"AnatomicalSystem",
+					"SuperficialAnatomy",
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalSystem(value, property) || new window.LiveElement.Element.elements.SuperficialAnatomy(value, property) || new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
         get associatedanatomy() { return this.associatedAnatomy }
         set associatedanatomy(value) { this.associatedAnatomy = value }
 
-            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+        category($this, value) {
+			var property = {
+				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+				parent: $this,
+				property: "category",
+				release: "11.01",
+				types: [
+					"Text",
+					"Thing",
+					"PhysicalActivityCategory",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            epidemiology($this, value) { return $this.__helperValidateAttribute($this, value, 'epidemiology') }
+        epidemiology($this, value) {
+			var property = {
+				comment: "The characteristics of associated patients, such as age, gender, race etc.",
+				parent: $this,
+				property: "epidemiology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            pathophysiology($this, value) { return $this.__helperValidateAttribute($this, value, 'pathophysiology') }
+        pathophysiology($this, value) {
+			var property = {
+				comment: "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
+				parent: $this,
+				property: "pathophysiology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

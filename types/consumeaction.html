@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Consumeaction extends window.Cloudouble.Element.elements.Action {
+    class ConsumeAction extends window.Cloudouble.Element.elements.Action {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            actionAccessibilityRequirement($this, value) { return $this.__helperValidateAttribute($this, value, 'actionAccessibilityRequirement') }
+        actionAccessibilityRequirement($this, value) {
+			var property = {
+				comment: "A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.",
+				parent: $this,
+				property: "actionAccessibilityRequirement",
+				release: "11.01",
+				types: [
+					"ActionAccessSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.ActionAccessSpecification(value, property) 
+		}
         get actionaccessibilityrequirement() { return this.actionAccessibilityRequirement }
         set actionaccessibilityrequirement(value) { this.actionAccessibilityRequirement = value }
 
-            expectsAcceptanceOf($this, value) { return $this.__helperValidateAttribute($this, value, 'expectsAcceptanceOf') }
+        expectsAcceptanceOf($this, value) {
+			var property = {
+				comment: "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
+				parent: $this,
+				property: "expectsAcceptanceOf",
+				release: "11.01",
+				types: [
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Offer(value, property) 
+		}
         get expectsacceptanceof() { return this.expectsAcceptanceOf }
         set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
         

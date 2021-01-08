@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Listitem extends window.Cloudouble.Element.elements.Intangible {
+    class ListItem extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,60 @@
         }
         
         
-            item($this, value) { return $this.__helperValidateAttribute($this, value, 'item') }
+        item($this, value) {
+			var property = {
+				comment: "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')\u2019.",
+				parent: $this,
+				property: "item",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
 
-            nextItem($this, value) { return $this.__helperValidateAttribute($this, value, 'nextItem') }
+        nextItem($this, value) {
+			var property = {
+				comment: "A link to the ListItem that follows the current one.",
+				parent: $this,
+				property: "nextItem",
+				release: "11.01",
+				types: [
+					"ListItem"
+				]
+			};
+			return new window.LiveElement.Element.elements.ListItem(value, property) 
+		}
         get nextitem() { return this.nextItem }
         set nextitem(value) { this.nextItem = value }
 
-            position($this, value) { return $this.__helperValidateAttribute($this, value, 'position') }
+        position($this, value) {
+			var property = {
+				comment: "The position of an item in a series or sequence of items.",
+				parent: $this,
+				property: "position",
+				release: "11.01",
+				types: [
+					"Text",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
 
-            previousItem($this, value) { return $this.__helperValidateAttribute($this, value, 'previousItem') }
+        previousItem($this, value) {
+			var property = {
+				comment: "A link to the ListItem that preceeds the current one.",
+				parent: $this,
+				property: "previousItem",
+				release: "11.01",
+				types: [
+					"ListItem"
+				]
+			};
+			return new window.LiveElement.Element.elements.ListItem(value, property) 
+		}
         get previousitem() { return this.previousItem }
         set previousitem(value) { this.previousItem = value }
         

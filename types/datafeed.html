@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Datafeed extends window.Cloudouble.Element.elements.Dataset {
+    class DataFeed extends window.Cloudouble.Element.elements.Dataset {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,20 @@
         }
         
         
-            dataFeedElement($this, value) { return $this.__helperValidateAttribute($this, value, 'dataFeedElement') }
+        dataFeedElement($this, value) {
+			var property = {
+				comment: "An item within in a data feed. Data feeds may have many elements.",
+				parent: $this,
+				property: "dataFeedElement",
+				release: "11.01",
+				types: [
+					"Thing",
+					"Text",
+					"DataFeedItem"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DataFeedItem(value, property) 
+		}
         get datafeedelement() { return this.dataFeedElement }
         set datafeedelement(value) { this.dataFeedElement = value }
         

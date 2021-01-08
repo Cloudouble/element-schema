@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Askaction extends window.Cloudouble.Element.elements.Communicateaction {
+    class AskAction extends window.Cloudouble.Element.elements.CommunicateAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            question($this, value) { return $this.__helperValidateAttribute($this, value, 'question') }
+        question($this, value) {
+			var property = {
+				comment: "A sub property of object. A question.",
+				parent: $this,
+				property: "question",
+				release: "11.01",
+				types: [
+					"Question"
+				]
+			};
+			return new window.LiveElement.Element.elements.Question(value, property) 
+		}
         
     }
 </script>

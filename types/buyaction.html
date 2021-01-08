@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Buyaction extends window.Cloudouble.Element.elements.Tradeaction {
+    class BuyAction extends window.Cloudouble.Element.elements.TradeAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,46 @@
         }
         
         
-            seller($this, value) { return $this.__helperValidateAttribute($this, value, 'seller') }
+        seller($this, value) {
+			var property = {
+				comment: "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+				parent: $this,
+				property: "seller",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            vendor($this, value) { return $this.__helperValidateAttribute($this, value, 'vendor') }
+        vendor($this, value) {
+			var property = {
+				comment: "'vendor' is an earlier term for 'seller'.",
+				parent: $this,
+				property: "vendor",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            warrantyPromise($this, value) { return $this.__helperValidateAttribute($this, value, 'warrantyPromise') }
+        warrantyPromise($this, value) {
+			var property = {
+				comment: "The warranty promise(s) included in the offer.",
+				parent: $this,
+				property: "warrantyPromise",
+				release: "11.01",
+				types: [
+					"WarrantyPromise"
+				]
+			};
+			return new window.LiveElement.Element.elements.WarrantyPromise(value, property) 
+		}
         get warrantypromise() { return this.warrantyPromise }
         set warrantypromise(value) { this.warrantyPromise = value }
         

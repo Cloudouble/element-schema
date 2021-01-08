@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Map extends window.Cloudouble.Element.elements.Creativework {
+    class Map extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            mapType($this, value) { return $this.__helperValidateAttribute($this, value, 'mapType') }
+        mapType($this, value) {
+			var property = {
+				comment: "Indicates the kind of Map, from the MapCategoryType Enumeration.",
+				parent: $this,
+				property: "mapType",
+				release: "11.01",
+				types: [
+					"MapCategoryType"
+				]
+			};
+			return new window.LiveElement.Element.elements.MapCategoryType(value, property) 
+		}
         get maptype() { return this.mapType }
         set maptype(value) { this.mapType = value }
         

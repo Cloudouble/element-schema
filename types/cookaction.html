@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Cookaction extends window.Cloudouble.Element.elements.Createaction {
+    class CookAction extends window.Cloudouble.Element.elements.CreateAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            foodEstablishment($this, value) { return $this.__helperValidateAttribute($this, value, 'foodEstablishment') }
+        foodEstablishment($this, value) {
+			var property = {
+				comment: "A sub property of location. The specific food establishment where the action occurred.",
+				parent: $this,
+				property: "foodEstablishment",
+				release: "11.01",
+				types: [
+					"FoodEstablishment",
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.FoodEstablishment(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get foodestablishment() { return this.foodEstablishment }
         set foodestablishment(value) { this.foodEstablishment = value }
 
-            foodEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'foodEvent') }
+        foodEvent($this, value) {
+			var property = {
+				comment: "A sub property of location. The specific food event where the action occurred.",
+				parent: $this,
+				property: "foodEvent",
+				release: "11.01",
+				types: [
+					"FoodEvent"
+				]
+			};
+			return new window.LiveElement.Element.elements.FoodEvent(value, property) 
+		}
         get foodevent() { return this.foodEvent }
         set foodevent(value) { this.foodEvent = value }
 
-            recipe($this, value) { return $this.__helperValidateAttribute($this, value, 'recipe') }
+        recipe($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The recipe/instructions used to perform the action.",
+				parent: $this,
+				property: "recipe",
+				release: "11.01",
+				types: [
+					"Recipe"
+				]
+			};
+			return new window.LiveElement.Element.elements.Recipe(value, property) 
+		}
         
     }
 </script>

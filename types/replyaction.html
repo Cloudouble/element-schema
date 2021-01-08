@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Replyaction extends window.Cloudouble.Element.elements.Communicateaction {
+    class ReplyAction extends window.Cloudouble.Element.elements.CommunicateAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            resultComment($this, value) { return $this.__helperValidateAttribute($this, value, 'resultComment') }
+        resultComment($this, value) {
+			var property = {
+				comment: "A sub property of result. The Comment created or sent as a result of this action.",
+				parent: $this,
+				property: "resultComment",
+				release: "11.01",
+				types: [
+					"Comment"
+				]
+			};
+			return new window.LiveElement.Element.elements.Comment(value, property) 
+		}
         get resultcomment() { return this.resultComment }
         set resultcomment(value) { this.resultComment = value }
         

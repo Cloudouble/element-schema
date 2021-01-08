@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Chooseaction extends window.Cloudouble.Element.elements.Assessaction {
+    class ChooseAction extends window.Cloudouble.Element.elements.AssessAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,35 @@
         }
         
         
-            actionOption($this, value) { return $this.__helperValidateAttribute($this, value, 'actionOption') }
+        actionOption($this, value) {
+			var property = {
+				comment: "A sub property of object. The options subject to this action.",
+				parent: $this,
+				property: "actionOption",
+				release: "11.01",
+				types: [
+					"Thing",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get actionoption() { return this.actionOption }
         set actionoption(value) { this.actionOption = value }
 
-            option($this, value) { return $this.__helperValidateAttribute($this, value, 'option') }
+        option($this, value) {
+			var property = {
+				comment: "A sub property of object. The options subject to this action.",
+				parent: $this,
+				property: "option",
+				release: "11.01",
+				types: [
+					"Thing",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

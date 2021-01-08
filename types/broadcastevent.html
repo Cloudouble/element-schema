@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Broadcastevent extends window.Cloudouble.Element.elements.Publicationevent {
+    class BroadcastEvent extends window.Cloudouble.Element.elements.PublicationEvent {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,64 @@
         }
         
         
-            broadcastOfEvent($this, value) { return $this.__helperValidateAttribute($this, value, 'broadcastOfEvent') }
+        broadcastOfEvent($this, value) {
+			var property = {
+				comment: "The event being broadcast such as a sporting event or awards ceremony.",
+				parent: $this,
+				property: "broadcastOfEvent",
+				release: "11.01",
+				types: [
+					"Event"
+				]
+			};
+			return new window.LiveElement.Element.elements.Event(value, property) 
+		}
         get broadcastofevent() { return this.broadcastOfEvent }
         set broadcastofevent(value) { this.broadcastOfEvent = value }
 
-            isLiveBroadcast($this, value) { return $this.__helperValidateAttribute($this, value, 'isLiveBroadcast') }
+        isLiveBroadcast($this, value) {
+			var property = {
+				comment: "True is the broadcast is of a live event.",
+				parent: $this,
+				property: "isLiveBroadcast",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get islivebroadcast() { return this.isLiveBroadcast }
         set islivebroadcast(value) { this.isLiveBroadcast = value }
 
-            subtitleLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'subtitleLanguage') }
+        subtitleLanguage($this, value) {
+			var property = {
+				comment: "Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).",
+				parent: $this,
+				property: "subtitleLanguage",
+				release: "11.01",
+				types: [
+					"Text",
+					"Language"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
 
-            videoFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFormat') }
+        videoFormat($this, value) {
+			var property = {
+				comment: "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+				parent: $this,
+				property: "videoFormat",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get videoformat() { return this.videoFormat }
         set videoformat(value) { this.videoFormat = value }
         

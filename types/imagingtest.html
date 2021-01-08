@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Imagingtest extends window.Cloudouble.Element.elements.Medicaltest {
+    class ImagingTest extends window.Cloudouble.Element.elements.MedicalTest {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            imagingTechnique($this, value) { return $this.__helperValidateAttribute($this, value, 'imagingTechnique') }
+        imagingTechnique($this, value) {
+			var property = {
+				comment: "Imaging technique used.",
+				parent: $this,
+				property: "imagingTechnique",
+				release: "11.01",
+				types: [
+					"MedicalImagingTechnique"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalImagingTechnique(value, property) 
+		}
         get imagingtechnique() { return this.imagingTechnique }
         set imagingtechnique(value) { this.imagingTechnique = value }
         

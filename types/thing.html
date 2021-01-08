@@ -33,51 +33,179 @@
         
         
         additionalType($this, value) {
-            var propertyMap = {
-                additionalType: {
-                    comment: 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the \'typeof\' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.',
-                    release: '11.01',
-                    types: ['URL']
-                }
-            }
-            return new window.Cloudouble.Element.elements.URL(value, $this, propertyMap) 
-        }
+			var property = {
+				comment: "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+				parent: $this,
+				property: "additionalType",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get additionaltype() { return this.additionalType }
         set additionaltype(value) { this.additionalType = value }
 
-            alternateName($this, value) { return $this.__helperValidateAttribute($this, value, 'alternateName') }
+        alternateName($this, value) {
+			var property = {
+				comment: "An alias for the item.",
+				parent: $this,
+				property: "alternateName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get alternatename() { return this.alternateName }
         set alternatename(value) { this.alternateName = value }
 
-            description($this, value) { return $this.__helperValidateAttribute($this, value, 'description') }
+        description($this, value) {
+			var property = {
+				comment: "A description of the item.",
+				parent: $this,
+				property: "description",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            disambiguatingDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'disambiguatingDescription') }
+        disambiguatingDescription($this, value) {
+			var property = {
+				comment: "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+				parent: $this,
+				property: "disambiguatingDescription",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get disambiguatingdescription() { return this.disambiguatingDescription }
         set disambiguatingdescription(value) { this.disambiguatingDescription = value }
 
-            identifier($this, value) { return $this.__helperValidateAttribute($this, value, 'identifier') }
+        identifier($this, value) {
+			var property = {
+				comment: "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        ",
+				parent: $this,
+				property: "identifier",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL",
+					"PropertyValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.PropertyValue(value, property) 
+		}
 
-            image($this, value) { return $this.__helperValidateAttribute($this, value, 'image') }
+        image($this, value) {
+			var property = {
+				comment: "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
+				parent: $this,
+				property: "image",
+				release: "11.01",
+				types: [
+					"ImageObject",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            mainEntityOfPage($this, value) { return $this.__helperValidateAttribute($this, value, 'mainEntityOfPage') }
+        mainEntityOfPage($this, value) {
+			var property = {
+				comment: "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.",
+				parent: $this,
+				property: "mainEntityOfPage",
+				release: "11.01",
+				types: [
+					"URL",
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get mainentityofpage() { return this.mainEntityOfPage }
         set mainentityofpage(value) { this.mainEntityOfPage = value }
 
-            name($this, value) { return $this.__helperValidateAttribute($this, value, 'name') }
+        name($this, value) {
+			var property = {
+				comment: "The name of the item.",
+				parent: $this,
+				property: "name",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            potentialAction($this, value) { return $this.__helperValidateAttribute($this, value, 'potentialAction') }
+        potentialAction($this, value) {
+			var property = {
+				comment: "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+				parent: $this,
+				property: "potentialAction",
+				release: "11.01",
+				types: [
+					"Action"
+				]
+			};
+			return new window.LiveElement.Element.elements.Action(value, property) 
+		}
         get potentialaction() { return this.potentialAction }
         set potentialaction(value) { this.potentialAction = value }
 
-            sameAs($this, value) { return $this.__helperValidateAttribute($this, value, 'sameAs') }
+        sameAs($this, value) {
+			var property = {
+				comment: "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+				parent: $this,
+				property: "sameAs",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get sameas() { return this.sameAs }
         set sameas(value) { this.sameAs = value }
 
-            subjectOf($this, value) { return $this.__helperValidateAttribute($this, value, 'subjectOf') }
+        subjectOf($this, value) {
+			var property = {
+				comment: "A CreativeWork or Event about this Thing.",
+				parent: $this,
+				property: "subjectOf",
+				release: "11.01",
+				types: [
+					"CreativeWork",
+					"Event"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.Event(value, property) 
+		}
         get subjectof() { return this.subjectOf }
         set subjectof(value) { this.subjectOf = value }
 
-            url($this, value) { return $this.__helperValidateAttribute($this, value, 'url') }
+        url($this, value) {
+			var property = {
+				comment: "URL of the item.",
+				parent: $this,
+				property: "url",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         
     }
 </script>

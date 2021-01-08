@@ -8,17 +8,14 @@
 </template>
 <script>
     /* global */
-    class Statisticalpopulation extends window.Cloudouble.Element.elements.Intangible {
+    class StatisticalPopulation extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:StatisticalPopulation'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
-The properties [[numConstraints]] and [[constrainingProperties]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
-population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.
-  '
+        static _rdfs_comment = 'A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people. The properties [[numConstraints]] and [[constrainingProperties]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.   '
         static _rdfs_label = 'StatisticalPopulation'
 
         static get observedAttributes() {
@@ -35,15 +32,48 @@ population, and does not imply that the population consists of people. For examp
         }
         
         
-            constrainingProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'constrainingProperty') }
+        constrainingProperty($this, value) {
+			var property = {
+				comment: "Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities\n  corresponding to an indicated type (via [[populationType]]).",
+				parent: $this,
+				property: "constrainingProperty",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get constrainingproperty() { return this.constrainingProperty }
         set constrainingproperty(value) { this.constrainingProperty = value }
 
-            numConstraints($this, value) { return $this.__helperValidateAttribute($this, value, 'numConstraints') }
+        numConstraints($this, value) {
+			var property = {
+				comment: "Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].",
+				parent: $this,
+				property: "numConstraints",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numconstraints() { return this.numConstraints }
         set numconstraints(value) { this.numConstraints = value }
 
-            populationType($this, value) { return $this.__helperValidateAttribute($this, value, 'populationType') }
+        populationType($this, value) {
+			var property = {
+				comment: "Indicates the populationType common to all members of a [[StatisticalPopulation]].",
+				parent: $this,
+				property: "populationType",
+				release: "11.01",
+				types: [
+					"Class"
+				]
+			};
+			return new window.LiveElement.Element.elements.Class(value, property) 
+		}
         get populationtype() { return this.populationType }
         set populationtype(value) { this.populationType = value }
         

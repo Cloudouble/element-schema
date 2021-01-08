@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Comment extends window.Cloudouble.Element.elements.Creativework {
+    class Comment extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            downvoteCount($this, value) { return $this.__helperValidateAttribute($this, value, 'downvoteCount') }
+        downvoteCount($this, value) {
+			var property = {
+				comment: "The number of downvotes this question, answer or comment has received from the community.",
+				parent: $this,
+				property: "downvoteCount",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get downvotecount() { return this.downvoteCount }
         set downvotecount(value) { this.downvoteCount = value }
 
-            parentItem($this, value) { return $this.__helperValidateAttribute($this, value, 'parentItem') }
+        parentItem($this, value) {
+			var property = {
+				comment: "The parent of a question, answer or item in general.",
+				parent: $this,
+				property: "parentItem",
+				release: "11.01",
+				types: [
+					"Comment"
+				]
+			};
+			return new window.LiveElement.Element.elements.Comment(value, property) 
+		}
         get parentitem() { return this.parentItem }
         set parentitem(value) { this.parentItem = value }
 
-            upvoteCount($this, value) { return $this.__helperValidateAttribute($this, value, 'upvoteCount') }
+        upvoteCount($this, value) {
+			var property = {
+				comment: "The number of upvotes this question, answer or comment has received from the community.",
+				parent: $this,
+				property: "upvoteCount",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get upvotecount() { return this.upvoteCount }
         set upvotecount(value) { this.upvoteCount = value }
         

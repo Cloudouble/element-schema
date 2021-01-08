@@ -32,121 +32,466 @@
         }
         
         
-            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        activeIngredient($this, value) {
+			var property = {
+				comment: "An active ingredient, typically chemical compounds and/or biologic substances.",
+				parent: $this,
+				property: "activeIngredient",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
 
-            administrationRoute($this, value) { return $this.__helperValidateAttribute($this, value, 'administrationRoute') }
+        administrationRoute($this, value) {
+			var property = {
+				comment: "A route by which this drug may be administered, e.g. 'oral'.",
+				parent: $this,
+				property: "administrationRoute",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get administrationroute() { return this.administrationRoute }
         set administrationroute(value) { this.administrationRoute = value }
 
-            alcoholWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'alcoholWarning') }
+        alcoholWarning($this, value) {
+			var property = {
+				comment: "Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.",
+				parent: $this,
+				property: "alcoholWarning",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get alcoholwarning() { return this.alcoholWarning }
         set alcoholwarning(value) { this.alcoholWarning = value }
 
-            availableStrength($this, value) { return $this.__helperValidateAttribute($this, value, 'availableStrength') }
+        availableStrength($this, value) {
+			var property = {
+				comment: "An available dosage strength for the drug.",
+				parent: $this,
+				property: "availableStrength",
+				release: "11.01",
+				types: [
+					"DrugStrength"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugStrength(value, property) 
+		}
         get availablestrength() { return this.availableStrength }
         set availablestrength(value) { this.availableStrength = value }
 
-            breastfeedingWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'breastfeedingWarning') }
+        breastfeedingWarning($this, value) {
+			var property = {
+				comment: "Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.",
+				parent: $this,
+				property: "breastfeedingWarning",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get breastfeedingwarning() { return this.breastfeedingWarning }
         set breastfeedingwarning(value) { this.breastfeedingWarning = value }
 
-            clincalPharmacology($this, value) { return $this.__helperValidateAttribute($this, value, 'clincalPharmacology') }
+        clincalPharmacology($this, value) {
+			var property = {
+				comment: "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
+				parent: $this,
+				property: "clincalPharmacology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get clincalpharmacology() { return this.clincalPharmacology }
         set clincalpharmacology(value) { this.clincalPharmacology = value }
 
-            clinicalPharmacology($this, value) { return $this.__helperValidateAttribute($this, value, 'clinicalPharmacology') }
+        clinicalPharmacology($this, value) {
+			var property = {
+				comment: "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
+				parent: $this,
+				property: "clinicalPharmacology",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get clinicalpharmacology() { return this.clinicalPharmacology }
         set clinicalpharmacology(value) { this.clinicalPharmacology = value }
 
-            dosageForm($this, value) { return $this.__helperValidateAttribute($this, value, 'dosageForm') }
+        dosageForm($this, value) {
+			var property = {
+				comment: "A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.",
+				parent: $this,
+				property: "dosageForm",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get dosageform() { return this.dosageForm }
         set dosageform(value) { this.dosageForm = value }
 
-            doseSchedule($this, value) { return $this.__helperValidateAttribute($this, value, 'doseSchedule') }
+        doseSchedule($this, value) {
+			var property = {
+				comment: "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
+				parent: $this,
+				property: "doseSchedule",
+				release: "11.01",
+				types: [
+					"DoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.DoseSchedule(value, property) 
+		}
         get doseschedule() { return this.doseSchedule }
         set doseschedule(value) { this.doseSchedule = value }
 
-            drugClass($this, value) { return $this.__helperValidateAttribute($this, value, 'drugClass') }
+        drugClass($this, value) {
+			var property = {
+				comment: "The class of drug this belongs to (e.g., statins).",
+				parent: $this,
+				property: "drugClass",
+				release: "11.01",
+				types: [
+					"DrugClass"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugClass(value, property) 
+		}
         get drugclass() { return this.drugClass }
         set drugclass(value) { this.drugClass = value }
 
-            drugUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'drugUnit') }
+        drugUnit($this, value) {
+			var property = {
+				comment: "The unit in which the drug is measured, e.g. '5 mg tablet'.",
+				parent: $this,
+				property: "drugUnit",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get drugunit() { return this.drugUnit }
         set drugunit(value) { this.drugUnit = value }
 
-            foodWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'foodWarning') }
+        foodWarning($this, value) {
+			var property = {
+				comment: "Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.",
+				parent: $this,
+				property: "foodWarning",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get foodwarning() { return this.foodWarning }
         set foodwarning(value) { this.foodWarning = value }
 
-            includedInHealthInsurancePlan($this, value) { return $this.__helperValidateAttribute($this, value, 'includedInHealthInsurancePlan') }
+        includedInHealthInsurancePlan($this, value) {
+			var property = {
+				comment: "The insurance plans that cover this drug.",
+				parent: $this,
+				property: "includedInHealthInsurancePlan",
+				release: "11.01",
+				types: [
+					"HealthInsurancePlan"
+				]
+			};
+			return new window.LiveElement.Element.elements.HealthInsurancePlan(value, property) 
+		}
         get includedinhealthinsuranceplan() { return this.includedInHealthInsurancePlan }
         set includedinhealthinsuranceplan(value) { this.includedInHealthInsurancePlan = value }
 
-            interactingDrug($this, value) { return $this.__helperValidateAttribute($this, value, 'interactingDrug') }
+        interactingDrug($this, value) {
+			var property = {
+				comment: "Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.",
+				parent: $this,
+				property: "interactingDrug",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
         get interactingdrug() { return this.interactingDrug }
         set interactingdrug(value) { this.interactingDrug = value }
 
-            isAvailableGenerically($this, value) { return $this.__helperValidateAttribute($this, value, 'isAvailableGenerically') }
+        isAvailableGenerically($this, value) {
+			var property = {
+				comment: "True if the drug is available in a generic form (regardless of name).",
+				parent: $this,
+				property: "isAvailableGenerically",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isavailablegenerically() { return this.isAvailableGenerically }
         set isavailablegenerically(value) { this.isAvailableGenerically = value }
 
-            isProprietary($this, value) { return $this.__helperValidateAttribute($this, value, 'isProprietary') }
+        isProprietary($this, value) {
+			var property = {
+				comment: "True if this item's name is a proprietary/brand name (vs. generic name).",
+				parent: $this,
+				property: "isProprietary",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isproprietary() { return this.isProprietary }
         set isproprietary(value) { this.isProprietary = value }
 
-            labelDetails($this, value) { return $this.__helperValidateAttribute($this, value, 'labelDetails') }
+        labelDetails($this, value) {
+			var property = {
+				comment: "Link to the drug's label details.",
+				parent: $this,
+				property: "labelDetails",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get labeldetails() { return this.labelDetails }
         set labeldetails(value) { this.labelDetails = value }
 
-            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        legalStatus($this, value) {
+			var property = {
+				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+				parent: $this,
+				property: "legalStatus",
+				release: "11.01",
+				types: [
+					"DrugLegalStatus",
+					"MedicalEnumeration",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugLegalStatus(value, property) || new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
 
-            manufacturer($this, value) { return $this.__helperValidateAttribute($this, value, 'manufacturer') }
+        manufacturer($this, value) {
+			var property = {
+				comment: "The manufacturer of the product.",
+				parent: $this,
+				property: "manufacturer",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        maximumIntake($this, value) {
+			var property = {
+				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+				parent: $this,
+				property: "maximumIntake",
+				release: "11.01",
+				types: [
+					"MaximumDoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.MaximumDoseSchedule(value, property) 
+		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
 
-            mechanismOfAction($this, value) { return $this.__helperValidateAttribute($this, value, 'mechanismOfAction') }
+        mechanismOfAction($this, value) {
+			var property = {
+				comment: "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
+				parent: $this,
+				property: "mechanismOfAction",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get mechanismofaction() { return this.mechanismOfAction }
         set mechanismofaction(value) { this.mechanismOfAction = value }
 
-            nonProprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'nonProprietaryName') }
+        nonProprietaryName($this, value) {
+			var property = {
+				comment: "The generic name of this drug or supplement.",
+				parent: $this,
+				property: "nonProprietaryName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get nonproprietaryname() { return this.nonProprietaryName }
         set nonproprietaryname(value) { this.nonProprietaryName = value }
 
-            overdosage($this, value) { return $this.__helperValidateAttribute($this, value, 'overdosage') }
+        overdosage($this, value) {
+			var property = {
+				comment: "Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.",
+				parent: $this,
+				property: "overdosage",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            pregnancyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'pregnancyCategory') }
+        pregnancyCategory($this, value) {
+			var property = {
+				comment: "Pregnancy category of this drug.",
+				parent: $this,
+				property: "pregnancyCategory",
+				release: "11.01",
+				types: [
+					"DrugPregnancyCategory"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugPregnancyCategory(value, property) 
+		}
         get pregnancycategory() { return this.pregnancyCategory }
         set pregnancycategory(value) { this.pregnancyCategory = value }
 
-            pregnancyWarning($this, value) { return $this.__helperValidateAttribute($this, value, 'pregnancyWarning') }
+        pregnancyWarning($this, value) {
+			var property = {
+				comment: "Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.",
+				parent: $this,
+				property: "pregnancyWarning",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get pregnancywarning() { return this.pregnancyWarning }
         set pregnancywarning(value) { this.pregnancyWarning = value }
 
-            prescribingInfo($this, value) { return $this.__helperValidateAttribute($this, value, 'prescribingInfo') }
+        prescribingInfo($this, value) {
+			var property = {
+				comment: "Link to prescribing information for the drug.",
+				parent: $this,
+				property: "prescribingInfo",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get prescribinginfo() { return this.prescribingInfo }
         set prescribinginfo(value) { this.prescribingInfo = value }
 
-            prescriptionStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'prescriptionStatus') }
+        prescriptionStatus($this, value) {
+			var property = {
+				comment: "Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.",
+				parent: $this,
+				property: "prescriptionStatus",
+				release: "11.01",
+				types: [
+					"DrugPrescriptionStatus",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugPrescriptionStatus(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get prescriptionstatus() { return this.prescriptionStatus }
         set prescriptionstatus(value) { this.prescriptionStatus = value }
 
-            proprietaryName($this, value) { return $this.__helperValidateAttribute($this, value, 'proprietaryName') }
+        proprietaryName($this, value) {
+			var property = {
+				comment: "Proprietary name given to the diet plan, typically by its originator or creator.",
+				parent: $this,
+				property: "proprietaryName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get proprietaryname() { return this.proprietaryName }
         set proprietaryname(value) { this.proprietaryName = value }
 
-            relatedDrug($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedDrug') }
+        relatedDrug($this, value) {
+			var property = {
+				comment: "Any other drug related to this one, for example commonly-prescribed alternatives.",
+				parent: $this,
+				property: "relatedDrug",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
         get relateddrug() { return this.relatedDrug }
         set relateddrug(value) { this.relatedDrug = value }
 
-            rxcui($this, value) { return $this.__helperValidateAttribute($this, value, 'rxcui') }
+        rxcui($this, value) {
+			var property = {
+				comment: "The RxCUI drug identifier from RXNORM.",
+				parent: $this,
+				property: "rxcui",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            warning($this, value) { return $this.__helperValidateAttribute($this, value, 'warning') }
+        warning($this, value) {
+			var property = {
+				comment: "Any FDA or other warnings about the drug (text or URL).",
+				parent: $this,
+				property: "warning",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

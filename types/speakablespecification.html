@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Speakablespecification extends window.Cloudouble.Element.elements.Intangible {
+    class SpeakableSpecification extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            cssSelector($this, value) { return $this.__helperValidateAttribute($this, value, 'cssSelector') }
+        cssSelector($this, value) {
+			var property = {
+				comment: "A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+				parent: $this,
+				property: "cssSelector",
+				release: "11.01",
+				types: [
+					"CssSelectorType"
+				]
+			};
+			return new window.LiveElement.Element.elements.CssSelectorType(value, property) 
+		}
         get cssselector() { return this.cssSelector }
         set cssselector(value) { this.cssSelector = value }
 
-            xpath($this, value) { return $this.__helperValidateAttribute($this, value, 'xpath') }
+        xpath($this, value) {
+			var property = {
+				comment: "An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+				parent: $this,
+				property: "xpath",
+				release: "11.01",
+				types: [
+					"XPathType"
+				]
+			};
+			return new window.LiveElement.Element.elements.XPathType(value, property) 
+		}
         
     }
 </script>

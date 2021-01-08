@@ -32,11 +32,33 @@
         }
         
         
-            audienceType($this, value) { return $this.__helperValidateAttribute($this, value, 'audienceType') }
+        audienceType($this, value) {
+			var property = {
+				comment: "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
+				parent: $this,
+				property: "audienceType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get audiencetype() { return this.audienceType }
         set audiencetype(value) { this.audienceType = value }
 
-            geographicArea($this, value) { return $this.__helperValidateAttribute($this, value, 'geographicArea') }
+        geographicArea($this, value) {
+			var property = {
+				comment: "The geographic area associated with the audience.",
+				parent: $this,
+				property: "geographicArea",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get geographicarea() { return this.geographicArea }
         set geographicarea(value) { this.geographicArea = value }
         

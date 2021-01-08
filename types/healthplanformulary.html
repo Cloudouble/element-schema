@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Healthplanformulary extends window.Cloudouble.Element.elements.Intangible {
+    class HealthPlanFormulary extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            healthPlanCostSharing($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCostSharing') }
+        healthPlanCostSharing($this, value) {
+			var property = {
+				comment: "Whether The costs to the patient for services under this network or formulary.",
+				parent: $this,
+				property: "healthPlanCostSharing",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get healthplancostsharing() { return this.healthPlanCostSharing }
         set healthplancostsharing(value) { this.healthPlanCostSharing = value }
 
-            healthPlanDrugTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanDrugTier') }
+        healthPlanDrugTier($this, value) {
+			var property = {
+				comment: "The tier(s) of drugs offered by this formulary or insurance plan.",
+				parent: $this,
+				property: "healthPlanDrugTier",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplandrugtier() { return this.healthPlanDrugTier }
         set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
-            offersPrescriptionByMail($this, value) { return $this.__helperValidateAttribute($this, value, 'offersPrescriptionByMail') }
+        offersPrescriptionByMail($this, value) {
+			var property = {
+				comment: "Whether prescriptions can be delivered by mail.",
+				parent: $this,
+				property: "offersPrescriptionByMail",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get offersprescriptionbymail() { return this.offersPrescriptionByMail }
         set offersprescriptionbymail(value) { this.offersPrescriptionByMail = value }
         

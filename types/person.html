@@ -32,197 +32,897 @@
         }
         
         
-            additionalName($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalName') }
+        additionalName($this, value) {
+			var property = {
+				comment: "An additional name for a Person, can be used for a middle name.",
+				parent: $this,
+				property: "additionalName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get additionalname() { return this.additionalName }
         set additionalname(value) { this.additionalName = value }
 
-            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+        address($this, value) {
+			var property = {
+				comment: "Physical address of the item.",
+				parent: $this,
+				property: "address",
+				release: "11.01",
+				types: [
+					"Text",
+					"PostalAddress"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+		}
 
-            affiliation($this, value) { return $this.__helperValidateAttribute($this, value, 'affiliation') }
+        affiliation($this, value) {
+			var property = {
+				comment: "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+				parent: $this,
+				property: "affiliation",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            alumniOf($this, value) { return $this.__helperValidateAttribute($this, value, 'alumniOf') }
+        alumniOf($this, value) {
+			var property = {
+				comment: "An organization that the person is an alumni of.",
+				parent: $this,
+				property: "alumniOf",
+				release: "11.01",
+				types: [
+					"EducationalOrganization",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.EducationalOrganization(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get alumniof() { return this.alumniOf }
         set alumniof(value) { this.alumniOf = value }
 
-            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+        award($this, value) {
+			var property = {
+				comment: "An award won by or for this item.",
+				parent: $this,
+				property: "award",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            awards($this, value) { return $this.__helperValidateAttribute($this, value, 'awards') }
+        awards($this, value) {
+			var property = {
+				comment: "Awards won by or for this item.",
+				parent: $this,
+				property: "awards",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            birthDate($this, value) { return $this.__helperValidateAttribute($this, value, 'birthDate') }
+        birthDate($this, value) {
+			var property = {
+				comment: "Date of birth.",
+				parent: $this,
+				property: "birthDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get birthdate() { return this.birthDate }
         set birthdate(value) { this.birthDate = value }
 
-            birthPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'birthPlace') }
+        birthPlace($this, value) {
+			var property = {
+				comment: "The place where the person was born.",
+				parent: $this,
+				property: "birthPlace",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get birthplace() { return this.birthPlace }
         set birthplace(value) { this.birthPlace = value }
 
-            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+        brand($this, value) {
+			var property = {
+				comment: "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+				parent: $this,
+				property: "brand",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Brand"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Brand(value, property) 
+		}
 
-            callSign($this, value) { return $this.__helperValidateAttribute($this, value, 'callSign') }
+        callSign($this, value) {
+			var property = {
+				comment: "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+				parent: $this,
+				property: "callSign",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
 
-            children($this, value) { return $this.__helperValidateAttribute($this, value, 'children') }
+        children($this, value) {
+			var property = {
+				comment: "A child of the person.",
+				parent: $this,
+				property: "children",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            colleague($this, value) { return $this.__helperValidateAttribute($this, value, 'colleague') }
+        colleague($this, value) {
+			var property = {
+				comment: "A colleague of the person.",
+				parent: $this,
+				property: "colleague",
+				release: "11.01",
+				types: [
+					"URL",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            colleagues($this, value) { return $this.__helperValidateAttribute($this, value, 'colleagues') }
+        colleagues($this, value) {
+			var property = {
+				comment: "A colleague of the person.",
+				parent: $this,
+				property: "colleagues",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            contactPoint($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoint') }
+        contactPoint($this, value) {
+			var property = {
+				comment: "A contact point for a person or organization.",
+				parent: $this,
+				property: "contactPoint",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
 
-            contactPoints($this, value) { return $this.__helperValidateAttribute($this, value, 'contactPoints') }
+        contactPoints($this, value) {
+			var property = {
+				comment: "A contact point for a person or organization.",
+				parent: $this,
+				property: "contactPoints",
+				release: "11.01",
+				types: [
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get contactpoints() { return this.contactPoints }
         set contactpoints(value) { this.contactPoints = value }
 
-            deathDate($this, value) { return $this.__helperValidateAttribute($this, value, 'deathDate') }
+        deathDate($this, value) {
+			var property = {
+				comment: "Date of death.",
+				parent: $this,
+				property: "deathDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get deathdate() { return this.deathDate }
         set deathdate(value) { this.deathDate = value }
 
-            deathPlace($this, value) { return $this.__helperValidateAttribute($this, value, 'deathPlace') }
+        deathPlace($this, value) {
+			var property = {
+				comment: "The place where the person died.",
+				parent: $this,
+				property: "deathPlace",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get deathplace() { return this.deathPlace }
         set deathplace(value) { this.deathPlace = value }
 
-            duns($this, value) { return $this.__helperValidateAttribute($this, value, 'duns') }
+        duns($this, value) {
+			var property = {
+				comment: "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+				parent: $this,
+				property: "duns",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            email($this, value) { return $this.__helperValidateAttribute($this, value, 'email') }
+        email($this, value) {
+			var property = {
+				comment: "Email address.",
+				parent: $this,
+				property: "email",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            familyName($this, value) { return $this.__helperValidateAttribute($this, value, 'familyName') }
+        familyName($this, value) {
+			var property = {
+				comment: "Family name. In the U.S., the last name of a Person.",
+				parent: $this,
+				property: "familyName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get familyname() { return this.familyName }
         set familyname(value) { this.familyName = value }
 
-            faxNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'faxNumber') }
+        faxNumber($this, value) {
+			var property = {
+				comment: "The fax number.",
+				parent: $this,
+				property: "faxNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
 
-            follows($this, value) { return $this.__helperValidateAttribute($this, value, 'follows') }
+        follows($this, value) {
+			var property = {
+				comment: "The most generic uni-directional social relation.",
+				parent: $this,
+				property: "follows",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+        funder($this, value) {
+			var property = {
+				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+				parent: $this,
+				property: "funder",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            gender($this, value) { return $this.__helperValidateAttribute($this, value, 'gender') }
+        gender($this, value) {
+			var property = {
+				comment: "Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of \"Mixed\".",
+				parent: $this,
+				property: "gender",
+				release: "11.01",
+				types: [
+					"Text",
+					"GenderType"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.GenderType(value, property) 
+		}
 
-            givenName($this, value) { return $this.__helperValidateAttribute($this, value, 'givenName') }
+        givenName($this, value) {
+			var property = {
+				comment: "Given name. In the U.S., the first name of a Person.",
+				parent: $this,
+				property: "givenName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get givenname() { return this.givenName }
         set givenname(value) { this.givenName = value }
 
-            globalLocationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'globalLocationNumber') }
+        globalLocationNumber($this, value) {
+			var property = {
+				comment: "The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+				parent: $this,
+				property: "globalLocationNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get globallocationnumber() { return this.globalLocationNumber }
         set globallocationnumber(value) { this.globalLocationNumber = value }
 
-            hasCredential($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCredential') }
+        hasCredential($this, value) {
+			var property = {
+				comment: "A credential awarded to the Person or Organization.",
+				parent: $this,
+				property: "hasCredential",
+				release: "11.01",
+				types: [
+					"EducationalOccupationalCredential"
+				]
+			};
+			return new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) 
+		}
         get hascredential() { return this.hasCredential }
         set hascredential(value) { this.hasCredential = value }
 
-            hasOccupation($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOccupation') }
+        hasOccupation($this, value) {
+			var property = {
+				comment: "The Person's occupation. For past professions, use Role for expressing dates.",
+				parent: $this,
+				property: "hasOccupation",
+				release: "11.01",
+				types: [
+					"Occupation"
+				]
+			};
+			return new window.LiveElement.Element.elements.Occupation(value, property) 
+		}
         get hasoccupation() { return this.hasOccupation }
         set hasoccupation(value) { this.hasOccupation = value }
 
-            hasOfferCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOfferCatalog') }
+        hasOfferCatalog($this, value) {
+			var property = {
+				comment: "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+				parent: $this,
+				property: "hasOfferCatalog",
+				release: "11.01",
+				types: [
+					"OfferCatalog"
+				]
+			};
+			return new window.LiveElement.Element.elements.OfferCatalog(value, property) 
+		}
         get hasoffercatalog() { return this.hasOfferCatalog }
         set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
-            hasPOS($this, value) { return $this.__helperValidateAttribute($this, value, 'hasPOS') }
+        hasPOS($this, value) {
+			var property = {
+				comment: "Points-of-Sales operated by the organization or person.",
+				parent: $this,
+				property: "hasPOS",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get haspos() { return this.hasPOS }
         set haspos(value) { this.hasPOS = value }
 
-            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+        height($this, value) {
+			var property = {
+				comment: "The height of the item.",
+				parent: $this,
+				property: "height",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
 
-            homeLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'homeLocation') }
+        homeLocation($this, value) {
+			var property = {
+				comment: "A contact location for a person's residence.",
+				parent: $this,
+				property: "homeLocation",
+				release: "11.01",
+				types: [
+					"ContactPoint",
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get homelocation() { return this.homeLocation }
         set homelocation(value) { this.homeLocation = value }
 
-            honorificPrefix($this, value) { return $this.__helperValidateAttribute($this, value, 'honorificPrefix') }
+        honorificPrefix($this, value) {
+			var property = {
+				comment: "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+				parent: $this,
+				property: "honorificPrefix",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get honorificprefix() { return this.honorificPrefix }
         set honorificprefix(value) { this.honorificPrefix = value }
 
-            honorificSuffix($this, value) { return $this.__helperValidateAttribute($this, value, 'honorificSuffix') }
+        honorificSuffix($this, value) {
+			var property = {
+				comment: "An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.",
+				parent: $this,
+				property: "honorificSuffix",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get honorificsuffix() { return this.honorificSuffix }
         set honorificsuffix(value) { this.honorificSuffix = value }
 
-            interactionStatistic($this, value) { return $this.__helperValidateAttribute($this, value, 'interactionStatistic') }
+        interactionStatistic($this, value) {
+			var property = {
+				comment: "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
+				parent: $this,
+				property: "interactionStatistic",
+				release: "11.01",
+				types: [
+					"InteractionCounter"
+				]
+			};
+			return new window.LiveElement.Element.elements.InteractionCounter(value, property) 
+		}
         get interactionstatistic() { return this.interactionStatistic }
         set interactionstatistic(value) { this.interactionStatistic = value }
 
-            isicV4($this, value) { return $this.__helperValidateAttribute($this, value, 'isicV4') }
+        isicV4($this, value) {
+			var property = {
+				comment: "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+				parent: $this,
+				property: "isicV4",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get isicv4() { return this.isicV4 }
         set isicv4(value) { this.isicV4 = value }
 
-            jobTitle($this, value) { return $this.__helperValidateAttribute($this, value, 'jobTitle') }
+        jobTitle($this, value) {
+			var property = {
+				comment: "The job title of the person (for example, Financial Manager).",
+				parent: $this,
+				property: "jobTitle",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get jobtitle() { return this.jobTitle }
         set jobtitle(value) { this.jobTitle = value }
 
-            knows($this, value) { return $this.__helperValidateAttribute($this, value, 'knows') }
+        knows($this, value) {
+			var property = {
+				comment: "The most generic bi-directional social/work relation.",
+				parent: $this,
+				property: "knows",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            knowsAbout($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsAbout') }
+        knowsAbout($this, value) {
+			var property = {
+				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
+				parent: $this,
+				property: "knowsAbout",
+				release: "11.01",
+				types: [
+					"Thing",
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get knowsabout() { return this.knowsAbout }
         set knowsabout(value) { this.knowsAbout = value }
 
-            knowsLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'knowsLanguage') }
+        knowsLanguage($this, value) {
+			var property = {
+				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).",
+				parent: $this,
+				property: "knowsLanguage",
+				release: "11.01",
+				types: [
+					"Language",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get knowslanguage() { return this.knowsLanguage }
         set knowslanguage(value) { this.knowsLanguage = value }
 
-            makesOffer($this, value) { return $this.__helperValidateAttribute($this, value, 'makesOffer') }
+        makesOffer($this, value) {
+			var property = {
+				comment: "A pointer to products or services offered by the organization or person.",
+				parent: $this,
+				property: "makesOffer",
+				release: "11.01",
+				types: [
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Offer(value, property) 
+		}
         get makesoffer() { return this.makesOffer }
         set makesoffer(value) { this.makesOffer = value }
 
-            memberOf($this, value) { return $this.__helperValidateAttribute($this, value, 'memberOf') }
+        memberOf($this, value) {
+			var property = {
+				comment: "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
+				parent: $this,
+				property: "memberOf",
+				release: "11.01",
+				types: [
+					"Organization",
+					"ProgramMembership"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.ProgramMembership(value, property) 
+		}
         get memberof() { return this.memberOf }
         set memberof(value) { this.memberOf = value }
 
-            naics($this, value) { return $this.__helperValidateAttribute($this, value, 'naics') }
+        naics($this, value) {
+			var property = {
+				comment: "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+				parent: $this,
+				property: "naics",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            nationality($this, value) { return $this.__helperValidateAttribute($this, value, 'nationality') }
+        nationality($this, value) {
+			var property = {
+				comment: "Nationality of the person.",
+				parent: $this,
+				property: "nationality",
+				release: "11.01",
+				types: [
+					"Country"
+				]
+			};
+			return new window.LiveElement.Element.elements.Country(value, property) 
+		}
 
-            netWorth($this, value) { return $this.__helperValidateAttribute($this, value, 'netWorth') }
+        netWorth($this, value) {
+			var property = {
+				comment: "The total financial value of the person as calculated by subtracting assets from liabilities.",
+				parent: $this,
+				property: "netWorth",
+				release: "11.01",
+				types: [
+					"MonetaryAmount",
+					"PriceSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) || new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+		}
         get networth() { return this.netWorth }
         set networth(value) { this.netWorth = value }
 
-            owns($this, value) { return $this.__helperValidateAttribute($this, value, 'owns') }
+        owns($this, value) {
+			var property = {
+				comment: "Products owned by the organization or person.",
+				parent: $this,
+				property: "owns",
+				release: "11.01",
+				types: [
+					"OwnershipInfo",
+					"Product"
+				]
+			};
+			return new window.LiveElement.Element.elements.OwnershipInfo(value, property) || new window.LiveElement.Element.elements.Product(value, property) 
+		}
 
-            parent($this, value) { return $this.__helperValidateAttribute($this, value, 'parent') }
+        parent($this, value) {
+			var property = {
+				comment: "A parent of this person.",
+				parent: $this,
+				property: "parent",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            parents($this, value) { return $this.__helperValidateAttribute($this, value, 'parents') }
+        parents($this, value) {
+			var property = {
+				comment: "A parents of the person.",
+				parent: $this,
+				property: "parents",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            performerIn($this, value) { return $this.__helperValidateAttribute($this, value, 'performerIn') }
+        performerIn($this, value) {
+			var property = {
+				comment: "Event that this person is a performer or participant in.",
+				parent: $this,
+				property: "performerIn",
+				release: "11.01",
+				types: [
+					"Event"
+				]
+			};
+			return new window.LiveElement.Element.elements.Event(value, property) 
+		}
         get performerin() { return this.performerIn }
         set performerin(value) { this.performerIn = value }
 
-            publishingPrinciples($this, value) { return $this.__helperValidateAttribute($this, value, 'publishingPrinciples') }
+        publishingPrinciples($this, value) {
+			var property = {
+				comment: "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
+				parent: $this,
+				property: "publishingPrinciples",
+				release: "11.01",
+				types: [
+					"URL",
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get publishingprinciples() { return this.publishingPrinciples }
         set publishingprinciples(value) { this.publishingPrinciples = value }
 
-            relatedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'relatedTo') }
+        relatedTo($this, value) {
+			var property = {
+				comment: "The most generic familial relation.",
+				parent: $this,
+				property: "relatedTo",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get relatedto() { return this.relatedTo }
         set relatedto(value) { this.relatedTo = value }
 
-            seeks($this, value) { return $this.__helperValidateAttribute($this, value, 'seeks') }
+        seeks($this, value) {
+			var property = {
+				comment: "A pointer to products or services sought by the organization or person (demand).",
+				parent: $this,
+				property: "seeks",
+				release: "11.01",
+				types: [
+					"Demand"
+				]
+			};
+			return new window.LiveElement.Element.elements.Demand(value, property) 
+		}
 
-            sibling($this, value) { return $this.__helperValidateAttribute($this, value, 'sibling') }
+        sibling($this, value) {
+			var property = {
+				comment: "A sibling of the person.",
+				parent: $this,
+				property: "sibling",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            siblings($this, value) { return $this.__helperValidateAttribute($this, value, 'siblings') }
+        siblings($this, value) {
+			var property = {
+				comment: "A sibling of the person.",
+				parent: $this,
+				property: "siblings",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            sponsor($this, value) { return $this.__helperValidateAttribute($this, value, 'sponsor') }
+        sponsor($this, value) {
+			var property = {
+				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+				parent: $this,
+				property: "sponsor",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            spouse($this, value) { return $this.__helperValidateAttribute($this, value, 'spouse') }
+        spouse($this, value) {
+			var property = {
+				comment: "The person's spouse.",
+				parent: $this,
+				property: "spouse",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            taxID($this, value) { return $this.__helperValidateAttribute($this, value, 'taxID') }
+        taxID($this, value) {
+			var property = {
+				comment: "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+				parent: $this,
+				property: "taxID",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get taxid() { return this.taxID }
         set taxid(value) { this.taxID = value }
 
-            telephone($this, value) { return $this.__helperValidateAttribute($this, value, 'telephone') }
+        telephone($this, value) {
+			var property = {
+				comment: "The telephone number.",
+				parent: $this,
+				property: "telephone",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            vatID($this, value) { return $this.__helperValidateAttribute($this, value, 'vatID') }
+        vatID($this, value) {
+			var property = {
+				comment: "The Value-added Tax ID of the organization or person.",
+				parent: $this,
+				property: "vatID",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vatid() { return this.vatID }
         set vatid(value) { this.vatID = value }
 
-            weight($this, value) { return $this.__helperValidateAttribute($this, value, 'weight') }
+        weight($this, value) {
+			var property = {
+				comment: "The weight of the product or person.",
+				parent: $this,
+				property: "weight",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
 
-            workLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'workLocation') }
+        workLocation($this, value) {
+			var property = {
+				comment: "A contact location for a person's place of work.",
+				parent: $this,
+				property: "workLocation",
+				release: "11.01",
+				types: [
+					"ContactPoint",
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get worklocation() { return this.workLocation }
         set worklocation(value) { this.workLocation = value }
 
-            worksFor($this, value) { return $this.__helperValidateAttribute($this, value, 'worksFor') }
+        worksFor($this, value) {
+			var property = {
+				comment: "Organizations that the person works for.",
+				parent: $this,
+				property: "worksFor",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get worksfor() { return this.worksFor }
         set worksfor(value) { this.worksFor = value }
         

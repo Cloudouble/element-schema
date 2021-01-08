@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalcause extends window.Cloudouble.Element.elements.Medicalentity {
+    class MedicalCause extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            causeOf($this, value) { return $this.__helperValidateAttribute($this, value, 'causeOf') }
+        causeOf($this, value) {
+			var property = {
+				comment: "The condition, complication, symptom, sign, etc. caused.",
+				parent: $this,
+				property: "causeOf",
+				release: "11.01",
+				types: [
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get causeof() { return this.causeOf }
         set causeof(value) { this.causeOf = value }
         

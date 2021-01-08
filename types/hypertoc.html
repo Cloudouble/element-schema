@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Hypertoc extends window.Cloudouble.Element.elements.Creativework {
+    class HyperToc extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            associatedMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedMedia') }
+        associatedMedia($this, value) {
+			var property = {
+				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
+				parent: $this,
+				property: "associatedMedia",
+				release: "11.01",
+				types: [
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
         get associatedmedia() { return this.associatedMedia }
         set associatedmedia(value) { this.associatedMedia = value }
 
-            tocEntry($this, value) { return $this.__helperValidateAttribute($this, value, 'tocEntry') }
+        tocEntry($this, value) {
+			var property = {
+				comment: "Indicates a [[HyperTocEntry]] in a [[HyperToc]].",
+				parent: $this,
+				property: "tocEntry",
+				release: "11.01",
+				types: [
+					"HyperTocEntry"
+				]
+			};
+			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) 
+		}
         get tocentry() { return this.tocEntry }
         set tocentry(value) { this.tocEntry = value }
         

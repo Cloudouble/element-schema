@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalsignorsymptom extends window.Cloudouble.Element.elements.Medicalcondition {
+    class MedicalSignOrSymptom extends window.Cloudouble.Element.elements.MedicalCondition {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            possibleTreatment($this, value) { return $this.__helperValidateAttribute($this, value, 'possibleTreatment') }
+        possibleTreatment($this, value) {
+			var property = {
+				comment: "A possible treatment to address this condition, sign or symptom.",
+				parent: $this,
+				property: "possibleTreatment",
+				release: "11.01",
+				types: [
+					"MedicalTherapy"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+		}
         get possibletreatment() { return this.possibleTreatment }
         set possibletreatment(value) { this.possibleTreatment = value }
         

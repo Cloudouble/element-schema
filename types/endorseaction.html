@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Endorseaction extends window.Cloudouble.Element.elements.Reactaction {
+    class EndorseAction extends window.Cloudouble.Element.elements.ReactAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            endorsee($this, value) { return $this.__helperValidateAttribute($this, value, 'endorsee') }
+        endorsee($this, value) {
+			var property = {
+				comment: "A sub property of participant. The person/organization being supported.",
+				parent: $this,
+				property: "endorsee",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         
     }
 </script>

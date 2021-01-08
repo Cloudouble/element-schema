@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Monetaryamount extends window.Cloudouble.Element.elements.Structuredvalue {
+    class MonetaryAmount extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,25 +32,96 @@
         }
         
         
-            currency($this, value) { return $this.__helperValidateAttribute($this, value, 'currency') }
+        currency($this, value) {
+			var property = {
+				comment: "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				parent: $this,
+				property: "currency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            maxValue($this, value) { return $this.__helperValidateAttribute($this, value, 'maxValue') }
+        maxValue($this, value) {
+			var property = {
+				comment: "The upper value of some characteristic or property.",
+				parent: $this,
+				property: "maxValue",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get maxvalue() { return this.maxValue }
         set maxvalue(value) { this.maxValue = value }
 
-            minValue($this, value) { return $this.__helperValidateAttribute($this, value, 'minValue') }
+        minValue($this, value) {
+			var property = {
+				comment: "The lower value of some characteristic or property.",
+				parent: $this,
+				property: "minValue",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get minvalue() { return this.minValue }
         set minvalue(value) { this.minValue = value }
 
-            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        validFrom($this, value) {
+			var property = {
+				comment: "The date when the item becomes valid.",
+				parent: $this,
+				property: "validFrom",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
-            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        validThrough($this, value) {
+			var property = {
+				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+				parent: $this,
+				property: "validThrough",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
 
-            value($this, value) { return $this.__helperValidateAttribute($this, value, 'value') }
+        value($this, value) {
+			var property = {
+				comment: "The value of the quantitative value or property value node.\\n\\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
+				parent: $this,
+				property: "value",
+				release: "11.01",
+				types: [
+					"Number",
+					"StructuredValue",
+					"Boolean",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

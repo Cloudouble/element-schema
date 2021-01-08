@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Joint extends window.Cloudouble.Element.elements.Anatomicalstructure {
+    class Joint extends window.Cloudouble.Element.elements.AnatomicalStructure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,49 @@
         }
         
         
-            biomechnicalClass($this, value) { return $this.__helperValidateAttribute($this, value, 'biomechnicalClass') }
+        biomechnicalClass($this, value) {
+			var property = {
+				comment: "The biomechanical properties of the bone.",
+				parent: $this,
+				property: "biomechnicalClass",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get biomechnicalclass() { return this.biomechnicalClass }
         set biomechnicalclass(value) { this.biomechnicalClass = value }
 
-            functionalClass($this, value) { return $this.__helperValidateAttribute($this, value, 'functionalClass') }
+        functionalClass($this, value) {
+			var property = {
+				comment: "The degree of mobility the joint allows.",
+				parent: $this,
+				property: "functionalClass",
+				release: "11.01",
+				types: [
+					"Text",
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get functionalclass() { return this.functionalClass }
         set functionalclass(value) { this.functionalClass = value }
 
-            structuralClass($this, value) { return $this.__helperValidateAttribute($this, value, 'structuralClass') }
+        structuralClass($this, value) {
+			var property = {
+				comment: "The name given to how bone physically connects to each other.",
+				parent: $this,
+				property: "structuralClass",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get structuralclass() { return this.structuralClass }
         set structuralclass(value) { this.structuralClass = value }
         

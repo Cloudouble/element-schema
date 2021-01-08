@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Warrantypromise extends window.Cloudouble.Element.elements.Structuredvalue {
+    class WarrantyPromise extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            durationOfWarranty($this, value) { return $this.__helperValidateAttribute($this, value, 'durationOfWarranty') }
+        durationOfWarranty($this, value) {
+			var property = {
+				comment: "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
+				parent: $this,
+				property: "durationOfWarranty",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get durationofwarranty() { return this.durationOfWarranty }
         set durationofwarranty(value) { this.durationOfWarranty = value }
 
-            warrantyScope($this, value) { return $this.__helperValidateAttribute($this, value, 'warrantyScope') }
+        warrantyScope($this, value) {
+			var property = {
+				comment: "The scope of the warranty promise.",
+				parent: $this,
+				property: "warrantyScope",
+				release: "11.01",
+				types: [
+					"WarrantyScope"
+				]
+			};
+			return new window.LiveElement.Element.elements.WarrantyScope(value, property) 
+		}
         get warrantyscope() { return this.warrantyScope }
         set warrantyscope(value) { this.warrantyScope = value }
         

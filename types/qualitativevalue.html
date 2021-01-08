@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Qualitativevalue extends window.Cloudouble.Element.elements.Enumeration {
+    class QualitativeValue extends window.Cloudouble.Element.elements.Enumeration {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,29 +32,121 @@
         }
         
         
-            additionalProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalProperty') }
+        additionalProperty($this, value) {
+			var property = {
+				comment: "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+				parent: $this,
+				property: "additionalProperty",
+				release: "11.01",
+				types: [
+					"PropertyValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.PropertyValue(value, property) 
+		}
         get additionalproperty() { return this.additionalProperty }
         set additionalproperty(value) { this.additionalProperty = value }
 
-            equal($this, value) { return $this.__helperValidateAttribute($this, value, 'equal') }
+        equal($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is equal to the object.",
+				parent: $this,
+				property: "equal",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
 
-            greater($this, value) { return $this.__helperValidateAttribute($this, value, 'greater') }
+        greater($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is greater than the object.",
+				parent: $this,
+				property: "greater",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
 
-            greaterOrEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'greaterOrEqual') }
+        greaterOrEqual($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.",
+				parent: $this,
+				property: "greaterOrEqual",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
         get greaterorequal() { return this.greaterOrEqual }
         set greaterorequal(value) { this.greaterOrEqual = value }
 
-            lesser($this, value) { return $this.__helperValidateAttribute($this, value, 'lesser') }
+        lesser($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is lesser than the object.",
+				parent: $this,
+				property: "lesser",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
 
-            lesserOrEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'lesserOrEqual') }
+        lesserOrEqual($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.",
+				parent: $this,
+				property: "lesserOrEqual",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
         get lesserorequal() { return this.lesserOrEqual }
         set lesserorequal(value) { this.lesserOrEqual = value }
 
-            nonEqual($this, value) { return $this.__helperValidateAttribute($this, value, 'nonEqual') }
+        nonEqual($this, value) {
+			var property = {
+				comment: "This ordering relation for qualitative values indicates that the subject is not equal to the object.",
+				parent: $this,
+				property: "nonEqual",
+				release: "11.01",
+				types: [
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
         get nonequal() { return this.nonEqual }
         set nonequal(value) { this.nonEqual = value }
 
-            valueReference($this, value) { return $this.__helperValidateAttribute($this, value, 'valueReference') }
+        valueReference($this, value) {
+			var property = {
+				comment: "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+				parent: $this,
+				property: "valueReference",
+				release: "11.01",
+				types: [
+					"StructuredValue",
+					"PropertyValue",
+					"QualitativeValue",
+					"QuantitativeValue",
+					"Enumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.PropertyValue(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Enumeration(value, property) 
+		}
         get valuereference() { return this.valueReference }
         set valuereference(value) { this.valueReference = value }
         

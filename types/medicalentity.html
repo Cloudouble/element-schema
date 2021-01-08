@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalentity extends window.Cloudouble.Element.elements.Thing {
+    class MedicalEntity extends window.Cloudouble.Element.elements.Thing {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,106 @@
         }
         
         
-            code($this, value) { return $this.__helperValidateAttribute($this, value, 'code') }
+        code($this, value) {
+			var property = {
+				comment: "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+				parent: $this,
+				property: "code",
+				release: "11.01",
+				types: [
+					"MedicalCode"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCode(value, property) 
+		}
 
-            guideline($this, value) { return $this.__helperValidateAttribute($this, value, 'guideline') }
+        guideline($this, value) {
+			var property = {
+				comment: "A medical guideline related to this entity.",
+				parent: $this,
+				property: "guideline",
+				release: "11.01",
+				types: [
+					"MedicalGuideline"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalGuideline(value, property) 
+		}
 
-            legalStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'legalStatus') }
+        legalStatus($this, value) {
+			var property = {
+				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+				parent: $this,
+				property: "legalStatus",
+				release: "11.01",
+				types: [
+					"DrugLegalStatus",
+					"MedicalEnumeration",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugLegalStatus(value, property) || new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
 
-            medicineSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'medicineSystem') }
+        medicineSystem($this, value) {
+			var property = {
+				comment: "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+				parent: $this,
+				property: "medicineSystem",
+				release: "11.01",
+				types: [
+					"MedicineSystem"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicineSystem(value, property) 
+		}
         get medicinesystem() { return this.medicineSystem }
         set medicinesystem(value) { this.medicineSystem = value }
 
-            recognizingAuthority($this, value) { return $this.__helperValidateAttribute($this, value, 'recognizingAuthority') }
+        recognizingAuthority($this, value) {
+			var property = {
+				comment: "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+				parent: $this,
+				property: "recognizingAuthority",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get recognizingauthority() { return this.recognizingAuthority }
         set recognizingauthority(value) { this.recognizingAuthority = value }
 
-            relevantSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'relevantSpecialty') }
+        relevantSpecialty($this, value) {
+			var property = {
+				comment: "If applicable, a medical specialty in which this entity is relevant.",
+				parent: $this,
+				property: "relevantSpecialty",
+				release: "11.01",
+				types: [
+					"MedicalSpecialty"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+		}
         get relevantspecialty() { return this.relevantSpecialty }
         set relevantspecialty(value) { this.relevantSpecialty = value }
 
-            study($this, value) { return $this.__helperValidateAttribute($this, value, 'study') }
+        study($this, value) {
+			var property = {
+				comment: "A medical study or trial related to this entity.",
+				parent: $this,
+				property: "study",
+				release: "11.01",
+				types: [
+					"MedicalStudy"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalStudy(value, property) 
+		}
         
     }
 </script>

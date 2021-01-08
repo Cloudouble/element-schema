@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Programmembership extends window.Cloudouble.Element.elements.Intangible {
+    class ProgramMembership extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,92 @@
         }
         
         
-            hostingOrganization($this, value) { return $this.__helperValidateAttribute($this, value, 'hostingOrganization') }
+        hostingOrganization($this, value) {
+			var property = {
+				comment: "The organization (airline, travelers' club, etc.) the membership is made with.",
+				parent: $this,
+				property: "hostingOrganization",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get hostingorganization() { return this.hostingOrganization }
         set hostingorganization(value) { this.hostingOrganization = value }
 
-            member($this, value) { return $this.__helperValidateAttribute($this, value, 'member') }
+        member($this, value) {
+			var property = {
+				comment: "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
+				parent: $this,
+				property: "member",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            members($this, value) { return $this.__helperValidateAttribute($this, value, 'members') }
+        members($this, value) {
+			var property = {
+				comment: "A member of this organization.",
+				parent: $this,
+				property: "members",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            membershipNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'membershipNumber') }
+        membershipNumber($this, value) {
+			var property = {
+				comment: "A unique identifier for the membership.",
+				parent: $this,
+				property: "membershipNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get membershipnumber() { return this.membershipNumber }
         set membershipnumber(value) { this.membershipNumber = value }
 
-            membershipPointsEarned($this, value) { return $this.__helperValidateAttribute($this, value, 'membershipPointsEarned') }
+        membershipPointsEarned($this, value) {
+			var property = {
+				comment: "The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)",
+				parent: $this,
+				property: "membershipPointsEarned",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get membershippointsearned() { return this.membershipPointsEarned }
         set membershippointsearned(value) { this.membershipPointsEarned = value }
 
-            programName($this, value) { return $this.__helperValidateAttribute($this, value, 'programName') }
+        programName($this, value) {
+			var property = {
+				comment: "The program providing the membership.",
+				parent: $this,
+				property: "programName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get programname() { return this.programName }
         set programname(value) { this.programName = value }
         

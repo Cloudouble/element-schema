@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Menusection extends window.Cloudouble.Element.elements.Creativework {
+    class MenuSection extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            hasMenuItem($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuItem') }
+        hasMenuItem($this, value) {
+			var property = {
+				comment: "A food or drink item contained in a menu or menu section.",
+				parent: $this,
+				property: "hasMenuItem",
+				release: "11.01",
+				types: [
+					"MenuItem"
+				]
+			};
+			return new window.LiveElement.Element.elements.MenuItem(value, property) 
+		}
         get hasmenuitem() { return this.hasMenuItem }
         set hasmenuitem(value) { this.hasMenuItem = value }
 
-            hasMenuSection($this, value) { return $this.__helperValidateAttribute($this, value, 'hasMenuSection') }
+        hasMenuSection($this, value) {
+			var property = {
+				comment: "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
+				parent: $this,
+				property: "hasMenuSection",
+				release: "11.01",
+				types: [
+					"MenuSection"
+				]
+			};
+			return new window.LiveElement.Element.elements.MenuSection(value, property) 
+		}
         get hasmenusection() { return this.hasMenuSection }
         set hasmenusection(value) { this.hasMenuSection = value }
         

@@ -32,7 +32,20 @@
         }
         
         
-            supersededBy($this, value) { return $this.__helperValidateAttribute($this, value, 'supersededBy') }
+        supersededBy($this, value) {
+			var property = {
+				comment: "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+				parent: $this,
+				property: "supersededBy",
+				release: "11.01",
+				types: [
+					"Enumeration",
+					"Property",
+					"Class"
+				]
+			};
+			return new window.LiveElement.Element.elements.Enumeration(value, property) || new window.LiveElement.Element.elements.Property(value, property) || new window.LiveElement.Element.elements.Class(value, property) 
+		}
         get supersededby() { return this.supersededBy }
         set supersededby(value) { this.supersededBy = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Financialservice extends window.Cloudouble.Element.elements.Localbusiness {
+    class FinancialService extends window.Cloudouble.Element.elements.LocalBusiness {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            feesAndCommissionsSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'feesAndCommissionsSpecification') }
+        feesAndCommissionsSpecification($this, value) {
+			var property = {
+				comment: "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
+				parent: $this,
+				property: "feesAndCommissionsSpecification",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get feesandcommissionsspecification() { return this.feesAndCommissionsSpecification }
         set feesandcommissionsspecification(value) { this.feesAndCommissionsSpecification = value }
         

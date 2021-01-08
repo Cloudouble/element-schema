@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Website extends window.Cloudouble.Element.elements.Creativework {
+    class WebSite extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            issn($this, value) { return $this.__helperValidateAttribute($this, value, 'issn') }
+        issn($this, value) {
+			var property = {
+				comment: "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
+				parent: $this,
+				property: "issn",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

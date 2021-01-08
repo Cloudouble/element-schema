@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Rsvpaction extends window.Cloudouble.Element.elements.Informaction {
+    class RsvpAction extends window.Cloudouble.Element.elements.InformAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,46 @@
         }
         
         
-            additionalNumberOfGuests($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalNumberOfGuests') }
+        additionalNumberOfGuests($this, value) {
+			var property = {
+				comment: "If responding yes, the number of guests who will attend in addition to the invitee.",
+				parent: $this,
+				property: "additionalNumberOfGuests",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get additionalnumberofguests() { return this.additionalNumberOfGuests }
         set additionalnumberofguests(value) { this.additionalNumberOfGuests = value }
 
-            comment($this, value) { return $this.__helperValidateAttribute($this, value, 'comment') }
+        comment($this, value) {
+			var property = {
+				comment: "Comments, typically from users.",
+				parent: $this,
+				property: "comment",
+				release: "11.01",
+				types: [
+					"Comment"
+				]
+			};
+			return new window.LiveElement.Element.elements.Comment(value, property) 
+		}
 
-            rsvpResponse($this, value) { return $this.__helperValidateAttribute($this, value, 'rsvpResponse') }
+        rsvpResponse($this, value) {
+			var property = {
+				comment: "The response (yes, no, maybe) to the RSVP.",
+				parent: $this,
+				property: "rsvpResponse",
+				release: "11.01",
+				types: [
+					"RsvpResponseType"
+				]
+			};
+			return new window.LiveElement.Element.elements.RsvpResponseType(value, property) 
+		}
         get rsvpresponse() { return this.rsvpResponse }
         set rsvpresponse(value) { this.rsvpResponse = value }
         

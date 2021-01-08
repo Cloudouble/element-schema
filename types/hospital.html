@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Hospital extends window.Cloudouble.Element.elements.Emergencyservice {
+    class Hospital extends window.Cloudouble.Element.elements.EmergencyService {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,51 @@
         }
         
         
-            availableService($this, value) { return $this.__helperValidateAttribute($this, value, 'availableService') }
+        availableService($this, value) {
+			var property = {
+				comment: "A medical service available from this provider.",
+				parent: $this,
+				property: "availableService",
+				release: "11.01",
+				types: [
+					"MedicalTest",
+					"MedicalTherapy",
+					"MedicalProcedure"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTest(value, property) || new window.LiveElement.Element.elements.MedicalTherapy(value, property) || new window.LiveElement.Element.elements.MedicalProcedure(value, property) 
+		}
         get availableservice() { return this.availableService }
         set availableservice(value) { this.availableService = value }
 
-            healthcareReportingData($this, value) { return $this.__helperValidateAttribute($this, value, 'healthcareReportingData') }
+        healthcareReportingData($this, value) {
+			var property = {
+				comment: "Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].",
+				parent: $this,
+				property: "healthcareReportingData",
+				release: "11.01",
+				types: [
+					"CDCPMDRecord",
+					"Dataset"
+				]
+			};
+			return new window.LiveElement.Element.elements.CDCPMDRecord(value, property) || new window.LiveElement.Element.elements.Dataset(value, property) 
+		}
         get healthcarereportingdata() { return this.healthcareReportingData }
         set healthcarereportingdata(value) { this.healthcareReportingData = value }
 
-            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        medicalSpecialty($this, value) {
+			var property = {
+				comment: "A medical specialty of the provider.",
+				parent: $this,
+				property: "medicalSpecialty",
+				release: "11.01",
+				types: [
+					"MedicalSpecialty"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }
         

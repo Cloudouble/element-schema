@@ -8,16 +8,14 @@
 </template>
 <script>
     /* global */
-    class Alignmentobject extends window.Cloudouble.Element.elements.Intangible {
+    class AlignmentObject extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:AlignmentObject'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'An intangible item that describes an alignment between a learning resource and a node in an educational framework.
-
-Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.'
+        static _rdfs_comment = 'An intangible item that describes an alignment between a learning resource and a node in an educational framework.  Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.'
         static _rdfs_label = 'AlignmentObject'
 
         static get observedAttributes() {
@@ -34,23 +32,78 @@ Should not be used where the nature of the alignment can be described using a si
         }
         
         
-            alignmentType($this, value) { return $this.__helperValidateAttribute($this, value, 'alignmentType') }
+        alignmentType($this, value) {
+			var property = {
+				comment: "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
+				parent: $this,
+				property: "alignmentType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get alignmenttype() { return this.alignmentType }
         set alignmenttype(value) { this.alignmentType = value }
 
-            educationalFramework($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalFramework') }
+        educationalFramework($this, value) {
+			var property = {
+				comment: "The framework to which the resource being described is aligned.",
+				parent: $this,
+				property: "educationalFramework",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get educationalframework() { return this.educationalFramework }
         set educationalframework(value) { this.educationalFramework = value }
 
-            targetDescription($this, value) { return $this.__helperValidateAttribute($this, value, 'targetDescription') }
+        targetDescription($this, value) {
+			var property = {
+				comment: "The description of a node in an established educational framework.",
+				parent: $this,
+				property: "targetDescription",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get targetdescription() { return this.targetDescription }
         set targetdescription(value) { this.targetDescription = value }
 
-            targetName($this, value) { return $this.__helperValidateAttribute($this, value, 'targetName') }
+        targetName($this, value) {
+			var property = {
+				comment: "The name of a node in an established educational framework.",
+				parent: $this,
+				property: "targetName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get targetname() { return this.targetName }
         set targetname(value) { this.targetName = value }
 
-            targetUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'targetUrl') }
+        targetUrl($this, value) {
+			var property = {
+				comment: "The URL of a node in an established educational framework.",
+				parent: $this,
+				property: "targetUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get targeturl() { return this.targetUrl }
         set targeturl(value) { this.targetUrl = value }
         

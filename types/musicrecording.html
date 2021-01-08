@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Musicrecording extends window.Cloudouble.Element.elements.Creativework {
+    class MusicRecording extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,25 +32,92 @@
         }
         
         
-            byArtist($this, value) { return $this.__helperValidateAttribute($this, value, 'byArtist') }
+        byArtist($this, value) {
+			var property = {
+				comment: "The artist that performed this album or recording.",
+				parent: $this,
+				property: "byArtist",
+				release: "11.01",
+				types: [
+					"MusicGroup",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicGroup(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get byartist() { return this.byArtist }
         set byartist(value) { this.byArtist = value }
 
-            duration($this, value) { return $this.__helperValidateAttribute($this, value, 'duration') }
+        duration($this, value) {
+			var property = {
+				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "duration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
 
-            inAlbum($this, value) { return $this.__helperValidateAttribute($this, value, 'inAlbum') }
+        inAlbum($this, value) {
+			var property = {
+				comment: "The album to which this recording belongs.",
+				parent: $this,
+				property: "inAlbum",
+				release: "11.01",
+				types: [
+					"MusicAlbum"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+		}
         get inalbum() { return this.inAlbum }
         set inalbum(value) { this.inAlbum = value }
 
-            inPlaylist($this, value) { return $this.__helperValidateAttribute($this, value, 'inPlaylist') }
+        inPlaylist($this, value) {
+			var property = {
+				comment: "The playlist to which this recording belongs.",
+				parent: $this,
+				property: "inPlaylist",
+				release: "11.01",
+				types: [
+					"MusicPlaylist"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicPlaylist(value, property) 
+		}
         get inplaylist() { return this.inPlaylist }
         set inplaylist(value) { this.inPlaylist = value }
 
-            isrcCode($this, value) { return $this.__helperValidateAttribute($this, value, 'isrcCode') }
+        isrcCode($this, value) {
+			var property = {
+				comment: "The International Standard Recording Code for the recording.",
+				parent: $this,
+				property: "isrcCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get isrccode() { return this.isrcCode }
         set isrccode(value) { this.isrcCode = value }
 
-            recordingOf($this, value) { return $this.__helperValidateAttribute($this, value, 'recordingOf') }
+        recordingOf($this, value) {
+			var property = {
+				comment: "The composition this track is a recording of.",
+				parent: $this,
+				property: "recordingOf",
+				release: "11.01",
+				types: [
+					"MusicComposition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicComposition(value, property) 
+		}
         get recordingof() { return this.recordingOf }
         set recordingof(value) { this.recordingOf = value }
         

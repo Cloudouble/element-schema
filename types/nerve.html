@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Nerve extends window.Cloudouble.Element.elements.Anatomicalstructure {
+    class Nerve extends window.Cloudouble.Element.elements.AnatomicalStructure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,17 +32,62 @@
         }
         
         
-            branch($this, value) { return $this.__helperValidateAttribute($this, value, 'branch') }
+        branch($this, value) {
+			var property = {
+				comment: "The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].",
+				parent: $this,
+				property: "branch",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+		}
 
-            nerveMotor($this, value) { return $this.__helperValidateAttribute($this, value, 'nerveMotor') }
+        nerveMotor($this, value) {
+			var property = {
+				comment: "The neurological pathway extension that involves muscle control.",
+				parent: $this,
+				property: "nerveMotor",
+				release: "11.01",
+				types: [
+					"Muscle"
+				]
+			};
+			return new window.LiveElement.Element.elements.Muscle(value, property) 
+		}
         get nervemotor() { return this.nerveMotor }
         set nervemotor(value) { this.nerveMotor = value }
 
-            sensoryUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'sensoryUnit') }
+        sensoryUnit($this, value) {
+			var property = {
+				comment: "The neurological pathway extension that inputs and sends information to the brain or spinal cord.",
+				parent: $this,
+				property: "sensoryUnit",
+				release: "11.01",
+				types: [
+					"AnatomicalStructure",
+					"SuperficialAnatomy"
+				]
+			};
+			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.SuperficialAnatomy(value, property) 
+		}
         get sensoryunit() { return this.sensoryUnit }
         set sensoryunit(value) { this.sensoryUnit = value }
 
-            sourcedFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'sourcedFrom') }
+        sourcedFrom($this, value) {
+			var property = {
+				comment: "The neurological pathway that originates the neurons.",
+				parent: $this,
+				property: "sourcedFrom",
+				release: "11.01",
+				types: [
+					"BrainStructure"
+				]
+			};
+			return new window.LiveElement.Element.elements.BrainStructure(value, property) 
+		}
         get sourcedfrom() { return this.sourcedFrom }
         set sourcedfrom(value) { this.sourcedFrom = value }
         

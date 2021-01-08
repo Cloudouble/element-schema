@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Game extends window.Cloudouble.Element.elements.Creativework {
+    class Game extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,80 @@
         }
         
         
-            characterAttribute($this, value) { return $this.__helperValidateAttribute($this, value, 'characterAttribute') }
+        characterAttribute($this, value) {
+			var property = {
+				comment: "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
+				parent: $this,
+				property: "characterAttribute",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         get characterattribute() { return this.characterAttribute }
         set characterattribute(value) { this.characterAttribute = value }
 
-            gameItem($this, value) { return $this.__helperValidateAttribute($this, value, 'gameItem') }
+        gameItem($this, value) {
+			var property = {
+				comment: "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
+				parent: $this,
+				property: "gameItem",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         get gameitem() { return this.gameItem }
         set gameitem(value) { this.gameItem = value }
 
-            gameLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'gameLocation') }
+        gameLocation($this, value) {
+			var property = {
+				comment: "Real or fictional location of the game (or part of game).",
+				parent: $this,
+				property: "gameLocation",
+				release: "11.01",
+				types: [
+					"Place",
+					"URL",
+					"PostalAddress"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+		}
         get gamelocation() { return this.gameLocation }
         set gamelocation(value) { this.gameLocation = value }
 
-            numberOfPlayers($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPlayers') }
+        numberOfPlayers($this, value) {
+			var property = {
+				comment: "Indicate how many people can play this game (minimum, maximum, or range).",
+				parent: $this,
+				property: "numberOfPlayers",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofplayers() { return this.numberOfPlayers }
         set numberofplayers(value) { this.numberOfPlayers = value }
 
-            quest($this, value) { return $this.__helperValidateAttribute($this, value, 'quest') }
+        quest($this, value) {
+			var property = {
+				comment: "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
+				parent: $this,
+				property: "quest",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         
     }
 </script>

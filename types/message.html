@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Message extends window.Cloudouble.Element.elements.Creativework {
+    class Message extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,35 +32,147 @@
         }
         
         
-            bccRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'bccRecipient') }
+        bccRecipient($this, value) {
+			var property = {
+				comment: "A sub property of recipient. The recipient blind copied on a message.",
+				parent: $this,
+				property: "bccRecipient",
+				release: "11.01",
+				types: [
+					"Person",
+					"Organization",
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get bccrecipient() { return this.bccRecipient }
         set bccrecipient(value) { this.bccRecipient = value }
 
-            ccRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'ccRecipient') }
+        ccRecipient($this, value) {
+			var property = {
+				comment: "A sub property of recipient. The recipient copied on a message.",
+				parent: $this,
+				property: "ccRecipient",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person",
+					"ContactPoint"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) 
+		}
         get ccrecipient() { return this.ccRecipient }
         set ccrecipient(value) { this.ccRecipient = value }
 
-            dateRead($this, value) { return $this.__helperValidateAttribute($this, value, 'dateRead') }
+        dateRead($this, value) {
+			var property = {
+				comment: "The date/time at which the message has been read by the recipient if a single recipient exists.",
+				parent: $this,
+				property: "dateRead",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get dateread() { return this.dateRead }
         set dateread(value) { this.dateRead = value }
 
-            dateReceived($this, value) { return $this.__helperValidateAttribute($this, value, 'dateReceived') }
+        dateReceived($this, value) {
+			var property = {
+				comment: "The date/time the message was received if a single recipient exists.",
+				parent: $this,
+				property: "dateReceived",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get datereceived() { return this.dateReceived }
         set datereceived(value) { this.dateReceived = value }
 
-            dateSent($this, value) { return $this.__helperValidateAttribute($this, value, 'dateSent') }
+        dateSent($this, value) {
+			var property = {
+				comment: "The date/time at which the message was sent.",
+				parent: $this,
+				property: "dateSent",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get datesent() { return this.dateSent }
         set datesent(value) { this.dateSent = value }
 
-            messageAttachment($this, value) { return $this.__helperValidateAttribute($this, value, 'messageAttachment') }
+        messageAttachment($this, value) {
+			var property = {
+				comment: "A CreativeWork attached to the message.",
+				parent: $this,
+				property: "messageAttachment",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get messageattachment() { return this.messageAttachment }
         set messageattachment(value) { this.messageAttachment = value }
 
-            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        recipient($this, value) {
+			var property = {
+				comment: "A sub property of participant. The participant who is at the receiving end of the action.",
+				parent: $this,
+				property: "recipient",
+				release: "11.01",
+				types: [
+					"Person",
+					"Audience",
+					"ContactPoint",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            sender($this, value) { return $this.__helperValidateAttribute($this, value, 'sender') }
+        sender($this, value) {
+			var property = {
+				comment: "A sub property of participant. The participant who is at the sending end of the action.",
+				parent: $this,
+				property: "sender",
+				release: "11.01",
+				types: [
+					"Audience",
+					"Person",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            toRecipient($this, value) { return $this.__helperValidateAttribute($this, value, 'toRecipient') }
+        toRecipient($this, value) {
+			var property = {
+				comment: "A sub property of recipient. The recipient who was directly sent the message.",
+				parent: $this,
+				property: "toRecipient",
+				release: "11.01",
+				types: [
+					"ContactPoint",
+					"Organization",
+					"Audience",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get torecipient() { return this.toRecipient }
         set torecipient(value) { this.toRecipient = value }
         

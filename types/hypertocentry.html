@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Hypertocentry extends window.Cloudouble.Element.elements.Creativework {
+    class HyperTocEntry extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            associatedMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'associatedMedia') }
+        associatedMedia($this, value) {
+			var property = {
+				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
+				parent: $this,
+				property: "associatedMedia",
+				release: "11.01",
+				types: [
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
         get associatedmedia() { return this.associatedMedia }
         set associatedmedia(value) { this.associatedMedia = value }
 
-            tocContinuation($this, value) { return $this.__helperValidateAttribute($this, value, 'tocContinuation') }
+        tocContinuation($this, value) {
+			var property = {
+				comment: "A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.",
+				parent: $this,
+				property: "tocContinuation",
+				release: "11.01",
+				types: [
+					"HyperTocEntry"
+				]
+			};
+			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) 
+		}
         get toccontinuation() { return this.tocContinuation }
         set toccontinuation(value) { this.tocContinuation = value }
 
-            utterances($this, value) { return $this.__helperValidateAttribute($this, value, 'utterances') }
+        utterances($this, value) {
+			var property = {
+				comment: "Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].",
+				parent: $this,
+				property: "utterances",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

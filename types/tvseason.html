@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Tvseason extends window.Cloudouble.Element.elements.Creativework {
+    class TVSeason extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            countryOfOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'countryOfOrigin') }
+        countryOfOrigin($this, value) {
+			var property = {
+				comment: "The country of the principal offices of the production company or individual responsible for the movie or program.",
+				parent: $this,
+				property: "countryOfOrigin",
+				release: "11.01",
+				types: [
+					"Country"
+				]
+			};
+			return new window.LiveElement.Element.elements.Country(value, property) 
+		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
 
-            partOfTVSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfTVSeries') }
+        partOfTVSeries($this, value) {
+			var property = {
+				comment: "The TV series to which this episode or season belongs.",
+				parent: $this,
+				property: "partOfTVSeries",
+				release: "11.01",
+				types: [
+					"TVSeries"
+				]
+			};
+			return new window.LiveElement.Element.elements.TVSeries(value, property) 
+		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }
         

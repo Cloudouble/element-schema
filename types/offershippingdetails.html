@@ -8,26 +8,14 @@
 </template>
 <script>
     /* global */
-    class Offershippingdetails extends window.Cloudouble.Element.elements.Structuredvalue {
+    class OfferShippingDetails extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:OfferShippingDetails'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'OfferShippingDetails represents information about shipping destinations.
-
-Multiple of these entities can be used to represent different shipping rates for different destinations:
-
-One entity for Alaska\/Hawaii. A different one for continental US.A different one for all France.
-
-Multiple of these entities can be used to represent different shipping costs and delivery times.
-
-Two entities that are identical but differ in rate and time:
-
-e.g. Cheaper and slower: $5 in 5-7days
-or Fast and expensive: $15 in 1-2 days
-'
+        static _rdfs_comment = 'OfferShippingDetails represents information about shipping destinations.  Multiple of these entities can be used to represent different shipping rates for different destinations:  One entity for Alaska\/Hawaii. A different one for continental US.A different one for all France.  Multiple of these entities can be used to represent different shipping costs and delivery times.  Two entities that are identical but differ in rate and time:  e.g. Cheaper and slower: $5 in 5-7days or Fast and expensive: $15 in 1-2 days '
         static _rdfs_label = 'OfferShippingDetails'
 
         static get observedAttributes() {
@@ -44,31 +32,108 @@ or Fast and expensive: $15 in 1-2 days
         }
         
         
-            deliveryTime($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryTime') }
+        deliveryTime($this, value) {
+			var property = {
+				comment: "The total delay between the receipt of the order and the goods reaching the final customer.",
+				parent: $this,
+				property: "deliveryTime",
+				release: "11.01",
+				types: [
+					"ShippingDeliveryTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.ShippingDeliveryTime(value, property) 
+		}
         get deliverytime() { return this.deliveryTime }
         set deliverytime(value) { this.deliveryTime = value }
 
-            doesNotShip($this, value) { return $this.__helperValidateAttribute($this, value, 'doesNotShip') }
+        doesNotShip($this, value) {
+			var property = {
+				comment: "Indicates when shipping to a particular [[shippingDestination]] is not available.",
+				parent: $this,
+				property: "doesNotShip",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get doesnotship() { return this.doesNotShip }
         set doesnotship(value) { this.doesNotShip = value }
 
-            shippingDestination($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDestination') }
+        shippingDestination($this, value) {
+			var property = {
+				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
+				parent: $this,
+				property: "shippingDestination",
+				release: "11.01",
+				types: [
+					"DefinedRegion"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedRegion(value, property) 
+		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
 
-            shippingLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingLabel') }
+        shippingLabel($this, value) {
+			var property = {
+				comment: "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+				parent: $this,
+				property: "shippingLabel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get shippinglabel() { return this.shippingLabel }
         set shippinglabel(value) { this.shippingLabel = value }
 
-            shippingRate($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingRate') }
+        shippingRate($this, value) {
+			var property = {
+				comment: "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
+				parent: $this,
+				property: "shippingRate",
+				release: "11.01",
+				types: [
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
         get shippingrate() { return this.shippingRate }
         set shippingrate(value) { this.shippingRate = value }
 
-            shippingSettingsLink($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingSettingsLink') }
+        shippingSettingsLink($this, value) {
+			var property = {
+				comment: "Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.",
+				parent: $this,
+				property: "shippingSettingsLink",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get shippingsettingslink() { return this.shippingSettingsLink }
         set shippingsettingslink(value) { this.shippingSettingsLink = value }
 
-            transitTimeLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'transitTimeLabel') }
+        transitTimeLabel($this, value) {
+			var property = {
+				comment: "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+				parent: $this,
+				property: "transitTimeLabel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get transittimelabel() { return this.transitTimeLabel }
         set transittimelabel(value) { this.transitTimeLabel = value }
         

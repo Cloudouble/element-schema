@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Infectiousdisease extends window.Cloudouble.Element.elements.Medicalcondition {
+    class InfectiousDisease extends window.Cloudouble.Element.elements.MedicalCondition {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            infectiousAgent($this, value) { return $this.__helperValidateAttribute($this, value, 'infectiousAgent') }
+        infectiousAgent($this, value) {
+			var property = {
+				comment: "The actual infectious agent, such as a specific bacterium.",
+				parent: $this,
+				property: "infectiousAgent",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get infectiousagent() { return this.infectiousAgent }
         set infectiousagent(value) { this.infectiousAgent = value }
 
-            infectiousAgentClass($this, value) { return $this.__helperValidateAttribute($this, value, 'infectiousAgentClass') }
+        infectiousAgentClass($this, value) {
+			var property = {
+				comment: "The class of infectious agent (bacteria, prion, etc.) that causes the disease.",
+				parent: $this,
+				property: "infectiousAgentClass",
+				release: "11.01",
+				types: [
+					"InfectiousAgentClass"
+				]
+			};
+			return new window.LiveElement.Element.elements.InfectiousAgentClass(value, property) 
+		}
         get infectiousagentclass() { return this.infectiousAgentClass }
         set infectiousagentclass(value) { this.infectiousAgentClass = value }
 
-            transmissionMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'transmissionMethod') }
+        transmissionMethod($this, value) {
+			var property = {
+				comment: "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.",
+				parent: $this,
+				property: "transmissionMethod",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get transmissionmethod() { return this.transmissionMethod }
         set transmissionmethod(value) { this.transmissionMethod = value }
         

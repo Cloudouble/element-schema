@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Datafeeditem extends window.Cloudouble.Element.elements.Intangible {
+    class DataFeedItem extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,66 @@
         }
         
         
-            dateCreated($this, value) { return $this.__helperValidateAttribute($this, value, 'dateCreated') }
+        dateCreated($this, value) {
+			var property = {
+				comment: "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+				parent: $this,
+				property: "dateCreated",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get datecreated() { return this.dateCreated }
         set datecreated(value) { this.dateCreated = value }
 
-            dateDeleted($this, value) { return $this.__helperValidateAttribute($this, value, 'dateDeleted') }
+        dateDeleted($this, value) {
+			var property = {
+				comment: "The datetime the item was removed from the DataFeed.",
+				parent: $this,
+				property: "dateDeleted",
+				release: "11.01",
+				types: [
+					"Date",
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get datedeleted() { return this.dateDeleted }
         set datedeleted(value) { this.dateDeleted = value }
 
-            dateModified($this, value) { return $this.__helperValidateAttribute($this, value, 'dateModified') }
+        dateModified($this, value) {
+			var property = {
+				comment: "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+				parent: $this,
+				property: "dateModified",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get datemodified() { return this.dateModified }
         set datemodified(value) { this.dateModified = value }
 
-            item($this, value) { return $this.__helperValidateAttribute($this, value, 'item') }
+        item($this, value) {
+			var property = {
+				comment: "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')\u2019.",
+				parent: $this,
+				property: "item",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         
     }
 </script>

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Apireference extends window.Cloudouble.Element.elements.Techarticle {
+    class APIReference extends window.Cloudouble.Element.elements.TechArticle {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,21 +32,76 @@
         }
         
         
-            assembly($this, value) { return $this.__helperValidateAttribute($this, value, 'assembly') }
+        assembly($this, value) {
+			var property = {
+				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
+				parent: $this,
+				property: "assembly",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            assemblyVersion($this, value) { return $this.__helperValidateAttribute($this, value, 'assemblyVersion') }
+        assemblyVersion($this, value) {
+			var property = {
+				comment: "Associated product/technology version. e.g., .NET Framework 4.5.",
+				parent: $this,
+				property: "assemblyVersion",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get assemblyversion() { return this.assemblyVersion }
         set assemblyversion(value) { this.assemblyVersion = value }
 
-            executableLibraryName($this, value) { return $this.__helperValidateAttribute($this, value, 'executableLibraryName') }
+        executableLibraryName($this, value) {
+			var property = {
+				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
+				parent: $this,
+				property: "executableLibraryName",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get executablelibraryname() { return this.executableLibraryName }
         set executablelibraryname(value) { this.executableLibraryName = value }
 
-            programmingModel($this, value) { return $this.__helperValidateAttribute($this, value, 'programmingModel') }
+        programmingModel($this, value) {
+			var property = {
+				comment: "Indicates whether API is managed or unmanaged.",
+				parent: $this,
+				property: "programmingModel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get programmingmodel() { return this.programmingModel }
         set programmingmodel(value) { this.programmingModel = value }
 
-            targetPlatform($this, value) { return $this.__helperValidateAttribute($this, value, 'targetPlatform') }
+        targetPlatform($this, value) {
+			var property = {
+				comment: "Type of app development: phone, Metro style, desktop, XBox, etc.",
+				parent: $this,
+				property: "targetPlatform",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get targetplatform() { return this.targetPlatform }
         set targetplatform(value) { this.targetPlatform = value }
         

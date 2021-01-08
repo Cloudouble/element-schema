@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Deliveryevent extends window.Cloudouble.Element.elements.Event {
+    class DeliveryEvent extends window.Cloudouble.Element.elements.Event {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,63 @@
         }
         
         
-            accessCode($this, value) { return $this.__helperValidateAttribute($this, value, 'accessCode') }
+        accessCode($this, value) {
+			var property = {
+				comment: "Password, PIN, or access code needed for delivery (e.g. from a locker).",
+				parent: $this,
+				property: "accessCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get accesscode() { return this.accessCode }
         set accesscode(value) { this.accessCode = value }
 
-            availableFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'availableFrom') }
+        availableFrom($this, value) {
+			var property = {
+				comment: "When the item is available for pickup from the store, locker, etc.",
+				parent: $this,
+				property: "availableFrom",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get availablefrom() { return this.availableFrom }
         set availablefrom(value) { this.availableFrom = value }
 
-            availableThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'availableThrough') }
+        availableThrough($this, value) {
+			var property = {
+				comment: "After this date, the item will no longer be available for pickup.",
+				parent: $this,
+				property: "availableThrough",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get availablethrough() { return this.availableThrough }
         set availablethrough(value) { this.availableThrough = value }
 
-            hasDeliveryMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'hasDeliveryMethod') }
+        hasDeliveryMethod($this, value) {
+			var property = {
+				comment: "Method used for delivery or shipping.",
+				parent: $this,
+				property: "hasDeliveryMethod",
+				release: "11.01",
+				types: [
+					"DeliveryMethod"
+				]
+			};
+			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+		}
         get hasdeliverymethod() { return this.hasDeliveryMethod }
         set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
         

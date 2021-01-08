@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Howtodirection extends window.Cloudouble.Element.elements.Creativework {
+    class HowToDirection extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,31 +32,124 @@
         }
         
         
-            afterMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'afterMedia') }
+        afterMedia($this, value) {
+			var property = {
+				comment: "A media object representing the circumstances after performing this direction.",
+				parent: $this,
+				property: "afterMedia",
+				release: "11.01",
+				types: [
+					"URL",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
         get aftermedia() { return this.afterMedia }
         set aftermedia(value) { this.afterMedia = value }
 
-            beforeMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'beforeMedia') }
+        beforeMedia($this, value) {
+			var property = {
+				comment: "A media object representing the circumstances before performing this direction.",
+				parent: $this,
+				property: "beforeMedia",
+				release: "11.01",
+				types: [
+					"URL",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
         get beforemedia() { return this.beforeMedia }
         set beforemedia(value) { this.beforeMedia = value }
 
-            duringMedia($this, value) { return $this.__helperValidateAttribute($this, value, 'duringMedia') }
+        duringMedia($this, value) {
+			var property = {
+				comment: "A media object representing the circumstances while performing this direction.",
+				parent: $this,
+				property: "duringMedia",
+				release: "11.01",
+				types: [
+					"URL",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
         get duringmedia() { return this.duringMedia }
         set duringmedia(value) { this.duringMedia = value }
 
-            performTime($this, value) { return $this.__helperValidateAttribute($this, value, 'performTime') }
+        performTime($this, value) {
+			var property = {
+				comment: "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "performTime",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get performtime() { return this.performTime }
         set performtime(value) { this.performTime = value }
 
-            prepTime($this, value) { return $this.__helperValidateAttribute($this, value, 'prepTime') }
+        prepTime($this, value) {
+			var property = {
+				comment: "The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "prepTime",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get preptime() { return this.prepTime }
         set preptime(value) { this.prepTime = value }
 
-            supply($this, value) { return $this.__helperValidateAttribute($this, value, 'supply') }
+        supply($this, value) {
+			var property = {
+				comment: "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
+				parent: $this,
+				property: "supply",
+				release: "11.01",
+				types: [
+					"HowToSupply",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.HowToSupply(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            tool($this, value) { return $this.__helperValidateAttribute($this, value, 'tool') }
+        tool($this, value) {
+			var property = {
+				comment: "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
+				parent: $this,
+				property: "tool",
+				release: "11.01",
+				types: [
+					"HowToTool",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.HowToTool(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            totalTime($this, value) { return $this.__helperValidateAttribute($this, value, 'totalTime') }
+        totalTime($this, value) {
+			var property = {
+				comment: "The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "totalTime",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get totaltime() { return this.totalTime }
         set totaltime(value) { this.totalTime = value }
         

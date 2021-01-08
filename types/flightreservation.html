@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Flightreservation extends window.Cloudouble.Element.elements.Reservation {
+    class FlightReservation extends window.Cloudouble.Element.elements.Reservation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,64 @@
         }
         
         
-            boardingGroup($this, value) { return $this.__helperValidateAttribute($this, value, 'boardingGroup') }
+        boardingGroup($this, value) {
+			var property = {
+				comment: "The airline-specific indicator of boarding order / preference.",
+				parent: $this,
+				property: "boardingGroup",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get boardinggroup() { return this.boardingGroup }
         set boardinggroup(value) { this.boardingGroup = value }
 
-            passengerPriorityStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'passengerPriorityStatus') }
+        passengerPriorityStatus($this, value) {
+			var property = {
+				comment: "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
+				parent: $this,
+				property: "passengerPriorityStatus",
+				release: "11.01",
+				types: [
+					"Text",
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
         get passengerprioritystatus() { return this.passengerPriorityStatus }
         set passengerprioritystatus(value) { this.passengerPriorityStatus = value }
 
-            passengerSequenceNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'passengerSequenceNumber') }
+        passengerSequenceNumber($this, value) {
+			var property = {
+				comment: "The passenger's sequence number as assigned by the airline.",
+				parent: $this,
+				property: "passengerSequenceNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get passengersequencenumber() { return this.passengerSequenceNumber }
         set passengersequencenumber(value) { this.passengerSequenceNumber = value }
 
-            securityScreening($this, value) { return $this.__helperValidateAttribute($this, value, 'securityScreening') }
+        securityScreening($this, value) {
+			var property = {
+				comment: "The type of security screening the passenger is subject to.",
+				parent: $this,
+				property: "securityScreening",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get securityscreening() { return this.securityScreening }
         set securityscreening(value) { this.securityScreening = value }
         

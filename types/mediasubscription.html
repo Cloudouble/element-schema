@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Mediasubscription extends window.Cloudouble.Element.elements.Intangible {
+    class MediaSubscription extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,31 @@
         }
         
         
-            authenticator($this, value) { return $this.__helperValidateAttribute($this, value, 'authenticator') }
+        authenticator($this, value) {
+			var property = {
+				comment: "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.",
+				parent: $this,
+				property: "authenticator",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
 
-            expectsAcceptanceOf($this, value) { return $this.__helperValidateAttribute($this, value, 'expectsAcceptanceOf') }
+        expectsAcceptanceOf($this, value) {
+			var property = {
+				comment: "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
+				parent: $this,
+				property: "expectsAcceptanceOf",
+				release: "11.01",
+				types: [
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Offer(value, property) 
+		}
         get expectsacceptanceof() { return this.expectsAcceptanceOf }
         set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
         

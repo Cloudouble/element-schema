@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Moneytransfer extends window.Cloudouble.Element.elements.Transferaction {
+    class MoneyTransfer extends window.Cloudouble.Element.elements.TransferAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,33 @@
         }
         
         
-            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        amount($this, value) {
+			var property = {
+				comment: "The amount of money.",
+				parent: $this,
+				property: "amount",
+				release: "11.01",
+				types: [
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
 
-            beneficiaryBank($this, value) { return $this.__helperValidateAttribute($this, value, 'beneficiaryBank') }
+        beneficiaryBank($this, value) {
+			var property = {
+				comment: "A bank or bank\u2019s branch, financial institution or international financial institution operating the beneficiary\u2019s bank account or releasing funds for the beneficiary",
+				parent: $this,
+				property: "beneficiaryBank",
+				release: "11.01",
+				types: [
+					"BankOrCreditUnion",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.BankOrCreditUnion(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get beneficiarybank() { return this.beneficiaryBank }
         set beneficiarybank(value) { this.beneficiaryBank = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Recipe extends window.Cloudouble.Element.elements.Howto {
+    class Recipe extends window.Cloudouble.Element.elements.HowTo {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,39 +32,152 @@
         }
         
         
-            cookTime($this, value) { return $this.__helperValidateAttribute($this, value, 'cookTime') }
+        cookTime($this, value) {
+			var property = {
+				comment: "The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).",
+				parent: $this,
+				property: "cookTime",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get cooktime() { return this.cookTime }
         set cooktime(value) { this.cookTime = value }
 
-            cookingMethod($this, value) { return $this.__helperValidateAttribute($this, value, 'cookingMethod') }
+        cookingMethod($this, value) {
+			var property = {
+				comment: "The method of cooking, such as Frying, Steaming, ...",
+				parent: $this,
+				property: "cookingMethod",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get cookingmethod() { return this.cookingMethod }
         set cookingmethod(value) { this.cookingMethod = value }
 
-            ingredients($this, value) { return $this.__helperValidateAttribute($this, value, 'ingredients') }
+        ingredients($this, value) {
+			var property = {
+				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+				parent: $this,
+				property: "ingredients",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            nutrition($this, value) { return $this.__helperValidateAttribute($this, value, 'nutrition') }
+        nutrition($this, value) {
+			var property = {
+				comment: "Nutrition information about the recipe or menu item.",
+				parent: $this,
+				property: "nutrition",
+				release: "11.01",
+				types: [
+					"NutritionInformation"
+				]
+			};
+			return new window.LiveElement.Element.elements.NutritionInformation(value, property) 
+		}
 
-            recipeCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeCategory') }
+        recipeCategory($this, value) {
+			var property = {
+				comment: "The category of the recipe\u2014for example, appetizer, entree, etc.",
+				parent: $this,
+				property: "recipeCategory",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get recipecategory() { return this.recipeCategory }
         set recipecategory(value) { this.recipeCategory = value }
 
-            recipeCuisine($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeCuisine') }
+        recipeCuisine($this, value) {
+			var property = {
+				comment: "The cuisine of the recipe (for example, French or Ethiopian).",
+				parent: $this,
+				property: "recipeCuisine",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get recipecuisine() { return this.recipeCuisine }
         set recipecuisine(value) { this.recipeCuisine = value }
 
-            recipeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeIngredient') }
+        recipeIngredient($this, value) {
+			var property = {
+				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
+				parent: $this,
+				property: "recipeIngredient",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get recipeingredient() { return this.recipeIngredient }
         set recipeingredient(value) { this.recipeIngredient = value }
 
-            recipeInstructions($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeInstructions') }
+        recipeInstructions($this, value) {
+			var property = {
+				comment: "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+				parent: $this,
+				property: "recipeInstructions",
+				release: "11.01",
+				types: [
+					"CreativeWork",
+					"Text",
+					"ItemList"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+		}
         get recipeinstructions() { return this.recipeInstructions }
         set recipeinstructions(value) { this.recipeInstructions = value }
 
-            recipeYield($this, value) { return $this.__helperValidateAttribute($this, value, 'recipeYield') }
+        recipeYield($this, value) {
+			var property = {
+				comment: "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
+				parent: $this,
+				property: "recipeYield",
+				release: "11.01",
+				types: [
+					"Text",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get recipeyield() { return this.recipeYield }
         set recipeyield(value) { this.recipeYield = value }
 
-            suitableForDiet($this, value) { return $this.__helperValidateAttribute($this, value, 'suitableForDiet') }
+        suitableForDiet($this, value) {
+			var property = {
+				comment: "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+				parent: $this,
+				property: "suitableForDiet",
+				release: "11.01",
+				types: [
+					"RestrictedDiet"
+				]
+			};
+			return new window.LiveElement.Element.elements.RestrictedDiet(value, property) 
+		}
         get suitablefordiet() { return this.suitableForDiet }
         set suitablefordiet(value) { this.suitableForDiet = value }
         

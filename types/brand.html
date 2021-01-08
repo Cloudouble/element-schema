@@ -32,15 +32,60 @@
         }
         
         
-            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        aggregateRating($this, value) {
+			var property = {
+				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
+				parent: $this,
+				property: "aggregateRating",
+				release: "11.01",
+				types: [
+					"AggregateRating"
+				]
+			};
+			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
-            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+        logo($this, value) {
+			var property = {
+				comment: "An associated logo.",
+				parent: $this,
+				property: "logo",
+				release: "11.01",
+				types: [
+					"ImageObject",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+        review($this, value) {
+			var property = {
+				comment: "A review of the item.",
+				parent: $this,
+				property: "review",
+				release: "11.01",
+				types: [
+					"Review"
+				]
+			};
+			return new window.LiveElement.Element.elements.Review(value, property) 
+		}
 
-            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+        slogan($this, value) {
+			var property = {
+				comment: "A slogan or motto associated with the item.",
+				parent: $this,
+				property: "slogan",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

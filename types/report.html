@@ -32,7 +32,18 @@
         }
         
         
-            reportNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'reportNumber') }
+        reportNumber($this, value) {
+			var property = {
+				comment: "The number or other unique designator assigned to a Report by the publishing organization.",
+				parent: $this,
+				property: "reportNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get reportnumber() { return this.reportNumber }
         set reportnumber(value) { this.reportNumber = value }
         

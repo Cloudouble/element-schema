@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Healthplancostsharingspecification extends window.Cloudouble.Element.elements.Intangible {
+    class HealthPlanCostSharingSpecification extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,78 @@
         }
         
         
-            healthPlanCoinsuranceOption($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCoinsuranceOption') }
+        healthPlanCoinsuranceOption($this, value) {
+			var property = {
+				comment: "Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?",
+				parent: $this,
+				property: "healthPlanCoinsuranceOption",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplancoinsuranceoption() { return this.healthPlanCoinsuranceOption }
         set healthplancoinsuranceoption(value) { this.healthPlanCoinsuranceOption = value }
 
-            healthPlanCoinsuranceRate($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCoinsuranceRate') }
+        healthPlanCoinsuranceRate($this, value) {
+			var property = {
+				comment: "Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.",
+				parent: $this,
+				property: "healthPlanCoinsuranceRate",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get healthplancoinsurancerate() { return this.healthPlanCoinsuranceRate }
         set healthplancoinsurancerate(value) { this.healthPlanCoinsuranceRate = value }
 
-            healthPlanCopay($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCopay') }
+        healthPlanCopay($this, value) {
+			var property = {
+				comment: "Whether The copay amount.",
+				parent: $this,
+				property: "healthPlanCopay",
+				release: "11.01",
+				types: [
+					"PriceSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+		}
         get healthplancopay() { return this.healthPlanCopay }
         set healthplancopay(value) { this.healthPlanCopay = value }
 
-            healthPlanCopayOption($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCopayOption') }
+        healthPlanCopayOption($this, value) {
+			var property = {
+				comment: "Whether the copay is before or after deductible, etc. TODO: Is this a closed set?",
+				parent: $this,
+				property: "healthPlanCopayOption",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplancopayoption() { return this.healthPlanCopayOption }
         set healthplancopayoption(value) { this.healthPlanCopayOption = value }
 
-            healthPlanPharmacyCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanPharmacyCategory') }
+        healthPlanPharmacyCategory($this, value) {
+			var property = {
+				comment: "The category or type of pharmacy associated with this cost sharing.",
+				parent: $this,
+				property: "healthPlanPharmacyCategory",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplanpharmacycategory() { return this.healthPlanPharmacyCategory }
         set healthplanpharmacycategory(value) { this.healthPlanPharmacyCategory = value }
         

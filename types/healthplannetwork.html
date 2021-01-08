@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Healthplannetwork extends window.Cloudouble.Element.elements.Intangible {
+    class HealthPlanNetwork extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            healthPlanCostSharing($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanCostSharing') }
+        healthPlanCostSharing($this, value) {
+			var property = {
+				comment: "Whether The costs to the patient for services under this network or formulary.",
+				parent: $this,
+				property: "healthPlanCostSharing",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get healthplancostsharing() { return this.healthPlanCostSharing }
         set healthplancostsharing(value) { this.healthPlanCostSharing = value }
 
-            healthPlanNetworkId($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkId') }
+        healthPlanNetworkId($this, value) {
+			var property = {
+				comment: "Name or unique ID of network. (Networks are often reused across different insurance plans).",
+				parent: $this,
+				property: "healthPlanNetworkId",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplannetworkid() { return this.healthPlanNetworkId }
         set healthplannetworkid(value) { this.healthPlanNetworkId = value }
 
-            healthPlanNetworkTier($this, value) { return $this.__helperValidateAttribute($this, value, 'healthPlanNetworkTier') }
+        healthPlanNetworkTier($this, value) {
+			var property = {
+				comment: "The tier(s) for this network.",
+				parent: $this,
+				property: "healthPlanNetworkTier",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get healthplannetworktier() { return this.healthPlanNetworkTier }
         set healthplannetworktier(value) { this.healthPlanNetworkTier = value }
         

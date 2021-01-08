@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Travelaction extends window.Cloudouble.Element.elements.Moveaction {
+    class TravelAction extends window.Cloudouble.Element.elements.MoveAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            distance($this, value) { return $this.__helperValidateAttribute($this, value, 'distance') }
+        distance($this, value) {
+			var property = {
+				comment: "The distance travelled, e.g. exercising or travelling.",
+				parent: $this,
+				property: "distance",
+				release: "11.01",
+				types: [
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.Distance(value, property) 
+		}
         
     }
 </script>

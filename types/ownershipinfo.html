@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Ownershipinfo extends window.Cloudouble.Element.elements.Structuredvalue {
+    class OwnershipInfo extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,65 @@
         }
         
         
-            acquiredFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'acquiredFrom') }
+        acquiredFrom($this, value) {
+			var property = {
+				comment: "The organization or person from which the product was acquired.",
+				parent: $this,
+				property: "acquiredFrom",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         get acquiredfrom() { return this.acquiredFrom }
         set acquiredfrom(value) { this.acquiredFrom = value }
 
-            ownedFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'ownedFrom') }
+        ownedFrom($this, value) {
+			var property = {
+				comment: "The date and time of obtaining the product.",
+				parent: $this,
+				property: "ownedFrom",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get ownedfrom() { return this.ownedFrom }
         set ownedfrom(value) { this.ownedFrom = value }
 
-            ownedThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'ownedThrough') }
+        ownedThrough($this, value) {
+			var property = {
+				comment: "The date and time of giving up ownership on the product.",
+				parent: $this,
+				property: "ownedThrough",
+				release: "11.01",
+				types: [
+					"DateTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) 
+		}
         get ownedthrough() { return this.ownedThrough }
         set ownedthrough(value) { this.ownedThrough = value }
 
-            typeOfGood($this, value) { return $this.__helperValidateAttribute($this, value, 'typeOfGood') }
+        typeOfGood($this, value) {
+			var property = {
+				comment: "The product that this structured value is referring to.",
+				parent: $this,
+				property: "typeOfGood",
+				release: "11.01",
+				types: [
+					"Service",
+					"Product"
+				]
+			};
+			return new window.LiveElement.Element.elements.Service(value, property) || new window.LiveElement.Element.elements.Product(value, property) 
+		}
         get typeofgood() { return this.typeOfGood }
         set typeofgood(value) { this.typeOfGood = value }
         

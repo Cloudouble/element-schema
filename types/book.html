@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Book extends window.Cloudouble.Element.elements.Creativework {
+    class Book extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,21 +32,87 @@
         }
         
         
-            abridged($this, value) { return $this.__helperValidateAttribute($this, value, 'abridged') }
+        abridged($this, value) {
+			var property = {
+				comment: "Indicates whether the book is an abridged edition.",
+				parent: $this,
+				property: "abridged",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
 
-            bookEdition($this, value) { return $this.__helperValidateAttribute($this, value, 'bookEdition') }
+        bookEdition($this, value) {
+			var property = {
+				comment: "The edition of the book.",
+				parent: $this,
+				property: "bookEdition",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get bookedition() { return this.bookEdition }
         set bookedition(value) { this.bookEdition = value }
 
-            bookFormat($this, value) { return $this.__helperValidateAttribute($this, value, 'bookFormat') }
+        bookFormat($this, value) {
+			var property = {
+				comment: "The format of the book.",
+				parent: $this,
+				property: "bookFormat",
+				release: "11.01",
+				types: [
+					"BookFormatType"
+				]
+			};
+			return new window.LiveElement.Element.elements.BookFormatType(value, property) 
+		}
         get bookformat() { return this.bookFormat }
         set bookformat(value) { this.bookFormat = value }
 
-            illustrator($this, value) { return $this.__helperValidateAttribute($this, value, 'illustrator') }
+        illustrator($this, value) {
+			var property = {
+				comment: "The illustrator of the book.",
+				parent: $this,
+				property: "illustrator",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            isbn($this, value) { return $this.__helperValidateAttribute($this, value, 'isbn') }
+        isbn($this, value) {
+			var property = {
+				comment: "The ISBN of the book.",
+				parent: $this,
+				property: "isbn",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            numberOfPages($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPages') }
+        numberOfPages($this, value) {
+			var property = {
+				comment: "The number of pages in the book.",
+				parent: $this,
+				property: "numberOfPages",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numberofpages() { return this.numberOfPages }
         set numberofpages(value) { this.numberOfPages = value }
         

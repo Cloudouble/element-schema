@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalprocedure extends window.Cloudouble.Element.elements.Medicalentity {
+    class MedicalProcedure extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,92 @@
         }
         
         
-            bodyLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'bodyLocation') }
+        bodyLocation($this, value) {
+			var property = {
+				comment: "Location in the body of the anatomical structure.",
+				parent: $this,
+				property: "bodyLocation",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get bodylocation() { return this.bodyLocation }
         set bodylocation(value) { this.bodyLocation = value }
 
-            followup($this, value) { return $this.__helperValidateAttribute($this, value, 'followup') }
+        followup($this, value) {
+			var property = {
+				comment: "Typical or recommended followup care after the procedure is performed.",
+				parent: $this,
+				property: "followup",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            howPerformed($this, value) { return $this.__helperValidateAttribute($this, value, 'howPerformed') }
+        howPerformed($this, value) {
+			var property = {
+				comment: "How the procedure is performed.",
+				parent: $this,
+				property: "howPerformed",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get howperformed() { return this.howPerformed }
         set howperformed(value) { this.howPerformed = value }
 
-            preparation($this, value) { return $this.__helperValidateAttribute($this, value, 'preparation') }
+        preparation($this, value) {
+			var property = {
+				comment: "Typical preparation that a patient must undergo before having the procedure performed.",
+				parent: $this,
+				property: "preparation",
+				release: "11.01",
+				types: [
+					"Text",
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
 
-            procedureType($this, value) { return $this.__helperValidateAttribute($this, value, 'procedureType') }
+        procedureType($this, value) {
+			var property = {
+				comment: "The type of procedure, for example Surgical, Noninvasive, or Percutaneous.",
+				parent: $this,
+				property: "procedureType",
+				release: "11.01",
+				types: [
+					"MedicalProcedureType"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalProcedureType(value, property) 
+		}
         get proceduretype() { return this.procedureType }
         set proceduretype(value) { this.procedureType = value }
 
-            status($this, value) { return $this.__helperValidateAttribute($this, value, 'status') }
+        status($this, value) {
+			var property = {
+				comment: "The status of the study (enumerated).",
+				parent: $this,
+				property: "status",
+				release: "11.01",
+				types: [
+					"Text",
+					"EventStatusType",
+					"MedicalStudyStatus"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.EventStatusType(value, property) || new window.LiveElement.Element.elements.MedicalStudyStatus(value, property) 
+		}
         
     }
 </script>

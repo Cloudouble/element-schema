@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicaltest extends window.Cloudouble.Element.elements.Medicalentity {
+    class MedicalTest extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,79 @@
         }
         
         
-            affectedBy($this, value) { return $this.__helperValidateAttribute($this, value, 'affectedBy') }
+        affectedBy($this, value) {
+			var property = {
+				comment: "Drugs that affect the test's results.",
+				parent: $this,
+				property: "affectedBy",
+				release: "11.01",
+				types: [
+					"Drug"
+				]
+			};
+			return new window.LiveElement.Element.elements.Drug(value, property) 
+		}
         get affectedby() { return this.affectedBy }
         set affectedby(value) { this.affectedBy = value }
 
-            normalRange($this, value) { return $this.__helperValidateAttribute($this, value, 'normalRange') }
+        normalRange($this, value) {
+			var property = {
+				comment: "Range of acceptable values for a typical patient, when applicable.",
+				parent: $this,
+				property: "normalRange",
+				release: "11.01",
+				types: [
+					"MedicalEnumeration",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get normalrange() { return this.normalRange }
         set normalrange(value) { this.normalRange = value }
 
-            signDetected($this, value) { return $this.__helperValidateAttribute($this, value, 'signDetected') }
+        signDetected($this, value) {
+			var property = {
+				comment: "A sign detected by the test.",
+				parent: $this,
+				property: "signDetected",
+				release: "11.01",
+				types: [
+					"MedicalSign"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSign(value, property) 
+		}
         get signdetected() { return this.signDetected }
         set signdetected(value) { this.signDetected = value }
 
-            usedToDiagnose($this, value) { return $this.__helperValidateAttribute($this, value, 'usedToDiagnose') }
+        usedToDiagnose($this, value) {
+			var property = {
+				comment: "A condition the test is used to diagnose.",
+				parent: $this,
+				property: "usedToDiagnose",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get usedtodiagnose() { return this.usedToDiagnose }
         set usedtodiagnose(value) { this.usedToDiagnose = value }
 
-            usesDevice($this, value) { return $this.__helperValidateAttribute($this, value, 'usesDevice') }
+        usesDevice($this, value) {
+			var property = {
+				comment: "Device used to perform the test.",
+				parent: $this,
+				property: "usesDevice",
+				release: "11.01",
+				types: [
+					"MedicalDevice"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalDevice(value, property) 
+		}
         get usesdevice() { return this.usesDevice }
         set usesdevice(value) { this.usesDevice = value }
         

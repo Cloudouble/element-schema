@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Solvemathaction extends window.Cloudouble.Element.elements.Action {
+    class SolveMathAction extends window.Cloudouble.Element.elements.Action {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            eduQuestionType($this, value) { return $this.__helperValidateAttribute($this, value, 'eduQuestionType') }
+        eduQuestionType($this, value) {
+			var property = {
+				comment: "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
+				parent: $this,
+				property: "eduQuestionType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get eduquestiontype() { return this.eduQuestionType }
         set eduquestiontype(value) { this.eduQuestionType = value }
         

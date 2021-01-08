@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Localbusiness extends window.Cloudouble.Element.elements.Organization {
+    class LocalBusiness extends window.Cloudouble.Element.elements.Organization {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,78 @@
         }
         
         
-            branchOf($this, value) { return $this.__helperValidateAttribute($this, value, 'branchOf') }
+        branchOf($this, value) {
+			var property = {
+				comment: "The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]].",
+				parent: $this,
+				property: "branchOf",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get branchof() { return this.branchOf }
         set branchof(value) { this.branchOf = value }
 
-            currenciesAccepted($this, value) { return $this.__helperValidateAttribute($this, value, 'currenciesAccepted') }
+        currenciesAccepted($this, value) {
+			var property = {
+				comment: "The currency accepted.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				parent: $this,
+				property: "currenciesAccepted",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get currenciesaccepted() { return this.currenciesAccepted }
         set currenciesaccepted(value) { this.currenciesAccepted = value }
 
-            openingHours($this, value) { return $this.__helperValidateAttribute($this, value, 'openingHours') }
+        openingHours($this, value) {
+			var property = {
+				comment: "The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.\\n\\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\\n* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. \\n* Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.\\n* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.",
+				parent: $this,
+				property: "openingHours",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get openinghours() { return this.openingHours }
         set openinghours(value) { this.openingHours = value }
 
-            paymentAccepted($this, value) { return $this.__helperValidateAttribute($this, value, 'paymentAccepted') }
+        paymentAccepted($this, value) {
+			var property = {
+				comment: "Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.",
+				parent: $this,
+				property: "paymentAccepted",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get paymentaccepted() { return this.paymentAccepted }
         set paymentaccepted(value) { this.paymentAccepted = value }
 
-            priceRange($this, value) { return $this.__helperValidateAttribute($this, value, 'priceRange') }
+        priceRange($this, value) {
+			var property = {
+				comment: "The price range of the business, for example ```$$$```.",
+				parent: $this,
+				property: "priceRange",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get pricerange() { return this.priceRange }
         set pricerange(value) { this.priceRange = value }
         

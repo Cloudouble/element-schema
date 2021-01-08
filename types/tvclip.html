@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Tvclip extends window.Cloudouble.Element.elements.Clip {
+    class TVClip extends window.Cloudouble.Element.elements.Clip {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            partOfTVSeries($this, value) { return $this.__helperValidateAttribute($this, value, 'partOfTVSeries') }
+        partOfTVSeries($this, value) {
+			var property = {
+				comment: "The TV series to which this episode or season belongs.",
+				parent: $this,
+				property: "partOfTVSeries",
+				release: "11.01",
+				types: [
+					"TVSeries"
+				]
+			};
+			return new window.LiveElement.Element.elements.TVSeries(value, property) 
+		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }
         

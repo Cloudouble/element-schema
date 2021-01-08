@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Videoobject extends window.Cloudouble.Element.elements.Mediaobject {
+    class VideoObject extends window.Cloudouble.Element.elements.MediaObject {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,29 +32,141 @@
         }
         
         
-            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+        actor($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actor",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+        actors($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            caption($this, value) { return $this.__helperValidateAttribute($this, value, 'caption') }
+        caption($this, value) {
+			var property = {
+				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
+				parent: $this,
+				property: "caption",
+				release: "11.01",
+				types: [
+					"Text",
+					"MediaObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+		}
 
-            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+        director($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "director",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+        directors($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "directors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        musicBy($this, value) {
+			var property = {
+				comment: "The composer of the soundtrack.",
+				parent: $this,
+				property: "musicBy",
+				release: "11.01",
+				types: [
+					"Person",
+					"MusicGroup"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
-            thumbnail($this, value) { return $this.__helperValidateAttribute($this, value, 'thumbnail') }
+        thumbnail($this, value) {
+			var property = {
+				comment: "Thumbnail image for an image or video.",
+				parent: $this,
+				property: "thumbnail",
+				release: "11.01",
+				types: [
+					"ImageObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+		}
 
-            transcript($this, value) { return $this.__helperValidateAttribute($this, value, 'transcript') }
+        transcript($this, value) {
+			var property = {
+				comment: "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
+				parent: $this,
+				property: "transcript",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            videoFrameSize($this, value) { return $this.__helperValidateAttribute($this, value, 'videoFrameSize') }
+        videoFrameSize($this, value) {
+			var property = {
+				comment: "The frame size of the video.",
+				parent: $this,
+				property: "videoFrameSize",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get videoframesize() { return this.videoFrameSize }
         set videoframesize(value) { this.videoFrameSize = value }
 
-            videoQuality($this, value) { return $this.__helperValidateAttribute($this, value, 'videoQuality') }
+        videoQuality($this, value) {
+			var property = {
+				comment: "The quality of the video.",
+				parent: $this,
+				property: "videoQuality",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get videoquality() { return this.videoQuality }
         set videoquality(value) { this.videoQuality = value }
         

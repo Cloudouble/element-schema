@@ -8,16 +8,14 @@
 </template>
 <script>
     /* global */
-    class Comicstory extends window.Cloudouble.Element.elements.Creativework {
+    class ComicStory extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:ComicStory'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'The term "story" is any indivisible, re-printable
-    	unit of a comic, including the interior stories, covers, and backmatter. Most
-    	comics have at least two stories: a cover (ComicCoverArt) and an interior story.'
+        static _rdfs_comment = 'The term "story" is any indivisible, re-printable     	unit of a comic, including the interior stories, covers, and backmatter. Most     	comics have at least two stories: a cover (ComicCoverArt) and an interior story.'
         static _rdfs_label = 'ComicStory'
 
         static get observedAttributes() {
@@ -34,15 +32,70 @@
         }
         
         
-            artist($this, value) { return $this.__helperValidateAttribute($this, value, 'artist') }
+        artist($this, value) {
+			var property = {
+				comment: "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+				parent: $this,
+				property: "artist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            colorist($this, value) { return $this.__helperValidateAttribute($this, value, 'colorist') }
+        colorist($this, value) {
+			var property = {
+				comment: "The individual who adds color to inked drawings.",
+				parent: $this,
+				property: "colorist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            inker($this, value) { return $this.__helperValidateAttribute($this, value, 'inker') }
+        inker($this, value) {
+			var property = {
+				comment: "The individual who traces over the pencil drawings in ink after pencils are complete.",
+				parent: $this,
+				property: "inker",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            letterer($this, value) { return $this.__helperValidateAttribute($this, value, 'letterer') }
+        letterer($this, value) {
+			var property = {
+				comment: "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+				parent: $this,
+				property: "letterer",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            penciler($this, value) { return $this.__helperValidateAttribute($this, value, 'penciler') }
+        penciler($this, value) {
+			var property = {
+				comment: "The individual who draws the primary narrative artwork.",
+				parent: $this,
+				property: "penciler",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         
     }
 </script>

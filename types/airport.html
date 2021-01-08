@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Airport extends window.Cloudouble.Element.elements.Civicstructure {
+    class Airport extends window.Cloudouble.Element.elements.CivicStructure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            iataCode($this, value) { return $this.__helperValidateAttribute($this, value, 'iataCode') }
+        iataCode($this, value) {
+			var property = {
+				comment: "IATA identifier for an airline or airport.",
+				parent: $this,
+				property: "iataCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get iatacode() { return this.iataCode }
         set iatacode(value) { this.iataCode = value }
 
-            icaoCode($this, value) { return $this.__helperValidateAttribute($this, value, 'icaoCode') }
+        icaoCode($this, value) {
+			var property = {
+				comment: "ICAO identifier for an airport.",
+				parent: $this,
+				property: "icaoCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get icaocode() { return this.icaoCode }
         set icaocode(value) { this.icaoCode = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Howtosection extends window.Cloudouble.Element.elements.Creativework {
+    class HowToSection extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,20 @@
         }
         
         
-            steps($this, value) { return $this.__helperValidateAttribute($this, value, 'steps') }
+        steps($this, value) {
+			var property = {
+				comment: "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
+				parent: $this,
+				property: "steps",
+				release: "11.01",
+				types: [
+					"ItemList",
+					"Text",
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         
     }
 </script>

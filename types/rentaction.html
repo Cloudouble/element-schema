@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Rentaction extends window.Cloudouble.Element.elements.Tradeaction {
+    class RentAction extends window.Cloudouble.Element.elements.TradeAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,32 @@
         }
         
         
-            landlord($this, value) { return $this.__helperValidateAttribute($this, value, 'landlord') }
+        landlord($this, value) {
+			var property = {
+				comment: "A sub property of participant. The owner of the real estate property.",
+				parent: $this,
+				property: "landlord",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            realEstateAgent($this, value) { return $this.__helperValidateAttribute($this, value, 'realEstateAgent') }
+        realEstateAgent($this, value) {
+			var property = {
+				comment: "A sub property of participant. The real estate agent involved in the action.",
+				parent: $this,
+				property: "realEstateAgent",
+				release: "11.01",
+				types: [
+					"RealEstateAgent"
+				]
+			};
+			return new window.LiveElement.Element.elements.RealEstateAgent(value, property) 
+		}
         get realestateagent() { return this.realEstateAgent }
         set realestateagent(value) { this.realEstateAgent = value }
         

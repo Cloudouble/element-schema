@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalcode extends window.Cloudouble.Element.elements.Categorycode {
+    class MedicalCode extends window.Cloudouble.Element.elements.CategoryCode {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            codeValue($this, value) { return $this.__helperValidateAttribute($this, value, 'codeValue') }
+        codeValue($this, value) {
+			var property = {
+				comment: "A short textual code that uniquely identifies the value.",
+				parent: $this,
+				property: "codeValue",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get codevalue() { return this.codeValue }
         set codevalue(value) { this.codeValue = value }
 
-            codingSystem($this, value) { return $this.__helperValidateAttribute($this, value, 'codingSystem') }
+        codingSystem($this, value) {
+			var property = {
+				comment: "The coding system, e.g. 'ICD-10'.",
+				parent: $this,
+				property: "codingSystem",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get codingsystem() { return this.codingSystem }
         set codingsystem(value) { this.codingSystem = value }
         

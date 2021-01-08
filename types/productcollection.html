@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Productcollection extends window.Cloudouble.Element.elements.Product {
+    class ProductCollection extends window.Cloudouble.Element.elements.Product {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            includesObject($this, value) { return $this.__helperValidateAttribute($this, value, 'includesObject') }
+        includesObject($this, value) {
+			var property = {
+				comment: "This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].",
+				parent: $this,
+				property: "includesObject",
+				release: "11.01",
+				types: [
+					"TypeAndQuantityNode"
+				]
+			};
+			return new window.LiveElement.Element.elements.TypeAndQuantityNode(value, property) 
+		}
         get includesobject() { return this.includesObject }
         set includesobject(value) { this.includesObject = value }
         

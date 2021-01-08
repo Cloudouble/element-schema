@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Exerciseplan extends window.Cloudouble.Element.elements.Creativework {
+    class ExercisePlan extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,31 +32,125 @@
         }
         
         
-            activityDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'activityDuration') }
+        activityDuration($this, value) {
+			var property = {
+				comment: "Length of time to engage in the activity.",
+				parent: $this,
+				property: "activityDuration",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get activityduration() { return this.activityDuration }
         set activityduration(value) { this.activityDuration = value }
 
-            activityFrequency($this, value) { return $this.__helperValidateAttribute($this, value, 'activityFrequency') }
+        activityFrequency($this, value) {
+			var property = {
+				comment: "How often one should engage in the activity.",
+				parent: $this,
+				property: "activityFrequency",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get activityfrequency() { return this.activityFrequency }
         set activityfrequency(value) { this.activityFrequency = value }
 
-            additionalVariable($this, value) { return $this.__helperValidateAttribute($this, value, 'additionalVariable') }
+        additionalVariable($this, value) {
+			var property = {
+				comment: "Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.",
+				parent: $this,
+				property: "additionalVariable",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get additionalvariable() { return this.additionalVariable }
         set additionalvariable(value) { this.additionalVariable = value }
 
-            exerciseType($this, value) { return $this.__helperValidateAttribute($this, value, 'exerciseType') }
+        exerciseType($this, value) {
+			var property = {
+				comment: "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+				parent: $this,
+				property: "exerciseType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
 
-            intensity($this, value) { return $this.__helperValidateAttribute($this, value, 'intensity') }
+        intensity($this, value) {
+			var property = {
+				comment: "Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.",
+				parent: $this,
+				property: "intensity",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            repetitions($this, value) { return $this.__helperValidateAttribute($this, value, 'repetitions') }
+        repetitions($this, value) {
+			var property = {
+				comment: "Number of times one should repeat the activity.",
+				parent: $this,
+				property: "repetitions",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
 
-            restPeriods($this, value) { return $this.__helperValidateAttribute($this, value, 'restPeriods') }
+        restPeriods($this, value) {
+			var property = {
+				comment: "How often one should break from the activity.",
+				parent: $this,
+				property: "restPeriods",
+				release: "11.01",
+				types: [
+					"Text",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get restperiods() { return this.restPeriods }
         set restperiods(value) { this.restPeriods = value }
 
-            workload($this, value) { return $this.__helperValidateAttribute($this, value, 'workload') }
+        workload($this, value) {
+			var property = {
+				comment: "Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.",
+				parent: $this,
+				property: "workload",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Energy"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Energy(value, property) 
+		}
         
     }
 </script>

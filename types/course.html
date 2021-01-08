@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Course extends window.Cloudouble.Element.elements.Creativework {
+    class Course extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,100 @@
         }
         
         
-            courseCode($this, value) { return $this.__helperValidateAttribute($this, value, 'courseCode') }
+        courseCode($this, value) {
+			var property = {
+				comment: "The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
+				parent: $this,
+				property: "courseCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get coursecode() { return this.courseCode }
         set coursecode(value) { this.courseCode = value }
 
-            coursePrerequisites($this, value) { return $this.__helperValidateAttribute($this, value, 'coursePrerequisites') }
+        coursePrerequisites($this, value) {
+			var property = {
+				comment: "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
+				parent: $this,
+				property: "coursePrerequisites",
+				release: "11.01",
+				types: [
+					"Course",
+					"Text",
+					"AlignmentObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.Course(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.AlignmentObject(value, property) 
+		}
         get courseprerequisites() { return this.coursePrerequisites }
         set courseprerequisites(value) { this.coursePrerequisites = value }
 
-            educationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalCredentialAwarded') }
+        educationalCredentialAwarded($this, value) {
+			var property = {
+				comment: "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+				parent: $this,
+				property: "educationalCredentialAwarded",
+				release: "11.01",
+				types: [
+					"URL",
+					"EducationalOccupationalCredential",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get educationalcredentialawarded() { return this.educationalCredentialAwarded }
         set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
 
-            hasCourseInstance($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCourseInstance') }
+        hasCourseInstance($this, value) {
+			var property = {
+				comment: "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
+				parent: $this,
+				property: "hasCourseInstance",
+				release: "11.01",
+				types: [
+					"CourseInstance"
+				]
+			};
+			return new window.LiveElement.Element.elements.CourseInstance(value, property) 
+		}
         get hascourseinstance() { return this.hasCourseInstance }
         set hascourseinstance(value) { this.hasCourseInstance = value }
 
-            numberOfCredits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfCredits') }
+        numberOfCredits($this, value) {
+			var property = {
+				comment: "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
+				parent: $this,
+				property: "numberOfCredits",
+				release: "11.01",
+				types: [
+					"StructuredValue",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numberofcredits() { return this.numberOfCredits }
         set numberofcredits(value) { this.numberOfCredits = value }
 
-            occupationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCredentialAwarded') }
+        occupationalCredentialAwarded($this, value) {
+			var property = {
+				comment: "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+				parent: $this,
+				property: "occupationalCredentialAwarded",
+				release: "11.01",
+				types: [
+					"URL",
+					"EducationalOccupationalCredential",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
         set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
         

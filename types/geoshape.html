@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Geoshape extends window.Cloudouble.Element.elements.Structuredvalue {
+    class GeoShape extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,114 @@
         }
         
         
-            address($this, value) { return $this.__helperValidateAttribute($this, value, 'address') }
+        address($this, value) {
+			var property = {
+				comment: "Physical address of the item.",
+				parent: $this,
+				property: "address",
+				release: "11.01",
+				types: [
+					"Text",
+					"PostalAddress"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+		}
 
-            addressCountry($this, value) { return $this.__helperValidateAttribute($this, value, 'addressCountry') }
+        addressCountry($this, value) {
+			var property = {
+				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).",
+				parent: $this,
+				property: "addressCountry",
+				release: "11.01",
+				types: [
+					"Country",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Country(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get addresscountry() { return this.addressCountry }
         set addresscountry(value) { this.addressCountry = value }
 
-            box($this, value) { return $this.__helperValidateAttribute($this, value, 'box') }
+        box($this, value) {
+			var property = {
+				comment: "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
+				parent: $this,
+				property: "box",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            circle($this, value) { return $this.__helperValidateAttribute($this, value, 'circle') }
+        circle($this, value) {
+			var property = {
+				comment: "A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.",
+				parent: $this,
+				property: "circle",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            elevation($this, value) { return $this.__helperValidateAttribute($this, value, 'elevation') }
+        elevation($this, value) {
+			var property = {
+				comment: "The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
+				parent: $this,
+				property: "elevation",
+				release: "11.01",
+				types: [
+					"Number",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            line($this, value) { return $this.__helperValidateAttribute($this, value, 'line') }
+        line($this, value) {
+			var property = {
+				comment: "A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.",
+				parent: $this,
+				property: "line",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            polygon($this, value) { return $this.__helperValidateAttribute($this, value, 'polygon') }
+        polygon($this, value) {
+			var property = {
+				comment: "A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.",
+				parent: $this,
+				property: "polygon",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            postalCode($this, value) { return $this.__helperValidateAttribute($this, value, 'postalCode') }
+        postalCode($this, value) {
+			var property = {
+				comment: "The postal code. For example, 94043.",
+				parent: $this,
+				property: "postalCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postalcode() { return this.postalCode }
         set postalcode(value) { this.postalCode = value }
         

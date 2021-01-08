@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Businessaudience extends window.Cloudouble.Element.elements.Audience {
+    class BusinessAudience extends window.Cloudouble.Element.elements.Audience {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,48 @@
         }
         
         
-            numberOfEmployees($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfEmployees') }
+        numberOfEmployees($this, value) {
+			var property = {
+				comment: "The number of employees in an organization e.g. business.",
+				parent: $this,
+				property: "numberOfEmployees",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofemployees() { return this.numberOfEmployees }
         set numberofemployees(value) { this.numberOfEmployees = value }
 
-            yearlyRevenue($this, value) { return $this.__helperValidateAttribute($this, value, 'yearlyRevenue') }
+        yearlyRevenue($this, value) {
+			var property = {
+				comment: "The size of the business in annual revenue.",
+				parent: $this,
+				property: "yearlyRevenue",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get yearlyrevenue() { return this.yearlyRevenue }
         set yearlyrevenue(value) { this.yearlyRevenue = value }
 
-            yearsInOperation($this, value) { return $this.__helperValidateAttribute($this, value, 'yearsInOperation') }
+        yearsInOperation($this, value) {
+			var property = {
+				comment: "The age of the business.",
+				parent: $this,
+				property: "yearsInOperation",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get yearsinoperation() { return this.yearsInOperation }
         set yearsinoperation(value) { this.yearsInOperation = value }
         

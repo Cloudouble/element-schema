@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Voteaction extends window.Cloudouble.Element.elements.Chooseaction {
+    class VoteAction extends window.Cloudouble.Element.elements.ChooseAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            candidate($this, value) { return $this.__helperValidateAttribute($this, value, 'candidate') }
+        candidate($this, value) {
+			var property = {
+				comment: "A sub property of object. The candidate subject of this action.",
+				parent: $this,
+				property: "candidate",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         
     }
 </script>

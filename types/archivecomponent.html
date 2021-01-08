@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Archivecomponent extends window.Cloudouble.Element.elements.Creativework {
+    class ArchiveComponent extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,35 @@
         }
         
         
-            holdingArchive($this, value) { return $this.__helperValidateAttribute($this, value, 'holdingArchive') }
+        holdingArchive($this, value) {
+			var property = {
+				comment: "[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].",
+				parent: $this,
+				property: "holdingArchive",
+				release: "11.01",
+				types: [
+					"ArchiveOrganization"
+				]
+			};
+			return new window.LiveElement.Element.elements.ArchiveOrganization(value, property) 
+		}
         get holdingarchive() { return this.holdingArchive }
         set holdingarchive(value) { this.holdingArchive = value }
 
-            itemLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'itemLocation') }
+        itemLocation($this, value) {
+			var property = {
+				comment: "Current location of the item.",
+				parent: $this,
+				property: "itemLocation",
+				release: "11.01",
+				types: [
+					"Text",
+					"PostalAddress",
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get itemlocation() { return this.itemLocation }
         set itemlocation(value) { this.itemLocation = value }
         

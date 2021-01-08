@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalscholarlyarticle extends window.Cloudouble.Element.elements.Scholarlyarticle {
+    class MedicalScholarlyArticle extends window.Cloudouble.Element.elements.ScholarlyArticle {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            publicationType($this, value) { return $this.__helperValidateAttribute($this, value, 'publicationType') }
+        publicationType($this, value) {
+			var property = {
+				comment: "The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).",
+				parent: $this,
+				property: "publicationType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get publicationtype() { return this.publicationType }
         set publicationtype(value) { this.publicationType = value }
         

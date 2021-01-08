@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Peopleaudience extends window.Cloudouble.Element.elements.Audience {
+    class PeopleAudience extends window.Cloudouble.Element.elements.Audience {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,31 +32,108 @@
         }
         
         
-            healthCondition($this, value) { return $this.__helperValidateAttribute($this, value, 'healthCondition') }
+        healthCondition($this, value) {
+			var property = {
+				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
+				parent: $this,
+				property: "healthCondition",
+				release: "11.01",
+				types: [
+					"MedicalCondition"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
 
-            requiredGender($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredGender') }
+        requiredGender($this, value) {
+			var property = {
+				comment: "Audiences defined by a person's gender.",
+				parent: $this,
+				property: "requiredGender",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get requiredgender() { return this.requiredGender }
         set requiredgender(value) { this.requiredGender = value }
 
-            requiredMaxAge($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredMaxAge') }
+        requiredMaxAge($this, value) {
+			var property = {
+				comment: "Audiences defined by a person's maximum age.",
+				parent: $this,
+				property: "requiredMaxAge",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get requiredmaxage() { return this.requiredMaxAge }
         set requiredmaxage(value) { this.requiredMaxAge = value }
 
-            requiredMinAge($this, value) { return $this.__helperValidateAttribute($this, value, 'requiredMinAge') }
+        requiredMinAge($this, value) {
+			var property = {
+				comment: "Audiences defined by a person's minimum age.",
+				parent: $this,
+				property: "requiredMinAge",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get requiredminage() { return this.requiredMinAge }
         set requiredminage(value) { this.requiredMinAge = value }
 
-            suggestedGender($this, value) { return $this.__helperValidateAttribute($this, value, 'suggestedGender') }
+        suggestedGender($this, value) {
+			var property = {
+				comment: "The gender of the person or audience.",
+				parent: $this,
+				property: "suggestedGender",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get suggestedgender() { return this.suggestedGender }
         set suggestedgender(value) { this.suggestedGender = value }
 
-            suggestedMaxAge($this, value) { return $this.__helperValidateAttribute($this, value, 'suggestedMaxAge') }
+        suggestedMaxAge($this, value) {
+			var property = {
+				comment: "Maximal age recommended for viewing content.",
+				parent: $this,
+				property: "suggestedMaxAge",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get suggestedmaxage() { return this.suggestedMaxAge }
         set suggestedmaxage(value) { this.suggestedMaxAge = value }
 
-            suggestedMinAge($this, value) { return $this.__helperValidateAttribute($this, value, 'suggestedMinAge') }
+        suggestedMinAge($this, value) {
+			var property = {
+				comment: "Minimal age recommended for viewing content.",
+				parent: $this,
+				property: "suggestedMinAge",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get suggestedminage() { return this.suggestedMinAge }
         set suggestedminage(value) { this.suggestedMinAge = value }
         

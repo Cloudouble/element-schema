@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Educationalorganization extends window.Cloudouble.Element.elements.Civicstructure {
+    class EducationalOrganization extends window.Cloudouble.Element.elements.CivicStructure {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            alumni($this, value) { return $this.__helperValidateAttribute($this, value, 'alumni') }
+        alumni($this, value) {
+			var property = {
+				comment: "Alumni of an organization.",
+				parent: $this,
+				property: "alumni",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         
     }
 </script>

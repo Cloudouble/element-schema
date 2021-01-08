@@ -32,11 +32,33 @@
         }
         
         
-            boardingPolicy($this, value) { return $this.__helperValidateAttribute($this, value, 'boardingPolicy') }
+        boardingPolicy($this, value) {
+			var property = {
+				comment: "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
+				parent: $this,
+				property: "boardingPolicy",
+				release: "11.01",
+				types: [
+					"BoardingPolicyType"
+				]
+			};
+			return new window.LiveElement.Element.elements.BoardingPolicyType(value, property) 
+		}
         get boardingpolicy() { return this.boardingPolicy }
         set boardingpolicy(value) { this.boardingPolicy = value }
 
-            iataCode($this, value) { return $this.__helperValidateAttribute($this, value, 'iataCode') }
+        iataCode($this, value) {
+			var property = {
+				comment: "IATA identifier for an airline or airport.",
+				parent: $this,
+				property: "iataCode",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get iatacode() { return this.iataCode }
         set iatacode(value) { this.iataCode = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Reservationpackage extends window.Cloudouble.Element.elements.Reservation {
+    class ReservationPackage extends window.Cloudouble.Element.elements.Reservation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            subReservation($this, value) { return $this.__helperValidateAttribute($this, value, 'subReservation') }
+        subReservation($this, value) {
+			var property = {
+				comment: "The individual reservations included in the package. Typically a repeated property.",
+				parent: $this,
+				property: "subReservation",
+				release: "11.01",
+				types: [
+					"Reservation"
+				]
+			};
+			return new window.LiveElement.Element.elements.Reservation(value, property) 
+		}
         get subreservation() { return this.subReservation }
         set subreservation(value) { this.subReservation = value }
         

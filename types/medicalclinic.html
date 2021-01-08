@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalclinic extends window.Cloudouble.Element.elements.Medicalbusiness {
+    class MedicalClinic extends window.Cloudouble.Element.elements.MedicalBusiness {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,35 @@
         }
         
         
-            availableService($this, value) { return $this.__helperValidateAttribute($this, value, 'availableService') }
+        availableService($this, value) {
+			var property = {
+				comment: "A medical service available from this provider.",
+				parent: $this,
+				property: "availableService",
+				release: "11.01",
+				types: [
+					"MedicalTest",
+					"MedicalTherapy",
+					"MedicalProcedure"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTest(value, property) || new window.LiveElement.Element.elements.MedicalTherapy(value, property) || new window.LiveElement.Element.elements.MedicalProcedure(value, property) 
+		}
         get availableservice() { return this.availableService }
         set availableservice(value) { this.availableService = value }
 
-            medicalSpecialty($this, value) { return $this.__helperValidateAttribute($this, value, 'medicalSpecialty') }
+        medicalSpecialty($this, value) {
+			var property = {
+				comment: "A medical specialty of the provider.",
+				parent: $this,
+				property: "medicalSpecialty",
+				release: "11.01",
+				types: [
+					"MedicalSpecialty"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Locationfeaturespecification extends window.Cloudouble.Element.elements.Propertyvalue {
+    class LocationFeatureSpecification extends window.Cloudouble.Element.elements.PropertyValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,50 @@
         }
         
         
-            hoursAvailable($this, value) { return $this.__helperValidateAttribute($this, value, 'hoursAvailable') }
+        hoursAvailable($this, value) {
+			var property = {
+				comment: "The hours during which this service or contact is available.",
+				parent: $this,
+				property: "hoursAvailable",
+				release: "11.01",
+				types: [
+					"OpeningHoursSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.OpeningHoursSpecification(value, property) 
+		}
         get hoursavailable() { return this.hoursAvailable }
         set hoursavailable(value) { this.hoursAvailable = value }
 
-            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        validFrom($this, value) {
+			var property = {
+				comment: "The date when the item becomes valid.",
+				parent: $this,
+				property: "validFrom",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
-            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        validThrough($this, value) {
+			var property = {
+				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+				parent: $this,
+				property: "validThrough",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
         

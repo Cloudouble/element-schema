@@ -8,16 +8,14 @@
 </template>
 <script>
     /* global */
-    class Mediareview extends window.Cloudouble.Element.elements.Review {
+    class MediaReview extends window.Cloudouble.Element.elements.Review {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:MediaReview'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = '(editorial work in progress, this definition is incomplete and unreviewed)
-    A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
-    For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types.'
+        static _rdfs_comment = '(editorial work in progress, this definition is incomplete and unreviewed)     A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.     For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types.'
         static _rdfs_label = 'MediaReview'
 
         static get observedAttributes() {
@@ -34,7 +32,18 @@
         }
         
         
-            mediaAuthenticityCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'mediaAuthenticityCategory') }
+        mediaAuthenticityCategory($this, value) {
+			var property = {
+				comment: "Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).",
+				parent: $this,
+				property: "mediaAuthenticityCategory",
+				release: "11.01",
+				types: [
+					"MediaManipulationRatingEnumeration"
+				]
+			};
+			return new window.LiveElement.Element.elements.MediaManipulationRatingEnumeration(value, property) 
+		}
         get mediaauthenticitycategory() { return this.mediaAuthenticityCategory }
         set mediaauthenticitycategory(value) { this.mediaAuthenticityCategory = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalriskscore extends window.Cloudouble.Element.elements.Medicalriskestimator {
+    class MedicalRiskScore extends window.Cloudouble.Element.elements.MedicalRiskEstimator {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            algorithm($this, value) { return $this.__helperValidateAttribute($this, value, 'algorithm') }
+        algorithm($this, value) {
+			var property = {
+				comment: "The algorithm or rules to follow to compute the score.",
+				parent: $this,
+				property: "algorithm",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         
     }
 </script>

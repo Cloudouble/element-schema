@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Gameserver extends window.Cloudouble.Element.elements.Intangible {
+    class GameServer extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,46 @@
         }
         
         
-            game($this, value) { return $this.__helperValidateAttribute($this, value, 'game') }
+        game($this, value) {
+			var property = {
+				comment: "Video game which is played on this server.",
+				parent: $this,
+				property: "game",
+				release: "11.01",
+				types: [
+					"VideoGame"
+				]
+			};
+			return new window.LiveElement.Element.elements.VideoGame(value, property) 
+		}
 
-            playersOnline($this, value) { return $this.__helperValidateAttribute($this, value, 'playersOnline') }
+        playersOnline($this, value) {
+			var property = {
+				comment: "Number of players on the server.",
+				parent: $this,
+				property: "playersOnline",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get playersonline() { return this.playersOnline }
         set playersonline(value) { this.playersOnline = value }
 
-            serverStatus($this, value) { return $this.__helperValidateAttribute($this, value, 'serverStatus') }
+        serverStatus($this, value) {
+			var property = {
+				comment: "Status of a game server.",
+				parent: $this,
+				property: "serverStatus",
+				release: "11.01",
+				types: [
+					"GameServerStatus"
+				]
+			};
+			return new window.LiveElement.Element.elements.GameServerStatus(value, property) 
+		}
         get serverstatus() { return this.serverStatus }
         set serverstatus(value) { this.serverStatus = value }
         

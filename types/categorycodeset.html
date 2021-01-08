@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Categorycodeset extends window.Cloudouble.Element.elements.Definedtermset {
+    class CategoryCodeSet extends window.Cloudouble.Element.elements.DefinedTermSet {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            hasCategoryCode($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCategoryCode') }
+        hasCategoryCode($this, value) {
+			var property = {
+				comment: "A Category code contained in this code set.",
+				parent: $this,
+				property: "hasCategoryCode",
+				release: "11.01",
+				types: [
+					"CategoryCode"
+				]
+			};
+			return new window.LiveElement.Element.elements.CategoryCode(value, property) 
+		}
         get hascategorycode() { return this.hasCategoryCode }
         set hascategorycode(value) { this.hasCategoryCode = value }
         

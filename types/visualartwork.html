@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Visualartwork extends window.Cloudouble.Element.elements.Creativework {
+    class VisualArtwork extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,37 +32,188 @@
         }
         
         
-            artEdition($this, value) { return $this.__helperValidateAttribute($this, value, 'artEdition') }
+        artEdition($this, value) {
+			var property = {
+				comment: "The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example \"20\").",
+				parent: $this,
+				property: "artEdition",
+				release: "11.01",
+				types: [
+					"Text",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get artedition() { return this.artEdition }
         set artedition(value) { this.artEdition = value }
 
-            artMedium($this, value) { return $this.__helperValidateAttribute($this, value, 'artMedium') }
+        artMedium($this, value) {
+			var property = {
+				comment: "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)",
+				parent: $this,
+				property: "artMedium",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get artmedium() { return this.artMedium }
         set artmedium(value) { this.artMedium = value }
 
-            artform($this, value) { return $this.__helperValidateAttribute($this, value, 'artform') }
+        artform($this, value) {
+			var property = {
+				comment: "e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.",
+				parent: $this,
+				property: "artform",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            artist($this, value) { return $this.__helperValidateAttribute($this, value, 'artist') }
+        artist($this, value) {
+			var property = {
+				comment: "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
+				parent: $this,
+				property: "artist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            artworkSurface($this, value) { return $this.__helperValidateAttribute($this, value, 'artworkSurface') }
+        artworkSurface($this, value) {
+			var property = {
+				comment: "The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.",
+				parent: $this,
+				property: "artworkSurface",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get artworksurface() { return this.artworkSurface }
         set artworksurface(value) { this.artworkSurface = value }
 
-            colorist($this, value) { return $this.__helperValidateAttribute($this, value, 'colorist') }
+        colorist($this, value) {
+			var property = {
+				comment: "The individual who adds color to inked drawings.",
+				parent: $this,
+				property: "colorist",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            depth($this, value) { return $this.__helperValidateAttribute($this, value, 'depth') }
+        depth($this, value) {
+			var property = {
+				comment: "The depth of the item.",
+				parent: $this,
+				property: "depth",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
 
-            height($this, value) { return $this.__helperValidateAttribute($this, value, 'height') }
+        height($this, value) {
+			var property = {
+				comment: "The height of the item.",
+				parent: $this,
+				property: "height",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
 
-            inker($this, value) { return $this.__helperValidateAttribute($this, value, 'inker') }
+        inker($this, value) {
+			var property = {
+				comment: "The individual who traces over the pencil drawings in ink after pencils are complete.",
+				parent: $this,
+				property: "inker",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            letterer($this, value) { return $this.__helperValidateAttribute($this, value, 'letterer') }
+        letterer($this, value) {
+			var property = {
+				comment: "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
+				parent: $this,
+				property: "letterer",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            penciler($this, value) { return $this.__helperValidateAttribute($this, value, 'penciler') }
+        penciler($this, value) {
+			var property = {
+				comment: "The individual who draws the primary narrative artwork.",
+				parent: $this,
+				property: "penciler",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            surface($this, value) { return $this.__helperValidateAttribute($this, value, 'surface') }
+        surface($this, value) {
+			var property = {
+				comment: "A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.",
+				parent: $this,
+				property: "surface",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            width($this, value) { return $this.__helperValidateAttribute($this, value, 'width') }
+        width($this, value) {
+			var property = {
+				comment: "The width of the item.",
+				parent: $this,
+				property: "width",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Distance"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+		}
         
     }
 </script>

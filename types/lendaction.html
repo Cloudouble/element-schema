@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Lendaction extends window.Cloudouble.Element.elements.Transferaction {
+    class LendAction extends window.Cloudouble.Element.elements.TransferAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            borrower($this, value) { return $this.__helperValidateAttribute($this, value, 'borrower') }
+        borrower($this, value) {
+			var property = {
+				comment: "A sub property of participant. The person that borrows the object being lent.",
+				parent: $this,
+				property: "borrower",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
         
     }
 </script>

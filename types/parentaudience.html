@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Parentaudience extends window.Cloudouble.Element.elements.Peopleaudience {
+    class ParentAudience extends window.Cloudouble.Element.elements.PeopleAudience {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            childMaxAge($this, value) { return $this.__helperValidateAttribute($this, value, 'childMaxAge') }
+        childMaxAge($this, value) {
+			var property = {
+				comment: "Maximal age of the child.",
+				parent: $this,
+				property: "childMaxAge",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get childmaxage() { return this.childMaxAge }
         set childmaxage(value) { this.childMaxAge = value }
 
-            childMinAge($this, value) { return $this.__helperValidateAttribute($this, value, 'childMinAge') }
+        childMinAge($this, value) {
+			var property = {
+				comment: "Minimal age of the child.",
+				parent: $this,
+				property: "childMinAge",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get childminage() { return this.childMinAge }
         set childminage(value) { this.childMinAge = value }
         

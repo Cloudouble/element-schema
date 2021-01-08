@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Legislationobject extends window.Cloudouble.Element.elements.Legislation {
+    class LegislationObject extends window.Cloudouble.Element.elements.Legislation {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,18 @@
         }
         
         
-            legislationLegalValue($this, value) { return $this.__helperValidateAttribute($this, value, 'legislationLegalValue') }
+        legislationLegalValue($this, value) {
+			var property = {
+				comment: "The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a \"stronger\" legal value than the HTML file of the same act.",
+				parent: $this,
+				property: "legislationLegalValue",
+				release: "11.01",
+				types: [
+					"LegalValueLevel"
+				]
+			};
+			return new window.LiveElement.Element.elements.LegalValueLevel(value, property) 
+		}
         get legislationlegalvalue() { return this.legislationLegalValue }
         set legislationlegalvalue(value) { this.legislationLegalValue = value }
         

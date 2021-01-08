@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicaldevice extends window.Cloudouble.Element.elements.Medicalentity {
+    class MedicalDevice extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,90 @@
         }
         
         
-            adverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'adverseOutcome') }
+        adverseOutcome($this, value) {
+			var property = {
+				comment: "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
+				parent: $this,
+				property: "adverseOutcome",
+				release: "11.01",
+				types: [
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get adverseoutcome() { return this.adverseOutcome }
         set adverseoutcome(value) { this.adverseOutcome = value }
 
-            contraindication($this, value) { return $this.__helperValidateAttribute($this, value, 'contraindication') }
+        contraindication($this, value) {
+			var property = {
+				comment: "A contraindication for this therapy.",
+				parent: $this,
+				property: "contraindication",
+				release: "11.01",
+				types: [
+					"MedicalContraindication",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalContraindication(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            postOp($this, value) { return $this.__helperValidateAttribute($this, value, 'postOp') }
+        postOp($this, value) {
+			var property = {
+				comment: "A description of the postoperative procedures, care, and/or followups for this device.",
+				parent: $this,
+				property: "postOp",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get postop() { return this.postOp }
         set postop(value) { this.postOp = value }
 
-            preOp($this, value) { return $this.__helperValidateAttribute($this, value, 'preOp') }
+        preOp($this, value) {
+			var property = {
+				comment: "A description of the workup, testing, and other preparations required before implanting this device.",
+				parent: $this,
+				property: "preOp",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get preop() { return this.preOp }
         set preop(value) { this.preOp = value }
 
-            procedure($this, value) { return $this.__helperValidateAttribute($this, value, 'procedure') }
+        procedure($this, value) {
+			var property = {
+				comment: "A description of the procedure involved in setting up, using, and/or installing the device.",
+				parent: $this,
+				property: "procedure",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            seriousAdverseOutcome($this, value) { return $this.__helperValidateAttribute($this, value, 'seriousAdverseOutcome') }
+        seriousAdverseOutcome($this, value) {
+			var property = {
+				comment: "A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
+				parent: $this,
+				property: "seriousAdverseOutcome",
+				release: "11.01",
+				types: [
+					"MedicalEntity"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+		}
         get seriousadverseoutcome() { return this.seriousAdverseOutcome }
         set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }
         

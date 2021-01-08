@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Musicplaylist extends window.Cloudouble.Element.elements.Creativework {
+    class MusicPlaylist extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,47 @@
         }
         
         
-            numTracks($this, value) { return $this.__helperValidateAttribute($this, value, 'numTracks') }
+        numTracks($this, value) {
+			var property = {
+				comment: "The number of tracks in this album or playlist.",
+				parent: $this,
+				property: "numTracks",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numtracks() { return this.numTracks }
         set numtracks(value) { this.numTracks = value }
 
-            track($this, value) { return $this.__helperValidateAttribute($this, value, 'track') }
+        track($this, value) {
+			var property = {
+				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
+				parent: $this,
+				property: "track",
+				release: "11.01",
+				types: [
+					"MusicRecording",
+					"ItemList"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicRecording(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+		}
 
-            tracks($this, value) { return $this.__helperValidateAttribute($this, value, 'tracks') }
+        tracks($this, value) {
+			var property = {
+				comment: "A music recording (track)&#x2014;usually a single song.",
+				parent: $this,
+				property: "tracks",
+				release: "11.01",
+				types: [
+					"MusicRecording"
+				]
+			};
+			return new window.LiveElement.Element.elements.MusicRecording(value, property) 
+		}
         
     }
 </script>

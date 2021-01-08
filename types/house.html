@@ -32,7 +32,19 @@
         }
         
         
-            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        numberOfRooms($this, value) {
+			var property = {
+				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+				parent: $this,
+				property: "numberOfRooms",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofrooms() { return this.numberOfRooms }
         set numberofrooms(value) { this.numberOfRooms = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Productreturnpolicy extends window.Cloudouble.Element.elements.Intangible {
+    class ProductReturnPolicy extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            productReturnDays($this, value) { return $this.__helperValidateAttribute($this, value, 'productReturnDays') }
+        productReturnDays($this, value) {
+			var property = {
+				comment: "The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.",
+				parent: $this,
+				property: "productReturnDays",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get productreturndays() { return this.productReturnDays }
         set productreturndays(value) { this.productReturnDays = value }
 
-            productReturnLink($this, value) { return $this.__helperValidateAttribute($this, value, 'productReturnLink') }
+        productReturnLink($this, value) {
+			var property = {
+				comment: "Indicates a Web page or service by URL, for product return.",
+				parent: $this,
+				property: "productReturnLink",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get productreturnlink() { return this.productReturnLink }
         set productreturnlink(value) { this.productReturnLink = value }
         

@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Tradeaction extends window.Cloudouble.Element.elements.Action {
+    class TradeAction extends window.Cloudouble.Element.elements.Action {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,13 +32,47 @@
         }
         
         
-            price($this, value) { return $this.__helperValidateAttribute($this, value, 'price') }
+        price($this, value) {
+			var property = {
+				comment: "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\\n\\nUsage guidelines:\\n\\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n      ",
+				parent: $this,
+				property: "price",
+				release: "11.01",
+				types: [
+					"Number",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            priceCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'priceCurrency') }
+        priceCurrency($this, value) {
+			var property = {
+				comment: "The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. \"USD\"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
+				parent: $this,
+				property: "priceCurrency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
 
-            priceSpecification($this, value) { return $this.__helperValidateAttribute($this, value, 'priceSpecification') }
+        priceSpecification($this, value) {
+			var property = {
+				comment: "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+				parent: $this,
+				property: "priceSpecification",
+				release: "11.01",
+				types: [
+					"PriceSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+		}
         get pricespecification() { return this.priceSpecification }
         set pricespecification(value) { this.priceSpecification = value }
         

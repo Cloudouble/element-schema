@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Mathsolver extends window.Cloudouble.Element.elements.Creativework {
+    class MathSolver extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,7 +32,19 @@
         }
         
         
-            mathExpression($this, value) { return $this.__helperValidateAttribute($this, value, 'mathExpression') }
+        mathExpression($this, value) {
+			var property = {
+				comment: "A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.",
+				parent: $this,
+				property: "mathExpression",
+				release: "11.01",
+				types: [
+					"Text",
+					"SolveMathAction"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.SolveMathAction(value, property) 
+		}
         get mathexpression() { return this.mathExpression }
         set mathexpression(value) { this.mathExpression = value }
         

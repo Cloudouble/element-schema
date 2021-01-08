@@ -32,159 +32,616 @@
         }
         
         
-            accelerationTime($this, value) { return $this.__helperValidateAttribute($this, value, 'accelerationTime') }
+        accelerationTime($this, value) {
+			var property = {
+				comment: "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.\\n\\nTypical unit code(s): SEC for seconds\\n\\n* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.",
+				parent: $this,
+				property: "accelerationTime",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get accelerationtime() { return this.accelerationTime }
         set accelerationtime(value) { this.accelerationTime = value }
 
-            bodyType($this, value) { return $this.__helperValidateAttribute($this, value, 'bodyType') }
+        bodyType($this, value) {
+			var property = {
+				comment: "Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).",
+				parent: $this,
+				property: "bodyType",
+				release: "11.01",
+				types: [
+					"Text",
+					"QualitativeValue",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get bodytype() { return this.bodyType }
         set bodytype(value) { this.bodyType = value }
 
-            callSign($this, value) { return $this.__helperValidateAttribute($this, value, 'callSign') }
+        callSign($this, value) {
+			var property = {
+				comment: "A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
+				parent: $this,
+				property: "callSign",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
 
-            cargoVolume($this, value) { return $this.__helperValidateAttribute($this, value, 'cargoVolume') }
+        cargoVolume($this, value) {
+			var property = {
+				comment: "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\\n\\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\\n\\nNote: You can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "cargoVolume",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get cargovolume() { return this.cargoVolume }
         set cargovolume(value) { this.cargoVolume = value }
 
-            dateVehicleFirstRegistered($this, value) { return $this.__helperValidateAttribute($this, value, 'dateVehicleFirstRegistered') }
+        dateVehicleFirstRegistered($this, value) {
+			var property = {
+				comment: "The date of the first registration of the vehicle with the respective public authorities.",
+				parent: $this,
+				property: "dateVehicleFirstRegistered",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get datevehiclefirstregistered() { return this.dateVehicleFirstRegistered }
         set datevehiclefirstregistered(value) { this.dateVehicleFirstRegistered = value }
 
-            driveWheelConfiguration($this, value) { return $this.__helperValidateAttribute($this, value, 'driveWheelConfiguration') }
+        driveWheelConfiguration($this, value) {
+			var property = {
+				comment: "The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.",
+				parent: $this,
+				property: "driveWheelConfiguration",
+				release: "11.01",
+				types: [
+					"DriveWheelConfigurationValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DriveWheelConfigurationValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get drivewheelconfiguration() { return this.driveWheelConfiguration }
         set drivewheelconfiguration(value) { this.driveWheelConfiguration = value }
 
-            emissionsCO2($this, value) { return $this.__helperValidateAttribute($this, value, 'emissionsCO2') }
+        emissionsCO2($this, value) {
+			var property = {
+				comment: "The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put \"g/km\" into the unitText property of that value, since there is no UN/CEFACT Common Code for \"g/km\".",
+				parent: $this,
+				property: "emissionsCO2",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get emissionsco2() { return this.emissionsCO2 }
         set emissionsco2(value) { this.emissionsCO2 = value }
 
-            fuelCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelCapacity') }
+        fuelCapacity($this, value) {
+			var property = {
+				comment: "The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.\\n\\nTypical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).",
+				parent: $this,
+				property: "fuelCapacity",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get fuelcapacity() { return this.fuelCapacity }
         set fuelcapacity(value) { this.fuelCapacity = value }
 
-            fuelConsumption($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelConsumption') }
+        fuelConsumption($this, value) {
+			var property = {
+				comment: "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\\n\\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel consumption to another value.",
+				parent: $this,
+				property: "fuelConsumption",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get fuelconsumption() { return this.fuelConsumption }
         set fuelconsumption(value) { this.fuelConsumption = value }
 
-            fuelEfficiency($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelEfficiency') }
+        fuelEfficiency($this, value) {
+			var property = {
+				comment: "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\\n\\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use [[valueReference]] to link the value for the fuel economy to another value.",
+				parent: $this,
+				property: "fuelEfficiency",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get fuelefficiency() { return this.fuelEfficiency }
         set fuelefficiency(value) { this.fuelEfficiency = value }
 
-            fuelType($this, value) { return $this.__helperValidateAttribute($this, value, 'fuelType') }
+        fuelType($this, value) {
+			var property = {
+				comment: "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
+				parent: $this,
+				property: "fuelType",
+				release: "11.01",
+				types: [
+					"Text",
+					"QualitativeValue",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get fueltype() { return this.fuelType }
         set fueltype(value) { this.fuelType = value }
 
-            knownVehicleDamages($this, value) { return $this.__helperValidateAttribute($this, value, 'knownVehicleDamages') }
+        knownVehicleDamages($this, value) {
+			var property = {
+				comment: "A textual description of known damages, both repaired and unrepaired.",
+				parent: $this,
+				property: "knownVehicleDamages",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get knownvehicledamages() { return this.knownVehicleDamages }
         set knownvehicledamages(value) { this.knownVehicleDamages = value }
 
-            meetsEmissionStandard($this, value) { return $this.__helperValidateAttribute($this, value, 'meetsEmissionStandard') }
+        meetsEmissionStandard($this, value) {
+			var property = {
+				comment: "Indicates that the vehicle meets the respective emission standard.",
+				parent: $this,
+				property: "meetsEmissionStandard",
+				release: "11.01",
+				types: [
+					"URL",
+					"Text",
+					"QualitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) 
+		}
         get meetsemissionstandard() { return this.meetsEmissionStandard }
         set meetsemissionstandard(value) { this.meetsEmissionStandard = value }
 
-            mileageFromOdometer($this, value) { return $this.__helperValidateAttribute($this, value, 'mileageFromOdometer') }
+        mileageFromOdometer($this, value) {
+			var property = {
+				comment: "The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\\n\\nTypical unit code(s): KMT for kilometers, SMI for statute miles",
+				parent: $this,
+				property: "mileageFromOdometer",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get mileagefromodometer() { return this.mileageFromOdometer }
         set mileagefromodometer(value) { this.mileageFromOdometer = value }
 
-            modelDate($this, value) { return $this.__helperValidateAttribute($this, value, 'modelDate') }
+        modelDate($this, value) {
+			var property = {
+				comment: "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+				parent: $this,
+				property: "modelDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get modeldate() { return this.modelDate }
         set modeldate(value) { this.modelDate = value }
 
-            numberOfAirbags($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAirbags') }
+        numberOfAirbags($this, value) {
+			var property = {
+				comment: "The number or type of airbags in the vehicle.",
+				parent: $this,
+				property: "numberOfAirbags",
+				release: "11.01",
+				types: [
+					"Text",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberofairbags() { return this.numberOfAirbags }
         set numberofairbags(value) { this.numberOfAirbags = value }
 
-            numberOfAxles($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfAxles') }
+        numberOfAxles($this, value) {
+			var property = {
+				comment: "The number of axles.\\n\\nTypical unit code(s): C62",
+				parent: $this,
+				property: "numberOfAxles",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofaxles() { return this.numberOfAxles }
         set numberofaxles(value) { this.numberOfAxles = value }
 
-            numberOfDoors($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfDoors') }
+        numberOfDoors($this, value) {
+			var property = {
+				comment: "The number of doors.\\n\\nTypical unit code(s): C62",
+				parent: $this,
+				property: "numberOfDoors",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberofdoors() { return this.numberOfDoors }
         set numberofdoors(value) { this.numberOfDoors = value }
 
-            numberOfForwardGears($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfForwardGears') }
+        numberOfForwardGears($this, value) {
+			var property = {
+				comment: "The total number of forward gears available for the transmission system of the vehicle.\\n\\nTypical unit code(s): C62",
+				parent: $this,
+				property: "numberOfForwardGears",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberofforwardgears() { return this.numberOfForwardGears }
         set numberofforwardgears(value) { this.numberOfForwardGears = value }
 
-            numberOfPreviousOwners($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPreviousOwners') }
+        numberOfPreviousOwners($this, value) {
+			var property = {
+				comment: "The number of owners of the vehicle, including the current one.\\n\\nTypical unit code(s): C62",
+				parent: $this,
+				property: "numberOfPreviousOwners",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofpreviousowners() { return this.numberOfPreviousOwners }
         set numberofpreviousowners(value) { this.numberOfPreviousOwners = value }
 
-            payload($this, value) { return $this.__helperValidateAttribute($this, value, 'payload') }
+        payload($this, value) {
+			var property = {
+				comment: "The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.\\n\\nTypical unit code(s): KGM for kilogram, LBR for pound\\n\\n* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]\\n* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\\n* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\\n* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "payload",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
 
-            productionDate($this, value) { return $this.__helperValidateAttribute($this, value, 'productionDate') }
+        productionDate($this, value) {
+			var property = {
+				comment: "The date of production of the item, e.g. vehicle.",
+				parent: $this,
+				property: "productionDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get productiondate() { return this.productionDate }
         set productiondate(value) { this.productionDate = value }
 
-            purchaseDate($this, value) { return $this.__helperValidateAttribute($this, value, 'purchaseDate') }
+        purchaseDate($this, value) {
+			var property = {
+				comment: "The date the item e.g. vehicle was purchased by the current owner.",
+				parent: $this,
+				property: "purchaseDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get purchasedate() { return this.purchaseDate }
         set purchasedate(value) { this.purchaseDate = value }
 
-            seatingCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'seatingCapacity') }
+        seatingCapacity($this, value) {
+			var property = {
+				comment: "The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.\\n\\nTypical unit code(s): C62 for persons ",
+				parent: $this,
+				property: "seatingCapacity",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get seatingcapacity() { return this.seatingCapacity }
         set seatingcapacity(value) { this.seatingCapacity = value }
 
-            speed($this, value) { return $this.__helperValidateAttribute($this, value, 'speed') }
+        speed($this, value) {
+			var property = {
+				comment: "The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.\\n\\nTypical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\\n\\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.",
+				parent: $this,
+				property: "speed",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
 
-            steeringPosition($this, value) { return $this.__helperValidateAttribute($this, value, 'steeringPosition') }
+        steeringPosition($this, value) {
+			var property = {
+				comment: "The position of the steering wheel or similar device (mostly for cars).",
+				parent: $this,
+				property: "steeringPosition",
+				release: "11.01",
+				types: [
+					"SteeringPositionValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.SteeringPositionValue(value, property) 
+		}
         get steeringposition() { return this.steeringPosition }
         set steeringposition(value) { this.steeringPosition = value }
 
-            stupidProperty($this, value) { return $this.__helperValidateAttribute($this, value, 'stupidProperty') }
+        stupidProperty($this, value) {
+			var property = {
+				comment: "This is a StupidProperty! - for testing only",
+				parent: $this,
+				property: "stupidProperty",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get stupidproperty() { return this.stupidProperty }
         set stupidproperty(value) { this.stupidProperty = value }
 
-            tongueWeight($this, value) { return $this.__helperValidateAttribute($this, value, 'tongueWeight') }
+        tongueWeight($this, value) {
+			var property = {
+				comment: "The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)\\n\\nTypical unit code(s): KGM for kilogram, LBR for pound\\n\\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "tongueWeight",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get tongueweight() { return this.tongueWeight }
         set tongueweight(value) { this.tongueWeight = value }
 
-            trailerWeight($this, value) { return $this.__helperValidateAttribute($this, value, 'trailerWeight') }
+        trailerWeight($this, value) {
+			var property = {
+				comment: "The permitted weight of a trailer attached to the vehicle.\\n\\nTypical unit code(s): KGM for kilogram, LBR for pound\\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "trailerWeight",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get trailerweight() { return this.trailerWeight }
         set trailerweight(value) { this.trailerWeight = value }
 
-            vehicleConfiguration($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleConfiguration') }
+        vehicleConfiguration($this, value) {
+			var property = {
+				comment: "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
+				parent: $this,
+				property: "vehicleConfiguration",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehicleconfiguration() { return this.vehicleConfiguration }
         set vehicleconfiguration(value) { this.vehicleConfiguration = value }
 
-            vehicleEngine($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleEngine') }
+        vehicleEngine($this, value) {
+			var property = {
+				comment: "Information about the engine or engines of the vehicle.",
+				parent: $this,
+				property: "vehicleEngine",
+				release: "11.01",
+				types: [
+					"EngineSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.EngineSpecification(value, property) 
+		}
         get vehicleengine() { return this.vehicleEngine }
         set vehicleengine(value) { this.vehicleEngine = value }
 
-            vehicleIdentificationNumber($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleIdentificationNumber') }
+        vehicleIdentificationNumber($this, value) {
+			var property = {
+				comment: "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
+				parent: $this,
+				property: "vehicleIdentificationNumber",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehicleidentificationnumber() { return this.vehicleIdentificationNumber }
         set vehicleidentificationnumber(value) { this.vehicleIdentificationNumber = value }
 
-            vehicleInteriorColor($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleInteriorColor') }
+        vehicleInteriorColor($this, value) {
+			var property = {
+				comment: "The color or color combination of the interior of the vehicle.",
+				parent: $this,
+				property: "vehicleInteriorColor",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehicleinteriorcolor() { return this.vehicleInteriorColor }
         set vehicleinteriorcolor(value) { this.vehicleInteriorColor = value }
 
-            vehicleInteriorType($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleInteriorType') }
+        vehicleInteriorType($this, value) {
+			var property = {
+				comment: "The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.",
+				parent: $this,
+				property: "vehicleInteriorType",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehicleinteriortype() { return this.vehicleInteriorType }
         set vehicleinteriortype(value) { this.vehicleInteriorType = value }
 
-            vehicleModelDate($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleModelDate') }
+        vehicleModelDate($this, value) {
+			var property = {
+				comment: "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+				parent: $this,
+				property: "vehicleModelDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get vehiclemodeldate() { return this.vehicleModelDate }
         set vehiclemodeldate(value) { this.vehicleModelDate = value }
 
-            vehicleSeatingCapacity($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleSeatingCapacity') }
+        vehicleSeatingCapacity($this, value) {
+			var property = {
+				comment: "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\\n\\nTypical unit code(s): C62 for persons.",
+				parent: $this,
+				property: "vehicleSeatingCapacity",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get vehicleseatingcapacity() { return this.vehicleSeatingCapacity }
         set vehicleseatingcapacity(value) { this.vehicleSeatingCapacity = value }
 
-            vehicleSpecialUsage($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleSpecialUsage') }
+        vehicleSpecialUsage($this, value) {
+			var property = {
+				comment: "Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.",
+				parent: $this,
+				property: "vehicleSpecialUsage",
+				release: "11.01",
+				types: [
+					"CarUsageType",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.CarUsageType(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehiclespecialusage() { return this.vehicleSpecialUsage }
         set vehiclespecialusage(value) { this.vehicleSpecialUsage = value }
 
-            vehicleTransmission($this, value) { return $this.__helperValidateAttribute($this, value, 'vehicleTransmission') }
+        vehicleTransmission($this, value) {
+			var property = {
+				comment: "The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (\"gearbox\" for cars).",
+				parent: $this,
+				property: "vehicleTransmission",
+				release: "11.01",
+				types: [
+					"URL",
+					"QualitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get vehicletransmission() { return this.vehicleTransmission }
         set vehicletransmission(value) { this.vehicleTransmission = value }
 
-            weightTotal($this, value) { return $this.__helperValidateAttribute($this, value, 'weightTotal') }
+        weightTotal($this, value) {
+			var property = {
+				comment: "The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.\\n\\nTypical unit code(s): KGM for kilogram, LBR for pound\\n\\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.",
+				parent: $this,
+				property: "weightTotal",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get weighttotal() { return this.weightTotal }
         set weighttotal(value) { this.weightTotal = value }
 
-            wheelbase($this, value) { return $this.__helperValidateAttribute($this, value, 'wheelbase') }
+        wheelbase($this, value) {
+			var property = {
+				comment: "The distance between the centers of the front and rear wheels.\\n\\nTypical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet",
+				parent: $this,
+				property: "wheelbase",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         
     }
 </script>

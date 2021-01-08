@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Drugcost extends window.Cloudouble.Element.elements.Medicalentity {
+    class DrugCost extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,27 +32,95 @@
         }
         
         
-            applicableLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'applicableLocation') }
+        applicableLocation($this, value) {
+			var property = {
+				comment: "The location in which the status applies.",
+				parent: $this,
+				property: "applicableLocation",
+				release: "11.01",
+				types: [
+					"AdministrativeArea"
+				]
+			};
+			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+		}
         get applicablelocation() { return this.applicableLocation }
         set applicablelocation(value) { this.applicableLocation = value }
 
-            costCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'costCategory') }
+        costCategory($this, value) {
+			var property = {
+				comment: "The category of cost, such as wholesale, retail, reimbursement cap, etc.",
+				parent: $this,
+				property: "costCategory",
+				release: "11.01",
+				types: [
+					"DrugCostCategory"
+				]
+			};
+			return new window.LiveElement.Element.elements.DrugCostCategory(value, property) 
+		}
         get costcategory() { return this.costCategory }
         set costcategory(value) { this.costCategory = value }
 
-            costCurrency($this, value) { return $this.__helperValidateAttribute($this, value, 'costCurrency') }
+        costCurrency($this, value) {
+			var property = {
+				comment: "The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217 ",
+				parent: $this,
+				property: "costCurrency",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get costcurrency() { return this.costCurrency }
         set costcurrency(value) { this.costCurrency = value }
 
-            costOrigin($this, value) { return $this.__helperValidateAttribute($this, value, 'costOrigin') }
+        costOrigin($this, value) {
+			var property = {
+				comment: "Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.",
+				parent: $this,
+				property: "costOrigin",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get costorigin() { return this.costOrigin }
         set costorigin(value) { this.costOrigin = value }
 
-            costPerUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'costPerUnit') }
+        costPerUnit($this, value) {
+			var property = {
+				comment: "The cost per unit of the drug.",
+				parent: $this,
+				property: "costPerUnit",
+				release: "11.01",
+				types: [
+					"Number",
+					"QualitativeValue",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get costperunit() { return this.costPerUnit }
         set costperunit(value) { this.costPerUnit = value }
 
-            drugUnit($this, value) { return $this.__helperValidateAttribute($this, value, 'drugUnit') }
+        drugUnit($this, value) {
+			var property = {
+				comment: "The unit in which the drug is measured, e.g. '5 mg tablet'.",
+				parent: $this,
+				property: "drugUnit",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get drugunit() { return this.drugUnit }
         set drugunit(value) { this.drugUnit = value }
         

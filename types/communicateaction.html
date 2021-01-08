@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Communicateaction extends window.Cloudouble.Element.elements.Interactaction {
+    class CommunicateAction extends window.Cloudouble.Element.elements.InteractAction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,63 @@
         }
         
         
-            about($this, value) { return $this.__helperValidateAttribute($this, value, 'about') }
+        about($this, value) {
+			var property = {
+				comment: "The subject matter of the content.",
+				parent: $this,
+				property: "about",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
 
-            inLanguage($this, value) { return $this.__helperValidateAttribute($this, value, 'inLanguage') }
+        inLanguage($this, value) {
+			var property = {
+				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].",
+				parent: $this,
+				property: "inLanguage",
+				release: "11.01",
+				types: [
+					"Text",
+					"Language"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
-            language($this, value) { return $this.__helperValidateAttribute($this, value, 'language') }
+        language($this, value) {
+			var property = {
+				comment: "A sub property of instrument. The language used on this action.",
+				parent: $this,
+				property: "language",
+				release: "11.01",
+				types: [
+					"Language"
+				]
+			};
+			return new window.LiveElement.Element.elements.Language(value, property) 
+		}
 
-            recipient($this, value) { return $this.__helperValidateAttribute($this, value, 'recipient') }
+        recipient($this, value) {
+			var property = {
+				comment: "A sub property of participant. The participant who is at the receiving end of the action.",
+				parent: $this,
+				property: "recipient",
+				release: "11.01",
+				types: [
+					"Person",
+					"Audience",
+					"ContactPoint",
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         
     }
 </script>

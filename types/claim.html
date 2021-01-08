@@ -8,19 +8,14 @@
 </template>
 <script>
     /* global */
-    class Claim extends window.Cloudouble.Element.elements.Creativework {
+    class Claim extends window.Cloudouble.Element.elements.CreativeWork {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:Claim'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.
-
-  Beyond [[ClaimReview]], the Claim type can be associated with related creative works - for example a [[ScholaryArticle]] or [[Question]] might be [[about]] some [[Claim]].
-
-  At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.
-  '
+        static _rdfs_comment = 'A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.    Beyond [[ClaimReview]], the Claim type can be associated with related creative works - for example a [[ScholaryArticle]] or [[Question]] might be [[about]] some [[Claim]].    At this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration.   '
         static _rdfs_label = 'Claim'
 
         static get observedAttributes() {
@@ -37,9 +32,31 @@
         }
         
         
-            appearance($this, value) { return $this.__helperValidateAttribute($this, value, 'appearance') }
+        appearance($this, value) {
+			var property = {
+				comment: "Indicates an occurence of a [[Claim]] in some [[CreativeWork]].",
+				parent: $this,
+				property: "appearance",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
 
-            firstAppearance($this, value) { return $this.__helperValidateAttribute($this, value, 'firstAppearance') }
+        firstAppearance($this, value) {
+			var property = {
+				comment: "Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].",
+				parent: $this,
+				property: "firstAppearance",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
         get firstappearance() { return this.firstAppearance }
         set firstappearance(value) { this.firstAppearance = value }
         

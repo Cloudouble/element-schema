@@ -15,11 +15,7 @@
         static __release = '11.01'
         static __id = 'schema:Accommodation'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
-For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
-<br \/><br \/>
-See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>.
-'
+        static _rdfs_comment = 'An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement. For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies. <br \/><br \/> See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>. '
         static _rdfs_label = 'Accommodation'
 
         static get observedAttributes() {
@@ -36,63 +32,232 @@ See also the <a href="\/docs\/hotels.html">dedicated document on the use of sche
         }
         
         
-            accommodationCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationCategory') }
+        accommodationCategory($this, value) {
+			var property = {
+				comment: "Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).",
+				parent: $this,
+				property: "accommodationCategory",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get accommodationcategory() { return this.accommodationCategory }
         set accommodationcategory(value) { this.accommodationCategory = value }
 
-            accommodationFloorPlan($this, value) { return $this.__helperValidateAttribute($this, value, 'accommodationFloorPlan') }
+        accommodationFloorPlan($this, value) {
+			var property = {
+				comment: "A floorplan of some [[Accommodation]].",
+				parent: $this,
+				property: "accommodationFloorPlan",
+				release: "11.01",
+				types: [
+					"FloorPlan"
+				]
+			};
+			return new window.LiveElement.Element.elements.FloorPlan(value, property) 
+		}
         get accommodationfloorplan() { return this.accommodationFloorPlan }
         set accommodationfloorplan(value) { this.accommodationFloorPlan = value }
 
-            amenityFeature($this, value) { return $this.__helperValidateAttribute($this, value, 'amenityFeature') }
+        amenityFeature($this, value) {
+			var property = {
+				comment: "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+				parent: $this,
+				property: "amenityFeature",
+				release: "11.01",
+				types: [
+					"LocationFeatureSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.LocationFeatureSpecification(value, property) 
+		}
         get amenityfeature() { return this.amenityFeature }
         set amenityfeature(value) { this.amenityFeature = value }
 
-            floorLevel($this, value) { return $this.__helperValidateAttribute($this, value, 'floorLevel') }
+        floorLevel($this, value) {
+			var property = {
+				comment: "The floor level for an [[Accommodation]] in a multi-storey building. Since counting\n  systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.",
+				parent: $this,
+				property: "floorLevel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get floorlevel() { return this.floorLevel }
         set floorlevel(value) { this.floorLevel = value }
 
-            floorSize($this, value) { return $this.__helperValidateAttribute($this, value, 'floorSize') }
+        floorSize($this, value) {
+			var property = {
+				comment: "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard ",
+				parent: $this,
+				property: "floorSize",
+				release: "11.01",
+				types: [
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get floorsize() { return this.floorSize }
         set floorsize(value) { this.floorSize = value }
 
-            leaseLength($this, value) { return $this.__helperValidateAttribute($this, value, 'leaseLength') }
+        leaseLength($this, value) {
+			var property = {
+				comment: "Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.",
+				parent: $this,
+				property: "leaseLength",
+				release: "11.01",
+				types: [
+					"Duration",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get leaselength() { return this.leaseLength }
         set leaselength(value) { this.leaseLength = value }
 
-            numberOfBathroomsTotal($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBathroomsTotal') }
+        numberOfBathroomsTotal($this, value) {
+			var property = {
+				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
+				parent: $this,
+				property: "numberOfBathroomsTotal",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numberofbathroomstotal() { return this.numberOfBathroomsTotal }
         set numberofbathroomstotal(value) { this.numberOfBathroomsTotal = value }
 
-            numberOfBedrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfBedrooms') }
+        numberOfBedrooms($this, value) {
+			var property = {
+				comment: "The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].",
+				parent: $this,
+				property: "numberOfBedrooms",
+				release: "11.01",
+				types: [
+					"QuantitativeValue",
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberofbedrooms() { return this.numberOfBedrooms }
         set numberofbedrooms(value) { this.numberOfBedrooms = value }
 
-            numberOfFullBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfFullBathrooms') }
+        numberOfFullBathrooms($this, value) {
+			var property = {
+				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).",
+				parent: $this,
+				property: "numberOfFullBathrooms",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberoffullbathrooms() { return this.numberOfFullBathrooms }
         set numberoffullbathrooms(value) { this.numberOfFullBathrooms = value }
 
-            numberOfPartialBathrooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfPartialBathrooms') }
+        numberOfPartialBathrooms($this, value) {
+			var property = {
+				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). ",
+				parent: $this,
+				property: "numberOfPartialBathrooms",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get numberofpartialbathrooms() { return this.numberOfPartialBathrooms }
         set numberofpartialbathrooms(value) { this.numberOfPartialBathrooms = value }
 
-            numberOfRooms($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfRooms') }
+        numberOfRooms($this, value) {
+			var property = {
+				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+				parent: $this,
+				property: "numberOfRooms",
+				release: "11.01",
+				types: [
+					"Number",
+					"QuantitativeValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+		}
         get numberofrooms() { return this.numberOfRooms }
         set numberofrooms(value) { this.numberOfRooms = value }
 
-            permittedUsage($this, value) { return $this.__helperValidateAttribute($this, value, 'permittedUsage') }
+        permittedUsage($this, value) {
+			var property = {
+				comment: "Indications regarding the permitted usage of the accommodation.",
+				parent: $this,
+				property: "permittedUsage",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get permittedusage() { return this.permittedUsage }
         set permittedusage(value) { this.permittedUsage = value }
 
-            petsAllowed($this, value) { return $this.__helperValidateAttribute($this, value, 'petsAllowed') }
+        petsAllowed($this, value) {
+			var property = {
+				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
+				parent: $this,
+				property: "petsAllowed",
+				release: "11.01",
+				types: [
+					"Boolean",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get petsallowed() { return this.petsAllowed }
         set petsallowed(value) { this.petsAllowed = value }
 
-            tourBookingPage($this, value) { return $this.__helperValidateAttribute($this, value, 'tourBookingPage') }
+        tourBookingPage($this, value) {
+			var property = {
+				comment: "A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.",
+				parent: $this,
+				property: "tourBookingPage",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get tourbookingpage() { return this.tourBookingPage }
         set tourbookingpage(value) { this.tourBookingPage = value }
 
-            yearBuilt($this, value) { return $this.__helperValidateAttribute($this, value, 'yearBuilt') }
+        yearBuilt($this, value) {
+			var property = {
+				comment: "The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). ",
+				parent: $this,
+				property: "yearBuilt",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get yearbuilt() { return this.yearBuilt }
         set yearbuilt(value) { this.yearBuilt = value }
         

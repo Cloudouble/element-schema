@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Movieseries extends window.Cloudouble.Element.elements.Creativeworkseries {
+    class MovieSeries extends window.Cloudouble.Element.elements.CreativeWorkSeries {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,23 +32,101 @@
         }
         
         
-            actor($this, value) { return $this.__helperValidateAttribute($this, value, 'actor') }
+        actor($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actor",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            actors($this, value) { return $this.__helperValidateAttribute($this, value, 'actors') }
+        actors($this, value) {
+			var property = {
+				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "actors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            director($this, value) { return $this.__helperValidateAttribute($this, value, 'director') }
+        director($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "director",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            directors($this, value) { return $this.__helperValidateAttribute($this, value, 'directors') }
+        directors($this, value) {
+			var property = {
+				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
+				parent: $this,
+				property: "directors",
+				release: "11.01",
+				types: [
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            musicBy($this, value) { return $this.__helperValidateAttribute($this, value, 'musicBy') }
+        musicBy($this, value) {
+			var property = {
+				comment: "The composer of the soundtrack.",
+				parent: $this,
+				property: "musicBy",
+				release: "11.01",
+				types: [
+					"Person",
+					"MusicGroup"
+				]
+			};
+			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
-            productionCompany($this, value) { return $this.__helperValidateAttribute($this, value, 'productionCompany') }
+        productionCompany($this, value) {
+			var property = {
+				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
+				parent: $this,
+				property: "productionCompany",
+				release: "11.01",
+				types: [
+					"Organization"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) 
+		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
 
-            trailer($this, value) { return $this.__helperValidateAttribute($this, value, 'trailer') }
+        trailer($this, value) {
+			var property = {
+				comment: "The trailer of a movie or tv/radio series, season, episode, etc.",
+				parent: $this,
+				property: "trailer",
+				release: "11.01",
+				types: [
+					"VideoObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.VideoObject(value, property) 
+		}
         
     }
 </script>

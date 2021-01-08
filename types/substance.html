@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Substance extends window.Cloudouble.Element.elements.Medicalentity {
+    class Substance extends window.Cloudouble.Element.elements.MedicalEntity {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            activeIngredient($this, value) { return $this.__helperValidateAttribute($this, value, 'activeIngredient') }
+        activeIngredient($this, value) {
+			var property = {
+				comment: "An active ingredient, typically chemical compounds and/or biologic substances.",
+				parent: $this,
+				property: "activeIngredient",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
 
-            maximumIntake($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumIntake') }
+        maximumIntake($this, value) {
+			var property = {
+				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
+				parent: $this,
+				property: "maximumIntake",
+				release: "11.01",
+				types: [
+					"MaximumDoseSchedule"
+				]
+			};
+			return new window.LiveElement.Element.elements.MaximumDoseSchedule(value, property) 
+		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
         

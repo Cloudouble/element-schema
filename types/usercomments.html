@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Usercomments extends window.Cloudouble.Element.elements.Userinteraction {
+    class UserComments extends window.Cloudouble.Element.elements.UserInteraction {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,76 @@
         }
         
         
-            commentText($this, value) { return $this.__helperValidateAttribute($this, value, 'commentText') }
+        commentText($this, value) {
+			var property = {
+				comment: "The text of the UserComment.",
+				parent: $this,
+				property: "commentText",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get commenttext() { return this.commentText }
         set commenttext(value) { this.commentText = value }
 
-            commentTime($this, value) { return $this.__helperValidateAttribute($this, value, 'commentTime') }
+        commentTime($this, value) {
+			var property = {
+				comment: "The time at which the UserComment was made.",
+				parent: $this,
+				property: "commentTime",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get commenttime() { return this.commentTime }
         set commenttime(value) { this.commentTime = value }
 
-            creator($this, value) { return $this.__helperValidateAttribute($this, value, 'creator') }
+        creator($this, value) {
+			var property = {
+				comment: "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+				parent: $this,
+				property: "creator",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            discusses($this, value) { return $this.__helperValidateAttribute($this, value, 'discusses') }
+        discusses($this, value) {
+			var property = {
+				comment: "Specifies the CreativeWork associated with the UserComment.",
+				parent: $this,
+				property: "discusses",
+				release: "11.01",
+				types: [
+					"CreativeWork"
+				]
+			};
+			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+		}
 
-            replyToUrl($this, value) { return $this.__helperValidateAttribute($this, value, 'replyToUrl') }
+        replyToUrl($this, value) {
+			var property = {
+				comment: "The URL at which a reply may be posted to the specified UserComment.",
+				parent: $this,
+				property: "replyToUrl",
+				release: "11.01",
+				types: [
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get replytourl() { return this.replyToUrl }
         set replytourl(value) { this.replyToUrl = value }
         

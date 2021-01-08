@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Monetarygrant extends window.Cloudouble.Element.elements.Grant {
+    class MonetaryGrant extends window.Cloudouble.Element.elements.Grant {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,9 +32,33 @@
         }
         
         
-            amount($this, value) { return $this.__helperValidateAttribute($this, value, 'amount') }
+        amount($this, value) {
+			var property = {
+				comment: "The amount of money.",
+				parent: $this,
+				property: "amount",
+				release: "11.01",
+				types: [
+					"Number",
+					"MonetaryAmount"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+		}
 
-            funder($this, value) { return $this.__helperValidateAttribute($this, value, 'funder') }
+        funder($this, value) {
+			var property = {
+				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+				parent: $this,
+				property: "funder",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
         
     }
 </script>

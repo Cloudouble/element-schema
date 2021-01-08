@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Itemlist extends window.Cloudouble.Element.elements.Intangible {
+    class ItemList extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,15 +32,51 @@
         }
         
         
-            itemListElement($this, value) { return $this.__helperValidateAttribute($this, value, 'itemListElement') }
+        itemListElement($this, value) {
+			var property = {
+				comment: "For itemListElement values, you can use simple strings (e.g. \"Peter\", \"Paul\", \"Mary\"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.",
+				parent: $this,
+				property: "itemListElement",
+				release: "11.01",
+				types: [
+					"ListItem",
+					"Text",
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.ListItem(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         get itemlistelement() { return this.itemListElement }
         set itemlistelement(value) { this.itemListElement = value }
 
-            itemListOrder($this, value) { return $this.__helperValidateAttribute($this, value, 'itemListOrder') }
+        itemListOrder($this, value) {
+			var property = {
+				comment: "Type of ordering (e.g. Ascending, Descending, Unordered).",
+				parent: $this,
+				property: "itemListOrder",
+				release: "11.01",
+				types: [
+					"Text",
+					"ItemListOrderType"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ItemListOrderType(value, property) 
+		}
         get itemlistorder() { return this.itemListOrder }
         set itemlistorder(value) { this.itemListOrder = value }
 
-            numberOfItems($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfItems') }
+        numberOfItems($this, value) {
+			var property = {
+				comment: "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
+				parent: $this,
+				property: "numberOfItems",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numberofitems() { return this.numberOfItems }
         set numberofitems(value) { this.numberOfItems = value }
         

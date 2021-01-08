@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Educationaloccupationalprogram extends window.Cloudouble.Element.elements.Intangible {
+    class EducationalOccupationalProgram extends window.Cloudouble.Element.elements.Intangible {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,95 +32,376 @@
         }
         
         
-            applicationDeadline($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationDeadline') }
+        applicationDeadline($this, value) {
+			var property = {
+				comment: "The date at which the program stops collecting applications for the next enrollment cycle.",
+				parent: $this,
+				property: "applicationDeadline",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get applicationdeadline() { return this.applicationDeadline }
         set applicationdeadline(value) { this.applicationDeadline = value }
 
-            applicationStartDate($this, value) { return $this.__helperValidateAttribute($this, value, 'applicationStartDate') }
+        applicationStartDate($this, value) {
+			var property = {
+				comment: "The date at which the program begins collecting applications for the next enrollment cycle.",
+				parent: $this,
+				property: "applicationStartDate",
+				release: "11.01",
+				types: [
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get applicationstartdate() { return this.applicationStartDate }
         set applicationstartdate(value) { this.applicationStartDate = value }
 
-            dayOfWeek($this, value) { return $this.__helperValidateAttribute($this, value, 'dayOfWeek') }
+        dayOfWeek($this, value) {
+			var property = {
+				comment: "The day of the week for which these opening hours are valid.",
+				parent: $this,
+				property: "dayOfWeek",
+				release: "11.01",
+				types: [
+					"DayOfWeek"
+				]
+			};
+			return new window.LiveElement.Element.elements.DayOfWeek(value, property) 
+		}
         get dayofweek() { return this.dayOfWeek }
         set dayofweek(value) { this.dayOfWeek = value }
 
-            educationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalCredentialAwarded') }
+        educationalCredentialAwarded($this, value) {
+			var property = {
+				comment: "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
+				parent: $this,
+				property: "educationalCredentialAwarded",
+				release: "11.01",
+				types: [
+					"URL",
+					"EducationalOccupationalCredential",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get educationalcredentialawarded() { return this.educationalCredentialAwarded }
         set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
 
-            educationalProgramMode($this, value) { return $this.__helperValidateAttribute($this, value, 'educationalProgramMode') }
+        educationalProgramMode($this, value) {
+			var property = {
+				comment: "Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).",
+				parent: $this,
+				property: "educationalProgramMode",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get educationalprogrammode() { return this.educationalProgramMode }
         set educationalprogrammode(value) { this.educationalProgramMode = value }
 
-            endDate($this, value) { return $this.__helperValidateAttribute($this, value, 'endDate') }
+        endDate($this, value) {
+			var property = {
+				comment: "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "endDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
-            financialAidEligible($this, value) { return $this.__helperValidateAttribute($this, value, 'financialAidEligible') }
+        financialAidEligible($this, value) {
+			var property = {
+				comment: "A financial aid type or program which students may use to pay for tuition or fees associated with the program.",
+				parent: $this,
+				property: "financialAidEligible",
+				release: "11.01",
+				types: [
+					"Text",
+					"DefinedTerm"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+		}
         get financialaideligible() { return this.financialAidEligible }
         set financialaideligible(value) { this.financialAidEligible = value }
 
-            hasCourse($this, value) { return $this.__helperValidateAttribute($this, value, 'hasCourse') }
+        hasCourse($this, value) {
+			var property = {
+				comment: "A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.",
+				parent: $this,
+				property: "hasCourse",
+				release: "11.01",
+				types: [
+					"Course"
+				]
+			};
+			return new window.LiveElement.Element.elements.Course(value, property) 
+		}
         get hascourse() { return this.hasCourse }
         set hascourse(value) { this.hasCourse = value }
 
-            maximumEnrollment($this, value) { return $this.__helperValidateAttribute($this, value, 'maximumEnrollment') }
+        maximumEnrollment($this, value) {
+			var property = {
+				comment: "The maximum number of students who may be enrolled in the program.",
+				parent: $this,
+				property: "maximumEnrollment",
+				release: "11.01",
+				types: [
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get maximumenrollment() { return this.maximumEnrollment }
         set maximumenrollment(value) { this.maximumEnrollment = value }
 
-            numberOfCredits($this, value) { return $this.__helperValidateAttribute($this, value, 'numberOfCredits') }
+        numberOfCredits($this, value) {
+			var property = {
+				comment: "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
+				parent: $this,
+				property: "numberOfCredits",
+				release: "11.01",
+				types: [
+					"StructuredValue",
+					"Integer"
+				]
+			};
+			return new window.LiveElement.Element.elements.StructuredValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+		}
         get numberofcredits() { return this.numberOfCredits }
         set numberofcredits(value) { this.numberOfCredits = value }
 
-            occupationalCategory($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCategory') }
+        occupationalCategory($this, value) {
+			var property = {
+				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
+				parent: $this,
+				property: "occupationalCategory",
+				release: "11.01",
+				types: [
+					"CategoryCode",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.CategoryCode(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
 
-            occupationalCredentialAwarded($this, value) { return $this.__helperValidateAttribute($this, value, 'occupationalCredentialAwarded') }
+        occupationalCredentialAwarded($this, value) {
+			var property = {
+				comment: "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
+				parent: $this,
+				property: "occupationalCredentialAwarded",
+				release: "11.01",
+				types: [
+					"URL",
+					"EducationalOccupationalCredential",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
         set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
 
-            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+        offers($this, value) {
+			var property = {
+				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+				parent: $this,
+				property: "offers",
+				release: "11.01",
+				types: [
+					"Demand",
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+		}
 
-            programPrerequisites($this, value) { return $this.__helperValidateAttribute($this, value, 'programPrerequisites') }
+        programPrerequisites($this, value) {
+			var property = {
+				comment: "Prerequisites for enrolling in the program.",
+				parent: $this,
+				property: "programPrerequisites",
+				release: "11.01",
+				types: [
+					"EducationalOccupationalCredential",
+					"Course",
+					"Text",
+					"AlignmentObject"
+				]
+			};
+			return new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) || new window.LiveElement.Element.elements.Course(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.AlignmentObject(value, property) 
+		}
         get programprerequisites() { return this.programPrerequisites }
         set programprerequisites(value) { this.programPrerequisites = value }
 
-            programType($this, value) { return $this.__helperValidateAttribute($this, value, 'programType') }
+        programType($this, value) {
+			var property = {
+				comment: "The type of educational or occupational program. For example, classroom, internship, alternance, etc..",
+				parent: $this,
+				property: "programType",
+				release: "11.01",
+				types: [
+					"DefinedTerm",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get programtype() { return this.programType }
         set programtype(value) { this.programType = value }
 
-            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+        provider($this, value) {
+			var property = {
+				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+				parent: $this,
+				property: "provider",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            salaryUponCompletion($this, value) { return $this.__helperValidateAttribute($this, value, 'salaryUponCompletion') }
+        salaryUponCompletion($this, value) {
+			var property = {
+				comment: "The expected salary upon completing the training.",
+				parent: $this,
+				property: "salaryUponCompletion",
+				release: "11.01",
+				types: [
+					"MonetaryAmountDistribution"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmountDistribution(value, property) 
+		}
         get salaryuponcompletion() { return this.salaryUponCompletion }
         set salaryuponcompletion(value) { this.salaryUponCompletion = value }
 
-            startDate($this, value) { return $this.__helperValidateAttribute($this, value, 'startDate') }
+        startDate($this, value) {
+			var property = {
+				comment: "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).",
+				parent: $this,
+				property: "startDate",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
 
-            termDuration($this, value) { return $this.__helperValidateAttribute($this, value, 'termDuration') }
+        termDuration($this, value) {
+			var property = {
+				comment: "The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.",
+				parent: $this,
+				property: "termDuration",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get termduration() { return this.termDuration }
         set termduration(value) { this.termDuration = value }
 
-            termsPerYear($this, value) { return $this.__helperValidateAttribute($this, value, 'termsPerYear') }
+        termsPerYear($this, value) {
+			var property = {
+				comment: "The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.",
+				parent: $this,
+				property: "termsPerYear",
+				release: "11.01",
+				types: [
+					"Number"
+				]
+			};
+			return new window.LiveElement.Element.elements.Number(value, property) 
+		}
         get termsperyear() { return this.termsPerYear }
         set termsperyear(value) { this.termsPerYear = value }
 
-            timeOfDay($this, value) { return $this.__helperValidateAttribute($this, value, 'timeOfDay') }
+        timeOfDay($this, value) {
+			var property = {
+				comment: "The time of day the program normally runs. For example, \"evenings\".",
+				parent: $this,
+				property: "timeOfDay",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get timeofday() { return this.timeOfDay }
         set timeofday(value) { this.timeOfDay = value }
 
-            timeToComplete($this, value) { return $this.__helperValidateAttribute($this, value, 'timeToComplete') }
+        timeToComplete($this, value) {
+			var property = {
+				comment: "The expected length of time to complete the program if attending full-time.",
+				parent: $this,
+				property: "timeToComplete",
+				release: "11.01",
+				types: [
+					"Duration"
+				]
+			};
+			return new window.LiveElement.Element.elements.Duration(value, property) 
+		}
         get timetocomplete() { return this.timeToComplete }
         set timetocomplete(value) { this.timeToComplete = value }
 
-            trainingSalary($this, value) { return $this.__helperValidateAttribute($this, value, 'trainingSalary') }
+        trainingSalary($this, value) {
+			var property = {
+				comment: "The estimated salary earned while in the program.",
+				parent: $this,
+				property: "trainingSalary",
+				release: "11.01",
+				types: [
+					"MonetaryAmountDistribution"
+				]
+			};
+			return new window.LiveElement.Element.elements.MonetaryAmountDistribution(value, property) 
+		}
         get trainingsalary() { return this.trainingSalary }
         set trainingsalary(value) { this.trainingSalary = value }
 
-            typicalCreditsPerTerm($this, value) { return $this.__helperValidateAttribute($this, value, 'typicalCreditsPerTerm') }
+        typicalCreditsPerTerm($this, value) {
+			var property = {
+				comment: "The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.",
+				parent: $this,
+				property: "typicalCreditsPerTerm",
+				release: "11.01",
+				types: [
+					"Integer",
+					"StructuredValue"
+				]
+			};
+			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.StructuredValue(value, property) 
+		}
         get typicalcreditsperterm() { return this.typicalCreditsPerTerm }
         set typicalcreditsperterm(value) { this.typicalCreditsPerTerm = value }
         

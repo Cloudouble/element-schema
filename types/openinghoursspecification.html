@@ -8,16 +8,14 @@
 </template>
 <script>
     /* global */
-    class Openinghoursspecification extends window.Cloudouble.Element.elements.Structuredvalue {
+    class OpeningHoursSpecification extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
         static __release = '11.01'
         static __id = 'schema:OpeningHoursSpecification'
         static __type = 'rdfs:Class'
-        static _rdfs_comment = 'A structured value providing information about the opening hours of a place or a certain service inside a place.\n\n
-The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\n\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.
-      '
+        static _rdfs_comment = 'A structured value providing information about the opening hours of a place or a certain service inside a place.\n\n The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\n\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.       '
         static _rdfs_label = 'OpeningHoursSpecification'
 
         static get observedAttributes() {
@@ -34,19 +32,76 @@ The place is __open__ if the [[opens]] property is specified, and __closed__ oth
         }
         
         
-            closes($this, value) { return $this.__helperValidateAttribute($this, value, 'closes') }
+        closes($this, value) {
+			var property = {
+				comment: "The closing hour of the place or service on the given day(s) of the week.",
+				parent: $this,
+				property: "closes",
+				release: "11.01",
+				types: [
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) 
+		}
 
-            dayOfWeek($this, value) { return $this.__helperValidateAttribute($this, value, 'dayOfWeek') }
+        dayOfWeek($this, value) {
+			var property = {
+				comment: "The day of the week for which these opening hours are valid.",
+				parent: $this,
+				property: "dayOfWeek",
+				release: "11.01",
+				types: [
+					"DayOfWeek"
+				]
+			};
+			return new window.LiveElement.Element.elements.DayOfWeek(value, property) 
+		}
         get dayofweek() { return this.dayOfWeek }
         set dayofweek(value) { this.dayOfWeek = value }
 
-            opens($this, value) { return $this.__helperValidateAttribute($this, value, 'opens') }
+        opens($this, value) {
+			var property = {
+				comment: "The opening hour of the place or service on the given day(s) of the week.",
+				parent: $this,
+				property: "opens",
+				release: "11.01",
+				types: [
+					"Time"
+				]
+			};
+			return new window.LiveElement.Element.elements.Time(value, property) 
+		}
 
-            validFrom($this, value) { return $this.__helperValidateAttribute($this, value, 'validFrom') }
+        validFrom($this, value) {
+			var property = {
+				comment: "The date when the item becomes valid.",
+				parent: $this,
+				property: "validFrom",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
-            validThrough($this, value) { return $this.__helperValidateAttribute($this, value, 'validThrough') }
+        validThrough($this, value) {
+			var property = {
+				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+				parent: $this,
+				property: "validThrough",
+				release: "11.01",
+				types: [
+					"DateTime",
+					"Date"
+				]
+			};
+			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
         

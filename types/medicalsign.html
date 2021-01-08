@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Medicalsign extends window.Cloudouble.Element.elements.Medicalsignorsymptom {
+    class MedicalSign extends window.Cloudouble.Element.elements.MedicalSignOrSymptom {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            identifyingExam($this, value) { return $this.__helperValidateAttribute($this, value, 'identifyingExam') }
+        identifyingExam($this, value) {
+			var property = {
+				comment: "A physical examination that can identify this sign.",
+				parent: $this,
+				property: "identifyingExam",
+				release: "11.01",
+				types: [
+					"PhysicalExam"
+				]
+			};
+			return new window.LiveElement.Element.elements.PhysicalExam(value, property) 
+		}
         get identifyingexam() { return this.identifyingExam }
         set identifyingexam(value) { this.identifyingExam = value }
 
-            identifyingTest($this, value) { return $this.__helperValidateAttribute($this, value, 'identifyingTest') }
+        identifyingTest($this, value) {
+			var property = {
+				comment: "A diagnostic test that can identify this sign.",
+				parent: $this,
+				property: "identifyingTest",
+				release: "11.01",
+				types: [
+					"MedicalTest"
+				]
+			};
+			return new window.LiveElement.Element.elements.MedicalTest(value, property) 
+		}
         get identifyingtest() { return this.identifyingTest }
         set identifyingtest(value) { this.identifyingTest = value }
         

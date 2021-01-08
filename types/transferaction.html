@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Transferaction extends window.Cloudouble.Element.elements.Action {
+    class TransferAction extends window.Cloudouble.Element.elements.Action {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,11 +32,33 @@
         }
         
         
-            fromLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'fromLocation') }
+        fromLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The original location of the object or the agent before the action.",
+				parent: $this,
+				property: "fromLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get fromlocation() { return this.fromLocation }
         set fromlocation(value) { this.fromLocation = value }
 
-            toLocation($this, value) { return $this.__helperValidateAttribute($this, value, 'toLocation') }
+        toLocation($this, value) {
+			var property = {
+				comment: "A sub property of location. The final location of the object or the agent after the action.",
+				parent: $this,
+				property: "toLocation",
+				release: "11.01",
+				types: [
+					"Place"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) 
+		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }
         

@@ -32,77 +32,358 @@
         }
         
         
-            aggregateRating($this, value) { return $this.__helperValidateAttribute($this, value, 'aggregateRating') }
+        aggregateRating($this, value) {
+			var property = {
+				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
+				parent: $this,
+				property: "aggregateRating",
+				release: "11.01",
+				types: [
+					"AggregateRating"
+				]
+			};
+			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
-            areaServed($this, value) { return $this.__helperValidateAttribute($this, value, 'areaServed') }
+        areaServed($this, value) {
+			var property = {
+				comment: "The geographic area where a service or offered item is provided.",
+				parent: $this,
+				property: "areaServed",
+				release: "11.01",
+				types: [
+					"Place",
+					"AdministrativeArea",
+					"GeoShape",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
 
-            audience($this, value) { return $this.__helperValidateAttribute($this, value, 'audience') }
+        audience($this, value) {
+			var property = {
+				comment: "An intended audience, i.e. a group for whom something was created.",
+				parent: $this,
+				property: "audience",
+				release: "11.01",
+				types: [
+					"Audience"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) 
+		}
 
-            availableChannel($this, value) { return $this.__helperValidateAttribute($this, value, 'availableChannel') }
+        availableChannel($this, value) {
+			var property = {
+				comment: "A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).",
+				parent: $this,
+				property: "availableChannel",
+				release: "11.01",
+				types: [
+					"ServiceChannel"
+				]
+			};
+			return new window.LiveElement.Element.elements.ServiceChannel(value, property) 
+		}
         get availablechannel() { return this.availableChannel }
         set availablechannel(value) { this.availableChannel = value }
 
-            award($this, value) { return $this.__helperValidateAttribute($this, value, 'award') }
+        award($this, value) {
+			var property = {
+				comment: "An award won by or for this item.",
+				parent: $this,
+				property: "award",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            brand($this, value) { return $this.__helperValidateAttribute($this, value, 'brand') }
+        brand($this, value) {
+			var property = {
+				comment: "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+				parent: $this,
+				property: "brand",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Brand"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Brand(value, property) 
+		}
 
-            broker($this, value) { return $this.__helperValidateAttribute($this, value, 'broker') }
+        broker($this, value) {
+			var property = {
+				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+				parent: $this,
+				property: "broker",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            category($this, value) { return $this.__helperValidateAttribute($this, value, 'category') }
+        category($this, value) {
+			var property = {
+				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+				parent: $this,
+				property: "category",
+				release: "11.01",
+				types: [
+					"Text",
+					"Thing",
+					"PhysicalActivityCategory",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            hasOfferCatalog($this, value) { return $this.__helperValidateAttribute($this, value, 'hasOfferCatalog') }
+        hasOfferCatalog($this, value) {
+			var property = {
+				comment: "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+				parent: $this,
+				property: "hasOfferCatalog",
+				release: "11.01",
+				types: [
+					"OfferCatalog"
+				]
+			};
+			return new window.LiveElement.Element.elements.OfferCatalog(value, property) 
+		}
         get hasoffercatalog() { return this.hasOfferCatalog }
         set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
-            hoursAvailable($this, value) { return $this.__helperValidateAttribute($this, value, 'hoursAvailable') }
+        hoursAvailable($this, value) {
+			var property = {
+				comment: "The hours during which this service or contact is available.",
+				parent: $this,
+				property: "hoursAvailable",
+				release: "11.01",
+				types: [
+					"OpeningHoursSpecification"
+				]
+			};
+			return new window.LiveElement.Element.elements.OpeningHoursSpecification(value, property) 
+		}
         get hoursavailable() { return this.hoursAvailable }
         set hoursavailable(value) { this.hoursAvailable = value }
 
-            isRelatedTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isRelatedTo') }
+        isRelatedTo($this, value) {
+			var property = {
+				comment: "A pointer to another, somehow related product (or multiple products).",
+				parent: $this,
+				property: "isRelatedTo",
+				release: "11.01",
+				types: [
+					"Product",
+					"Service"
+				]
+			};
+			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+		}
         get isrelatedto() { return this.isRelatedTo }
         set isrelatedto(value) { this.isRelatedTo = value }
 
-            isSimilarTo($this, value) { return $this.__helperValidateAttribute($this, value, 'isSimilarTo') }
+        isSimilarTo($this, value) {
+			var property = {
+				comment: "A pointer to another, functionally similar product (or multiple products).",
+				parent: $this,
+				property: "isSimilarTo",
+				release: "11.01",
+				types: [
+					"Product",
+					"Service"
+				]
+			};
+			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+		}
         get issimilarto() { return this.isSimilarTo }
         set issimilarto(value) { this.isSimilarTo = value }
 
-            logo($this, value) { return $this.__helperValidateAttribute($this, value, 'logo') }
+        logo($this, value) {
+			var property = {
+				comment: "An associated logo.",
+				parent: $this,
+				property: "logo",
+				release: "11.01",
+				types: [
+					"ImageObject",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
 
-            offers($this, value) { return $this.__helperValidateAttribute($this, value, 'offers') }
+        offers($this, value) {
+			var property = {
+				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
+				parent: $this,
+				property: "offers",
+				release: "11.01",
+				types: [
+					"Demand",
+					"Offer"
+				]
+			};
+			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+		}
 
-            produces($this, value) { return $this.__helperValidateAttribute($this, value, 'produces') }
+        produces($this, value) {
+			var property = {
+				comment: "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+				parent: $this,
+				property: "produces",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
 
-            provider($this, value) { return $this.__helperValidateAttribute($this, value, 'provider') }
+        provider($this, value) {
+			var property = {
+				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+				parent: $this,
+				property: "provider",
+				release: "11.01",
+				types: [
+					"Organization",
+					"Person"
+				]
+			};
+			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+		}
 
-            providerMobility($this, value) { return $this.__helperValidateAttribute($this, value, 'providerMobility') }
+        providerMobility($this, value) {
+			var property = {
+				comment: "Indicates the mobility of a provided service (e.g. 'static', 'dynamic').",
+				parent: $this,
+				property: "providerMobility",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get providermobility() { return this.providerMobility }
         set providermobility(value) { this.providerMobility = value }
 
-            review($this, value) { return $this.__helperValidateAttribute($this, value, 'review') }
+        review($this, value) {
+			var property = {
+				comment: "A review of the item.",
+				parent: $this,
+				property: "review",
+				release: "11.01",
+				types: [
+					"Review"
+				]
+			};
+			return new window.LiveElement.Element.elements.Review(value, property) 
+		}
 
-            serviceArea($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceArea') }
+        serviceArea($this, value) {
+			var property = {
+				comment: "The geographic area where the service is provided.",
+				parent: $this,
+				property: "serviceArea",
+				release: "11.01",
+				types: [
+					"Place",
+					"AdministrativeArea",
+					"GeoShape"
+				]
+			};
+			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) 
+		}
         get servicearea() { return this.serviceArea }
         set servicearea(value) { this.serviceArea = value }
 
-            serviceAudience($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceAudience') }
+        serviceAudience($this, value) {
+			var property = {
+				comment: "The audience eligible for this service.",
+				parent: $this,
+				property: "serviceAudience",
+				release: "11.01",
+				types: [
+					"Audience"
+				]
+			};
+			return new window.LiveElement.Element.elements.Audience(value, property) 
+		}
         get serviceaudience() { return this.serviceAudience }
         set serviceaudience(value) { this.serviceAudience = value }
 
-            serviceOutput($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceOutput') }
+        serviceOutput($this, value) {
+			var property = {
+				comment: "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+				parent: $this,
+				property: "serviceOutput",
+				release: "11.01",
+				types: [
+					"Thing"
+				]
+			};
+			return new window.LiveElement.Element.elements.Thing(value, property) 
+		}
         get serviceoutput() { return this.serviceOutput }
         set serviceoutput(value) { this.serviceOutput = value }
 
-            serviceType($this, value) { return $this.__helperValidateAttribute($this, value, 'serviceType') }
+        serviceType($this, value) {
+			var property = {
+				comment: "The type of service being offered, e.g. veterans' benefits, emergency relief, etc.",
+				parent: $this,
+				property: "serviceType",
+				release: "11.01",
+				types: [
+					"GovernmentBenefitsType",
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.GovernmentBenefitsType(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get servicetype() { return this.serviceType }
         set servicetype(value) { this.serviceType = value }
 
-            slogan($this, value) { return $this.__helperValidateAttribute($this, value, 'slogan') }
+        slogan($this, value) {
+			var property = {
+				comment: "A slogan or motto associated with the item.",
+				parent: $this,
+				property: "slogan",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
 
-            termsOfService($this, value) { return $this.__helperValidateAttribute($this, value, 'termsOfService') }
+        termsOfService($this, value) {
+			var property = {
+				comment: "Human-readable terms of service documentation.",
+				parent: $this,
+				property: "termsOfService",
+				release: "11.01",
+				types: [
+					"Text",
+					"URL"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+		}
         get termsofservice() { return this.termsOfService }
         set termsofservice(value) { this.termsOfService = value }
         

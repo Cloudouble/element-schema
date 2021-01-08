@@ -8,7 +8,7 @@
 </template>
 <script>
     /* global */
-    class Deliverytimesettings extends window.Cloudouble.Element.elements.Structuredvalue {
+    class DeliveryTimeSettings extends window.Cloudouble.Element.elements.StructuredValue {
 
         static __prefix = window.Cloudouble.Element.prefix
         
@@ -32,19 +32,63 @@
         }
         
         
-            deliveryTime($this, value) { return $this.__helperValidateAttribute($this, value, 'deliveryTime') }
+        deliveryTime($this, value) {
+			var property = {
+				comment: "The total delay between the receipt of the order and the goods reaching the final customer.",
+				parent: $this,
+				property: "deliveryTime",
+				release: "11.01",
+				types: [
+					"ShippingDeliveryTime"
+				]
+			};
+			return new window.LiveElement.Element.elements.ShippingDeliveryTime(value, property) 
+		}
         get deliverytime() { return this.deliveryTime }
         set deliverytime(value) { this.deliveryTime = value }
 
-            isUnlabelledFallback($this, value) { return $this.__helperValidateAttribute($this, value, 'isUnlabelledFallback') }
+        isUnlabelledFallback($this, value) {
+			var property = {
+				comment: "This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.",
+				parent: $this,
+				property: "isUnlabelledFallback",
+				release: "11.01",
+				types: [
+					"Boolean"
+				]
+			};
+			return new window.LiveElement.Element.elements.Boolean(value, property) 
+		}
         get isunlabelledfallback() { return this.isUnlabelledFallback }
         set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
 
-            shippingDestination($this, value) { return $this.__helperValidateAttribute($this, value, 'shippingDestination') }
+        shippingDestination($this, value) {
+			var property = {
+				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
+				parent: $this,
+				property: "shippingDestination",
+				release: "11.01",
+				types: [
+					"DefinedRegion"
+				]
+			};
+			return new window.LiveElement.Element.elements.DefinedRegion(value, property) 
+		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
 
-            transitTimeLabel($this, value) { return $this.__helperValidateAttribute($this, value, 'transitTimeLabel') }
+        transitTimeLabel($this, value) {
+			var property = {
+				comment: "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
+				parent: $this,
+				property: "transitTimeLabel",
+				release: "11.01",
+				types: [
+					"Text"
+				]
+			};
+			return new window.LiveElement.Element.elements.Text(value, property) 
+		}
         get transittimelabel() { return this.transitTimeLabel }
         set transittimelabel(value) { this.transitTimeLabel = value }
         

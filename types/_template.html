@@ -1,7 +1,4 @@
 <style>
-:host {{
-    contain: content;
-}}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '{release}'
         static __id = '{_id}'
         static __type = '{_type}'
+        static __extends = '{rdfssubclassof_id_safe_no_schemaprefix}'
         static _rdfs_comment = '{rdfscomment}'
         static _rdfs_label = '{rdfslabel}'
 
@@ -24,7 +22,6 @@
         
         constructor() {{
             super()
-            this.__setRenderer('{rdfslabel}')
         }}
         
         connectedCallback() {{

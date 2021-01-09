@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PodcastSeason'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWorkSeason'
         static _rdfs_comment = 'A single season of a podcast. Many podcasts do not break down into separate seasons. In that case, PodcastSeries should be used.'
         static _rdfs_label = 'PodcastSeason'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PodcastSeason')
         }
         
         connectedCallback() {

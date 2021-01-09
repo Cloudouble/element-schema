@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LymphaticVessel'
         static __type = 'rdfs:Class'
+        static __extends = 'Vessel'
         static _rdfs_comment = 'A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.'
         static _rdfs_label = 'LymphaticVessel'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LymphaticVessel')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         originatesFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The vasculature the lymphatic structure originates, or afferents, from.",
-				parent: $this,
+				container: $this,
 				property: "originatesFrom",
 				release: "11.01",
 				types: [
 					"Vessel"
-				]
-			};
-			return new window.LiveElement.Element.elements.Vessel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get originatesfrom() { return this.originatesFrom }
         set originatesfrom(value) { this.originatesFrom = value }
 
         regionDrained($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
-				parent: $this,
+				container: $this,
 				property: "regionDrained",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure",
 					"AnatomicalSystem"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get regiondrained() { return this.regionDrained }
         set regiondrained(value) { this.regionDrained = value }
 
         runsTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The vasculature the lymphatic structure runs, or efferents, to.",
-				parent: $this,
+				container: $this,
 				property: "runsTo",
 				release: "11.01",
 				types: [
 					"Vessel"
-				]
-			};
-			return new window.LiveElement.Element.elements.Vessel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get runsto() { return this.runsTo }
         set runsto(value) { this.runsTo = value }

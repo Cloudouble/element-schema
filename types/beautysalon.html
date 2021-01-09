@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BeautySalon'
         static __type = 'rdfs:Class'
+        static __extends = 'HealthAndBeautyBusiness'
         static _rdfs_comment = 'Beauty salon.'
         static _rdfs_label = 'BeautySalon'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BeautySalon')
         }
         
         connectedCallback() {

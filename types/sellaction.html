@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SellAction'
         static __type = 'rdfs:Class'
+        static __extends = 'TradeAction'
         static _rdfs_comment = 'The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.'
         static _rdfs_label = 'SellAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SellAction')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         buyer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The participant\\/person\\/organization that bought the object.",
-				parent: $this,
+				container: $this,
 				property: "buyer",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         warrantyPromise($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The warranty promise(s) included in the offer.",
-				parent: $this,
+				container: $this,
 				property: "warrantyPromise",
 				release: "11.01",
 				types: [
 					"WarrantyPromise"
-				]
-			};
-			return new window.LiveElement.Element.elements.WarrantyPromise(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get warrantypromise() { return this.warrantyPromise }
         set warrantypromise(value) { this.warrantyPromise = value }

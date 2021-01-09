@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalSignOrSymptom'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalCondition'
         static _rdfs_comment = 'Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective.'
         static _rdfs_label = 'MedicalSignOrSymptom'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalSignOrSymptom')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         possibleTreatment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A possible treatment to address this condition, sign or symptom.",
-				parent: $this,
+				container: $this,
 				property: "possibleTreatment",
 				release: "11.01",
 				types: [
 					"MedicalTherapy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get possibletreatment() { return this.possibleTreatment }
         set possibletreatment(value) { this.possibleTreatment = value }

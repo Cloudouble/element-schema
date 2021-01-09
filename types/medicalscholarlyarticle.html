@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalScholarlyArticle'
         static __type = 'rdfs:Class'
+        static __extends = 'ScholarlyArticle'
         static _rdfs_comment = 'A scholarly article in the medical domain.'
         static _rdfs_label = 'MedicalScholarlyArticle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalScholarlyArticle')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         publicationType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http:\\/\\/www.nlm.nih.gov\\/mesh\\/pubtypes.html).",
-				parent: $this,
+				container: $this,
 				property: "publicationType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publicationtype() { return this.publicationType }
         set publicationtype(value) { this.publicationType = value }

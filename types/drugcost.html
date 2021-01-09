@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DrugCost'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'The cost per unit of a medical drug. Note that this type is not meant to represent the price in an offer of a drug for sale; see the Offer type for that. This type will typically be used to tag wholesale or average retail cost of a drug, or maximum reimbursable cost. Costs of medical drugs vary widely depending on how and where they are paid for, so while this type captures some of the variables, costs should be used with caution by consumers of this schema\'s markup.'
         static _rdfs_label = 'DrugCost'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DrugCost')
         }
         
         connectedCallback() {
@@ -33,93 +30,99 @@
         
         
         applicableLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location in which the status applies.",
-				parent: $this,
+				container: $this,
 				property: "applicableLocation",
 				release: "11.01",
 				types: [
 					"AdministrativeArea"
-				]
-			};
-			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get applicablelocation() { return this.applicableLocation }
         set applicablelocation(value) { this.applicableLocation = value }
 
         costCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The category of cost, such as wholesale, retail, reimbursement cap, etc.",
-				parent: $this,
+				container: $this,
 				property: "costCategory",
 				release: "11.01",
 				types: [
 					"DrugCostCategory"
-				]
-			};
-			return new window.LiveElement.Element.elements.DrugCostCategory(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get costcategory() { return this.costCategory }
         set costcategory(value) { this.costCategory = value }
 
         costCurrency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The currency (in 3-letter of the drug cost. See: http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217 ",
-				parent: $this,
+				container: $this,
 				property: "costCurrency",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get costcurrency() { return this.costCurrency }
         set costcurrency(value) { this.costCurrency = value }
 
         costOrigin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.",
-				parent: $this,
+				container: $this,
 				property: "costOrigin",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get costorigin() { return this.costOrigin }
         set costorigin(value) { this.costOrigin = value }
 
         costPerUnit($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The cost per unit of the drug.",
-				parent: $this,
+				container: $this,
 				property: "costPerUnit",
 				release: "11.01",
 				types: [
 					"Number",
 					"QualitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get costperunit() { return this.costPerUnit }
         set costperunit(value) { this.costPerUnit = value }
 
         drugUnit($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unit in which the drug is measured, e.g. '5 mg tablet'.",
-				parent: $this,
+				container: $this,
 				property: "drugUnit",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get drugunit() { return this.drugUnit }
         set drugunit(value) { this.drugUnit = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalSign'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalSignOrSymptom'
         static _rdfs_comment = 'Any physical manifestation of a person\'s medical condition discoverable by objective diagnostic tests or physical examination.'
         static _rdfs_label = 'MedicalSign'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalSign')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         identifyingExam($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A physical examination that can identify this sign.",
-				parent: $this,
+				container: $this,
 				property: "identifyingExam",
 				release: "11.01",
 				types: [
 					"PhysicalExam"
-				]
-			};
-			return new window.LiveElement.Element.elements.PhysicalExam(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get identifyingexam() { return this.identifyingExam }
         set identifyingexam(value) { this.identifyingExam = value }
 
         identifyingTest($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A diagnostic test that can identify this sign.",
-				parent: $this,
+				container: $this,
 				property: "identifyingTest",
 				release: "11.01",
 				types: [
 					"MedicalTest"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTest(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get identifyingtest() { return this.identifyingTest }
         set identifyingtest(value) { this.identifyingTest = value }

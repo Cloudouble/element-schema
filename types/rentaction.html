@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:RentAction'
         static __type = 'rdfs:Class'
+        static __extends = 'TradeAction'
         static _rdfs_comment = 'The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.'
         static _rdfs_label = 'RentAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('RentAction')
         }
         
         connectedCallback() {
@@ -33,30 +30,32 @@
         
         
         landlord($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The owner of the real estate property.",
-				parent: $this,
+				container: $this,
 				property: "landlord",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         realEstateAgent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The real estate agent involved in the action.",
-				parent: $this,
+				container: $this,
 				property: "realEstateAgent",
 				release: "11.01",
 				types: [
 					"RealEstateAgent"
-				]
-			};
-			return new window.LiveElement.Element.elements.RealEstateAgent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get realestateagent() { return this.realEstateAgent }
         set realestateagent(value) { this.realEstateAgent = value }

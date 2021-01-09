@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TouristAttraction'
         static __type = 'rdfs:Class'
+        static __extends = 'Place'
         static _rdfs_comment = 'A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)'
         static _rdfs_label = 'TouristAttraction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TouristAttraction')
         }
         
         connectedCallback() {
@@ -33,33 +30,35 @@
         
         
         availableLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
-				parent: $this,
+				container: $this,
 				property: "availableLanguage",
 				release: "11.01",
 				types: [
 					"Language",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
 
         touristType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. ",
-				parent: $this,
+				container: $this,
 				property: "touristType",
 				release: "11.01",
 				types: [
 					"Text",
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get touristtype() { return this.touristType }
         set touristtype(value) { this.touristType = value }

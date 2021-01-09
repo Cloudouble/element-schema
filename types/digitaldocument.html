@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DigitalDocument'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'An electronic file or document.'
         static _rdfs_label = 'DigitalDocument'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DigitalDocument')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         hasDigitalDocumentPermission($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to \"public\".",
-				parent: $this,
+				container: $this,
 				property: "hasDigitalDocumentPermission",
 				release: "11.01",
 				types: [
 					"DigitalDocumentPermission"
-				]
-			};
-			return new window.LiveElement.Element.elements.DigitalDocumentPermission(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasdigitaldocumentpermission() { return this.hasDigitalDocumentPermission }
         set hasdigitaldocumentpermission(value) { this.hasDigitalDocumentPermission = value }

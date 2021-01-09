@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DeleteAction'
         static __type = 'rdfs:Class'
+        static __extends = 'UpdateAction'
         static _rdfs_comment = 'The act of editing a recipient by removing one of its objects.'
         static _rdfs_label = 'DeleteAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DeleteAction')
         }
         
         connectedCallback() {

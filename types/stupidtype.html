@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:StupidType'
         static __type = 'rdfs:Class'
+        static __extends = 'Thing'
         static _rdfs_comment = 'A StupidType for testing.'
         static _rdfs_label = 'StupidType'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('StupidType')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         stupidProperty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "This is a StupidProperty! - for testing only",
-				parent: $this,
+				container: $this,
 				property: "stupidProperty",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get stupidproperty() { return this.stupidProperty }
         set stupidproperty(value) { this.stupidProperty = value }

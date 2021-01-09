@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MotorizedBicycle'
         static __type = 'rdfs:Class'
+        static __extends = 'Vehicle'
         static _rdfs_comment = 'A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.'
         static _rdfs_label = 'MotorizedBicycle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MotorizedBicycle')
         }
         
         connectedCallback() {

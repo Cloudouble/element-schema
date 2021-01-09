@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CreativeWork'
         static __type = 'rdfs:Class'
+        static __extends = 'Thing'
         static _rdfs_comment = 'The most generic kind of creative work, including books, movies, photographs, software programs, etc.'
         static _rdfs_label = 'CreativeWork'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CreativeWork')
         }
         
         connectedCallback() {
@@ -33,1592 +30,1700 @@
         
         
         about($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The subject matter of the content.",
-				parent: $this,
+				container: $this,
 				property: "about",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         abstract($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An abstract is a short description that summarizes a [[CreativeWork]].",
-				parent: $this,
+				container: $this,
 				property: "abstract",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         accessMode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.\n      ",
-				parent: $this,
+				container: $this,
 				property: "accessMode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessmode() { return this.accessMode }
         set accessmode(value) { this.accessMode = value }
 
         accessModeSufficient($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.\n      ",
-				parent: $this,
+				container: $this,
 				property: "accessModeSufficient",
 				release: "11.01",
 				types: [
 					"ItemList"
-				]
-			};
-			return new window.LiveElement.Element.elements.ItemList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessmodesufficient() { return this.accessModeSufficient }
         set accessmodesufficient(value) { this.accessModeSufficient = value }
 
         accessibilityAPI($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
-				parent: $this,
+				container: $this,
 				property: "accessibilityAPI",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessibilityapi() { return this.accessibilityAPI }
         set accessibilityapi(value) { this.accessibilityAPI = value }
 
         accessibilityControl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifies input methods that are sufficient to fully control the described resource ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
-				parent: $this,
+				container: $this,
 				property: "accessibilityControl",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessibilitycontrol() { return this.accessibilityControl }
         set accessibilitycontrol(value) { this.accessibilityControl = value }
 
         accessibilityFeature($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
-				parent: $this,
+				container: $this,
 				property: "accessibilityFeature",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessibilityfeature() { return this.accessibilityFeature }
         set accessibilityfeature(value) { this.accessibilityFeature = value }
 
         accessibilityHazard($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 ([WebSchemas wiki lists possible values](http:\\/\\/www.w3.org\\/wiki\\/WebSchemas\\/Accessibility)).",
-				parent: $this,
+				container: $this,
 				property: "accessibilityHazard",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessibilityhazard() { return this.accessibilityHazard }
         set accessibilityhazard(value) { this.accessibilityHazard = value }
 
         accessibilitySummary($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as \"short descriptions are present but long descriptions will be needed for non-visual users\" or \"short descriptions are present and no long descriptions are needed.\"",
-				parent: $this,
+				container: $this,
 				property: "accessibilitySummary",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accessibilitysummary() { return this.accessibilitySummary }
         set accessibilitysummary(value) { this.accessibilitySummary = value }
 
         accountablePerson($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the Person that is legally accountable for the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "accountablePerson",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accountableperson() { return this.accountablePerson }
         set accountableperson(value) { this.accountablePerson = value }
 
         acquireLicensePage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.",
-				parent: $this,
+				container: $this,
 				property: "acquireLicensePage",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get acquirelicensepage() { return this.acquireLicensePage }
         set acquirelicensepage(value) { this.acquireLicensePage = value }
 
         aggregateRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
-				parent: $this,
+				container: $this,
 				property: "aggregateRating",
 				release: "11.01",
 				types: [
 					"AggregateRating"
-				]
-			};
-			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
         alternativeHeadline($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A secondary title of the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "alternativeHeadline",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get alternativeheadline() { return this.alternativeHeadline }
         set alternativeheadline(value) { this.alternativeHeadline = value }
 
         assesses($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
-				parent: $this,
+				container: $this,
 				property: "assesses",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         associatedMedia($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
-				parent: $this,
+				container: $this,
 				property: "associatedMedia",
 				release: "11.01",
 				types: [
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get associatedmedia() { return this.associatedMedia }
         set associatedmedia(value) { this.associatedMedia = value }
 
         audience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
-				parent: $this,
+				container: $this,
 				property: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         audio($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An embedded audio object.",
-				parent: $this,
+				container: $this,
 				property: "audio",
 				release: "11.01",
 				types: [
 					"MusicRecording",
 					"Clip",
 					"AudioObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) || new window.LiveElement.Element.elements.Clip(value, property) || new window.LiveElement.Element.elements.AudioObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         author($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
-				parent: $this,
+				container: $this,
 				property: "author",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         award($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An award won by or for this item.",
-				parent: $this,
+				container: $this,
 				property: "award",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         awards($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Awards won by or for this item.",
-				parent: $this,
+				container: $this,
 				property: "awards",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         character($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Fictional person connected with a creative work.",
-				parent: $this,
+				container: $this,
 				property: "character",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         citation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
-				parent: $this,
+				container: $this,
 				property: "citation",
 				release: "11.01",
 				types: [
 					"Text",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         comment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Comments, typically from users.",
-				parent: $this,
+				container: $this,
 				property: "comment",
 				release: "11.01",
 				types: [
 					"Comment"
-				]
-			};
-			return new window.LiveElement.Element.elements.Comment(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         commentCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.",
-				parent: $this,
+				container: $this,
 				property: "commentCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get commentcount() { return this.commentCount }
         set commentcount(value) { this.commentCount = value }
 
         conditionsOfAccess($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example \"Available by appointment from the Reading Room\" or \"Accessible only from logged-in accounts \". ",
-				parent: $this,
+				container: $this,
 				property: "conditionsOfAccess",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get conditionsofaccess() { return this.conditionsOfAccess }
         set conditionsofaccess(value) { this.conditionsOfAccess = value }
 
         contentLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location depicted or described in the content. For example, the location in a photograph or painting.",
-				parent: $this,
+				container: $this,
 				property: "contentLocation",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contentlocation() { return this.contentLocation }
         set contentlocation(value) { this.contentLocation = value }
 
         contentRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.",
-				parent: $this,
+				container: $this,
 				property: "contentRating",
 				release: "11.01",
 				types: [
 					"Text",
 					"Rating"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Rating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contentrating() { return this.contentRating }
         set contentrating(value) { this.contentRating = value }
 
         contentReferenceTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.",
-				parent: $this,
+				container: $this,
 				property: "contentReferenceTime",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contentreferencetime() { return this.contentReferenceTime }
         set contentreferencetime(value) { this.contentReferenceTime = value }
 
         contributor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A secondary contributor to the CreativeWork or Event.",
-				parent: $this,
+				container: $this,
 				property: "contributor",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         copyrightHolder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The party holding the legal copyright to the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "copyrightHolder",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get copyrightholder() { return this.copyrightHolder }
         set copyrightholder(value) { this.copyrightHolder = value }
 
         copyrightNotice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.",
-				parent: $this,
+				container: $this,
 				property: "copyrightNotice",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get copyrightnotice() { return this.copyrightNotice }
         set copyrightnotice(value) { this.copyrightNotice = value }
 
         copyrightYear($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The year during which the claimed copyright for the CreativeWork was first asserted.",
-				parent: $this,
+				container: $this,
 				property: "copyrightYear",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get copyrightyear() { return this.copyrightYear }
         set copyrightyear(value) { this.copyrightYear = value }
 
         correction($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.",
-				parent: $this,
+				container: $this,
 				property: "correction",
 				release: "11.01",
 				types: [
 					"Text",
 					"CorrectionComment",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CorrectionComment(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         creativeWorkStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
-				parent: $this,
+				container: $this,
 				property: "creativeWorkStatus",
 				release: "11.01",
 				types: [
 					"Text",
 					"DefinedTerm"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get creativeworkstatus() { return this.creativeWorkStatus }
         set creativeworkstatus(value) { this.creativeWorkStatus = value }
 
         creator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The creator\\/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "creator",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         creditText($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Text that can be used to credit person(s) and\\/or organization(s) associated with a published Creative Work.",
-				parent: $this,
+				container: $this,
 				property: "creditText",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get credittext() { return this.creditText }
         set credittext(value) { this.creditText = value }
 
         dateCreated($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-				parent: $this,
+				container: $this,
 				property: "dateCreated",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datecreated() { return this.dateCreated }
         set datecreated(value) { this.dateCreated = value }
 
         dateModified($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
-				parent: $this,
+				container: $this,
 				property: "dateModified",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datemodified() { return this.dateModified }
         set datemodified(value) { this.dateModified = value }
 
         datePublished($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Date of first broadcast\\/publication.",
-				parent: $this,
+				container: $this,
 				property: "datePublished",
 				release: "11.01",
 				types: [
 					"Date",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datepublished() { return this.datePublished }
         set datepublished(value) { this.datePublished = value }
 
         discussionUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A link to the page containing the comments of the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "discussionUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get discussionurl() { return this.discussionUrl }
         set discussionurl(value) { this.discussionUrl = value }
 
         editEIDR($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit \\/ edition for a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" whose [[titleEIDR]] is \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\", has several edits e.g. \"10.5240\\/1F2A-E1C5-680A-14C6-E76B-I\" and \"10.5240\\/8A35-3BEE-6497-5D12-9E4F-3\".\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
-				parent: $this,
+				container: $this,
 				property: "editEIDR",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get editeidr() { return this.editEIDR }
         set editeidr(value) { this.editEIDR = value }
 
         editor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the Person who edited the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "editor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         educationalAlignment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An alignment to an established educational framework.\n\nThis property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.",
-				parent: $this,
+				container: $this,
 				property: "educationalAlignment",
 				release: "11.01",
 				types: [
 					"AlignmentObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.AlignmentObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get educationalalignment() { return this.educationalAlignment }
         set educationalalignment(value) { this.educationalAlignment = value }
 
         educationalLevel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
-				parent: $this,
+				container: $this,
 				property: "educationalLevel",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text",
 					"DefinedTerm"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
 
         educationalUse($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The purpose of a work in the context of education; for example, 'assignment', 'group work'.",
-				parent: $this,
+				container: $this,
 				property: "educationalUse",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get educationaluse() { return this.educationalUse }
         set educationaluse(value) { this.educationalUse = value }
 
         encoding($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.",
-				parent: $this,
+				container: $this,
 				property: "encoding",
 				release: "11.01",
 				types: [
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         encodingFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Media type typically expressed using a MIME format (see [IANA site](http:\\/\\/www.iana.org\\/assignments\\/media-types\\/media-types.xhtml) and [MDN reference](https:\\/\\/developer.mozilla.org\\/en-US\\/docs\\/Web\\/HTTP\\/Basics_of_HTTP\\/MIME_types)) e.g. application\\/zip for a SoftwareApplication binary, audio\\/mpeg for .mp3 etc.).\n\nIn cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.\n\nUnregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia\\/Wikidata entry.",
-				parent: $this,
+				container: $this,
 				property: "encodingFormat",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get encodingformat() { return this.encodingFormat }
         set encodingformat(value) { this.encodingFormat = value }
 
         encodings($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A media object that encodes this CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "encodings",
 				release: "11.01",
 				types: [
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         exampleOfWork($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A creative work that this work is an example\\/instance\\/realization\\/derivation of.",
-				parent: $this,
+				container: $this,
 				property: "exampleOfWork",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exampleofwork() { return this.exampleOfWork }
         set exampleofwork(value) { this.exampleOfWork = value }
 
         expires($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
-				parent: $this,
+				container: $this,
 				property: "expires",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         fileFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Media type, typically MIME format (see [IANA site](http:\\/\\/www.iana.org\\/assignments\\/media-types\\/media-types.xhtml)) of the content e.g. application\\/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-				parent: $this,
+				container: $this,
 				property: "fileFormat",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get fileformat() { return this.fileFormat }
         set fileformat(value) { this.fileFormat = value }
 
         funder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-				parent: $this,
+				container: $this,
 				property: "funder",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         genre($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Genre of the creative work, broadcast channel or group.",
-				parent: $this,
+				container: $this,
 				property: "genre",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         hasPart($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).",
-				parent: $this,
+				container: $this,
 				property: "hasPart",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get haspart() { return this.hasPart }
         set haspart(value) { this.hasPart = value }
 
         headline($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Headline of the article.",
-				parent: $this,
+				container: $this,
 				property: "headline",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         inLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
-				parent: $this,
+				container: $this,
 				property: "inLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
         interactionStatistic($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-				parent: $this,
+				container: $this,
 				property: "interactionStatistic",
 				release: "11.01",
 				types: [
 					"InteractionCounter"
-				]
-			};
-			return new window.LiveElement.Element.elements.InteractionCounter(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get interactionstatistic() { return this.interactionStatistic }
         set interactionstatistic(value) { this.interactionStatistic = value }
 
         interactivityType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.",
-				parent: $this,
+				container: $this,
 				property: "interactivityType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get interactivitytype() { return this.interactivityType }
         set interactivitytype(value) { this.interactivityType = value }
 
         isAccessibleForFree($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A flag to signal that the item, event, or place is accessible for free.",
-				parent: $this,
+				container: $this,
 				property: "isAccessibleForFree",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isaccessibleforfree() { return this.isAccessibleForFree }
         set isaccessibleforfree(value) { this.isAccessibleForFree = value }
 
         isBasedOn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A resource from which this work is derived or from which it is a modification or adaption.",
-				parent: $this,
+				container: $this,
 				property: "isBasedOn",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"Product",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isbasedon() { return this.isBasedOn }
         set isbasedon(value) { this.isBasedOn = value }
 
         isBasedOnUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http:\\/\\/example.com\\/great-multiplication-intro.html.",
-				parent: $this,
+				container: $this,
 				property: "isBasedOnUrl",
 				release: "11.01",
 				types: [
 					"Product",
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isbasedonurl() { return this.isBasedOnUrl }
         set isbasedonurl(value) { this.isBasedOnUrl = value }
 
         isFamilyFriendly($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether this content is family friendly.",
-				parent: $this,
+				container: $this,
 				property: "isFamilyFriendly",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isfamilyfriendly() { return this.isFamilyFriendly }
         set isfamilyfriendly(value) { this.isFamilyFriendly = value }
 
         isPartOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.",
-				parent: $this,
+				container: $this,
 				property: "isPartOf",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ispartof() { return this.isPartOf }
         set ispartof(value) { this.isPartOf = value }
 
         keywords($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-				parent: $this,
+				container: $this,
 				property: "keywords",
 				release: "11.01",
 				types: [
 					"Text",
 					"DefinedTerm",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         learningResourceType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
-				parent: $this,
+				container: $this,
 				property: "learningResourceType",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get learningresourcetype() { return this.learningResourceType }
         set learningresourcetype(value) { this.learningResourceType = value }
 
         license($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A license document that applies to this content, typically indicated by URL.",
-				parent: $this,
+				container: $this,
 				property: "license",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         locationCreated($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "locationCreated",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get locationcreated() { return this.locationCreated }
         set locationcreated(value) { this.locationCreated = value }
 
         mainEntity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the primary entity described in some page or other CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "mainEntity",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get mainentity() { return this.mainEntity }
         set mainentity(value) { this.mainEntity = value }
 
         maintainer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and\\/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on \"upstream\" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.\n      ",
-				parent: $this,
+				container: $this,
 				property: "maintainer",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         material($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A material that something is made from, e.g. leather, wool, cotton, paper.",
-				parent: $this,
+				container: $this,
 				property: "material",
 				release: "11.01",
 				types: [
 					"Text",
 					"Product",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         materialExtent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity of the materials being described or an expression of the physical space they occupy.",
-				parent: $this,
+				container: $this,
 				property: "materialExtent",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get materialextent() { return this.materialExtent }
         set materialextent(value) { this.materialExtent = value }
 
         mentions($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
-				parent: $this,
+				container: $this,
 				property: "mentions",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         offers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
-				parent: $this,
+				container: $this,
 				property: "offers",
 				release: "11.01",
 				types: [
 					"Demand",
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         pattern($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.",
-				parent: $this,
+				container: $this,
 				property: "pattern",
 				release: "11.01",
 				types: [
 					"Text",
 					"DefinedTerm"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         position($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The position of an item in a series or sequence of items.",
-				parent: $this,
+				container: $this,
 				property: "position",
 				release: "11.01",
 				types: [
 					"Text",
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         producer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person or organization who produced the work (e.g. music album, movie, tv\\/radio series etc.).",
-				parent: $this,
+				container: $this,
 				property: "producer",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         provider($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-				parent: $this,
+				container: $this,
 				property: "provider",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         publication($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A publication event associated with the item.",
-				parent: $this,
+				container: $this,
 				property: "publication",
 				release: "11.01",
 				types: [
 					"PublicationEvent"
-				]
-			};
-			return new window.LiveElement.Element.elements.PublicationEvent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         publisher($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The publisher of the creative work.",
-				parent: $this,
+				container: $this,
 				property: "publisher",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         publisherImprint($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The publishing division which published the comic.",
-				parent: $this,
+				container: $this,
 				property: "publisherImprint",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publisherimprint() { return this.publisherImprint }
         set publisherimprint(value) { this.publisherImprint = value }
 
         publishingPrinciples($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
-				parent: $this,
+				container: $this,
 				property: "publishingPrinciples",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publishingprinciples() { return this.publishingPrinciples }
         set publishingprinciples(value) { this.publishingPrinciples = value }
 
         recordedAt($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.",
-				parent: $this,
+				container: $this,
 				property: "recordedAt",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recordedat() { return this.recordedAt }
         set recordedat(value) { this.recordedAt = value }
 
         releasedEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The place and time the release was issued, expressed as a PublicationEvent.",
-				parent: $this,
+				container: $this,
 				property: "releasedEvent",
 				release: "11.01",
 				types: [
 					"PublicationEvent"
-				]
-			};
-			return new window.LiveElement.Element.elements.PublicationEvent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get releasedevent() { return this.releasedEvent }
         set releasedevent(value) { this.releasedEvent = value }
 
         review($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A review of the item.",
-				parent: $this,
+				container: $this,
 				property: "review",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         reviews($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Review of the item.",
-				parent: $this,
+				container: $this,
 				property: "reviews",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         schemaVersion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as https:\\/\\/schema.org\\/version\\/2.0\\/ if precise indication of schema version was required by some application. ",
-				parent: $this,
+				container: $this,
 				property: "schemaVersion",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get schemaversion() { return this.schemaVersion }
         set schemaversion(value) { this.schemaVersion = value }
 
         sdDatePublished($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the date on which the current structured data was generated \\/ published. Typically used alongside [[sdPublisher]]",
-				parent: $this,
+				container: $this,
 				property: "sdDatePublished",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sddatepublished() { return this.sdDatePublished }
         set sddatepublished(value) { this.sdDatePublished = value }
 
         sdLicense($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A license document that applies to this structured data, typically indicated by URL.",
-				parent: $this,
+				container: $this,
 				property: "sdLicense",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sdlicense() { return this.sdLicense }
         set sdlicense(value) { this.sdLicense = value }
 
         sdPublisher($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The\n[[sdPublisher]] property helps make such practices more explicit.",
-				parent: $this,
+				container: $this,
 				property: "sdPublisher",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sdpublisher() { return this.sdPublisher }
         set sdpublisher(value) { this.sdPublisher = value }
 
         size($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A standardized size of a product or creative work, often simplifying richer information into a simple textual string, either through referring to named sizes or (in the case of product markup), by adopting conventional simplifications. Use of QuantitativeValue with a unitCode or unitText can add more structure; in other cases, the \\/width, \\/height, \\/depth and \\/weight properties may be more applicable. ",
-				parent: $this,
+				container: $this,
 				property: "size",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         sourceOrganization($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Organization on whose behalf the creator was working.",
-				parent: $this,
+				container: $this,
 				property: "sourceOrganization",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sourceorganization() { return this.sourceOrganization }
         set sourceorganization(value) { this.sourceOrganization = value }
 
         spatial($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The \"spatial\" property can be used in cases when more specific properties\n(e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.",
-				parent: $this,
+				container: $this,
 				property: "spatial",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         spatialCoverage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
-				parent: $this,
+				container: $this,
 				property: "spatialCoverage",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get spatialcoverage() { return this.spatialCoverage }
         set spatialcoverage(value) { this.spatialCoverage = value }
 
         sponsor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-				parent: $this,
+				container: $this,
 				property: "sponsor",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         teaches($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
-				parent: $this,
+				container: $this,
 				property: "teaches",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         temporal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The \"temporal\" property can be used in cases where more specific properties\n(e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.",
-				parent: $this,
+				container: $this,
 				property: "temporal",
 				release: "11.01",
 				types: [
 					"Text",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         temporalCoverage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601#Time_intervals). In\n      the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written \"2011\\/2012\"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.\n      Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via \"1939\\/1945\".\n\nOpen-ended date ranges can be written with \"..\" in place of the end date. For example, \"2015-11\\/..\" indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.",
-				parent: $this,
+				container: $this,
 				property: "temporalCoverage",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get temporalcoverage() { return this.temporalCoverage }
         set temporalcoverage(value) { this.temporalCoverage = value }
 
         text($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The textual content of this CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "text",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         thumbnailUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A thumbnail image relevant to the Thing.",
-				parent: $this,
+				container: $this,
 				property: "thumbnailUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get thumbnailurl() { return this.thumbnailUrl }
         set thumbnailurl(value) { this.thumbnailUrl = value }
 
         timeRequired($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.",
-				parent: $this,
+				container: $this,
 				property: "timeRequired",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get timerequired() { return this.timeRequired }
         set timerequired(value) { this.timeRequired = value }
 
         translationOfWork($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The work that this work has been translated from. e.g. \u7269\u79cd\u8d77\u6e90 is a translationOf \u201cOn the Origin of Species\u201d",
-				parent: $this,
+				container: $this,
 				property: "translationOfWork",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get translationofwork() { return this.translationOfWork }
         set translationofwork(value) { this.translationOfWork = value }
 
         translator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
-				parent: $this,
+				container: $this,
 				property: "translator",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         typicalAgeRange($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The typical expected age range, e.g. '7-9', '11-'.",
-				parent: $this,
+				container: $this,
 				property: "typicalAgeRange",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get typicalagerange() { return this.typicalAgeRange }
         set typicalagerange(value) { this.typicalAgeRange = value }
 
         usageInfo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.\n\nThis property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.",
-				parent: $this,
+				container: $this,
 				property: "usageInfo",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get usageinfo() { return this.usageInfo }
         set usageinfo(value) { this.usageInfo = value }
 
         version($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The version of the CreativeWork embodied by a specified resource.",
-				parent: $this,
+				container: $this,
 				property: "version",
 				release: "11.01",
 				types: [
 					"Text",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         video($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An embedded video object.",
-				parent: $this,
+				container: $this,
 				property: "video",
 				release: "11.01",
 				types: [
 					"Clip",
 					"VideoObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.Clip(value, property) || new window.LiveElement.Element.elements.VideoObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         workExample($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Example\\/instance\\/realization\\/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.",
-				parent: $this,
+				container: $this,
 				property: "workExample",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get workexample() { return this.workExample }
         set workexample(value) { this.workExample = value }
 
         workTranslation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A work that is a translation of the content of this work. e.g. \u897f\u904a\u8a18 has an English workTranslation \u201cJourney to the West\u201d,a German workTranslation \u201cMonkeys Pilgerfahrt\u201d and a Vietnamese  translation T\u00e2y du k\u00fd b\u00ecnh kh\u1ea3o.",
-				parent: $this,
+				container: $this,
 				property: "workTranslation",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get worktranslation() { return this.workTranslation }
         set worktranslation(value) { this.workTranslation = value }

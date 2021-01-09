@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CDCPMDRecord'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A CDCPMDRecord is a data structure representing a record in a CDC tabular data format       used for hospital data reporting. See [documentation](\/docs\/cdc-covid.html) for details, and the linked CDC materials for authoritative       definitions used as the source here.       '
         static _rdfs_label = 'CDCPMDRecord'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CDCPMDRecord')
         }
         
         connectedCallback() {
@@ -33,258 +30,275 @@
         
         
         cvdCollectionDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "collectiondate - Date for which patient counts are reported.",
-				parent: $this,
+				container: $this,
 				property: "cvdCollectionDate",
 				release: "11.01",
 				types: [
 					"Text",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdcollectiondate() { return this.cvdCollectionDate }
         set cvdcollectiondate(value) { this.cvdCollectionDate = value }
 
         cvdFacilityCounty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
-				parent: $this,
+				container: $this,
 				property: "cvdFacilityCounty",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdfacilitycounty() { return this.cvdFacilityCounty }
         set cvdfacilitycounty(value) { this.cvdFacilityCounty = value }
 
         cvdFacilityId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
-				parent: $this,
+				container: $this,
 				property: "cvdFacilityId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdfacilityid() { return this.cvdFacilityId }
         set cvdfacilityid(value) { this.cvdFacilityId = value }
 
         cvdNumBeds($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumBeds",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumbeds() { return this.cvdNumBeds }
         set cvdnumbeds(value) { this.cvdNumBeds = value }
 
         cvdNumBedsOcc($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumBedsOcc",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumbedsocc() { return this.cvdNumBedsOcc }
         set cvdnumbedsocc(value) { this.cvdNumBedsOcc = value }
 
         cvdNumC19Died($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19Died",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19died() { return this.cvdNumC19Died }
         set cvdnumc19died(value) { this.cvdNumC19Died = value }
 
         cvdNumC19HOPats($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19HOPats",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19hopats() { return this.cvdNumC19HOPats }
         set cvdnumc19hopats(value) { this.cvdNumC19HOPats = value }
 
         cvdNumC19HospPats($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19HospPats",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19hosppats() { return this.cvdNumC19HospPats }
         set cvdnumc19hosppats(value) { this.cvdNumC19HospPats = value }
 
         cvdNumC19MechVentPats($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19MechVentPats",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19mechventpats() { return this.cvdNumC19MechVentPats }
         set cvdnumc19mechventpats(value) { this.cvdNumC19MechVentPats = value }
 
         cvdNumC19OFMechVentPats($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19ofmechventpats - ED\\/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19OFMechVentPats",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19ofmechventpats() { return this.cvdNumC19OFMechVentPats }
         set cvdnumc19ofmechventpats(value) { this.cvdNumC19OFMechVentPats = value }
 
         cvdNumC19OverflowPats($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numc19overflowpats - ED\\/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumC19OverflowPats",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumc19overflowpats() { return this.cvdNumC19OverflowPats }
         set cvdnumc19overflowpats(value) { this.cvdNumC19OverflowPats = value }
 
         cvdNumICUBeds($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumICUBeds",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumicubeds() { return this.cvdNumICUBeds }
         set cvdnumicubeds(value) { this.cvdNumICUBeds = value }
 
         cvdNumICUBedsOcc($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumICUBedsOcc",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumicubedsocc() { return this.cvdNumICUBedsOcc }
         set cvdnumicubedsocc(value) { this.cvdNumICUBedsOcc = value }
 
         cvdNumTotBeds($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumTotBeds",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumtotbeds() { return this.cvdNumTotBeds }
         set cvdnumtotbeds(value) { this.cvdNumTotBeds = value }
 
         cvdNumVent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numvent - MECHANICAL VENTILATORS: Total number of ventilators available.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumVent",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumvent() { return this.cvdNumVent }
         set cvdnumvent(value) { this.cvdNumVent = value }
 
         cvdNumVentUse($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
-				parent: $this,
+				container: $this,
 				property: "cvdNumVentUse",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cvdnumventuse() { return this.cvdNumVentUse }
         set cvdnumventuse(value) { this.cvdNumVentUse = value }
 
         datePosted($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Publication date of an online listing.",
-				parent: $this,
+				container: $this,
 				property: "datePosted",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dateposted() { return this.datePosted }
         set dateposted(value) { this.datePosted = value }

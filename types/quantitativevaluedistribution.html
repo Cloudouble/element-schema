@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:QuantitativeValueDistribution'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A statistical distribution of values.'
         static _rdfs_label = 'QuantitativeValueDistribution'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('QuantitativeValueDistribution')
         }
         
         connectedCallback() {
@@ -33,81 +30,87 @@
         
         
         duration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         median($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The median value.",
-				parent: $this,
+				container: $this,
 				property: "median",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         percentile10($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The 10th percentile value.",
-				parent: $this,
+				container: $this,
 				property: "percentile10",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         percentile25($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The 25th percentile value.",
-				parent: $this,
+				container: $this,
 				property: "percentile25",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         percentile75($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The 75th percentile value.",
-				parent: $this,
+				container: $this,
 				property: "percentile75",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         percentile90($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The 90th percentile value.",
-				parent: $this,
+				container: $this,
 				property: "percentile90",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

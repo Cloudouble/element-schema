@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PayAction'
         static __type = 'rdfs:Class'
+        static __extends = 'TradeAction'
         static _rdfs_comment = 'An agent pays a price to a participant.'
         static _rdfs_label = 'PayAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PayAction')
         }
         
         connectedCallback() {
@@ -33,9 +30,9 @@
         
         
         recipient($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The participant who is at the receiving end of the action.",
-				parent: $this,
+				container: $this,
 				property: "recipient",
 				release: "11.01",
 				types: [
@@ -43,9 +40,10 @@
 					"Audience",
 					"ContactPoint",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

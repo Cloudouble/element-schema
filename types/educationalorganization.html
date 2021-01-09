@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EducationalOrganization'
         static __type = 'rdfs:Class'
+        static __extends = 'CivicStructure'
         static _rdfs_comment = 'An educational organization.'
         static _rdfs_label = 'EducationalOrganization'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EducationalOrganization')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         alumni($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Alumni of an organization.",
-				parent: $this,
+				container: $this,
 				property: "alumni",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

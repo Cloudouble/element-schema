@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ReviewAction'
         static __type = 'rdfs:Class'
+        static __extends = 'AssessAction'
         static _rdfs_comment = 'The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.'
         static _rdfs_label = 'ReviewAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ReviewAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         resultReview($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of result. The review that resulted in the performing of the action.",
-				parent: $this,
+				container: $this,
 				property: "resultReview",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get resultreview() { return this.resultReview }
         set resultreview(value) { this.resultReview = value }

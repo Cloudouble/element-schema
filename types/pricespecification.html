@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PriceSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.'
         static _rdfs_label = 'PriceSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PriceSpecification')
         }
         
         connectedCallback() {
@@ -33,137 +30,146 @@
         
         
         eligibleQuantity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
-				parent: $this,
+				container: $this,
 				property: "eligibleQuantity",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eligiblequantity() { return this.eligibleQuantity }
         set eligiblequantity(value) { this.eligibleQuantity = value }
 
         eligibleTransactionVolume($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
-				parent: $this,
+				container: $this,
 				property: "eligibleTransactionVolume",
 				release: "11.01",
 				types: [
 					"PriceSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eligibletransactionvolume() { return this.eligibleTransactionVolume }
         set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
 
         maxPrice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The highest price if the price is a range.",
-				parent: $this,
+				container: $this,
 				property: "maxPrice",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maxprice() { return this.maxPrice }
         set maxprice(value) { this.maxPrice = value }
 
         minPrice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The lowest price if the price is a range.",
-				parent: $this,
+				container: $this,
 				property: "minPrice",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get minprice() { return this.minPrice }
         set minprice(value) { this.minPrice = value }
 
         price($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\\n\\nUsage guidelines:\\n\\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\") instead of including [ambiguous symbols](http:\\/\\/en.wikipedia.org\\/wiki\\/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\\n* Note that both [RDFa](http:\\/\\/www.w3.org\\/TR\\/xhtml-rdfa-primer\\/#using-the-content-attribute) and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n      ",
-				parent: $this,
+				container: $this,
 				property: "price",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         priceCurrency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
-				parent: $this,
+				container: $this,
 				property: "priceCurrency",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
 
         validFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date when the item becomes valid.",
-				parent: $this,
+				container: $this,
 				property: "validFrom",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-				parent: $this,
+				container: $this,
 				property: "validThrough",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
 
         valueAddedTaxIncluded($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.",
-				parent: $this,
+				container: $this,
 				property: "valueAddedTaxIncluded",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valueaddedtaxincluded() { return this.valueAddedTaxIncluded }
         set valueaddedtaxincluded(value) { this.valueAddedTaxIncluded = value }

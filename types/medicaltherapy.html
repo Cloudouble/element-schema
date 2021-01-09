@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalTherapy'
         static __type = 'rdfs:Class'
+        static __extends = 'TherapeuticProcedure'
         static _rdfs_comment = 'Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.'
         static _rdfs_label = 'MedicalTherapy'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalTherapy')
         }
         
         connectedCallback() {
@@ -33,45 +30,48 @@
         
         
         contraindication($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A contraindication for this therapy.",
-				parent: $this,
+				container: $this,
 				property: "contraindication",
 				release: "11.01",
 				types: [
 					"MedicalContraindication",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalContraindication(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         duplicateTherapy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A therapy that duplicates or overlaps this one.",
-				parent: $this,
+				container: $this,
 				property: "duplicateTherapy",
 				release: "11.01",
 				types: [
 					"MedicalTherapy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get duplicatetherapy() { return this.duplicateTherapy }
         set duplicatetherapy(value) { this.duplicateTherapy = value }
 
         seriousAdverseOutcome($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A possible serious complication and\\/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
-				parent: $this,
+				container: $this,
 				property: "seriousAdverseOutcome",
 				release: "11.01",
 				types: [
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seriousadverseoutcome() { return this.seriousAdverseOutcome }
         set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Ticket'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Used to describe a ticket to an event, a flight, a bus ride, etc.'
         static _rdfs_label = 'Ticket'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Ticket')
         }
         
         connectedCallback() {
@@ -33,126 +30,134 @@
         
         
         dateIssued($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date the ticket was issued.",
-				parent: $this,
+				container: $this,
 				property: "dateIssued",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dateissued() { return this.dateIssued }
         set dateissued(value) { this.dateIssued = value }
 
         issuedBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The organization issuing the ticket or permit.",
-				parent: $this,
+				container: $this,
 				property: "issuedBy",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get issuedby() { return this.issuedBy }
         set issuedby(value) { this.issuedBy = value }
 
         priceCurrency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
-				parent: $this,
+				container: $this,
 				property: "priceCurrency",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
 
         ticketNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unique identifier for the ticket.",
-				parent: $this,
+				container: $this,
 				property: "ticketNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ticketnumber() { return this.ticketNumber }
         set ticketnumber(value) { this.ticketNumber = value }
 
         ticketToken($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
-				parent: $this,
+				container: $this,
 				property: "ticketToken",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tickettoken() { return this.ticketToken }
         set tickettoken(value) { this.ticketToken = value }
 
         ticketedSeat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The seat associated with the ticket.",
-				parent: $this,
+				container: $this,
 				property: "ticketedSeat",
 				release: "11.01",
 				types: [
 					"Seat"
-				]
-			};
-			return new window.LiveElement.Element.elements.Seat(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ticketedseat() { return this.ticketedSeat }
         set ticketedseat(value) { this.ticketedSeat = value }
 
         totalPrice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total price for the reservation or ticket, including applicable taxes, shipping, etc.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
-				parent: $this,
+				container: $this,
 				property: "totalPrice",
 				release: "11.01",
 				types: [
 					"Number",
 					"PriceSpecification",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.PriceSpecification(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get totalprice() { return this.totalPrice }
         set totalprice(value) { this.totalPrice = value }
 
         underName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person or organization the reservation or ticket is for.",
-				parent: $this,
+				container: $this,
 				property: "underName",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get undername() { return this.underName }
         set undername(value) { this.underName = value }

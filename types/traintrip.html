@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TrainTrip'
         static __type = 'rdfs:Class'
+        static __extends = 'Trip'
         static _rdfs_comment = 'A trip on a commercial train line.'
         static _rdfs_label = 'TrainTrip'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TrainTrip')
         }
         
         connectedCallback() {
@@ -33,91 +30,97 @@
         
         
         arrivalPlatform($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The platform where the train arrives.",
-				parent: $this,
+				container: $this,
 				property: "arrivalPlatform",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalplatform() { return this.arrivalPlatform }
         set arrivalplatform(value) { this.arrivalPlatform = value }
 
         arrivalStation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The station where the train trip ends.",
-				parent: $this,
+				container: $this,
 				property: "arrivalStation",
 				release: "11.01",
 				types: [
 					"TrainStation"
-				]
-			};
-			return new window.LiveElement.Element.elements.TrainStation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalstation() { return this.arrivalStation }
         set arrivalstation(value) { this.arrivalStation = value }
 
         departurePlatform($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The platform from which the train departs.",
-				parent: $this,
+				container: $this,
 				property: "departurePlatform",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departureplatform() { return this.departurePlatform }
         set departureplatform(value) { this.departurePlatform = value }
 
         departureStation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The station from which the train departs.",
-				parent: $this,
+				container: $this,
 				property: "departureStation",
 				release: "11.01",
 				types: [
 					"TrainStation"
-				]
-			};
-			return new window.LiveElement.Element.elements.TrainStation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departurestation() { return this.departureStation }
         set departurestation(value) { this.departureStation = value }
 
         trainName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name of the train (e.g. The Orient Express).",
-				parent: $this,
+				container: $this,
 				property: "trainName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get trainname() { return this.trainName }
         set trainname(value) { this.trainName = value }
 
         trainNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unique identifier for the train.",
-				parent: $this,
+				container: $this,
 				property: "trainNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get trainnumber() { return this.trainNumber }
         set trainnumber(value) { this.trainNumber = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicComposition'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A musical composition.'
         static _rdfs_label = 'MusicComposition'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicComposition')
         }
         
         connectedCallback() {
@@ -33,146 +30,156 @@
         
         
         composer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
-				parent: $this,
+				container: $this,
 				property: "composer",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         firstPerformance($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date and place the work was first performed.",
-				parent: $this,
+				container: $this,
 				property: "firstPerformance",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get firstperformance() { return this.firstPerformance }
         set firstperformance(value) { this.firstPerformance = value }
 
         includedComposition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Smaller compositions included in this work (e.g. a movement in a symphony).",
-				parent: $this,
+				container: $this,
 				property: "includedComposition",
 				release: "11.01",
 				types: [
 					"MusicComposition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicComposition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get includedcomposition() { return this.includedComposition }
         set includedcomposition(value) { this.includedComposition = value }
 
         iswcCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The International Standard Musical Work Code for the composition.",
-				parent: $this,
+				container: $this,
 				property: "iswcCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get iswccode() { return this.iswcCode }
         set iswccode(value) { this.iswcCode = value }
 
         lyricist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person who wrote the words.",
-				parent: $this,
+				container: $this,
 				property: "lyricist",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         lyrics($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The words in the song.",
-				parent: $this,
+				container: $this,
 				property: "lyrics",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         musicArrangement($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An arrangement derived from the composition.",
-				parent: $this,
+				container: $this,
 				property: "musicArrangement",
 				release: "11.01",
 				types: [
 					"MusicComposition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicComposition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicarrangement() { return this.musicArrangement }
         set musicarrangement(value) { this.musicArrangement = value }
 
         musicCompositionForm($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of composition (e.g. overture, sonata, symphony, etc.).",
-				parent: $this,
+				container: $this,
 				property: "musicCompositionForm",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musiccompositionform() { return this.musicCompositionForm }
         set musiccompositionform(value) { this.musicCompositionForm = value }
 
         musicalKey($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The key, mode, or scale this composition uses.",
-				parent: $this,
+				container: $this,
 				property: "musicalKey",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicalkey() { return this.musicalKey }
         set musicalkey(value) { this.musicalKey = value }
 
         recordedAs($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An audio recording of the work.",
-				parent: $this,
+				container: $this,
 				property: "recordedAs",
 				release: "11.01",
 				types: [
 					"MusicRecording"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recordedas() { return this.recordedAs }
         set recordedas(value) { this.recordedAs = value }

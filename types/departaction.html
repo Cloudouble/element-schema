@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DepartAction'
         static __type = 'rdfs:Class'
+        static __extends = 'MoveAction'
         static _rdfs_comment = 'The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.'
         static _rdfs_label = 'DepartAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DepartAction')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Clip'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A short TV or radio program or a segment\/part of a program.'
         static _rdfs_label = 'Clip'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Clip')
         }
         
         connectedCallback() {
@@ -33,162 +30,173 @@
         
         
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         actors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         clipNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Position of the clip within an ordered group of clips.",
-				parent: $this,
+				container: $this,
 				property: "clipNumber",
 				release: "11.01",
 				types: [
 					"Text",
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get clipnumber() { return this.clipNumber }
         set clipnumber(value) { this.clipNumber = value }
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         directors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "directors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         endOffset($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The end time of the clip expressed as the number of seconds from the beginning of the work.",
-				parent: $this,
+				container: $this,
 				property: "endOffset",
 				release: "11.01",
 				types: [
 					"HyperTocEntry",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get endoffset() { return this.endOffset }
         set endoffset(value) { this.endOffset = value }
 
         musicBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The composer of the soundtrack.",
-				parent: $this,
+				container: $this,
 				property: "musicBy",
 				release: "11.01",
 				types: [
 					"Person",
 					"MusicGroup"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
         partOfEpisode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The episode to which this clip belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfEpisode",
 				release: "11.01",
 				types: [
 					"Episode"
-				]
-			};
-			return new window.LiveElement.Element.elements.Episode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partofepisode() { return this.partOfEpisode }
         set partofepisode(value) { this.partOfEpisode = value }
 
         partOfSeason($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The season to which this episode belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfSeason",
 				release: "11.01",
 				types: [
 					"CreativeWorkSeason"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWorkSeason(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partofseason() { return this.partOfSeason }
         set partofseason(value) { this.partOfSeason = value }
 
         partOfSeries($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The series to which this episode or season belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfSeries",
 				release: "11.01",
 				types: [
 					"CreativeWorkSeries"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWorkSeries(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partofseries() { return this.partOfSeries }
         set partofseries(value) { this.partOfSeries = value }
 
         startOffset($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The start time of the clip expressed as the number of seconds from the beginning of the work.",
-				parent: $this,
+				container: $this,
 				property: "startOffset",
 				release: "11.01",
 				types: [
 					"HyperTocEntry",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get startoffset() { return this.startOffset }
         set startoffset(value) { this.startOffset = value }

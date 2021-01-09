@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BowlingAlley'
         static __type = 'rdfs:Class'
+        static __extends = 'SportsActivityLocation'
         static _rdfs_comment = 'A bowling alley.'
         static _rdfs_label = 'BowlingAlley'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BowlingAlley')
         }
         
         connectedCallback() {

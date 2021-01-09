@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Seat'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Used to describe a seat, such as a reserved seat in an event reservation.'
         static _rdfs_label = 'Seat'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Seat')
         }
         
         connectedCallback() {
@@ -33,62 +30,66 @@
         
         
         seatNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location of the reserved seat (e.g., 27).",
-				parent: $this,
+				container: $this,
 				property: "seatNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seatnumber() { return this.seatNumber }
         set seatnumber(value) { this.seatNumber = value }
 
         seatRow($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The row location of the reserved seat (e.g., B).",
-				parent: $this,
+				container: $this,
 				property: "seatRow",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seatrow() { return this.seatRow }
         set seatrow(value) { this.seatRow = value }
 
         seatSection($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The section location of the reserved seat (e.g. Orchestra).",
-				parent: $this,
+				container: $this,
 				property: "seatSection",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seatsection() { return this.seatSection }
         set seatsection(value) { this.seatSection = value }
 
         seatingType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type\\/class of the seat.",
-				parent: $this,
+				container: $this,
 				property: "seatingType",
 				release: "11.01",
 				types: [
 					"QualitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seatingtype() { return this.seatingType }
         set seatingtype(value) { this.seatingType = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ParcelDelivery'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'The delivery of a parcel either via the postal service or a commercial service.'
         static _rdfs_label = 'ParcelDelivery'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ParcelDelivery')
         }
         
         connectedCallback() {
@@ -33,180 +30,192 @@
         
         
         carrier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-				parent: $this,
+				container: $this,
 				property: "carrier",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         deliveryAddress($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Destination address.",
-				parent: $this,
+				container: $this,
 				property: "deliveryAddress",
 				release: "11.01",
 				types: [
 					"PostalAddress"
-				]
-			};
-			return new window.LiveElement.Element.elements.PostalAddress(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get deliveryaddress() { return this.deliveryAddress }
         set deliveryaddress(value) { this.deliveryAddress = value }
 
         deliveryStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
-				parent: $this,
+				container: $this,
 				property: "deliveryStatus",
 				release: "11.01",
 				types: [
 					"DeliveryEvent"
-				]
-			};
-			return new window.LiveElement.Element.elements.DeliveryEvent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get deliverystatus() { return this.deliveryStatus }
         set deliverystatus(value) { this.deliveryStatus = value }
 
         expectedArrivalFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The earliest date the package may arrive.",
-				parent: $this,
+				container: $this,
 				property: "expectedArrivalFrom",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get expectedarrivalfrom() { return this.expectedArrivalFrom }
         set expectedarrivalfrom(value) { this.expectedArrivalFrom = value }
 
         expectedArrivalUntil($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The latest date the package may arrive.",
-				parent: $this,
+				container: $this,
 				property: "expectedArrivalUntil",
 				release: "11.01",
 				types: [
 					"Date",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get expectedarrivaluntil() { return this.expectedArrivalUntil }
         set expectedarrivaluntil(value) { this.expectedArrivalUntil = value }
 
         hasDeliveryMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Method used for delivery or shipping.",
-				parent: $this,
+				container: $this,
 				property: "hasDeliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasdeliverymethod() { return this.hasDeliveryMethod }
         set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
 
         itemShipped($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Item(s) being shipped.",
-				parent: $this,
+				container: $this,
 				property: "itemShipped",
 				release: "11.01",
 				types: [
 					"Product"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemshipped() { return this.itemShipped }
         set itemshipped(value) { this.itemShipped = value }
 
         originAddress($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Shipper's address.",
-				parent: $this,
+				container: $this,
 				property: "originAddress",
 				release: "11.01",
 				types: [
 					"PostalAddress"
-				]
-			};
-			return new window.LiveElement.Element.elements.PostalAddress(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get originaddress() { return this.originAddress }
         set originaddress(value) { this.originAddress = value }
 
         partOfOrder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall order the items in this delivery were included in.",
-				parent: $this,
+				container: $this,
 				property: "partOfOrder",
 				release: "11.01",
 				types: [
 					"Order"
-				]
-			};
-			return new window.LiveElement.Element.elements.Order(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partoforder() { return this.partOfOrder }
         set partoforder(value) { this.partOfOrder = value }
 
         provider($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-				parent: $this,
+				container: $this,
 				property: "provider",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         trackingNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Shipper tracking number.",
-				parent: $this,
+				container: $this,
 				property: "trackingNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get trackingnumber() { return this.trackingNumber }
         set trackingnumber(value) { this.trackingNumber = value }
 
         trackingUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Tracking url for the parcel delivery.",
-				parent: $this,
+				container: $this,
 				property: "trackingUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get trackingurl() { return this.trackingUrl }
         set trackingurl(value) { this.trackingUrl = value }

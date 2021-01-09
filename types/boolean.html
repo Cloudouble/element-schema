@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Boolean'
         static __type = 'schema:DataType'
+        static __extends = 'DataType'
         static _rdfs_comment = 'Boolean: True or False.'
         static _rdfs_label = 'Boolean'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Boolean')
         }
         
         connectedCallback() {

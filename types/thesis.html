@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Thesis'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification.'
         static _rdfs_label = 'Thesis'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Thesis')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         inSupportOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Qualification, candidature, degree, application that Thesis supports.",
-				parent: $this,
+				container: $this,
 				property: "inSupportOf",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get insupportof() { return this.inSupportOf }
         set insupportof(value) { this.inSupportOf = value }

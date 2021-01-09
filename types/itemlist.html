@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ItemList'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.'
         static _rdfs_label = 'ItemList'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ItemList')
         }
         
         connectedCallback() {
@@ -33,49 +30,52 @@
         
         
         itemListElement($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For itemListElement values, you can use simple strings (e.g. \"Peter\", \"Paul\", \"Mary\"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.",
-				parent: $this,
+				container: $this,
 				property: "itemListElement",
 				release: "11.01",
 				types: [
 					"ListItem",
 					"Text",
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.ListItem(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemlistelement() { return this.itemListElement }
         set itemlistelement(value) { this.itemListElement = value }
 
         itemListOrder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Type of ordering (e.g. Ascending, Descending, Unordered).",
-				parent: $this,
+				container: $this,
 				property: "itemListOrder",
 				release: "11.01",
 				types: [
 					"Text",
 					"ItemListOrderType"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ItemListOrderType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemlistorder() { return this.itemListOrder }
         set itemlistorder(value) { this.itemListOrder = value }
 
         numberOfItems($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
-				parent: $this,
+				container: $this,
 				property: "numberOfItems",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofitems() { return this.numberOfItems }
         set numberofitems(value) { this.numberOfItems = value }

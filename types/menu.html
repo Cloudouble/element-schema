@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Menu'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A structured representation of food or drink items available from a FoodEstablishment.'
         static _rdfs_label = 'Menu'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Menu')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         hasMenuItem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A food or drink item contained in a menu or menu section.",
-				parent: $this,
+				container: $this,
 				property: "hasMenuItem",
 				release: "11.01",
 				types: [
 					"MenuItem"
-				]
-			};
-			return new window.LiveElement.Element.elements.MenuItem(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasmenuitem() { return this.hasMenuItem }
         set hasmenuitem(value) { this.hasMenuItem = value }
 
         hasMenuSection($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
-				parent: $this,
+				container: $this,
 				property: "hasMenuSection",
 				release: "11.01",
 				types: [
 					"MenuSection"
-				]
-			};
-			return new window.LiveElement.Element.elements.MenuSection(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasmenusection() { return this.hasMenuSection }
         set hasmenusection(value) { this.hasMenuSection = value }

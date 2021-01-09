@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LegislationObject'
         static __type = 'rdfs:Class'
+        static __extends = 'Legislation'
         static _rdfs_comment = 'A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version.'
         static _rdfs_label = 'LegislationObject'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LegislationObject')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         legislationLegalValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a \"stronger\" legal value than the HTML file of the same act.",
-				parent: $this,
+				container: $this,
 				property: "legislationLegalValue",
 				release: "11.01",
 				types: [
 					"LegalValueLevel"
-				]
-			};
-			return new window.LiveElement.Element.elements.LegalValueLevel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationlegalvalue() { return this.legislationLegalValue }
         set legislationlegalvalue(value) { this.legislationLegalValue = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OpeningHoursSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A structured value providing information about the opening hours of a place or a certain service inside a place.\n\n The place is __open__ if the [[opens]] property is specified, and __closed__ otherwise.\n\nIf the value for the [[closes]] property is less than the value for the [[opens]] property then the hour range is assumed to span over the next day.       '
         static _rdfs_label = 'OpeningHoursSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OpeningHoursSpecification')
         }
         
         connectedCallback() {
@@ -33,74 +30,79 @@
         
         
         closes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The closing hour of the place or service on the given day(s) of the week.",
-				parent: $this,
+				container: $this,
 				property: "closes",
 				release: "11.01",
 				types: [
 					"Time"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         dayOfWeek($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The day of the week for which these opening hours are valid.",
-				parent: $this,
+				container: $this,
 				property: "dayOfWeek",
 				release: "11.01",
 				types: [
 					"DayOfWeek"
-				]
-			};
-			return new window.LiveElement.Element.elements.DayOfWeek(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dayofweek() { return this.dayOfWeek }
         set dayofweek(value) { this.dayOfWeek = value }
 
         opens($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The opening hour of the place or service on the given day(s) of the week.",
-				parent: $this,
+				container: $this,
 				property: "opens",
 				release: "11.01",
 				types: [
 					"Time"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         validFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date when the item becomes valid.",
-				parent: $this,
+				container: $this,
 				property: "validFrom",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
-				parent: $this,
+				container: $this,
 				property: "validThrough",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Guide'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = '[[Guide]] is a page or article that recommend specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking.'
         static _rdfs_label = 'Guide'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Guide')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         reviewAspect($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
-				parent: $this,
+				container: $this,
 				property: "reviewAspect",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }

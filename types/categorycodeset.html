@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CategoryCodeSet'
         static __type = 'rdfs:Class'
+        static __extends = 'DefinedTermSet'
         static _rdfs_comment = 'A set of Category Code values.'
         static _rdfs_label = 'CategoryCodeSet'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CategoryCodeSet')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         hasCategoryCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A Category code contained in this code set.",
-				parent: $this,
+				container: $this,
 				property: "hasCategoryCode",
 				release: "11.01",
 				types: [
 					"CategoryCode"
-				]
-			};
-			return new window.LiveElement.Element.elements.CategoryCode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hascategorycode() { return this.hasCategoryCode }
         set hascategorycode(value) { this.hasCategoryCode = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LodgingBusiness'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'A lodging business, such as a motel, hotel, or inn.'
         static _rdfs_label = 'LodgingBusiness'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LodgingBusiness')
         }
         
         connectedCallback() {
@@ -33,124 +30,132 @@
         
         
         amenityFeature($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
-				parent: $this,
+				container: $this,
 				property: "amenityFeature",
 				release: "11.01",
 				types: [
 					"LocationFeatureSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.LocationFeatureSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get amenityfeature() { return this.amenityFeature }
         set amenityfeature(value) { this.amenityFeature = value }
 
         audience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
-				parent: $this,
+				container: $this,
 				property: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         availableLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
-				parent: $this,
+				container: $this,
 				property: "availableLanguage",
 				release: "11.01",
 				types: [
 					"Language",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
 
         checkinTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The earliest someone may check into a lodging establishment.",
-				parent: $this,
+				container: $this,
 				property: "checkinTime",
 				release: "11.01",
 				types: [
 					"Time",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get checkintime() { return this.checkinTime }
         set checkintime(value) { this.checkinTime = value }
 
         checkoutTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The latest someone may check out of a lodging establishment.",
-				parent: $this,
+				container: $this,
 				property: "checkoutTime",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Time"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get checkouttime() { return this.checkoutTime }
         set checkouttime(value) { this.checkoutTime = value }
 
         numberOfRooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-				parent: $this,
+				container: $this,
 				property: "numberOfRooms",
 				release: "11.01",
 				types: [
 					"Number",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofrooms() { return this.numberOfRooms }
         set numberofrooms(value) { this.numberOfRooms = value }
 
         petsAllowed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
-				parent: $this,
+				container: $this,
 				property: "petsAllowed",
 				release: "11.01",
 				types: [
 					"Boolean",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get petsallowed() { return this.petsAllowed }
         set petsallowed(value) { this.petsAllowed = value }
 
         starRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
-				parent: $this,
+				container: $this,
 				property: "starRating",
 				release: "11.01",
 				types: [
 					"Rating"
-				]
-			};
-			return new window.LiveElement.Element.elements.Rating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get starrating() { return this.starRating }
         set starrating(value) { this.starRating = value }

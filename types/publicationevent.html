@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PublicationEvent'
         static __type = 'rdfs:Class'
+        static __extends = 'Event'
         static _rdfs_comment = 'A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book\/journal publication via a variety of delivery media.'
         static _rdfs_label = 'PublicationEvent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PublicationEvent')
         }
         
         connectedCallback() {
@@ -33,45 +30,48 @@
         
         
         free($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A flag to signal that the item, event, or place is accessible for free.",
-				parent: $this,
+				container: $this,
 				property: "free",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         publishedBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An agent associated with the publication event.",
-				parent: $this,
+				container: $this,
 				property: "publishedBy",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publishedby() { return this.publishedBy }
         set publishedby(value) { this.publishedBy = value }
 
         publishedOn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A broadcast service associated with the publication event.",
-				parent: $this,
+				container: $this,
 				property: "publishedOn",
 				release: "11.01",
 				types: [
 					"BroadcastService"
-				]
-			};
-			return new window.LiveElement.Element.elements.BroadcastService(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publishedon() { return this.publishedOn }
         set publishedon(value) { this.publishedOn = value }

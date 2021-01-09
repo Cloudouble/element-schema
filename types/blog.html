@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Blog'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A blog.'
         static _rdfs_label = 'Blog'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Blog')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         blogPost($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A posting that is part of this blog.",
-				parent: $this,
+				container: $this,
 				property: "blogPost",
 				release: "11.01",
 				types: [
 					"BlogPosting"
-				]
-			};
-			return new window.LiveElement.Element.elements.BlogPosting(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get blogpost() { return this.blogPost }
         set blogpost(value) { this.blogPost = value }
 
         blogPosts($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The postings that are part of this blog.",
-				parent: $this,
+				container: $this,
 				property: "blogPosts",
 				release: "11.01",
 				types: [
 					"BlogPosting"
-				]
-			};
-			return new window.LiveElement.Element.elements.BlogPosting(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get blogposts() { return this.blogPosts }
         set blogposts(value) { this.blogPosts = value }
 
         issn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-				parent: $this,
+				container: $this,
 				property: "issn",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

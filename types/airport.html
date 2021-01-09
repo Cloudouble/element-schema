@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Airport'
         static __type = 'rdfs:Class'
+        static __extends = 'CivicStructure'
         static _rdfs_comment = 'An airport.'
         static _rdfs_label = 'Airport'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Airport')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         iataCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "IATA identifier for an airline or airport.",
-				parent: $this,
+				container: $this,
 				property: "iataCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get iatacode() { return this.iataCode }
         set iatacode(value) { this.iataCode = value }
 
         icaoCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "ICAO identifier for an airport.",
-				parent: $this,
+				container: $this,
 				property: "icaoCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get icaocode() { return this.icaoCode }
         set icaocode(value) { this.icaoCode = value }

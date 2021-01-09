@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ArchiveOrganization'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'An organization with archival holdings. An organization which keeps and preserves archival material and typically makes it accessible to the public.'
         static _rdfs_label = 'ArchiveOrganization'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ArchiveOrganization')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         archiveHeld($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Collection, [fonds](https:\\/\\/en.wikipedia.org\\/wiki\\/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].",
-				parent: $this,
+				container: $this,
 				property: "archiveHeld",
 				release: "11.01",
 				types: [
 					"ArchiveComponent"
-				]
-			};
-			return new window.LiveElement.Element.elements.ArchiveComponent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get archiveheld() { return this.archiveHeld }
         set archiveheld(value) { this.archiveHeld = value }

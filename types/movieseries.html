@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MovieSeries'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWorkSeries'
         static _rdfs_comment = 'A series of movies. Included movies can be indicated with the hasPart property.'
         static _rdfs_label = 'MovieSeries'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MovieSeries')
         }
         
         connectedCallback() {
@@ -33,99 +30,106 @@
         
         
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         actors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         directors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "directors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         musicBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The composer of the soundtrack.",
-				parent: $this,
+				container: $this,
 				property: "musicBy",
 				release: "11.01",
 				types: [
 					"Person",
 					"MusicGroup"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
         productionCompany($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-				parent: $this,
+				container: $this,
 				property: "productionCompany",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
 
         trailer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
-				parent: $this,
+				container: $this,
 				property: "trailer",
 				release: "11.01",
 				types: [
 					"VideoObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.VideoObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

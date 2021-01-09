@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PathologyTest'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalTest'
         static _rdfs_comment = 'A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.'
         static _rdfs_label = 'PathologyTest'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PathologyTest')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         tissueSample($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of tissue sample required for the test.",
-				parent: $this,
+				container: $this,
 				property: "tissueSample",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tissuesample() { return this.tissueSample }
         set tissuesample(value) { this.tissueSample = value }

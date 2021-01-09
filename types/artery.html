@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Artery'
         static __type = 'rdfs:Class'
+        static __extends = 'Vessel'
         static _rdfs_comment = 'A type of blood vessel that specifically carries blood away from the heart.'
         static _rdfs_label = 'Artery'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Artery')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         arterialBranch($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The branches that comprise the arterial structure.",
-				parent: $this,
+				container: $this,
 				property: "arterialBranch",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arterialbranch() { return this.arterialBranch }
         set arterialbranch(value) { this.arterialBranch = value }
 
         supplyTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The area to which the artery supplies blood.",
-				parent: $this,
+				container: $this,
 				property: "supplyTo",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get supplyto() { return this.supplyTo }
         set supplyto(value) { this.supplyTo = value }

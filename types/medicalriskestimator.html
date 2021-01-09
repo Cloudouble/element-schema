@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalRiskEstimator'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'Any rule set or interactive tool for estimating the risk of developing a complication or condition.'
         static _rdfs_label = 'MedicalRiskEstimator'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalRiskEstimator')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         estimatesRiskOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The condition, complication, or symptom whose risk is being estimated.",
-				parent: $this,
+				container: $this,
 				property: "estimatesRiskOf",
 				release: "11.01",
 				types: [
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get estimatesriskof() { return this.estimatesRiskOf }
         set estimatesriskof(value) { this.estimatesRiskOf = value }
 
         includedRiskFactor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.",
-				parent: $this,
+				container: $this,
 				property: "includedRiskFactor",
 				release: "11.01",
 				types: [
 					"MedicalRiskFactor"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalRiskFactor(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get includedriskfactor() { return this.includedRiskFactor }
         set includedriskfactor(value) { this.includedRiskFactor = value }

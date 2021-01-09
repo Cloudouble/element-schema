@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Invoice'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A statement of the money due for goods or services; a bill.'
         static _rdfs_label = 'Invoice'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Invoice')
         }
         
         connectedCallback() {
@@ -33,53 +30,56 @@
         
         
         accountId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The identifier for the account the payment will be applied to.",
-				parent: $this,
+				container: $this,
 				property: "accountId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accountid() { return this.accountId }
         set accountid(value) { this.accountId = value }
 
         billingPeriod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time interval used to compute the invoice.",
-				parent: $this,
+				container: $this,
 				property: "billingPeriod",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get billingperiod() { return this.billingPeriod }
         set billingperiod(value) { this.billingPeriod = value }
 
         broker($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
-				parent: $this,
+				container: $this,
 				property: "broker",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         category($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-				parent: $this,
+				container: $this,
 				property: "category",
 				release: "11.01",
 				types: [
@@ -87,189 +87,202 @@
 					"Thing",
 					"PhysicalActivityCategory",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         confirmationNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A number that confirms the given order or payment has been received.",
-				parent: $this,
+				container: $this,
 				property: "confirmationNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get confirmationnumber() { return this.confirmationNumber }
         set confirmationnumber(value) { this.confirmationNumber = value }
 
         customer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Party placing the order or paying the invoice.",
-				parent: $this,
+				container: $this,
 				property: "customer",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         minimumPaymentDue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The minimum payment required at this time.",
-				parent: $this,
+				container: $this,
 				property: "minimumPaymentDue",
 				release: "11.01",
 				types: [
 					"MonetaryAmount",
 					"PriceSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) || new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get minimumpaymentdue() { return this.minimumPaymentDue }
         set minimumpaymentdue(value) { this.minimumPaymentDue = value }
 
         paymentDue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date that payment is due.",
-				parent: $this,
+				container: $this,
 				property: "paymentDue",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get paymentdue() { return this.paymentDue }
         set paymentdue(value) { this.paymentDue = value }
 
         paymentDueDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date that payment is due.",
-				parent: $this,
+				container: $this,
 				property: "paymentDueDate",
 				release: "11.01",
 				types: [
 					"Date",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get paymentduedate() { return this.paymentDueDate }
         set paymentduedate(value) { this.paymentDueDate = value }
 
         paymentMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name of the credit card or other method of payment for the order.",
-				parent: $this,
+				container: $this,
 				property: "paymentMethod",
 				release: "11.01",
 				types: [
 					"PaymentMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.PaymentMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get paymentmethod() { return this.paymentMethod }
         set paymentmethod(value) { this.paymentMethod = value }
 
         paymentMethodId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
-				parent: $this,
+				container: $this,
 				property: "paymentMethodId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get paymentmethodid() { return this.paymentMethodId }
         set paymentmethodid(value) { this.paymentMethodId = value }
 
         paymentStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The status of payment; whether the invoice has been paid or not.",
-				parent: $this,
+				container: $this,
 				property: "paymentStatus",
 				release: "11.01",
 				types: [
 					"PaymentStatusType",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.PaymentStatusType(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get paymentstatus() { return this.paymentStatus }
         set paymentstatus(value) { this.paymentStatus = value }
 
         provider($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-				parent: $this,
+				container: $this,
 				property: "provider",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         referencesOrder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.",
-				parent: $this,
+				container: $this,
 				property: "referencesOrder",
 				release: "11.01",
 				types: [
 					"Order"
-				]
-			};
-			return new window.LiveElement.Element.elements.Order(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get referencesorder() { return this.referencesOrder }
         set referencesorder(value) { this.referencesOrder = value }
 
         scheduledPaymentDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date the invoice is scheduled to be paid.",
-				parent: $this,
+				container: $this,
 				property: "scheduledPaymentDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get scheduledpaymentdate() { return this.scheduledPaymentDate }
         set scheduledpaymentdate(value) { this.scheduledPaymentDate = value }
 
         totalPaymentDue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total amount due.",
-				parent: $this,
+				container: $this,
 				property: "totalPaymentDue",
 				release: "11.01",
 				types: [
 					"PriceSpecification",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.PriceSpecification(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get totalpaymentdue() { return this.totalPaymentDue }
         set totalpaymentdue(value) { this.totalPaymentDue = value }

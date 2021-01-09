@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EmergencyService'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'An emergency service, such as a fire station or ER.'
         static _rdfs_label = 'EmergencyService'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EmergencyService')
         }
         
         connectedCallback() {

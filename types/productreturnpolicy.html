@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ProductReturnPolicy'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A ProductReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].'
         static _rdfs_label = 'ProductReturnPolicy'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ProductReturnPolicy')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         productReturnDays($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The productReturnDays property indicates the number of days (from purchase) within which relevant product return policy is applicable.",
-				parent: $this,
+				container: $this,
 				property: "productReturnDays",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productreturndays() { return this.productReturnDays }
         set productreturndays(value) { this.productReturnDays = value }
 
         productReturnLink($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a Web page or service by URL, for product return.",
-				parent: $this,
+				container: $this,
 				property: "productReturnLink",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productreturnlink() { return this.productReturnLink }
         set productreturnlink(value) { this.productReturnLink = value }

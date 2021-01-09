@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HealthPlanFormulary'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'For a given health insurance plan, the specification for costs and coverage of prescription drugs. '
         static _rdfs_label = 'HealthPlanFormulary'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HealthPlanFormulary')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         healthPlanCostSharing($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether The costs to the patient for services under this network or formulary.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanCostSharing",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplancostsharing() { return this.healthPlanCostSharing }
         set healthplancostsharing(value) { this.healthPlanCostSharing = value }
 
         healthPlanDrugTier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The tier(s) of drugs offered by this formulary or insurance plan.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanDrugTier",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplandrugtier() { return this.healthPlanDrugTier }
         set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
         offersPrescriptionByMail($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether prescriptions can be delivered by mail.",
-				parent: $this,
+				container: $this,
 				property: "offersPrescriptionByMail",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get offersprescriptionbymail() { return this.offersPrescriptionByMail }
         set offersprescriptionbymail(value) { this.offersPrescriptionByMail = value }

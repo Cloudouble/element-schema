@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ProgramMembership'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.'
         static _rdfs_label = 'ProgramMembership'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ProgramMembership')
         }
         
         connectedCallback() {
@@ -33,90 +30,96 @@
         
         
         hostingOrganization($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The organization (airline, travelers' club, etc.) the membership is made with.",
-				parent: $this,
+				container: $this,
 				property: "hostingOrganization",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hostingorganization() { return this.hostingOrganization }
         set hostingorganization(value) { this.hostingOrganization = value }
 
         member($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
-				parent: $this,
+				container: $this,
 				property: "member",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         members($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A member of this organization.",
-				parent: $this,
+				container: $this,
 				property: "members",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         membershipNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A unique identifier for the membership.",
-				parent: $this,
+				container: $this,
 				property: "membershipNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get membershipnumber() { return this.membershipNumber }
         set membershipnumber(value) { this.membershipNumber = value }
 
         membershipPointsEarned($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)",
-				parent: $this,
+				container: $this,
 				property: "membershipPointsEarned",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get membershippointsearned() { return this.membershipPointsEarned }
         set membershippointsearned(value) { this.membershipPointsEarned = value }
 
         programName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The program providing the membership.",
-				parent: $this,
+				container: $this,
 				property: "programName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get programname() { return this.programName }
         set programname(value) { this.programName = value }

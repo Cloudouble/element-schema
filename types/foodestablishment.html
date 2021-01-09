@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:FoodEstablishment'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'A food-related business.'
         static _rdfs_label = 'FoodEstablishment'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('FoodEstablishment')
         }
         
         connectedCallback() {
@@ -33,80 +30,85 @@
         
         
         acceptsReservations($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.",
-				parent: $this,
+				container: $this,
 				property: "acceptsReservations",
 				release: "11.01",
 				types: [
 					"Boolean",
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get acceptsreservations() { return this.acceptsReservations }
         set acceptsreservations(value) { this.acceptsReservations = value }
 
         hasMenu($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Either the actual menu as a structured representation, as text, or a URL of the menu.",
-				parent: $this,
+				container: $this,
 				property: "hasMenu",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL",
 					"Menu"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Menu(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasmenu() { return this.hasMenu }
         set hasmenu(value) { this.hasMenu = value }
 
         menu($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Either the actual menu as a structured representation, as text, or a URL of the menu.",
-				parent: $this,
+				container: $this,
 				property: "menu",
 				release: "11.01",
 				types: [
 					"Text",
 					"Menu",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Menu(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         servesCuisine($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The cuisine of the restaurant.",
-				parent: $this,
+				container: $this,
 				property: "servesCuisine",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servescuisine() { return this.servesCuisine }
         set servescuisine(value) { this.servesCuisine = value }
 
         starRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
-				parent: $this,
+				container: $this,
 				property: "starRating",
 				release: "11.01",
 				types: [
 					"Rating"
-				]
-			};
-			return new window.LiveElement.Element.elements.Rating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get starrating() { return this.starRating }
         set starrating(value) { this.starRating = value }

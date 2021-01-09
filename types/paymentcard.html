@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PaymentCard'
         static __type = 'rdfs:Class'
+        static __extends = 'PaymentMethod'
         static _rdfs_comment = 'A payment method using a credit, debit, store or other card to associate the payment with an account.'
         static _rdfs_label = 'PaymentCard'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PaymentCard')
         }
         
         connectedCallback() {
@@ -33,63 +30,67 @@
         
         
         cashBack($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
-				parent: $this,
+				container: $this,
 				property: "cashBack",
 				release: "11.01",
 				types: [
 					"Number",
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cashback() { return this.cashBack }
         set cashback(value) { this.cashBack = value }
 
         contactlessPayment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
-				parent: $this,
+				container: $this,
 				property: "contactlessPayment",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contactlesspayment() { return this.contactlessPayment }
         set contactlesspayment(value) { this.contactlessPayment = value }
 
         floorLimit($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A floor limit is the amount of money above which credit card transactions must be authorized.",
-				parent: $this,
+				container: $this,
 				property: "floorLimit",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get floorlimit() { return this.floorLimit }
         set floorlimit(value) { this.floorLimit = value }
 
         monthlyMinimumRepaymentAmount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.",
-				parent: $this,
+				container: $this,
 				property: "monthlyMinimumRepaymentAmount",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get monthlyminimumrepaymentamount() { return this.monthlyMinimumRepaymentAmount }
         set monthlyminimumrepaymentamount(value) { this.monthlyMinimumRepaymentAmount = value }

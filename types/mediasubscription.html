@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MediaSubscription'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A subscription which allows a user to access media including audio, video, books, etc.'
         static _rdfs_label = 'MediaSubscription'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MediaSubscription')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         authenticator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable\\/satellite provider to authenticate your subscription before playing media.",
-				parent: $this,
+				container: $this,
 				property: "authenticator",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         expectsAcceptanceOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
-				parent: $this,
+				container: $this,
 				property: "expectsAcceptanceOf",
 				release: "11.01",
 				types: [
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get expectsacceptanceof() { return this.expectsAcceptanceOf }
         set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }

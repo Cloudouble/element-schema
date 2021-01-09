@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PublicationVolume'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/09\/schemaorg-support-for-bibliographic_2.html).'
         static _rdfs_label = 'PublicationVolume'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PublicationVolume')
         }
         
         connectedCallback() {
@@ -33,62 +30,66 @@
         
         
         pageEnd($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The page on which the work ends; for example \"138\" or \"xvi\".",
-				parent: $this,
+				container: $this,
 				property: "pageEnd",
 				release: "11.01",
 				types: [
 					"Text",
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get pageend() { return this.pageEnd }
         set pageend(value) { this.pageEnd = value }
 
         pageStart($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The page on which the work starts; for example \"135\" or \"xiii\".",
-				parent: $this,
+				container: $this,
 				property: "pageStart",
 				release: "11.01",
 				types: [
 					"Integer",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get pagestart() { return this.pageStart }
         set pagestart(value) { this.pageStart = value }
 
         pagination($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
-				parent: $this,
+				container: $this,
 				property: "pagination",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         volumeNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifies the volume of publication or multi-part work; for example, \"iii\" or \"2\".",
-				parent: $this,
+				container: $this,
 				property: "volumeNumber",
 				release: "11.01",
 				types: [
 					"Integer",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get volumenumber() { return this.volumeNumber }
         set volumenumber(value) { this.volumeNumber = value }

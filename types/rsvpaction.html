@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:RsvpAction'
         static __type = 'rdfs:Class'
+        static __extends = 'InformAction'
         static _rdfs_comment = 'The act of notifying an event organizer as to whether you expect to attend the event.'
         static _rdfs_label = 'RsvpAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('RsvpAction')
         }
         
         connectedCallback() {
@@ -33,44 +30,47 @@
         
         
         additionalNumberOfGuests($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If responding yes, the number of guests who will attend in addition to the invitee.",
-				parent: $this,
+				container: $this,
 				property: "additionalNumberOfGuests",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get additionalnumberofguests() { return this.additionalNumberOfGuests }
         set additionalnumberofguests(value) { this.additionalNumberOfGuests = value }
 
         comment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Comments, typically from users.",
-				parent: $this,
+				container: $this,
 				property: "comment",
 				release: "11.01",
 				types: [
 					"Comment"
-				]
-			};
-			return new window.LiveElement.Element.elements.Comment(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         rsvpResponse($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The response (yes, no, maybe) to the RSVP.",
-				parent: $this,
+				container: $this,
 				property: "rsvpResponse",
 				release: "11.01",
 				types: [
 					"RsvpResponseType"
-				]
-			};
-			return new window.LiveElement.Element.elements.RsvpResponseType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get rsvpresponse() { return this.rsvpResponse }
         set rsvpresponse(value) { this.rsvpResponse = value }

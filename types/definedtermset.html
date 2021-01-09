@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DefinedTermSet'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.'
         static _rdfs_label = 'DefinedTermSet'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DefinedTermSet')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         hasDefinedTerm($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A Defined Term contained in this term set.",
-				parent: $this,
+				container: $this,
 				property: "hasDefinedTerm",
 				release: "11.01",
 				types: [
 					"DefinedTerm"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasdefinedterm() { return this.hasDefinedTerm }
         set hasdefinedterm(value) { this.hasDefinedTerm = value }

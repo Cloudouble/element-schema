@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AlignmentObject'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'An intangible item that describes an alignment between a learning resource and a node in an educational framework.  Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.'
         static _rdfs_label = 'AlignmentObject'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AlignmentObject')
         }
         
         connectedCallback() {
@@ -33,76 +30,81 @@
         
         
         alignmentType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
-				parent: $this,
+				container: $this,
 				property: "alignmentType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get alignmenttype() { return this.alignmentType }
         set alignmenttype(value) { this.alignmentType = value }
 
         educationalFramework($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The framework to which the resource being described is aligned.",
-				parent: $this,
+				container: $this,
 				property: "educationalFramework",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get educationalframework() { return this.educationalFramework }
         set educationalframework(value) { this.educationalFramework = value }
 
         targetDescription($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The description of a node in an established educational framework.",
-				parent: $this,
+				container: $this,
 				property: "targetDescription",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targetdescription() { return this.targetDescription }
         set targetdescription(value) { this.targetDescription = value }
 
         targetName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name of a node in an established educational framework.",
-				parent: $this,
+				container: $this,
 				property: "targetName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targetname() { return this.targetName }
         set targetname(value) { this.targetName = value }
 
         targetUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The URL of a node in an established educational framework.",
-				parent: $this,
+				container: $this,
 				property: "targetUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targeturl() { return this.targetUrl }
         set targeturl(value) { this.targetUrl = value }

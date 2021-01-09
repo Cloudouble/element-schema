@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:RealEstateListing'
         static __type = 'rdfs:Class'
+        static __extends = 'WebPage'
         static _rdfs_comment = 'A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).   The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].   '
         static _rdfs_label = 'RealEstateListing'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('RealEstateListing')
         }
         
         connectedCallback() {
@@ -33,33 +30,35 @@
         
         
         datePosted($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Publication date of an online listing.",
-				parent: $this,
+				container: $this,
 				property: "datePosted",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dateposted() { return this.datePosted }
         set dateposted(value) { this.datePosted = value }
 
         leaseLength($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.",
-				parent: $this,
+				container: $this,
 				property: "leaseLength",
 				release: "11.01",
 				types: [
 					"Duration",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get leaselength() { return this.leaseLength }
         set leaselength(value) { this.leaseLength = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PaymentStatusType'
         static __type = 'rdfs:Class'
+        static __extends = 'StatusEnumeration'
         static _rdfs_comment = 'A specific payment status. For example, PaymentDue, PaymentComplete, etc.'
         static _rdfs_label = 'PaymentStatusType'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PaymentStatusType')
         }
         
         connectedCallback() {

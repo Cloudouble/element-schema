@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalEnumeration'
         static __type = 'rdfs:Class'
+        static __extends = 'Enumeration'
         static _rdfs_comment = 'Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice.'
         static _rdfs_label = 'MedicalEnumeration'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalEnumeration')
         }
         
         connectedCallback() {

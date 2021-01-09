@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AgreeAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ReactAction'
         static _rdfs_comment = 'The act of expressing a consistency of opinion with the object. An agent agrees to\/about an object (a proposition, topic or theme) with participants.'
         static _rdfs_label = 'AgreeAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AgreeAction')
         }
         
         connectedCallback() {

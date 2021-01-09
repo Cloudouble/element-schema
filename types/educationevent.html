@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EducationEvent'
         static __type = 'rdfs:Class'
+        static __extends = 'Event'
         static _rdfs_comment = 'Event type: Education event.'
         static _rdfs_label = 'EducationEvent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EducationEvent')
         }
         
         connectedCallback() {
@@ -33,48 +30,51 @@
         
         
         assesses($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item being described is intended to assess the competency or learning outcome defined by the referenced term.",
-				parent: $this,
+				container: $this,
 				property: "assesses",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         educationalLevel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.",
-				parent: $this,
+				container: $this,
 				property: "educationalLevel",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text",
 					"DefinedTerm"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.DefinedTerm(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
 
         teaches($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.",
-				parent: $this,
+				container: $this,
 				property: "teaches",
 				release: "11.01",
 				types: [
 					"DefinedTerm",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTerm(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

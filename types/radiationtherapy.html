@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:RadiationTherapy'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalTherapy'
         static _rdfs_comment = 'A process of care using radiation aimed at improving a health condition.'
         static _rdfs_label = 'RadiationTherapy'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('RadiationTherapy')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BroadcastService'
         static __type = 'rdfs:Class'
+        static __extends = 'Service'
         static _rdfs_comment = 'A delivery service through which content is provided via broadcast over the air or online.'
         static _rdfs_label = 'BroadcastService'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BroadcastService')
         }
         
         connectedCallback() {
@@ -33,164 +30,175 @@
         
         
         area($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The area within which users can expect to reach the broadcast service.",
-				parent: $this,
+				container: $this,
 				property: "area",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         broadcastAffiliateOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The media network(s) whose content is broadcast on this station.",
-				parent: $this,
+				container: $this,
 				property: "broadcastAffiliateOf",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastaffiliateof() { return this.broadcastAffiliateOf }
         set broadcastaffiliateof(value) { this.broadcastAffiliateOf = value }
 
         broadcastDisplayName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name displayed in the channel guide. For many US affiliates, it is the network name.",
-				parent: $this,
+				container: $this,
 				property: "broadcastDisplayName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastdisplayname() { return this.broadcastDisplayName }
         set broadcastdisplayname(value) { this.broadcastDisplayName = value }
 
         broadcastFrequency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
-				parent: $this,
+				container: $this,
 				property: "broadcastFrequency",
 				release: "11.01",
 				types: [
 					"Text",
 					"BroadcastFrequencySpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.BroadcastFrequencySpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastfrequency() { return this.broadcastFrequency }
         set broadcastfrequency(value) { this.broadcastFrequency = value }
 
         broadcastTimezone($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The timezone in [ISO 8601 format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601) for which the service bases its broadcasts",
-				parent: $this,
+				container: $this,
 				property: "broadcastTimezone",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcasttimezone() { return this.broadcastTimezone }
         set broadcasttimezone(value) { this.broadcastTimezone = value }
 
         broadcaster($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The organization owning or operating the broadcast service.",
-				parent: $this,
+				container: $this,
 				property: "broadcaster",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         callSign($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A [callsign](https:\\/\\/en.wikipedia.org\\/wiki\\/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
-				parent: $this,
+				container: $this,
 				property: "callSign",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
 
         hasBroadcastChannel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A broadcast channel of a broadcast service.",
-				parent: $this,
+				container: $this,
 				property: "hasBroadcastChannel",
 				release: "11.01",
 				types: [
 					"BroadcastChannel"
-				]
-			};
-			return new window.LiveElement.Element.elements.BroadcastChannel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasbroadcastchannel() { return this.hasBroadcastChannel }
         set hasbroadcastchannel(value) { this.hasBroadcastChannel = value }
 
         inLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
-				parent: $this,
+				container: $this,
 				property: "inLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
         parentService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
-				parent: $this,
+				container: $this,
 				property: "parentService",
 				release: "11.01",
 				types: [
 					"BroadcastService"
-				]
-			};
-			return new window.LiveElement.Element.elements.BroadcastService(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get parentservice() { return this.parentService }
         set parentservice(value) { this.parentService = value }
 
         videoFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
-				parent: $this,
+				container: $this,
 				property: "videoFormat",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get videoformat() { return this.videoFormat }
         set videoformat(value) { this.videoFormat = value }

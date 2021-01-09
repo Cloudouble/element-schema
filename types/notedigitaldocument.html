@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:NoteDigitalDocument'
         static __type = 'rdfs:Class'
+        static __extends = 'DigitalDocument'
         static _rdfs_comment = 'A file containing a note, primarily for the author.'
         static _rdfs_label = 'NoteDigitalDocument'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('NoteDigitalDocument')
         }
         
         connectedCallback() {

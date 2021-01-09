@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SoftwareSourceCode'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.'
         static _rdfs_label = 'SoftwareSourceCode'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SoftwareSourceCode')
         }
         
         connectedCallback() {
@@ -33,105 +30,112 @@
         
         
         codeRepository($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
-				parent: $this,
+				container: $this,
 				property: "codeRepository",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get coderepository() { return this.codeRepository }
         set coderepository(value) { this.codeRepository = value }
 
         codeSampleType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-				parent: $this,
+				container: $this,
 				property: "codeSampleType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get codesampletype() { return this.codeSampleType }
         set codesampletype(value) { this.codeSampleType = value }
 
         programmingLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The computer programming language.",
-				parent: $this,
+				container: $this,
 				property: "programmingLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"ComputerLanguage"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ComputerLanguage(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get programminglanguage() { return this.programmingLanguage }
         set programminglanguage(value) { this.programmingLanguage = value }
 
         runtime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-				parent: $this,
+				container: $this,
 				property: "runtime",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         runtimePlatform($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
-				parent: $this,
+				container: $this,
 				property: "runtimePlatform",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get runtimeplatform() { return this.runtimePlatform }
         set runtimeplatform(value) { this.runtimePlatform = value }
 
         sampleType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
-				parent: $this,
+				container: $this,
 				property: "sampleType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sampletype() { return this.sampleType }
         set sampletype(value) { this.sampleType = value }
 
         targetProduct($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Target Operating System \\/ Product to which the code applies.  If applies to several versions, just the product name can be used.",
-				parent: $this,
+				container: $this,
 				property: "targetProduct",
 				release: "11.01",
 				types: [
 					"SoftwareApplication"
-				]
-			};
-			return new window.LiveElement.Element.elements.SoftwareApplication(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targetproduct() { return this.targetProduct }
         set targetproduct(value) { this.targetProduct = value }

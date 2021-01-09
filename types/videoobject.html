@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:VideoObject'
         static __type = 'rdfs:Class'
+        static __extends = 'MediaObject'
         static _rdfs_comment = 'A video file.'
         static _rdfs_label = 'VideoObject'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('VideoObject')
         }
         
         connectedCallback() {
@@ -33,139 +30,149 @@
         
         
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         actors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         caption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
-				parent: $this,
+				container: $this,
 				property: "caption",
 				release: "11.01",
 				types: [
 					"Text",
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         directors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "directors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         musicBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The composer of the soundtrack.",
-				parent: $this,
+				container: $this,
 				property: "musicBy",
 				release: "11.01",
 				types: [
 					"Person",
 					"MusicGroup"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
         thumbnail($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Thumbnail image for an image or video.",
-				parent: $this,
+				container: $this,
 				property: "thumbnail",
 				release: "11.01",
 				types: [
 					"ImageObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         transcript($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
-				parent: $this,
+				container: $this,
 				property: "transcript",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         videoFrameSize($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The frame size of the video.",
-				parent: $this,
+				container: $this,
 				property: "videoFrameSize",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get videoframesize() { return this.videoFrameSize }
         set videoframesize(value) { this.videoFrameSize = value }
 
         videoQuality($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quality of the video.",
-				parent: $this,
+				container: $this,
 				property: "videoQuality",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get videoquality() { return this.videoQuality }
         set videoquality(value) { this.videoQuality = value }

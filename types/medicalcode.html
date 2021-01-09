@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalCode'
         static __type = 'rdfs:Class'
+        static __extends = 'CategoryCode'
         static _rdfs_comment = 'A code for a medical entity.'
         static _rdfs_label = 'MedicalCode'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalCode')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         codeValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A short textual code that uniquely identifies the value.",
-				parent: $this,
+				container: $this,
 				property: "codeValue",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get codevalue() { return this.codeValue }
         set codevalue(value) { this.codeValue = value }
 
         codingSystem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The coding system, e.g. 'ICD-10'.",
-				parent: $this,
+				container: $this,
 				property: "codingSystem",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get codingsystem() { return this.codingSystem }
         set codingsystem(value) { this.codingSystem = value }

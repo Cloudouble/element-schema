@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Diet'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.'
         static _rdfs_label = 'Diet'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Diet')
         }
         
         connectedCallback() {
@@ -33,75 +30,80 @@
         
         
         dietFeatures($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations\\/deviations from the USDA or other regulatory body's approved dietary guidelines.",
-				parent: $this,
+				container: $this,
 				property: "dietFeatures",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dietfeatures() { return this.dietFeatures }
         set dietfeatures(value) { this.dietFeatures = value }
 
         endorsers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "People or organizations that endorse the plan.",
-				parent: $this,
+				container: $this,
 				property: "endorsers",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         expertConsiderations($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Medical expert advice related to the plan.",
-				parent: $this,
+				container: $this,
 				property: "expertConsiderations",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get expertconsiderations() { return this.expertConsiderations }
         set expertconsiderations(value) { this.expertConsiderations = value }
 
         physiologicalBenefits($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specific physiologic benefits associated to the plan.",
-				parent: $this,
+				container: $this,
 				property: "physiologicalBenefits",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get physiologicalbenefits() { return this.physiologicalBenefits }
         set physiologicalbenefits(value) { this.physiologicalBenefits = value }
 
         risks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specific physiologic risks associated to the diet plan.",
-				parent: $this,
+				container: $this,
 				property: "risks",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

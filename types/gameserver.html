@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:GameServer'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Server that provides game interaction in a multiplayer game.'
         static _rdfs_label = 'GameServer'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('GameServer')
         }
         
         connectedCallback() {
@@ -33,44 +30,47 @@
         
         
         game($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Video game which is played on this server.",
-				parent: $this,
+				container: $this,
 				property: "game",
 				release: "11.01",
 				types: [
 					"VideoGame"
-				]
-			};
-			return new window.LiveElement.Element.elements.VideoGame(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         playersOnline($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Number of players on the server.",
-				parent: $this,
+				container: $this,
 				property: "playersOnline",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get playersonline() { return this.playersOnline }
         set playersonline(value) { this.playersOnline = value }
 
         serverStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Status of a game server.",
-				parent: $this,
+				container: $this,
 				property: "serverStatus",
 				release: "11.01",
 				types: [
 					"GameServerStatus"
-				]
-			};
-			return new window.LiveElement.Element.elements.GameServerStatus(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get serverstatus() { return this.serverStatus }
         set serverstatus(value) { this.serverStatus = value }

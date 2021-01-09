@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MonetaryGrant'
         static __type = 'rdfs:Class'
+        static __extends = 'Grant'
         static _rdfs_comment = 'A monetary grant.'
         static _rdfs_label = 'MonetaryGrant'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MonetaryGrant')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         amount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of money.",
-				parent: $this,
+				container: $this,
 				property: "amount",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         funder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-				parent: $this,
+				container: $this,
 				property: "funder",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

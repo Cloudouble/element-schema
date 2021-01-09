@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BefriendAction'
         static __type = 'rdfs:Class'
+        static __extends = 'InteractAction'
         static _rdfs_comment = 'The act of forming a personal connection with someone (object) mutually\/bidirectionally\/symmetrically.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.'
         static _rdfs_label = 'BefriendAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BefriendAction')
         }
         
         connectedCallback() {

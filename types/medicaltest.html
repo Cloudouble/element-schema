@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalTest'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'Any medical test, typically performed for diagnostic purposes.'
         static _rdfs_label = 'MedicalTest'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalTest')
         }
         
         connectedCallback() {
@@ -33,77 +30,82 @@
         
         
         affectedBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Drugs that affect the test's results.",
-				parent: $this,
+				container: $this,
 				property: "affectedBy",
 				release: "11.01",
 				types: [
 					"Drug"
-				]
-			};
-			return new window.LiveElement.Element.elements.Drug(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get affectedby() { return this.affectedBy }
         set affectedby(value) { this.affectedBy = value }
 
         normalRange($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Range of acceptable values for a typical patient, when applicable.",
-				parent: $this,
+				container: $this,
 				property: "normalRange",
 				release: "11.01",
 				types: [
 					"MedicalEnumeration",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get normalrange() { return this.normalRange }
         set normalrange(value) { this.normalRange = value }
 
         signDetected($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sign detected by the test.",
-				parent: $this,
+				container: $this,
 				property: "signDetected",
 				release: "11.01",
 				types: [
 					"MedicalSign"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalSign(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get signdetected() { return this.signDetected }
         set signdetected(value) { this.signDetected = value }
 
         usedToDiagnose($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A condition the test is used to diagnose.",
-				parent: $this,
+				container: $this,
 				property: "usedToDiagnose",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get usedtodiagnose() { return this.usedToDiagnose }
         set usedtodiagnose(value) { this.usedToDiagnose = value }
 
         usesDevice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Device used to perform the test.",
-				parent: $this,
+				container: $this,
 				property: "usesDevice",
 				release: "11.01",
 				types: [
 					"MedicalDevice"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalDevice(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get usesdevice() { return this.usesDevice }
         set usesdevice(value) { this.usesDevice = value }

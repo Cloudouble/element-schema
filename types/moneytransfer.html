@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MoneyTransfer'
         static __type = 'rdfs:Class'
+        static __extends = 'TransferAction'
         static _rdfs_comment = 'The act of transferring money from one place to another place. This may occur electronically or physically.'
         static _rdfs_label = 'MoneyTransfer'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MoneyTransfer')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         amount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of money.",
-				parent: $this,
+				container: $this,
 				property: "amount",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         beneficiaryBank($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A bank or bank\u2019s branch, financial institution or international financial institution operating the beneficiary\u2019s bank account or releasing funds for the beneficiary",
-				parent: $this,
+				container: $this,
 				property: "beneficiaryBank",
 				release: "11.01",
 				types: [
 					"BankOrCreditUnion",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.BankOrCreditUnion(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get beneficiarybank() { return this.beneficiaryBank }
         set beneficiarybank(value) { this.beneficiaryBank = value }

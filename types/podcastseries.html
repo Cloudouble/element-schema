@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PodcastSeries'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWorkSeries'
         static _rdfs_comment = 'A podcast is an episodic series of digital audio or video files which a user can download and listen to.'
         static _rdfs_label = 'PodcastSeries'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PodcastSeries')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         webFeed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.",
-				parent: $this,
+				container: $this,
 				property: "webFeed",
 				release: "11.01",
 				types: [
 					"DataFeed",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.DataFeed(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get webfeed() { return this.webFeed }
         set webfeed(value) { this.webFeed = value }

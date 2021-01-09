@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Property'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.'
         static _rdfs_label = 'Property'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Property')
         }
         
         connectedCallback() {
@@ -33,63 +30,67 @@
         
         
         domainIncludes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
-				parent: $this,
+				container: $this,
 				property: "domainIncludes",
 				release: "11.01",
 				types: [
 					"Class"
-				]
-			};
-			return new window.LiveElement.Element.elements.Class(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get domainincludes() { return this.domainIncludes }
         set domainincludes(value) { this.domainIncludes = value }
 
         inverseOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.",
-				parent: $this,
+				container: $this,
 				property: "inverseOf",
 				release: "11.01",
 				types: [
 					"Property"
-				]
-			};
-			return new window.LiveElement.Element.elements.Property(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inverseof() { return this.inverseOf }
         set inverseof(value) { this.inverseOf = value }
 
         rangeIncludes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
-				parent: $this,
+				container: $this,
 				property: "rangeIncludes",
 				release: "11.01",
 				types: [
 					"Class"
-				]
-			};
-			return new window.LiveElement.Element.elements.Class(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get rangeincludes() { return this.rangeIncludes }
         set rangeincludes(value) { this.rangeIncludes = value }
 
         supersededBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
-				parent: $this,
+				container: $this,
 				property: "supersededBy",
 				release: "11.01",
 				types: [
 					"Enumeration",
 					"Property",
 					"Class"
-				]
-			};
-			return new window.LiveElement.Element.elements.Enumeration(value, property) || new window.LiveElement.Element.elements.Property(value, property) || new window.LiveElement.Element.elements.Class(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get supersededby() { return this.supersededBy }
         set supersededby(value) { this.supersededBy = value }

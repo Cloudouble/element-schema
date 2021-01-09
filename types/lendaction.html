@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LendAction'
         static __type = 'rdfs:Class'
+        static __extends = 'TransferAction'
         static _rdfs_comment = 'The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.\n\nRelated actions:\n\n* [[BorrowAction]]: Reciprocal of LendAction.'
         static _rdfs_label = 'LendAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LendAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         borrower($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The person that borrows the object being lent.",
-				parent: $this,
+				container: $this,
 				property: "borrower",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

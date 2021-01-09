@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Hospital'
         static __type = 'rdfs:Class'
+        static __extends = 'EmergencyService'
         static _rdfs_comment = 'A hospital.'
         static _rdfs_label = 'Hospital'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Hospital')
         }
         
         connectedCallback() {
@@ -33,49 +30,52 @@
         
         
         availableService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical service available from this provider.",
-				parent: $this,
+				container: $this,
 				property: "availableService",
 				release: "11.01",
 				types: [
 					"MedicalTest",
 					"MedicalTherapy",
 					"MedicalProcedure"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTest(value, property) || new window.LiveElement.Element.elements.MedicalTherapy(value, property) || new window.LiveElement.Element.elements.MedicalProcedure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availableservice() { return this.availableService }
         set availableservice(value) { this.availableService = value }
 
         healthcareReportingData($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].",
-				parent: $this,
+				container: $this,
 				property: "healthcareReportingData",
 				release: "11.01",
 				types: [
 					"CDCPMDRecord",
 					"Dataset"
-				]
-			};
-			return new window.LiveElement.Element.elements.CDCPMDRecord(value, property) || new window.LiveElement.Element.elements.Dataset(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthcarereportingdata() { return this.healthcareReportingData }
         set healthcarereportingdata(value) { this.healthcareReportingData = value }
 
         medicalSpecialty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical specialty of the provider.",
-				parent: $this,
+				container: $this,
 				property: "medicalSpecialty",
 				release: "11.01",
 				types: [
 					"MedicalSpecialty"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }

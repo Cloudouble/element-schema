@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalGuidelineContraindication'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalGuideline'
         static _rdfs_comment = 'A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.'
         static _rdfs_label = 'MedicalGuidelineContraindication'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalGuidelineContraindication')
         }
         
         connectedCallback() {

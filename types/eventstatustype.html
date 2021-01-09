@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EventStatusType'
         static __type = 'rdfs:Class'
+        static __extends = 'StatusEnumeration'
         static _rdfs_comment = 'EventStatusType is an enumeration type whose instances represent several states that an Event may be in.'
         static _rdfs_label = 'EventStatusType'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EventStatusType')
         }
         
         connectedCallback() {

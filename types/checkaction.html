@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CheckAction'
         static __type = 'rdfs:Class'
+        static __extends = 'FindAction'
         static _rdfs_comment = 'An agent inspects, determines, investigates, inquires, or examines an object\'s accuracy, quality, condition, or state.'
         static _rdfs_label = 'CheckAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CheckAction')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ParentAudience'
         static __type = 'rdfs:Class'
+        static __extends = 'PeopleAudience'
         static _rdfs_comment = 'A set of characteristics describing parents, who can be interested in viewing some content.'
         static _rdfs_label = 'ParentAudience'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ParentAudience')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         childMaxAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Maximal age of the child.",
-				parent: $this,
+				container: $this,
 				property: "childMaxAge",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get childmaxage() { return this.childMaxAge }
         set childmaxage(value) { this.childMaxAge = value }
 
         childMinAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Minimal age of the child.",
-				parent: $this,
+				container: $this,
 				property: "childMinAge",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get childminage() { return this.childMinAge }
         set childminage(value) { this.childMinAge = value }

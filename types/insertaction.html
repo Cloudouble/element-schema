@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:InsertAction'
         static __type = 'rdfs:Class'
+        static __extends = 'AddAction'
         static _rdfs_comment = 'The act of adding at a specific location in an ordered collection.'
         static _rdfs_label = 'InsertAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('InsertAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         toLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The final location of the object or the agent after the action.",
-				parent: $this,
+				container: $this,
 				property: "toLocation",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }

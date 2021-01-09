@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:FAQPage'
         static __type = 'rdfs:Class'
+        static __extends = 'WebPage'
         static _rdfs_comment = 'A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https:\/\/en.wikipedia.org\/wiki\/FAQ)" (see also [[QAPage]]).'
         static _rdfs_label = 'FAQPage'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('FAQPage')
         }
         
         connectedCallback() {

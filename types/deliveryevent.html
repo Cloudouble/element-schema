@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DeliveryEvent'
         static __type = 'rdfs:Class'
+        static __extends = 'Event'
         static _rdfs_comment = 'An event involving the delivery of an item.'
         static _rdfs_label = 'DeliveryEvent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DeliveryEvent')
         }
         
         connectedCallback() {
@@ -33,61 +30,65 @@
         
         
         accessCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Password, PIN, or access code needed for delivery (e.g. from a locker).",
-				parent: $this,
+				container: $this,
 				property: "accessCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accesscode() { return this.accessCode }
         set accesscode(value) { this.accessCode = value }
 
         availableFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "When the item is available for pickup from the store, locker, etc.",
-				parent: $this,
+				container: $this,
 				property: "availableFrom",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablefrom() { return this.availableFrom }
         set availablefrom(value) { this.availableFrom = value }
 
         availableThrough($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "After this date, the item will no longer be available for pickup.",
-				parent: $this,
+				container: $this,
 				property: "availableThrough",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablethrough() { return this.availableThrough }
         set availablethrough(value) { this.availableThrough = value }
 
         hasDeliveryMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Method used for delivery or shipping.",
-				parent: $this,
+				container: $this,
 				property: "hasDeliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasdeliverymethod() { return this.hasDeliveryMethod }
         set hasdeliverymethod(value) { this.hasDeliveryMethod = value }

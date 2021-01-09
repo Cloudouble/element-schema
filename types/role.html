@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Role'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Represents additional information about a relationship or property. For example a Role can be used to say that a \'member\' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person\'s \'actor\' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like \'member\' or \'actor\'.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/06\/introducing-role.html).'
         static _rdfs_label = 'Role'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Role')
         }
         
         connectedCallback() {
@@ -33,65 +30,69 @@
         
         
         endDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "endDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
         namedPosition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.",
-				parent: $this,
+				container: $this,
 				property: "namedPosition",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get namedposition() { return this.namedPosition }
         set namedposition(value) { this.namedPosition = value }
 
         roleName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
-				parent: $this,
+				container: $this,
 				property: "roleName",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get rolename() { return this.roleName }
         set rolename(value) { this.roleName = value }
 
         startDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "startDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }

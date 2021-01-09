@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Comment'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A comment on an item - for example, a comment on a blog post. The comment\'s content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.'
         static _rdfs_label = 'Comment'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Comment')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         downvoteCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of downvotes this question, answer or comment has received from the community.",
-				parent: $this,
+				container: $this,
 				property: "downvoteCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get downvotecount() { return this.downvoteCount }
         set downvotecount(value) { this.downvoteCount = value }
 
         parentItem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The parent of a question, answer or item in general.",
-				parent: $this,
+				container: $this,
 				property: "parentItem",
 				release: "11.01",
 				types: [
 					"Comment"
-				]
-			};
-			return new window.LiveElement.Element.elements.Comment(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get parentitem() { return this.parentItem }
         set parentitem(value) { this.parentItem = value }
 
         upvoteCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of upvotes this question, answer or comment has received from the community.",
-				parent: $this,
+				container: $this,
 				property: "upvoteCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get upvotecount() { return this.upvoteCount }
         set upvotecount(value) { this.upvoteCount = value }

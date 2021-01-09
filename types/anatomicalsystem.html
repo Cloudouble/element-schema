@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AnatomicalSystem'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems.'
         static _rdfs_label = 'AnatomicalSystem'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AnatomicalSystem')
         }
         
         connectedCallback() {
@@ -33,77 +30,82 @@
         
         
         associatedPathophysiology($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
-				parent: $this,
+				container: $this,
 				property: "associatedPathophysiology",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get associatedpathophysiology() { return this.associatedPathophysiology }
         set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
         comprisedOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.",
-				parent: $this,
+				container: $this,
 				property: "comprisedOf",
 				release: "11.01",
 				types: [
 					"AnatomicalSystem",
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalSystem(value, property) || new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get comprisedof() { return this.comprisedOf }
         set comprisedof(value) { this.comprisedOf = value }
 
         relatedCondition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical condition associated with this anatomy.",
-				parent: $this,
+				container: $this,
 				property: "relatedCondition",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedcondition() { return this.relatedCondition }
         set relatedcondition(value) { this.relatedCondition = value }
 
         relatedStructure($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.",
-				parent: $this,
+				container: $this,
 				property: "relatedStructure",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedstructure() { return this.relatedStructure }
         set relatedstructure(value) { this.relatedStructure = value }
 
         relatedTherapy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical therapy related to this anatomy.",
-				parent: $this,
+				container: $this,
 				property: "relatedTherapy",
 				release: "11.01",
 				types: [
 					"MedicalTherapy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedtherapy() { return this.relatedTherapy }
         set relatedtherapy(value) { this.relatedTherapy = value }

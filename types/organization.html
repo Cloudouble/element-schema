@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Organization'
         static __type = 'rdfs:Class'
+        static __extends = 'Thing'
         static _rdfs_comment = 'An organization such as a school, NGO, corporation, club, etc.'
         static _rdfs_label = 'Organization'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Organization')
         }
         
         connectedCallback() {
@@ -33,67 +30,71 @@
         
         
         actionableFeedbackPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
-				parent: $this,
+				container: $this,
 				property: "actionableFeedbackPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
         set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
 
         address($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Physical address of the item.",
-				parent: $this,
+				container: $this,
 				property: "address",
 				release: "11.01",
 				types: [
 					"Text",
 					"PostalAddress"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         aggregateRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
-				parent: $this,
+				container: $this,
 				property: "aggregateRating",
 				release: "11.01",
 				types: [
 					"AggregateRating"
-				]
-			};
-			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
         alumni($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Alumni of an organization.",
-				parent: $this,
+				container: $this,
 				property: "alumni",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         areaServed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where a service or offered item is provided.",
-				parent: $this,
+				container: $this,
 				property: "areaServed",
 				release: "11.01",
 				types: [
@@ -101,525 +102,561 @@
 					"AdministrativeArea",
 					"GeoShape",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
 
         award($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An award won by or for this item.",
-				parent: $this,
+				container: $this,
 				property: "award",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         awards($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Awards won by or for this item.",
-				parent: $this,
+				container: $this,
 				property: "awards",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         brand($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-				parent: $this,
+				container: $this,
 				property: "brand",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Brand"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Brand(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         contactPoint($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A contact point for a person or organization.",
-				parent: $this,
+				container: $this,
 				property: "contactPoint",
 				release: "11.01",
 				types: [
 					"ContactPoint"
-				]
-			};
-			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
 
         contactPoints($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A contact point for a person or organization.",
-				parent: $this,
+				container: $this,
 				property: "contactPoints",
 				release: "11.01",
 				types: [
 					"ContactPoint"
-				]
-			};
-			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contactpoints() { return this.contactPoints }
         set contactpoints(value) { this.contactPoints = value }
 
         correctionsPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
-				parent: $this,
+				container: $this,
 				property: "correctionsPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get correctionspolicy() { return this.correctionsPolicy }
         set correctionspolicy(value) { this.correctionsPolicy = value }
 
         department($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
-				parent: $this,
+				container: $this,
 				property: "department",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         dissolutionDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date that this organization was dissolved.",
-				parent: $this,
+				container: $this,
 				property: "dissolutionDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get dissolutiondate() { return this.dissolutionDate }
         set dissolutiondate(value) { this.dissolutionDate = value }
 
         diversityPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom\u2019s diversity policy on both staffing and sources, typically providing staffing data.",
-				parent: $this,
+				container: $this,
 				property: "diversityPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get diversitypolicy() { return this.diversityPolicy }
         set diversitypolicy(value) { this.diversityPolicy = value }
 
         diversityStaffingReport($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.",
-				parent: $this,
+				container: $this,
 				property: "diversityStaffingReport",
 				release: "11.01",
 				types: [
 					"Article",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Article(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get diversitystaffingreport() { return this.diversityStaffingReport }
         set diversitystaffingreport(value) { this.diversityStaffingReport = value }
 
         duns($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-				parent: $this,
+				container: $this,
 				property: "duns",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         email($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Email address.",
-				parent: $this,
+				container: $this,
 				property: "email",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         employee($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Someone working for this organization.",
-				parent: $this,
+				container: $this,
 				property: "employee",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         employees($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "People working for this organization.",
-				parent: $this,
+				container: $this,
 				property: "employees",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         ethicsPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
-				parent: $this,
+				container: $this,
 				property: "ethicsPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ethicspolicy() { return this.ethicsPolicy }
         set ethicspolicy(value) { this.ethicsPolicy = value }
 
         event($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Upcoming or past event associated with this place, organization, or action.",
-				parent: $this,
+				container: $this,
 				property: "event",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         events($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Upcoming or past events associated with this place or organization.",
-				parent: $this,
+				container: $this,
 				property: "events",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         faxNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The fax number.",
-				parent: $this,
+				container: $this,
 				property: "faxNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
 
         founder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person who founded this organization.",
-				parent: $this,
+				container: $this,
 				property: "founder",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         founders($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person who founded this organization.",
-				parent: $this,
+				container: $this,
 				property: "founders",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         foundingDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date that this organization was founded.",
-				parent: $this,
+				container: $this,
 				property: "foundingDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get foundingdate() { return this.foundingDate }
         set foundingdate(value) { this.foundingDate = value }
 
         foundingLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The place where the Organization was founded.",
-				parent: $this,
+				container: $this,
 				property: "foundingLocation",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get foundinglocation() { return this.foundingLocation }
         set foundinglocation(value) { this.foundingLocation = value }
 
         funder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-				parent: $this,
+				container: $this,
 				property: "funder",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         globalLocationNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The [Global Location Number](http:\\/\\/www.gs1.org\\/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-				parent: $this,
+				container: $this,
 				property: "globalLocationNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get globallocationnumber() { return this.globalLocationNumber }
         set globallocationnumber(value) { this.globalLocationNumber = value }
 
         hasCredential($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A credential awarded to the Person or Organization.",
-				parent: $this,
+				container: $this,
 				property: "hasCredential",
 				release: "11.01",
 				types: [
 					"EducationalOccupationalCredential"
-				]
-			};
-			return new window.LiveElement.Element.elements.EducationalOccupationalCredential(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hascredential() { return this.hasCredential }
         set hascredential(value) { this.hasCredential = value }
 
         hasMerchantReturnPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a MerchantReturnPolicy that may be applicable.",
-				parent: $this,
+				container: $this,
 				property: "hasMerchantReturnPolicy",
 				release: "11.01",
 				types: [
 					"MerchantReturnPolicy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MerchantReturnPolicy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
         set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
 
         hasOfferCatalog($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-				parent: $this,
+				container: $this,
 				property: "hasOfferCatalog",
 				release: "11.01",
 				types: [
 					"OfferCatalog"
-				]
-			};
-			return new window.LiveElement.Element.elements.OfferCatalog(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasoffercatalog() { return this.hasOfferCatalog }
         set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
         hasPOS($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Points-of-Sales operated by the organization or person.",
-				parent: $this,
+				container: $this,
 				property: "hasPOS",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get haspos() { return this.hasPOS }
         set haspos(value) { this.hasPOS = value }
 
         hasProductReturnPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a ProductReturnPolicy that may be applicable.",
-				parent: $this,
+				container: $this,
 				property: "hasProductReturnPolicy",
 				release: "11.01",
 				types: [
 					"ProductReturnPolicy"
-				]
-			};
-			return new window.LiveElement.Element.elements.ProductReturnPolicy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
         set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
 
         interactionStatistic($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
-				parent: $this,
+				container: $this,
 				property: "interactionStatistic",
 				release: "11.01",
 				types: [
 					"InteractionCounter"
-				]
-			};
-			return new window.LiveElement.Element.elements.InteractionCounter(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get interactionstatistic() { return this.interactionStatistic }
         set interactionstatistic(value) { this.interactionStatistic = value }
 
         isicV4($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-				parent: $this,
+				container: $this,
 				property: "isicV4",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isicv4() { return this.isicV4 }
         set isicv4(value) { this.isicV4 = value }
 
         knowsAbout($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.",
-				parent: $this,
+				container: $this,
 				property: "knowsAbout",
 				release: "11.01",
 				types: [
 					"Thing",
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get knowsabout() { return this.knowsAbout }
         set knowsabout(value) { this.knowsAbout = value }
 
         knowsLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading\\/writing\\/speaking\\/signing here. Use language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
-				parent: $this,
+				container: $this,
 				property: "knowsLanguage",
 				release: "11.01",
 				types: [
 					"Language",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get knowslanguage() { return this.knowsLanguage }
         set knowslanguage(value) { this.knowsLanguage = value }
 
         legalName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The official name of the organization, e.g. the registered company name.",
-				parent: $this,
+				container: $this,
 				property: "legalName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legalname() { return this.legalName }
         set legalname(value) { this.legalName = value }
 
         leiCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
-				parent: $this,
+				container: $this,
 				property: "leiCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get leicode() { return this.leiCode }
         set leicode(value) { this.leiCode = value }
 
         location($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
-				parent: $this,
+				container: $this,
 				property: "location",
 				release: "11.01",
 				types: [
@@ -627,131 +664,140 @@
 					"Text",
 					"VirtualLocation",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.PostalAddress(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.VirtualLocation(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         logo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An associated logo.",
-				parent: $this,
+				container: $this,
 				property: "logo",
 				release: "11.01",
 				types: [
 					"ImageObject",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         makesOffer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A pointer to products or services offered by the organization or person.",
-				parent: $this,
+				container: $this,
 				property: "makesOffer",
 				release: "11.01",
 				types: [
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get makesoffer() { return this.makesOffer }
         set makesoffer(value) { this.makesOffer = value }
 
         member($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
-				parent: $this,
+				container: $this,
 				property: "member",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         memberOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
-				parent: $this,
+				container: $this,
 				property: "memberOf",
 				release: "11.01",
 				types: [
 					"Organization",
 					"ProgramMembership"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.ProgramMembership(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get memberof() { return this.memberOf }
         set memberof(value) { this.memberOf = value }
 
         members($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A member of this organization.",
-				parent: $this,
+				container: $this,
 				property: "members",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         naics($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-				parent: $this,
+				container: $this,
 				property: "naics",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         nonprofitStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.",
-				parent: $this,
+				container: $this,
 				property: "nonprofitStatus",
 				release: "11.01",
 				types: [
 					"NonprofitType"
-				]
-			};
-			return new window.LiveElement.Element.elements.NonprofitType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get nonprofitstatus() { return this.nonprofitStatus }
         set nonprofitstatus(value) { this.nonprofitStatus = value }
 
         numberOfEmployees($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of employees in an organization e.g. business.",
-				parent: $this,
+				container: $this,
 				property: "numberOfEmployees",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofemployees() { return this.numberOfEmployees }
         set numberofemployees(value) { this.numberOfEmployees = value }
 
         ownershipFundingInfo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news\\/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
-				parent: $this,
+				container: $this,
 				property: "ownershipFundingInfo",
 				release: "11.01",
 				types: [
@@ -759,211 +805,226 @@
 					"Text",
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.AboutPage(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ownershipfundinginfo() { return this.ownershipFundingInfo }
         set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
 
         owns($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Products owned by the organization or person.",
-				parent: $this,
+				container: $this,
 				property: "owns",
 				release: "11.01",
 				types: [
 					"OwnershipInfo",
 					"Product"
-				]
-			};
-			return new window.LiveElement.Element.elements.OwnershipInfo(value, property) || new window.LiveElement.Element.elements.Product(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         parentOrganization($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The larger organization that this organization is a [[subOrganization]] of, if any.",
-				parent: $this,
+				container: $this,
 				property: "parentOrganization",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get parentorganization() { return this.parentOrganization }
         set parentorganization(value) { this.parentOrganization = value }
 
         publishingPrinciples($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].\n\nWhile such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.\n",
-				parent: $this,
+				container: $this,
 				property: "publishingPrinciples",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get publishingprinciples() { return this.publishingPrinciples }
         set publishingprinciples(value) { this.publishingPrinciples = value }
 
         review($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A review of the item.",
-				parent: $this,
+				container: $this,
 				property: "review",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         reviews($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Review of the item.",
-				parent: $this,
+				container: $this,
 				property: "reviews",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         seeks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A pointer to products or services sought by the organization or person (demand).",
-				parent: $this,
+				container: $this,
 				property: "seeks",
 				release: "11.01",
 				types: [
 					"Demand"
-				]
-			};
-			return new window.LiveElement.Element.elements.Demand(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         serviceArea($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where the service is provided.",
-				parent: $this,
+				container: $this,
 				property: "serviceArea",
 				release: "11.01",
 				types: [
 					"Place",
 					"AdministrativeArea",
 					"GeoShape"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servicearea() { return this.serviceArea }
         set servicearea(value) { this.serviceArea = value }
 
         slogan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A slogan or motto associated with the item.",
-				parent: $this,
+				container: $this,
 				property: "slogan",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         sponsor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-				parent: $this,
+				container: $this,
 				property: "sponsor",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         subOrganization($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.",
-				parent: $this,
+				container: $this,
 				property: "subOrganization",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suborganization() { return this.subOrganization }
         set suborganization(value) { this.subOrganization = value }
 
         taxID($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Tax \\/ Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF\\/NIF in Spain.",
-				parent: $this,
+				container: $this,
 				property: "taxID",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get taxid() { return this.taxID }
         set taxid(value) { this.taxID = value }
 
         telephone($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The telephone number.",
-				parent: $this,
+				container: $this,
 				property: "telephone",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         unnamedSourcesPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.",
-				parent: $this,
+				container: $this,
 				property: "unnamedSourcesPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
         set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
 
         vatID($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Value-added Tax ID of the organization or person.",
-				parent: $this,
+				container: $this,
 				property: "vatID",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get vatid() { return this.vatID }
         set vatid(value) { this.vatID = value }

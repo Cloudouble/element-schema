@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ContactPoint'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A contact point&#x2014;for example, a Customer Complaints department.'
         static _rdfs_label = 'ContactPoint'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ContactPoint')
         }
         
         connectedCallback() {
@@ -33,9 +30,9 @@
         
         
         areaServed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where a service or offered item is provided.",
-				parent: $this,
+				container: $this,
 				property: "areaServed",
 				release: "11.01",
 				types: [
@@ -43,146 +40,156 @@
 					"AdministrativeArea",
 					"GeoShape",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
 
         availableLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
-				parent: $this,
+				container: $this,
 				property: "availableLanguage",
 				release: "11.01",
 				types: [
 					"Language",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Language(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
 
         contactOption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
-				parent: $this,
+				container: $this,
 				property: "contactOption",
 				release: "11.01",
 				types: [
 					"ContactPointOption"
-				]
-			};
-			return new window.LiveElement.Element.elements.ContactPointOption(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contactoption() { return this.contactOption }
         set contactoption(value) { this.contactOption = value }
 
         contactType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
-				parent: $this,
+				container: $this,
 				property: "contactType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contacttype() { return this.contactType }
         set contacttype(value) { this.contactType = value }
 
         email($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Email address.",
-				parent: $this,
+				container: $this,
 				property: "email",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         faxNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The fax number.",
-				parent: $this,
+				container: $this,
 				property: "faxNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
 
         hoursAvailable($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The hours during which this service or contact is available.",
-				parent: $this,
+				container: $this,
 				property: "hoursAvailable",
 				release: "11.01",
 				types: [
 					"OpeningHoursSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.OpeningHoursSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hoursavailable() { return this.hoursAvailable }
         set hoursavailable(value) { this.hoursAvailable = value }
 
         productSupported($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
-				parent: $this,
+				container: $this,
 				property: "productSupported",
 				release: "11.01",
 				types: [
 					"Product",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productsupported() { return this.productSupported }
         set productsupported(value) { this.productSupported = value }
 
         serviceArea($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where the service is provided.",
-				parent: $this,
+				container: $this,
 				property: "serviceArea",
 				release: "11.01",
 				types: [
 					"Place",
 					"AdministrativeArea",
 					"GeoShape"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servicearea() { return this.serviceArea }
         set servicearea(value) { this.serviceArea = value }
 
         telephone($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The telephone number.",
-				parent: $this,
+				container: $this,
 				property: "telephone",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

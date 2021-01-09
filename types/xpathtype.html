@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:XPathType'
         static __type = 'rdfs:Class'
+        static __extends = 'Text'
         static _rdfs_comment = 'Text representing an XPath (typically but not necessarily version 1.0).'
         static _rdfs_label = 'XPathType'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('XPathType')
         }
         
         connectedCallback() {

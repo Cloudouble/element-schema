@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ImageGallery'
         static __type = 'rdfs:Class'
+        static __extends = 'MediaGallery'
         static _rdfs_comment = 'Web page type: Image gallery page.'
         static _rdfs_label = 'ImageGallery'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ImageGallery')
         }
         
         connectedCallback() {

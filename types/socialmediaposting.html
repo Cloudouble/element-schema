@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SocialMediaPosting'
         static __type = 'rdfs:Class'
+        static __extends = 'Article'
         static _rdfs_comment = 'A post to a social media platform, including blog posts, tweets, Facebook posts, etc.'
         static _rdfs_label = 'SocialMediaPosting'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SocialMediaPosting')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         sharedContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A CreativeWork such as an image, video, or audio clip shared as part of this posting.",
-				parent: $this,
+				container: $this,
 				property: "sharedContent",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sharedcontent() { return this.sharedContent }
         set sharedcontent(value) { this.sharedContent = value }

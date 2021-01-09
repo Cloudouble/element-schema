@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BusinessAudience'
         static __type = 'rdfs:Class'
+        static __extends = 'Audience'
         static _rdfs_comment = 'A set of characteristics belonging to businesses, e.g. who compose an item\'s target audience.'
         static _rdfs_label = 'BusinessAudience'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BusinessAudience')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         numberOfEmployees($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of employees in an organization e.g. business.",
-				parent: $this,
+				container: $this,
 				property: "numberOfEmployees",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofemployees() { return this.numberOfEmployees }
         set numberofemployees(value) { this.numberOfEmployees = value }
 
         yearlyRevenue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The size of the business in annual revenue.",
-				parent: $this,
+				container: $this,
 				property: "yearlyRevenue",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get yearlyrevenue() { return this.yearlyRevenue }
         set yearlyrevenue(value) { this.yearlyRevenue = value }
 
         yearsInOperation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The age of the business.",
-				parent: $this,
+				container: $this,
 				property: "yearsInOperation",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get yearsinoperation() { return this.yearsInOperation }
         set yearsinoperation(value) { this.yearsInOperation = value }

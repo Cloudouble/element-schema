@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Service'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A service provided by an organization, e.g. delivery service, print services, etc.'
         static _rdfs_label = 'Service'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Service')
         }
         
         connectedCallback() {
@@ -33,24 +30,25 @@
         
         
         aggregateRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
-				parent: $this,
+				container: $this,
 				property: "aggregateRating",
 				release: "11.01",
 				types: [
 					"AggregateRating"
-				]
-			};
-			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
         areaServed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where a service or offered item is provided.",
-				parent: $this,
+				container: $this,
 				property: "areaServed",
 				release: "11.01",
 				types: [
@@ -58,86 +56,92 @@
 					"AdministrativeArea",
 					"GeoShape",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
 
         audience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
-				parent: $this,
+				container: $this,
 				property: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         availableChannel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).",
-				parent: $this,
+				container: $this,
 				property: "availableChannel",
 				release: "11.01",
 				types: [
 					"ServiceChannel"
-				]
-			};
-			return new window.LiveElement.Element.elements.ServiceChannel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablechannel() { return this.availableChannel }
         set availablechannel(value) { this.availableChannel = value }
 
         award($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An award won by or for this item.",
-				parent: $this,
+				container: $this,
 				property: "award",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         brand($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-				parent: $this,
+				container: $this,
 				property: "brand",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Brand"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Brand(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         broker($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
-				parent: $this,
+				container: $this,
 				property: "broker",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         category($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-				parent: $this,
+				container: $this,
 				property: "category",
 				release: "11.01",
 				types: [
@@ -145,244 +149,261 @@
 					"Thing",
 					"PhysicalActivityCategory",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         hasOfferCatalog($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-				parent: $this,
+				container: $this,
 				property: "hasOfferCatalog",
 				release: "11.01",
 				types: [
 					"OfferCatalog"
-				]
-			};
-			return new window.LiveElement.Element.elements.OfferCatalog(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hasoffercatalog() { return this.hasOfferCatalog }
         set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
         hoursAvailable($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The hours during which this service or contact is available.",
-				parent: $this,
+				container: $this,
 				property: "hoursAvailable",
 				release: "11.01",
 				types: [
 					"OpeningHoursSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.OpeningHoursSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hoursavailable() { return this.hoursAvailable }
         set hoursavailable(value) { this.hoursAvailable = value }
 
         isRelatedTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A pointer to another, somehow related product (or multiple products).",
-				parent: $this,
+				container: $this,
 				property: "isRelatedTo",
 				release: "11.01",
 				types: [
 					"Product",
 					"Service"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isrelatedto() { return this.isRelatedTo }
         set isrelatedto(value) { this.isRelatedTo = value }
 
         isSimilarTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A pointer to another, functionally similar product (or multiple products).",
-				parent: $this,
+				container: $this,
 				property: "isSimilarTo",
 				release: "11.01",
 				types: [
 					"Product",
 					"Service"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get issimilarto() { return this.isSimilarTo }
         set issimilarto(value) { this.isSimilarTo = value }
 
         logo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An associated logo.",
-				parent: $this,
+				container: $this,
 				property: "logo",
 				release: "11.01",
 				types: [
 					"ImageObject",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         offers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
-				parent: $this,
+				container: $this,
 				property: "offers",
 				release: "11.01",
 				types: [
 					"Demand",
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         produces($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The tangible thing generated by the service, e.g. a passport, permit, etc.",
-				parent: $this,
+				container: $this,
 				property: "produces",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         provider($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
-				parent: $this,
+				container: $this,
 				property: "provider",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         providerMobility($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the mobility of a provided service (e.g. 'static', 'dynamic').",
-				parent: $this,
+				container: $this,
 				property: "providerMobility",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get providermobility() { return this.providerMobility }
         set providermobility(value) { this.providerMobility = value }
 
         review($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A review of the item.",
-				parent: $this,
+				container: $this,
 				property: "review",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         serviceArea($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where the service is provided.",
-				parent: $this,
+				container: $this,
 				property: "serviceArea",
 				release: "11.01",
 				types: [
 					"Place",
 					"AdministrativeArea",
 					"GeoShape"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servicearea() { return this.serviceArea }
         set servicearea(value) { this.serviceArea = value }
 
         serviceAudience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The audience eligible for this service.",
-				parent: $this,
+				container: $this,
 				property: "serviceAudience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get serviceaudience() { return this.serviceAudience }
         set serviceaudience(value) { this.serviceAudience = value }
 
         serviceOutput($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The tangible thing generated by the service, e.g. a passport, permit, etc.",
-				parent: $this,
+				container: $this,
 				property: "serviceOutput",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get serviceoutput() { return this.serviceOutput }
         set serviceoutput(value) { this.serviceOutput = value }
 
         serviceType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of service being offered, e.g. veterans' benefits, emergency relief, etc.",
-				parent: $this,
+				container: $this,
 				property: "serviceType",
 				release: "11.01",
 				types: [
 					"GovernmentBenefitsType",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.GovernmentBenefitsType(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servicetype() { return this.serviceType }
         set servicetype(value) { this.serviceType = value }
 
         slogan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A slogan or motto associated with the item.",
-				parent: $this,
+				container: $this,
 				property: "slogan",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         termsOfService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Human-readable terms of service documentation.",
-				parent: $this,
+				container: $this,
 				property: "termsOfService",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get termsofservice() { return this.termsOfService }
         set termsofservice(value) { this.termsOfService = value }

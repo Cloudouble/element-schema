@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DefinedTerm'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.'
         static _rdfs_label = 'DefinedTerm'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DefinedTerm')
         }
         
         connectedCallback() {
@@ -33,32 +30,34 @@
         
         
         inDefinedTermSet($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A [[DefinedTermSet]] that contains this term.",
-				parent: $this,
+				container: $this,
 				property: "inDefinedTermSet",
 				release: "11.01",
 				types: [
 					"DefinedTermSet",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedTermSet(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get indefinedtermset() { return this.inDefinedTermSet }
         set indefinedtermset(value) { this.inDefinedTermSet = value }
 
         termCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]",
-				parent: $this,
+				container: $this,
 				property: "termCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get termcode() { return this.termCode }
         set termcode(value) { this.termCode = value }

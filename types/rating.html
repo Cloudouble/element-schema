@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Rating'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
         static _rdfs_label = 'Rating'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Rating')
         }
         
         connectedCallback() {
@@ -33,93 +30,99 @@
         
         
         author($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
-				parent: $this,
+				container: $this,
 				property: "author",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         bestRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.",
-				parent: $this,
+				container: $this,
 				property: "bestRating",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bestrating() { return this.bestRating }
         set bestrating(value) { this.bestRating = value }
 
         ratingExplanation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with \"fact check\" markup using [[ClaimReview]].",
-				parent: $this,
+				container: $this,
 				property: "ratingExplanation",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ratingexplanation() { return this.ratingExplanation }
         set ratingexplanation(value) { this.ratingExplanation = value }
 
         ratingValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The rating for the content.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
-				parent: $this,
+				container: $this,
 				property: "ratingValue",
 				release: "11.01",
 				types: [
 					"Text",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ratingvalue() { return this.ratingValue }
         set ratingvalue(value) { this.ratingValue = value }
 
         reviewAspect($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
-				parent: $this,
+				container: $this,
 				property: "reviewAspect",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }
 
         worstRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.",
-				parent: $this,
+				container: $this,
 				property: "worstRating",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get worstrating() { return this.worstRating }
         set worstrating(value) { this.worstRating = value }

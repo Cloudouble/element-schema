@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PreventionIndication'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalIndication'
         static _rdfs_comment = 'An indication for preventing an underlying condition, symptom, etc.'
         static _rdfs_label = 'PreventionIndication'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PreventionIndication')
         }
         
         connectedCallback() {

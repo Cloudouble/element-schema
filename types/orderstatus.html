@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OrderStatus'
         static __type = 'rdfs:Class'
+        static __extends = 'StatusEnumeration'
         static _rdfs_comment = 'Enumerated status values for Order.'
         static _rdfs_label = 'OrderStatus'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OrderStatus')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LoanOrCredit'
         static __type = 'rdfs:Class'
+        static __extends = 'FinancialProduct'
         static _rdfs_comment = 'A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.'
         static _rdfs_label = 'LoanOrCredit'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LoanOrCredit')
         }
         
         connectedCallback() {
@@ -33,135 +30,144 @@
         
         
         amount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of money.",
-				parent: $this,
+				container: $this,
 				property: "amount",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         currency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
-				parent: $this,
+				container: $this,
 				property: "currency",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         gracePeriod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
-				parent: $this,
+				container: $this,
 				property: "gracePeriod",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get graceperiod() { return this.gracePeriod }
         set graceperiod(value) { this.gracePeriod = value }
 
         loanRepaymentForm($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
-				parent: $this,
+				container: $this,
 				property: "loanRepaymentForm",
 				release: "11.01",
 				types: [
 					"RepaymentSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.RepaymentSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get loanrepaymentform() { return this.loanRepaymentForm }
         set loanrepaymentform(value) { this.loanRepaymentForm = value }
 
         loanTerm($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the loan or credit agreement.",
-				parent: $this,
+				container: $this,
 				property: "loanTerm",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get loanterm() { return this.loanTerm }
         set loanterm(value) { this.loanTerm = value }
 
         loanType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of a loan or credit.",
-				parent: $this,
+				container: $this,
 				property: "loanType",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get loantype() { return this.loanType }
         set loantype(value) { this.loanType = value }
 
         recourseLoan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
-				parent: $this,
+				container: $this,
 				property: "recourseLoan",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recourseloan() { return this.recourseLoan }
         set recourseloan(value) { this.recourseLoan = value }
 
         renegotiableLoan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
-				parent: $this,
+				container: $this,
 				property: "renegotiableLoan",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get renegotiableloan() { return this.renegotiableLoan }
         set renegotiableloan(value) { this.renegotiableLoan = value }
 
         requiredCollateral($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
-				parent: $this,
+				container: $this,
 				property: "requiredCollateral",
 				release: "11.01",
 				types: [
 					"Thing",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiredcollateral() { return this.requiredCollateral }
         set requiredcollateral(value) { this.requiredCollateral = value }

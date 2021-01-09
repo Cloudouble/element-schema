@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PeopleAudience'
         static __type = 'rdfs:Class'
+        static __extends = 'Audience'
         static _rdfs_comment = 'A set of characteristics belonging to people, e.g. who compose an item\'s target audience.'
         static _rdfs_label = 'PeopleAudience'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PeopleAudience')
         }
         
         connectedCallback() {
@@ -33,106 +30,113 @@
         
         
         healthCondition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
-				parent: $this,
+				container: $this,
 				property: "healthCondition",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
 
         requiredGender($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Audiences defined by a person's gender.",
-				parent: $this,
+				container: $this,
 				property: "requiredGender",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiredgender() { return this.requiredGender }
         set requiredgender(value) { this.requiredGender = value }
 
         requiredMaxAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Audiences defined by a person's maximum age.",
-				parent: $this,
+				container: $this,
 				property: "requiredMaxAge",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiredmaxage() { return this.requiredMaxAge }
         set requiredmaxage(value) { this.requiredMaxAge = value }
 
         requiredMinAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Audiences defined by a person's minimum age.",
-				parent: $this,
+				container: $this,
 				property: "requiredMinAge",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiredminage() { return this.requiredMinAge }
         set requiredminage(value) { this.requiredMinAge = value }
 
         suggestedGender($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The gender of the person or audience.",
-				parent: $this,
+				container: $this,
 				property: "suggestedGender",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suggestedgender() { return this.suggestedGender }
         set suggestedgender(value) { this.suggestedGender = value }
 
         suggestedMaxAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Maximal age recommended for viewing content.",
-				parent: $this,
+				container: $this,
 				property: "suggestedMaxAge",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suggestedmaxage() { return this.suggestedMaxAge }
         set suggestedmaxage(value) { this.suggestedMaxAge = value }
 
         suggestedMinAge($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Minimal age recommended for viewing content.",
-				parent: $this,
+				container: $this,
 				property: "suggestedMinAge",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suggestedminage() { return this.suggestedMinAge }
         set suggestedminage(value) { this.suggestedMinAge = value }

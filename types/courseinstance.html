@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CourseInstance'
         static __type = 'rdfs:Class'
+        static __extends = 'Event'
         static _rdfs_comment = 'An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.'
         static _rdfs_label = 'CourseInstance'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CourseInstance')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         courseMode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. \"online\", \"onsite\" or \"blended\"; \"synchronous\" or \"asynchronous\"; \"full-time\" or \"part-time\") or as a URL reference to a term from a controlled vocabulary (e.g. https:\\/\\/ceds.ed.gov\\/element\\/001311#Asynchronous ).",
-				parent: $this,
+				container: $this,
 				property: "courseMode",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get coursemode() { return this.courseMode }
         set coursemode(value) { this.courseMode = value }
 
         courseWorkload($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, \"2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week\".",
-				parent: $this,
+				container: $this,
 				property: "courseWorkload",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get courseworkload() { return this.courseWorkload }
         set courseworkload(value) { this.courseWorkload = value }
 
         instructor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].",
-				parent: $this,
+				container: $this,
 				property: "instructor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

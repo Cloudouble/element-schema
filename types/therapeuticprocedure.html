@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TherapeuticProcedure'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalProcedure'
         static _rdfs_comment = 'A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.'
         static _rdfs_label = 'TherapeuticProcedure'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TherapeuticProcedure')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         adverseOutcome($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A possible complication and\\/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
-				parent: $this,
+				container: $this,
 				property: "adverseOutcome",
 				release: "11.01",
 				types: [
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get adverseoutcome() { return this.adverseOutcome }
         set adverseoutcome(value) { this.adverseOutcome = value }
 
         doseSchedule($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
-				parent: $this,
+				container: $this,
 				property: "doseSchedule",
 				release: "11.01",
 				types: [
 					"DoseSchedule"
-				]
-			};
-			return new window.LiveElement.Element.elements.DoseSchedule(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get doseschedule() { return this.doseSchedule }
         set doseschedule(value) { this.doseSchedule = value }
 
         drug($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying a drug or medicine used in a medication procedure",
-				parent: $this,
+				container: $this,
 				property: "drug",
 				release: "11.01",
 				types: [
 					"Drug"
-				]
-			};
-			return new window.LiveElement.Element.elements.Drug(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

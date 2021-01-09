@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PlanAction'
         static __type = 'rdfs:Class'
+        static __extends = 'OrganizeAction'
         static _rdfs_comment = 'The act of planning the execution of an event\/task\/action\/reservation\/plan to a future date.'
         static _rdfs_label = 'PlanAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PlanAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         scheduledTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time the object is scheduled to.",
-				parent: $this,
+				container: $this,
 				property: "scheduledTime",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get scheduledtime() { return this.scheduledTime }
         set scheduledtime(value) { this.scheduledTime = value }

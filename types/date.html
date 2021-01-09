@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Date'
         static __type = 'schema:DataType'
+        static __extends = 'DataType'
         static _rdfs_comment = 'A date value in [ISO 8601 date format](http:\/\/en.wikipedia.org\/wiki\/ISO_8601).'
         static _rdfs_label = 'Date'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Date')
         }
         
         connectedCallback() {

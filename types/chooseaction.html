@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ChooseAction'
         static __type = 'rdfs:Class'
+        static __extends = 'AssessAction'
         static _rdfs_comment = 'The act of expressing a preference from a set of options or a large or unbounded set of choices\/options.'
         static _rdfs_label = 'ChooseAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ChooseAction')
         }
         
         connectedCallback() {
@@ -33,33 +30,35 @@
         
         
         actionOption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The options subject to this action.",
-				parent: $this,
+				container: $this,
 				property: "actionOption",
 				release: "11.01",
 				types: [
 					"Thing",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get actionoption() { return this.actionOption }
         set actionoption(value) { this.actionOption = value }
 
         option($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The options subject to this action.",
-				parent: $this,
+				container: $this,
 				property: "option",
 				release: "11.01",
 				types: [
 					"Thing",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

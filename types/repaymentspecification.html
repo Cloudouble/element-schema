@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:RepaymentSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A structured value representing repayment.'
         static _rdfs_label = 'RepaymentSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('RepaymentSpecification')
         }
         
         connectedCallback() {
@@ -33,77 +30,82 @@
         
         
         downPayment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "a type of payment made in cash during the onset of the purchase of an expensive good\\/service. The payment typically represents only a percentage of the full purchase price.",
-				parent: $this,
+				container: $this,
 				property: "downPayment",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get downpayment() { return this.downPayment }
         set downpayment(value) { this.downPayment = value }
 
         earlyPrepaymentPenalty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount to be paid as a penalty in the event of early payment of the loan.",
-				parent: $this,
+				container: $this,
 				property: "earlyPrepaymentPenalty",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get earlyprepaymentpenalty() { return this.earlyPrepaymentPenalty }
         set earlyprepaymentpenalty(value) { this.earlyPrepaymentPenalty = value }
 
         loanPaymentAmount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of money to pay in a single payment.",
-				parent: $this,
+				container: $this,
 				property: "loanPaymentAmount",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get loanpaymentamount() { return this.loanPaymentAmount }
         set loanpaymentamount(value) { this.loanPaymentAmount = value }
 
         loanPaymentFrequency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.",
-				parent: $this,
+				container: $this,
 				property: "loanPaymentFrequency",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get loanpaymentfrequency() { return this.loanPaymentFrequency }
         set loanpaymentfrequency(value) { this.loanPaymentFrequency = value }
 
         numberOfLoanPayments($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.",
-				parent: $this,
+				container: $this,
 				property: "numberOfLoanPayments",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofloanpayments() { return this.numberOfLoanPayments }
         set numberofloanpayments(value) { this.numberOfLoanPayments = value }

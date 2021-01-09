@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalSymptom'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalSignOrSymptom'
         static _rdfs_comment = 'Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.'
         static _rdfs_label = 'MedicalSymptom'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalSymptom')
         }
         
         connectedCallback() {

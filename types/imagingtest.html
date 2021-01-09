@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ImagingTest'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalTest'
         static _rdfs_comment = 'Any medical imaging modality typically used for diagnostic purposes.'
         static _rdfs_label = 'ImagingTest'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ImagingTest')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         imagingTechnique($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Imaging technique used.",
-				parent: $this,
+				container: $this,
 				property: "imagingTechnique",
 				release: "11.01",
 				types: [
 					"MedicalImagingTechnique"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalImagingTechnique(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get imagingtechnique() { return this.imagingTechnique }
         set imagingtechnique(value) { this.imagingTechnique = value }

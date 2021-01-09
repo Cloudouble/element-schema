@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ImageObject'
         static __type = 'rdfs:Class'
+        static __extends = 'MediaObject'
         static _rdfs_comment = 'An image file.'
         static _rdfs_label = 'ImageObject'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ImageObject')
         }
         
         connectedCallback() {
@@ -33,61 +30,65 @@
         
         
         caption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
-				parent: $this,
+				container: $this,
 				property: "caption",
 				release: "11.01",
 				types: [
 					"Text",
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         exifData($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "exif data for this object.",
-				parent: $this,
+				container: $this,
 				property: "exifData",
 				release: "11.01",
 				types: [
 					"PropertyValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.PropertyValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exifdata() { return this.exifData }
         set exifdata(value) { this.exifData = value }
 
         representativeOfPage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether this image is representative of the content of the page.",
-				parent: $this,
+				container: $this,
 				property: "representativeOfPage",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get representativeofpage() { return this.representativeOfPage }
         set representativeofpage(value) { this.representativeOfPage = value }
 
         thumbnail($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Thumbnail image for an image or video.",
-				parent: $this,
+				container: $this,
 				property: "thumbnail",
 				release: "11.01",
 				types: [
 					"ImageObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

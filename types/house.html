@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:House'
         static __type = 'rdfs:Class'
+        static __extends = 'Accommodation'
         static _rdfs_comment = 'A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see <a href="http:\/\/en.wikipedia.org\/wiki\/House">http:\/\/en.wikipedia.org\/wiki\/House<\/a>).'
         static _rdfs_label = 'House'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('House')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         numberOfRooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-				parent: $this,
+				container: $this,
 				property: "numberOfRooms",
 				release: "11.01",
 				types: [
 					"Number",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofrooms() { return this.numberOfRooms }
         set numberofrooms(value) { this.numberOfRooms = value }

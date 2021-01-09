@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PerformAction'
         static __type = 'rdfs:Class'
+        static __extends = 'PlayAction'
         static _rdfs_comment = 'The act of participating in performance arts.'
         static _rdfs_label = 'PerformAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PerformAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         entertainmentBusiness($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The entertainment business where the action occurred.",
-				parent: $this,
+				container: $this,
 				property: "entertainmentBusiness",
 				release: "11.01",
 				types: [
 					"EntertainmentBusiness"
-				]
-			};
-			return new window.LiveElement.Element.elements.EntertainmentBusiness(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get entertainmentbusiness() { return this.entertainmentBusiness }
         set entertainmentbusiness(value) { this.entertainmentBusiness = value }

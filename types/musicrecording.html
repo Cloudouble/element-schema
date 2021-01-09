@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicRecording'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A music recording (track), usually a single song.'
         static _rdfs_label = 'MusicRecording'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicRecording')
         }
         
         connectedCallback() {
@@ -33,90 +30,96 @@
         
         
         byArtist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The artist that performed this album or recording.",
-				parent: $this,
+				container: $this,
 				property: "byArtist",
 				release: "11.01",
 				types: [
 					"MusicGroup",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicGroup(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get byartist() { return this.byArtist }
         set byartist(value) { this.byArtist = value }
 
         duration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         inAlbum($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The album to which this recording belongs.",
-				parent: $this,
+				container: $this,
 				property: "inAlbum",
 				release: "11.01",
 				types: [
 					"MusicAlbum"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inalbum() { return this.inAlbum }
         set inalbum(value) { this.inAlbum = value }
 
         inPlaylist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The playlist to which this recording belongs.",
-				parent: $this,
+				container: $this,
 				property: "inPlaylist",
 				release: "11.01",
 				types: [
 					"MusicPlaylist"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicPlaylist(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inplaylist() { return this.inPlaylist }
         set inplaylist(value) { this.inPlaylist = value }
 
         isrcCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The International Standard Recording Code for the recording.",
-				parent: $this,
+				container: $this,
 				property: "isrcCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isrccode() { return this.isrcCode }
         set isrccode(value) { this.isrcCode = value }
 
         recordingOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The composition this track is a recording of.",
-				parent: $this,
+				container: $this,
 				property: "recordingOf",
 				release: "11.01",
 				types: [
 					"MusicComposition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicComposition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recordingof() { return this.recordingOf }
         set recordingof(value) { this.recordingOf = value }

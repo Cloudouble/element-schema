@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WebApplication'
         static __type = 'rdfs:Class'
+        static __extends = 'SoftwareApplication'
         static _rdfs_comment = 'Web applications.'
         static _rdfs_label = 'WebApplication'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WebApplication')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         browserRequirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.",
-				parent: $this,
+				container: $this,
 				property: "browserRequirements",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get browserrequirements() { return this.browserRequirements }
         set browserrequirements(value) { this.browserRequirements = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:VoteAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ChooseAction'
         static _rdfs_comment = 'The act of expressing a preference from a fixed\/finite\/structured set of choices\/options.'
         static _rdfs_label = 'VoteAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('VoteAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         candidate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The candidate subject of this action.",
-				parent: $this,
+				container: $this,
 				property: "candidate",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

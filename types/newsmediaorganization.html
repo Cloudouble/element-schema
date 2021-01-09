@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:NewsMediaOrganization'
         static __type = 'rdfs:Class'
+        static __extends = 'Organization'
         static _rdfs_comment = 'A News\/Media organization such as a newspaper or TV station.'
         static _rdfs_label = 'NewsMediaOrganization'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('NewsMediaOrganization')
         }
         
         connectedCallback() {
@@ -33,135 +30,143 @@
         
         
         actionableFeedbackPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
-				parent: $this,
+				container: $this,
 				property: "actionableFeedbackPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
         set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
 
         correctionsPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
-				parent: $this,
+				container: $this,
 				property: "correctionsPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get correctionspolicy() { return this.correctionsPolicy }
         set correctionspolicy(value) { this.correctionsPolicy = value }
 
         diversityPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom\u2019s diversity policy on both staffing and sources, typically providing staffing data.",
-				parent: $this,
+				container: $this,
 				property: "diversityPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get diversitypolicy() { return this.diversityPolicy }
         set diversitypolicy(value) { this.diversityPolicy = value }
 
         diversityStaffingReport($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.",
-				parent: $this,
+				container: $this,
 				property: "diversityStaffingReport",
 				release: "11.01",
 				types: [
 					"Article",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Article(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get diversitystaffingreport() { return this.diversityStaffingReport }
         set diversitystaffingreport(value) { this.diversityStaffingReport = value }
 
         ethicsPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
-				parent: $this,
+				container: $this,
 				property: "ethicsPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ethicspolicy() { return this.ethicsPolicy }
         set ethicspolicy(value) { this.ethicsPolicy = value }
 
         masthead($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.",
-				parent: $this,
+				container: $this,
 				property: "masthead",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         missionCoveragePrioritiesPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.",
-				parent: $this,
+				container: $this,
 				property: "missionCoveragePrioritiesPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get missioncoverageprioritiespolicy() { return this.missionCoveragePrioritiesPolicy }
         set missioncoverageprioritiespolicy(value) { this.missionCoveragePrioritiesPolicy = value }
 
         noBylinesPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.",
-				parent: $this,
+				container: $this,
 				property: "noBylinesPolicy",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get nobylinespolicy() { return this.noBylinesPolicy }
         set nobylinespolicy(value) { this.noBylinesPolicy = value }
 
         ownershipFundingInfo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news\\/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.",
-				parent: $this,
+				container: $this,
 				property: "ownershipFundingInfo",
 				release: "11.01",
 				types: [
@@ -169,41 +174,44 @@
 					"Text",
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.AboutPage(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ownershipfundinginfo() { return this.ownershipFundingInfo }
         set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
 
         unnamedSourcesPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.",
-				parent: $this,
+				container: $this,
 				property: "unnamedSourcesPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
         set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
 
         verificationFactCheckingPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].",
-				parent: $this,
+				container: $this,
 				property: "verificationFactCheckingPolicy",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get verificationfactcheckingpolicy() { return this.verificationFactCheckingPolicy }
         set verificationfactcheckingpolicy(value) { this.verificationFactCheckingPolicy = value }

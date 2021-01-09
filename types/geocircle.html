@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:GeoCircle'
         static __type = 'rdfs:Class'
+        static __extends = 'GeoShape'
         static _rdfs_comment = 'A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape           it provides the simple textual property \'circle\', but also allows the combination of postalCode alongside geoRadius.           The center of the circle can be indicated via the \'geoMidpoint\' property, or more approximately using \'address\', \'postalCode\'.        '
         static _rdfs_label = 'GeoCircle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('GeoCircle')
         }
         
         connectedCallback() {
@@ -33,33 +30,35 @@
         
         
         geoMidpoint($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.",
-				parent: $this,
+				container: $this,
 				property: "geoMidpoint",
 				release: "11.01",
 				types: [
 					"GeoCoordinates"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeoCoordinates(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geomidpoint() { return this.geoMidpoint }
         set geomidpoint(value) { this.geoMidpoint = value }
 
         geoRadius($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
-				parent: $this,
+				container: $this,
 				property: "geoRadius",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text",
 					"Distance"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get georadius() { return this.geoRadius }
         set georadius(value) { this.geoRadius = value }

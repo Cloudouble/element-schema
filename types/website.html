@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WebSite'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.'
         static _rdfs_label = 'WebSite'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WebSite')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         issn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.",
-				parent: $this,
+				container: $this,
 				property: "issn",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

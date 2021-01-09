@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MathSolver'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A math solver which is capable of solving a subset of mathematical problems.'
         static _rdfs_label = 'MathSolver'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MathSolver')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         mathExpression($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.",
-				parent: $this,
+				container: $this,
 				property: "mathExpression",
 				release: "11.01",
 				types: [
 					"Text",
 					"SolveMathAction"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.SolveMathAction(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get mathexpression() { return this.mathExpression }
         set mathexpression(value) { this.mathExpression = value }

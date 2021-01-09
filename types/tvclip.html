@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TVClip'
         static __type = 'rdfs:Class'
+        static __extends = 'Clip'
         static _rdfs_comment = 'A short TV program or a segment\/part of a TV program.'
         static _rdfs_label = 'TVClip'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TVClip')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         partOfTVSeries($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The TV series to which this episode or season belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfTVSeries",
 				release: "11.01",
 				types: [
 					"TVSeries"
-				]
-			};
-			return new window.LiveElement.Element.elements.TVSeries(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }

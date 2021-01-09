@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Residence'
         static __type = 'rdfs:Class'
+        static __extends = 'Place'
         static _rdfs_comment = 'The place where a person lives.'
         static _rdfs_label = 'Residence'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Residence')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         accommodationFloorPlan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A floorplan of some [[Accommodation]].",
-				parent: $this,
+				container: $this,
 				property: "accommodationFloorPlan",
 				release: "11.01",
 				types: [
 					"FloorPlan"
-				]
-			};
-			return new window.LiveElement.Element.elements.FloorPlan(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get accommodationfloorplan() { return this.accommodationFloorPlan }
         set accommodationfloorplan(value) { this.accommodationFloorPlan = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HyperToc'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A HyperToc represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. Items in the table of contents are indicated using the [[tocEntry]] property, and typed [[HyperTocEntry]]. For cases where the same larger work is split into multiple files, [[associatedMedia]] can be used on individual [[HyperTocEntry]] items.'
         static _rdfs_label = 'HyperToc'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HyperToc')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         associatedMedia($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
-				parent: $this,
+				container: $this,
 				property: "associatedMedia",
 				release: "11.01",
 				types: [
 					"MediaObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.MediaObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get associatedmedia() { return this.associatedMedia }
         set associatedmedia(value) { this.associatedMedia = value }
 
         tocEntry($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a [[HyperTocEntry]] in a [[HyperToc]].",
-				parent: $this,
+				container: $this,
 				property: "tocEntry",
 				release: "11.01",
 				types: [
 					"HyperTocEntry"
-				]
-			};
-			return new window.LiveElement.Element.elements.HyperTocEntry(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tocentry() { return this.tocEntry }
         set tocentry(value) { this.tocEntry = value }

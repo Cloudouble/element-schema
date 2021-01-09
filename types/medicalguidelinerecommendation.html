@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalGuidelineRecommendation'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalGuideline'
         static _rdfs_comment = 'A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound.'
         static _rdfs_label = 'MedicalGuidelineRecommendation'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalGuidelineRecommendation')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         recommendationStrength($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Strength of the guideline's recommendation (e.g. 'class I').",
-				parent: $this,
+				container: $this,
 				property: "recommendationStrength",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recommendationstrength() { return this.recommendationStrength }
         set recommendationstrength(value) { this.recommendationStrength = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalProcedure'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.'
         static _rdfs_label = 'MedicalProcedure'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalProcedure')
         }
         
         connectedCallback() {
@@ -33,90 +30,96 @@
         
         
         bodyLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Location in the body of the anatomical structure.",
-				parent: $this,
+				container: $this,
 				property: "bodyLocation",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bodylocation() { return this.bodyLocation }
         set bodylocation(value) { this.bodyLocation = value }
 
         followup($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Typical or recommended followup care after the procedure is performed.",
-				parent: $this,
+				container: $this,
 				property: "followup",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         howPerformed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "How the procedure is performed.",
-				parent: $this,
+				container: $this,
 				property: "howPerformed",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get howperformed() { return this.howPerformed }
         set howperformed(value) { this.howPerformed = value }
 
         preparation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Typical preparation that a patient must undergo before having the procedure performed.",
-				parent: $this,
+				container: $this,
 				property: "preparation",
 				release: "11.01",
 				types: [
 					"Text",
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         procedureType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of procedure, for example Surgical, Noninvasive, or Percutaneous.",
-				parent: $this,
+				container: $this,
 				property: "procedureType",
 				release: "11.01",
 				types: [
 					"MedicalProcedureType"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalProcedureType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get proceduretype() { return this.procedureType }
         set proceduretype(value) { this.procedureType = value }
 
         status($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The status of the study (enumerated).",
-				parent: $this,
+				container: $this,
 				property: "status",
 				release: "11.01",
 				types: [
 					"Text",
 					"EventStatusType",
 					"MedicalStudyStatus"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.EventStatusType(value, property) || new window.LiveElement.Element.elements.MedicalStudyStatus(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

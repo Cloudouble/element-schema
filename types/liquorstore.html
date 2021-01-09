@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LiquorStore'
         static __type = 'rdfs:Class'
+        static __extends = 'Store'
         static _rdfs_comment = 'A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.'
         static _rdfs_label = 'LiquorStore'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LiquorStore')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SolveMathAction'
         static __type = 'rdfs:Class'
+        static __extends = 'Action'
         static _rdfs_comment = 'The action that takes in a math expression and directs users to a page potentially capable of solving\/simplifying that expression.'
         static _rdfs_label = 'SolveMathAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SolveMathAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         eduQuestionType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
-				parent: $this,
+				container: $this,
 				property: "eduQuestionType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eduquestiontype() { return this.eduQuestionType }
         set eduquestiontype(value) { this.eduQuestionType = value }

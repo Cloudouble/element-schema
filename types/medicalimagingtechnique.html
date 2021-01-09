@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalImagingTechnique'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEnumeration'
         static _rdfs_comment = 'Any medical imaging modality typically used for diagnostic purposes. Enumerated type.'
         static _rdfs_label = 'MedicalImagingTechnique'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalImagingTechnique')
         }
         
         connectedCallback() {

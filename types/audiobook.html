@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Audiobook'
         static __type = 'rdfs:Class'
+        static __extends = 'AudioObject'
         static _rdfs_comment = 'An audiobook.'
         static _rdfs_label = 'Audiobook'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Audiobook')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         duration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         readBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person who reads (performs) the audiobook.",
-				parent: $this,
+				container: $this,
 				property: "readBy",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get readby() { return this.readBy }
         set readby(value) { this.readBy = value }

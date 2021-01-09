@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BroadcastChannel'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A unique instance of a BroadcastService on a CableOrSatelliteService lineup.'
         static _rdfs_label = 'BroadcastChannel'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BroadcastChannel')
         }
         
         connectedCallback() {
@@ -33,91 +30,97 @@
         
         
         broadcastChannelId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
-				parent: $this,
+				container: $this,
 				property: "broadcastChannelId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastchannelid() { return this.broadcastChannelId }
         set broadcastchannelid(value) { this.broadcastChannelId = value }
 
         broadcastFrequency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
-				parent: $this,
+				container: $this,
 				property: "broadcastFrequency",
 				release: "11.01",
 				types: [
 					"Text",
 					"BroadcastFrequencySpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.BroadcastFrequencySpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastfrequency() { return this.broadcastFrequency }
         set broadcastfrequency(value) { this.broadcastFrequency = value }
 
         broadcastServiceTier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of service required to have access to the channel (e.g. Standard or Premium).",
-				parent: $this,
+				container: $this,
 				property: "broadcastServiceTier",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastservicetier() { return this.broadcastServiceTier }
         set broadcastservicetier(value) { this.broadcastServiceTier = value }
 
         genre($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Genre of the creative work, broadcast channel or group.",
-				parent: $this,
+				container: $this,
 				property: "genre",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         inBroadcastLineup($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The CableOrSatelliteService offering the channel.",
-				parent: $this,
+				container: $this,
 				property: "inBroadcastLineup",
 				release: "11.01",
 				types: [
 					"CableOrSatelliteService"
-				]
-			};
-			return new window.LiveElement.Element.elements.CableOrSatelliteService(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inbroadcastlineup() { return this.inBroadcastLineup }
         set inbroadcastlineup(value) { this.inBroadcastLineup = value }
 
         providesBroadcastService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The BroadcastService offered on this channel.",
-				parent: $this,
+				container: $this,
 				property: "providesBroadcastService",
 				release: "11.01",
 				types: [
 					"BroadcastService"
-				]
-			};
-			return new window.LiveElement.Element.elements.BroadcastService(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get providesbroadcastservice() { return this.providesBroadcastService }
         set providesbroadcastservice(value) { this.providesBroadcastService = value }

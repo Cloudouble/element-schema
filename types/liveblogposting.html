@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LiveBlogPosting'
         static __type = 'rdfs:Class'
+        static __extends = 'BlogPosting'
         static _rdfs_comment = 'A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.'
         static _rdfs_label = 'LiveBlogPosting'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LiveBlogPosting')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         coverageEndTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
-				parent: $this,
+				container: $this,
 				property: "coverageEndTime",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get coverageendtime() { return this.coverageEndTime }
         set coverageendtime(value) { this.coverageEndTime = value }
 
         coverageStartTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
-				parent: $this,
+				container: $this,
 				property: "coverageStartTime",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get coveragestarttime() { return this.coverageStartTime }
         set coveragestarttime(value) { this.coverageStartTime = value }
 
         liveBlogUpdate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An update to the LiveBlog.",
-				parent: $this,
+				container: $this,
 				property: "liveBlogUpdate",
 				release: "11.01",
 				types: [
 					"BlogPosting"
-				]
-			};
-			return new window.LiveElement.Element.elements.BlogPosting(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get liveblogupdate() { return this.liveBlogUpdate }
         set liveblogupdate(value) { this.liveBlogUpdate = value }

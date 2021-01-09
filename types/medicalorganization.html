@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalOrganization'
         static __type = 'rdfs:Class'
+        static __extends = 'Organization'
         static _rdfs_comment = 'A medical organization (physical or not), such as hospital, institution or clinic.'
         static _rdfs_label = 'MedicalOrganization'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalOrganization')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         healthPlanNetworkId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Name or unique ID of network. (Networks are often reused across different insurance plans).",
-				parent: $this,
+				container: $this,
 				property: "healthPlanNetworkId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplannetworkid() { return this.healthPlanNetworkId }
         set healthplannetworkid(value) { this.healthPlanNetworkId = value }
 
         isAcceptingNewPatients($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the provider is accepting new patients.",
-				parent: $this,
+				container: $this,
 				property: "isAcceptingNewPatients",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isacceptingnewpatients() { return this.isAcceptingNewPatients }
         set isacceptingnewpatients(value) { this.isAcceptingNewPatients = value }
 
         medicalSpecialty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical specialty of the provider.",
-				parent: $this,
+				container: $this,
 				property: "medicalSpecialty",
 				release: "11.01",
 				types: [
 					"MedicalSpecialty"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }

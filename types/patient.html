@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Patient'
         static __type = 'rdfs:Class'
+        static __extends = 'Person'
         static _rdfs_comment = 'A patient is any person recipient of health care services.'
         static _rdfs_label = 'Patient'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Patient')
         }
         
         connectedCallback() {
@@ -33,42 +30,45 @@
         
         
         diagnosis($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
-				parent: $this,
+				container: $this,
 				property: "diagnosis",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         drug($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying a drug or medicine used in a medication procedure",
-				parent: $this,
+				container: $this,
 				property: "drug",
 				release: "11.01",
 				types: [
 					"Drug"
-				]
-			};
-			return new window.LiveElement.Element.elements.Drug(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         healthCondition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
-				parent: $this,
+				container: $this,
 				property: "healthCondition",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }

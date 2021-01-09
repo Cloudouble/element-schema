@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WinAction'
         static __type = 'rdfs:Class'
+        static __extends = 'AchieveAction'
         static _rdfs_comment = 'The act of achieving victory in a competitive activity.'
         static _rdfs_label = 'WinAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WinAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         loser($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The loser of the action.",
-				parent: $this,
+				container: $this,
 				property: "loser",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

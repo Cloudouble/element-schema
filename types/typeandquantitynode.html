@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TypeAndQuantityNode'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.'
         static _rdfs_label = 'TypeAndQuantityNode'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TypeAndQuantityNode')
         }
         
         connectedCallback() {
@@ -33,78 +30,83 @@
         
         
         amountOfThisGood($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity of the goods included in the offer.",
-				parent: $this,
+				container: $this,
 				property: "amountOfThisGood",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get amountofthisgood() { return this.amountOfThisGood }
         set amountofthisgood(value) { this.amountOfThisGood = value }
 
         businessFunction($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http:\\/\\/purl.org\\/goodrelations\\/v1#Sell.",
-				parent: $this,
+				container: $this,
 				property: "businessFunction",
 				release: "11.01",
 				types: [
 					"BusinessFunction"
-				]
-			};
-			return new window.LiveElement.Element.elements.BusinessFunction(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get businessfunction() { return this.businessFunction }
         set businessfunction(value) { this.businessFunction = value }
 
         typeOfGood($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The product that this structured value is referring to.",
-				parent: $this,
+				container: $this,
 				property: "typeOfGood",
 				release: "11.01",
 				types: [
 					"Service",
 					"Product"
-				]
-			};
-			return new window.LiveElement.Element.elements.Service(value, property) || new window.LiveElement.Element.elements.Product(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get typeofgood() { return this.typeOfGood }
         set typeofgood(value) { this.typeOfGood = value }
 
         unitCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unit of measurement given using the UN\\/CEFACT Common Code (3 characters) or a URL. Other codes than the UN\\/CEFACT Common Code may be used with a prefix followed by a colon.",
-				parent: $this,
+				container: $this,
 				property: "unitCode",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get unitcode() { return this.unitCode }
         set unitcode(value) { this.unitCode = value }
 
         unitText($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode<\\/a>.",
-				parent: $this,
+				container: $this,
 				property: "unitText",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get unittext() { return this.unitText }
         set unittext(value) { this.unitText = value }

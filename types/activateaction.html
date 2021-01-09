@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ActivateAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ControlAction'
         static _rdfs_comment = 'The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).'
         static _rdfs_label = 'ActivateAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ActivateAction')
         }
         
         connectedCallback() {

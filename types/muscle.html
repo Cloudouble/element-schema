@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Muscle'
         static __type = 'rdfs:Class'
+        static __extends = 'AnatomicalStructure'
         static _rdfs_comment = 'A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.'
         static _rdfs_label = 'Muscle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Muscle')
         }
         
         connectedCallback() {
@@ -33,72 +30,77 @@
         
         
         antagonist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The muscle whose action counteracts the specified muscle.",
-				parent: $this,
+				container: $this,
 				property: "antagonist",
 				release: "11.01",
 				types: [
 					"Muscle"
-				]
-			};
-			return new window.LiveElement.Element.elements.Muscle(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         bloodSupply($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The blood vessel that carries blood from the heart to the muscle.",
-				parent: $this,
+				container: $this,
 				property: "bloodSupply",
 				release: "11.01",
 				types: [
 					"Vessel"
-				]
-			};
-			return new window.LiveElement.Element.elements.Vessel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bloodsupply() { return this.bloodSupply }
         set bloodsupply(value) { this.bloodSupply = value }
 
         insertion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The place of attachment of a muscle, or what the muscle moves.",
-				parent: $this,
+				container: $this,
 				property: "insertion",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         muscleAction($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The movement the muscle generates.",
-				parent: $this,
+				container: $this,
 				property: "muscleAction",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get muscleaction() { return this.muscleAction }
         set muscleaction(value) { this.muscleAction = value }
 
         nerve($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The underlying innervation associated with the muscle.",
-				parent: $this,
+				container: $this,
 				property: "nerve",
 				release: "11.01",
 				types: [
 					"Nerve"
-				]
-			};
-			return new window.LiveElement.Element.elements.Nerve(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

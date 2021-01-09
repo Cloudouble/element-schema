@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Recipe'
         static __type = 'rdfs:Class'
+        static __extends = 'HowTo'
         static _rdfs_comment = 'A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.'
         static _rdfs_label = 'Recipe'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Recipe')
         }
         
         connectedCallback() {
@@ -33,150 +30,160 @@
         
         
         cookTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time it takes to actually cook the dish, in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "cookTime",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cooktime() { return this.cookTime }
         set cooktime(value) { this.cookTime = value }
 
         cookingMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The method of cooking, such as Frying, Steaming, ...",
-				parent: $this,
+				container: $this,
 				property: "cookingMethod",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cookingmethod() { return this.cookingMethod }
         set cookingmethod(value) { this.cookingMethod = value }
 
         ingredients($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
-				parent: $this,
+				container: $this,
 				property: "ingredients",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         nutrition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Nutrition information about the recipe or menu item.",
-				parent: $this,
+				container: $this,
 				property: "nutrition",
 				release: "11.01",
 				types: [
 					"NutritionInformation"
-				]
-			};
-			return new window.LiveElement.Element.elements.NutritionInformation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         recipeCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The category of the recipe\u2014for example, appetizer, entree, etc.",
-				parent: $this,
+				container: $this,
 				property: "recipeCategory",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recipecategory() { return this.recipeCategory }
         set recipecategory(value) { this.recipeCategory = value }
 
         recipeCuisine($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The cuisine of the recipe (for example, French or Ethiopian).",
-				parent: $this,
+				container: $this,
 				property: "recipeCuisine",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recipecuisine() { return this.recipeCuisine }
         set recipecuisine(value) { this.recipeCuisine = value }
 
         recipeIngredient($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
-				parent: $this,
+				container: $this,
 				property: "recipeIngredient",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recipeingredient() { return this.recipeIngredient }
         set recipeingredient(value) { this.recipeIngredient = value }
 
         recipeInstructions($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and\\/or HowToSection items.",
-				parent: $this,
+				container: $this,
 				property: "recipeInstructions",
 				release: "11.01",
 				types: [
 					"CreativeWork",
 					"Text",
 					"ItemList"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recipeinstructions() { return this.recipeInstructions }
         set recipeinstructions(value) { this.recipeInstructions = value }
 
         recipeYield($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
-				parent: $this,
+				container: $this,
 				property: "recipeYield",
 				release: "11.01",
 				types: [
 					"Text",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recipeyield() { return this.recipeYield }
         set recipeyield(value) { this.recipeYield = value }
 
         suitableForDiet($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
-				parent: $this,
+				container: $this,
 				property: "suitableForDiet",
 				release: "11.01",
 				types: [
 					"RestrictedDiet"
-				]
-			};
-			return new window.LiveElement.Element.elements.RestrictedDiet(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suitablefordiet() { return this.suitableForDiet }
         set suitablefordiet(value) { this.suitableForDiet = value }

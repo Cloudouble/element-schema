@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalTrial'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalStudy'
         static _rdfs_comment = 'A medical trial is a type of medical study that uses scientific process used to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and\/or control groups.'
         static _rdfs_label = 'MedicalTrial'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalTrial')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         trialDesign($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifics about the trial design (enumerated).",
-				parent: $this,
+				container: $this,
 				property: "trialDesign",
 				release: "11.01",
 				types: [
 					"MedicalTrialDesign"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTrialDesign(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get trialdesign() { return this.trialDesign }
         set trialdesign(value) { this.trialDesign = value }

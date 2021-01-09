@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DiagnosticLab'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalOrganization'
         static _rdfs_comment = 'A medical laboratory that offers on-site or off-site diagnostic services.'
         static _rdfs_label = 'DiagnosticLab'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DiagnosticLab')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         availableTest($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A diagnostic test or procedure offered by this lab.",
-				parent: $this,
+				container: $this,
 				property: "availableTest",
 				release: "11.01",
 				types: [
 					"MedicalTest"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTest(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availabletest() { return this.availableTest }
         set availabletest(value) { this.availableTest = value }

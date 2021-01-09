@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BoatTrip'
         static __type = 'rdfs:Class'
+        static __extends = 'Trip'
         static _rdfs_comment = 'A trip on a commercial ferry line.'
         static _rdfs_label = 'BoatTrip'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BoatTrip')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         arrivalBoatTerminal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The terminal or port from which the boat arrives.",
-				parent: $this,
+				container: $this,
 				property: "arrivalBoatTerminal",
 				release: "11.01",
 				types: [
 					"BoatTerminal"
-				]
-			};
-			return new window.LiveElement.Element.elements.BoatTerminal(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalboatterminal() { return this.arrivalBoatTerminal }
         set arrivalboatterminal(value) { this.arrivalBoatTerminal = value }
 
         departureBoatTerminal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The terminal or port from which the boat departs.",
-				parent: $this,
+				container: $this,
 				property: "departureBoatTerminal",
 				release: "11.01",
 				types: [
 					"BoatTerminal"
-				]
-			};
-			return new window.LiveElement.Element.elements.BoatTerminal(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departureboatterminal() { return this.departureBoatTerminal }
         set departureboatterminal(value) { this.departureBoatTerminal = value }

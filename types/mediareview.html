@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MediaReview'
         static __type = 'rdfs:Class'
+        static __extends = 'Review'
         static _rdfs_comment = '(editorial work in progress, this definition is incomplete and unreviewed)     A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.     For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types.'
         static _rdfs_label = 'MediaReview'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MediaReview')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         mediaAuthenticityCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).",
-				parent: $this,
+				container: $this,
 				property: "mediaAuthenticityCategory",
 				release: "11.01",
 				types: [
 					"MediaManipulationRatingEnumeration"
-				]
-			};
-			return new window.LiveElement.Element.elements.MediaManipulationRatingEnumeration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get mediaauthenticitycategory() { return this.mediaAuthenticityCategory }
         set mediaauthenticitycategory(value) { this.mediaAuthenticityCategory = value }

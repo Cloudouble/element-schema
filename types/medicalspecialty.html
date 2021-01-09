@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalSpecialty'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEnumeration'
         static _rdfs_comment = 'Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.'
         static _rdfs_label = 'MedicalSpecialty'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalSpecialty')
         }
         
         connectedCallback() {

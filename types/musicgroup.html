@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicGroup'
         static __type = 'rdfs:Class'
+        static __extends = 'PerformingGroup'
         static _rdfs_comment = 'A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.'
         static _rdfs_label = 'MusicGroup'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicGroup')
         }
         
         connectedCallback() {
@@ -33,85 +30,91 @@
         
         
         album($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A music album.",
-				parent: $this,
+				container: $this,
 				property: "album",
 				release: "11.01",
 				types: [
 					"MusicAlbum"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         albums($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A collection of music albums.",
-				parent: $this,
+				container: $this,
 				property: "albums",
 				release: "11.01",
 				types: [
 					"MusicAlbum"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         genre($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Genre of the creative work, broadcast channel or group.",
-				parent: $this,
+				container: $this,
 				property: "genre",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         musicGroupMember($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A member of a music group&#x2014;for example, John, Paul, George, or Ringo.",
-				parent: $this,
+				container: $this,
 				property: "musicGroupMember",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicgroupmember() { return this.musicGroupMember }
         set musicgroupmember(value) { this.musicGroupMember = value }
 
         track($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
-				parent: $this,
+				container: $this,
 				property: "track",
 				release: "11.01",
 				types: [
 					"MusicRecording",
 					"ItemList"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         tracks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A music recording (track)&#x2014;usually a single song.",
-				parent: $this,
+				container: $this,
 				property: "tracks",
 				release: "11.01",
 				types: [
 					"MusicRecording"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

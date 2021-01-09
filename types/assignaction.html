@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AssignAction'
         static __type = 'rdfs:Class'
+        static __extends = 'AllocateAction'
         static _rdfs_comment = 'The act of allocating an action\/event\/task to some destination (someone or something).'
         static _rdfs_label = 'AssignAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AssignAction')
         }
         
         connectedCallback() {

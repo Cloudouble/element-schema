@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HealthPlanCostSharingSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A description of costs to the patient under a given network or formulary.'
         static _rdfs_label = 'HealthPlanCostSharingSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HealthPlanCostSharingSpecification')
         }
         
         connectedCallback() {
@@ -33,76 +30,81 @@
         
         
         healthPlanCoinsuranceOption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?",
-				parent: $this,
+				container: $this,
 				property: "healthPlanCoinsuranceOption",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplancoinsuranceoption() { return this.healthPlanCoinsuranceOption }
         set healthplancoinsuranceoption(value) { this.healthPlanCoinsuranceOption = value }
 
         healthPlanCoinsuranceRate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanCoinsuranceRate",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplancoinsurancerate() { return this.healthPlanCoinsuranceRate }
         set healthplancoinsurancerate(value) { this.healthPlanCoinsuranceRate = value }
 
         healthPlanCopay($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether The copay amount.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanCopay",
 				release: "11.01",
 				types: [
 					"PriceSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.PriceSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplancopay() { return this.healthPlanCopay }
         set healthplancopay(value) { this.healthPlanCopay = value }
 
         healthPlanCopayOption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the copay is before or after deductible, etc. TODO: Is this a closed set?",
-				parent: $this,
+				container: $this,
 				property: "healthPlanCopayOption",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplancopayoption() { return this.healthPlanCopayOption }
         set healthplancopayoption(value) { this.healthPlanCopayOption = value }
 
         healthPlanPharmacyCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The category or type of pharmacy associated with this cost sharing.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanPharmacyCategory",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplanpharmacycategory() { return this.healthPlanPharmacyCategory }
         set healthplanpharmacycategory(value) { this.healthPlanPharmacyCategory = value }

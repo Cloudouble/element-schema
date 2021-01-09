@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:FMRadioChannel'
         static __type = 'rdfs:Class'
+        static __extends = 'RadioChannel'
         static _rdfs_comment = 'A radio channel that uses FM.'
         static _rdfs_label = 'FMRadioChannel'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('FMRadioChannel')
         }
         
         connectedCallback() {

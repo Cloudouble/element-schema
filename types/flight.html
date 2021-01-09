@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Flight'
         static __type = 'rdfs:Class'
+        static __extends = 'Trip'
         static _rdfs_comment = 'An airline flight.'
         static _rdfs_label = 'Flight'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Flight')
         }
         
         connectedCallback() {
@@ -33,224 +30,239 @@
         
         
         aircraft($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The kind of aircraft (e.g., \"Boeing 747\").",
-				parent: $this,
+				container: $this,
 				property: "aircraft",
 				release: "11.01",
 				types: [
 					"Text",
 					"Vehicle"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Vehicle(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         arrivalAirport($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The airport where the flight terminates.",
-				parent: $this,
+				container: $this,
 				property: "arrivalAirport",
 				release: "11.01",
 				types: [
 					"Airport"
-				]
-			};
-			return new window.LiveElement.Element.elements.Airport(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalairport() { return this.arrivalAirport }
         set arrivalairport(value) { this.arrivalAirport = value }
 
         arrivalGate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the flight's arrival gate.",
-				parent: $this,
+				container: $this,
 				property: "arrivalGate",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalgate() { return this.arrivalGate }
         set arrivalgate(value) { this.arrivalGate = value }
 
         arrivalTerminal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the flight's arrival terminal.",
-				parent: $this,
+				container: $this,
 				property: "arrivalTerminal",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get arrivalterminal() { return this.arrivalTerminal }
         set arrivalterminal(value) { this.arrivalTerminal = value }
 
         boardingPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-				parent: $this,
+				container: $this,
 				property: "boardingPolicy",
 				release: "11.01",
 				types: [
 					"BoardingPolicyType"
-				]
-			};
-			return new window.LiveElement.Element.elements.BoardingPolicyType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get boardingpolicy() { return this.boardingPolicy }
         set boardingpolicy(value) { this.boardingPolicy = value }
 
         carrier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
-				parent: $this,
+				container: $this,
 				property: "carrier",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         departureAirport($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The airport where the flight originates.",
-				parent: $this,
+				container: $this,
 				property: "departureAirport",
 				release: "11.01",
 				types: [
 					"Airport"
-				]
-			};
-			return new window.LiveElement.Element.elements.Airport(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departureairport() { return this.departureAirport }
         set departureairport(value) { this.departureAirport = value }
 
         departureGate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the flight's departure gate.",
-				parent: $this,
+				container: $this,
 				property: "departureGate",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departuregate() { return this.departureGate }
         set departuregate(value) { this.departureGate = value }
 
         departureTerminal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the flight's departure terminal.",
-				parent: $this,
+				container: $this,
 				property: "departureTerminal",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get departureterminal() { return this.departureTerminal }
         set departureterminal(value) { this.departureTerminal = value }
 
         estimatedFlightDuration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The estimated time the flight will take.",
-				parent: $this,
+				container: $this,
 				property: "estimatedFlightDuration",
 				release: "11.01",
 				types: [
 					"Duration",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get estimatedflightduration() { return this.estimatedFlightDuration }
         set estimatedflightduration(value) { this.estimatedFlightDuration = value }
 
         flightDistance($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The distance of the flight.",
-				parent: $this,
+				container: $this,
 				property: "flightDistance",
 				release: "11.01",
 				types: [
 					"Text",
 					"Distance"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Distance(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get flightdistance() { return this.flightDistance }
         set flightdistance(value) { this.flightDistance = value }
 
         flightNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.",
-				parent: $this,
+				container: $this,
 				property: "flightNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get flightnumber() { return this.flightNumber }
         set flightnumber(value) { this.flightNumber = value }
 
         mealService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Description of the meals that will be provided or available for purchase.",
-				parent: $this,
+				container: $this,
 				property: "mealService",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get mealservice() { return this.mealService }
         set mealservice(value) { this.mealService = value }
 
         seller($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
-				parent: $this,
+				container: $this,
 				property: "seller",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         webCheckinTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time when a passenger can check into the flight online.",
-				parent: $this,
+				container: $this,
 				property: "webCheckinTime",
 				release: "11.01",
 				types: [
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get webcheckintime() { return this.webCheckinTime }
         set webcheckintime(value) { this.webCheckinTime = value }

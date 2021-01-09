@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicRelease'
         static __type = 'rdfs:Class'
+        static __extends = 'MusicPlaylist'
         static _rdfs_comment = 'A MusicRelease is a specific release of a music album.'
         static _rdfs_label = 'MusicRelease'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicRelease')
         }
         
         connectedCallback() {
@@ -33,90 +30,96 @@
         
         
         catalogNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The catalog number for the release.",
-				parent: $this,
+				container: $this,
 				property: "catalogNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get catalognumber() { return this.catalogNumber }
         set catalognumber(value) { this.catalogNumber = value }
 
         creditedTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
-				parent: $this,
+				container: $this,
 				property: "creditedTo",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get creditedto() { return this.creditedTo }
         set creditedto(value) { this.creditedTo = value }
 
         duration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         musicReleaseFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
-				parent: $this,
+				container: $this,
 				property: "musicReleaseFormat",
 				release: "11.01",
 				types: [
 					"MusicReleaseFormatType"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicReleaseFormatType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicreleaseformat() { return this.musicReleaseFormat }
         set musicreleaseformat(value) { this.musicReleaseFormat = value }
 
         recordLabel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The label that issued the release.",
-				parent: $this,
+				container: $this,
 				property: "recordLabel",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recordlabel() { return this.recordLabel }
         set recordlabel(value) { this.recordLabel = value }
 
         releaseOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The album this is a release of.",
-				parent: $this,
+				container: $this,
 				property: "releaseOf",
 				release: "11.01",
 				types: [
 					"MusicAlbum"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicAlbum(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get releaseof() { return this.releaseOf }
         set releaseof(value) { this.releaseOf = value }

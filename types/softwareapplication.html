@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SoftwareApplication'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A software application.'
         static _rdfs_label = 'SoftwareApplication'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SoftwareApplication')
         }
         
         connectedCallback() {
@@ -33,362 +30,386 @@
         
         
         applicationCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Type of software application, e.g. 'Game, Multimedia'.",
-				parent: $this,
+				container: $this,
 				property: "applicationCategory",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get applicationcategory() { return this.applicationCategory }
         set applicationcategory(value) { this.applicationCategory = value }
 
         applicationSubCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Subcategory of the application, e.g. 'Arcade Game'.",
-				parent: $this,
+				container: $this,
 				property: "applicationSubCategory",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get applicationsubcategory() { return this.applicationSubCategory }
         set applicationsubcategory(value) { this.applicationSubCategory = value }
 
         applicationSuite($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
-				parent: $this,
+				container: $this,
 				property: "applicationSuite",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get applicationsuite() { return this.applicationSuite }
         set applicationsuite(value) { this.applicationSuite = value }
 
         availableOnDevice($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
-				parent: $this,
+				container: $this,
 				property: "availableOnDevice",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availableondevice() { return this.availableOnDevice }
         set availableondevice(value) { this.availableOnDevice = value }
 
         countriesNotSupported($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-				parent: $this,
+				container: $this,
 				property: "countriesNotSupported",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get countriesnotsupported() { return this.countriesNotSupported }
         set countriesnotsupported(value) { this.countriesNotSupported = value }
 
         countriesSupported($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-				parent: $this,
+				container: $this,
 				property: "countriesSupported",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get countriessupported() { return this.countriesSupported }
         set countriessupported(value) { this.countriesSupported = value }
 
         device($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
-				parent: $this,
+				container: $this,
 				property: "device",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         downloadUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If the file can be downloaded, URL to download the binary.",
-				parent: $this,
+				container: $this,
 				property: "downloadUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get downloadurl() { return this.downloadUrl }
         set downloadurl(value) { this.downloadUrl = value }
 
         featureList($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Features or modules provided by this application (and possibly required by other applications).",
-				parent: $this,
+				container: $this,
 				property: "featureList",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get featurelist() { return this.featureList }
         set featurelist(value) { this.featureList = value }
 
         fileSize($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Size of the application \\/ package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
-				parent: $this,
+				container: $this,
 				property: "fileSize",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get filesize() { return this.fileSize }
         set filesize(value) { this.fileSize = value }
 
         installUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "URL at which the app may be installed, if different from the URL of the item.",
-				parent: $this,
+				container: $this,
 				property: "installUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get installurl() { return this.installUrl }
         set installurl(value) { this.installUrl = value }
 
         memoryRequirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Minimum memory requirements.",
-				parent: $this,
+				container: $this,
 				property: "memoryRequirements",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get memoryrequirements() { return this.memoryRequirements }
         set memoryrequirements(value) { this.memoryRequirements = value }
 
         operatingSystem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
-				parent: $this,
+				container: $this,
 				property: "operatingSystem",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get operatingsystem() { return this.operatingSystem }
         set operatingsystem(value) { this.operatingSystem = value }
 
         permissions($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
-				parent: $this,
+				container: $this,
 				property: "permissions",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         processorRequirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Processor architecture required to run the application (e.g. IA64).",
-				parent: $this,
+				container: $this,
 				property: "processorRequirements",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get processorrequirements() { return this.processorRequirements }
         set processorrequirements(value) { this.processorRequirements = value }
 
         releaseNotes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Description of what changed in this version.",
-				parent: $this,
+				container: $this,
 				property: "releaseNotes",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get releasenotes() { return this.releaseNotes }
         set releasenotes(value) { this.releaseNotes = value }
 
         requirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
-				parent: $this,
+				container: $this,
 				property: "requirements",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         screenshot($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A link to a screenshot image of the app.",
-				parent: $this,
+				container: $this,
 				property: "screenshot",
 				release: "11.01",
 				types: [
 					"URL",
 					"ImageObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.ImageObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         softwareAddOn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Additional content for a software application.",
-				parent: $this,
+				container: $this,
 				property: "softwareAddOn",
 				release: "11.01",
 				types: [
 					"SoftwareApplication"
-				]
-			};
-			return new window.LiveElement.Element.elements.SoftwareApplication(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get softwareaddon() { return this.softwareAddOn }
         set softwareaddon(value) { this.softwareAddOn = value }
 
         softwareHelp($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Software application help.",
-				parent: $this,
+				container: $this,
 				property: "softwareHelp",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get softwarehelp() { return this.softwareHelp }
         set softwarehelp(value) { this.softwareHelp = value }
 
         softwareRequirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
-				parent: $this,
+				container: $this,
 				property: "softwareRequirements",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get softwarerequirements() { return this.softwareRequirements }
         set softwarerequirements(value) { this.softwareRequirements = value }
 
         softwareVersion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Version of the software instance.",
-				parent: $this,
+				container: $this,
 				property: "softwareVersion",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get softwareversion() { return this.softwareVersion }
         set softwareversion(value) { this.softwareVersion = value }
 
         storageRequirements($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Storage requirements (free space required).",
-				parent: $this,
+				container: $this,
 				property: "storageRequirements",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get storagerequirements() { return this.storageRequirements }
         set storagerequirements(value) { this.storageRequirements = value }
 
         supportingData($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Supporting data for a SoftwareApplication.",
-				parent: $this,
+				container: $this,
 				property: "supportingData",
 				release: "11.01",
 				types: [
 					"DataFeed"
-				]
-			};
-			return new window.LiveElement.Element.elements.DataFeed(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get supportingdata() { return this.supportingData }
         set supportingdata(value) { this.supportingData = value }

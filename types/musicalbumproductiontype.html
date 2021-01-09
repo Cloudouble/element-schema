@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicAlbumProductionType'
         static __type = 'rdfs:Class'
+        static __extends = 'Enumeration'
         static _rdfs_comment = 'Classification of the album by it\'s type of content: soundtrack, live album, studio album, etc.'
         static _rdfs_label = 'MusicAlbumProductionType'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicAlbumProductionType')
         }
         
         connectedCallback() {

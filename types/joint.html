@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Joint'
         static __type = 'rdfs:Class'
+        static __extends = 'AnatomicalStructure'
         static _rdfs_comment = 'The anatomical location at which two or more bones make contact.'
         static _rdfs_label = 'Joint'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Joint')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         biomechnicalClass($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The biomechanical properties of the bone.",
-				parent: $this,
+				container: $this,
 				property: "biomechnicalClass",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get biomechnicalclass() { return this.biomechnicalClass }
         set biomechnicalclass(value) { this.biomechnicalClass = value }
 
         functionalClass($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The degree of mobility the joint allows.",
-				parent: $this,
+				container: $this,
 				property: "functionalClass",
 				release: "11.01",
 				types: [
 					"Text",
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get functionalclass() { return this.functionalClass }
         set functionalclass(value) { this.functionalClass = value }
 
         structuralClass($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name given to how bone physically connects to each other.",
-				parent: $this,
+				container: $this,
 				property: "structuralClass",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get structuralclass() { return this.structuralClass }
         set structuralclass(value) { this.structuralClass = value }

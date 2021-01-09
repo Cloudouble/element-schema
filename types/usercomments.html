@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:UserComments'
         static __type = 'rdfs:Class'
+        static __extends = 'UserInteraction'
         static _rdfs_comment = 'UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].'
         static _rdfs_label = 'UserComments'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('UserComments')
         }
         
         connectedCallback() {
@@ -33,74 +30,79 @@
         
         
         commentText($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The text of the UserComment.",
-				parent: $this,
+				container: $this,
 				property: "commentText",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get commenttext() { return this.commentText }
         set commenttext(value) { this.commentText = value }
 
         commentTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time at which the UserComment was made.",
-				parent: $this,
+				container: $this,
 				property: "commentTime",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get commenttime() { return this.commentTime }
         set commenttime(value) { this.commentTime = value }
 
         creator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The creator\\/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "creator",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         discusses($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the CreativeWork associated with the UserComment.",
-				parent: $this,
+				container: $this,
 				property: "discusses",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         replyToUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The URL at which a reply may be posted to the specified UserComment.",
-				parent: $this,
+				container: $this,
 				property: "replyToUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get replytourl() { return this.replyToUrl }
         set replytourl(value) { this.replyToUrl = value }

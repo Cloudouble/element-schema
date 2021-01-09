@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Audience'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Intended audience for an item, i.e. the group for whom the item was created.'
         static _rdfs_label = 'Audience'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Audience')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         audienceType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
-				parent: $this,
+				container: $this,
 				property: "audienceType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get audiencetype() { return this.audienceType }
         set audiencetype(value) { this.audienceType = value }
 
         geographicArea($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area associated with the audience.",
-				parent: $this,
+				container: $this,
 				property: "geographicArea",
 				release: "11.01",
 				types: [
 					"AdministrativeArea"
-				]
-			};
-			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geographicarea() { return this.geographicArea }
         set geographicarea(value) { this.geographicArea = value }

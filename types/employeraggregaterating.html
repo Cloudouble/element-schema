@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EmployerAggregateRating'
         static __type = 'rdfs:Class'
+        static __extends = 'AggregateRating'
         static _rdfs_comment = 'An aggregate rating of an Organization related to its role as an employer.'
         static _rdfs_label = 'EmployerAggregateRating'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EmployerAggregateRating')
         }
         
         connectedCallback() {

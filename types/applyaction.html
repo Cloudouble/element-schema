@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ApplyAction'
         static __type = 'rdfs:Class'
+        static __extends = 'OrganizeAction'
         static _rdfs_comment = 'The act of registering to an organization\/service without the guarantee to receive it.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.'
         static _rdfs_label = 'ApplyAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ApplyAction')
         }
         
         connectedCallback() {

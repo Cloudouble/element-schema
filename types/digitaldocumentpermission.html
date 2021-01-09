@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DigitalDocumentPermission'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A permission for a particular person or group to access a particular file.'
         static _rdfs_label = 'DigitalDocumentPermission'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DigitalDocumentPermission')
         }
         
         connectedCallback() {
@@ -33,9 +30,9 @@
         
         
         grantee($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person, organization, contact point, or audience that has been granted this permission.",
-				parent: $this,
+				container: $this,
 				property: "grantee",
 				release: "11.01",
 				types: [
@@ -43,22 +40,24 @@
 					"Audience",
 					"Organization",
 					"ContactPoint"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         permissionType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of permission granted the person, organization, or audience.",
-				parent: $this,
+				container: $this,
 				property: "permissionType",
 				release: "11.01",
 				types: [
 					"DigitalDocumentPermissionType"
-				]
-			};
-			return new window.LiveElement.Element.elements.DigitalDocumentPermissionType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get permissiontype() { return this.permissionType }
         set permissiontype(value) { this.permissionType = value }

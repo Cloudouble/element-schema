@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ActionAccessSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A set of requirements that a must be fulfilled in order to perform an Action.'
         static _rdfs_label = 'ActionAccessSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ActionAccessSpecification')
         }
         
         connectedCallback() {
@@ -33,43 +30,45 @@
         
         
         availabilityEnds($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The end of the availability of the product or service included in the offer.",
-				parent: $this,
+				container: $this,
 				property: "availabilityEnds",
 				release: "11.01",
 				types: [
 					"Time",
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availabilityends() { return this.availabilityEnds }
         set availabilityends(value) { this.availabilityEnds = value }
 
         availabilityStarts($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The beginning of the availability of the product or service included in the offer.",
-				parent: $this,
+				container: $this,
 				property: "availabilityStarts",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Time",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availabilitystarts() { return this.availabilityStarts }
         set availabilitystarts(value) { this.availabilityStarts = value }
 
         category($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-				parent: $this,
+				container: $this,
 				property: "category",
 				release: "11.01",
 				types: [
@@ -77,72 +76,77 @@
 					"Thing",
 					"PhysicalActivityCategory",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         eligibleRegion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
-				parent: $this,
+				container: $this,
 				property: "eligibleRegion",
 				release: "11.01",
 				types: [
 					"Place",
 					"GeoShape",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eligibleregion() { return this.eligibleRegion }
         set eligibleregion(value) { this.eligibleRegion = value }
 
         expectsAcceptanceOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.",
-				parent: $this,
+				container: $this,
 				property: "expectsAcceptanceOf",
 				release: "11.01",
 				types: [
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get expectsacceptanceof() { return this.expectsAcceptanceOf }
         set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
 
         ineligibleRegion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
-				parent: $this,
+				container: $this,
 				property: "ineligibleRegion",
 				release: "11.01",
 				types: [
 					"Text",
 					"GeoShape",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.GeoShape(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ineligibleregion() { return this.ineligibleRegion }
         set ineligibleregion(value) { this.ineligibleRegion = value }
 
         requiresSubscription($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').",
-				parent: $this,
+				container: $this,
 				property: "requiresSubscription",
 				release: "11.01",
 				types: [
 					"Boolean",
 					"MediaSubscription"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.MediaSubscription(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiressubscription() { return this.requiresSubscription }
         set requiressubscription(value) { this.requiresSubscription = value }

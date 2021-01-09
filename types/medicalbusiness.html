@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalBusiness'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals.'
         static _rdfs_label = 'MedicalBusiness'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalBusiness')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ExerciseAction'
         static __type = 'rdfs:Class'
+        static __extends = 'PlayAction'
         static _rdfs_comment = 'The act of participating in exertive activity for the purposes of improving health and fitness.'
         static _rdfs_label = 'ExerciseAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ExerciseAction')
         }
         
         connectedCallback() {
@@ -33,188 +30,201 @@
         
         
         course($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The course where this action was taken.",
-				parent: $this,
+				container: $this,
 				property: "course",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         diet($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The diet used in this action.",
-				parent: $this,
+				container: $this,
 				property: "diet",
 				release: "11.01",
 				types: [
 					"Diet"
-				]
-			};
-			return new window.LiveElement.Element.elements.Diet(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         distance($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The distance travelled, e.g. exercising or travelling.",
-				parent: $this,
+				container: $this,
 				property: "distance",
 				release: "11.01",
 				types: [
 					"Distance"
-				]
-			};
-			return new window.LiveElement.Element.elements.Distance(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         exerciseCourse($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The course where this action was taken.",
-				parent: $this,
+				container: $this,
 				property: "exerciseCourse",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exercisecourse() { return this.exerciseCourse }
         set exercisecourse(value) { this.exerciseCourse = value }
 
         exercisePlan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The exercise plan used on this action.",
-				parent: $this,
+				container: $this,
 				property: "exercisePlan",
 				release: "11.01",
 				types: [
 					"ExercisePlan"
-				]
-			};
-			return new window.LiveElement.Element.elements.ExercisePlan(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exerciseplan() { return this.exercisePlan }
         set exerciseplan(value) { this.exercisePlan = value }
 
         exerciseRelatedDiet($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The diet used in this action.",
-				parent: $this,
+				container: $this,
 				property: "exerciseRelatedDiet",
 				release: "11.01",
 				types: [
 					"Diet"
-				]
-			};
-			return new window.LiveElement.Element.elements.Diet(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exerciserelateddiet() { return this.exerciseRelatedDiet }
         set exerciserelateddiet(value) { this.exerciseRelatedDiet = value }
 
         exerciseType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
-				parent: $this,
+				container: $this,
 				property: "exerciseType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
 
         fromLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The original location of the object or the agent before the action.",
-				parent: $this,
+				container: $this,
 				property: "fromLocation",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get fromlocation() { return this.fromLocation }
         set fromlocation(value) { this.fromLocation = value }
 
         opponent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The opponent on this action.",
-				parent: $this,
+				container: $this,
 				property: "opponent",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         sportsActivityLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The sports activity location where this action occurred.",
-				parent: $this,
+				container: $this,
 				property: "sportsActivityLocation",
 				release: "11.01",
 				types: [
 					"SportsActivityLocation"
-				]
-			};
-			return new window.LiveElement.Element.elements.SportsActivityLocation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sportsactivitylocation() { return this.sportsActivityLocation }
         set sportsactivitylocation(value) { this.sportsActivityLocation = value }
 
         sportsEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The sports event where this action occurred.",
-				parent: $this,
+				container: $this,
 				property: "sportsEvent",
 				release: "11.01",
 				types: [
 					"SportsEvent"
-				]
-			};
-			return new window.LiveElement.Element.elements.SportsEvent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sportsevent() { return this.sportsEvent }
         set sportsevent(value) { this.sportsEvent = value }
 
         sportsTeam($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The sports team that participated on this action.",
-				parent: $this,
+				container: $this,
 				property: "sportsTeam",
 				release: "11.01",
 				types: [
 					"SportsTeam"
-				]
-			};
-			return new window.LiveElement.Element.elements.SportsTeam(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sportsteam() { return this.sportsTeam }
         set sportsteam(value) { this.sportsTeam = value }
 
         toLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The final location of the object or the agent after the action.",
-				parent: $this,
+				container: $this,
 				property: "toLocation",
 				release: "11.01",
 				types: [
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }

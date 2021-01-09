@@ -56,10 +56,9 @@ for index, datatype in enumerate([d for d in graph if (
     rdfscomment = datatype['rdfs:comment'] if type(datatype['rdfs:comment']) is str else (datatype['rdfs:comment'].get('@value') if type(datatype['rdfs:comment']) is dict else None)
     if rdfslabel and rdfscomment:
         digits_map = {'0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'}
-        properties_dict = {property_name: {'parent': '$this', 'property': property_name, **properties.get(property_name, {})} for property_name in properties_list}
+        properties_dict = {property_name: {'container': '$this', 'value': 'value', 'property': property_name, **properties.get(property_name, {})} for property_name in properties_list}
         for property_name, property_dict in properties_dict.items():
             property_dict['comment'] = property_dict.get('comment', '').replace('/', '\/')
-        return_statements = {property_name: ' || '.join(['new window.LiveElement.Element.elements.{}(value, property)'.format(t) for t in property_dict.get('types', [])]) for property_name, property_dict in properties_dict.items()}
         class_file_properties = {
             'release': release, 
             'rdfslabel_safe': rdfslabel.replace(rdfslabel[0], digits_map.get(rdfslabel[0], 'X'), 1) if rdfslabel[0].isnumeric() else rdfslabel, 
@@ -71,9 +70,8 @@ for index, datatype in enumerate([d for d in graph if (
             'properties_list_comma': json.dumps(properties_list)[1:-1].replace('"', "'"), 
             'properties_list_getters': '''
 '''.join(['''
-        {property_name}($this, value) {{\n\t\t\tvar property = {property_map};\n\t\t\treturn {return_statement} \n\t\t}}{getters}'''.format(
-                property_map=re.sub('"([^"]+)":', r"\1:", json.dumps(properties_dict.get(property_name, {}), sort_keys=True, indent="\t\t\t\t")).replace('"$this"', '$this'), 
-                return_statement=return_statements.get(property_name, 'undefined'), 
+        {property_name}($this, value) {{\n\t\t\twindow.LiveElement.Schema.renderProperty({property_map})\n\t\t\treturn value\n\t\t}}{getters}'''.format(
+                property_map=re.sub('"([^"]+)":', r"\1:", json.dumps(properties_dict.get(property_name, {}), sort_keys=True, indent="\t\t\t\t")).replace('"$this"', '$this').replace('"value"', 'value').replace("\n}", "\n\t\t\t}"), 
                 property_name=property_name, 
                 property_name_lower=property_name.lower(), 
                 getters='''

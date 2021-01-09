@@ -2,9 +2,37 @@ window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
-    ThemeName: {configurable: false, enumerable: true, writable: true, value: 'Theme'}, 
-    RenderName: {configurable: false, enumerable: true, writable: true, value: 'Render'}, 
-    Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}
+    Renderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+        return 'Schema'
+    }}, 
+    Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}, 
+    Validators: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    Errors: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    renderProperty: {configurable: false, enumerable: false, writable: false, value: function(property) {
+        // property = {comment, container, property, release, types, value}
+        if (property && typeof property == 'object' && typeof property.parent == 'object' && typeof property.types == 'object' && typeof property.types.some == 'function') {
+            var thisType
+            property.types.some(t => {
+                thisType = t
+                return window.LiveElement.Element.elements[t] && typeof (window.LiveElement.Element.elements[t].__valid == 'function') && window.LiveElement.Element.elements[t].__valid(property.value)
+            })
+            var errorObj = thisType ? undefined : {}
+            var containerType = ((property.container || {}).constructor || {})._rdfs_label || 'Schema'
+            var propertyTag = window.LiveElement.Schema.Renderer(property.property, window.LiveElement.Element.getInheritance(thisType), window.LiveElement.Element.getInheritance(window.LiveElement.Element.elements[containerType]), property)
+            var propertyElement = propertyTag && window.LiveElement.Element.tags[propertyTag] ? document.createElement(window.LiveElement.Element.tags[propertyTag]) : undefined
+            if (property.parent && typeof property.parent.__attachPropertyElement == 'function') {
+                property.parent.__attachPropertyElement(propertyElement, property, errorObj)
+            }
+                
+
+            if (property.value && typeof property.value == 'object') {
+                
+            } else {
+                
+            }
+        }
+        console.log('line 9', property)
+    }}
 })
 
 /*

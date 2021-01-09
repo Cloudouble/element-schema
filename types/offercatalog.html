@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OfferCatalog'
         static __type = 'rdfs:Class'
+        static __extends = 'ItemList'
         static _rdfs_comment = 'An OfferCatalog is an ItemList that contains related Offers and\/or further OfferCatalogs that are offeredBy the same provider.'
         static _rdfs_label = 'OfferCatalog'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OfferCatalog')
         }
         
         connectedCallback() {

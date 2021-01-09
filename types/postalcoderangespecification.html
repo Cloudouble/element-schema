@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PostalCodeRangeSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'Indicates a range of postalcodes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively.'
         static _rdfs_label = 'PostalCodeRangeSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PostalCodeRangeSpecification')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         postalCodeBegin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "First postal code in a range (included).",
-				parent: $this,
+				container: $this,
 				property: "postalCodeBegin",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get postalcodebegin() { return this.postalCodeBegin }
         set postalcodebegin(value) { this.postalCodeBegin = value }
 
         postalCodeEnd($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Last postal code in the range (included). Needs to be after [[postalCodeBegin]].",
-				parent: $this,
+				container: $this,
 				property: "postalCodeEnd",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get postalcodeend() { return this.postalCodeEnd }
         set postalcodeend(value) { this.postalCodeEnd = value }

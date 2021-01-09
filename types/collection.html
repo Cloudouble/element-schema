@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Collection'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A collection of items e.g. creative works or products.'
         static _rdfs_label = 'Collection'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Collection')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         collectionSize($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of items in the [[Collection]].",
-				parent: $this,
+				container: $this,
 				property: "collectionSize",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get collectionsize() { return this.collectionSize }
         set collectionsize(value) { this.collectionSize = value }

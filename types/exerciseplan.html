@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ExercisePlan'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician.'
         static _rdfs_label = 'ExercisePlan'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ExercisePlan')
         }
         
         connectedCallback() {
@@ -33,123 +30,131 @@
         
         
         activityDuration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Length of time to engage in the activity.",
-				parent: $this,
+				container: $this,
 				property: "activityDuration",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get activityduration() { return this.activityDuration }
         set activityduration(value) { this.activityDuration = value }
 
         activityFrequency($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "How often one should engage in the activity.",
-				parent: $this,
+				container: $this,
 				property: "activityFrequency",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get activityfrequency() { return this.activityFrequency }
         set activityfrequency(value) { this.activityFrequency = value }
 
         additionalVariable($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.",
-				parent: $this,
+				container: $this,
 				property: "additionalVariable",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get additionalvariable() { return this.additionalVariable }
         set additionalvariable(value) { this.additionalVariable = value }
 
         exerciseType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
-				parent: $this,
+				container: $this,
 				property: "exerciseType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
 
         intensity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.",
-				parent: $this,
+				container: $this,
 				property: "intensity",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         repetitions($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Number of times one should repeat the activity.",
-				parent: $this,
+				container: $this,
 				property: "repetitions",
 				release: "11.01",
 				types: [
 					"Number",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         restPeriods($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "How often one should break from the activity.",
-				parent: $this,
+				container: $this,
 				property: "restPeriods",
 				release: "11.01",
 				types: [
 					"Text",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get restperiods() { return this.restPeriods }
         set restperiods(value) { this.restPeriods = value }
 
         workload($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.",
-				parent: $this,
+				container: $this,
 				property: "workload",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Energy"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Energy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

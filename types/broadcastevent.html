@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BroadcastEvent'
         static __type = 'rdfs:Class'
+        static __extends = 'PublicationEvent'
         static _rdfs_comment = 'An over the air or online broadcast event.'
         static _rdfs_label = 'BroadcastEvent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BroadcastEvent')
         }
         
         connectedCallback() {
@@ -33,62 +30,66 @@
         
         
         broadcastOfEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The event being broadcast such as a sporting event or awards ceremony.",
-				parent: $this,
+				container: $this,
 				property: "broadcastOfEvent",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get broadcastofevent() { return this.broadcastOfEvent }
         set broadcastofevent(value) { this.broadcastOfEvent = value }
 
         isLiveBroadcast($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "True is the broadcast is of a live event.",
-				parent: $this,
+				container: $this,
 				property: "isLiveBroadcast",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get islivebroadcast() { return this.isLiveBroadcast }
         set islivebroadcast(value) { this.isLiveBroadcast = value }
 
         subtitleLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
-				parent: $this,
+				container: $this,
 				property: "subtitleLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
 
         videoFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
-				parent: $this,
+				container: $this,
 				property: "videoFormat",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get videoformat() { return this.videoFormat }
         set videoformat(value) { this.videoFormat = value }

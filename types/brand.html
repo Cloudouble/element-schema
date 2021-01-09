@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Brand'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A brand is a name used by an organization or business person for labeling a product, product group, or similar.'
         static _rdfs_label = 'Brand'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Brand')
         }
         
         connectedCallback() {
@@ -33,58 +30,62 @@
         
         
         aggregateRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
-				parent: $this,
+				container: $this,
 				property: "aggregateRating",
 				release: "11.01",
 				types: [
 					"AggregateRating"
-				]
-			};
-			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
         logo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An associated logo.",
-				parent: $this,
+				container: $this,
 				property: "logo",
 				release: "11.01",
 				types: [
 					"ImageObject",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         review($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A review of the item.",
-				parent: $this,
+				container: $this,
 				property: "review",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         slogan($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A slogan or motto associated with the item.",
-				parent: $this,
+				container: $this,
 				property: "slogan",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

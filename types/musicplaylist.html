@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MusicPlaylist'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A collection of music tracks in playlist form.'
         static _rdfs_label = 'MusicPlaylist'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MusicPlaylist')
         }
         
         connectedCallback() {
@@ -33,45 +30,48 @@
         
         
         numTracks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of tracks in this album or playlist.",
-				parent: $this,
+				container: $this,
 				property: "numTracks",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numtracks() { return this.numTracks }
         set numtracks(value) { this.numTracks = value }
 
         track($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
-				parent: $this,
+				container: $this,
 				property: "track",
 				release: "11.01",
 				types: [
 					"MusicRecording",
 					"ItemList"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         tracks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A music recording (track)&#x2014;usually a single song.",
-				parent: $this,
+				container: $this,
 				property: "tracks",
 				release: "11.01",
 				types: [
 					"MusicRecording"
-				]
-			};
-			return new window.LiveElement.Element.elements.MusicRecording(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

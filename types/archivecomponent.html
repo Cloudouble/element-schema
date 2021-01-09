@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ArchiveComponent'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.'
         static _rdfs_label = 'ArchiveComponent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ArchiveComponent')
         }
         
         connectedCallback() {
@@ -33,33 +30,35 @@
         
         
         holdingArchive($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].",
-				parent: $this,
+				container: $this,
 				property: "holdingArchive",
 				release: "11.01",
 				types: [
 					"ArchiveOrganization"
-				]
-			};
-			return new window.LiveElement.Element.elements.ArchiveOrganization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get holdingarchive() { return this.holdingArchive }
         set holdingarchive(value) { this.holdingArchive = value }
 
         itemLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Current location of the item.",
-				parent: $this,
+				container: $this,
 				property: "itemLocation",
 				release: "11.01",
 				types: [
 					"Text",
 					"PostalAddress",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemlocation() { return this.itemLocation }
         set itemlocation(value) { this.itemLocation = value }

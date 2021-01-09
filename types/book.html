@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Book'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A book.'
         static _rdfs_label = 'Book'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Book')
         }
         
         connectedCallback() {
@@ -33,85 +30,91 @@
         
         
         abridged($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether the book is an abridged edition.",
-				parent: $this,
+				container: $this,
 				property: "abridged",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         bookEdition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The edition of the book.",
-				parent: $this,
+				container: $this,
 				property: "bookEdition",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bookedition() { return this.bookEdition }
         set bookedition(value) { this.bookEdition = value }
 
         bookFormat($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The format of the book.",
-				parent: $this,
+				container: $this,
 				property: "bookFormat",
 				release: "11.01",
 				types: [
 					"BookFormatType"
-				]
-			};
-			return new window.LiveElement.Element.elements.BookFormatType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bookformat() { return this.bookFormat }
         set bookformat(value) { this.bookFormat = value }
 
         illustrator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The illustrator of the book.",
-				parent: $this,
+				container: $this,
 				property: "illustrator",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         isbn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The ISBN of the book.",
-				parent: $this,
+				container: $this,
 				property: "isbn",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         numberOfPages($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of pages in the book.",
-				parent: $this,
+				container: $this,
 				property: "numberOfPages",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofpages() { return this.numberOfPages }
         set numberofpages(value) { this.numberOfPages = value }

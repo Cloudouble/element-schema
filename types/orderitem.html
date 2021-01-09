@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OrderItem'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'An order item is a line of an order. It includes the quantity and shipping details of a bought offer.'
         static _rdfs_label = 'OrderItem'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OrderItem')
         }
         
         connectedCallback() {
@@ -33,78 +30,83 @@
         
         
         orderDelivery($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The delivery of the parcel related to this order or order item.",
-				parent: $this,
+				container: $this,
 				property: "orderDelivery",
 				release: "11.01",
 				types: [
 					"ParcelDelivery"
-				]
-			};
-			return new window.LiveElement.Element.elements.ParcelDelivery(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get orderdelivery() { return this.orderDelivery }
         set orderdelivery(value) { this.orderDelivery = value }
 
         orderItemNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The identifier of the order item.",
-				parent: $this,
+				container: $this,
 				property: "orderItemNumber",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get orderitemnumber() { return this.orderItemNumber }
         set orderitemnumber(value) { this.orderItemNumber = value }
 
         orderItemStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The current status of the order item.",
-				parent: $this,
+				container: $this,
 				property: "orderItemStatus",
 				release: "11.01",
 				types: [
 					"OrderStatus"
-				]
-			};
-			return new window.LiveElement.Element.elements.OrderStatus(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get orderitemstatus() { return this.orderItemStatus }
         set orderitemstatus(value) { this.orderItemStatus = value }
 
         orderQuantity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of the item ordered. If the property is not set, assume the quantity is one.",
-				parent: $this,
+				container: $this,
 				property: "orderQuantity",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get orderquantity() { return this.orderQuantity }
         set orderquantity(value) { this.orderQuantity = value }
 
         orderedItem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item ordered.",
-				parent: $this,
+				container: $this,
 				property: "orderedItem",
 				release: "11.01",
 				types: [
 					"Product",
 					"OrderItem",
 					"Service"
-				]
-			};
-			return new window.LiveElement.Element.elements.Product(value, property) || new window.LiveElement.Element.elements.OrderItem(value, property) || new window.LiveElement.Element.elements.Service(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ordereditem() { return this.orderedItem }
         set ordereditem(value) { this.orderedItem = value }

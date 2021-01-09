@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:APIReference'
         static __type = 'rdfs:Class'
+        static __extends = 'TechArticle'
         static _rdfs_comment = 'Reference documentation for application programming interfaces (APIs).'
         static _rdfs_label = 'APIReference'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('APIReference')
         }
         
         connectedCallback() {
@@ -33,74 +30,79 @@
         
         
         assembly($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
-				parent: $this,
+				container: $this,
 				property: "assembly",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         assemblyVersion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Associated product\\/technology version. e.g., .NET Framework 4.5.",
-				parent: $this,
+				container: $this,
 				property: "assemblyVersion",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get assemblyversion() { return this.assemblyVersion }
         set assemblyversion(value) { this.assemblyVersion = value }
 
         executableLibraryName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
-				parent: $this,
+				container: $this,
 				property: "executableLibraryName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get executablelibraryname() { return this.executableLibraryName }
         set executablelibraryname(value) { this.executableLibraryName = value }
 
         programmingModel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether API is managed or unmanaged.",
-				parent: $this,
+				container: $this,
 				property: "programmingModel",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get programmingmodel() { return this.programmingModel }
         set programmingmodel(value) { this.programmingModel = value }
 
         targetPlatform($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Type of app development: phone, Metro style, desktop, XBox, etc.",
-				parent: $this,
+				container: $this,
 				property: "targetPlatform",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targetplatform() { return this.targetPlatform }
         set targetplatform(value) { this.targetPlatform = value }

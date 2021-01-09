@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PropertyValueSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A Property value specification.'
         static _rdfs_label = 'PropertyValueSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PropertyValueSpecification')
         }
         
         connectedCallback() {
@@ -33,167 +30,178 @@
         
         
         defaultValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
-				parent: $this,
+				container: $this,
 				property: "defaultValue",
 				release: "11.01",
 				types: [
 					"Text",
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get defaultvalue() { return this.defaultValue }
         set defaultvalue(value) { this.defaultValue = value }
 
         maxValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The upper value of some characteristic or property.",
-				parent: $this,
+				container: $this,
 				property: "maxValue",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maxvalue() { return this.maxValue }
         set maxvalue(value) { this.maxValue = value }
 
         minValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The lower value of some characteristic or property.",
-				parent: $this,
+				container: $this,
 				property: "minValue",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get minvalue() { return this.minValue }
         set minvalue(value) { this.minValue = value }
 
         multipleValues($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether multiple values are allowed for the property.  Default is false.",
-				parent: $this,
+				container: $this,
 				property: "multipleValues",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get multiplevalues() { return this.multipleValues }
         set multiplevalues(value) { this.multipleValues = value }
 
         readonlyValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a \"hidden\" input in an HTML form.",
-				parent: $this,
+				container: $this,
 				property: "readonlyValue",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get readonlyvalue() { return this.readonlyValue }
         set readonlyvalue(value) { this.readonlyValue = value }
 
         stepValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.",
-				parent: $this,
+				container: $this,
 				property: "stepValue",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get stepvalue() { return this.stepValue }
         set stepvalue(value) { this.stepValue = value }
 
         valueMaxLength($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the allowed range for number of characters in a literal value.",
-				parent: $this,
+				container: $this,
 				property: "valueMaxLength",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valuemaxlength() { return this.valueMaxLength }
         set valuemaxlength(value) { this.valueMaxLength = value }
 
         valueMinLength($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the minimum allowed range for number of characters in a literal value.",
-				parent: $this,
+				container: $this,
 				property: "valueMinLength",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valueminlength() { return this.valueMinLength }
         set valueminlength(value) { this.valueMinLength = value }
 
         valueName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.",
-				parent: $this,
+				container: $this,
 				property: "valueName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valuename() { return this.valueName }
         set valuename(value) { this.valueName = value }
 
         valuePattern($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies a regular expression for testing literal values according to the HTML spec.",
-				parent: $this,
+				container: $this,
 				property: "valuePattern",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valuepattern() { return this.valuePattern }
         set valuepattern(value) { this.valuePattern = value }
 
         valueRequired($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the property must be filled in to complete the action.  Default is false.",
-				parent: $this,
+				container: $this,
 				property: "valueRequired",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get valuerequired() { return this.valueRequired }
         set valuerequired(value) { this.valueRequired = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Quotation'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A quotation. Often but not necessarily from some written work, attributable to a real world author and - if associated with a fictional character - to any fictional Person. Use [[isBasedOn]] to link to source\/origin. The [[recordedIn]] property can be used to reference a Quotation from an [[Event]].'
         static _rdfs_label = 'Quotation'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Quotation')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         spokenByCharacter($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.",
-				parent: $this,
+				container: $this,
 				property: "spokenByCharacter",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get spokenbycharacter() { return this.spokenByCharacter }
         set spokenbycharacter(value) { this.spokenByCharacter = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DataFeedItem'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A single item within a larger data feed.'
         static _rdfs_label = 'DataFeedItem'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DataFeedItem')
         }
         
         connectedCallback() {
@@ -33,64 +30,68 @@
         
         
         dateCreated($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-				parent: $this,
+				container: $this,
 				property: "dateCreated",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datecreated() { return this.dateCreated }
         set datecreated(value) { this.dateCreated = value }
 
         dateDeleted($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The datetime the item was removed from the DataFeed.",
-				parent: $this,
+				container: $this,
 				property: "dateDeleted",
 				release: "11.01",
 				types: [
 					"Date",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datedeleted() { return this.dateDeleted }
         set datedeleted(value) { this.dateDeleted = value }
 
         dateModified($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
-				parent: $this,
+				container: $this,
 				property: "dateModified",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get datemodified() { return this.dateModified }
         set datemodified(value) { this.dateModified = value }
 
         item($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')\u2019.",
-				parent: $this,
+				container: $this,
 				property: "item",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

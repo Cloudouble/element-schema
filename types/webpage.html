@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WebPage'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb<\/code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.'
         static _rdfs_label = 'WebPage'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WebPage')
         }
         
         connectedCallback() {
@@ -33,150 +30,160 @@
         
         
         breadcrumb($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A set of links that can help a user understand and navigate a website hierarchy.",
-				parent: $this,
+				container: $this,
 				property: "breadcrumb",
 				release: "11.01",
 				types: [
 					"Text",
 					"BreadcrumbList"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.BreadcrumbList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         lastReviewed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Date on which the content on this web page was last reviewed for accuracy and\\/or completeness.",
-				parent: $this,
+				container: $this,
 				property: "lastReviewed",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get lastreviewed() { return this.lastReviewed }
         set lastreviewed(value) { this.lastReviewed = value }
 
         mainContentOfPage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates if this web page element is the main subject of the page.",
-				parent: $this,
+				container: $this,
 				property: "mainContentOfPage",
 				release: "11.01",
 				types: [
 					"WebPageElement"
-				]
-			};
-			return new window.LiveElement.Element.elements.WebPageElement(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maincontentofpage() { return this.mainContentOfPage }
         set maincontentofpage(value) { this.mainContentOfPage = value }
 
         primaryImageOfPage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the main image on the page.",
-				parent: $this,
+				container: $this,
 				property: "primaryImageOfPage",
 				release: "11.01",
 				types: [
 					"ImageObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get primaryimageofpage() { return this.primaryImageOfPage }
         set primaryimageofpage(value) { this.primaryImageOfPage = value }
 
         relatedLink($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A link related to this web page, for example to other related web pages.",
-				parent: $this,
+				container: $this,
 				property: "relatedLink",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedlink() { return this.relatedLink }
         set relatedlink(value) { this.relatedLink = value }
 
         reviewedBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "People or organizations that have reviewed the content on this web page for accuracy and\\/or completeness.",
-				parent: $this,
+				container: $this,
 				property: "reviewedBy",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewedby() { return this.reviewedBy }
         set reviewedby(value) { this.reviewedBy = value }
 
         significantLink($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
-				parent: $this,
+				container: $this,
 				property: "significantLink",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get significantlink() { return this.significantLink }
         set significantlink(value) { this.significantLink = value }
 
         significantLinks($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
-				parent: $this,
+				container: $this,
 				property: "significantLinks",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get significantlinks() { return this.significantLinks }
         set significantlinks(value) { this.significantLinks = value }
 
         speakable($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
-				parent: $this,
+				container: $this,
 				property: "speakable",
 				release: "11.01",
 				types: [
 					"URL",
 					"SpeakableSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.SpeakableSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         specialty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "One of the domain specialities to which this web page's content applies.",
-				parent: $this,
+				container: $this,
 				property: "specialty",
 				release: "11.01",
 				types: [
 					"Specialty"
-				]
-			};
-			return new window.LiveElement.Element.elements.Specialty(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

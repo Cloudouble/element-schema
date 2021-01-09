@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HowToSection'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).'
         static _rdfs_label = 'HowToSection'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HowToSection')
         }
         
         connectedCallback() {
@@ -33,18 +30,19 @@
         
         
         steps($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
-				parent: $this,
+				container: $this,
 				property: "steps",
 				release: "11.01",
 				types: [
 					"ItemList",
 					"Text",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

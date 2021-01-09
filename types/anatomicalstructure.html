@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AnatomicalStructure'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.'
         static _rdfs_label = 'AnatomicalStructure'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AnatomicalStructure')
         }
         
         connectedCallback() {
@@ -33,119 +30,127 @@
         
         
         associatedPathophysiology($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
-				parent: $this,
+				container: $this,
 				property: "associatedPathophysiology",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get associatedpathophysiology() { return this.associatedPathophysiology }
         set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
         bodyLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Location in the body of the anatomical structure.",
-				parent: $this,
+				container: $this,
 				property: "bodyLocation",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get bodylocation() { return this.bodyLocation }
         set bodylocation(value) { this.bodyLocation = value }
 
         connectedTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Other anatomical structures to which this structure is connected.",
-				parent: $this,
+				container: $this,
 				property: "connectedTo",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get connectedto() { return this.connectedTo }
         set connectedto(value) { this.connectedTo = value }
 
         diagram($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An image containing a diagram that illustrates the structure and\\/or its component substructures and\\/or connections with other structures.",
-				parent: $this,
+				container: $this,
 				property: "diagram",
 				release: "11.01",
 				types: [
 					"ImageObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         partOfSystem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The anatomical or organ system that this structure is part of.",
-				parent: $this,
+				container: $this,
 				property: "partOfSystem",
 				release: "11.01",
 				types: [
 					"AnatomicalSystem"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partofsystem() { return this.partOfSystem }
         set partofsystem(value) { this.partOfSystem = value }
 
         relatedCondition($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical condition associated with this anatomy.",
-				parent: $this,
+				container: $this,
 				property: "relatedCondition",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedcondition() { return this.relatedCondition }
         set relatedcondition(value) { this.relatedCondition = value }
 
         relatedTherapy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical therapy related to this anatomy.",
-				parent: $this,
+				container: $this,
 				property: "relatedTherapy",
 				release: "11.01",
 				types: [
 					"MedicalTherapy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalTherapy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relatedtherapy() { return this.relatedTherapy }
         set relatedtherapy(value) { this.relatedTherapy = value }
 
         subStructure($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Component (sub-)structure(s) that comprise this anatomical structure.",
-				parent: $this,
+				container: $this,
 				property: "subStructure",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get substructure() { return this.subStructure }
         set substructure(value) { this.subStructure = value }

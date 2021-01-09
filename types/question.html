@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Question'
         static __type = 'rdfs:Class'
+        static __extends = 'Comment'
         static _rdfs_comment = 'A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.'
         static _rdfs_label = 'Question'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Question')
         }
         
         connectedCallback() {
@@ -33,63 +30,67 @@
         
         
         acceptedAnswer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The answer(s) that has been accepted as best, typically on a Question\\/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and\\/or the view of the Question author.",
-				parent: $this,
+				container: $this,
 				property: "acceptedAnswer",
 				release: "11.01",
 				types: [
 					"Answer",
 					"ItemList"
-				]
-			};
-			return new window.LiveElement.Element.elements.Answer(value, property) || new window.LiveElement.Element.elements.ItemList(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get acceptedanswer() { return this.acceptedAnswer }
         set acceptedanswer(value) { this.acceptedAnswer = value }
 
         answerCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of answers this question has received.",
-				parent: $this,
+				container: $this,
 				property: "answerCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get answercount() { return this.answerCount }
         set answercount(value) { this.answerCount = value }
 
         eduQuestionType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
-				parent: $this,
+				container: $this,
 				property: "eduQuestionType",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eduquestiontype() { return this.eduQuestionType }
         set eduquestiontype(value) { this.eduQuestionType = value }
 
         suggestedAnswer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question\\/Answer site.",
-				parent: $this,
+				container: $this,
 				property: "suggestedAnswer",
 				release: "11.01",
 				types: [
 					"ItemList",
 					"Answer"
-				]
-			};
-			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Answer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get suggestedanswer() { return this.suggestedAnswer }
         set suggestedanswer(value) { this.suggestedAnswer = value }

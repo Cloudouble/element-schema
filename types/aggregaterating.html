@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AggregateRating'
         static __type = 'rdfs:Class'
+        static __extends = 'Rating'
         static _rdfs_comment = 'The average rating based on multiple ratings or reviews.'
         static _rdfs_label = 'AggregateRating'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AggregateRating')
         }
         
         connectedCallback() {
@@ -33,46 +30,49 @@
         
         
         itemReviewed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item that is being reviewed\\/rated.",
-				parent: $this,
+				container: $this,
 				property: "itemReviewed",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemreviewed() { return this.itemReviewed }
         set itemreviewed(value) { this.itemReviewed = value }
 
         ratingCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The count of total number of ratings.",
-				parent: $this,
+				container: $this,
 				property: "ratingCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get ratingcount() { return this.ratingCount }
         set ratingcount(value) { this.ratingCount = value }
 
         reviewCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The count of total number of reviews.",
-				parent: $this,
+				container: $this,
 				property: "reviewCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewcount() { return this.reviewCount }
         set reviewcount(value) { this.reviewCount = value }

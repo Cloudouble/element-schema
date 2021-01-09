@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:NutritionInformation'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'Nutritional information about the recipe.'
         static _rdfs_label = 'NutritionInformation'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('NutritionInformation')
         }
         
         connectedCallback() {
@@ -33,179 +30,191 @@
         
         
         calories($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of calories.",
-				parent: $this,
+				container: $this,
 				property: "calories",
 				release: "11.01",
 				types: [
 					"Energy"
-				]
-			};
-			return new window.LiveElement.Element.elements.Energy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         carbohydrateContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of carbohydrates.",
-				parent: $this,
+				container: $this,
 				property: "carbohydrateContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get carbohydratecontent() { return this.carbohydrateContent }
         set carbohydratecontent(value) { this.carbohydrateContent = value }
 
         cholesterolContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of milligrams of cholesterol.",
-				parent: $this,
+				container: $this,
 				property: "cholesterolContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cholesterolcontent() { return this.cholesterolContent }
         set cholesterolcontent(value) { this.cholesterolContent = value }
 
         fatContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of fat.",
-				parent: $this,
+				container: $this,
 				property: "fatContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get fatcontent() { return this.fatContent }
         set fatcontent(value) { this.fatContent = value }
 
         fiberContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of fiber.",
-				parent: $this,
+				container: $this,
 				property: "fiberContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get fibercontent() { return this.fiberContent }
         set fibercontent(value) { this.fiberContent = value }
 
         proteinContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of protein.",
-				parent: $this,
+				container: $this,
 				property: "proteinContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get proteincontent() { return this.proteinContent }
         set proteincontent(value) { this.proteinContent = value }
 
         saturatedFatContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of saturated fat.",
-				parent: $this,
+				container: $this,
 				property: "saturatedFatContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get saturatedfatcontent() { return this.saturatedFatContent }
         set saturatedfatcontent(value) { this.saturatedFatContent = value }
 
         servingSize($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The serving size, in terms of the number of volume or mass.",
-				parent: $this,
+				container: $this,
 				property: "servingSize",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get servingsize() { return this.servingSize }
         set servingsize(value) { this.servingSize = value }
 
         sodiumContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of milligrams of sodium.",
-				parent: $this,
+				container: $this,
 				property: "sodiumContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sodiumcontent() { return this.sodiumContent }
         set sodiumcontent(value) { this.sodiumContent = value }
 
         sugarContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of sugar.",
-				parent: $this,
+				container: $this,
 				property: "sugarContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sugarcontent() { return this.sugarContent }
         set sugarcontent(value) { this.sugarContent = value }
 
         transFatContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of trans fat.",
-				parent: $this,
+				container: $this,
 				property: "transFatContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get transfatcontent() { return this.transFatContent }
         set transfatcontent(value) { this.transFatContent = value }
 
         unsaturatedFatContent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of grams of unsaturated fat.",
-				parent: $this,
+				container: $this,
 				property: "unsaturatedFatContent",
 				release: "11.01",
 				types: [
 					"Mass"
-				]
-			};
-			return new window.LiveElement.Element.elements.Mass(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get unsaturatedfatcontent() { return this.unsaturatedFatContent }
         set unsaturatedfatcontent(value) { this.unsaturatedFatContent = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Airline'
         static __type = 'rdfs:Class'
+        static __extends = 'Organization'
         static _rdfs_comment = 'An organization that provides flights for passengers.'
         static _rdfs_label = 'Airline'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Airline')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         boardingPolicy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
-				parent: $this,
+				container: $this,
 				property: "boardingPolicy",
 				release: "11.01",
 				types: [
 					"BoardingPolicyType"
-				]
-			};
-			return new window.LiveElement.Element.elements.BoardingPolicyType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get boardingpolicy() { return this.boardingPolicy }
         set boardingpolicy(value) { this.boardingPolicy = value }
 
         iataCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "IATA identifier for an airline or airport.",
-				parent: $this,
+				container: $this,
 				property: "iataCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get iatacode() { return this.iataCode }
         set iatacode(value) { this.iataCode = value }

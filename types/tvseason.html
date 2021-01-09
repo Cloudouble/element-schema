@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TVSeason'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'Season dedicated to TV broadcast and associated online delivery.'
         static _rdfs_label = 'TVSeason'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TVSeason')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         countryOfOrigin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The country of the principal offices of the production company or individual responsible for the movie or program.",
-				parent: $this,
+				container: $this,
 				property: "countryOfOrigin",
 				release: "11.01",
 				types: [
 					"Country"
-				]
-			};
-			return new window.LiveElement.Element.elements.Country(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
 
         partOfTVSeries($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The TV series to which this episode or season belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfTVSeries",
 				release: "11.01",
 				types: [
 					"TVSeries"
-				]
-			};
-			return new window.LiveElement.Element.elements.TVSeries(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HobbyShop'
         static __type = 'rdfs:Class'
+        static __extends = 'Store'
         static _rdfs_comment = 'A store that sells materials useful or necessary for various hobbies.'
         static _rdfs_label = 'HobbyShop'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HobbyShop')
         }
         
         connectedCallback() {

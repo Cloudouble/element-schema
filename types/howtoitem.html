@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HowToItem'
         static __type = 'rdfs:Class'
+        static __extends = 'ListItem'
         static _rdfs_comment = 'An item used as either a tool or supply when performing the instructions for how to to achieve a result.'
         static _rdfs_label = 'HowToItem'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HowToItem')
         }
         
         connectedCallback() {
@@ -33,18 +30,19 @@
         
         
         requiredQuantity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The required quantity of the item(s).",
-				parent: $this,
+				container: $this,
 				property: "requiredQuantity",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Text",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get requiredquantity() { return this.requiredQuantity }
         set requiredquantity(value) { this.requiredQuantity = value }

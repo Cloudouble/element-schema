@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DDxElement'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalIntangible'
         static _rdfs_comment = 'An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it.'
         static _rdfs_label = 'DDxElement'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DDxElement')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         diagnosis($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
-				parent: $this,
+				container: $this,
 				property: "diagnosis",
 				release: "11.01",
 				types: [
 					"MedicalCondition"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCondition(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         distinguishingSign($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.",
-				parent: $this,
+				container: $this,
 				property: "distinguishingSign",
 				release: "11.01",
 				types: [
 					"MedicalSignOrSymptom"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalSignOrSymptom(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get distinguishingsign() { return this.distinguishingSign }
         set distinguishingsign(value) { this.distinguishingSign = value }

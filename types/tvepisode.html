@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TVEpisode'
         static __type = 'rdfs:Class'
+        static __extends = 'Episode'
         static _rdfs_comment = 'A TV episode which can be part of a series or season.'
         static _rdfs_label = 'TVEpisode'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TVEpisode')
         }
         
         connectedCallback() {
@@ -33,63 +30,67 @@
         
         
         countryOfOrigin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The country of the principal offices of the production company or individual responsible for the movie or program.",
-				parent: $this,
+				container: $this,
 				property: "countryOfOrigin",
 				release: "11.01",
 				types: [
 					"Country"
-				]
-			};
-			return new window.LiveElement.Element.elements.Country(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
 
         partOfTVSeries($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The TV series to which this episode or season belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfTVSeries",
 				release: "11.01",
 				types: [
 					"TVSeries"
-				]
-			};
-			return new window.LiveElement.Element.elements.TVSeries(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }
 
         subtitleLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
-				parent: $this,
+				container: $this,
 				property: "subtitleLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
 
         titleEIDR($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing at the most general\\/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
-				parent: $this,
+				container: $this,
 				property: "titleEIDR",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get titleeidr() { return this.titleEIDR }
         set titleeidr(value) { this.titleEIDR = value }

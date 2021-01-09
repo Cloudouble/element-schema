@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Map'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A map.'
         static _rdfs_label = 'Map'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Map')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         mapType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the kind of Map, from the MapCategoryType Enumeration.",
-				parent: $this,
+				container: $this,
 				property: "mapType",
 				release: "11.01",
 				types: [
 					"MapCategoryType"
-				]
-			};
-			return new window.LiveElement.Element.elements.MapCategoryType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maptype() { return this.mapType }
         set maptype(value) { this.mapType = value }

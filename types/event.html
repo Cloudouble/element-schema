@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Event'
         static __type = 'rdfs:Class'
+        static __extends = 'Thing'
         static _rdfs_comment = 'An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.'
         static _rdfs_label = 'Event'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Event')
         }
         
         connectedCallback() {
@@ -33,267 +30,285 @@
         
         
         about($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The subject matter of the content.",
-				parent: $this,
+				container: $this,
 				property: "about",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         aggregateRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
-				parent: $this,
+				container: $this,
 				property: "aggregateRating",
 				release: "11.01",
 				types: [
 					"AggregateRating"
-				]
-			};
-			return new window.LiveElement.Element.elements.AggregateRating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
 
         attendee($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization attending the event.",
-				parent: $this,
+				container: $this,
 				property: "attendee",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         attendees($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person attending the event.",
-				parent: $this,
+				container: $this,
 				property: "attendees",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         audience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
-				parent: $this,
+				container: $this,
 				property: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         composer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
-				parent: $this,
+				container: $this,
 				property: "composer",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         contributor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A secondary contributor to the CreativeWork or Event.",
-				parent: $this,
+				container: $this,
 				property: "contributor",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         doorTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The time admission will commence.",
-				parent: $this,
+				container: $this,
 				property: "doorTime",
 				release: "11.01",
 				types: [
 					"Time",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get doortime() { return this.doorTime }
         set doortime(value) { this.doorTime = value }
 
         duration($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         endDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "endDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
         eventAttendanceMode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.",
-				parent: $this,
+				container: $this,
 				property: "eventAttendanceMode",
 				release: "11.01",
 				types: [
 					"EventAttendanceModeEnumeration"
-				]
-			};
-			return new window.LiveElement.Element.elements.EventAttendanceModeEnumeration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eventattendancemode() { return this.eventAttendanceMode }
         set eventattendancemode(value) { this.eventAttendanceMode = value }
 
         eventSchedule($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of\n      repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly\n      gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that\n      is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated\n      [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months\n      or seasons.",
-				parent: $this,
+				container: $this,
 				property: "eventSchedule",
 				release: "11.01",
 				types: [
 					"Schedule"
-				]
-			};
-			return new window.LiveElement.Element.elements.Schedule(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eventschedule() { return this.eventSchedule }
         set eventschedule(value) { this.eventSchedule = value }
 
         eventStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
-				parent: $this,
+				container: $this,
 				property: "eventStatus",
 				release: "11.01",
 				types: [
 					"EventStatusType"
-				]
-			};
-			return new window.LiveElement.Element.elements.EventStatusType(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get eventstatus() { return this.eventStatus }
         set eventstatus(value) { this.eventStatus = value }
 
         funder($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-				parent: $this,
+				container: $this,
 				property: "funder",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         inLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
-				parent: $this,
+				container: $this,
 				property: "inLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
         isAccessibleForFree($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A flag to signal that the item, event, or place is accessible for free.",
-				parent: $this,
+				container: $this,
 				property: "isAccessibleForFree",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isaccessibleforfree() { return this.isAccessibleForFree }
         set isaccessibleforfree(value) { this.isAccessibleForFree = value }
 
         location($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location of, for example, where an event is happening, where an organization is located, or where an action takes place.",
-				parent: $this,
+				container: $this,
 				property: "location",
 				release: "11.01",
 				types: [
@@ -301,300 +316,321 @@
 					"Text",
 					"VirtualLocation",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.PostalAddress(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.VirtualLocation(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         maximumAttendeeCapacity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total number of individuals that may attend an event or venue.",
-				parent: $this,
+				container: $this,
 				property: "maximumAttendeeCapacity",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
         set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
 
         maximumPhysicalAttendeeCapacity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). ",
-				parent: $this,
+				container: $this,
 				property: "maximumPhysicalAttendeeCapacity",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maximumphysicalattendeecapacity() { return this.maximumPhysicalAttendeeCapacity }
         set maximumphysicalattendeecapacity(value) { this.maximumPhysicalAttendeeCapacity = value }
 
         maximumVirtualAttendeeCapacity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). ",
-				parent: $this,
+				container: $this,
 				property: "maximumVirtualAttendeeCapacity",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maximumvirtualattendeecapacity() { return this.maximumVirtualAttendeeCapacity }
         set maximumvirtualattendeecapacity(value) { this.maximumVirtualAttendeeCapacity = value }
 
         offers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.\n      ",
-				parent: $this,
+				container: $this,
 				property: "offers",
 				release: "11.01",
 				types: [
 					"Demand",
 					"Offer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Demand(value, property) || new window.LiveElement.Element.elements.Offer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         organizer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An organizer of an Event.",
-				parent: $this,
+				container: $this,
 				property: "organizer",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         performer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
-				parent: $this,
+				container: $this,
 				property: "performer",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         performers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.",
-				parent: $this,
+				container: $this,
 				property: "performers",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         previousStartDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
-				parent: $this,
+				container: $this,
 				property: "previousStartDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get previousstartdate() { return this.previousStartDate }
         set previousstartdate(value) { this.previousStartDate = value }
 
         recordedIn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The CreativeWork that captured all or part of this Event.",
-				parent: $this,
+				container: $this,
 				property: "recordedIn",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recordedin() { return this.recordedIn }
         set recordedin(value) { this.recordedIn = value }
 
         remainingAttendeeCapacity($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of attendee places for an event that remain unallocated.",
-				parent: $this,
+				container: $this,
 				property: "remainingAttendeeCapacity",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get remainingattendeecapacity() { return this.remainingAttendeeCapacity }
         set remainingattendeecapacity(value) { this.remainingAttendeeCapacity = value }
 
         review($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A review of the item.",
-				parent: $this,
+				container: $this,
 				property: "review",
 				release: "11.01",
 				types: [
 					"Review"
-				]
-			};
-			return new window.LiveElement.Element.elements.Review(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         sponsor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
-				parent: $this,
+				container: $this,
 				property: "sponsor",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         startDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "startDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
 
         subEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
-				parent: $this,
+				container: $this,
 				property: "subEvent",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get subevent() { return this.subEvent }
         set subevent(value) { this.subEvent = value }
 
         subEvents($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
-				parent: $this,
+				container: $this,
 				property: "subEvents",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get subevents() { return this.subEvents }
         set subevents(value) { this.subEvents = value }
 
         superEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
-				parent: $this,
+				container: $this,
 				property: "superEvent",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get superevent() { return this.superEvent }
         set superevent(value) { this.superEvent = value }
 
         translator($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
-				parent: $this,
+				container: $this,
 				property: "translator",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         typicalAgeRange($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The typical expected age range, e.g. '7-9', '11-'.",
-				parent: $this,
+				container: $this,
 				property: "typicalAgeRange",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get typicalagerange() { return this.typicalAgeRange }
         set typicalagerange(value) { this.typicalAgeRange = value }
 
         workFeatured($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
-				parent: $this,
+				container: $this,
 				property: "workFeatured",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get workfeatured() { return this.workFeatured }
         set workfeatured(value) { this.workFeatured = value }
 
         workPerformed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A work performed in some event, for example a play performed in a TheaterEvent.",
-				parent: $this,
+				container: $this,
 				property: "workPerformed",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get workperformed() { return this.workPerformed }
         set workperformed(value) { this.workPerformed = value }

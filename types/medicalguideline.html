@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalGuideline'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'Any recommendation made by a standard society (e.g. ACC\/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.'
         static _rdfs_label = 'MedicalGuideline'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalGuideline')
         }
         
         connectedCallback() {
@@ -33,61 +30,65 @@
         
         
         evidenceLevel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Strength of evidence of the data used to formulate the guideline (enumerated).",
-				parent: $this,
+				container: $this,
 				property: "evidenceLevel",
 				release: "11.01",
 				types: [
 					"MedicalEvidenceLevel"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEvidenceLevel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get evidencelevel() { return this.evidenceLevel }
         set evidencelevel(value) { this.evidenceLevel = value }
 
         evidenceOrigin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.",
-				parent: $this,
+				container: $this,
 				property: "evidenceOrigin",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get evidenceorigin() { return this.evidenceOrigin }
         set evidenceorigin(value) { this.evidenceOrigin = value }
 
         guidelineDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Date on which this guideline's recommendation was made.",
-				parent: $this,
+				container: $this,
 				property: "guidelineDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get guidelinedate() { return this.guidelineDate }
         set guidelinedate(value) { this.guidelineDate = value }
 
         guidelineSubject($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The medical conditions, treatments, etc. that are the subject of the guideline.",
-				parent: $this,
+				container: $this,
 				property: "guidelineSubject",
 				release: "11.01",
 				types: [
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get guidelinesubject() { return this.guidelineSubject }
         set guidelinesubject(value) { this.guidelineSubject = value }

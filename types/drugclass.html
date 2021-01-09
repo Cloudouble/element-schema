@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DrugClass'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.'
         static _rdfs_label = 'DrugClass'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DrugClass')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         drug($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Specifying a drug or medicine used in a medication procedure",
-				parent: $this,
+				container: $this,
 				property: "drug",
 				release: "11.01",
 				types: [
 					"Drug"
-				]
-			};
-			return new window.LiveElement.Element.elements.Drug(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

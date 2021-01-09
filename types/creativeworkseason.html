@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CreativeWorkSeason'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A media season e.g. tv, radio, video game etc.'
         static _rdfs_label = 'CreativeWorkSeason'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CreativeWorkSeason')
         }
         
         connectedCallback() {
@@ -33,161 +30,172 @@
         
         
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         endDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The end date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "endDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
 
         episode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An episode of a tv, radio or game media within a series or season.",
-				parent: $this,
+				container: $this,
 				property: "episode",
 				release: "11.01",
 				types: [
 					"Episode"
-				]
-			};
-			return new window.LiveElement.Element.elements.Episode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         episodes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An episode of a TV\\/radio series or season.",
-				parent: $this,
+				container: $this,
 				property: "episodes",
 				release: "11.01",
 				types: [
 					"Episode"
-				]
-			};
-			return new window.LiveElement.Element.elements.Episode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         numberOfEpisodes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of episodes in this season or series.",
-				parent: $this,
+				container: $this,
 				property: "numberOfEpisodes",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofepisodes() { return this.numberOfEpisodes }
         set numberofepisodes(value) { this.numberOfEpisodes = value }
 
         partOfSeries($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The series to which this episode or season belongs.",
-				parent: $this,
+				container: $this,
 				property: "partOfSeries",
 				release: "11.01",
 				types: [
 					"CreativeWorkSeries"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWorkSeries(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get partofseries() { return this.partOfSeries }
         set partofseries(value) { this.partOfSeries = value }
 
         productionCompany($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-				parent: $this,
+				container: $this,
 				property: "productionCompany",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
 
         seasonNumber($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Position of the season within an ordered group of seasons.",
-				parent: $this,
+				container: $this,
 				property: "seasonNumber",
 				release: "11.01",
 				types: [
 					"Integer",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get seasonnumber() { return this.seasonNumber }
         set seasonnumber(value) { this.seasonNumber = value }
 
         startDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The start date and time of the item (in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601)).",
-				parent: $this,
+				container: $this,
 				property: "startDate",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
 
         trailer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
-				parent: $this,
+				container: $this,
 				property: "trailer",
 				release: "11.01",
 				types: [
 					"VideoObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.VideoObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

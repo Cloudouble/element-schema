@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OfferForLease'
         static __type = 'rdfs:Class'
+        static __extends = 'Offer'
         static _rdfs_comment = 'An [[OfferForLease]] in Schema.org represents an [[Offer]] to lease out something, i.e. an [[Offer]] whose   [[businessFunction]] is [lease out](http:\/\/purl.org\/goodrelations\/v1#LeaseOut.). See [Good Relations](https:\/\/en.wikipedia.org\/wiki\/GoodRelations) for   background on the underlying concepts.   '
         static _rdfs_label = 'OfferForLease'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OfferForLease')
         }
         
         connectedCallback() {

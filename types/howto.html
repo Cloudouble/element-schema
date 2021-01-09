@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HowTo'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'Instructions that explain how to achieve a result by performing a sequence of steps.'
         static _rdfs_label = 'HowTo'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HowTo')
         }
         
         connectedCallback() {
@@ -33,55 +30,58 @@
         
         
         estimatedCost($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The estimated cost of the supply or supplies consumed when performing instructions.",
-				parent: $this,
+				container: $this,
 				property: "estimatedCost",
 				release: "11.01",
 				types: [
 					"Text",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get estimatedcost() { return this.estimatedCost }
         set estimatedcost(value) { this.estimatedCost = value }
 
         performTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "performTime",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get performtime() { return this.performTime }
         set performtime(value) { this.performTime = value }
 
         prepTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "prepTime",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get preptime() { return this.prepTime }
         set preptime(value) { this.prepTime = value }
 
         step($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.",
-				parent: $this,
+				container: $this,
 				property: "step",
 				release: "11.01",
 				types: [
@@ -89,81 +89,87 @@
 					"Text",
 					"HowToSection",
 					"HowToStep"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.HowToSection(value, property) || new window.LiveElement.Element.elements.HowToStep(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         steps($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
-				parent: $this,
+				container: $this,
 				property: "steps",
 				release: "11.01",
 				types: [
 					"ItemList",
 					"Text",
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.ItemList(value, property) || new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         supply($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
-				parent: $this,
+				container: $this,
 				property: "supply",
 				release: "11.01",
 				types: [
 					"HowToSupply",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.HowToSupply(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         tool($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
-				parent: $this,
+				container: $this,
 				property: "tool",
 				release: "11.01",
 				types: [
 					"HowToTool",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.HowToTool(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         totalTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
-				parent: $this,
+				container: $this,
 				property: "totalTime",
 				release: "11.01",
 				types: [
 					"Duration"
-				]
-			};
-			return new window.LiveElement.Element.elements.Duration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get totaltime() { return this.totalTime }
         set totaltime(value) { this.totalTime = value }
 
         yield($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.",
-				parent: $this,
+				container: $this,
 				property: "yield",
 				release: "11.01",
 				types: [
 					"Text",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

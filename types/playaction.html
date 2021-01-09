@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PlayAction'
         static __type = 'rdfs:Class'
+        static __extends = 'Action'
         static _rdfs_comment = 'The act of playing\/exercising\/training\/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing\/displaying for an audience or at an event, rather than consuming visual content.'
         static _rdfs_label = 'PlayAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PlayAction')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         audience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
-				parent: $this,
+				container: $this,
 				property: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
-				]
-			};
-			return new window.LiveElement.Element.elements.Audience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         event($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Upcoming or past event associated with this place, organization, or action.",
-				parent: $this,
+				container: $this,
 				property: "event",
 				release: "11.01",
 				types: [
 					"Event"
-				]
-			};
-			return new window.LiveElement.Element.elements.Event(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Legislation'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).'
         static _rdfs_label = 'Legislation'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Legislation')
         }
         
         connectedCallback() {
@@ -33,200 +30,213 @@
         
         
         jurisdiction($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.",
-				parent: $this,
+				container: $this,
 				property: "jurisdiction",
 				release: "11.01",
 				types: [
 					"AdministrativeArea",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         legislationApplies($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href=\"\\/legislationTransposes\">legislationTransposes<\\/a> property. For example an informative consolidated law of a European Union's member state \"applies\" the consolidated version of the European Directive implemented in it.",
-				parent: $this,
+				container: $this,
 				property: "legislationApplies",
 				release: "11.01",
 				types: [
 					"Legislation"
-				]
-			};
-			return new window.LiveElement.Element.elements.Legislation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationapplies() { return this.legislationApplies }
         set legislationapplies(value) { this.legislationApplies = value }
 
         legislationChanges($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href=\"\\/legislationConsolidates\">legislationConsolidates<\\/a> property.",
-				parent: $this,
+				container: $this,
 				property: "legislationChanges",
 				release: "11.01",
 				types: [
 					"Legislation"
-				]
-			};
-			return new window.LiveElement.Element.elements.Legislation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationchanges() { return this.legislationChanges }
         set legislationchanges(value) { this.legislationChanges = value }
 
         legislationConsolidates($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates another legislation taken into account in this consolidated legislation (which is usually the product of an editorial process that revises the legislation). This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change.",
-				parent: $this,
+				container: $this,
 				property: "legislationConsolidates",
 				release: "11.01",
 				types: [
 					"Legislation"
-				]
-			};
-			return new window.LiveElement.Element.elements.Legislation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationconsolidates() { return this.legislationConsolidates }
         set legislationconsolidates(value) { this.legislationConsolidates = value }
 
         legislationDate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.",
-				parent: $this,
+				container: $this,
 				property: "legislationDate",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationdate() { return this.legislationDate }
         set legislationdate(value) { this.legislationDate = value }
 
         legislationDateVersion($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The point-in-time at which the provided description of the legislation is valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the \"National Insurance Contributions Act 2015\")",
-				parent: $this,
+				container: $this,
 				property: "legislationDateVersion",
 				release: "11.01",
 				types: [
 					"Date"
-				]
-			};
-			return new window.LiveElement.Element.elements.Date(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationdateversion() { return this.legislationDateVersion }
         set legislationdateversion(value) { this.legislationDateVersion = value }
 
         legislationIdentifier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL\\/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.",
-				parent: $this,
+				container: $this,
 				property: "legislationIdentifier",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationidentifier() { return this.legislationIdentifier }
         set legislationidentifier(value) { this.legislationIdentifier = value }
 
         legislationJurisdiction($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The jurisdiction from which the legislation originates.",
-				parent: $this,
+				container: $this,
 				property: "legislationJurisdiction",
 				release: "11.01",
 				types: [
 					"AdministrativeArea",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationjurisdiction() { return this.legislationJurisdiction }
         set legislationjurisdiction(value) { this.legislationJurisdiction = value }
 
         legislationLegalForce($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the legislation is currently in force, not in force, or partially in force.",
-				parent: $this,
+				container: $this,
 				property: "legislationLegalForce",
 				release: "11.01",
 				types: [
 					"LegalForceStatus"
-				]
-			};
-			return new window.LiveElement.Element.elements.LegalForceStatus(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationlegalforce() { return this.legislationLegalForce }
         set legislationlegalforce(value) { this.legislationLegalForce = value }
 
         legislationPassedBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the \"legal author\" of the law, as opposed to its physical author.",
-				parent: $this,
+				container: $this,
 				property: "legislationPassedBy",
 				release: "11.01",
 				types: [
 					"Person",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationpassedby() { return this.legislationPassedBy }
         set legislationpassedby(value) { this.legislationPassedBy = value }
 
         legislationResponsible($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is\\/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.",
-				parent: $this,
+				container: $this,
 				property: "legislationResponsible",
 				release: "11.01",
 				types: [
 					"Organization",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationresponsible() { return this.legislationResponsible }
         set legislationresponsible(value) { this.legislationResponsible = value }
 
         legislationTransposes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.",
-				parent: $this,
+				container: $this,
 				property: "legislationTransposes",
 				release: "11.01",
 				types: [
 					"Legislation"
-				]
-			};
-			return new window.LiveElement.Element.elements.Legislation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationtransposes() { return this.legislationTransposes }
         set legislationtransposes(value) { this.legislationTransposes = value }
 
         legislationType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of the legislation. Examples of values are \"law\", \"act\", \"directive\", \"decree\", \"regulation\", \"statutory instrument\", \"loi organique\", \"r\u00e8glement grand-ducal\", etc., depending on the country.",
-				parent: $this,
+				container: $this,
 				property: "legislationType",
 				release: "11.01",
 				types: [
 					"CategoryCode",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.CategoryCode(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legislationtype() { return this.legislationType }
         set legislationtype(value) { this.legislationType = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:UserReview'
         static __type = 'rdfs:Class'
+        static __extends = 'Review'
         static _rdfs_comment = 'A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].'
         static _rdfs_label = 'UserReview'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('UserReview')
         }
         
         connectedCallback() {

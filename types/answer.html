@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Answer'
         static __type = 'rdfs:Class'
+        static __extends = 'Comment'
         static _rdfs_comment = 'An answer offered to a question; perhaps correct, perhaps opinionated or wrong.'
         static _rdfs_label = 'Answer'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Answer')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         answerExplanation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. ",
-				parent: $this,
+				container: $this,
 				property: "answerExplanation",
 				release: "11.01",
 				types: [
 					"Comment",
 					"WebContent"
-				]
-			};
-			return new window.LiveElement.Element.elements.Comment(value, property) || new window.LiveElement.Element.elements.WebContent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get answerexplanation() { return this.answerExplanation }
         set answerexplanation(value) { this.answerExplanation = value }

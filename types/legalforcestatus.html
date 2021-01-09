@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LegalForceStatus'
         static __type = 'rdfs:Class'
+        static __extends = 'StatusEnumeration'
         static _rdfs_comment = 'A list of possible statuses for the legal force of a legislation.'
         static _rdfs_label = 'LegalForceStatus'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LegalForceStatus')
         }
         
         connectedCallback() {

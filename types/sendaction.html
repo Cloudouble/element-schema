@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SendAction'
         static __type = 'rdfs:Class'
+        static __extends = 'TransferAction'
         static _rdfs_comment = 'The act of physically\/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I\'m not necessarily giving it to you).'
         static _rdfs_label = 'SendAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SendAction')
         }
         
         connectedCallback() {
@@ -33,24 +30,25 @@
         
         
         deliveryMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The method of delivery.",
-				parent: $this,
+				container: $this,
 				property: "deliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get deliverymethod() { return this.deliveryMethod }
         set deliverymethod(value) { this.deliveryMethod = value }
 
         recipient($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of participant. The participant who is at the receiving end of the action.",
-				parent: $this,
+				container: $this,
 				property: "recipient",
 				release: "11.01",
 				types: [
@@ -58,9 +56,10 @@
 					"Audience",
 					"ContactPoint",
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.Audience(value, property) || new window.LiveElement.Element.elements.ContactPoint(value, property) || new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

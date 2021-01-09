@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DrugStrength'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalIntangible'
         static _rdfs_comment = 'A specific strength in which a medical drug is available in a specific country.'
         static _rdfs_label = 'DrugStrength'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DrugStrength')
         }
         
         connectedCallback() {
@@ -33,76 +30,81 @@
         
         
         activeIngredient($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
-				parent: $this,
+				container: $this,
 				property: "activeIngredient",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
 
         availableIn($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The location in which the strength is available.",
-				parent: $this,
+				container: $this,
 				property: "availableIn",
 				release: "11.01",
 				types: [
 					"AdministrativeArea"
-				]
-			};
-			return new window.LiveElement.Element.elements.AdministrativeArea(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get availablein() { return this.availableIn }
         set availablein(value) { this.availableIn = value }
 
         maximumIntake($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
-				parent: $this,
+				container: $this,
 				property: "maximumIntake",
 				release: "11.01",
 				types: [
 					"MaximumDoseSchedule"
-				]
-			};
-			return new window.LiveElement.Element.elements.MaximumDoseSchedule(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
 
         strengthUnit($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The units of an active ingredient's strength, e.g. mg.",
-				parent: $this,
+				container: $this,
 				property: "strengthUnit",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get strengthunit() { return this.strengthUnit }
         set strengthunit(value) { this.strengthUnit = value }
 
         strengthValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The value of an active ingredient's strength, e.g. 325.",
-				parent: $this,
+				container: $this,
 				property: "strengthValue",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get strengthvalue() { return this.strengthValue }
         set strengthvalue(value) { this.strengthValue = value }

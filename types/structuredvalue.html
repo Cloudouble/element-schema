@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:StructuredValue'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.'
         static _rdfs_label = 'StructuredValue'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('StructuredValue')
         }
         
         connectedCallback() {

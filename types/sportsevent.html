@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SportsEvent'
         static __type = 'rdfs:Class'
+        static __extends = 'Event'
         static _rdfs_comment = 'Event type: Sports event.'
         static _rdfs_label = 'SportsEvent'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SportsEvent')
         }
         
         connectedCallback() {
@@ -33,63 +30,67 @@
         
         
         awayTeam($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The away team in a sports event.",
-				parent: $this,
+				container: $this,
 				property: "awayTeam",
 				release: "11.01",
 				types: [
 					"SportsTeam",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.SportsTeam(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get awayteam() { return this.awayTeam }
         set awayteam(value) { this.awayTeam = value }
 
         competitor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A competitor in a sports event.",
-				parent: $this,
+				container: $this,
 				property: "competitor",
 				release: "11.01",
 				types: [
 					"Person",
 					"SportsTeam"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.SportsTeam(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         homeTeam($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The home team in a sports event.",
-				parent: $this,
+				container: $this,
 				property: "homeTeam",
 				release: "11.01",
 				types: [
 					"SportsTeam",
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.SportsTeam(value, property) || new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get hometeam() { return this.homeTeam }
         set hometeam(value) { this.homeTeam = value }
 
         sport($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A type of sport (e.g. Baseball).",
-				parent: $this,
+				container: $this,
 				property: "sport",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

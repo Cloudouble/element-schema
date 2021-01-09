@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalEntity'
         static __type = 'rdfs:Class'
+        static __extends = 'Thing'
         static _rdfs_comment = 'The most generic type of entity related to health and the practice of medicine.'
         static _rdfs_label = 'MedicalEntity'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalEntity')
         }
         
         connectedCallback() {
@@ -33,104 +30,111 @@
         
         
         code($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
-				parent: $this,
+				container: $this,
 				property: "code",
 				release: "11.01",
 				types: [
 					"MedicalCode"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalCode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         guideline($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical guideline related to this entity.",
-				parent: $this,
+				container: $this,
 				property: "guideline",
 				release: "11.01",
 				types: [
 					"MedicalGuideline"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalGuideline(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         legalStatus($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
-				parent: $this,
+				container: $this,
 				property: "legalStatus",
 				release: "11.01",
 				types: [
 					"DrugLegalStatus",
 					"MedicalEnumeration",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.DrugLegalStatus(value, property) || new window.LiveElement.Element.elements.MedicalEnumeration(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
 
         medicineSystem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
-				parent: $this,
+				container: $this,
 				property: "medicineSystem",
 				release: "11.01",
 				types: [
 					"MedicineSystem"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicineSystem(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get medicinesystem() { return this.medicineSystem }
         set medicinesystem(value) { this.medicineSystem = value }
 
         recognizingAuthority($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
-				parent: $this,
+				container: $this,
 				property: "recognizingAuthority",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get recognizingauthority() { return this.recognizingAuthority }
         set recognizingauthority(value) { this.recognizingAuthority = value }
 
         relevantSpecialty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "If applicable, a medical specialty in which this entity is relevant.",
-				parent: $this,
+				container: $this,
 				property: "relevantSpecialty",
 				release: "11.01",
 				types: [
 					"MedicalSpecialty"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalSpecialty(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get relevantspecialty() { return this.relevantSpecialty }
         set relevantspecialty(value) { this.relevantSpecialty = value }
 
         study($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A medical study or trial related to this entity.",
-				parent: $this,
+				container: $this,
 				property: "study",
 				release: "11.01",
 				types: [
 					"MedicalStudy"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalStudy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

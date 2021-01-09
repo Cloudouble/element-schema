@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SteeringPositionValue'
         static __type = 'rdfs:Class'
+        static __extends = 'QualitativeValue'
         static _rdfs_comment = 'A value indicating a steering position.'
         static _rdfs_label = 'SteeringPositionValue'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SteeringPositionValue')
         }
         
         connectedCallback() {

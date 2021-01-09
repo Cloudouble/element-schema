@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:GeospatialGeometry'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = '(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.'
         static _rdfs_label = 'GeospatialGeometry'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('GeospatialGeometry')
         }
         
         connectedCallback() {
@@ -33,161 +30,171 @@
         
         
         geoContains($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoContains",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geocontains() { return this.geoContains }
         set geocontains(value) { this.geoContains = value }
 
         geoCoveredBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoCoveredBy",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geocoveredby() { return this.geoCoveredBy }
         set geocoveredby(value) { this.geoCoveredBy = value }
 
         geoCovers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoCovers",
 				release: "11.01",
 				types: [
 					"Place",
 					"GeospatialGeometry"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.GeospatialGeometry(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geocovers() { return this.geoCovers }
         set geocovers(value) { this.geoCovers = value }
 
         geoCrosses($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoCrosses",
 				release: "11.01",
 				types: [
 					"Place",
 					"GeospatialGeometry"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.GeospatialGeometry(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geocrosses() { return this.geoCrosses }
         set geocrosses(value) { this.geoCrosses = value }
 
         geoDisjoint($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM))",
-				parent: $this,
+				container: $this,
 				property: "geoDisjoint",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geodisjoint() { return this.geoDisjoint }
         set geodisjoint(value) { this.geoDisjoint = value }
 
         geoEquals($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM). \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
-				parent: $this,
+				container: $this,
 				property: "geoEquals",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geoequals() { return this.geoEquals }
         set geoequals(value) { this.geoEquals = value }
 
         geoIntersects($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoIntersects",
 				release: "11.01",
 				types: [
 					"Place",
 					"GeospatialGeometry"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.GeospatialGeometry(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geointersects() { return this.geoIntersects }
         set geointersects(value) { this.geoIntersects = value }
 
         geoOverlaps($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoOverlaps",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geooverlaps() { return this.geoOverlaps }
         set geooverlaps(value) { this.geoOverlaps = value }
 
         geoTouches($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM) )",
-				parent: $this,
+				container: $this,
 				property: "geoTouches",
 				release: "11.01",
 				types: [
 					"GeospatialGeometry",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.GeospatialGeometry(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geotouches() { return this.geoTouches }
         set geotouches(value) { this.geoTouches = value }
 
         geoWithin($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https:\\/\\/en.wikipedia.org\\/wiki\\/DE-9IM).",
-				parent: $this,
+				container: $this,
 				property: "geoWithin",
 				release: "11.01",
 				types: [
 					"Place",
 					"GeospatialGeometry"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.GeospatialGeometry(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get geowithin() { return this.geoWithin }
         set geowithin(value) { this.geoWithin = value }

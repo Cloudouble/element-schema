@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WriteAction'
         static __type = 'rdfs:Class'
+        static __extends = 'CreateAction'
         static _rdfs_comment = 'The act of authoring written creative content.'
         static _rdfs_label = 'WriteAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WriteAction')
         }
         
         connectedCallback() {
@@ -33,32 +30,34 @@
         
         
         inLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
-				parent: $this,
+				container: $this,
 				property: "inLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
         language($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The language used on this action.",
-				parent: $this,
+				container: $this,
 				property: "language",
 				release: "11.01",
 				types: [
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

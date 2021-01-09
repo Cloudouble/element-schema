@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CookAction'
         static __type = 'rdfs:Class'
+        static __extends = 'CreateAction'
         static _rdfs_comment = 'The act of producing\/preparing food.'
         static _rdfs_label = 'CookAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CookAction')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         foodEstablishment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The specific food establishment where the action occurred.",
-				parent: $this,
+				container: $this,
 				property: "foodEstablishment",
 				release: "11.01",
 				types: [
 					"FoodEstablishment",
 					"Place"
-				]
-			};
-			return new window.LiveElement.Element.elements.FoodEstablishment(value, property) || new window.LiveElement.Element.elements.Place(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get foodestablishment() { return this.foodEstablishment }
         set foodestablishment(value) { this.foodEstablishment = value }
 
         foodEvent($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of location. The specific food event where the action occurred.",
-				parent: $this,
+				container: $this,
 				property: "foodEvent",
 				release: "11.01",
 				types: [
 					"FoodEvent"
-				]
-			};
-			return new window.LiveElement.Element.elements.FoodEvent(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get foodevent() { return this.foodEvent }
         set foodevent(value) { this.foodEvent = value }
 
         recipe($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of instrument. The recipe\\/instructions used to perform the action.",
-				parent: $this,
+				container: $this,
 				property: "recipe",
 				release: "11.01",
 				types: [
 					"Recipe"
-				]
-			};
-			return new window.LiveElement.Element.elements.Recipe(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

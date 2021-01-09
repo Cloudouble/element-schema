@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:UpdateAction'
         static __type = 'rdfs:Class'
+        static __extends = 'Action'
         static _rdfs_comment = 'The act of managing by changing\/editing the state of the object.'
         static _rdfs_label = 'UpdateAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('UpdateAction')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         collection($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The collection target of the action.",
-				parent: $this,
+				container: $this,
 				property: "collection",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         targetCollection($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The collection target of the action.",
-				parent: $this,
+				container: $this,
 				property: "targetCollection",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get targetcollection() { return this.targetCollection }
         set targetcollection(value) { this.targetCollection = value }

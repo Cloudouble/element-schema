@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:CommentAction'
         static __type = 'rdfs:Class'
+        static __extends = 'CommunicateAction'
         static _rdfs_comment = 'The act of generating a comment about a subject.'
         static _rdfs_label = 'CommentAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('CommentAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         resultComment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of result. The Comment created or sent as a result of this action.",
-				parent: $this,
+				container: $this,
 				property: "resultComment",
 				release: "11.01",
 				types: [
 					"Comment"
-				]
-			};
-			return new window.LiveElement.Element.elements.Comment(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get resultcomment() { return this.resultComment }
         set resultcomment(value) { this.resultComment = value }

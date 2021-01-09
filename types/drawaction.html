@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DrawAction'
         static __type = 'rdfs:Class'
+        static __extends = 'CreateAction'
         static _rdfs_comment = 'The act of producing a visual\/graphical representation of an object, typically with a pen\/pencil and paper as instruments.'
         static _rdfs_label = 'DrawAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DrawAction')
         }
         
         connectedCallback() {

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:OfferShippingDetails'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'OfferShippingDetails represents information about shipping destinations.  Multiple of these entities can be used to represent different shipping rates for different destinations:  One entity for Alaska\/Hawaii. A different one for continental US.A different one for all France.  Multiple of these entities can be used to represent different shipping costs and delivery times.  Two entities that are identical but differ in rate and time:  e.g. Cheaper and slower: $5 in 5-7days or Fast and expensive: $15 in 1-2 days '
         static _rdfs_label = 'OfferShippingDetails'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('OfferShippingDetails')
         }
         
         connectedCallback() {
@@ -33,106 +30,113 @@
         
         
         deliveryTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total delay between the receipt of the order and the goods reaching the final customer.",
-				parent: $this,
+				container: $this,
 				property: "deliveryTime",
 				release: "11.01",
 				types: [
 					"ShippingDeliveryTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.ShippingDeliveryTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get deliverytime() { return this.deliveryTime }
         set deliverytime(value) { this.deliveryTime = value }
 
         doesNotShip($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates when shipping to a particular [[shippingDestination]] is not available.",
-				parent: $this,
+				container: $this,
 				property: "doesNotShip",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get doesnotship() { return this.doesNotShip }
         set doesnotship(value) { this.doesNotShip = value }
 
         shippingDestination($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
-				parent: $this,
+				container: $this,
 				property: "shippingDestination",
 				release: "11.01",
 				types: [
 					"DefinedRegion"
-				]
-			};
-			return new window.LiveElement.Element.elements.DefinedRegion(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
 
         shippingLabel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
-				parent: $this,
+				container: $this,
 				property: "shippingLabel",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get shippinglabel() { return this.shippingLabel }
         set shippinglabel(value) { this.shippingLabel = value }
 
         shippingRate($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
-				parent: $this,
+				container: $this,
 				property: "shippingRate",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get shippingrate() { return this.shippingRate }
         set shippingrate(value) { this.shippingRate = value }
 
         shippingSettingsLink($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.",
-				parent: $this,
+				container: $this,
 				property: "shippingSettingsLink",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get shippingsettingslink() { return this.shippingSettingsLink }
         set shippingsettingslink(value) { this.shippingSettingsLink = value }
 
         transitTimeLabel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
-				parent: $this,
+				container: $this,
 				property: "transitTimeLabel",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get transittimelabel() { return this.transitTimeLabel }
         set transittimelabel(value) { this.transitTimeLabel = value }

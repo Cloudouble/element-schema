@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ProductCollection'
         static __type = 'rdfs:Class'
+        static __extends = 'Product'
         static _rdfs_comment = 'A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].'
         static _rdfs_label = 'ProductCollection'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ProductCollection')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         includesObject($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].",
-				parent: $this,
+				container: $this,
 				property: "includesObject",
 				release: "11.01",
 				types: [
 					"TypeAndQuantityNode"
-				]
-			};
-			return new window.LiveElement.Element.elements.TypeAndQuantityNode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get includesobject() { return this.includesObject }
         set includesobject(value) { this.includesObject = value }

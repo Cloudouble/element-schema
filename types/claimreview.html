@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ClaimReview'
         static __type = 'rdfs:Class'
+        static __extends = 'Review'
         static _rdfs_comment = 'A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed).'
         static _rdfs_label = 'ClaimReview'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ClaimReview')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         claimReviewed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A short summary of the specific claims reviewed in a ClaimReview.",
-				parent: $this,
+				container: $this,
 				property: "claimReviewed",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get claimreviewed() { return this.claimReviewed }
         set claimreviewed(value) { this.claimReviewed = value }

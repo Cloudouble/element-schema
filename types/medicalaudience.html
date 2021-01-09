@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalAudience'
         static __type = 'rdfs:Class'
+        static __extends = 'PeopleAudience'
         static _rdfs_comment = 'Target audiences for medical web pages.'
         static _rdfs_label = 'MedicalAudience'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalAudience')
         }
         
         connectedCallback() {

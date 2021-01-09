@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:InteractionCounter'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.'
         static _rdfs_label = 'InteractionCounter'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('InteractionCounter')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         interactionService($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The WebSite or SoftwareApplication where the interactions took place.",
-				parent: $this,
+				container: $this,
 				property: "interactionService",
 				release: "11.01",
 				types: [
 					"SoftwareApplication",
 					"WebSite"
-				]
-			};
-			return new window.LiveElement.Element.elements.SoftwareApplication(value, property) || new window.LiveElement.Element.elements.WebSite(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get interactionservice() { return this.interactionService }
         set interactionservice(value) { this.interactionService = value }
 
         interactionType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.",
-				parent: $this,
+				container: $this,
 				property: "interactionType",
 				release: "11.01",
 				types: [
 					"Action"
-				]
-			};
-			return new window.LiveElement.Element.elements.Action(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get interactiontype() { return this.interactionType }
         set interactiontype(value) { this.interactionType = value }
 
         userInteractionCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
-				parent: $this,
+				container: $this,
 				property: "userInteractionCount",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get userinteractioncount() { return this.userInteractionCount }
         set userinteractioncount(value) { this.userInteractionCount = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalRiskFactor'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEntity'
         static _rdfs_comment = 'A risk factor is anything that increases a person\'s likelihood of developing or contracting a disease, medical condition, or complication.'
         static _rdfs_label = 'MedicalRiskFactor'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalRiskFactor')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         increasesRiskOf($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The condition, complication, etc. influenced by this factor.",
-				parent: $this,
+				container: $this,
 				property: "increasesRiskOf",
 				release: "11.01",
 				types: [
 					"MedicalEntity"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalEntity(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get increasesriskof() { return this.increasesRiskOf }
         set increasesriskof(value) { this.increasesRiskOf = value }

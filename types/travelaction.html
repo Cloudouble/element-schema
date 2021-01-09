@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TravelAction'
         static __type = 'rdfs:Class'
+        static __extends = 'MoveAction'
         static _rdfs_comment = 'The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.'
         static _rdfs_label = 'TravelAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TravelAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         distance($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The distance travelled, e.g. exercising or travelling.",
-				parent: $this,
+				container: $this,
 				property: "distance",
 				release: "11.01",
 				types: [
 					"Distance"
-				]
-			};
-			return new window.LiveElement.Element.elements.Distance(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

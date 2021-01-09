@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ResumeAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ControlAction'
         static _rdfs_comment = 'The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).'
         static _rdfs_label = 'ResumeAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ResumeAction')
         }
         
         connectedCallback() {

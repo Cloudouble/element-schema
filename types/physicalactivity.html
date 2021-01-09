@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PhysicalActivity'
         static __type = 'rdfs:Class'
+        static __extends = 'LifestyleModification'
         static _rdfs_comment = 'Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.'
         static _rdfs_label = 'PhysicalActivity'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PhysicalActivity')
         }
         
         connectedCallback() {
@@ -33,26 +30,27 @@
         
         
         associatedAnatomy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The anatomy of the underlying organ system or structures associated with this entity.",
-				parent: $this,
+				container: $this,
 				property: "associatedAnatomy",
 				release: "11.01",
 				types: [
 					"AnatomicalSystem",
 					"SuperficialAnatomy",
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalSystem(value, property) || new window.LiveElement.Element.elements.SuperficialAnatomy(value, property) || new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get associatedanatomy() { return this.associatedAnatomy }
         set associatedanatomy(value) { this.associatedAnatomy = value }
 
         category($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-				parent: $this,
+				container: $this,
 				property: "category",
 				release: "11.01",
 				types: [
@@ -60,35 +58,38 @@
 					"Thing",
 					"PhysicalActivityCategory",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Thing(value, property) || new window.LiveElement.Element.elements.PhysicalActivityCategory(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         epidemiology($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The characteristics of associated patients, such as age, gender, race etc.",
-				parent: $this,
+				container: $this,
 				property: "epidemiology",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         pathophysiology($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.",
-				parent: $this,
+				container: $this,
 				property: "pathophysiology",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

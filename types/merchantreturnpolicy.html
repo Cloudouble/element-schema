@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MerchantReturnPolicy'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].'
         static _rdfs_label = 'MerchantReturnPolicy'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MerchantReturnPolicy')
         }
         
         connectedCallback() {
@@ -33,91 +30,97 @@
         
         
         inStoreReturnsOffered($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Are in-store returns offered?",
-				parent: $this,
+				container: $this,
 				property: "inStoreReturnsOffered",
 				release: "11.01",
 				types: [
 					"Boolean"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get instorereturnsoffered() { return this.inStoreReturnsOffered }
         set instorereturnsoffered(value) { this.inStoreReturnsOffered = value }
 
         merchantReturnDays($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable.",
-				parent: $this,
+				container: $this,
 				property: "merchantReturnDays",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get merchantreturndays() { return this.merchantReturnDays }
         set merchantreturndays(value) { this.merchantReturnDays = value }
 
         merchantReturnLink($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a Web page or service by URL, for product return.",
-				parent: $this,
+				container: $this,
 				property: "merchantReturnLink",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get merchantreturnlink() { return this.merchantReturnLink }
         set merchantreturnlink(value) { this.merchantReturnLink = value }
 
         refundType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A refundType, from an enumerated list.",
-				parent: $this,
+				container: $this,
 				property: "refundType",
 				release: "11.01",
 				types: [
 					"RefundTypeEnumeration"
-				]
-			};
-			return new window.LiveElement.Element.elements.RefundTypeEnumeration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get refundtype() { return this.refundType }
         set refundtype(value) { this.refundType = value }
 
         returnFees($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy",
-				parent: $this,
+				container: $this,
 				property: "returnFees",
 				release: "11.01",
 				types: [
 					"ReturnFeesEnumeration"
-				]
-			};
-			return new window.LiveElement.Element.elements.ReturnFeesEnumeration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get returnfees() { return this.returnFees }
         set returnfees(value) { this.returnFees = value }
 
         returnPolicyCategory($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A returnPolicyCategory expresses at most one of several enumerated kinds of return.",
-				parent: $this,
+				container: $this,
 				property: "returnPolicyCategory",
 				release: "11.01",
 				types: [
 					"MerchantReturnEnumeration"
-				]
-			};
-			return new window.LiveElement.Element.elements.MerchantReturnEnumeration(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get returnpolicycategory() { return this.returnPolicyCategory }
         set returnpolicycategory(value) { this.returnPolicyCategory = value }

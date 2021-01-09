@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Enumeration'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'Lists or enumerations—for example, a list of cuisines or music genres, etc.'
         static _rdfs_label = 'Enumeration'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Enumeration')
         }
         
         connectedCallback() {
@@ -33,18 +30,19 @@
         
         
         supersededBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
-				parent: $this,
+				container: $this,
 				property: "supersededBy",
 				release: "11.01",
 				types: [
 					"Enumeration",
 					"Property",
 					"Class"
-				]
-			};
-			return new window.LiveElement.Element.elements.Enumeration(value, property) || new window.LiveElement.Element.elements.Property(value, property) || new window.LiveElement.Element.elements.Class(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get supersededby() { return this.supersededBy }
         set supersededby(value) { this.supersededBy = value }

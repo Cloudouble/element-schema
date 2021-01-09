@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MovieTheater'
         static __type = 'rdfs:Class'
+        static __extends = 'EntertainmentBusiness'
         static _rdfs_comment = 'A movie theater.'
         static _rdfs_label = 'MovieTheater'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MovieTheater')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         screenCount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of screens in the movie theater.",
-				parent: $this,
+				container: $this,
 				property: "screenCount",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get screencount() { return this.screenCount }
         set screencount(value) { this.screenCount = value }

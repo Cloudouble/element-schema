@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ComicStory'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'The term "story" is any indivisible, re-printable     	unit of a comic, including the interior stories, covers, and backmatter. Most     	comics have at least two stories: a cover (ComicCoverArt) and an interior story.'
         static _rdfs_label = 'ComicStory'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ComicStory')
         }
         
         connectedCallback() {
@@ -33,68 +30,73 @@
         
         
         artist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The primary artist for a work\n    \tin a medium other than pencils or digital line art--for example, if the\n    \tprimary artwork is done in watercolors or digital paints.",
-				parent: $this,
+				container: $this,
 				property: "artist",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         colorist($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The individual who adds color to inked drawings.",
-				parent: $this,
+				container: $this,
 				property: "colorist",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         inker($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The individual who traces over the pencil drawings in ink after pencils are complete.",
-				parent: $this,
+				container: $this,
 				property: "inker",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         letterer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The individual who adds lettering, including speech balloons and sound effects, to artwork.",
-				parent: $this,
+				container: $this,
 				property: "letterer",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         penciler($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The individual who draws the primary narrative artwork.",
-				parent: $this,
+				container: $this,
 				property: "penciler",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

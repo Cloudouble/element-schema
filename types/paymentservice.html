@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PaymentService'
         static __type = 'rdfs:Class'
+        static __extends = 'FinancialProduct'
         static _rdfs_comment = 'A Service to transfer funds from a person or organization to a beneficiary person or organization.'
         static _rdfs_label = 'PaymentService'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PaymentService')
         }
         
         connectedCallback() {

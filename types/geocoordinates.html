@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:GeoCoordinates'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'The geographic coordinates of a place or event.'
         static _rdfs_label = 'GeoCoordinates'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('GeoCoordinates')
         }
         
         connectedCallback() {
@@ -33,88 +30,94 @@
         
         
         address($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Physical address of the item.",
-				parent: $this,
+				container: $this,
 				property: "address",
 				release: "11.01",
 				types: [
 					"Text",
 					"PostalAddress"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         addressCountry($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_3166-1).",
-				parent: $this,
+				container: $this,
 				property: "addressCountry",
 				release: "11.01",
 				types: [
 					"Country",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Country(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get addresscountry() { return this.addressCountry }
         set addresscountry(value) { this.addressCountry = value }
 
         elevation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The elevation of a location ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.",
-				parent: $this,
+				container: $this,
 				property: "elevation",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         latitude($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The latitude of a location. For example ```37.42242``` ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)).",
-				parent: $this,
+				container: $this,
 				property: "latitude",
 				release: "11.01",
 				types: [
 					"Number",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         longitude($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The longitude of a location. For example ```-122.08585``` ([WGS 84](https:\\/\\/en.wikipedia.org\\/wiki\\/World_Geodetic_System)).",
-				parent: $this,
+				container: $this,
 				property: "longitude",
 				release: "11.01",
 				types: [
 					"Text",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         postalCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The postal code. For example, 94043.",
-				parent: $this,
+				container: $this,
 				property: "postalCode",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get postalcode() { return this.postalCode }
         set postalcode(value) { this.postalCode = value }

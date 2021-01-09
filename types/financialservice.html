@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:FinancialService'
         static __type = 'rdfs:Class'
+        static __extends = 'LocalBusiness'
         static _rdfs_comment = 'Financial services business.'
         static _rdfs_label = 'FinancialService'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('FinancialService')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         feesAndCommissionsSpecification($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
-				parent: $this,
+				container: $this,
 				property: "feesAndCommissionsSpecification",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get feesandcommissionsspecification() { return this.feesAndCommissionsSpecification }
         set feesandcommissionsspecification(value) { this.feesAndCommissionsSpecification = value }

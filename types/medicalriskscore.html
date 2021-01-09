@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalRiskScore'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalRiskEstimator'
         static _rdfs_comment = 'A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.'
         static _rdfs_label = 'MedicalRiskScore'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalRiskScore')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         algorithm($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The algorithm or rules to follow to compute the score.",
-				parent: $this,
+				container: $this,
 				property: "algorithm",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

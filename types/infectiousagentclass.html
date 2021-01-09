@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:InfectiousAgentClass'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalEnumeration'
         static _rdfs_comment = 'Classes of agents or pathogens that transmit infectious diseases. Enumerated type.'
         static _rdfs_label = 'InfectiousAgentClass'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('InfectiousAgentClass')
         }
         
         connectedCallback() {

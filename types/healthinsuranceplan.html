@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HealthInsurancePlan'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A US-style health insurance plan, including PPOs, EPOs, and HMOs. '
         static _rdfs_label = 'HealthInsurancePlan'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HealthInsurancePlan')
         }
         
         connectedCallback() {
@@ -33,137 +30,146 @@
         
         
         benefitsSummaryUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.",
-				parent: $this,
+				container: $this,
 				property: "benefitsSummaryUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get benefitssummaryurl() { return this.benefitsSummaryUrl }
         set benefitssummaryurl(value) { this.benefitsSummaryUrl = value }
 
         contactPoint($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A contact point for a person or organization.",
-				parent: $this,
+				container: $this,
 				property: "contactPoint",
 				release: "11.01",
 				types: [
 					"ContactPoint"
-				]
-			};
-			return new window.LiveElement.Element.elements.ContactPoint(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
 
         healthPlanDrugOption($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "TODO.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanDrugOption",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplandrugoption() { return this.healthPlanDrugOption }
         set healthplandrugoption(value) { this.healthPlanDrugOption = value }
 
         healthPlanDrugTier($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The tier(s) of drugs offered by this formulary or insurance plan.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanDrugTier",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplandrugtier() { return this.healthPlanDrugTier }
         set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
         healthPlanId($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)",
-				parent: $this,
+				container: $this,
 				property: "healthPlanId",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplanid() { return this.healthPlanId }
         set healthplanid(value) { this.healthPlanId = value }
 
         healthPlanMarketingUrl($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The URL that goes directly to the plan brochure for the specific standard plan or plan variation.",
-				parent: $this,
+				container: $this,
 				property: "healthPlanMarketingUrl",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get healthplanmarketingurl() { return this.healthPlanMarketingUrl }
         set healthplanmarketingurl(value) { this.healthPlanMarketingUrl = value }
 
         includesHealthPlanFormulary($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Formularies covered by this plan.",
-				parent: $this,
+				container: $this,
 				property: "includesHealthPlanFormulary",
 				release: "11.01",
 				types: [
 					"HealthPlanFormulary"
-				]
-			};
-			return new window.LiveElement.Element.elements.HealthPlanFormulary(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get includeshealthplanformulary() { return this.includesHealthPlanFormulary }
         set includeshealthplanformulary(value) { this.includesHealthPlanFormulary = value }
 
         includesHealthPlanNetwork($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Networks covered by this plan.",
-				parent: $this,
+				container: $this,
 				property: "includesHealthPlanNetwork",
 				release: "11.01",
 				types: [
 					"HealthPlanNetwork"
-				]
-			};
-			return new window.LiveElement.Element.elements.HealthPlanNetwork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get includeshealthplannetwork() { return this.includesHealthPlanNetwork }
         set includeshealthplannetwork(value) { this.includesHealthPlanNetwork = value }
 
         usesHealthPlanIdStandard($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The standard for interpreting thePlan ID. The preferred is \"HIOS\". See the Centers for Medicare & Medicaid Services for more details.",
-				parent: $this,
+				container: $this,
 				property: "usesHealthPlanIdStandard",
 				release: "11.01",
 				types: [
 					"URL",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get useshealthplanidstandard() { return this.usesHealthPlanIdStandard }
         set useshealthplanidstandard(value) { this.usesHealthPlanIdStandard = value }

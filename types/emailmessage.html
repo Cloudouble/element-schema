@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:EmailMessage'
         static __type = 'rdfs:Class'
+        static __extends = 'Message'
         static _rdfs_comment = 'An email message.'
         static _rdfs_label = 'EmailMessage'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('EmailMessage')
         }
         
         connectedCallback() {

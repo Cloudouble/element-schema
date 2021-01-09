@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Review'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWork'
         static _rdfs_comment = 'A review of an item - for example, of a restaurant, movie, or store.'
         static _rdfs_label = 'Review'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Review')
         }
         
         connectedCallback() {
@@ -33,61 +30,65 @@
         
         
         itemReviewed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The item that is being reviewed\\/rated.",
-				parent: $this,
+				container: $this,
 				property: "itemReviewed",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get itemreviewed() { return this.itemReviewed }
         set itemreviewed(value) { this.itemReviewed = value }
 
         reviewAspect($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
-				parent: $this,
+				container: $this,
 				property: "reviewAspect",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }
 
         reviewBody($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The actual body of the review.",
-				parent: $this,
+				container: $this,
 				property: "reviewBody",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewbody() { return this.reviewBody }
         set reviewbody(value) { this.reviewBody = value }
 
         reviewRating($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.",
-				parent: $this,
+				container: $this,
 				property: "reviewRating",
 				release: "11.01",
 				types: [
 					"Rating"
-				]
-			};
-			return new window.LiveElement.Element.elements.Rating(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get reviewrating() { return this.reviewRating }
         set reviewrating(value) { this.reviewRating = value }

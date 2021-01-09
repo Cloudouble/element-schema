@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Quiz'
         static __type = 'rdfs:Class'
+        static __extends = 'LearningResource'
         static _rdfs_comment = 'Quiz: A test of knowledge, skills and abilities.'
         static _rdfs_label = 'Quiz'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Quiz')
         }
         
         connectedCallback() {

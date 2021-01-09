@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:TechArticle'
         static __type = 'rdfs:Class'
+        static __extends = 'Article'
         static _rdfs_comment = 'A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.'
         static _rdfs_label = 'TechArticle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('TechArticle')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         dependencies($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Prerequisites needed to fulfill steps in article.",
-				parent: $this,
+				container: $this,
 				property: "dependencies",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         proficiencyLevel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
-				parent: $this,
+				container: $this,
 				property: "proficiencyLevel",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get proficiencylevel() { return this.proficiencyLevel }
         set proficiencylevel(value) { this.proficiencyLevel = value }

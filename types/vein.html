@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Vein'
         static __type = 'rdfs:Class'
+        static __extends = 'Vessel'
         static _rdfs_comment = 'A type of blood vessel that specifically carries blood to the heart.'
         static _rdfs_label = 'Vein'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Vein')
         }
         
         connectedCallback() {
@@ -33,47 +30,50 @@
         
         
         drainsTo($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The vasculature that the vein drains into.",
-				parent: $this,
+				container: $this,
 				property: "drainsTo",
 				release: "11.01",
 				types: [
 					"Vessel"
-				]
-			};
-			return new window.LiveElement.Element.elements.Vessel(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get drainsto() { return this.drainsTo }
         set drainsto(value) { this.drainsTo = value }
 
         regionDrained($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
-				parent: $this,
+				container: $this,
 				property: "regionDrained",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure",
 					"AnatomicalSystem"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.AnatomicalSystem(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get regiondrained() { return this.regionDrained }
         set regiondrained(value) { this.regionDrained = value }
 
         tributary($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.",
-				parent: $this,
+				container: $this,
 				property: "tributary",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

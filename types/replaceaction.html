@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ReplaceAction'
         static __type = 'rdfs:Class'
+        static __extends = 'UpdateAction'
         static _rdfs_comment = 'The act of editing a recipient by replacing an old object with a new object.'
         static _rdfs_label = 'ReplaceAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ReplaceAction')
         }
         
         connectedCallback() {
@@ -33,29 +30,31 @@
         
         
         replacee($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The object that is being replaced.",
-				parent: $this,
+				container: $this,
 				property: "replacee",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         replacer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. The object that replaces.",
-				parent: $this,
+				container: $this,
 				property: "replacer",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ApartmentComplex'
         static __type = 'rdfs:Class'
+        static __extends = 'Residence'
         static _rdfs_comment = 'Residence type: Apartment complex.'
         static _rdfs_label = 'ApartmentComplex'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ApartmentComplex')
         }
         
         connectedCallback() {
@@ -33,78 +30,83 @@
         
         
         numberOfAccommodationUnits($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofaccommodationunits() { return this.numberOfAccommodationUnits }
         set numberofaccommodationunits(value) { this.numberOfAccommodationUnits = value }
 
         numberOfAvailableAccommodationUnits($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfAvailableAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofavailableaccommodationunits() { return this.numberOfAvailableAccommodationUnits }
         set numberofavailableaccommodationunits(value) { this.numberOfAvailableAccommodationUnits = value }
 
         numberOfBedrooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfBedrooms",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofbedrooms() { return this.numberOfBedrooms }
         set numberofbedrooms(value) { this.numberOfBedrooms = value }
 
         petsAllowed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
-				parent: $this,
+				container: $this,
 				property: "petsAllowed",
 				release: "11.01",
 				types: [
 					"Boolean",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get petsallowed() { return this.petsAllowed }
         set petsallowed(value) { this.petsAllowed = value }
 
         tourBookingPage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.",
-				parent: $this,
+				container: $this,
 				property: "tourBookingPage",
 				release: "11.01",
 				types: [
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get tourbookingpage() { return this.tourBookingPage }
         set tourbookingpage(value) { this.tourBookingPage = value }

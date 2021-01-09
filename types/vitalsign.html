@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:VitalSign'
         static __type = 'rdfs:Class'
+        static __extends = 'MedicalSign'
         static _rdfs_comment = 'Vital signs are measures of various physiological functions in order to assess the most basic body functions.'
         static _rdfs_label = 'VitalSign'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('VitalSign')
         }
         
         connectedCallback() {

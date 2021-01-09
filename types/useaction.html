@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:UseAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ConsumeAction'
         static _rdfs_comment = 'The act of applying an object to its intended purpose.'
         static _rdfs_label = 'UseAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('UseAction')
         }
         
         connectedCallback() {

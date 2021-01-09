@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:BedDetails'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).'
         static _rdfs_label = 'BedDetails'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('BedDetails')
         }
         
         connectedCallback() {
@@ -33,32 +30,34 @@
         
         
         numberOfBeds($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.",
-				parent: $this,
+				container: $this,
 				property: "numberOfBeds",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofbeds() { return this.numberOfBeds }
         set numberofbeds(value) { this.numberOfBeds = value }
 
         typeOfBed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
-				parent: $this,
+				container: $this,
 				property: "typeOfBed",
 				release: "11.01",
 				types: [
 					"BedType",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.BedType(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get typeofbed() { return this.typeOfBed }
         set typeofbed(value) { this.typeOfBed = value }

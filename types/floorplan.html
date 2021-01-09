@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:FloorPlan'
         static __type = 'rdfs:Class'
+        static __extends = 'Intangible'
         static _rdfs_comment = 'A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual\/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https:\/\/en.wikipedia.org\/wiki\/Floor_plan)) can be indicated using [[image]]. '
         static _rdfs_label = 'FloorPlan'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('FloorPlan')
         }
         
         connectedCallback() {
@@ -33,185 +30,197 @@
         
         
         amenityFeature($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
-				parent: $this,
+				container: $this,
 				property: "amenityFeature",
 				release: "11.01",
 				types: [
 					"LocationFeatureSpecification"
-				]
-			};
-			return new window.LiveElement.Element.elements.LocationFeatureSpecification(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get amenityfeature() { return this.amenityFeature }
         set amenityfeature(value) { this.amenityFeature = value }
 
         floorSize($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard ",
-				parent: $this,
+				container: $this,
 				property: "floorSize",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get floorsize() { return this.floorSize }
         set floorsize(value) { this.floorSize = value }
 
         isPlanForApartment($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates some accommodation that this floor plan describes.",
-				parent: $this,
+				container: $this,
 				property: "isPlanForApartment",
 				release: "11.01",
 				types: [
 					"Accommodation"
-				]
-			};
-			return new window.LiveElement.Element.elements.Accommodation(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get isplanforapartment() { return this.isPlanForApartment }
         set isplanforapartment(value) { this.isPlanForApartment = value }
 
         layoutImage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A schematic image showing the floorplan layout.",
-				parent: $this,
+				container: $this,
 				property: "layoutImage",
 				release: "11.01",
 				types: [
 					"ImageObject",
 					"URL"
-				]
-			};
-			return new window.LiveElement.Element.elements.ImageObject(value, property) || new window.LiveElement.Element.elements.URL(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get layoutimage() { return this.layoutImage }
         set layoutimage(value) { this.layoutImage = value }
 
         numberOfAccommodationUnits($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofaccommodationunits() { return this.numberOfAccommodationUnits }
         set numberofaccommodationunits(value) { this.numberOfAccommodationUnits = value }
 
         numberOfAvailableAccommodationUnits($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfAvailableAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofavailableaccommodationunits() { return this.numberOfAvailableAccommodationUnits }
         set numberofavailableaccommodationunits(value) { this.numberOfAvailableAccommodationUnits = value }
 
         numberOfBathroomsTotal($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfBathroomsTotal",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofbathroomstotal() { return this.numberOfBathroomsTotal }
         set numberofbathroomstotal(value) { this.numberOfBathroomsTotal = value }
 
         numberOfBedrooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].",
-				parent: $this,
+				container: $this,
 				property: "numberOfBedrooms",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofbedrooms() { return this.numberOfBedrooms }
         set numberofbedrooms(value) { this.numberOfBedrooms = value }
 
         numberOfFullBathrooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsFull+Field).",
-				parent: $this,
+				container: $this,
 				property: "numberOfFullBathrooms",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberoffullbathrooms() { return this.numberOfFullBathrooms }
         set numberoffullbathrooms(value) { this.numberOfFullBathrooms = value }
 
         numberOfPartialBathrooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsPartial+Field). ",
-				parent: $this,
+				container: $this,
 				property: "numberOfPartialBathrooms",
 				release: "11.01",
 				types: [
 					"Number"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofpartialbathrooms() { return this.numberOfPartialBathrooms }
         set numberofpartialbathrooms(value) { this.numberOfPartialBathrooms = value }
 
         numberOfRooms($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-				parent: $this,
+				container: $this,
 				property: "numberOfRooms",
 				release: "11.01",
 				types: [
 					"Number",
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofrooms() { return this.numberOfRooms }
         set numberofrooms(value) { this.numberOfRooms = value }
 
         petsAllowed($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
-				parent: $this,
+				container: $this,
 				property: "petsAllowed",
 				release: "11.01",
 				types: [
 					"Boolean",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Boolean(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get petsallowed() { return this.petsAllowed }
         set petsallowed(value) { this.petsAllowed = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PaymentChargeSpecification'
         static __type = 'rdfs:Class'
+        static __extends = 'PriceSpecification'
         static _rdfs_comment = 'The costs of settling the payment using a particular payment method.'
         static _rdfs_label = 'PaymentChargeSpecification'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PaymentChargeSpecification')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         appliesToDeliveryMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The delivery method(s) to which the delivery charge or payment charge specification applies.",
-				parent: $this,
+				container: $this,
 				property: "appliesToDeliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.DeliveryMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
         set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
 
         appliesToPaymentMethod($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The payment method(s) to which the payment charge specification applies.",
-				parent: $this,
+				container: $this,
 				property: "appliesToPaymentMethod",
 				release: "11.01",
 				types: [
 					"PaymentMethod"
-				]
-			};
-			return new window.LiveElement.Element.elements.PaymentMethod(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get appliestopaymentmethod() { return this.appliesToPaymentMethod }
         set appliestopaymentmethod(value) { this.appliesToPaymentMethod = value }

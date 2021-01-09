@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WarrantyPromise'
         static __type = 'rdfs:Class'
+        static __extends = 'StructuredValue'
         static _rdfs_comment = 'A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.'
         static _rdfs_label = 'WarrantyPromise'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WarrantyPromise')
         }
         
         connectedCallback() {
@@ -33,31 +30,33 @@
         
         
         durationOfWarranty($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
-				parent: $this,
+				container: $this,
 				property: "durationOfWarranty",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get durationofwarranty() { return this.durationOfWarranty }
         set durationofwarranty(value) { this.durationOfWarranty = value }
 
         warrantyScope($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The scope of the warranty promise.",
-				parent: $this,
+				container: $this,
 				property: "warrantyScope",
 				release: "11.01",
 				types: [
 					"WarrantyScope"
-				]
-			};
-			return new window.LiveElement.Element.elements.WarrantyScope(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get warrantyscope() { return this.warrantyScope }
         set warrantyscope(value) { this.warrantyScope = value }

@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:WPHeader'
         static __type = 'rdfs:Class'
+        static __extends = 'WebPageElement'
         static _rdfs_comment = 'The header section of the page.'
         static _rdfs_label = 'WPHeader'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('WPHeader')
         }
         
         connectedCallback() {

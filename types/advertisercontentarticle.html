@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AdvertiserContentArticle'
         static __type = 'rdfs:Class'
+        static __extends = 'Article'
         static _rdfs_comment = 'An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https:\/\/en.wikipedia.org\/wiki\/Advertorial), sponsored content, native advertising and other paid content.'
         static _rdfs_label = 'AdvertiserContentArticle'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AdvertiserContentArticle')
         }
         
         connectedCallback() {

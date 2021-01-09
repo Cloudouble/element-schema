@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:DanceGroup'
         static __type = 'rdfs:Class'
+        static __extends = 'PerformingGroup'
         static _rdfs_comment = 'A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.'
         static _rdfs_label = 'DanceGroup'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('DanceGroup')
         }
         
         connectedCallback() {

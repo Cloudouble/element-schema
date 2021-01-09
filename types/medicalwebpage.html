@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:MedicalWebPage'
         static __type = 'rdfs:Class'
+        static __extends = 'WebPage'
         static _rdfs_comment = 'A web page that provides medical information.'
         static _rdfs_label = 'MedicalWebPage'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('MedicalWebPage')
         }
         
         connectedCallback() {
@@ -33,30 +30,32 @@
         
         
         aspect($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.",
-				parent: $this,
+				container: $this,
 				property: "aspect",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         medicalAudience($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Medical audience for page.",
-				parent: $this,
+				container: $this,
 				property: "medicalAudience",
 				release: "11.01",
 				types: [
 					"MedicalAudienceType",
 					"MedicalAudience"
-				]
-			};
-			return new window.LiveElement.Element.elements.MedicalAudienceType(value, property) || new window.LiveElement.Element.elements.MedicalAudience(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get medicalaudience() { return this.medicalAudience }
         set medicalaudience(value) { this.medicalAudience = value }

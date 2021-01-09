@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LikeAction'
         static __type = 'rdfs:Class'
+        static __extends = 'ReactAction'
         static _rdfs_comment = 'The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.'
         static _rdfs_label = 'LikeAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LikeAction')
         }
         
         connectedCallback() {

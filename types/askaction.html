@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:AskAction'
         static __type = 'rdfs:Class'
+        static __extends = 'CommunicateAction'
         static _rdfs_comment = 'The act of posing a question \/ favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.'
         static _rdfs_label = 'AskAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('AskAction')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         question($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of object. A question.",
-				parent: $this,
+				container: $this,
 				property: "question",
 				release: "11.01",
 				types: [
 					"Question"
-				]
-			};
-			return new window.LiveElement.Element.elements.Question(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

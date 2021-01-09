@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SchoolDistrict'
         static __type = 'rdfs:Class'
+        static __extends = 'AdministrativeArea'
         static _rdfs_comment = 'A School District is an administrative area for the administration of schools.'
         static _rdfs_label = 'SchoolDistrict'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SchoolDistrict')
         }
         
         connectedCallback() {

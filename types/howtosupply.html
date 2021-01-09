@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:HowToSupply'
         static __type = 'rdfs:Class'
+        static __extends = 'HowToItem'
         static _rdfs_comment = 'A supply consumed when performing the instructions for how to achieve a result.'
         static _rdfs_label = 'HowToSupply'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('HowToSupply')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         estimatedCost($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The estimated cost of the supply or supplies consumed when performing instructions.",
-				parent: $this,
+				container: $this,
 				property: "estimatedCost",
 				release: "11.01",
 				types: [
 					"Text",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get estimatedcost() { return this.estimatedCost }
         set estimatedcost(value) { this.estimatedCost = value }

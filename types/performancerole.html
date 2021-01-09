@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PerformanceRole'
         static __type = 'rdfs:Class'
+        static __extends = 'Role'
         static _rdfs_comment = 'A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.'
         static _rdfs_label = 'PerformanceRole'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PerformanceRole')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         characterName($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
-				parent: $this,
+				container: $this,
 				property: "characterName",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get charactername() { return this.characterName }
         set charactername(value) { this.characterName = value }

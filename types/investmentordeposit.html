@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:InvestmentOrDeposit'
         static __type = 'rdfs:Class'
+        static __extends = 'FinancialProduct'
         static _rdfs_comment = 'A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.'
         static _rdfs_label = 'InvestmentOrDeposit'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('InvestmentOrDeposit')
         }
         
         connectedCallback() {
@@ -33,17 +30,18 @@
         
         
         amount($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of money.",
-				parent: $this,
+				container: $this,
 				property: "amount",
 				release: "11.01",
 				types: [
 					"Number",
 					"MonetaryAmount"
-				]
-			};
-			return new window.LiveElement.Element.elements.Number(value, property) || new window.LiveElement.Element.elements.MonetaryAmount(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

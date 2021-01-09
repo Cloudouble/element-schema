@@ -22,7 +22,11 @@
         static _rdfs_label = 'Schema'
         
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('data-context', 'data-type', '__editmode', 'content')
+            return (super.observedAttributes || []).concat()
+        }
+        
+        static __valid(input) {
+            return true
         }
         
         __input = undefined
@@ -32,7 +36,11 @@
         constructor(input, property=undefined) {
             super()
             var $this = this
-            Object.entries({...$this.__validate($this.__input), ...{input: input}}).forEach(entry => $this[`__${entry[0]}`] = entry[0])
+            var validation = $this.__validate(input)
+            
+            
+
+            //Object.entries({...$this.__validate($this.__input), ...{input: input}}).forEach(entry => $this[`__${entry[0]}`] = entry[1])
             if (property && typeof property == 'object' && typeof property.property == 'string' && typeof property.parent == 'object' && typeof property.parent.dispatchEvent == 'function') {
                 var detailProperty = {...property, ...{input: $this.__input, value: $this.__value, error: $this.__error}}
                 property.parent.dispatchEvent(new CustomEvent('schema-propertyset', {detail: detailProperty}))
@@ -44,6 +52,7 @@
         
         connectedCallback() {
             var $this = this
+            //console.log('line 47', this.constructor.observedAttributes)
         }
         
         __validate(input) {

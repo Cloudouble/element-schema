@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:SomeProducts'
         static __type = 'rdfs:Class'
+        static __extends = 'Product'
         static _rdfs_comment = 'A placeholder for multiple similar products of the same kind.'
         static _rdfs_label = 'SomeProducts'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('SomeProducts')
         }
         
         connectedCallback() {
@@ -33,16 +30,17 @@
         
         
         inventoryLevel($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The current approximate inventory level for the item or items.",
-				parent: $this,
+				container: $this,
 				property: "inventoryLevel",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inventorylevel() { return this.inventoryLevel }
         set inventorylevel(value) { this.inventoryLevel = value }

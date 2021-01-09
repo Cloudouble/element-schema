@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Nerve'
         static __type = 'rdfs:Class'
+        static __extends = 'AnatomicalStructure'
         static _rdfs_comment = 'A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons.'
         static _rdfs_label = 'Nerve'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Nerve')
         }
         
         connectedCallback() {
@@ -33,60 +30,64 @@
         
         
         branch($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].",
-				parent: $this,
+				container: $this,
 				property: "branch",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         nerveMotor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The neurological pathway extension that involves muscle control.",
-				parent: $this,
+				container: $this,
 				property: "nerveMotor",
 				release: "11.01",
 				types: [
 					"Muscle"
-				]
-			};
-			return new window.LiveElement.Element.elements.Muscle(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get nervemotor() { return this.nerveMotor }
         set nervemotor(value) { this.nerveMotor = value }
 
         sensoryUnit($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The neurological pathway extension that inputs and sends information to the brain or spinal cord.",
-				parent: $this,
+				container: $this,
 				property: "sensoryUnit",
 				release: "11.01",
 				types: [
 					"AnatomicalStructure",
 					"SuperficialAnatomy"
-				]
-			};
-			return new window.LiveElement.Element.elements.AnatomicalStructure(value, property) || new window.LiveElement.Element.elements.SuperficialAnatomy(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sensoryunit() { return this.sensoryUnit }
         set sensoryunit(value) { this.sensoryUnit = value }
 
         sourcedFrom($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The neurological pathway that originates the neurons.",
-				parent: $this,
+				container: $this,
 				property: "sourcedFrom",
 				release: "11.01",
 				types: [
 					"BrainStructure"
-				]
-			};
-			return new window.LiveElement.Element.elements.BrainStructure(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get sourcedfrom() { return this.sourcedFrom }
         set sourcedfrom(value) { this.sourcedFrom = value }

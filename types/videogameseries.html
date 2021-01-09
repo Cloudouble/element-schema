@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:VideoGameSeries'
         static __type = 'rdfs:Class'
+        static __extends = 'CreativeWorkSeries'
         static _rdfs_comment = 'A video game series.'
         static _rdfs_label = 'VideoGameSeries'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('VideoGameSeries')
         }
         
         connectedCallback() {
@@ -33,319 +30,341 @@
         
         
         actor($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actor",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         actors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "actors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         characterAttribute($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).",
-				parent: $this,
+				container: $this,
 				property: "characterAttribute",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get characterattribute() { return this.characterAttribute }
         set characterattribute(value) { this.characterAttribute = value }
 
         cheatCode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Cheat codes to the game.",
-				parent: $this,
+				container: $this,
 				property: "cheatCode",
 				release: "11.01",
 				types: [
 					"CreativeWork"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWork(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get cheatcode() { return this.cheatCode }
         set cheatcode(value) { this.cheatCode = value }
 
         containsSeason($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A season that is part of the media series.",
-				parent: $this,
+				container: $this,
 				property: "containsSeason",
 				release: "11.01",
 				types: [
 					"CreativeWorkSeason"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWorkSeason(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get containsseason() { return this.containsSeason }
         set containsseason(value) { this.containsSeason = value }
 
         director($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "director",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         directors($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
-				parent: $this,
+				container: $this,
 				property: "directors",
 				release: "11.01",
 				types: [
 					"Person"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         episode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An episode of a tv, radio or game media within a series or season.",
-				parent: $this,
+				container: $this,
 				property: "episode",
 				release: "11.01",
 				types: [
 					"Episode"
-				]
-			};
-			return new window.LiveElement.Element.elements.Episode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         episodes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An episode of a TV\\/radio series or season.",
-				parent: $this,
+				container: $this,
 				property: "episodes",
 				release: "11.01",
 				types: [
 					"Episode"
-				]
-			};
-			return new window.LiveElement.Element.elements.Episode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         gameItem($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.",
-				parent: $this,
+				container: $this,
 				property: "gameItem",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get gameitem() { return this.gameItem }
         set gameitem(value) { this.gameItem = value }
 
         gameLocation($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Real or fictional location of the game (or part of game).",
-				parent: $this,
+				container: $this,
 				property: "gameLocation",
 				release: "11.01",
 				types: [
 					"Place",
 					"URL",
 					"PostalAddress"
-				]
-			};
-			return new window.LiveElement.Element.elements.Place(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.PostalAddress(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get gamelocation() { return this.gameLocation }
         set gamelocation(value) { this.gameLocation = value }
 
         gamePlatform($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The electronic systems used to play <a href=\"http:\\/\\/en.wikipedia.org\\/wiki\\/Category:Video_game_platforms\">video games<\\/a>.",
-				parent: $this,
+				container: $this,
 				property: "gamePlatform",
 				release: "11.01",
 				types: [
 					"Text",
 					"URL",
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get gameplatform() { return this.gamePlatform }
         set gameplatform(value) { this.gamePlatform = value }
 
         musicBy($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The composer of the soundtrack.",
-				parent: $this,
+				container: $this,
 				property: "musicBy",
 				release: "11.01",
 				types: [
 					"Person",
 					"MusicGroup"
-				]
-			};
-			return new window.LiveElement.Element.elements.Person(value, property) || new window.LiveElement.Element.elements.MusicGroup(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
 
         numberOfEpisodes($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of episodes in this season or series.",
-				parent: $this,
+				container: $this,
 				property: "numberOfEpisodes",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofepisodes() { return this.numberOfEpisodes }
         set numberofepisodes(value) { this.numberOfEpisodes = value }
 
         numberOfPlayers($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicate how many people can play this game (minimum, maximum, or range).",
-				parent: $this,
+				container: $this,
 				property: "numberOfPlayers",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofplayers() { return this.numberOfPlayers }
         set numberofplayers(value) { this.numberOfPlayers = value }
 
         numberOfSeasons($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of seasons in this series.",
-				parent: $this,
+				container: $this,
 				property: "numberOfSeasons",
 				release: "11.01",
 				types: [
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numberofseasons() { return this.numberOfSeasons }
         set numberofseasons(value) { this.numberOfSeasons = value }
 
         playMode($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.",
-				parent: $this,
+				container: $this,
 				property: "playMode",
 				release: "11.01",
 				types: [
 					"GamePlayMode"
-				]
-			};
-			return new window.LiveElement.Element.elements.GamePlayMode(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get playmode() { return this.playMode }
         set playmode(value) { this.playMode = value }
 
         productionCompany($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
-				parent: $this,
+				container: $this,
 				property: "productionCompany",
 				release: "11.01",
 				types: [
 					"Organization"
-				]
-			};
-			return new window.LiveElement.Element.elements.Organization(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
 
         quest($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The task that a player-controlled character, or group of characters may complete in order to gain a reward.",
-				parent: $this,
+				container: $this,
 				property: "quest",
 				release: "11.01",
 				types: [
 					"Thing"
-				]
-			};
-			return new window.LiveElement.Element.elements.Thing(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         season($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A season in a media series.",
-				parent: $this,
+				container: $this,
 				property: "season",
 				release: "11.01",
 				types: [
 					"URL",
 					"CreativeWorkSeason"
-				]
-			};
-			return new window.LiveElement.Element.elements.URL(value, property) || new window.LiveElement.Element.elements.CreativeWorkSeason(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         seasons($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A season in a media series.",
-				parent: $this,
+				container: $this,
 				property: "seasons",
 				release: "11.01",
 				types: [
 					"CreativeWorkSeason"
-				]
-			};
-			return new window.LiveElement.Element.elements.CreativeWorkSeason(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
 
         trailer($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
-				parent: $this,
+				container: $this,
 				property: "trailer",
 				release: "11.01",
 				types: [
 					"VideoObject"
-				]
-			};
-			return new window.LiveElement.Element.elements.VideoObject(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         
     }

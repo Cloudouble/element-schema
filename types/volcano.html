@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:Volcano'
         static __type = 'rdfs:Class'
+        static __extends = 'Landform'
         static _rdfs_comment = 'A volcano, like Fuji san.'
         static _rdfs_label = 'Volcano'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('Volcano')
         }
         
         connectedCallback() {

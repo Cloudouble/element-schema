@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:ConfirmAction'
         static __type = 'rdfs:Class'
+        static __extends = 'InformAction'
         static _rdfs_comment = 'The act of notifying someone that a future event\/action is going to happen as expected.\n\nRelated actions:\n\n* [[CancelAction]]: The antonym of ConfirmAction.'
         static _rdfs_label = 'ConfirmAction'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('ConfirmAction')
         }
         
         connectedCallback() {

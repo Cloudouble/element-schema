@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:LodgingReservation'
         static __type = 'rdfs:Class'
+        static __extends = 'Reservation'
         static _rdfs_comment = 'A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.'
         static _rdfs_label = 'LodgingReservation'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('LodgingReservation')
         }
         
         connectedCallback() {
@@ -33,96 +30,102 @@
         
         
         checkinTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The earliest someone may check into a lodging establishment.",
-				parent: $this,
+				container: $this,
 				property: "checkinTime",
 				release: "11.01",
 				types: [
 					"Time",
 					"DateTime"
-				]
-			};
-			return new window.LiveElement.Element.elements.Time(value, property) || new window.LiveElement.Element.elements.DateTime(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get checkintime() { return this.checkinTime }
         set checkintime(value) { this.checkinTime = value }
 
         checkoutTime($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The latest someone may check out of a lodging establishment.",
-				parent: $this,
+				container: $this,
 				property: "checkoutTime",
 				release: "11.01",
 				types: [
 					"DateTime",
 					"Time"
-				]
-			};
-			return new window.LiveElement.Element.elements.DateTime(value, property) || new window.LiveElement.Element.elements.Time(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get checkouttime() { return this.checkoutTime }
         set checkouttime(value) { this.checkoutTime = value }
 
         lodgingUnitDescription($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "A full description of the lodging unit.",
-				parent: $this,
+				container: $this,
 				property: "lodgingUnitDescription",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get lodgingunitdescription() { return this.lodgingUnitDescription }
         set lodgingunitdescription(value) { this.lodgingUnitDescription = value }
 
         lodgingUnitType($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Textual description of the unit type (including suite vs. room, size of bed, etc.).",
-				parent: $this,
+				container: $this,
 				property: "lodgingUnitType",
 				release: "11.01",
 				types: [
 					"QualitativeValue",
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.QualitativeValue(value, property) || new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get lodgingunittype() { return this.lodgingUnitType }
         set lodgingunittype(value) { this.lodgingUnitType = value }
 
         numAdults($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of adults staying in the unit.",
-				parent: $this,
+				container: $this,
 				property: "numAdults",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numadults() { return this.numAdults }
         set numadults(value) { this.numAdults = value }
 
         numChildren($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The number of children staying in the unit.",
-				parent: $this,
+				container: $this,
 				property: "numChildren",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
 					"Integer"
-				]
-			};
-			return new window.LiveElement.Element.elements.QuantitativeValue(value, property) || new window.LiveElement.Element.elements.Integer(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get numchildren() { return this.numChildren }
         set numchildren(value) { this.numChildren = value }

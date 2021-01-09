@@ -1,7 +1,4 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
@@ -15,6 +12,7 @@
         static __release = '11.01'
         static __id = 'schema:PronounceableText'
         static __type = 'rdfs:Class'
+        static __extends = 'Text'
         static _rdfs_comment = 'Data type: PronounceableText.'
         static _rdfs_label = 'PronounceableText'
 
@@ -24,7 +22,6 @@
         
         constructor() {
             super()
-            this.__setRenderer('PronounceableText')
         }
         
         connectedCallback() {
@@ -33,62 +30,66 @@
         
         
         inLanguage($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
-				parent: $this,
+				container: $this,
 				property: "inLanguage",
 				release: "11.01",
 				types: [
 					"Text",
 					"Language"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) || new window.LiveElement.Element.elements.Language(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
 
         phoneticText($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: \\/\u02c8hju\u02d0st\u0259n\\/.",
-				parent: $this,
+				container: $this,
 				property: "phoneticText",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get phonetictext() { return this.phoneticText }
         set phonetictext(value) { this.phoneticText = value }
 
         speechToTextMarkup($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Form of markup used. eg. [SSML](https:\\/\\/www.w3.org\\/TR\\/speech-synthesis11) or [IPA](https:\\/\\/www.wikidata.org\\/wiki\\/Property:P898).",
-				parent: $this,
+				container: $this,
 				property: "speechToTextMarkup",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get speechtotextmarkup() { return this.speechToTextMarkup }
         set speechtotextmarkup(value) { this.speechToTextMarkup = value }
 
         textValue($this, value) {
-			var property = {
+			window.LiveElement.Schema.renderProperty({
 				comment: "Text value being annotated.",
-				parent: $this,
+				container: $this,
 				property: "textValue",
 				release: "11.01",
 				types: [
 					"Text"
-				]
-			};
-			return new window.LiveElement.Element.elements.Text(value, property) 
+				],
+				value: value
+			})
+			return value
 		}
         get textvalue() { return this.textValue }
         set textvalue(value) { this.textValue = value }

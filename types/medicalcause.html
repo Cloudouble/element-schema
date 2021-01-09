@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get causeof() { return this.causeOf }
         set causeof(value) { this.causeOf = value }

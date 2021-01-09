@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         status($this, value) {
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         studyLocation($this, value) {
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get studylocation() { return this.studyLocation }
         set studylocation(value) { this.studyLocation = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get studysubject() { return this.studySubject }
         set studysubject(value) { this.studySubject = value }

@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get arrivaltime() { return this.arrivalTime }
         set arrivaltime(value) { this.arrivalTime = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get departuretime() { return this.departureTime }
         set departuretime(value) { this.departureTime = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         offers($this, value) {
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         partOfTrip($this, value) {
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partoftrip() { return this.partOfTrip }
         set partoftrip(value) { this.partOfTrip = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         subTrip($this, value) {
@@ -135,7 +135,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get subtrip() { return this.subTrip }
         set subtrip(value) { this.subTrip = value }

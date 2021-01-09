@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
         set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get appliestopaymentmethod() { return this.appliesToPaymentMethod }
         set appliestopaymentmethod(value) { this.appliesToPaymentMethod = value }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get actionapplication() { return this.actionApplication }
         set actionapplication(value) { this.actionApplication = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get actionplatform() { return this.actionPlatform }
         set actionplatform(value) { this.actionPlatform = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         contentType($this, value) {
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contenttype() { return this.contentType }
         set contenttype(value) { this.contentType = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get encodingtype() { return this.encodingType }
         set encodingtype(value) { this.encodingType = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get httpmethod() { return this.httpMethod }
         set httpmethod(value) { this.httpMethod = value }
@@ -135,7 +135,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get urltemplate() { return this.urlTemplate }
         set urltemplate(value) { this.urlTemplate = value }

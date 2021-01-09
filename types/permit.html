@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get issuedby() { return this.issuedBy }
         set issuedby(value) { this.issuedBy = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get issuedthrough() { return this.issuedThrough }
         set issuedthrough(value) { this.issuedThrough = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get permitaudience() { return this.permitAudience }
         set permitaudience(value) { this.permitAudience = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validfor() { return this.validFor }
         set validfor(value) { this.validFor = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validin() { return this.validIn }
         set validin(value) { this.validIn = value }
@@ -137,7 +137,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validuntil() { return this.validUntil }
         set validuntil(value) { this.validUntil = value }

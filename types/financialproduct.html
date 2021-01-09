@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get annualpercentagerate() { return this.annualPercentageRate }
         set annualpercentagerate(value) { this.annualPercentageRate = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get feesandcommissionsspecification() { return this.feesAndCommissionsSpecification }
         set feesandcommissionsspecification(value) { this.feesAndCommissionsSpecification = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get interestrate() { return this.interestRate }
         set interestrate(value) { this.interestRate = value }

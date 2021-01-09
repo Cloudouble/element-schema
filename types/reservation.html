@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bookingagent() { return this.bookingAgent }
         set bookingagent(value) { this.bookingAgent = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bookingtime() { return this.bookingTime }
         set bookingtime(value) { this.bookingTime = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         modifiedTime($this, value) {
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get modifiedtime() { return this.modifiedTime }
         set modifiedtime(value) { this.modifiedTime = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programmembershipused() { return this.programMembershipUsed }
         set programmembershipused(value) { this.programMembershipUsed = value }
@@ -137,7 +137,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         reservationFor($this, value) {
@@ -151,7 +151,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reservationfor() { return this.reservationFor }
         set reservationfor(value) { this.reservationFor = value }
@@ -167,7 +167,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reservationid() { return this.reservationId }
         set reservationid(value) { this.reservationId = value }
@@ -183,7 +183,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reservationstatus() { return this.reservationStatus }
         set reservationstatus(value) { this.reservationStatus = value }
@@ -199,7 +199,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reservedticket() { return this.reservedTicket }
         set reservedticket(value) { this.reservedTicket = value }
@@ -217,7 +217,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get totalprice() { return this.totalPrice }
         set totalprice(value) { this.totalPrice = value }
@@ -234,7 +234,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get undername() { return this.underName }
         set undername(value) { this.underName = value }

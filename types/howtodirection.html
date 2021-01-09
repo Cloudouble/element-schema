@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get aftermedia() { return this.afterMedia }
         set aftermedia(value) { this.afterMedia = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get beforemedia() { return this.beforeMedia }
         set beforemedia(value) { this.beforeMedia = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get duringmedia() { return this.duringMedia }
         set duringmedia(value) { this.duringMedia = value }
@@ -91,7 +91,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get performtime() { return this.performTime }
         set performtime(value) { this.performTime = value }
@@ -107,7 +107,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get preptime() { return this.prepTime }
         set preptime(value) { this.prepTime = value }
@@ -124,7 +124,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         tool($this, value) {
@@ -139,7 +139,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         totalTime($this, value) {
@@ -153,7 +153,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get totaltime() { return this.totalTime }
         set totaltime(value) { this.totalTime = value }

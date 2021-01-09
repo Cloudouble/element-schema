@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get alignmenttype() { return this.alignmentType }
         set alignmenttype(value) { this.alignmentType = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalframework() { return this.educationalFramework }
         set educationalframework(value) { this.educationalFramework = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetdescription() { return this.targetDescription }
         set targetdescription(value) { this.targetDescription = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetname() { return this.targetName }
         set targetname(value) { this.targetName = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targeturl() { return this.targetUrl }
         set targeturl(value) { this.targetUrl = value }

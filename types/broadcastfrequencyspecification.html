@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastfrequencyvalue() { return this.broadcastFrequencyValue }
         set broadcastfrequencyvalue(value) { this.broadcastFrequencyValue = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastsignalmodulation() { return this.broadcastSignalModulation }
         set broadcastsignalmodulation(value) { this.broadcastSignalModulation = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastsubchannel() { return this.broadcastSubChannel }
         set broadcastsubchannel(value) { this.broadcastSubChannel = value }

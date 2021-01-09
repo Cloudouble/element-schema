@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cashback() { return this.cashBack }
         set cashback(value) { this.cashBack = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contactlesspayment() { return this.contactlessPayment }
         set contactlesspayment(value) { this.contactlessPayment = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get floorlimit() { return this.floorLimit }
         set floorlimit(value) { this.floorLimit = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get monthlyminimumrepaymentamount() { return this.monthlyMinimumRepaymentAmount }
         set monthlyminimumrepaymentamount(value) { this.monthlyMinimumRepaymentAmount = value }

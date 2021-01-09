@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get associatedanatomy() { return this.associatedAnatomy }
         set associatedanatomy(value) { this.associatedAnatomy = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get differentialdiagnosis() { return this.differentialDiagnosis }
         set differentialdiagnosis(value) { this.differentialDiagnosis = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         epidemiology($this, value) {
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         expectedPrognosis($this, value) {
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get expectedprognosis() { return this.expectedPrognosis }
         set expectedprognosis(value) { this.expectedPrognosis = value }
@@ -118,7 +118,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get naturalprogression() { return this.naturalProgression }
         set naturalprogression(value) { this.naturalProgression = value }
@@ -134,7 +134,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         possibleComplication($this, value) {
@@ -148,7 +148,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get possiblecomplication() { return this.possibleComplication }
         set possiblecomplication(value) { this.possibleComplication = value }
@@ -164,7 +164,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get possibletreatment() { return this.possibleTreatment }
         set possibletreatment(value) { this.possibleTreatment = value }
@@ -180,7 +180,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get primaryprevention() { return this.primaryPrevention }
         set primaryprevention(value) { this.primaryPrevention = value }
@@ -196,7 +196,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get riskfactor() { return this.riskFactor }
         set riskfactor(value) { this.riskFactor = value }
@@ -212,7 +212,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get secondaryprevention() { return this.secondaryPrevention }
         set secondaryprevention(value) { this.secondaryPrevention = value }
@@ -228,7 +228,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get signorsymptom() { return this.signOrSymptom }
         set signorsymptom(value) { this.signOrSymptom = value }
@@ -244,7 +244,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         status($this, value) {
@@ -260,7 +260,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         typicalTest($this, value) {
@@ -274,7 +274,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get typicaltest() { return this.typicalTest }
         set typicaltest(value) { this.typicalTest = value }

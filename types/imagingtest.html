@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get imagingtechnique() { return this.imagingTechnique }
         set imagingtechnique(value) { this.imagingTechnique = value }

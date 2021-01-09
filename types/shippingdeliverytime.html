@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get businessdays() { return this.businessDays }
         set businessdays(value) { this.businessDays = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cutofftime() { return this.cutoffTime }
         set cutofftime(value) { this.cutoffTime = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get handlingtime() { return this.handlingTime }
         set handlingtime(value) { this.handlingTime = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get transittime() { return this.transitTime }
         set transittime(value) { this.transitTime = value }

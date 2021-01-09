@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         actors($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         countryOfOrigin($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         directors($this, value) {
@@ -98,7 +98,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         duration($this, value) {
@@ -112,7 +112,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         musicBy($this, value) {
@@ -127,7 +127,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
@@ -143,7 +143,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
@@ -160,7 +160,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
@@ -177,7 +177,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get titleeidr() { return this.titleEIDR }
         set titleeidr(value) { this.titleEIDR = value }
@@ -193,7 +193,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

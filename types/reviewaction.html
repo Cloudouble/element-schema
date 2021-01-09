@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get resultreview() { return this.resultReview }
         set resultreview(value) { this.resultReview = value }

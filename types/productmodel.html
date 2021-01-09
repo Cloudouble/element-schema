@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isvariantof() { return this.isVariantOf }
         set isvariantof(value) { this.isVariantOf = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get predecessorof() { return this.predecessorOf }
         set predecessorof(value) { this.predecessorOf = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get successorof() { return this.successorOf }
         set successorof(value) { this.successorOf = value }

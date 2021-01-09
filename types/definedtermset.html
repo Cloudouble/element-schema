@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasdefinedterm() { return this.hasDefinedTerm }
         set hasdefinedterm(value) { this.hasDefinedTerm = value }

@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         bestRating($this, value) {
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bestrating() { return this.bestRating }
         set bestrating(value) { this.bestRating = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ratingexplanation() { return this.ratingExplanation }
         set ratingexplanation(value) { this.ratingExplanation = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ratingvalue() { return this.ratingValue }
         set ratingvalue(value) { this.ratingValue = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get worstrating() { return this.worstRating }
         set worstrating(value) { this.worstRating = value }

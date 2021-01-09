@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partysize() { return this.partySize }
         set partysize(value) { this.partySize = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pickuplocation() { return this.pickupLocation }
         set pickuplocation(value) { this.pickupLocation = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pickuptime() { return this.pickupTime }
         set pickuptime(value) { this.pickupTime = value }

@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get addresscountry() { return this.addressCountry }
         set addresscountry(value) { this.addressCountry = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get addresslocality() { return this.addressLocality }
         set addresslocality(value) { this.addressLocality = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get addressregion() { return this.addressRegion }
         set addressregion(value) { this.addressRegion = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get postofficeboxnumber() { return this.postOfficeBoxNumber }
         set postofficeboxnumber(value) { this.postOfficeBoxNumber = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get postalcode() { return this.postalCode }
         set postalcode(value) { this.postalCode = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get streetaddress() { return this.streetAddress }
         set streetaddress(value) { this.streetAddress = value }

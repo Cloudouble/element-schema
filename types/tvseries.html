@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         actors($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         containsSeason($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get containsseason() { return this.containsSeason }
         set containsseason(value) { this.containsSeason = value }
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         directors($this, value) {
@@ -114,7 +114,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         episode($this, value) {
@@ -128,7 +128,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         episodes($this, value) {
@@ -142,7 +142,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         musicBy($this, value) {
@@ -157,7 +157,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
@@ -173,7 +173,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofepisodes() { return this.numberOfEpisodes }
         set numberofepisodes(value) { this.numberOfEpisodes = value }
@@ -189,7 +189,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofseasons() { return this.numberOfSeasons }
         set numberofseasons(value) { this.numberOfSeasons = value }
@@ -205,7 +205,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
@@ -222,7 +222,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         seasons($this, value) {
@@ -236,7 +236,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         trailer($this, value) {
@@ -250,7 +250,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

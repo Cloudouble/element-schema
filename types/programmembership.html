@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hostingorganization() { return this.hostingOrganization }
         set hostingorganization(value) { this.hostingOrganization = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         members($this, value) {
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         membershipNumber($this, value) {
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get membershipnumber() { return this.membershipNumber }
         set membershipnumber(value) { this.membershipNumber = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get membershippointsearned() { return this.membershipPointsEarned }
         set membershippointsearned(value) { this.membershipPointsEarned = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programname() { return this.programName }
         set programname(value) { this.programName = value }

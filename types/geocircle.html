@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geomidpoint() { return this.geoMidpoint }
         set geomidpoint(value) { this.geoMidpoint = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get georadius() { return this.geoRadius }
         set georadius(value) { this.geoRadius = value }

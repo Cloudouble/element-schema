@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalname() { return this.additionalName }
         set additionalname(value) { this.additionalName = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         affiliation($this, value) {
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         alumniOf($this, value) {
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get alumniof() { return this.alumniOf }
         set alumniof(value) { this.alumniOf = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         awards($this, value) {
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         birthDate($this, value) {
@@ -130,7 +130,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get birthdate() { return this.birthDate }
         set birthdate(value) { this.birthDate = value }
@@ -146,7 +146,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get birthplace() { return this.birthPlace }
         set birthplace(value) { this.birthPlace = value }
@@ -163,7 +163,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         callSign($this, value) {
@@ -177,7 +177,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
@@ -193,7 +193,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         colleague($this, value) {
@@ -208,7 +208,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         colleagues($this, value) {
@@ -222,7 +222,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         contactPoint($this, value) {
@@ -236,7 +236,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
@@ -252,7 +252,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contactpoints() { return this.contactPoints }
         set contactpoints(value) { this.contactPoints = value }
@@ -268,7 +268,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deathdate() { return this.deathDate }
         set deathdate(value) { this.deathDate = value }
@@ -284,7 +284,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deathplace() { return this.deathPlace }
         set deathplace(value) { this.deathPlace = value }
@@ -300,7 +300,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         email($this, value) {
@@ -314,7 +314,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         familyName($this, value) {
@@ -328,7 +328,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get familyname() { return this.familyName }
         set familyname(value) { this.familyName = value }
@@ -344,7 +344,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
@@ -360,7 +360,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         funder($this, value) {
@@ -375,7 +375,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gender($this, value) {
@@ -390,7 +390,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         givenName($this, value) {
@@ -404,7 +404,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get givenname() { return this.givenName }
         set givenname(value) { this.givenName = value }
@@ -420,7 +420,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get globallocationnumber() { return this.globalLocationNumber }
         set globallocationnumber(value) { this.globalLocationNumber = value }
@@ -436,7 +436,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hascredential() { return this.hasCredential }
         set hascredential(value) { this.hasCredential = value }
@@ -452,7 +452,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasoccupation() { return this.hasOccupation }
         set hasoccupation(value) { this.hasOccupation = value }
@@ -468,7 +468,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasoffercatalog() { return this.hasOfferCatalog }
         set hasoffercatalog(value) { this.hasOfferCatalog = value }
@@ -484,7 +484,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get haspos() { return this.hasPOS }
         set haspos(value) { this.hasPOS = value }
@@ -501,7 +501,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         homeLocation($this, value) {
@@ -516,7 +516,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get homelocation() { return this.homeLocation }
         set homelocation(value) { this.homeLocation = value }
@@ -532,7 +532,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get honorificprefix() { return this.honorificPrefix }
         set honorificprefix(value) { this.honorificPrefix = value }
@@ -548,7 +548,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get honorificsuffix() { return this.honorificSuffix }
         set honorificsuffix(value) { this.honorificSuffix = value }
@@ -564,7 +564,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get interactionstatistic() { return this.interactionStatistic }
         set interactionstatistic(value) { this.interactionStatistic = value }
@@ -580,7 +580,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isicv4() { return this.isicV4 }
         set isicv4(value) { this.isicV4 = value }
@@ -597,7 +597,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get jobtitle() { return this.jobTitle }
         set jobtitle(value) { this.jobTitle = value }
@@ -613,7 +613,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         knowsAbout($this, value) {
@@ -629,7 +629,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get knowsabout() { return this.knowsAbout }
         set knowsabout(value) { this.knowsAbout = value }
@@ -646,7 +646,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get knowslanguage() { return this.knowsLanguage }
         set knowslanguage(value) { this.knowsLanguage = value }
@@ -662,7 +662,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get makesoffer() { return this.makesOffer }
         set makesoffer(value) { this.makesOffer = value }
@@ -679,7 +679,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get memberof() { return this.memberOf }
         set memberof(value) { this.memberOf = value }
@@ -695,7 +695,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         nationality($this, value) {
@@ -709,7 +709,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         netWorth($this, value) {
@@ -724,7 +724,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get networth() { return this.netWorth }
         set networth(value) { this.netWorth = value }
@@ -741,7 +741,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         parent($this, value) {
@@ -755,7 +755,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         parents($this, value) {
@@ -769,7 +769,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         performerIn($this, value) {
@@ -783,7 +783,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get performerin() { return this.performerIn }
         set performerin(value) { this.performerIn = value }
@@ -800,7 +800,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get publishingprinciples() { return this.publishingPrinciples }
         set publishingprinciples(value) { this.publishingPrinciples = value }
@@ -816,7 +816,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relatedto() { return this.relatedTo }
         set relatedto(value) { this.relatedTo = value }
@@ -832,7 +832,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sibling($this, value) {
@@ -846,7 +846,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         siblings($this, value) {
@@ -860,7 +860,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sponsor($this, value) {
@@ -875,7 +875,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         spouse($this, value) {
@@ -889,7 +889,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         taxID($this, value) {
@@ -903,7 +903,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get taxid() { return this.taxID }
         set taxid(value) { this.taxID = value }
@@ -919,7 +919,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         vatID($this, value) {
@@ -933,7 +933,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vatid() { return this.vatID }
         set vatid(value) { this.vatID = value }
@@ -949,7 +949,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         workLocation($this, value) {
@@ -964,7 +964,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get worklocation() { return this.workLocation }
         set worklocation(value) { this.workLocation = value }
@@ -980,7 +980,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get worksfor() { return this.worksFor }
         set worksfor(value) { this.worksFor = value }

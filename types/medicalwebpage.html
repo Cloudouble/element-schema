@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         medicalAudience($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get medicalaudience() { return this.medicalAudience }
         set medicalaudience(value) { this.medicalAudience = value }

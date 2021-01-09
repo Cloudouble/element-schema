@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         guideline($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         legalStatus($this, value) {
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get medicinesystem() { return this.medicineSystem }
         set medicinesystem(value) { this.medicineSystem = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recognizingauthority() { return this.recognizingAuthority }
         set recognizingauthority(value) { this.recognizingAuthority = value }
@@ -118,7 +118,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relevantspecialty() { return this.relevantSpecialty }
         set relevantspecialty(value) { this.relevantSpecialty = value }
@@ -134,7 +134,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

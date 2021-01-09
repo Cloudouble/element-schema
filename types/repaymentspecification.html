@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get downpayment() { return this.downPayment }
         set downpayment(value) { this.downPayment = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get earlyprepaymentpenalty() { return this.earlyPrepaymentPenalty }
         set earlyprepaymentpenalty(value) { this.earlyPrepaymentPenalty = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loanpaymentamount() { return this.loanPaymentAmount }
         set loanpaymentamount(value) { this.loanPaymentAmount = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loanpaymentfrequency() { return this.loanPaymentFrequency }
         set loanpaymentfrequency(value) { this.loanPaymentFrequency = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofloanpayments() { return this.numberOfLoanPayments }
         set numberofloanpayments(value) { this.numberOfLoanPayments = value }

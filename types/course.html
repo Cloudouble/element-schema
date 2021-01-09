@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get coursecode() { return this.courseCode }
         set coursecode(value) { this.courseCode = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get courseprerequisites() { return this.coursePrerequisites }
         set courseprerequisites(value) { this.coursePrerequisites = value }
@@ -76,7 +76,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalcredentialawarded() { return this.educationalCredentialAwarded }
         set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hascourseinstance() { return this.hasCourseInstance }
         set hascourseinstance(value) { this.hasCourseInstance = value }
@@ -109,7 +109,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofcredits() { return this.numberOfCredits }
         set numberofcredits(value) { this.numberOfCredits = value }
@@ -127,7 +127,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
         set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }

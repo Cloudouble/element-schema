@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         datasetTimeInterval($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datasettimeinterval() { return this.datasetTimeInterval }
         set datasettimeinterval(value) { this.datasetTimeInterval = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         includedDataCatalog($this, value) {
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includeddatacatalog() { return this.includedDataCatalog }
         set includeddatacatalog(value) { this.includedDataCatalog = value }
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includedindatacatalog() { return this.includedInDataCatalog }
         set includedindatacatalog(value) { this.includedInDataCatalog = value }
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         measurementTechnique($this, value) {
@@ -131,7 +131,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get measurementtechnique() { return this.measurementTechnique }
         set measurementtechnique(value) { this.measurementTechnique = value }
@@ -148,7 +148,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get variablemeasured() { return this.variableMeasured }
         set variablemeasured(value) { this.variableMeasured = value }
@@ -165,7 +165,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get variablesmeasured() { return this.variablesMeasured }
         set variablesmeasured(value) { this.variablesMeasured = value }

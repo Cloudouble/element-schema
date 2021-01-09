@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicationdeadline() { return this.applicationDeadline }
         set applicationdeadline(value) { this.applicationDeadline = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicationstartdate() { return this.applicationStartDate }
         set applicationstartdate(value) { this.applicationStartDate = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dayofweek() { return this.dayOfWeek }
         set dayofweek(value) { this.dayOfWeek = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalcredentialawarded() { return this.educationalCredentialAwarded }
         set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
@@ -107,7 +107,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalprogrammode() { return this.educationalProgramMode }
         set educationalprogrammode(value) { this.educationalProgramMode = value }
@@ -124,7 +124,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
@@ -141,7 +141,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get financialaideligible() { return this.financialAidEligible }
         set financialaideligible(value) { this.financialAidEligible = value }
@@ -157,7 +157,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hascourse() { return this.hasCourse }
         set hascourse(value) { this.hasCourse = value }
@@ -173,7 +173,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maximumenrollment() { return this.maximumEnrollment }
         set maximumenrollment(value) { this.maximumEnrollment = value }
@@ -190,7 +190,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofcredits() { return this.numberOfCredits }
         set numberofcredits(value) { this.numberOfCredits = value }
@@ -207,7 +207,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
@@ -225,7 +225,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
         set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
@@ -242,7 +242,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         programPrerequisites($this, value) {
@@ -259,7 +259,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programprerequisites() { return this.programPrerequisites }
         set programprerequisites(value) { this.programPrerequisites = value }
@@ -276,7 +276,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programtype() { return this.programType }
         set programtype(value) { this.programType = value }
@@ -293,7 +293,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         salaryUponCompletion($this, value) {
@@ -307,7 +307,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get salaryuponcompletion() { return this.salaryUponCompletion }
         set salaryuponcompletion(value) { this.salaryUponCompletion = value }
@@ -324,7 +324,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
@@ -340,7 +340,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get termduration() { return this.termDuration }
         set termduration(value) { this.termDuration = value }
@@ -356,7 +356,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get termsperyear() { return this.termsPerYear }
         set termsperyear(value) { this.termsPerYear = value }
@@ -372,7 +372,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get timeofday() { return this.timeOfDay }
         set timeofday(value) { this.timeOfDay = value }
@@ -388,7 +388,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get timetocomplete() { return this.timeToComplete }
         set timetocomplete(value) { this.timeToComplete = value }
@@ -404,7 +404,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trainingsalary() { return this.trainingSalary }
         set trainingsalary(value) { this.trainingSalary = value }
@@ -421,7 +421,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get typicalcreditsperterm() { return this.typicalCreditsPerTerm }
         set typicalcreditsperterm(value) { this.typicalCreditsPerTerm = value }

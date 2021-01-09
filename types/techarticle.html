@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         proficiencyLevel($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get proficiencylevel() { return this.proficiencyLevel }
         set proficiencylevel(value) { this.proficiencyLevel = value }

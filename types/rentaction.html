@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         realEstateAgent($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get realestateagent() { return this.realEstateAgent }
         set realestateagent(value) { this.realEstateAgent = value }

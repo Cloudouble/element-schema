@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         firstPerformance($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get firstperformance() { return this.firstPerformance }
         set firstperformance(value) { this.firstPerformance = value }
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includedcomposition() { return this.includedComposition }
         set includedcomposition(value) { this.includedComposition = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get iswccode() { return this.iswcCode }
         set iswccode(value) { this.iswcCode = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         lyrics($this, value) {
@@ -117,7 +117,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         musicArrangement($this, value) {
@@ -131,7 +131,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicarrangement() { return this.musicArrangement }
         set musicarrangement(value) { this.musicArrangement = value }
@@ -147,7 +147,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musiccompositionform() { return this.musicCompositionForm }
         set musiccompositionform(value) { this.musicCompositionForm = value }
@@ -163,7 +163,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicalkey() { return this.musicalKey }
         set musicalkey(value) { this.musicalKey = value }
@@ -179,7 +179,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recordedas() { return this.recordedAs }
         set recordedas(value) { this.recordedAs = value }

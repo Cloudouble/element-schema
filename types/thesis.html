@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get insupportof() { return this.inSupportOf }
         set insupportof(value) { this.inSupportOf = value }

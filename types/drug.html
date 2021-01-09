@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get administrationroute() { return this.administrationRoute }
         set administrationroute(value) { this.administrationRoute = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get alcoholwarning() { return this.alcoholWarning }
         set alcoholwarning(value) { this.alcoholWarning = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availablestrength() { return this.availableStrength }
         set availablestrength(value) { this.availableStrength = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get breastfeedingwarning() { return this.breastfeedingWarning }
         set breastfeedingwarning(value) { this.breastfeedingWarning = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get clincalpharmacology() { return this.clincalPharmacology }
         set clincalpharmacology(value) { this.clincalPharmacology = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get clinicalpharmacology() { return this.clinicalPharmacology }
         set clinicalpharmacology(value) { this.clinicalPharmacology = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dosageform() { return this.dosageForm }
         set dosageform(value) { this.dosageForm = value }
@@ -168,7 +168,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get doseschedule() { return this.doseSchedule }
         set doseschedule(value) { this.doseSchedule = value }
@@ -184,7 +184,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get drugclass() { return this.drugClass }
         set drugclass(value) { this.drugClass = value }
@@ -200,7 +200,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get drugunit() { return this.drugUnit }
         set drugunit(value) { this.drugUnit = value }
@@ -216,7 +216,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get foodwarning() { return this.foodWarning }
         set foodwarning(value) { this.foodWarning = value }
@@ -232,7 +232,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includedinhealthinsuranceplan() { return this.includedInHealthInsurancePlan }
         set includedinhealthinsuranceplan(value) { this.includedInHealthInsurancePlan = value }
@@ -248,7 +248,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get interactingdrug() { return this.interactingDrug }
         set interactingdrug(value) { this.interactingDrug = value }
@@ -264,7 +264,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isavailablegenerically() { return this.isAvailableGenerically }
         set isavailablegenerically(value) { this.isAvailableGenerically = value }
@@ -280,7 +280,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isproprietary() { return this.isProprietary }
         set isproprietary(value) { this.isProprietary = value }
@@ -296,7 +296,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get labeldetails() { return this.labelDetails }
         set labeldetails(value) { this.labelDetails = value }
@@ -314,7 +314,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
@@ -330,7 +330,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         maximumIntake($this, value) {
@@ -344,7 +344,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
@@ -360,7 +360,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get mechanismofaction() { return this.mechanismOfAction }
         set mechanismofaction(value) { this.mechanismOfAction = value }
@@ -376,7 +376,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get nonproprietaryname() { return this.nonProprietaryName }
         set nonproprietaryname(value) { this.nonProprietaryName = value }
@@ -392,7 +392,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         pregnancyCategory($this, value) {
@@ -406,7 +406,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pregnancycategory() { return this.pregnancyCategory }
         set pregnancycategory(value) { this.pregnancyCategory = value }
@@ -422,7 +422,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pregnancywarning() { return this.pregnancyWarning }
         set pregnancywarning(value) { this.pregnancyWarning = value }
@@ -438,7 +438,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get prescribinginfo() { return this.prescribingInfo }
         set prescribinginfo(value) { this.prescribingInfo = value }
@@ -455,7 +455,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get prescriptionstatus() { return this.prescriptionStatus }
         set prescriptionstatus(value) { this.prescriptionStatus = value }
@@ -471,7 +471,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get proprietaryname() { return this.proprietaryName }
         set proprietaryname(value) { this.proprietaryName = value }
@@ -487,7 +487,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relateddrug() { return this.relatedDrug }
         set relateddrug(value) { this.relatedDrug = value }
@@ -503,7 +503,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         warning($this, value) {
@@ -518,7 +518,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

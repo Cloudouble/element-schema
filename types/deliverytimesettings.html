@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deliverytime() { return this.deliveryTime }
         set deliverytime(value) { this.deliveryTime = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isunlabelledfallback() { return this.isUnlabelledFallback }
         set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get transittimelabel() { return this.transitTimeLabel }
         set transittimelabel(value) { this.transitTimeLabel = value }

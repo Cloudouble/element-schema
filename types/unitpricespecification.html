@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get billingduration() { return this.billingDuration }
         set billingduration(value) { this.billingDuration = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get billingincrement() { return this.billingIncrement }
         set billingincrement(value) { this.billingIncrement = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get billingstart() { return this.billingStart }
         set billingstart(value) { this.billingStart = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricecomponenttype() { return this.priceComponentType }
         set pricecomponenttype(value) { this.priceComponentType = value }
@@ -107,7 +107,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricetype() { return this.priceType }
         set pricetype(value) { this.priceType = value }
@@ -123,7 +123,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get referencequantity() { return this.referenceQuantity }
         set referencequantity(value) { this.referenceQuantity = value }
@@ -140,7 +140,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get unitcode() { return this.unitCode }
         set unitcode(value) { this.unitCode = value }
@@ -156,7 +156,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get unittext() { return this.unitText }
         set unittext(value) { this.unitText = value }

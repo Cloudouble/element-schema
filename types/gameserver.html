@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         playersOnline($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get playersonline() { return this.playersOnline }
         set playersonline(value) { this.playersOnline = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get serverstatus() { return this.serverStatus }
         set serverstatus(value) { this.serverStatus = value }

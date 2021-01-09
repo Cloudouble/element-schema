@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get charactername() { return this.characterName }
         set charactername(value) { this.characterName = value }

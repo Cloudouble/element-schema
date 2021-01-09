@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accountminimuminflow() { return this.accountMinimumInflow }
         set accountminimuminflow(value) { this.accountMinimumInflow = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accountoverdraftlimit() { return this.accountOverdraftLimit }
         set accountoverdraftlimit(value) { this.accountOverdraftLimit = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bankaccounttype() { return this.bankAccountType }
         set bankaccounttype(value) { this.bankAccountType = value }

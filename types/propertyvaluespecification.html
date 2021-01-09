@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get defaultvalue() { return this.defaultValue }
         set defaultvalue(value) { this.defaultValue = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maxvalue() { return this.maxValue }
         set maxvalue(value) { this.maxValue = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get minvalue() { return this.minValue }
         set minvalue(value) { this.minValue = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get multiplevalues() { return this.multipleValues }
         set multiplevalues(value) { this.multipleValues = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get readonlyvalue() { return this.readonlyValue }
         set readonlyvalue(value) { this.readonlyValue = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get stepvalue() { return this.stepValue }
         set stepvalue(value) { this.stepValue = value }
@@ -137,7 +137,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuemaxlength() { return this.valueMaxLength }
         set valuemaxlength(value) { this.valueMaxLength = value }
@@ -153,7 +153,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valueminlength() { return this.valueMinLength }
         set valueminlength(value) { this.valueMinLength = value }
@@ -169,7 +169,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuename() { return this.valueName }
         set valuename(value) { this.valueName = value }
@@ -185,7 +185,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuepattern() { return this.valuePattern }
         set valuepattern(value) { this.valuePattern = value }
@@ -201,7 +201,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuerequired() { return this.valueRequired }
         set valuerequired(value) { this.valueRequired = value }

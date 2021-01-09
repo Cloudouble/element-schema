@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricecomponent() { return this.priceComponent }
         set pricecomponent(value) { this.priceComponent = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricetype() { return this.priceType }
         set pricetype(value) { this.priceType = value }

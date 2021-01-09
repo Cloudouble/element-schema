@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasvariant() { return this.hasVariant }
         set hasvariant(value) { this.hasVariant = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productgroupid() { return this.productGroupID }
         set productgroupid(value) { this.productGroupID = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get variesby() { return this.variesBy }
         set variesby(value) { this.variesBy = value }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         printColumn($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get printcolumn() { return this.printColumn }
         set printcolumn(value) { this.printColumn = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get printedition() { return this.printEdition }
         set printedition(value) { this.printEdition = value }
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get printpage() { return this.printPage }
         set printpage(value) { this.printPage = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get printsection() { return this.printSection }
         set printsection(value) { this.printSection = value }

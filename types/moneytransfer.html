@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         beneficiaryBank($this, value) {
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get beneficiarybank() { return this.beneficiaryBank }
         set beneficiarybank(value) { this.beneficiaryBank = value }

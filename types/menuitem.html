@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get menuaddon() { return this.menuAddOn }
         set menuaddon(value) { this.menuAddOn = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         offers($this, value) {
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         suitableForDiet($this, value) {
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suitablefordiet() { return this.suitableForDiet }
         set suitablefordiet(value) { this.suitableForDiet = value }

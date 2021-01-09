@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         deliveryAddress($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deliveryaddress() { return this.deliveryAddress }
         set deliveryaddress(value) { this.deliveryAddress = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deliverystatus() { return this.deliveryStatus }
         set deliverystatus(value) { this.deliveryStatus = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get expectedarrivalfrom() { return this.expectedArrivalFrom }
         set expectedarrivalfrom(value) { this.expectedArrivalFrom = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get expectedarrivaluntil() { return this.expectedArrivalUntil }
         set expectedarrivaluntil(value) { this.expectedArrivalUntil = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasdeliverymethod() { return this.hasDeliveryMethod }
         set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get itemshipped() { return this.itemShipped }
         set itemshipped(value) { this.itemShipped = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get originaddress() { return this.originAddress }
         set originaddress(value) { this.originAddress = value }
@@ -168,7 +168,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partoforder() { return this.partOfOrder }
         set partoforder(value) { this.partOfOrder = value }
@@ -185,7 +185,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         trackingNumber($this, value) {
@@ -199,7 +199,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trackingnumber() { return this.trackingNumber }
         set trackingnumber(value) { this.trackingNumber = value }
@@ -215,7 +215,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trackingurl() { return this.trackingUrl }
         set trackingurl(value) { this.trackingUrl = value }

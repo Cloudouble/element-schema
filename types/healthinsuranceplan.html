@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get benefitssummaryurl() { return this.benefitsSummaryUrl }
         set benefitssummaryurl(value) { this.benefitsSummaryUrl = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contactpoint() { return this.contactPoint }
         set contactpoint(value) { this.contactPoint = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthplandrugoption() { return this.healthPlanDrugOption }
         set healthplandrugoption(value) { this.healthPlanDrugOption = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthplandrugtier() { return this.healthPlanDrugTier }
         set healthplandrugtier(value) { this.healthPlanDrugTier = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthplanid() { return this.healthPlanId }
         set healthplanid(value) { this.healthPlanId = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthplanmarketingurl() { return this.healthPlanMarketingUrl }
         set healthplanmarketingurl(value) { this.healthPlanMarketingUrl = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includeshealthplanformulary() { return this.includesHealthPlanFormulary }
         set includeshealthplanformulary(value) { this.includesHealthPlanFormulary = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includeshealthplannetwork() { return this.includesHealthPlanNetwork }
         set includeshealthplannetwork(value) { this.includesHealthPlanNetwork = value }
@@ -169,7 +169,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get useshealthplanidstandard() { return this.usesHealthPlanIdStandard }
         set useshealthplanidstandard(value) { this.usesHealthPlanIdStandard = value }

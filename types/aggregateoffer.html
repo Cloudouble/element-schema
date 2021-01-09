@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get highprice() { return this.highPrice }
         set highprice(value) { this.highPrice = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get lowprice() { return this.lowPrice }
         set lowprice(value) { this.lowPrice = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get offercount() { return this.offerCount }
         set offercount(value) { this.offerCount = value }
@@ -91,7 +91,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

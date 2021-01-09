@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get itemreviewed() { return this.itemReviewed }
         set itemreviewed(value) { this.itemReviewed = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ratingcount() { return this.ratingCount }
         set ratingcount(value) { this.ratingCount = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reviewcount() { return this.reviewCount }
         set reviewcount(value) { this.reviewCount = value }

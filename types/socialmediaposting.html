@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sharedcontent() { return this.sharedContent }
         set sharedcontent(value) { this.sharedContent = value }

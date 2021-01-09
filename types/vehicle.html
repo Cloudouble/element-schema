@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accelerationtime() { return this.accelerationTime }
         set accelerationtime(value) { this.accelerationTime = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bodytype() { return this.bodyType }
         set bodytype(value) { this.bodyType = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cargovolume() { return this.cargoVolume }
         set cargovolume(value) { this.cargoVolume = value }
@@ -106,7 +106,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datevehiclefirstregistered() { return this.dateVehicleFirstRegistered }
         set datevehiclefirstregistered(value) { this.dateVehicleFirstRegistered = value }
@@ -123,7 +123,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get drivewheelconfiguration() { return this.driveWheelConfiguration }
         set drivewheelconfiguration(value) { this.driveWheelConfiguration = value }
@@ -139,7 +139,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get emissionsco2() { return this.emissionsCO2 }
         set emissionsco2(value) { this.emissionsCO2 = value }
@@ -155,7 +155,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fuelcapacity() { return this.fuelCapacity }
         set fuelcapacity(value) { this.fuelCapacity = value }
@@ -171,7 +171,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fuelconsumption() { return this.fuelConsumption }
         set fuelconsumption(value) { this.fuelConsumption = value }
@@ -187,7 +187,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fuelefficiency() { return this.fuelEfficiency }
         set fuelefficiency(value) { this.fuelEfficiency = value }
@@ -205,7 +205,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fueltype() { return this.fuelType }
         set fueltype(value) { this.fuelType = value }
@@ -221,7 +221,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get knownvehicledamages() { return this.knownVehicleDamages }
         set knownvehicledamages(value) { this.knownVehicleDamages = value }
@@ -239,7 +239,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get meetsemissionstandard() { return this.meetsEmissionStandard }
         set meetsemissionstandard(value) { this.meetsEmissionStandard = value }
@@ -255,7 +255,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get mileagefromodometer() { return this.mileageFromOdometer }
         set mileagefromodometer(value) { this.mileageFromOdometer = value }
@@ -271,7 +271,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get modeldate() { return this.modelDate }
         set modeldate(value) { this.modelDate = value }
@@ -288,7 +288,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofairbags() { return this.numberOfAirbags }
         set numberofairbags(value) { this.numberOfAirbags = value }
@@ -305,7 +305,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofaxles() { return this.numberOfAxles }
         set numberofaxles(value) { this.numberOfAxles = value }
@@ -322,7 +322,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofdoors() { return this.numberOfDoors }
         set numberofdoors(value) { this.numberOfDoors = value }
@@ -339,7 +339,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofforwardgears() { return this.numberOfForwardGears }
         set numberofforwardgears(value) { this.numberOfForwardGears = value }
@@ -356,7 +356,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofpreviousowners() { return this.numberOfPreviousOwners }
         set numberofpreviousowners(value) { this.numberOfPreviousOwners = value }
@@ -372,7 +372,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         productionDate($this, value) {
@@ -386,7 +386,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productiondate() { return this.productionDate }
         set productiondate(value) { this.productionDate = value }
@@ -402,7 +402,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get purchasedate() { return this.purchaseDate }
         set purchasedate(value) { this.purchaseDate = value }
@@ -419,7 +419,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get seatingcapacity() { return this.seatingCapacity }
         set seatingcapacity(value) { this.seatingCapacity = value }
@@ -435,7 +435,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         steeringPosition($this, value) {
@@ -449,7 +449,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get steeringposition() { return this.steeringPosition }
         set steeringposition(value) { this.steeringPosition = value }
@@ -465,7 +465,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get stupidproperty() { return this.stupidProperty }
         set stupidproperty(value) { this.stupidProperty = value }
@@ -481,7 +481,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tongueweight() { return this.tongueWeight }
         set tongueweight(value) { this.tongueWeight = value }
@@ -497,7 +497,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trailerweight() { return this.trailerWeight }
         set trailerweight(value) { this.trailerWeight = value }
@@ -513,7 +513,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleconfiguration() { return this.vehicleConfiguration }
         set vehicleconfiguration(value) { this.vehicleConfiguration = value }
@@ -529,7 +529,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleengine() { return this.vehicleEngine }
         set vehicleengine(value) { this.vehicleEngine = value }
@@ -545,7 +545,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleidentificationnumber() { return this.vehicleIdentificationNumber }
         set vehicleidentificationnumber(value) { this.vehicleIdentificationNumber = value }
@@ -561,7 +561,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleinteriorcolor() { return this.vehicleInteriorColor }
         set vehicleinteriorcolor(value) { this.vehicleInteriorColor = value }
@@ -577,7 +577,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleinteriortype() { return this.vehicleInteriorType }
         set vehicleinteriortype(value) { this.vehicleInteriorType = value }
@@ -593,7 +593,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehiclemodeldate() { return this.vehicleModelDate }
         set vehiclemodeldate(value) { this.vehicleModelDate = value }
@@ -610,7 +610,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicleseatingcapacity() { return this.vehicleSeatingCapacity }
         set vehicleseatingcapacity(value) { this.vehicleSeatingCapacity = value }
@@ -627,7 +627,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehiclespecialusage() { return this.vehicleSpecialUsage }
         set vehiclespecialusage(value) { this.vehicleSpecialUsage = value }
@@ -645,7 +645,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get vehicletransmission() { return this.vehicleTransmission }
         set vehicletransmission(value) { this.vehicleTransmission = value }
@@ -661,7 +661,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get weighttotal() { return this.weightTotal }
         set weighttotal(value) { this.weightTotal = value }
@@ -677,7 +677,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

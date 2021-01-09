@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accesscode() { return this.accessCode }
         set accesscode(value) { this.accessCode = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availablefrom() { return this.availableFrom }
         set availablefrom(value) { this.availableFrom = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availablethrough() { return this.availableThrough }
         set availablethrough(value) { this.availableThrough = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasdeliverymethod() { return this.hasDeliveryMethod }
         set hasdeliverymethod(value) { this.hasDeliveryMethod = value }

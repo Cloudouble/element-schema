@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includesattraction() { return this.includesAttraction }
         set includesattraction(value) { this.includesAttraction = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get touristtype() { return this.touristType }
         set touristtype(value) { this.touristType = value }

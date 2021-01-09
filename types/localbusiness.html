@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get branchof() { return this.branchOf }
         set branchof(value) { this.branchOf = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get currenciesaccepted() { return this.currenciesAccepted }
         set currenciesaccepted(value) { this.currenciesAccepted = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get openinghours() { return this.openingHours }
         set openinghours(value) { this.openingHours = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentaccepted() { return this.paymentAccepted }
         set paymentaccepted(value) { this.paymentAccepted = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricerange() { return this.priceRange }
         set pricerange(value) { this.priceRange = value }

@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availableservice() { return this.availableService }
         set availableservice(value) { this.availableService = value }
@@ -59,7 +59,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthcarereportingdata() { return this.healthcareReportingData }
         set healthcarereportingdata(value) { this.healthcareReportingData = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get medicalspecialty() { return this.medicalSpecialty }
         set medicalspecialty(value) { this.medicalSpecialty = value }

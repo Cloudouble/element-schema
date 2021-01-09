@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get touristtype() { return this.touristType }
         set touristtype(value) { this.touristType = value }

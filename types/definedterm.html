@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get indefinedtermset() { return this.inDefinedTermSet }
         set indefinedtermset(value) { this.inDefinedTermSet = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get termcode() { return this.termCode }
         set termcode(value) { this.termCode = value }

@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bccrecipient() { return this.bccRecipient }
         set bccrecipient(value) { this.bccRecipient = value }
@@ -60,7 +60,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ccrecipient() { return this.ccRecipient }
         set ccrecipient(value) { this.ccRecipient = value }
@@ -77,7 +77,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dateread() { return this.dateRead }
         set dateread(value) { this.dateRead = value }
@@ -93,7 +93,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datereceived() { return this.dateReceived }
         set datereceived(value) { this.dateReceived = value }
@@ -109,7 +109,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datesent() { return this.dateSent }
         set datesent(value) { this.dateSent = value }
@@ -125,7 +125,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get messageattachment() { return this.messageAttachment }
         set messageattachment(value) { this.messageAttachment = value }
@@ -144,7 +144,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sender($this, value) {
@@ -160,7 +160,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         toRecipient($this, value) {
@@ -177,7 +177,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get torecipient() { return this.toRecipient }
         set torecipient(value) { this.toRecipient = value }

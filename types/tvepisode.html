@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get countryoforigin() { return this.countryOfOrigin }
         set countryoforigin(value) { this.countryOfOrigin = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get titleeidr() { return this.titleEIDR }
         set titleeidr(value) { this.titleEIDR = value }

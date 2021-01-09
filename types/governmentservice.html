@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         serviceOperator($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get serviceoperator() { return this.serviceOperator }
         set serviceoperator(value) { this.serviceOperator = value }

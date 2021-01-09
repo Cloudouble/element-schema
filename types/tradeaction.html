@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         priceCurrency($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricespecification() { return this.priceSpecification }
         set pricespecification(value) { this.priceSpecification = value }

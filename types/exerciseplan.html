@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get activityduration() { return this.activityDuration }
         set activityduration(value) { this.activityDuration = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get activityfrequency() { return this.activityFrequency }
         set activityfrequency(value) { this.activityFrequency = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalvariable() { return this.additionalVariable }
         set additionalvariable(value) { this.additionalVariable = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
@@ -107,7 +107,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         repetitions($this, value) {
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         restPeriods($this, value) {
@@ -137,7 +137,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get restperiods() { return this.restPeriods }
         set restperiods(value) { this.restPeriods = value }
@@ -154,7 +154,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

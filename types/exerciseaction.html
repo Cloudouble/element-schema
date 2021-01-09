@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         diet($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         distance($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         exerciseCourse($this, value) {
@@ -82,7 +82,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exercisecourse() { return this.exerciseCourse }
         set exercisecourse(value) { this.exerciseCourse = value }
@@ -98,7 +98,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exerciseplan() { return this.exercisePlan }
         set exerciseplan(value) { this.exercisePlan = value }
@@ -114,7 +114,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exerciserelateddiet() { return this.exerciseRelatedDiet }
         set exerciserelateddiet(value) { this.exerciseRelatedDiet = value }
@@ -130,7 +130,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exercisetype() { return this.exerciseType }
         set exercisetype(value) { this.exerciseType = value }
@@ -146,7 +146,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fromlocation() { return this.fromLocation }
         set fromlocation(value) { this.fromLocation = value }
@@ -162,7 +162,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sportsActivityLocation($this, value) {
@@ -176,7 +176,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sportsactivitylocation() { return this.sportsActivityLocation }
         set sportsactivitylocation(value) { this.sportsActivityLocation = value }
@@ -192,7 +192,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sportsevent() { return this.sportsEvent }
         set sportsevent(value) { this.sportsEvent = value }
@@ -208,7 +208,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sportsteam() { return this.sportsTeam }
         set sportsteam(value) { this.sportsTeam = value }
@@ -224,7 +224,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         assemblyVersion($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get assemblyversion() { return this.assemblyVersion }
         set assemblyversion(value) { this.assemblyVersion = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get executablelibraryname() { return this.executableLibraryName }
         set executablelibraryname(value) { this.executableLibraryName = value }
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programmingmodel() { return this.programmingModel }
         set programmingmodel(value) { this.programmingModel = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetplatform() { return this.targetPlatform }
         set targetplatform(value) { this.targetPlatform = value }

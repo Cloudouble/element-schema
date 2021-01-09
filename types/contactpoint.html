@@ -43,7 +43,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
@@ -60,7 +60,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
@@ -76,7 +76,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contactoption() { return this.contactOption }
         set contactoption(value) { this.contactOption = value }
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contacttype() { return this.contactType }
         set contacttype(value) { this.contactType = value }
@@ -108,7 +108,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         faxNumber($this, value) {
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
@@ -138,7 +138,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hoursavailable() { return this.hoursAvailable }
         set hoursavailable(value) { this.hoursAvailable = value }
@@ -155,7 +155,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productsupported() { return this.productSupported }
         set productsupported(value) { this.productSupported = value }
@@ -173,7 +173,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servicearea() { return this.serviceArea }
         set servicearea(value) { this.serviceArea = value }
@@ -189,7 +189,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

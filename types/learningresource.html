@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         competencyRequired($this, value) {
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get competencyrequired() { return this.competencyRequired }
         set competencyrequired(value) { this.competencyRequired = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalalignment() { return this.educationalAlignment }
         set educationalalignment(value) { this.educationalAlignment = value }
@@ -91,7 +91,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
@@ -108,7 +108,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationaluse() { return this.educationalUse }
         set educationaluse(value) { this.educationalUse = value }
@@ -125,7 +125,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get learningresourcetype() { return this.learningResourceType }
         set learningresourcetype(value) { this.learningResourceType = value }
@@ -142,7 +142,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

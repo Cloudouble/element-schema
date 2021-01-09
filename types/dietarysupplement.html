@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get activeingredient() { return this.activeIngredient }
         set activeingredient(value) { this.activeIngredient = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isproprietary() { return this.isProprietary }
         set isproprietary(value) { this.isProprietary = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get legalstatus() { return this.legalStatus }
         set legalstatus(value) { this.legalStatus = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         maximumIntake($this, value) {
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maximumintake() { return this.maximumIntake }
         set maximumintake(value) { this.maximumIntake = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get mechanismofaction() { return this.mechanismOfAction }
         set mechanismofaction(value) { this.mechanismOfAction = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get nonproprietaryname() { return this.nonProprietaryName }
         set nonproprietaryname(value) { this.nonProprietaryName = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get proprietaryname() { return this.proprietaryName }
         set proprietaryname(value) { this.proprietaryName = value }
@@ -168,7 +168,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recommendedintake() { return this.recommendedIntake }
         set recommendedintake(value) { this.recommendedIntake = value }
@@ -184,7 +184,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get safetyconsideration() { return this.safetyConsideration }
         set safetyconsideration(value) { this.safetyConsideration = value }
@@ -200,7 +200,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetpopulation() { return this.targetPopulation }
         set targetpopulation(value) { this.targetPopulation = value }

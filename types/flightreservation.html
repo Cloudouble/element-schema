@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get boardinggroup() { return this.boardingGroup }
         set boardinggroup(value) { this.boardingGroup = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get passengerprioritystatus() { return this.passengerPriorityStatus }
         set passengerprioritystatus(value) { this.passengerPriorityStatus = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get passengersequencenumber() { return this.passengerSequenceNumber }
         set passengersequencenumber(value) { this.passengerSequenceNumber = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get securityscreening() { return this.securityScreening }
         set securityscreening(value) { this.securityScreening = value }

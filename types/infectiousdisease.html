@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get infectiousagent() { return this.infectiousAgent }
         set infectiousagent(value) { this.infectiousAgent = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get infectiousagentclass() { return this.infectiousAgentClass }
         set infectiousagentclass(value) { this.infectiousAgentClass = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get transmissionmethod() { return this.transmissionMethod }
         set transmissionmethod(value) { this.transmissionMethod = value }

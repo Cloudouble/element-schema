@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get coverageendtime() { return this.coverageEndTime }
         set coverageendtime(value) { this.coverageEndTime = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get coveragestarttime() { return this.coverageStartTime }
         set coveragestarttime(value) { this.coverageStartTime = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get liveblogupdate() { return this.liveBlogUpdate }
         set liveblogupdate(value) { this.liveBlogUpdate = value }

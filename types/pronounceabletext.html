@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get phonetictext() { return this.phoneticText }
         set phonetictext(value) { this.phoneticText = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get speechtotextmarkup() { return this.speechToTextMarkup }
         set speechtotextmarkup(value) { this.speechToTextMarkup = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get textvalue() { return this.textValue }
         set textvalue(value) { this.textValue = value }

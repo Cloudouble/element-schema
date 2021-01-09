@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get subtitlelanguage() { return this.subtitleLanguage }
         set subtitlelanguage(value) { this.subtitleLanguage = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get videoformat() { return this.videoFormat }
         set videoformat(value) { this.videoFormat = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get workpresented() { return this.workPresented }
         set workpresented(value) { this.workPresented = value }

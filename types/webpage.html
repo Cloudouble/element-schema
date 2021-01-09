@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         lastReviewed($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get lastreviewed() { return this.lastReviewed }
         set lastreviewed(value) { this.lastReviewed = value }
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maincontentofpage() { return this.mainContentOfPage }
         set maincontentofpage(value) { this.mainContentOfPage = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get primaryimageofpage() { return this.primaryImageOfPage }
         set primaryimageofpage(value) { this.primaryImageOfPage = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relatedlink() { return this.relatedLink }
         set relatedlink(value) { this.relatedLink = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reviewedby() { return this.reviewedBy }
         set reviewedby(value) { this.reviewedBy = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get significantlink() { return this.significantLink }
         set significantlink(value) { this.significantLink = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get significantlinks() { return this.significantLinks }
         set significantlinks(value) { this.significantLinks = value }
@@ -169,7 +169,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         specialty($this, value) {
@@ -183,7 +183,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastchannelid() { return this.broadcastChannelId }
         set broadcastchannelid(value) { this.broadcastChannelId = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastfrequency() { return this.broadcastFrequency }
         set broadcastfrequency(value) { this.broadcastFrequency = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastservicetier() { return this.broadcastServiceTier }
         set broadcastservicetier(value) { this.broadcastServiceTier = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         inBroadcastLineup($this, value) {
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inbroadcastlineup() { return this.inBroadcastLineup }
         set inbroadcastlineup(value) { this.inBroadcastLineup = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get providesbroadcastservice() { return this.providesBroadcastService }
         set providesbroadcastservice(value) { this.providesBroadcastService = value }

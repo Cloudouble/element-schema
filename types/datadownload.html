@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get measurementtechnique() { return this.measurementTechnique }
         set measurementtechnique(value) { this.measurementTechnique = value }

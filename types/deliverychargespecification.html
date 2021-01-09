@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
         set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
@@ -59,7 +59,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
@@ -77,7 +77,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligibleregion() { return this.eligibleRegion }
         set eligibleregion(value) { this.eligibleRegion = value }
@@ -95,7 +95,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ineligibleregion() { return this.ineligibleRegion }
         set ineligibleregion(value) { this.ineligibleRegion = value }

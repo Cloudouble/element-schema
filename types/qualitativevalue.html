@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalproperty() { return this.additionalProperty }
         set additionalproperty(value) { this.additionalProperty = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         greater($this, value) {
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         greaterOrEqual($this, value) {
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get greaterorequal() { return this.greaterOrEqual }
         set greaterorequal(value) { this.greaterOrEqual = value }
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         lesserOrEqual($this, value) {
@@ -114,7 +114,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get lesserorequal() { return this.lesserOrEqual }
         set lesserorequal(value) { this.lesserOrEqual = value }
@@ -130,7 +130,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get nonequal() { return this.nonEqual }
         set nonequal(value) { this.nonEqual = value }
@@ -150,7 +150,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuereference() { return this.valueReference }
         set valuereference(value) { this.valueReference = value }

@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dateissued() { return this.dateIssued }
         set dateissued(value) { this.dateIssued = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get issuedby() { return this.issuedBy }
         set issuedby(value) { this.issuedBy = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricecurrency() { return this.priceCurrency }
         set pricecurrency(value) { this.priceCurrency = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ticketnumber() { return this.ticketNumber }
         set ticketnumber(value) { this.ticketNumber = value }
@@ -106,7 +106,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tickettoken() { return this.ticketToken }
         set tickettoken(value) { this.ticketToken = value }
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ticketedseat() { return this.ticketedSeat }
         set ticketedseat(value) { this.ticketedSeat = value }
@@ -140,7 +140,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get totalprice() { return this.totalPrice }
         set totalprice(value) { this.totalPrice = value }
@@ -157,7 +157,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get undername() { return this.underName }
         set undername(value) { this.underName = value }

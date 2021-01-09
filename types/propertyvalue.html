@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maxvalue() { return this.maxValue }
         set maxvalue(value) { this.maxValue = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get measurementtechnique() { return this.measurementTechnique }
         set measurementtechnique(value) { this.measurementTechnique = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get minvalue() { return this.minValue }
         set minvalue(value) { this.minValue = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get propertyid() { return this.propertyID }
         set propertyid(value) { this.propertyID = value }
@@ -107,7 +107,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get unitcode() { return this.unitCode }
         set unitcode(value) { this.unitCode = value }
@@ -123,7 +123,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get unittext() { return this.unitText }
         set unittext(value) { this.unitText = value }
@@ -142,7 +142,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         valueReference($this, value) {
@@ -160,7 +160,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get valuereference() { return this.valueReference }
         set valuereference(value) { this.valueReference = value }

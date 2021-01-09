@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acceptsreservations() { return this.acceptsReservations }
         set acceptsreservations(value) { this.acceptsReservations = value }
@@ -60,7 +60,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasmenu() { return this.hasMenu }
         set hasmenu(value) { this.hasMenu = value }
@@ -78,7 +78,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         servesCuisine($this, value) {
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servescuisine() { return this.servesCuisine }
         set servescuisine(value) { this.servesCuisine = value }
@@ -108,7 +108,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get starrating() { return this.starRating }
         set starrating(value) { this.starRating = value }

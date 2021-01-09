@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get possibletreatment() { return this.possibleTreatment }
         set possibletreatment(value) { this.possibleTreatment = value }

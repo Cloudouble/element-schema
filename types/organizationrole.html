@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberedposition() { return this.numberedPosition }
         set numberedposition(value) { this.numberedPosition = value }

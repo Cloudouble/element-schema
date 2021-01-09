@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicationcategory() { return this.applicationCategory }
         set applicationcategory(value) { this.applicationCategory = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicationsubcategory() { return this.applicationSubCategory }
         set applicationsubcategory(value) { this.applicationSubCategory = value }
@@ -74,7 +74,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicationsuite() { return this.applicationSuite }
         set applicationsuite(value) { this.applicationSuite = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availableondevice() { return this.availableOnDevice }
         set availableondevice(value) { this.availableOnDevice = value }
@@ -106,7 +106,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get countriesnotsupported() { return this.countriesNotSupported }
         set countriesnotsupported(value) { this.countriesNotSupported = value }
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get countriessupported() { return this.countriesSupported }
         set countriessupported(value) { this.countriesSupported = value }
@@ -138,7 +138,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         downloadUrl($this, value) {
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get downloadurl() { return this.downloadUrl }
         set downloadurl(value) { this.downloadUrl = value }
@@ -169,7 +169,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get featurelist() { return this.featureList }
         set featurelist(value) { this.featureList = value }
@@ -185,7 +185,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get filesize() { return this.fileSize }
         set filesize(value) { this.fileSize = value }
@@ -201,7 +201,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get installurl() { return this.installUrl }
         set installurl(value) { this.installUrl = value }
@@ -218,7 +218,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get memoryrequirements() { return this.memoryRequirements }
         set memoryrequirements(value) { this.memoryRequirements = value }
@@ -234,7 +234,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get operatingsystem() { return this.operatingSystem }
         set operatingsystem(value) { this.operatingSystem = value }
@@ -250,7 +250,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         processorRequirements($this, value) {
@@ -264,7 +264,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get processorrequirements() { return this.processorRequirements }
         set processorrequirements(value) { this.processorRequirements = value }
@@ -281,7 +281,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get releasenotes() { return this.releaseNotes }
         set releasenotes(value) { this.releaseNotes = value }
@@ -298,7 +298,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         screenshot($this, value) {
@@ -313,7 +313,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         softwareAddOn($this, value) {
@@ -327,7 +327,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get softwareaddon() { return this.softwareAddOn }
         set softwareaddon(value) { this.softwareAddOn = value }
@@ -343,7 +343,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get softwarehelp() { return this.softwareHelp }
         set softwarehelp(value) { this.softwareHelp = value }
@@ -360,7 +360,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get softwarerequirements() { return this.softwareRequirements }
         set softwarerequirements(value) { this.softwareRequirements = value }
@@ -376,7 +376,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get softwareversion() { return this.softwareVersion }
         set softwareversion(value) { this.softwareVersion = value }
@@ -393,7 +393,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get storagerequirements() { return this.storageRequirements }
         set storagerequirements(value) { this.storageRequirements = value }
@@ -409,7 +409,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get supportingdata() { return this.supportingData }
         set supportingdata(value) { this.supportingData = value }

@@ -2,17 +2,73 @@ window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
-    Renderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
-        return 'Schema'
-    }}, 
     Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}, 
-    Validators: {configurable: false, enumerable: true, writable: true, value: {}}, 
-    Errors: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+        var t
+        var target = mapObject.Schema
+        if (containerInheritance && containerInheritance.some(containerClassName => {
+            t = containerClassName
+            return mapObject[containerClassName] && typeof mapObject[containerClassName] == 'object' 
+                && mapObject[containerClassName][ownPropertyName] && typeof mapObject[containerClassName][ownPropertyName] == 'function'
+        })) {
+            // this propertyName can be found as a propertyName in any ancestor container class
+            target = mapObject[t][ownPropertyName]
+        } else if (ownInheritance && containerInheritance) {
+            ownInheritance.some(ot => {
+                return containerInheritance.some(ct => {
+                    if (mapObject[ct] && typeof mapObject[ct] == 'object' 
+                        && mapObject[ct][ot] && typeof mapObject[ct][ot] == 'function') {
+                            // this type or one of it's ancestors can be found in any ancestor container class
+                            target = mapObject[ct][ot]
+                            return true
+                        }
+                })
+            })
+        }
+        if (!target && mapObject[ownPropertyName] && typeof mapObject[ownPropertyName] == 'function') {
+            // the propertyName is directly under the root
+            target = mapObject[ownPropertyName]
+        } else if (!target && ownInheritance && ownInheritance.some(ot => { 
+            t = ot
+            return mapObject[ot] && typeof mapObject[ot] == 'function'
+        })) {
+            // the type or one of it's ancestors is directly under the root
+            target = mapObject[t]
+        }
+        return target || mapObject.Schema
+    }}, 
+    getValidator: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Validators, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
+    }}, 
+    getRenderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Renderers, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
+    }}, 
+    getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
+    }}, 
+    Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
+            Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
+                return true
+            }}
+        })
+    }, 
+    Renderers: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
+            Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
+                return true
+            }}
+        })
+    }, 
+    Errors: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
+            Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
+                return true
+            }}
+        })
+    }, 
     renderProperty: {configurable: false, enumerable: false, writable: false, value: function(property) {
         // property = {comment, container, property, release, types, value}
-        if (property && typeof property == 'object' && typeof property.parent == 'object' && typeof property.types == 'object' && typeof property.types.some == 'function') {
+        if (property && typeof property == 'object' && typeof property.parent == 'object' && property.parent._rdfs_label && typeof property.types == 'object' && typeof property.types.some == 'function') {
             var thisType
-            property.types.some(t => {
+            window.LiveElement.Element.getTypeSpecificity(property.types).some(t => {
                 thisType = t
                 return window.LiveElement.Element.elements[t] && typeof (window.LiveElement.Element.elements[t].__valid == 'function') && window.LiveElement.Element.elements[t].__valid(property.value)
             })

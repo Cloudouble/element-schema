@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reportnumber() { return this.reportNumber }
         set reportnumber(value) { this.reportNumber = value }

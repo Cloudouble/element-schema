@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get byartist() { return this.byArtist }
         set byartist(value) { this.byArtist = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         inAlbum($this, value) {
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inalbum() { return this.inAlbum }
         set inalbum(value) { this.inAlbum = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inplaylist() { return this.inPlaylist }
         set inplaylist(value) { this.inPlaylist = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isrccode() { return this.isrcCode }
         set isrccode(value) { this.isrcCode = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recordingof() { return this.recordingOf }
         set recordingof(value) { this.recordingOf = value }

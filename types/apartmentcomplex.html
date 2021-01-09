@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofaccommodationunits() { return this.numberOfAccommodationUnits }
         set numberofaccommodationunits(value) { this.numberOfAccommodationUnits = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofavailableaccommodationunits() { return this.numberOfAvailableAccommodationUnits }
         set numberofavailableaccommodationunits(value) { this.numberOfAvailableAccommodationUnits = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofbedrooms() { return this.numberOfBedrooms }
         set numberofbedrooms(value) { this.numberOfBedrooms = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get petsallowed() { return this.petsAllowed }
         set petsallowed(value) { this.petsAllowed = value }
@@ -106,7 +106,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tourbookingpage() { return this.tourBookingPage }
         set tourbookingpage(value) { this.tourBookingPage = value }

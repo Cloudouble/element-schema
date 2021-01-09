@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acquiredfrom() { return this.acquiredFrom }
         set acquiredfrom(value) { this.acquiredFrom = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ownedfrom() { return this.ownedFrom }
         set ownedfrom(value) { this.ownedFrom = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ownedthrough() { return this.ownedThrough }
         set ownedthrough(value) { this.ownedThrough = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get typeofgood() { return this.typeOfGood }
         set typeofgood(value) { this.typeOfGood = value }

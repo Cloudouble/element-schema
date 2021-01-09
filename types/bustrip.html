@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get arrivalbusstop() { return this.arrivalBusStop }
         set arrivalbusstop(value) { this.arrivalBusStop = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get busname() { return this.busName }
         set busname(value) { this.busName = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get busnumber() { return this.busNumber }
         set busnumber(value) { this.busNumber = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get departurebusstop() { return this.departureBusStop }
         set departurebusstop(value) { this.departureBusStop = value }

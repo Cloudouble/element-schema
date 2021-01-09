@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get subtest() { return this.subTest }
         set subtest(value) { this.subTest = value }

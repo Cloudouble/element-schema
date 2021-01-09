@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         carbohydrateContent($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get carbohydratecontent() { return this.carbohydrateContent }
         set carbohydratecontent(value) { this.carbohydrateContent = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cholesterolcontent() { return this.cholesterolContent }
         set cholesterolcontent(value) { this.cholesterolContent = value }
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fatcontent() { return this.fatContent }
         set fatcontent(value) { this.fatContent = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fibercontent() { return this.fiberContent }
         set fibercontent(value) { this.fiberContent = value }
@@ -118,7 +118,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get proteincontent() { return this.proteinContent }
         set proteincontent(value) { this.proteinContent = value }
@@ -134,7 +134,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get saturatedfatcontent() { return this.saturatedFatContent }
         set saturatedfatcontent(value) { this.saturatedFatContent = value }
@@ -150,7 +150,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servingsize() { return this.servingSize }
         set servingsize(value) { this.servingSize = value }
@@ -166,7 +166,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sodiumcontent() { return this.sodiumContent }
         set sodiumcontent(value) { this.sodiumContent = value }
@@ -182,7 +182,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sugarcontent() { return this.sugarContent }
         set sugarcontent(value) { this.sugarContent = value }
@@ -198,7 +198,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get transfatcontent() { return this.transFatContent }
         set transfatcontent(value) { this.transFatContent = value }
@@ -214,7 +214,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get unsaturatedfatcontent() { return this.unsaturatedFatContent }
         set unsaturatedfatcontent(value) { this.unsaturatedFatContent = value }

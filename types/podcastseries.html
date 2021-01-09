@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get webfeed() { return this.webFeed }
         set webfeed(value) { this.webFeed = value }

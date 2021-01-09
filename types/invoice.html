@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accountid() { return this.accountId }
         set accountid(value) { this.accountId = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get billingperiod() { return this.billingPeriod }
         set billingperiod(value) { this.billingPeriod = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         category($this, value) {
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         confirmationNumber($this, value) {
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get confirmationnumber() { return this.confirmationNumber }
         set confirmationnumber(value) { this.confirmationNumber = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         minimumPaymentDue($this, value) {
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get minimumpaymentdue() { return this.minimumPaymentDue }
         set minimumpaymentdue(value) { this.minimumPaymentDue = value }
@@ -152,7 +152,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentdue() { return this.paymentDue }
         set paymentdue(value) { this.paymentDue = value }
@@ -169,7 +169,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentduedate() { return this.paymentDueDate }
         set paymentduedate(value) { this.paymentDueDate = value }
@@ -185,7 +185,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentmethod() { return this.paymentMethod }
         set paymentmethod(value) { this.paymentMethod = value }
@@ -201,7 +201,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentmethodid() { return this.paymentMethodId }
         set paymentmethodid(value) { this.paymentMethodId = value }
@@ -218,7 +218,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentstatus() { return this.paymentStatus }
         set paymentstatus(value) { this.paymentStatus = value }
@@ -235,7 +235,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         referencesOrder($this, value) {
@@ -249,7 +249,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get referencesorder() { return this.referencesOrder }
         set referencesorder(value) { this.referencesOrder = value }
@@ -265,7 +265,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get scheduledpaymentdate() { return this.scheduledPaymentDate }
         set scheduledpaymentdate(value) { this.scheduledPaymentDate = value }
@@ -282,7 +282,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get totalpaymentdue() { return this.totalPaymentDue }
         set totalpaymentdue(value) { this.totalPaymentDue = value }

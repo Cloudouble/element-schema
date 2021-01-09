@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acceptedoffer() { return this.acceptedOffer }
         set acceptedoffer(value) { this.acceptedOffer = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get billingaddress() { return this.billingAddress }
         set billingaddress(value) { this.billingAddress = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         confirmationNumber($this, value) {
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get confirmationnumber() { return this.confirmationNumber }
         set confirmationnumber(value) { this.confirmationNumber = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         discount($this, value) {
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         discountCode($this, value) {
@@ -133,7 +133,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get discountcode() { return this.discountCode }
         set discountcode(value) { this.discountCode = value }
@@ -149,7 +149,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get discountcurrency() { return this.discountCurrency }
         set discountcurrency(value) { this.discountCurrency = value }
@@ -165,7 +165,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isgift() { return this.isGift }
         set isgift(value) { this.isGift = value }
@@ -182,7 +182,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         orderDate($this, value) {
@@ -197,7 +197,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get orderdate() { return this.orderDate }
         set orderdate(value) { this.orderDate = value }
@@ -213,7 +213,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get orderdelivery() { return this.orderDelivery }
         set orderdelivery(value) { this.orderDelivery = value }
@@ -229,7 +229,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ordernumber() { return this.orderNumber }
         set ordernumber(value) { this.orderNumber = value }
@@ -245,7 +245,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get orderstatus() { return this.orderStatus }
         set orderstatus(value) { this.orderStatus = value }
@@ -263,7 +263,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ordereditem() { return this.orderedItem }
         set ordereditem(value) { this.orderedItem = value }
@@ -279,7 +279,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partofinvoice() { return this.partOfInvoice }
         set partofinvoice(value) { this.partOfInvoice = value }
@@ -295,7 +295,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentdue() { return this.paymentDue }
         set paymentdue(value) { this.paymentDue = value }
@@ -312,7 +312,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentduedate() { return this.paymentDueDate }
         set paymentduedate(value) { this.paymentDueDate = value }
@@ -328,7 +328,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentmethod() { return this.paymentMethod }
         set paymentmethod(value) { this.paymentMethod = value }
@@ -344,7 +344,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymentmethodid() { return this.paymentMethodId }
         set paymentmethodid(value) { this.paymentMethodId = value }
@@ -360,7 +360,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get paymenturl() { return this.paymentUrl }
         set paymenturl(value) { this.paymentUrl = value }
@@ -377,7 +377,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

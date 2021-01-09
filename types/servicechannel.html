@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availablelanguage() { return this.availableLanguage }
         set availablelanguage(value) { this.availableLanguage = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get processingtime() { return this.processingTime }
         set processingtime(value) { this.processingTime = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get providesservice() { return this.providesService }
         set providesservice(value) { this.providesService = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servicelocation() { return this.serviceLocation }
         set servicelocation(value) { this.serviceLocation = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servicephone() { return this.servicePhone }
         set servicephone(value) { this.servicePhone = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servicepostaladdress() { return this.servicePostalAddress }
         set servicepostaladdress(value) { this.servicePostalAddress = value }
@@ -137,7 +137,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get servicesmsnumber() { return this.serviceSmsNumber }
         set servicesmsnumber(value) { this.serviceSmsNumber = value }
@@ -153,7 +153,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get serviceurl() { return this.serviceUrl }
         set serviceurl(value) { this.serviceUrl = value }

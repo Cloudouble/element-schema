@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tissuesample() { return this.tissueSample }
         set tissuesample(value) { this.tissueSample = value }

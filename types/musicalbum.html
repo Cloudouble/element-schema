@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get albumproductiontype() { return this.albumProductionType }
         set albumproductiontype(value) { this.albumProductionType = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get albumrelease() { return this.albumRelease }
         set albumrelease(value) { this.albumRelease = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get albumreleasetype() { return this.albumReleaseType }
         set albumreleasetype(value) { this.albumReleaseType = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get byartist() { return this.byArtist }
         set byartist(value) { this.byArtist = value }

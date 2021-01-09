@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trainingsalary() { return this.trainingSalary }
         set trainingsalary(value) { this.trainingSalary = value }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalnumberofguests() { return this.additionalNumberOfGuests }
         set additionalnumberofguests(value) { this.additionalNumberOfGuests = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         rsvpResponse($this, value) {
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get rsvpresponse() { return this.rsvpResponse }
         set rsvpresponse(value) { this.rsvpResponse = value }

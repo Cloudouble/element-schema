@@ -70,7 +70,7 @@ for index, datatype in enumerate([d for d in graph if (
             'properties_list_comma': json.dumps(properties_list)[1:-1].replace('"', "'"), 
             'properties_list_getters': '''
 '''.join(['''
-        {property_name}($this, value) {{\n\t\t\twindow.LiveElement.Schema.renderProperty({property_map})\n\t\t\treturn value\n\t\t}}{getters}'''.format(
+        {property_name}($this, value) {{\n\t\t\twindow.LiveElement.Schema.renderProperty({property_map})\n\t\t\treturn value && typeof value == 'object' ? undefined : value\n\t\t}}{getters}'''.format(
                 property_map=re.sub('"([^"]+)":', r"\1:", json.dumps(properties_dict.get(property_name, {}), sort_keys=True, indent="\t\t\t\t")).replace('"$this"', '$this').replace('"value"', 'value').replace("\n}", "\n\t\t\t}"), 
                 property_name=property_name, 
                 property_name_lower=property_name.lower(), 

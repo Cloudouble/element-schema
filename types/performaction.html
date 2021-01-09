@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get entertainmentbusiness() { return this.entertainmentBusiness }
         set entertainmentbusiness(value) { this.entertainmentBusiness = value }

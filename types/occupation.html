@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationrequirements() { return this.educationRequirements }
         set educationrequirements(value) { this.educationRequirements = value }
@@ -59,7 +59,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get estimatedsalary() { return this.estimatedSalary }
         set estimatedsalary(value) { this.estimatedSalary = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get experiencerequirements() { return this.experienceRequirements }
         set experiencerequirements(value) { this.experienceRequirements = value }
@@ -91,7 +91,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationlocation() { return this.occupationLocation }
         set occupationlocation(value) { this.occupationLocation = value }
@@ -108,7 +108,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get occupationalcategory() { return this.occupationalCategory }
         set occupationalcategory(value) { this.occupationalCategory = value }
@@ -125,7 +125,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         responsibilities($this, value) {
@@ -139,7 +139,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         skills($this, value) {
@@ -154,7 +154,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

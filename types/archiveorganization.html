@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get archiveheld() { return this.archiveHeld }
         set archiveheld(value) { this.archiveHeld = value }

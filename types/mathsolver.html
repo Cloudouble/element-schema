@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get mathexpression() { return this.mathExpression }
         set mathexpression(value) { this.mathExpression = value }

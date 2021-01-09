@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get healthcondition() { return this.healthCondition }
         set healthcondition(value) { this.healthCondition = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiredgender() { return this.requiredGender }
         set requiredgender(value) { this.requiredGender = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiredmaxage() { return this.requiredMaxAge }
         set requiredmaxage(value) { this.requiredMaxAge = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiredminage() { return this.requiredMinAge }
         set requiredminage(value) { this.requiredMinAge = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suggestedgender() { return this.suggestedGender }
         set suggestedgender(value) { this.suggestedGender = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suggestedmaxage() { return this.suggestedMaxAge }
         set suggestedmaxage(value) { this.suggestedMaxAge = value }
@@ -136,7 +136,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suggestedminage() { return this.suggestedMinAge }
         set suggestedminage(value) { this.suggestedMinAge = value }

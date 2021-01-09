@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get studydesign() { return this.studyDesign }
         set studydesign(value) { this.studyDesign = value }

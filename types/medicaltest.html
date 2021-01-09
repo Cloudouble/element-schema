@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get affectedby() { return this.affectedBy }
         set affectedby(value) { this.affectedBy = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get normalrange() { return this.normalRange }
         set normalrange(value) { this.normalRange = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get signdetected() { return this.signDetected }
         set signdetected(value) { this.signDetected = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get usedtodiagnose() { return this.usedToDiagnose }
         set usedtodiagnose(value) { this.usedToDiagnose = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get usesdevice() { return this.usesDevice }
         set usesdevice(value) { this.usesDevice = value }

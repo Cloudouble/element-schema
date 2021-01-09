@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inventorylevel() { return this.inventoryLevel }
         set inventorylevel(value) { this.inventoryLevel = value }

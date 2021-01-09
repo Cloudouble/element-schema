@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         currency($this, value) {
@@ -55,7 +55,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gracePeriod($this, value) {
@@ -69,7 +69,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get graceperiod() { return this.gracePeriod }
         set graceperiod(value) { this.gracePeriod = value }
@@ -85,7 +85,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loanrepaymentform() { return this.loanRepaymentForm }
         set loanrepaymentform(value) { this.loanRepaymentForm = value }
@@ -101,7 +101,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loanterm() { return this.loanTerm }
         set loanterm(value) { this.loanTerm = value }
@@ -118,7 +118,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loantype() { return this.loanType }
         set loantype(value) { this.loanType = value }
@@ -134,7 +134,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recourseloan() { return this.recourseLoan }
         set recourseloan(value) { this.recourseLoan = value }
@@ -150,7 +150,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get renegotiableloan() { return this.renegotiableLoan }
         set renegotiableloan(value) { this.renegotiableLoan = value }
@@ -167,7 +167,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiredcollateral() { return this.requiredCollateral }
         set requiredcollateral(value) { this.requiredCollateral = value }

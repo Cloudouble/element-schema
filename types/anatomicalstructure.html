@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get associatedpathophysiology() { return this.associatedPathophysiology }
         set associatedpathophysiology(value) { this.associatedPathophysiology = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get bodylocation() { return this.bodyLocation }
         set bodylocation(value) { this.bodyLocation = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get connectedto() { return this.connectedTo }
         set connectedto(value) { this.connectedTo = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         partOfSystem($this, value) {
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partofsystem() { return this.partOfSystem }
         set partofsystem(value) { this.partOfSystem = value }
@@ -118,7 +118,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relatedcondition() { return this.relatedCondition }
         set relatedcondition(value) { this.relatedCondition = value }
@@ -134,7 +134,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get relatedtherapy() { return this.relatedTherapy }
         set relatedtherapy(value) { this.relatedTherapy = value }
@@ -150,7 +150,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get substructure() { return this.subStructure }
         set substructure(value) { this.subStructure = value }

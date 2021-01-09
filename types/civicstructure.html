@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get openinghours() { return this.openingHours }
         set openinghours(value) { this.openingHours = value }

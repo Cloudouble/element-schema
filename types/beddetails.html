@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofbeds() { return this.numberOfBeds }
         set numberofbeds(value) { this.numberOfBeds = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get typeofbed() { return this.typeOfBed }
         set typeofbed(value) { this.typeOfBed = value }

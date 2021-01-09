@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cooktime() { return this.cookTime }
         set cooktime(value) { this.cookTime = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cookingmethod() { return this.cookingMethod }
         set cookingmethod(value) { this.cookingMethod = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         nutrition($this, value) {
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         recipeCategory($this, value) {
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recipecategory() { return this.recipeCategory }
         set recipecategory(value) { this.recipeCategory = value }
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recipecuisine() { return this.recipeCuisine }
         set recipecuisine(value) { this.recipeCuisine = value }
@@ -132,7 +132,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recipeingredient() { return this.recipeIngredient }
         set recipeingredient(value) { this.recipeIngredient = value }
@@ -150,7 +150,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recipeinstructions() { return this.recipeInstructions }
         set recipeinstructions(value) { this.recipeInstructions = value }
@@ -167,7 +167,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recipeyield() { return this.recipeYield }
         set recipeyield(value) { this.recipeYield = value }
@@ -183,7 +183,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suitablefordiet() { return this.suitableForDiet }
         set suitablefordiet(value) { this.suitableForDiet = value }

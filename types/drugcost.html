@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get applicablelocation() { return this.applicableLocation }
         set applicablelocation(value) { this.applicableLocation = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get costcategory() { return this.costCategory }
         set costcategory(value) { this.costCategory = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get costcurrency() { return this.costCurrency }
         set costcurrency(value) { this.costCurrency = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get costorigin() { return this.costOrigin }
         set costorigin(value) { this.costOrigin = value }
@@ -106,7 +106,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get costperunit() { return this.costPerUnit }
         set costperunit(value) { this.costPerUnit = value }
@@ -122,7 +122,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get drugunit() { return this.drugUnit }
         set drugunit(value) { this.drugUnit = value }

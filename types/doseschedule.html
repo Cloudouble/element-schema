@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get doseunit() { return this.doseUnit }
         set doseunit(value) { this.doseUnit = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dosevalue() { return this.doseValue }
         set dosevalue(value) { this.doseValue = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         targetPopulation($this, value) {
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetpopulation() { return this.targetPopulation }
         set targetpopulation(value) { this.targetPopulation = value }

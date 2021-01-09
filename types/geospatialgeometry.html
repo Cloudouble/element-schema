@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocontains() { return this.geoContains }
         set geocontains(value) { this.geoContains = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocoveredby() { return this.geoCoveredBy }
         set geocoveredby(value) { this.geoCoveredBy = value }
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocovers() { return this.geoCovers }
         set geocovers(value) { this.geoCovers = value }
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocrosses() { return this.geoCrosses }
         set geocrosses(value) { this.geoCrosses = value }
@@ -109,7 +109,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geodisjoint() { return this.geoDisjoint }
         set geodisjoint(value) { this.geoDisjoint = value }
@@ -126,7 +126,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geoequals() { return this.geoEquals }
         set geoequals(value) { this.geoEquals = value }
@@ -143,7 +143,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geointersects() { return this.geoIntersects }
         set geointersects(value) { this.geoIntersects = value }
@@ -160,7 +160,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geooverlaps() { return this.geoOverlaps }
         set geooverlaps(value) { this.geoOverlaps = value }
@@ -177,7 +177,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geotouches() { return this.geoTouches }
         set geotouches(value) { this.geoTouches = value }
@@ -194,7 +194,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geowithin() { return this.geoWithin }
         set geowithin(value) { this.geoWithin = value }

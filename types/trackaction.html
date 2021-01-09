@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deliverymethod() { return this.deliveryMethod }
         set deliverymethod(value) { this.deliveryMethod = value }

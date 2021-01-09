@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acceptedpaymentmethod() { return this.acceptedPaymentMethod }
         set acceptedpaymentmethod(value) { this.acceptedPaymentMethod = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get advancebookingrequirement() { return this.advanceBookingRequirement }
         set advancebookingrequirement(value) { this.advanceBookingRequirement = value }
@@ -76,7 +76,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get areaserved() { return this.areaServed }
         set areaserved(value) { this.areaServed = value }
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         availabilityEnds($this, value) {
@@ -108,7 +108,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availabilityends() { return this.availabilityEnds }
         set availabilityends(value) { this.availabilityEnds = value }
@@ -126,7 +126,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availabilitystarts() { return this.availabilityStarts }
         set availabilitystarts(value) { this.availabilityStarts = value }
@@ -142,7 +142,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availableatorfrom() { return this.availableAtOrFrom }
         set availableatorfrom(value) { this.availableAtOrFrom = value }
@@ -158,7 +158,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availabledeliverymethod() { return this.availableDeliveryMethod }
         set availabledeliverymethod(value) { this.availableDeliveryMethod = value }
@@ -174,7 +174,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get businessfunction() { return this.businessFunction }
         set businessfunction(value) { this.businessFunction = value }
@@ -190,7 +190,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get deliveryleadtime() { return this.deliveryLeadTime }
         set deliveryleadtime(value) { this.deliveryLeadTime = value }
@@ -206,7 +206,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligiblecustomertype() { return this.eligibleCustomerType }
         set eligiblecustomertype(value) { this.eligibleCustomerType = value }
@@ -222,7 +222,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligibleduration() { return this.eligibleDuration }
         set eligibleduration(value) { this.eligibleDuration = value }
@@ -238,7 +238,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligiblequantity() { return this.eligibleQuantity }
         set eligiblequantity(value) { this.eligibleQuantity = value }
@@ -256,7 +256,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligibleregion() { return this.eligibleRegion }
         set eligibleregion(value) { this.eligibleRegion = value }
@@ -272,7 +272,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligibletransactionvolume() { return this.eligibleTransactionVolume }
         set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
@@ -288,7 +288,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin12($this, value) {
@@ -302,7 +302,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin13($this, value) {
@@ -316,7 +316,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin14($this, value) {
@@ -330,7 +330,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin8($this, value) {
@@ -344,7 +344,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         includesObject($this, value) {
@@ -358,7 +358,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get includesobject() { return this.includesObject }
         set includesobject(value) { this.includesObject = value }
@@ -376,7 +376,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ineligibleregion() { return this.ineligibleRegion }
         set ineligibleregion(value) { this.ineligibleRegion = value }
@@ -392,7 +392,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inventorylevel() { return this.inventoryLevel }
         set inventorylevel(value) { this.inventoryLevel = value }
@@ -408,7 +408,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get itemcondition() { return this.itemCondition }
         set itemcondition(value) { this.itemCondition = value }
@@ -430,7 +430,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get itemoffered() { return this.itemOffered }
         set itemoffered(value) { this.itemOffered = value }
@@ -446,7 +446,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         priceSpecification($this, value) {
@@ -460,7 +460,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get pricespecification() { return this.priceSpecification }
         set pricespecification(value) { this.priceSpecification = value }
@@ -477,7 +477,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         serialNumber($this, value) {
@@ -491,7 +491,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get serialnumber() { return this.serialNumber }
         set serialnumber(value) { this.serialNumber = value }
@@ -507,7 +507,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         validFrom($this, value) {
@@ -522,7 +522,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validfrom() { return this.validFrom }
         set validfrom(value) { this.validFrom = value }
@@ -539,7 +539,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get validthrough() { return this.validThrough }
         set validthrough(value) { this.validThrough = value }
@@ -555,7 +555,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

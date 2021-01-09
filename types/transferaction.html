@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fromlocation() { return this.fromLocation }
         set fromlocation(value) { this.fromLocation = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }

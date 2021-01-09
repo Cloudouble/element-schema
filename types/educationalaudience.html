@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalrole() { return this.educationalRole }
         set educationalrole(value) { this.educationalRole = value }

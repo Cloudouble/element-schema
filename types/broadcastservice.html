@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         broadcastAffiliateOf($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastaffiliateof() { return this.broadcastAffiliateOf }
         set broadcastaffiliateof(value) { this.broadcastAffiliateOf = value }
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastdisplayname() { return this.broadcastDisplayName }
         set broadcastdisplayname(value) { this.broadcastDisplayName = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcastfrequency() { return this.broadcastFrequency }
         set broadcastfrequency(value) { this.broadcastFrequency = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get broadcasttimezone() { return this.broadcastTimezone }
         set broadcasttimezone(value) { this.broadcastTimezone = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         callSign($this, value) {
@@ -133,7 +133,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get callsign() { return this.callSign }
         set callsign(value) { this.callSign = value }
@@ -149,7 +149,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasbroadcastchannel() { return this.hasBroadcastChannel }
         set hasbroadcastchannel(value) { this.hasBroadcastChannel = value }
@@ -166,7 +166,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
@@ -182,7 +182,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get parentservice() { return this.parentService }
         set parentservice(value) { this.parentService = value }
@@ -198,7 +198,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get videoformat() { return this.videoFormat }
         set videoformat(value) { this.videoFormat = value }

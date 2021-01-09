@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         abstract($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         accessMode($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessmode() { return this.accessMode }
         set accessmode(value) { this.accessMode = value }
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessmodesufficient() { return this.accessModeSufficient }
         set accessmodesufficient(value) { this.accessModeSufficient = value }
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessibilityapi() { return this.accessibilityAPI }
         set accessibilityapi(value) { this.accessibilityAPI = value }
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessibilitycontrol() { return this.accessibilityControl }
         set accessibilitycontrol(value) { this.accessibilityControl = value }
@@ -132,7 +132,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessibilityfeature() { return this.accessibilityFeature }
         set accessibilityfeature(value) { this.accessibilityFeature = value }
@@ -148,7 +148,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessibilityhazard() { return this.accessibilityHazard }
         set accessibilityhazard(value) { this.accessibilityHazard = value }
@@ -164,7 +164,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accessibilitysummary() { return this.accessibilitySummary }
         set accessibilitysummary(value) { this.accessibilitySummary = value }
@@ -180,7 +180,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get accountableperson() { return this.accountablePerson }
         set accountableperson(value) { this.accountablePerson = value }
@@ -197,7 +197,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acquirelicensepage() { return this.acquireLicensePage }
         set acquirelicensepage(value) { this.acquireLicensePage = value }
@@ -213,7 +213,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
@@ -229,7 +229,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get alternativeheadline() { return this.alternativeHeadline }
         set alternativeheadline(value) { this.alternativeHeadline = value }
@@ -246,7 +246,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         associatedMedia($this, value) {
@@ -260,7 +260,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get associatedmedia() { return this.associatedMedia }
         set associatedmedia(value) { this.associatedMedia = value }
@@ -276,7 +276,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         audio($this, value) {
@@ -292,7 +292,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         author($this, value) {
@@ -307,7 +307,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         award($this, value) {
@@ -321,7 +321,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         awards($this, value) {
@@ -335,7 +335,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         character($this, value) {
@@ -349,7 +349,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         citation($this, value) {
@@ -364,7 +364,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         comment($this, value) {
@@ -378,7 +378,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         commentCount($this, value) {
@@ -392,7 +392,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get commentcount() { return this.commentCount }
         set commentcount(value) { this.commentCount = value }
@@ -408,7 +408,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get conditionsofaccess() { return this.conditionsOfAccess }
         set conditionsofaccess(value) { this.conditionsOfAccess = value }
@@ -424,7 +424,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contentlocation() { return this.contentLocation }
         set contentlocation(value) { this.contentLocation = value }
@@ -441,7 +441,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contentrating() { return this.contentRating }
         set contentrating(value) { this.contentRating = value }
@@ -457,7 +457,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contentreferencetime() { return this.contentReferenceTime }
         set contentreferencetime(value) { this.contentReferenceTime = value }
@@ -474,7 +474,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         copyrightHolder($this, value) {
@@ -489,7 +489,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get copyrightholder() { return this.copyrightHolder }
         set copyrightholder(value) { this.copyrightHolder = value }
@@ -505,7 +505,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get copyrightnotice() { return this.copyrightNotice }
         set copyrightnotice(value) { this.copyrightNotice = value }
@@ -521,7 +521,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get copyrightyear() { return this.copyrightYear }
         set copyrightyear(value) { this.copyrightYear = value }
@@ -539,7 +539,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         creativeWorkStatus($this, value) {
@@ -554,7 +554,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get creativeworkstatus() { return this.creativeWorkStatus }
         set creativeworkstatus(value) { this.creativeWorkStatus = value }
@@ -571,7 +571,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         creditText($this, value) {
@@ -585,7 +585,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get credittext() { return this.creditText }
         set credittext(value) { this.creditText = value }
@@ -602,7 +602,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datecreated() { return this.dateCreated }
         set datecreated(value) { this.dateCreated = value }
@@ -619,7 +619,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datemodified() { return this.dateModified }
         set datemodified(value) { this.dateModified = value }
@@ -636,7 +636,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get datepublished() { return this.datePublished }
         set datepublished(value) { this.datePublished = value }
@@ -652,7 +652,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get discussionurl() { return this.discussionUrl }
         set discussionurl(value) { this.discussionUrl = value }
@@ -669,7 +669,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get editeidr() { return this.editEIDR }
         set editeidr(value) { this.editEIDR = value }
@@ -685,7 +685,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         educationalAlignment($this, value) {
@@ -699,7 +699,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationalalignment() { return this.educationalAlignment }
         set educationalalignment(value) { this.educationalAlignment = value }
@@ -717,7 +717,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationallevel() { return this.educationalLevel }
         set educationallevel(value) { this.educationalLevel = value }
@@ -734,7 +734,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get educationaluse() { return this.educationalUse }
         set educationaluse(value) { this.educationalUse = value }
@@ -750,7 +750,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         encodingFormat($this, value) {
@@ -765,7 +765,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get encodingformat() { return this.encodingFormat }
         set encodingformat(value) { this.encodingFormat = value }
@@ -781,7 +781,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         exampleOfWork($this, value) {
@@ -795,7 +795,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exampleofwork() { return this.exampleOfWork }
         set exampleofwork(value) { this.exampleOfWork = value }
@@ -811,7 +811,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         fileFormat($this, value) {
@@ -826,7 +826,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get fileformat() { return this.fileFormat }
         set fileformat(value) { this.fileFormat = value }
@@ -843,7 +843,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         genre($this, value) {
@@ -858,7 +858,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         hasPart($this, value) {
@@ -872,7 +872,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get haspart() { return this.hasPart }
         set haspart(value) { this.hasPart = value }
@@ -888,7 +888,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         inLanguage($this, value) {
@@ -903,7 +903,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inlanguage() { return this.inLanguage }
         set inlanguage(value) { this.inLanguage = value }
@@ -919,7 +919,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get interactionstatistic() { return this.interactionStatistic }
         set interactionstatistic(value) { this.interactionStatistic = value }
@@ -935,7 +935,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get interactivitytype() { return this.interactivityType }
         set interactivitytype(value) { this.interactivityType = value }
@@ -951,7 +951,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isaccessibleforfree() { return this.isAccessibleForFree }
         set isaccessibleforfree(value) { this.isAccessibleForFree = value }
@@ -969,7 +969,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isbasedon() { return this.isBasedOn }
         set isbasedon(value) { this.isBasedOn = value }
@@ -987,7 +987,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isbasedonurl() { return this.isBasedOnUrl }
         set isbasedonurl(value) { this.isBasedOnUrl = value }
@@ -1003,7 +1003,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isfamilyfriendly() { return this.isFamilyFriendly }
         set isfamilyfriendly(value) { this.isFamilyFriendly = value }
@@ -1020,7 +1020,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ispartof() { return this.isPartOf }
         set ispartof(value) { this.isPartOf = value }
@@ -1038,7 +1038,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         learningResourceType($this, value) {
@@ -1053,7 +1053,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get learningresourcetype() { return this.learningResourceType }
         set learningresourcetype(value) { this.learningResourceType = value }
@@ -1070,7 +1070,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         locationCreated($this, value) {
@@ -1084,7 +1084,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get locationcreated() { return this.locationCreated }
         set locationcreated(value) { this.locationCreated = value }
@@ -1100,7 +1100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get mainentity() { return this.mainEntity }
         set mainentity(value) { this.mainEntity = value }
@@ -1117,7 +1117,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         material($this, value) {
@@ -1133,7 +1133,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         materialExtent($this, value) {
@@ -1148,7 +1148,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get materialextent() { return this.materialExtent }
         set materialextent(value) { this.materialExtent = value }
@@ -1164,7 +1164,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         offers($this, value) {
@@ -1179,7 +1179,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         pattern($this, value) {
@@ -1194,7 +1194,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         position($this, value) {
@@ -1209,7 +1209,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         producer($this, value) {
@@ -1224,7 +1224,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         provider($this, value) {
@@ -1239,7 +1239,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         publication($this, value) {
@@ -1253,7 +1253,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         publisher($this, value) {
@@ -1268,7 +1268,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         publisherImprint($this, value) {
@@ -1282,7 +1282,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get publisherimprint() { return this.publisherImprint }
         set publisherimprint(value) { this.publisherImprint = value }
@@ -1299,7 +1299,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get publishingprinciples() { return this.publishingPrinciples }
         set publishingprinciples(value) { this.publishingPrinciples = value }
@@ -1315,7 +1315,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get recordedat() { return this.recordedAt }
         set recordedat(value) { this.recordedAt = value }
@@ -1331,7 +1331,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get releasedevent() { return this.releasedEvent }
         set releasedevent(value) { this.releasedEvent = value }
@@ -1347,7 +1347,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         reviews($this, value) {
@@ -1361,7 +1361,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         schemaVersion($this, value) {
@@ -1376,7 +1376,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get schemaversion() { return this.schemaVersion }
         set schemaversion(value) { this.schemaVersion = value }
@@ -1392,7 +1392,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sddatepublished() { return this.sdDatePublished }
         set sddatepublished(value) { this.sdDatePublished = value }
@@ -1409,7 +1409,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sdlicense() { return this.sdLicense }
         set sdlicense(value) { this.sdLicense = value }
@@ -1426,7 +1426,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sdpublisher() { return this.sdPublisher }
         set sdpublisher(value) { this.sdPublisher = value }
@@ -1444,7 +1444,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sourceOrganization($this, value) {
@@ -1458,7 +1458,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sourceorganization() { return this.sourceOrganization }
         set sourceorganization(value) { this.sourceOrganization = value }
@@ -1474,7 +1474,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         spatialCoverage($this, value) {
@@ -1488,7 +1488,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get spatialcoverage() { return this.spatialCoverage }
         set spatialcoverage(value) { this.spatialCoverage = value }
@@ -1505,7 +1505,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         teaches($this, value) {
@@ -1520,7 +1520,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         temporal($this, value) {
@@ -1535,7 +1535,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         temporalCoverage($this, value) {
@@ -1551,7 +1551,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get temporalcoverage() { return this.temporalCoverage }
         set temporalcoverage(value) { this.temporalCoverage = value }
@@ -1567,7 +1567,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         thumbnailUrl($this, value) {
@@ -1581,7 +1581,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get thumbnailurl() { return this.thumbnailUrl }
         set thumbnailurl(value) { this.thumbnailUrl = value }
@@ -1597,7 +1597,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get timerequired() { return this.timeRequired }
         set timerequired(value) { this.timeRequired = value }
@@ -1613,7 +1613,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get translationofwork() { return this.translationOfWork }
         set translationofwork(value) { this.translationOfWork = value }
@@ -1630,7 +1630,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         typicalAgeRange($this, value) {
@@ -1644,7 +1644,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get typicalagerange() { return this.typicalAgeRange }
         set typicalagerange(value) { this.typicalAgeRange = value }
@@ -1661,7 +1661,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get usageinfo() { return this.usageInfo }
         set usageinfo(value) { this.usageInfo = value }
@@ -1678,7 +1678,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         video($this, value) {
@@ -1693,7 +1693,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         workExample($this, value) {
@@ -1707,7 +1707,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get workexample() { return this.workExample }
         set workexample(value) { this.workExample = value }
@@ -1723,7 +1723,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get worktranslation() { return this.workTranslation }
         set worktranslation(value) { this.workTranslation = value }

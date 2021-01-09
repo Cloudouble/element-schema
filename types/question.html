@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get acceptedanswer() { return this.acceptedAnswer }
         set acceptedanswer(value) { this.acceptedAnswer = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get answercount() { return this.answerCount }
         set answercount(value) { this.answerCount = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eduquestiontype() { return this.eduQuestionType }
         set eduquestiontype(value) { this.eduQuestionType = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get suggestedanswer() { return this.suggestedAnswer }
         set suggestedanswer(value) { this.suggestedAnswer = value }

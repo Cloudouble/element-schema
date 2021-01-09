@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         currentExchangeRate($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get currentexchangerate() { return this.currentExchangeRate }
         set currentexchangerate(value) { this.currentExchangeRate = value }
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get exchangeratespread() { return this.exchangeRateSpread }
         set exchangeratespread(value) { this.exchangeRateSpread = value }

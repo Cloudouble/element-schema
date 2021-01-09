@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get scheduledtime() { return this.scheduledTime }
         set scheduledtime(value) { this.scheduledTime = value }

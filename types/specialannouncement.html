@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get announcementlocation() { return this.announcementLocation }
         set announcementlocation(value) { this.announcementLocation = value }
@@ -60,7 +60,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         datePosted($this, value) {
@@ -75,7 +75,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get dateposted() { return this.datePosted }
         set dateposted(value) { this.datePosted = value }
@@ -92,7 +92,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get diseasepreventioninfo() { return this.diseasePreventionInfo }
         set diseasepreventioninfo(value) { this.diseasePreventionInfo = value }
@@ -111,7 +111,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get diseasespreadstatistics() { return this.diseaseSpreadStatistics }
         set diseasespreadstatistics(value) { this.diseaseSpreadStatistics = value }
@@ -128,7 +128,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gettingtestedinfo() { return this.gettingTestedInfo }
         set gettingtestedinfo(value) { this.gettingTestedInfo = value }
@@ -144,7 +144,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get governmentbenefitsinfo() { return this.governmentBenefitsInfo }
         set governmentbenefitsinfo(value) { this.governmentBenefitsInfo = value }
@@ -161,7 +161,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get newsupdatesandguidelines() { return this.newsUpdatesAndGuidelines }
         set newsupdatesandguidelines(value) { this.newsUpdatesAndGuidelines = value }
@@ -178,7 +178,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get publictransportclosuresinfo() { return this.publicTransportClosuresInfo }
         set publictransportclosuresinfo(value) { this.publicTransportClosuresInfo = value }
@@ -195,7 +195,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get quarantineguidelines() { return this.quarantineGuidelines }
         set quarantineguidelines(value) { this.quarantineGuidelines = value }
@@ -212,7 +212,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get schoolclosuresinfo() { return this.schoolClosuresInfo }
         set schoolclosuresinfo(value) { this.schoolClosuresInfo = value }
@@ -229,7 +229,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get travelbans() { return this.travelBans }
         set travelbans(value) { this.travelBans = value }
@@ -246,7 +246,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get webfeed() { return this.webFeed }
         set webfeed(value) { this.webFeed = value }

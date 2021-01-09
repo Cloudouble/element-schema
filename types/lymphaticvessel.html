@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get originatesfrom() { return this.originatesFrom }
         set originatesfrom(value) { this.originatesFrom = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get regiondrained() { return this.regionDrained }
         set regiondrained(value) { this.regionDrained = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get runsto() { return this.runsTo }
         set runsto(value) { this.runsTo = value }

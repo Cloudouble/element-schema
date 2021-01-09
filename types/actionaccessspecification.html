@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availabilityends() { return this.availabilityEnds }
         set availabilityends(value) { this.availabilityEnds = value }
@@ -60,7 +60,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get availabilitystarts() { return this.availabilityStarts }
         set availabilitystarts(value) { this.availabilityStarts = value }
@@ -79,7 +79,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         eligibleRegion($this, value) {
@@ -95,7 +95,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get eligibleregion() { return this.eligibleRegion }
         set eligibleregion(value) { this.eligibleRegion = value }
@@ -111,7 +111,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get expectsacceptanceof() { return this.expectsAcceptanceOf }
         set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
@@ -129,7 +129,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get ineligibleregion() { return this.ineligibleRegion }
         set ineligibleregion(value) { this.ineligibleRegion = value }
@@ -146,7 +146,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiressubscription() { return this.requiresSubscription }
         set requiressubscription(value) { this.requiresSubscription = value }

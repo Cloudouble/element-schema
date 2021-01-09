@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get arrivalplatform() { return this.arrivalPlatform }
         set arrivalplatform(value) { this.arrivalPlatform = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get arrivalstation() { return this.arrivalStation }
         set arrivalstation(value) { this.arrivalStation = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get departureplatform() { return this.departurePlatform }
         set departureplatform(value) { this.departurePlatform = value }
@@ -88,7 +88,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get departurestation() { return this.departureStation }
         set departurestation(value) { this.departureStation = value }
@@ -104,7 +104,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trainname() { return this.trainName }
         set trainname(value) { this.trainName = value }
@@ -120,7 +120,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get trainnumber() { return this.trainNumber }
         set trainnumber(value) { this.trainNumber = value }

@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get codevalue() { return this.codeValue }
         set codevalue(value) { this.codeValue = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get incodeset() { return this.inCodeSet }
         set incodeset(value) { this.inCodeSet = value }

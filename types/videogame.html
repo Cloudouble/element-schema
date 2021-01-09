@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         actors($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         cheatCode($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cheatcode() { return this.cheatCode }
         set cheatcode(value) { this.cheatCode = value }
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         directors($this, value) {
@@ -98,7 +98,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gamePlatform($this, value) {
@@ -114,7 +114,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gameplatform() { return this.gamePlatform }
         set gameplatform(value) { this.gamePlatform = value }
@@ -130,7 +130,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gameserver() { return this.gameServer }
         set gameserver(value) { this.gameServer = value }
@@ -146,7 +146,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gametip() { return this.gameTip }
         set gametip(value) { this.gameTip = value }
@@ -163,7 +163,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
@@ -179,7 +179,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get playmode() { return this.playMode }
         set playmode(value) { this.playMode = value }
@@ -195,7 +195,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

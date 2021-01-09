@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get serialnumber() { return this.serialNumber }
         set serialnumber(value) { this.serialNumber = value }

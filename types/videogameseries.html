@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         actors($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         characterAttribute($this, value) {
@@ -68,7 +68,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get characterattribute() { return this.characterAttribute }
         set characterattribute(value) { this.characterAttribute = value }
@@ -84,7 +84,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get cheatcode() { return this.cheatCode }
         set cheatcode(value) { this.cheatCode = value }
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get containsseason() { return this.containsSeason }
         set containsseason(value) { this.containsSeason = value }
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         directors($this, value) {
@@ -130,7 +130,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         episode($this, value) {
@@ -144,7 +144,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         episodes($this, value) {
@@ -158,7 +158,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gameItem($this, value) {
@@ -172,7 +172,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gameitem() { return this.gameItem }
         set gameitem(value) { this.gameItem = value }
@@ -190,7 +190,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gamelocation() { return this.gameLocation }
         set gamelocation(value) { this.gameLocation = value }
@@ -208,7 +208,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get gameplatform() { return this.gamePlatform }
         set gameplatform(value) { this.gamePlatform = value }
@@ -225,7 +225,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get musicby() { return this.musicBy }
         set musicby(value) { this.musicBy = value }
@@ -241,7 +241,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofepisodes() { return this.numberOfEpisodes }
         set numberofepisodes(value) { this.numberOfEpisodes = value }
@@ -257,7 +257,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofplayers() { return this.numberOfPlayers }
         set numberofplayers(value) { this.numberOfPlayers = value }
@@ -273,7 +273,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofseasons() { return this.numberOfSeasons }
         set numberofseasons(value) { this.numberOfSeasons = value }
@@ -289,7 +289,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get playmode() { return this.playMode }
         set playmode(value) { this.playMode = value }
@@ -305,7 +305,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
@@ -321,7 +321,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         season($this, value) {
@@ -336,7 +336,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         seasons($this, value) {
@@ -350,7 +350,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         trailer($this, value) {
@@ -364,7 +364,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

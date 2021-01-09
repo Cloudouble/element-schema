@@ -42,7 +42,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get basesalary() { return this.baseSalary }
         set basesalary(value) { this.baseSalary = value }
@@ -58,7 +58,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get salarycurrency() { return this.salaryCurrency }
         set salarycurrency(value) { this.salaryCurrency = value }

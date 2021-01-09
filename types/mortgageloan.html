@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get domiciledmortgage() { return this.domiciledMortgage }
         set domiciledmortgage(value) { this.domiciledMortgage = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get loanmortgagemandateamount() { return this.loanMortgageMandateAmount }
         set loanmortgagemandateamount(value) { this.loanMortgageMandateAmount = value }

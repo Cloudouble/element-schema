@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maptype() { return this.mapType }
         set maptype(value) { this.mapType = value }

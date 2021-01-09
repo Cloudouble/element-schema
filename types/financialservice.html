@@ -41,7 +41,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get feesandcommissionsspecification() { return this.feesAndCommissionsSpecification }
         set feesandcommissionsspecification(value) { this.feesAndCommissionsSpecification = value }

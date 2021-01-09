@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get biomechnicalclass() { return this.biomechnicalClass }
         set biomechnicalclass(value) { this.biomechnicalClass = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get functionalclass() { return this.functionalClass }
         set functionalclass(value) { this.functionalClass = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get structuralclass() { return this.structuralClass }
         set structuralclass(value) { this.structuralClass = value }

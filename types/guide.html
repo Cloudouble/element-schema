@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get reviewaspect() { return this.reviewAspect }
         set reviewaspect(value) { this.reviewAspect = value }

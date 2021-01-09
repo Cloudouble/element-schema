@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalproperty() { return this.additionalProperty }
         set additionalproperty(value) { this.additionalProperty = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         award($this, value) {
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         awards($this, value) {
@@ -100,7 +100,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         brand($this, value) {
@@ -115,7 +115,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         category($this, value) {
@@ -132,7 +132,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         color($this, value) {
@@ -146,7 +146,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         depth($this, value) {
@@ -161,7 +161,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin($this, value) {
@@ -175,7 +175,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin12($this, value) {
@@ -189,7 +189,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin13($this, value) {
@@ -203,7 +203,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin14($this, value) {
@@ -217,7 +217,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         gtin8($this, value) {
@@ -231,7 +231,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         hasEnergyConsumptionDetails($this, value) {
@@ -245,7 +245,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasenergyconsumptiondetails() { return this.hasEnergyConsumptionDetails }
         set hasenergyconsumptiondetails(value) { this.hasEnergyConsumptionDetails = value }
@@ -261,7 +261,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
         set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
@@ -277,7 +277,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
         set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
@@ -294,7 +294,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         inProductGroupWithID($this, value) {
@@ -308,7 +308,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inproductgroupwithid() { return this.inProductGroupWithID }
         set inproductgroupwithid(value) { this.inProductGroupWithID = value }
@@ -324,7 +324,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isaccessoryorsparepartfor() { return this.isAccessoryOrSparePartFor }
         set isaccessoryorsparepartfor(value) { this.isAccessoryOrSparePartFor = value }
@@ -340,7 +340,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isconsumablefor() { return this.isConsumableFor }
         set isconsumablefor(value) { this.isConsumableFor = value }
@@ -357,7 +357,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isrelatedto() { return this.isRelatedTo }
         set isrelatedto(value) { this.isRelatedTo = value }
@@ -374,7 +374,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get issimilarto() { return this.isSimilarTo }
         set issimilarto(value) { this.isSimilarTo = value }
@@ -391,7 +391,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isvariantof() { return this.isVariantOf }
         set isvariantof(value) { this.isVariantOf = value }
@@ -407,7 +407,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get itemcondition() { return this.itemCondition }
         set itemcondition(value) { this.itemCondition = value }
@@ -424,7 +424,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         manufacturer($this, value) {
@@ -438,7 +438,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         material($this, value) {
@@ -454,7 +454,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         model($this, value) {
@@ -469,7 +469,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         mpn($this, value) {
@@ -483,7 +483,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         nsn($this, value) {
@@ -497,7 +497,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         offers($this, value) {
@@ -512,7 +512,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         pattern($this, value) {
@@ -527,7 +527,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         productID($this, value) {
@@ -541,7 +541,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productid() { return this.productID }
         set productid(value) { this.productID = value }
@@ -557,7 +557,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productiondate() { return this.productionDate }
         set productiondate(value) { this.productionDate = value }
@@ -573,7 +573,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get purchasedate() { return this.purchaseDate }
         set purchasedate(value) { this.purchaseDate = value }
@@ -589,7 +589,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get releasedate() { return this.releaseDate }
         set releasedate(value) { this.releaseDate = value }
@@ -605,7 +605,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         reviews($this, value) {
@@ -619,7 +619,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         size($this, value) {
@@ -635,7 +635,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         sku($this, value) {
@@ -649,7 +649,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         slogan($this, value) {
@@ -663,7 +663,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         weight($this, value) {
@@ -677,7 +677,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         width($this, value) {
@@ -692,7 +692,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

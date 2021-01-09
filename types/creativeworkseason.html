@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         director($this, value) {
@@ -54,7 +54,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         endDate($this, value) {
@@ -69,7 +69,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get enddate() { return this.endDate }
         set enddate(value) { this.endDate = value }
@@ -85,7 +85,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         episodes($this, value) {
@@ -99,7 +99,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         numberOfEpisodes($this, value) {
@@ -113,7 +113,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get numberofepisodes() { return this.numberOfEpisodes }
         set numberofepisodes(value) { this.numberOfEpisodes = value }
@@ -129,7 +129,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partofseries() { return this.partOfSeries }
         set partofseries(value) { this.partOfSeries = value }
@@ -145,7 +145,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
@@ -162,7 +162,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get seasonnumber() { return this.seasonNumber }
         set seasonnumber(value) { this.seasonNumber = value }
@@ -179,7 +179,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get startdate() { return this.startDate }
         set startdate(value) { this.startDate = value }
@@ -195,7 +195,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

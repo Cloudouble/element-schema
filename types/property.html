@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get domainincludes() { return this.domainIncludes }
         set domainincludes(value) { this.domainIncludes = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get inverseof() { return this.inverseOf }
         set inverseof(value) { this.inverseOf = value }
@@ -72,7 +72,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get rangeincludes() { return this.rangeIncludes }
         set rangeincludes(value) { this.rangeIncludes = value }
@@ -90,7 +90,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get supersededby() { return this.supersededBy }
         set supersededby(value) { this.supersededBy = value }

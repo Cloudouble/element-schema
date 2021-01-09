@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get associatedarticle() { return this.associatedArticle }
         set associatedarticle(value) { this.associatedArticle = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         contentSize($this, value) {
@@ -70,7 +70,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contentsize() { return this.contentSize }
         set contentsize(value) { this.contentSize = value }
@@ -86,7 +86,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get contenturl() { return this.contentUrl }
         set contenturl(value) { this.contentUrl = value }
@@ -102,7 +102,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         embedUrl($this, value) {
@@ -116,7 +116,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get embedurl() { return this.embedUrl }
         set embedurl(value) { this.embedUrl = value }
@@ -132,7 +132,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get encodescreativework() { return this.encodesCreativeWork }
         set encodescreativework(value) { this.encodesCreativeWork = value }
@@ -149,7 +149,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get encodingformat() { return this.encodingFormat }
         set encodingformat(value) { this.encodingFormat = value }
@@ -166,7 +166,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get endtime() { return this.endTime }
         set endtime(value) { this.endTime = value }
@@ -183,7 +183,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         playerType($this, value) {
@@ -197,7 +197,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get playertype() { return this.playerType }
         set playertype(value) { this.playerType = value }
@@ -213,7 +213,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get productioncompany() { return this.productionCompany }
         set productioncompany(value) { this.productionCompany = value }
@@ -229,7 +229,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get regionsallowed() { return this.regionsAllowed }
         set regionsallowed(value) { this.regionsAllowed = value }
@@ -246,7 +246,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get requiressubscription() { return this.requiresSubscription }
         set requiressubscription(value) { this.requiresSubscription = value }
@@ -263,7 +263,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get starttime() { return this.startTime }
         set starttime(value) { this.startTime = value }
@@ -279,7 +279,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get uploaddate() { return this.uploadDate }
         set uploaddate(value) { this.uploadDate = value }
@@ -296,7 +296,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         
     }

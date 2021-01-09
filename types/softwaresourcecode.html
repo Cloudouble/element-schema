@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get coderepository() { return this.codeRepository }
         set coderepository(value) { this.codeRepository = value }
@@ -56,7 +56,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get codesampletype() { return this.codeSampleType }
         set codesampletype(value) { this.codeSampleType = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get programminglanguage() { return this.programmingLanguage }
         set programminglanguage(value) { this.programmingLanguage = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         runtimePlatform($this, value) {
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get runtimeplatform() { return this.runtimePlatform }
         set runtimeplatform(value) { this.runtimePlatform = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get sampletype() { return this.sampleType }
         set sampletype(value) { this.sampleType = value }
@@ -135,7 +135,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get targetproduct() { return this.targetProduct }
         set targetproduct(value) { this.targetProduct = value }

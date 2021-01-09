@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get partoftvseries() { return this.partOfTVSeries }
         set partoftvseries(value) { this.partOfTVSeries = value }

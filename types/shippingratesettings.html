@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get doesnotship() { return this.doesNotShip }
         set doesnotship(value) { this.doesNotShip = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get freeshippingthreshold() { return this.freeShippingThreshold }
         set freeshippingthreshold(value) { this.freeShippingThreshold = value }
@@ -73,7 +73,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isunlabelledfallback() { return this.isUnlabelledFallback }
         set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
@@ -89,7 +89,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get shippingdestination() { return this.shippingDestination }
         set shippingdestination(value) { this.shippingDestination = value }
@@ -105,7 +105,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get shippinglabel() { return this.shippingLabel }
         set shippinglabel(value) { this.shippingLabel = value }
@@ -121,7 +121,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get shippingrate() { return this.shippingRate }
         set shippingrate(value) { this.shippingRate = value }

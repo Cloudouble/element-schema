@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get additionalproperty() { return this.additionalProperty }
         set additionalproperty(value) { this.additionalProperty = value }
@@ -57,7 +57,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         aggregateRating($this, value) {
@@ -71,7 +71,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get aggregaterating() { return this.aggregateRating }
         set aggregaterating(value) { this.aggregateRating = value }
@@ -87,7 +87,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get amenityfeature() { return this.amenityFeature }
         set amenityfeature(value) { this.amenityFeature = value }
@@ -103,7 +103,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get branchcode() { return this.branchCode }
         set branchcode(value) { this.branchCode = value }
@@ -119,7 +119,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get containedin() { return this.containedIn }
         set containedin(value) { this.containedIn = value }
@@ -135,7 +135,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get containedinplace() { return this.containedInPlace }
         set containedinplace(value) { this.containedInPlace = value }
@@ -151,7 +151,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get containsplace() { return this.containsPlace }
         set containsplace(value) { this.containsPlace = value }
@@ -167,7 +167,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         events($this, value) {
@@ -181,7 +181,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         faxNumber($this, value) {
@@ -195,7 +195,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get faxnumber() { return this.faxNumber }
         set faxnumber(value) { this.faxNumber = value }
@@ -212,7 +212,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         geoContains($this, value) {
@@ -227,7 +227,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocontains() { return this.geoContains }
         set geocontains(value) { this.geoContains = value }
@@ -244,7 +244,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocoveredby() { return this.geoCoveredBy }
         set geocoveredby(value) { this.geoCoveredBy = value }
@@ -261,7 +261,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocovers() { return this.geoCovers }
         set geocovers(value) { this.geoCovers = value }
@@ -278,7 +278,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geocrosses() { return this.geoCrosses }
         set geocrosses(value) { this.geoCrosses = value }
@@ -295,7 +295,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geodisjoint() { return this.geoDisjoint }
         set geodisjoint(value) { this.geoDisjoint = value }
@@ -312,7 +312,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geoequals() { return this.geoEquals }
         set geoequals(value) { this.geoEquals = value }
@@ -329,7 +329,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geointersects() { return this.geoIntersects }
         set geointersects(value) { this.geoIntersects = value }
@@ -346,7 +346,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geooverlaps() { return this.geoOverlaps }
         set geooverlaps(value) { this.geoOverlaps = value }
@@ -363,7 +363,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geotouches() { return this.geoTouches }
         set geotouches(value) { this.geoTouches = value }
@@ -380,7 +380,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get geowithin() { return this.geoWithin }
         set geowithin(value) { this.geoWithin = value }
@@ -396,7 +396,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get globallocationnumber() { return this.globalLocationNumber }
         set globallocationnumber(value) { this.globalLocationNumber = value }
@@ -412,7 +412,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasdrivethroughservice() { return this.hasDriveThroughService }
         set hasdrivethroughservice(value) { this.hasDriveThroughService = value }
@@ -429,7 +429,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get hasmap() { return this.hasMap }
         set hasmap(value) { this.hasMap = value }
@@ -445,7 +445,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isaccessibleforfree() { return this.isAccessibleForFree }
         set isaccessibleforfree(value) { this.isAccessibleForFree = value }
@@ -461,7 +461,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get isicv4() { return this.isicV4 }
         set isicv4(value) { this.isicV4 = value }
@@ -478,7 +478,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         logo($this, value) {
@@ -493,7 +493,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         longitude($this, value) {
@@ -508,7 +508,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         map($this, value) {
@@ -522,7 +522,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         maps($this, value) {
@@ -536,7 +536,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         maximumAttendeeCapacity($this, value) {
@@ -550,7 +550,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
         set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
@@ -566,7 +566,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get openinghoursspecification() { return this.openingHoursSpecification }
         set openinghoursspecification(value) { this.openingHoursSpecification = value }
@@ -583,7 +583,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         photos($this, value) {
@@ -598,7 +598,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         publicAccess($this, value) {
@@ -612,7 +612,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get publicaccess() { return this.publicAccess }
         set publicaccess(value) { this.publicAccess = value }
@@ -628,7 +628,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         reviews($this, value) {
@@ -642,7 +642,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         slogan($this, value) {
@@ -656,7 +656,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         smokingAllowed($this, value) {
@@ -670,7 +670,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get smokingallowed() { return this.smokingAllowed }
         set smokingallowed(value) { this.smokingAllowed = value }
@@ -686,7 +686,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get specialopeninghoursspecification() { return this.specialOpeningHoursSpecification }
         set specialopeninghoursspecification(value) { this.specialOpeningHoursSpecification = value }
@@ -702,7 +702,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
 
         tourBookingPage($this, value) {
@@ -716,7 +716,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tourbookingpage() { return this.tourBookingPage }
         set tourbookingpage(value) { this.tourBookingPage = value }

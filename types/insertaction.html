@@ -40,7 +40,7 @@
 				],
 				value: value
 			})
-			return value
+			return value && typeof value == 'object' ? undefined : value
 		}
         get tolocation() { return this.toLocation }
         set tolocation(value) { this.toLocation = value }

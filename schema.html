@@ -43,12 +43,6 @@
         
         connectedCallback() {
             var $this = this
-            /*this.constructor.observedAttributes.forEach(attributeName => {
-                var attributeNameLower = attributeName.toLowerCase()
-                if ($this.hasAttribute(attributeName) && !((attributeNameLower != attributeName) && (allAttributes.includes(attributeNameLower)))) {
-                    $this[attributeName] = $this.getAttribute(attributeName)
-                }
-            })*/
             /*var observer = new window.MutationObserver(function(record) {
                 if (record.attributeName) {
                     if ($this.getAttribute(record.attributeName) != record.oldValue) {
@@ -59,7 +53,6 @@
                 console.log('line 47', record)
             })
             observer.observe($this, {childList: true, characterData: true, characterDataOldValue: true, attributes: true, attributeOldValue: true, attributeFilter: this.constructor.observedAttributes})*/
-            //console.log('line 47', this.constructor.observedAttributes)
         }
         
         toString() {
@@ -70,10 +63,10 @@
             return this.__value
         }
         
-        
         __input = undefined
-        __validation = {}
         __value = undefined
+        __validation = {}
+        __map = {}
         
         __load(input, thisType, propertyMap, validationResults) { 
             var $this = this
@@ -87,8 +80,11 @@
             }
         }
         
-        __renderProperty(propertyElement, propertyName, propertyMap) {
-            console.log('line 75')
+        __renderProperty(propertyElement, propertyName, container, propertyMap) {
+            console.log('line 84')
+            //propertyElement.setAttribute('itemprop', propertyName)
+            //propertyElement.innerHTML = propertyMap.value
+            //container.append(propertyElement)
         }
         
 

@@ -45,10 +45,6 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
         window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
     }}, 
-    ValidatorMap: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
-            Schema: {configurable: false, enumerable: true, writable: false, value: 'Schema'}
-        })
-    }, 
     Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             True: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
@@ -205,6 +201,10 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}
         })
     }, 
+    ValidatorMap: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
+            Schema: {configurable: false, enumerable: true, writable: false, value: 'Schema'}
+        })
+    }, 
     RenderMap: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             Schema: {configurable: false, enumerable: true, writable: false, value: 'Schema'}
         })
@@ -224,9 +224,11 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             )})))
             var thisType = 'Schema'
             var validationResults = {}
+            var validationResult = {}
             typeSpecificity.some(t => {
                 if (typeof validators[t] == 'function') {
                     validationResults[t] = validators[t](propertyMap.value, propertyMap)
+                    validationResult = validationResults[t]
                     if (validationResults[t] && validationResults[t].valid) {
                         thisType = t
                         return true
@@ -235,15 +237,21 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             })
             var renderer = window.LiveElement.Schema.getRenderer(propertyMap.propertyName, window.LiveElement.Element.getInheritance(window.LiveElement.Element.elements[thisType]), containerInheritance, propertyMap)
             var propertyTag = window.LiveElement.Element.tags[renderer] || window.LiveElement.Element.tags[thisType] || window.LiveElement.Element.tags.Schema
-            var propertyElement = propertyTag && window.LiveElement.Element.tags[propertyTag] ? document.createElement(window.LiveElement.Element.tags[propertyTag]) : undefined
+            var propertyElement = propertyTag && window.LiveElement.Element.classes[propertyTag] ? document.createElement(propertyTag) : undefined
             if (propertyMap.container) {
                 propertyMap.container.__input = propertyMap.container.__input || {}
                 propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
+                propertyMap.container.__map[propertyMap.propertyName] = propertyElement
+                var eventPropertyMap = {...propertyMap, ...{validation: validationResult, thisType: thisType}}
+                propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
+                if (validationResult.error) {
+                    propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
+                }
             }
             if (propertyElement) {
                 propertyElement.__load(propertyMap.value, thisType, propertyMap, validationResults)
                 if (propertyMap.container && typeof propertyMap.container.__renderProperty == 'function') {
-                    propertyMap.container.__renderProperty(propertyElement, propertyMap.propertyName, propertyMap)
+                    propertyMap.container.__renderProperty(propertyElement, propertyMap.propertyName, propertyMap.container, propertyMap)
                 }
             } 
         }

@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The actual body of the article.",
 				container: $this,
-				property: "articleBody",
+				propertyName: "articleBody",
 				release: "11.01",
 				types: [
 					"Text"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.",
 				container: $this,
-				property: "articleSection",
+				propertyName: "articleSection",
 				release: "11.01",
 				types: [
 					"Text"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.",
 				container: $this,
-				property: "backstory",
+				propertyName: "backstory",
 				release: "11.01",
 				types: [
 					"Text",
@@ -80,7 +80,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The page on which the work ends; for example \"138\" or \"xvi\".",
 				container: $this,
-				property: "pageEnd",
+				propertyName: "pageEnd",
 				release: "11.01",
 				types: [
 					"Text",
@@ -97,7 +97,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The page on which the work starts; for example \"135\" or \"xiii\".",
 				container: $this,
-				property: "pageStart",
+				propertyName: "pageStart",
 				release: "11.01",
 				types: [
 					"Integer",
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
 				container: $this,
-				property: "pagination",
+				propertyName: "pagination",
 				release: "11.01",
 				types: [
 					"Text"
@@ -128,7 +128,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
 				container: $this,
-				property: "speakable",
+				propertyName: "speakable",
 				release: "11.01",
 				types: [
 					"URL",
@@ -143,7 +143,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The number of words in the text of the Article.",
 				container: $this,
-				property: "wordCount",
+				propertyName: "wordCount",
 				release: "11.01",
 				types: [
 					"Integer"

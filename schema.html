@@ -29,10 +29,6 @@
             return true
         }
         
-        __input = undefined
-        __error = []
-        __value = undefined
-        
         constructor(input, property=undefined) {
             super()
             var $this = this
@@ -55,16 +51,33 @@
             //console.log('line 47', this.constructor.observedAttributes)
         }
         
-        __validate(input) {
-            return {value: input, error: undefined}
-        }
-        
         toString() {
             return String(this.__value)
         }
         
         valueOf() {
             return this.__value
+        }
+        
+        
+        __input = undefined
+        __validation = {}
+        __value = undefined
+        
+        __load(input, thisType, propertyMap, validationResults) { 
+            var $this = this
+            $this.__input = input
+            $this.__validation = validationResults
+            $this.__value = $this.__validation[thisType] && typeof $this.__validation[thisType] == 'object' ? $this.__validation[thisType].value : undefined 
+            if (input && typeof input == 'object') {
+                Object.keys(input).forEach(propertyName => {
+                    $this[propertyName] = input[propertyName]
+                })
+            }
+        }
+        
+        __renderProperty(propertyElement, propertyName, propertyMap) {
+            
         }
         
 

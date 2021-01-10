@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
-				property: "actor",
+				propertyName: "actor",
 				release: "11.01",
 				types: [
 					"Person"
@@ -47,7 +47,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
-				property: "actors",
+				propertyName: "actors",
 				release: "11.01",
 				types: [
 					"Person"
@@ -61,7 +61,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The country of the principal offices of the production company or individual responsible for the movie or program.",
 				container: $this,
-				property: "countryOfOrigin",
+				propertyName: "countryOfOrigin",
 				release: "11.01",
 				types: [
 					"Country"
@@ -77,7 +77,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
-				property: "director",
+				propertyName: "director",
 				release: "11.01",
 				types: [
 					"Person"
@@ -91,7 +91,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
-				property: "directors",
+				propertyName: "directors",
 				release: "11.01",
 				types: [
 					"Person"
@@ -105,7 +105,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
-				property: "duration",
+				propertyName: "duration",
 				release: "11.01",
 				types: [
 					"Duration"
@@ -119,7 +119,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The composer of the soundtrack.",
 				container: $this,
-				property: "musicBy",
+				propertyName: "musicBy",
 				release: "11.01",
 				types: [
 					"Person",
@@ -136,7 +136,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The production company or studio responsible for the item e.g. series, video game, episode etc.",
 				container: $this,
-				property: "productionCompany",
+				propertyName: "productionCompany",
 				release: "11.01",
 				types: [
 					"Organization"
@@ -152,7 +152,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				container: $this,
-				property: "subtitleLanguage",
+				propertyName: "subtitleLanguage",
 				release: "11.01",
 				types: [
 					"Text",
@@ -169,7 +169,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing at the most general\\/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
 				container: $this,
-				property: "titleEIDR",
+				propertyName: "titleEIDR",
 				release: "11.01",
 				types: [
 					"URL",
@@ -186,7 +186,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The trailer of a movie or tv\\/radio series, season, episode, etc.",
 				container: $this,
-				property: "trailer",
+				propertyName: "trailer",
 				release: "11.01",
 				types: [
 					"VideoObject"

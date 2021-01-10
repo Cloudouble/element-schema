@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The country of the principal offices of the production company or individual responsible for the movie or program.",
 				container: $this,
-				property: "countryOfOrigin",
+				propertyName: "countryOfOrigin",
 				release: "11.01",
 				types: [
 					"Country"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The TV series to which this episode or season belongs.",
 				container: $this,
-				property: "partOfTVSeries",
+				propertyName: "partOfTVSeries",
 				release: "11.01",
 				types: [
 					"TVSeries"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				container: $this,
-				property: "subtitleLanguage",
+				propertyName: "subtitleLanguage",
 				release: "11.01",
 				types: [
 					"Text",
@@ -82,7 +82,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An [EIDR](https:\\/\\/eidr.org\\/) (Entertainment Identifier Registry) [[identifier]] representing at the most general\\/abstract level, a work of film or television.\n\nFor example, the motion picture known as \"Ghostbusters\" has a titleEIDR of  \"10.5240\\/7EC7-228A-510A-053E-CBB8-J\". This title (or work) may have several variants, which EIDR calls \"edits\". See [[editEIDR]].\n\nSince schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.\n",
 				container: $this,
-				property: "titleEIDR",
+				propertyName: "titleEIDR",
 				release: "11.01",
 				types: [
 					"URL",

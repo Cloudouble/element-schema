@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
 				container: $this,
-				property: "courseCode",
+				propertyName: "courseCode",
 				release: "11.01",
 				types: [
 					"Text"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
 				container: $this,
-				property: "coursePrerequisites",
+				propertyName: "coursePrerequisites",
 				release: "11.01",
 				types: [
 					"Course",
@@ -67,7 +67,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
 				container: $this,
-				property: "educationalCredentialAwarded",
+				propertyName: "educationalCredentialAwarded",
 				release: "11.01",
 				types: [
 					"URL",
@@ -85,7 +85,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
 				container: $this,
-				property: "hasCourseInstance",
+				propertyName: "hasCourseInstance",
 				release: "11.01",
 				types: [
 					"CourseInstance"
@@ -101,7 +101,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
 				container: $this,
-				property: "numberOfCredits",
+				propertyName: "numberOfCredits",
 				release: "11.01",
 				types: [
 					"StructuredValue",
@@ -118,7 +118,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
 				container: $this,
-				property: "occupationalCredentialAwarded",
+				propertyName: "occupationalCredentialAwarded",
 				release: "11.01",
 				types: [
 					"URL",

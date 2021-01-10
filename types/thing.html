@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
 				container: $this,
-				property: "additionalType",
+				propertyName: "additionalType",
 				release: "11.01",
 				types: [
 					"URL"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An alias for the item.",
 				container: $this,
-				property: "alternateName",
+				propertyName: "alternateName",
 				release: "11.01",
 				types: [
 					"Text"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A description of the item.",
 				container: $this,
-				property: "description",
+				propertyName: "description",
 				release: "11.01",
 				types: [
 					"Text"
@@ -79,7 +79,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
 				container: $this,
-				property: "disambiguatingDescription",
+				propertyName: "disambiguatingDescription",
 				release: "11.01",
 				types: [
 					"Text"
@@ -95,7 +95,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](\\/docs\\/datamodel.html#identifierBg) for more details.\n        ",
 				container: $this,
-				property: "identifier",
+				propertyName: "identifier",
 				release: "11.01",
 				types: [
 					"Text",
@@ -111,7 +111,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
 				container: $this,
-				property: "image",
+				propertyName: "image",
 				release: "11.01",
 				types: [
 					"ImageObject",
@@ -126,7 +126,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](\\/docs\\/datamodel.html#mainEntityBackground) for details.",
 				container: $this,
-				property: "mainEntityOfPage",
+				propertyName: "mainEntityOfPage",
 				release: "11.01",
 				types: [
 					"URL",
@@ -143,7 +143,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The name of the item.",
 				container: $this,
-				property: "name",
+				propertyName: "name",
 				release: "11.01",
 				types: [
 					"Text"
@@ -157,7 +157,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
 				container: $this,
-				property: "potentialAction",
+				propertyName: "potentialAction",
 				release: "11.01",
 				types: [
 					"Action"
@@ -173,7 +173,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
 				container: $this,
-				property: "sameAs",
+				propertyName: "sameAs",
 				release: "11.01",
 				types: [
 					"URL"
@@ -189,7 +189,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A CreativeWork or Event about this Thing.",
 				container: $this,
-				property: "subjectOf",
+				propertyName: "subjectOf",
 				release: "11.01",
 				types: [
 					"CreativeWork",
@@ -206,7 +206,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "URL of the item.",
 				container: $this,
-				property: "url",
+				propertyName: "url",
 				release: "11.01",
 				types: [
 					"URL"

@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The quantity of the goods included in the offer.",
 				container: $this,
-				property: "amountOfThisGood",
+				propertyName: "amountOfThisGood",
 				release: "11.01",
 				types: [
 					"Number"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http:\\/\\/purl.org\\/goodrelations\\/v1#Sell.",
 				container: $this,
-				property: "businessFunction",
+				propertyName: "businessFunction",
 				release: "11.01",
 				types: [
 					"BusinessFunction"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The product that this structured value is referring to.",
 				container: $this,
-				property: "typeOfGood",
+				propertyName: "typeOfGood",
 				release: "11.01",
 				types: [
 					"Service",
@@ -82,7 +82,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The unit of measurement given using the UN\\/CEFACT Common Code (3 characters) or a URL. Other codes than the UN\\/CEFACT Common Code may be used with a prefix followed by a colon.",
 				container: $this,
-				property: "unitCode",
+				propertyName: "unitCode",
 				release: "11.01",
 				types: [
 					"URL",
@@ -99,7 +99,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode<\\/a>.",
 				container: $this,
-				property: "unitText",
+				propertyName: "unitText",
 				release: "11.01",
 				types: [
 					"Text"

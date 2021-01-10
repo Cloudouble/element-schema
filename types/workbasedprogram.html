@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http:\\/\\/www.onetcenter.org\\/taxonomy.html), [ISCO-08](https:\\/\\/www.ilo.org\\/public\\/english\\/bureau\\/stat\\/isco\\/isco08\\/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
 				container: $this,
-				property: "occupationalCategory",
+				propertyName: "occupationalCategory",
 				release: "11.01",
 				types: [
 					"CategoryCode",
@@ -50,7 +50,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The estimated salary earned while in the program.",
 				container: $this,
-				property: "trainingSalary",
+				propertyName: "trainingSalary",
 				release: "11.01",
 				types: [
 					"MonetaryAmountDistribution"

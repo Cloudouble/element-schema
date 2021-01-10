@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
 				container: $this,
-				property: "carrier",
+				propertyName: "carrier",
 				release: "11.01",
 				types: [
 					"Organization"
@@ -47,7 +47,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Destination address.",
 				container: $this,
-				property: "deliveryAddress",
+				propertyName: "deliveryAddress",
 				release: "11.01",
 				types: [
 					"PostalAddress"
@@ -63,7 +63,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
 				container: $this,
-				property: "deliveryStatus",
+				propertyName: "deliveryStatus",
 				release: "11.01",
 				types: [
 					"DeliveryEvent"
@@ -79,7 +79,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The earliest date the package may arrive.",
 				container: $this,
-				property: "expectedArrivalFrom",
+				propertyName: "expectedArrivalFrom",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -96,7 +96,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The latest date the package may arrive.",
 				container: $this,
-				property: "expectedArrivalUntil",
+				propertyName: "expectedArrivalUntil",
 				release: "11.01",
 				types: [
 					"Date",
@@ -113,7 +113,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Method used for delivery or shipping.",
 				container: $this,
-				property: "hasDeliveryMethod",
+				propertyName: "hasDeliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
@@ -129,7 +129,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Item(s) being shipped.",
 				container: $this,
-				property: "itemShipped",
+				propertyName: "itemShipped",
 				release: "11.01",
 				types: [
 					"Product"
@@ -145,7 +145,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Shipper's address.",
 				container: $this,
-				property: "originAddress",
+				propertyName: "originAddress",
 				release: "11.01",
 				types: [
 					"PostalAddress"
@@ -161,7 +161,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The overall order the items in this delivery were included in.",
 				container: $this,
-				property: "partOfOrder",
+				propertyName: "partOfOrder",
 				release: "11.01",
 				types: [
 					"Order"
@@ -177,7 +177,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
 				container: $this,
-				property: "provider",
+				propertyName: "provider",
 				release: "11.01",
 				types: [
 					"Organization",
@@ -192,7 +192,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Shipper tracking number.",
 				container: $this,
-				property: "trackingNumber",
+				propertyName: "trackingNumber",
 				release: "11.01",
 				types: [
 					"Text"
@@ -208,7 +208,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Tracking url for the parcel delivery.",
 				container: $this,
-				property: "trackingUrl",
+				propertyName: "trackingUrl",
 				release: "11.01",
 				types: [
 					"URL"

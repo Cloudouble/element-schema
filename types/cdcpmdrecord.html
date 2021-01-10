@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "collectiondate - Date for which patient counts are reported.",
 				container: $this,
-				property: "cvdCollectionDate",
+				propertyName: "cvdCollectionDate",
 				release: "11.01",
 				types: [
 					"Text",
@@ -50,7 +50,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
 				container: $this,
-				property: "cvdFacilityCounty",
+				propertyName: "cvdFacilityCounty",
 				release: "11.01",
 				types: [
 					"Text"
@@ -66,7 +66,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
 				container: $this,
-				property: "cvdFacilityId",
+				propertyName: "cvdFacilityId",
 				release: "11.01",
 				types: [
 					"Text"
@@ -82,7 +82,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.",
 				container: $this,
-				property: "cvdNumBeds",
+				propertyName: "cvdNumBeds",
 				release: "11.01",
 				types: [
 					"Number"
@@ -98,7 +98,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
 				container: $this,
-				property: "cvdNumBedsOcc",
+				propertyName: "cvdNumBedsOcc",
 				release: "11.01",
 				types: [
 					"Number"
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
 				container: $this,
-				property: "cvdNumC19Died",
+				propertyName: "cvdNumC19Died",
 				release: "11.01",
 				types: [
 					"Number"
@@ -130,7 +130,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.",
 				container: $this,
-				property: "cvdNumC19HOPats",
+				propertyName: "cvdNumC19HOPats",
 				release: "11.01",
 				types: [
 					"Number"
@@ -146,7 +146,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
 				container: $this,
-				property: "cvdNumC19HospPats",
+				propertyName: "cvdNumC19HospPats",
 				release: "11.01",
 				types: [
 					"Number"
@@ -162,7 +162,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
 				container: $this,
-				property: "cvdNumC19MechVentPats",
+				propertyName: "cvdNumC19MechVentPats",
 				release: "11.01",
 				types: [
 					"Number"
@@ -178,7 +178,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19ofmechventpats - ED\\/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
 				container: $this,
-				property: "cvdNumC19OFMechVentPats",
+				propertyName: "cvdNumC19OFMechVentPats",
 				release: "11.01",
 				types: [
 					"Number"
@@ -194,7 +194,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numc19overflowpats - ED\\/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
 				container: $this,
-				property: "cvdNumC19OverflowPats",
+				propertyName: "cvdNumC19OverflowPats",
 				release: "11.01",
 				types: [
 					"Number"
@@ -210,7 +210,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
 				container: $this,
-				property: "cvdNumICUBeds",
+				propertyName: "cvdNumICUBeds",
 				release: "11.01",
 				types: [
 					"Number"
@@ -226,7 +226,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
 				container: $this,
-				property: "cvdNumICUBedsOcc",
+				propertyName: "cvdNumICUBedsOcc",
 				release: "11.01",
 				types: [
 					"Number"
@@ -242,7 +242,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.",
 				container: $this,
-				property: "cvdNumTotBeds",
+				propertyName: "cvdNumTotBeds",
 				release: "11.01",
 				types: [
 					"Number"
@@ -258,7 +258,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numvent - MECHANICAL VENTILATORS: Total number of ventilators available.",
 				container: $this,
-				property: "cvdNumVent",
+				propertyName: "cvdNumVent",
 				release: "11.01",
 				types: [
 					"Number"
@@ -274,7 +274,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
 				container: $this,
-				property: "cvdNumVentUse",
+				propertyName: "cvdNumVentUse",
 				release: "11.01",
 				types: [
 					"Number"
@@ -290,7 +290,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Publication date of an online listing.",
 				container: $this,
-				property: "datePosted",
+				propertyName: "datePosted",
 				release: "11.01",
 				types: [
 					"DateTime",

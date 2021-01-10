@@ -56,7 +56,7 @@ for index, datatype in enumerate([d for d in graph if (
     rdfscomment = datatype['rdfs:comment'] if type(datatype['rdfs:comment']) is str else (datatype['rdfs:comment'].get('@value') if type(datatype['rdfs:comment']) is dict else None)
     if rdfslabel and rdfscomment:
         digits_map = {'0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'}
-        properties_dict = {property_name: {'container': '$this', 'value': 'value', 'property': property_name, **properties.get(property_name, {})} for property_name in properties_list}
+        properties_dict = {property_name: {'container': '$this', 'value': 'value', 'propertyName': property_name, **properties.get(property_name, {})} for property_name in properties_list}
         for property_name, property_dict in properties_dict.items():
             property_dict['comment'] = property_dict.get('comment', '').replace('/', '\/')
         class_file_properties = {

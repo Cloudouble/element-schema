@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The item that is being reviewed\\/rated.",
 				container: $this,
-				property: "itemReviewed",
+				propertyName: "itemReviewed",
 				release: "11.01",
 				types: [
 					"Thing"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
 				container: $this,
-				property: "reviewAspect",
+				propertyName: "reviewAspect",
 				release: "11.01",
 				types: [
 					"Text"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The actual body of the review.",
 				container: $this,
-				property: "reviewBody",
+				propertyName: "reviewBody",
 				release: "11.01",
 				types: [
 					"Text"
@@ -81,7 +81,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.",
 				container: $this,
-				property: "reviewRating",
+				propertyName: "reviewRating",
 				release: "11.01",
 				types: [
 					"Rating"

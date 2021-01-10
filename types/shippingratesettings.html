@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates when shipping to a particular [[shippingDestination]] is not available.",
 				container: $this,
-				property: "doesNotShip",
+				propertyName: "doesNotShip",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].",
 				container: $this,
-				property: "freeShippingThreshold",
+				propertyName: "freeShippingThreshold",
 				release: "11.01",
 				types: [
 					"DeliveryChargeSpecification",
@@ -66,7 +66,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.",
 				container: $this,
-				property: "isUnlabelledFallback",
+				propertyName: "isUnlabelledFallback",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -82,7 +82,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
 				container: $this,
-				property: "shippingDestination",
+				propertyName: "shippingDestination",
 				release: "11.01",
 				types: [
 					"DefinedRegion"
@@ -98,7 +98,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
 				container: $this,
-				property: "shippingLabel",
+				propertyName: "shippingLabel",
 				release: "11.01",
 				types: [
 					"Text"
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
 				container: $this,
-				property: "shippingRate",
+				propertyName: "shippingRate",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"

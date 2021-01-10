@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The organization (airline, travelers' club, etc.) the membership is made with.",
 				container: $this,
-				property: "hostingOrganization",
+				propertyName: "hostingOrganization",
 				release: "11.01",
 				types: [
 					"Organization"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.",
 				container: $this,
-				property: "member",
+				propertyName: "member",
 				release: "11.01",
 				types: [
 					"Person",
@@ -64,7 +64,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A member of this organization.",
 				container: $this,
-				property: "members",
+				propertyName: "members",
 				release: "11.01",
 				types: [
 					"Organization",
@@ -79,7 +79,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A unique identifier for the membership.",
 				container: $this,
-				property: "membershipNumber",
+				propertyName: "membershipNumber",
 				release: "11.01",
 				types: [
 					"Text"
@@ -95,7 +95,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)",
 				container: $this,
-				property: "membershipPointsEarned",
+				propertyName: "membershipPointsEarned",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
@@ -112,7 +112,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The program providing the membership.",
 				container: $this,
-				property: "programName",
+				propertyName: "programName",
 				release: "11.01",
 				types: [
 					"Text"

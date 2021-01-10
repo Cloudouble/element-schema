@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
 				container: $this,
-				property: "domainIncludes",
+				propertyName: "domainIncludes",
 				release: "11.01",
 				types: [
 					"Class"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.",
 				container: $this,
-				property: "inverseOf",
+				propertyName: "inverseOf",
 				release: "11.01",
 				types: [
 					"Property"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
 				container: $this,
-				property: "rangeIncludes",
+				propertyName: "rangeIncludes",
 				release: "11.01",
 				types: [
 					"Class"
@@ -81,7 +81,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
 				container: $this,
-				property: "supersededBy",
+				propertyName: "supersededBy",
 				release: "11.01",
 				types: [
 					"Enumeration",

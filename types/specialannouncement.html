@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].",
 				container: $this,
-				property: "announcementLocation",
+				propertyName: "announcementLocation",
 				release: "11.01",
 				types: [
 					"CivicStructure",
@@ -50,7 +50,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
 				container: $this,
-				property: "category",
+				propertyName: "category",
 				release: "11.01",
 				types: [
 					"Text",
@@ -67,7 +67,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Publication date of an online listing.",
 				container: $this,
-				property: "datePosted",
+				propertyName: "datePosted",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -84,7 +84,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Information about disease prevention.",
 				container: $this,
-				property: "diseasePreventionInfo",
+				propertyName: "diseasePreventionInfo",
 				release: "11.01",
 				types: [
 					"URL",
@@ -101,7 +101,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Statistical information about the spread of a disease, either as [[WebContent]], or\n  described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is\n  provided, the page indicated might also contain more such markup.",
 				container: $this,
-				property: "diseaseSpreadStatistics",
+				propertyName: "diseaseSpreadStatistics",
 				release: "11.01",
 				types: [
 					"URL",
@@ -120,7 +120,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.",
 				container: $this,
-				property: "gettingTestedInfo",
+				propertyName: "gettingTestedInfo",
 				release: "11.01",
 				types: [
 					"WebContent",
@@ -137,7 +137,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.",
 				container: $this,
-				property: "governmentBenefitsInfo",
+				propertyName: "governmentBenefitsInfo",
 				release: "11.01",
 				types: [
 					"GovernmentService"
@@ -153,7 +153,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.",
 				container: $this,
-				property: "newsUpdatesAndGuidelines",
+				propertyName: "newsUpdatesAndGuidelines",
 				release: "11.01",
 				types: [
 					"WebContent",
@@ -170,7 +170,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Information about public transport closures.",
 				container: $this,
-				property: "publicTransportClosuresInfo",
+				propertyName: "publicTransportClosuresInfo",
 				release: "11.01",
 				types: [
 					"WebContent",
@@ -187,7 +187,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Guidelines about quarantine rules, e.g. in the context of a pandemic.",
 				container: $this,
-				property: "quarantineGuidelines",
+				propertyName: "quarantineGuidelines",
 				release: "11.01",
 				types: [
 					"WebContent",
@@ -204,7 +204,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Information about school closures.",
 				container: $this,
-				property: "schoolClosuresInfo",
+				propertyName: "schoolClosuresInfo",
 				release: "11.01",
 				types: [
 					"WebContent",
@@ -221,7 +221,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Information about travel bans, e.g. in the context of a pandemic.",
 				container: $this,
-				property: "travelBans",
+				propertyName: "travelBans",
 				release: "11.01",
 				types: [
 					"URL",
@@ -238,7 +238,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.",
 				container: $this,
-				property: "webFeed",
+				propertyName: "webFeed",
 				release: "11.01",
 				types: [
 					"DataFeed",

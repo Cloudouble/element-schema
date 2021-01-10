@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The total delay between the receipt of the order and the goods reaching the final customer.",
 				container: $this,
-				property: "deliveryTime",
+				propertyName: "deliveryTime",
 				release: "11.01",
 				types: [
 					"ShippingDeliveryTime"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates when shipping to a particular [[shippingDestination]] is not available.",
 				container: $this,
-				property: "doesNotShip",
+				propertyName: "doesNotShip",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
 				container: $this,
-				property: "shippingDestination",
+				propertyName: "shippingDestination",
 				release: "11.01",
 				types: [
 					"DefinedRegion"
@@ -81,7 +81,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
 				container: $this,
-				property: "shippingLabel",
+				propertyName: "shippingLabel",
 				release: "11.01",
 				types: [
 					"Text"
@@ -97,7 +97,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.",
 				container: $this,
-				property: "shippingRate",
+				propertyName: "shippingRate",
 				release: "11.01",
 				types: [
 					"MonetaryAmount"
@@ -113,7 +113,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.",
 				container: $this,
-				property: "shippingSettingsLink",
+				propertyName: "shippingSettingsLink",
 				release: "11.01",
 				types: [
 					"URL"
@@ -129,7 +129,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
 				container: $this,
-				property: "transitTimeLabel",
+				propertyName: "transitTimeLabel",
 				release: "11.01",
 				types: [
 					"Text"

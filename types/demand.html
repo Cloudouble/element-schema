@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The payment method(s) accepted by seller for this offer.",
 				container: $this,
-				property: "acceptedPaymentMethod",
+				propertyName: "acceptedPaymentMethod",
 				release: "11.01",
 				types: [
 					"LoanOrCredit",
@@ -50,7 +50,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
 				container: $this,
-				property: "advanceBookingRequirement",
+				propertyName: "advanceBookingRequirement",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -66,7 +66,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The geographic area where a service or offered item is provided.",
 				container: $this,
-				property: "areaServed",
+				propertyName: "areaServed",
 				release: "11.01",
 				types: [
 					"Place",
@@ -85,7 +85,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.",
 				container: $this,
-				property: "availability",
+				propertyName: "availability",
 				release: "11.01",
 				types: [
 					"ItemAvailability"
@@ -99,7 +99,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The end of the availability of the product or service included in the offer.",
 				container: $this,
-				property: "availabilityEnds",
+				propertyName: "availabilityEnds",
 				release: "11.01",
 				types: [
 					"Time",
@@ -117,7 +117,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The beginning of the availability of the product or service included in the offer.",
 				container: $this,
-				property: "availabilityStarts",
+				propertyName: "availabilityStarts",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -135,7 +135,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The place(s) from which the offer can be obtained (e.g. store locations).",
 				container: $this,
-				property: "availableAtOrFrom",
+				propertyName: "availableAtOrFrom",
 				release: "11.01",
 				types: [
 					"Place"
@@ -151,7 +151,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The delivery method(s) available for this offer.",
 				container: $this,
-				property: "availableDeliveryMethod",
+				propertyName: "availableDeliveryMethod",
 				release: "11.01",
 				types: [
 					"DeliveryMethod"
@@ -167,7 +167,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http:\\/\\/purl.org\\/goodrelations\\/v1#Sell.",
 				container: $this,
-				property: "businessFunction",
+				propertyName: "businessFunction",
 				release: "11.01",
 				types: [
 					"BusinessFunction"
@@ -183,7 +183,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.",
 				container: $this,
-				property: "deliveryLeadTime",
+				propertyName: "deliveryLeadTime",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -199,7 +199,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The type(s) of customers for which the given offer is valid.",
 				container: $this,
-				property: "eligibleCustomerType",
+				propertyName: "eligibleCustomerType",
 				release: "11.01",
 				types: [
 					"BusinessEntityType"
@@ -215,7 +215,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The duration for which the given offer is valid.",
 				container: $this,
-				property: "eligibleDuration",
+				propertyName: "eligibleDuration",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -231,7 +231,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
 				container: $this,
-				property: "eligibleQuantity",
+				propertyName: "eligibleQuantity",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -247,7 +247,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
 				container: $this,
-				property: "eligibleRegion",
+				propertyName: "eligibleRegion",
 				release: "11.01",
 				types: [
 					"Place",
@@ -265,7 +265,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
 				container: $this,
-				property: "eligibleTransactionVolume",
+				propertyName: "eligibleTransactionVolume",
 				release: "11.01",
 				types: [
 					"PriceSpecification"
@@ -281,7 +281,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A Global Trade Item Number ([GTIN](https:\\/\\/www.gs1.org\\/standards\\/id-keys\\/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https:\\/\\/www.gs1.org\\/standards\\/Digital-Link\\/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a \"GS1 Digital Link\" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https:\\/\\/www.gs1.org\\/services\\/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http:\\/\\/www.gs1.org\\/barcodes\\/technical\\/idkeys\\/gtin) and [Wikipedia](https:\\/\\/en.wikipedia.org\\/wiki\\/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.\n   ",
 				container: $this,
-				property: "gtin",
+				propertyName: "gtin",
 				release: "11.01",
 				types: [
 					"Text"
@@ -295,7 +295,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http:\\/\\/www.gs1.org\\/barcodes\\/technical\\/idkeys\\/gtin) for more details.",
 				container: $this,
-				property: "gtin12",
+				propertyName: "gtin12",
 				release: "11.01",
 				types: [
 					"Text"
@@ -309,7 +309,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http:\\/\\/www.gs1.org\\/barcodes\\/technical\\/idkeys\\/gtin) for more details.",
 				container: $this,
-				property: "gtin13",
+				propertyName: "gtin13",
 				release: "11.01",
 				types: [
 					"Text"
@@ -323,7 +323,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http:\\/\\/www.gs1.org\\/barcodes\\/technical\\/idkeys\\/gtin) for more details.",
 				container: $this,
-				property: "gtin14",
+				propertyName: "gtin14",
 				release: "11.01",
 				types: [
 					"Text"
@@ -337,7 +337,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The [GTIN-8](http:\\/\\/apps.gs1.org\\/GDD\\/glossary\\/Pages\\/GTIN-8.aspx) code of the product, or the product to which the offer refers. This code is also known as EAN\\/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http:\\/\\/www.gs1.org\\/barcodes\\/technical\\/idkeys\\/gtin) for more details.",
 				container: $this,
-				property: "gtin8",
+				propertyName: "gtin8",
 				release: "11.01",
 				types: [
 					"Text"
@@ -351,7 +351,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].",
 				container: $this,
-				property: "includesObject",
+				propertyName: "includesObject",
 				release: "11.01",
 				types: [
 					"TypeAndQuantityNode"
@@ -367,7 +367,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
 				container: $this,
-				property: "ineligibleRegion",
+				propertyName: "ineligibleRegion",
 				release: "11.01",
 				types: [
 					"Text",
@@ -385,7 +385,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The current approximate inventory level for the item or items.",
 				container: $this,
-				property: "inventoryLevel",
+				propertyName: "inventoryLevel",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -401,7 +401,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
 				container: $this,
-				property: "itemCondition",
+				propertyName: "itemCondition",
 				release: "11.01",
 				types: [
 					"OfferItemCondition"
@@ -417,7 +417,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.",
 				container: $this,
-				property: "itemOffered",
+				propertyName: "itemOffered",
 				release: "11.01",
 				types: [
 					"CreativeWork",
@@ -439,7 +439,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
 				container: $this,
-				property: "mpn",
+				propertyName: "mpn",
 				release: "11.01",
 				types: [
 					"Text"
@@ -453,7 +453,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
 				container: $this,
-				property: "priceSpecification",
+				propertyName: "priceSpecification",
 				release: "11.01",
 				types: [
 					"PriceSpecification"
@@ -469,7 +469,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				container: $this,
-				property: "seller",
+				propertyName: "seller",
 				release: "11.01",
 				types: [
 					"Organization",
@@ -484,7 +484,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.",
 				container: $this,
-				property: "serialNumber",
+				propertyName: "serialNumber",
 				release: "11.01",
 				types: [
 					"Text"
@@ -500,7 +500,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
 				container: $this,
-				property: "sku",
+				propertyName: "sku",
 				release: "11.01",
 				types: [
 					"Text"
@@ -514,7 +514,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The date when the item becomes valid.",
 				container: $this,
-				property: "validFrom",
+				propertyName: "validFrom",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -531,7 +531,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
 				container: $this,
-				property: "validThrough",
+				propertyName: "validThrough",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -548,7 +548,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The warranty promise(s) included in the offer.",
 				container: $this,
-				property: "warranty",
+				propertyName: "warranty",
 				release: "11.01",
 				types: [
 					"WarrantyPromise"

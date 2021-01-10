@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities\n  corresponding to an indicated type (via [[populationType]]).",
 				container: $this,
-				property: "constrainingProperty",
+				propertyName: "constrainingProperty",
 				release: "11.01",
 				types: [
 					"Integer"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].",
 				container: $this,
-				property: "numConstraints",
+				propertyName: "numConstraints",
 				release: "11.01",
 				types: [
 					"Integer"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the populationType common to all members of a [[StatisticalPopulation]].",
 				container: $this,
-				property: "populationType",
+				propertyName: "populationType",
 				release: "11.01",
 				types: [
 					"Class"

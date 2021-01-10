@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
 				container: $this,
-				property: "amenityFeature",
+				propertyName: "amenityFeature",
 				release: "11.01",
 				types: [
 					"LocationFeatureSpecification"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard ",
 				container: $this,
-				property: "floorSize",
+				propertyName: "floorSize",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates some accommodation that this floor plan describes.",
 				container: $this,
-				property: "isPlanForApartment",
+				propertyName: "isPlanForApartment",
 				release: "11.01",
 				types: [
 					"Accommodation"
@@ -81,7 +81,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A schematic image showing the floorplan layout.",
 				container: $this,
-				property: "layoutImage",
+				propertyName: "layoutImage",
 				release: "11.01",
 				types: [
 					"ImageObject",
@@ -98,7 +98,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].",
 				container: $this,
-				property: "numberOfAccommodationUnits",
+				propertyName: "numberOfAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].",
 				container: $this,
-				property: "numberOfAvailableAccommodationUnits",
+				propertyName: "numberOfAvailableAccommodationUnits",
 				release: "11.01",
 				types: [
 					"QuantitativeValue"
@@ -130,7 +130,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsTotalInteger+Field): \"The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.\". See also [[numberOfRooms]].",
 				container: $this,
-				property: "numberOfBathroomsTotal",
+				propertyName: "numberOfBathroomsTotal",
 				release: "11.01",
 				types: [
 					"Integer"
@@ -146,7 +146,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].",
 				container: $this,
-				property: "numberOfBedrooms",
+				propertyName: "numberOfBedrooms",
 				release: "11.01",
 				types: [
 					"QuantitativeValue",
@@ -163,7 +163,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Number of full bathrooms - The total number of full and \u00be bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsFull+Field).",
 				container: $this,
-				property: "numberOfFullBathrooms",
+				propertyName: "numberOfFullBathrooms",
 				release: "11.01",
 				types: [
 					"Number"
@@ -179,7 +179,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Number of partial bathrooms - The total number of half and \u00bc bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https:\\/\\/ddwiki.reso.org\\/display\\/DDW17\\/BathroomsPartial+Field). ",
 				container: $this,
-				property: "numberOfPartialBathrooms",
+				propertyName: "numberOfPartialBathrooms",
 				release: "11.01",
 				types: [
 					"Number"
@@ -195,7 +195,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
 				container: $this,
-				property: "numberOfRooms",
+				propertyName: "numberOfRooms",
 				release: "11.01",
 				types: [
 					"Number",
@@ -212,7 +212,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
 				container: $this,
-				property: "petsAllowed",
+				propertyName: "petsAllowed",
 				release: "11.01",
 				types: [
 					"Boolean",

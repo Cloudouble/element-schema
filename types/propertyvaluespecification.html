@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
 				container: $this,
-				property: "defaultValue",
+				propertyName: "defaultValue",
 				release: "11.01",
 				types: [
 					"Text",
@@ -50,7 +50,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The upper value of some characteristic or property.",
 				container: $this,
-				property: "maxValue",
+				propertyName: "maxValue",
 				release: "11.01",
 				types: [
 					"Number"
@@ -66,7 +66,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The lower value of some characteristic or property.",
 				container: $this,
-				property: "minValue",
+				propertyName: "minValue",
 				release: "11.01",
 				types: [
 					"Number"
@@ -82,7 +82,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Whether multiple values are allowed for the property.  Default is false.",
 				container: $this,
-				property: "multipleValues",
+				propertyName: "multipleValues",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -98,7 +98,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a \"hidden\" input in an HTML form.",
 				container: $this,
-				property: "readonlyValue",
+				propertyName: "readonlyValue",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.",
 				container: $this,
-				property: "stepValue",
+				propertyName: "stepValue",
 				release: "11.01",
 				types: [
 					"Number"
@@ -130,7 +130,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the allowed range for number of characters in a literal value.",
 				container: $this,
-				property: "valueMaxLength",
+				propertyName: "valueMaxLength",
 				release: "11.01",
 				types: [
 					"Number"
@@ -146,7 +146,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies the minimum allowed range for number of characters in a literal value.",
 				container: $this,
-				property: "valueMinLength",
+				propertyName: "valueMinLength",
 				release: "11.01",
 				types: [
 					"Number"
@@ -162,7 +162,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.",
 				container: $this,
-				property: "valueName",
+				propertyName: "valueName",
 				release: "11.01",
 				types: [
 					"Text"
@@ -178,7 +178,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Specifies a regular expression for testing literal values according to the HTML spec.",
 				container: $this,
-				property: "valuePattern",
+				propertyName: "valuePattern",
 				release: "11.01",
 				types: [
 					"Text"
@@ -194,7 +194,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Whether the property must be filled in to complete the action.  Default is false.",
 				container: $this,
-				property: "valueRequired",
+				propertyName: "valueRequired",
 				release: "11.01",
 				types: [
 					"Boolean"

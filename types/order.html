@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
 				container: $this,
-				property: "acceptedOffer",
+				propertyName: "acceptedOffer",
 				release: "11.01",
 				types: [
 					"Offer"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The billing address for the order.",
 				container: $this,
-				property: "billingAddress",
+				propertyName: "billingAddress",
 				release: "11.01",
 				types: [
 					"PostalAddress"
@@ -65,7 +65,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
 				container: $this,
-				property: "broker",
+				propertyName: "broker",
 				release: "11.01",
 				types: [
 					"Organization",
@@ -80,7 +80,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A number that confirms the given order or payment has been received.",
 				container: $this,
-				property: "confirmationNumber",
+				propertyName: "confirmationNumber",
 				release: "11.01",
 				types: [
 					"Text"
@@ -96,7 +96,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Party placing the order or paying the invoice.",
 				container: $this,
-				property: "customer",
+				propertyName: "customer",
 				release: "11.01",
 				types: [
 					"Person",
@@ -111,7 +111,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Any discount applied (to an Order).",
 				container: $this,
-				property: "discount",
+				propertyName: "discount",
 				release: "11.01",
 				types: [
 					"Text",
@@ -126,7 +126,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Code used to redeem a discount.",
 				container: $this,
-				property: "discountCode",
+				propertyName: "discountCode",
 				release: "11.01",
 				types: [
 					"Text"
@@ -142,7 +142,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
 				container: $this,
-				property: "discountCurrency",
+				propertyName: "discountCurrency",
 				release: "11.01",
 				types: [
 					"Text"
@@ -158,7 +158,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Was the offer accepted as a gift for someone other than the buyer.",
 				container: $this,
-				property: "isGift",
+				propertyName: "isGift",
 				release: "11.01",
 				types: [
 					"Boolean"
@@ -174,7 +174,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "'merchant' is an out-dated term for 'seller'.",
 				container: $this,
-				property: "merchant",
+				propertyName: "merchant",
 				release: "11.01",
 				types: [
 					"Person",
@@ -189,7 +189,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Date order was placed.",
 				container: $this,
-				property: "orderDate",
+				propertyName: "orderDate",
 				release: "11.01",
 				types: [
 					"Date",
@@ -206,7 +206,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The delivery of the parcel related to this order or order item.",
 				container: $this,
-				property: "orderDelivery",
+				propertyName: "orderDelivery",
 				release: "11.01",
 				types: [
 					"ParcelDelivery"
@@ -222,7 +222,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The identifier of the transaction.",
 				container: $this,
-				property: "orderNumber",
+				propertyName: "orderNumber",
 				release: "11.01",
 				types: [
 					"Text"
@@ -238,7 +238,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The current status of the order.",
 				container: $this,
-				property: "orderStatus",
+				propertyName: "orderStatus",
 				release: "11.01",
 				types: [
 					"OrderStatus"
@@ -254,7 +254,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The item ordered.",
 				container: $this,
-				property: "orderedItem",
+				propertyName: "orderedItem",
 				release: "11.01",
 				types: [
 					"Product",
@@ -272,7 +272,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The order is being paid as part of the referenced Invoice.",
 				container: $this,
-				property: "partOfInvoice",
+				propertyName: "partOfInvoice",
 				release: "11.01",
 				types: [
 					"Invoice"
@@ -288,7 +288,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The date that payment is due.",
 				container: $this,
-				property: "paymentDue",
+				propertyName: "paymentDue",
 				release: "11.01",
 				types: [
 					"DateTime"
@@ -304,7 +304,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The date that payment is due.",
 				container: $this,
-				property: "paymentDueDate",
+				propertyName: "paymentDueDate",
 				release: "11.01",
 				types: [
 					"Date",
@@ -321,7 +321,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The name of the credit card or other method of payment for the order.",
 				container: $this,
-				property: "paymentMethod",
+				propertyName: "paymentMethod",
 				release: "11.01",
 				types: [
 					"PaymentMethod"
@@ -337,7 +337,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
 				container: $this,
-				property: "paymentMethodId",
+				propertyName: "paymentMethodId",
 				release: "11.01",
 				types: [
 					"Text"
@@ -353,7 +353,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The URL for sending a payment.",
 				container: $this,
-				property: "paymentUrl",
+				propertyName: "paymentUrl",
 				release: "11.01",
 				types: [
 					"URL"
@@ -369,7 +369,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				container: $this,
-				property: "seller",
+				propertyName: "seller",
 				release: "11.01",
 				types: [
 					"Organization",

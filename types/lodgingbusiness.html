@@ -33,7 +33,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
 				container: $this,
-				property: "amenityFeature",
+				propertyName: "amenityFeature",
 				release: "11.01",
 				types: [
 					"LocationFeatureSpecification"
@@ -49,7 +49,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
 				container: $this,
-				property: "audience",
+				propertyName: "audience",
 				release: "11.01",
 				types: [
 					"Audience"
@@ -63,7 +63,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
 				container: $this,
-				property: "availableLanguage",
+				propertyName: "availableLanguage",
 				release: "11.01",
 				types: [
 					"Language",
@@ -80,7 +80,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The earliest someone may check into a lodging establishment.",
 				container: $this,
-				property: "checkinTime",
+				propertyName: "checkinTime",
 				release: "11.01",
 				types: [
 					"Time",
@@ -97,7 +97,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The latest someone may check out of a lodging establishment.",
 				container: $this,
-				property: "checkoutTime",
+				propertyName: "checkoutTime",
 				release: "11.01",
 				types: [
 					"DateTime",
@@ -114,7 +114,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
 				container: $this,
-				property: "numberOfRooms",
+				propertyName: "numberOfRooms",
 				release: "11.01",
 				types: [
 					"Number",
@@ -131,7 +131,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.",
 				container: $this,
-				property: "petsAllowed",
+				propertyName: "petsAllowed",
 				release: "11.01",
 				types: [
 					"Boolean",
@@ -148,7 +148,7 @@
 			window.LiveElement.Schema.renderProperty({
 				comment: "An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).",
 				container: $this,
-				property: "starRating",
+				propertyName: "starRating",
 				release: "11.01",
 				types: [
 					"Rating"

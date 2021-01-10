@@ -17,7 +17,7 @@
         static _rdfs_label = 'Permit'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('issuedBy', 'issuedThrough', 'permitAudience', 'validFor', 'validFrom', 'validIn', 'validUntil')
+            return Array.from(new Set((super.observedAttributes || []).concat((['issuedBy', 'issuedThrough', 'permitAudience', 'validFor', 'validFrom', 'validIn', 'validUntil']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

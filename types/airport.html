@@ -17,7 +17,7 @@
         static _rdfs_label = 'Airport'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('iataCode', 'icaoCode')
+            return Array.from(new Set((super.observedAttributes || []).concat((['iataCode', 'icaoCode']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

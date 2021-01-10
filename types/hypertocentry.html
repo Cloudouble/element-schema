@@ -17,7 +17,7 @@
         static _rdfs_label = 'HyperTocEntry'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('associatedMedia', 'tocContinuation', 'utterances')
+            return Array.from(new Set((super.observedAttributes || []).concat((['associatedMedia', 'tocContinuation', 'utterances']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

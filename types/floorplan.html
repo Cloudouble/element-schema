@@ -17,7 +17,7 @@
         static _rdfs_label = 'FloorPlan'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('amenityFeature', 'floorSize', 'isPlanForApartment', 'layoutImage', 'numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'petsAllowed')
+            return Array.from(new Set((super.observedAttributes || []).concat((['amenityFeature', 'floorSize', 'isPlanForApartment', 'layoutImage', 'numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'petsAllowed']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

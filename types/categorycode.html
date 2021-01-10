@@ -17,7 +17,7 @@
         static _rdfs_label = 'CategoryCode'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('codeValue', 'inCodeSet')
+            return Array.from(new Set((super.observedAttributes || []).concat((['codeValue', 'inCodeSet']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

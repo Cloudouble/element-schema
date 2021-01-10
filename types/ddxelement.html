@@ -17,7 +17,7 @@
         static _rdfs_label = 'DDxElement'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('diagnosis', 'distinguishingSign')
+            return Array.from(new Set((super.observedAttributes || []).concat((['diagnosis', 'distinguishingSign']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

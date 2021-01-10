@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExchangeRateSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('currency', 'currentExchangeRate', 'exchangeRateSpread')
+            return Array.from(new Set((super.observedAttributes || []).concat((['currency', 'currentExchangeRate', 'exchangeRateSpread']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PostalCodeRangeSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('postalCodeBegin', 'postalCodeEnd')
+            return Array.from(new Set((super.observedAttributes || []).concat((['postalCodeBegin', 'postalCodeEnd']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

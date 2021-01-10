@@ -17,7 +17,7 @@
         static _rdfs_label = 'JobPosting'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours')
+            return Array.from(new Set((super.observedAttributes || []).concat((['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

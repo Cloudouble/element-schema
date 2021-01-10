@@ -17,7 +17,7 @@
         static _rdfs_label = 'AudioObject'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('caption', 'transcript')
+            return Array.from(new Set((super.observedAttributes || []).concat((['caption', 'transcript']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

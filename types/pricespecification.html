@@ -17,7 +17,7 @@
         static _rdfs_label = 'PriceSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded')
+            return Array.from(new Set((super.observedAttributes || []).concat((['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

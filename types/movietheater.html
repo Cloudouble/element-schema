@@ -17,7 +17,7 @@
         static _rdfs_label = 'MovieTheater'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('screenCount')
+            return Array.from(new Set((super.observedAttributes || []).concat((['screenCount']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

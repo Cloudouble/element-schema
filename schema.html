@@ -43,10 +43,22 @@
         
         connectedCallback() {
             var $this = this
-            var observer = new window.MutationObserver(function(record) {
+            /*this.constructor.observedAttributes.forEach(attributeName => {
+                var attributeNameLower = attributeName.toLowerCase()
+                if ($this.hasAttribute(attributeName) && !((attributeNameLower != attributeName) && (allAttributes.includes(attributeNameLower)))) {
+                    $this[attributeName] = $this.getAttribute(attributeName)
+                }
+            })*/
+            /*var observer = new window.MutationObserver(function(record) {
+                if (record.attributeName) {
+                    if ($this.getAttribute(record.attributeName) != record.oldValue) {
+                        
+                    }
+                }
+                
                 console.log('line 47', record)
             })
-            observer.observe($this, {attributes: true, /*attributeFilter: this.constructor.observedAttributes, */attributeOldValue: true})            
+            observer.observe($this, {childList: true, characterData: true, characterDataOldValue: true, attributes: true, attributeOldValue: true, attributeFilter: this.constructor.observedAttributes})*/
             //console.log('line 47', this.constructor.observedAttributes)
         }
         

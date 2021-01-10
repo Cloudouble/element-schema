@@ -17,7 +17,7 @@
         static _rdfs_label = 'Artery'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('arterialBranch', 'supplyTo')
+            return Array.from(new Set((super.observedAttributes || []).concat((['arterialBranch', 'supplyTo']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

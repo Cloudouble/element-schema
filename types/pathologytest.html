@@ -17,7 +17,7 @@
         static _rdfs_label = 'PathologyTest'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('tissueSample')
+            return Array.from(new Set((super.observedAttributes || []).concat((['tissueSample']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

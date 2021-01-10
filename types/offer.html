@@ -17,7 +17,7 @@
         static _rdfs_label = 'Offer'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('acceptedPaymentMethod', 'addOn', 'advanceBookingRequirement', 'aggregateRating', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'category', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'leaseLength', 'mpn', 'offeredBy', 'price', 'priceCurrency', 'priceSpecification', 'priceValidUntil', 'review', 'reviews', 'seller', 'serialNumber', 'shippingDetails', 'sku', 'validFrom', 'validThrough', 'warranty')
+            return Array.from(new Set((super.observedAttributes || []).concat((['acceptedPaymentMethod', 'addOn', 'advanceBookingRequirement', 'aggregateRating', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'category', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'leaseLength', 'mpn', 'offeredBy', 'price', 'priceCurrency', 'priceSpecification', 'priceValidUntil', 'review', 'reviews', 'seller', 'serialNumber', 'shippingDetails', 'sku', 'validFrom', 'validThrough', 'warranty']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

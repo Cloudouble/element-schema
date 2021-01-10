@@ -17,7 +17,7 @@
         static _rdfs_label = 'Collection'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('collectionSize')
+            return Array.from(new Set((super.observedAttributes || []).concat((['collectionSize']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

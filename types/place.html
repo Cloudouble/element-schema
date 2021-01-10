@@ -17,7 +17,7 @@
         static _rdfs_label = 'Place'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage')
+            return Array.from(new Set((super.observedAttributes || []).concat((['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

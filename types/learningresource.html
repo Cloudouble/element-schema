@@ -17,7 +17,7 @@
         static _rdfs_label = 'LearningResource'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches')
+            return Array.from(new Set((super.observedAttributes || []).concat((['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

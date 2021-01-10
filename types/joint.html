@@ -17,7 +17,7 @@
         static _rdfs_label = 'Joint'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('biomechnicalClass', 'functionalClass', 'structuralClass')
+            return Array.from(new Set((super.observedAttributes || []).concat((['biomechnicalClass', 'functionalClass', 'structuralClass']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'CommunicateAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('about', 'inLanguage', 'language', 'recipient')
+            return Array.from(new Set((super.observedAttributes || []).concat((['about', 'inLanguage', 'language', 'recipient']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductCollection'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('includesObject')
+            return Array.from(new Set((super.observedAttributes || []).concat((['includesObject']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

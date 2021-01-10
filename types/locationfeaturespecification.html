@@ -17,7 +17,7 @@
         static _rdfs_label = 'LocationFeatureSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('hoursAvailable', 'validFrom', 'validThrough')
+            return Array.from(new Set((super.observedAttributes || []).concat((['hoursAvailable', 'validFrom', 'validThrough']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

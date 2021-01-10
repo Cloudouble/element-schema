@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoGame'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer')
+            return Array.from(new Set((super.observedAttributes || []).concat((['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

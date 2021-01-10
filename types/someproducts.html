@@ -17,7 +17,7 @@
         static _rdfs_label = 'SomeProducts'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('inventoryLevel')
+            return Array.from(new Set((super.observedAttributes || []).concat((['inventoryLevel']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

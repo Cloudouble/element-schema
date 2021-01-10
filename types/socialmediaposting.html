@@ -17,7 +17,7 @@
         static _rdfs_label = 'SocialMediaPosting'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('sharedContent')
+            return Array.from(new Set((super.observedAttributes || []).concat((['sharedContent']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

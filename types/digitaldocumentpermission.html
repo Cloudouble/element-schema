@@ -17,7 +17,7 @@
         static _rdfs_label = 'DigitalDocumentPermission'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('grantee', 'permissionType')
+            return Array.from(new Set((super.observedAttributes || []).concat((['grantee', 'permissionType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalTestPanel'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('subTest')
+            return Array.from(new Set((super.observedAttributes || []).concat((['subTest']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExercisePlan'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload')
+            return Array.from(new Set((super.observedAttributes || []).concat((['activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PropertyValueSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('defaultValue', 'maxValue', 'minValue', 'multipleValues', 'readonlyValue', 'stepValue', 'valueMaxLength', 'valueMinLength', 'valueName', 'valuePattern', 'valueRequired')
+            return Array.from(new Set((super.observedAttributes || []).concat((['defaultValue', 'maxValue', 'minValue', 'multipleValues', 'readonlyValue', 'stepValue', 'valueMaxLength', 'valueMinLength', 'valueName', 'valuePattern', 'valueRequired']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

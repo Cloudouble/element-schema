@@ -17,7 +17,7 @@
         static _rdfs_label = 'QuantitativeValue'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference')
+            return Array.from(new Set((super.observedAttributes || []).concat((['additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

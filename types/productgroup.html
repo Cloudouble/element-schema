@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductGroup'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('hasVariant', 'productGroupID', 'variesBy')
+            return Array.from(new Set((super.observedAttributes || []).concat((['hasVariant', 'productGroupID', 'variesBy']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

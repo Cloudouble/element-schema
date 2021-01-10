@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoObject'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality')
+            return Array.from(new Set((super.observedAttributes || []).concat((['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

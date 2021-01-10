@@ -17,7 +17,7 @@
         static _rdfs_label = 'TravelAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('distance')
+            return Array.from(new Set((super.observedAttributes || []).concat((['distance']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

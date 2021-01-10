@@ -17,7 +17,7 @@
         static _rdfs_label = 'MoneyTransfer'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('amount', 'beneficiaryBank')
+            return Array.from(new Set((super.observedAttributes || []).concat((['amount', 'beneficiaryBank']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

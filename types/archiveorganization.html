@@ -17,7 +17,7 @@
         static _rdfs_label = 'ArchiveOrganization'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('archiveHeld')
+            return Array.from(new Set((super.observedAttributes || []).concat((['archiveHeld']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

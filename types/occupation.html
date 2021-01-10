@@ -17,7 +17,7 @@
         static _rdfs_label = 'Occupation'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('educationRequirements', 'estimatedSalary', 'experienceRequirements', 'occupationLocation', 'occupationalCategory', 'qualifications', 'responsibilities', 'skills')
+            return Array.from(new Set((super.observedAttributes || []).concat((['educationRequirements', 'estimatedSalary', 'experienceRequirements', 'occupationLocation', 'occupationalCategory', 'qualifications', 'responsibilities', 'skills']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

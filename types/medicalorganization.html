@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalOrganization'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty')
+            return Array.from(new Set((super.observedAttributes || []).concat((['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

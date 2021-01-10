@@ -17,7 +17,7 @@
         static _rdfs_label = 'EngineSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque')
+            return Array.from(new Set((super.observedAttributes || []).concat((['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

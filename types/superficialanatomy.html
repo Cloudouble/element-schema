@@ -17,7 +17,7 @@
         static _rdfs_label = 'SuperficialAnatomy'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('associatedPathophysiology', 'relatedAnatomy', 'relatedCondition', 'relatedTherapy', 'significance')
+            return Array.from(new Set((super.observedAttributes || []).concat((['associatedPathophysiology', 'relatedAnatomy', 'relatedCondition', 'relatedTherapy', 'significance']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

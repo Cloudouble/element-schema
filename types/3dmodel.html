@@ -17,7 +17,7 @@
         static _rdfs_label = '3DModel'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('isResizable')
+            return Array.from(new Set((super.observedAttributes || []).concat((['isResizable']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

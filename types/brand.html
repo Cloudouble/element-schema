@@ -17,7 +17,7 @@
         static _rdfs_label = 'Brand'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('aggregateRating', 'logo', 'review', 'slogan')
+            return Array.from(new Set((super.observedAttributes || []).concat((['aggregateRating', 'logo', 'review', 'slogan']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

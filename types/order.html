@@ -17,7 +17,7 @@
         static _rdfs_label = 'Order'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('acceptedOffer', 'billingAddress', 'broker', 'confirmationNumber', 'customer', 'discount', 'discountCode', 'discountCurrency', 'isGift', 'merchant', 'orderDate', 'orderDelivery', 'orderNumber', 'orderStatus', 'orderedItem', 'partOfInvoice', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentUrl', 'seller')
+            return Array.from(new Set((super.observedAttributes || []).concat((['acceptedOffer', 'billingAddress', 'broker', 'confirmationNumber', 'customer', 'discount', 'discountCode', 'discountCurrency', 'isGift', 'merchant', 'orderDate', 'orderDelivery', 'orderNumber', 'orderStatus', 'orderedItem', 'partOfInvoice', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentUrl', 'seller']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

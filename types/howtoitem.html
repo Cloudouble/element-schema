@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowToItem'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('requiredQuantity')
+            return Array.from(new Set((super.observedAttributes || []).concat((['requiredQuantity']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

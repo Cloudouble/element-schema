@@ -17,7 +17,7 @@
         static _rdfs_label = 'MerchantReturnPolicy'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory')
+            return Array.from(new Set((super.observedAttributes || []).concat((['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

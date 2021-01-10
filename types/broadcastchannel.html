@@ -17,7 +17,7 @@
         static _rdfs_label = 'BroadcastChannel'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('broadcastChannelId', 'broadcastFrequency', 'broadcastServiceTier', 'genre', 'inBroadcastLineup', 'providesBroadcastService')
+            return Array.from(new Set((super.observedAttributes || []).concat((['broadcastChannelId', 'broadcastFrequency', 'broadcastServiceTier', 'genre', 'inBroadcastLineup', 'providesBroadcastService']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

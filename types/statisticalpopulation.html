@@ -17,7 +17,7 @@
         static _rdfs_label = 'StatisticalPopulation'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('constrainingProperty', 'numConstraints', 'populationType')
+            return Array.from(new Set((super.observedAttributes || []).concat((['constrainingProperty', 'numConstraints', 'populationType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'SportsTeam'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('athlete', 'coach', 'gender')
+            return Array.from(new Set((super.observedAttributes || []).concat((['athlete', 'coach', 'gender']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

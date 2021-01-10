@@ -17,7 +17,7 @@
         static _rdfs_label = 'ApartmentComplex'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBedrooms', 'petsAllowed', 'tourBookingPage')
+            return Array.from(new Set((super.observedAttributes || []).concat((['numberOfAccommodationUnits', 'numberOfAvailableAccommodationUnits', 'numberOfBedrooms', 'petsAllowed', 'tourBookingPage']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

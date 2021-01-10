@@ -17,7 +17,7 @@
         static _rdfs_label = 'UserComments'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl')
+            return Array.from(new Set((super.observedAttributes || []).concat((['commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

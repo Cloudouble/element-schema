@@ -17,7 +17,7 @@
         static _rdfs_label = 'BowlingAlley'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat()
+            return Array.from(new Set((super.observedAttributes || []).concat(([]).map(v => v.toLowerCase()))))
         }
         
         constructor() {

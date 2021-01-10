@@ -17,7 +17,7 @@
         static _rdfs_label = 'FoodEstablishment'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating')
+            return Array.from(new Set((super.observedAttributes || []).concat((['acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

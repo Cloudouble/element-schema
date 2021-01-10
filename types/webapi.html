@@ -17,7 +17,7 @@
         static _rdfs_label = 'WebAPI'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('documentation')
+            return Array.from(new Set((super.observedAttributes || []).concat((['documentation']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

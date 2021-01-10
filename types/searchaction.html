@@ -17,7 +17,7 @@
         static _rdfs_label = 'SearchAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('query')
+            return Array.from(new Set((super.observedAttributes || []).concat((['query']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProgramMembership'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName')
+            return Array.from(new Set((super.observedAttributes || []).concat((['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

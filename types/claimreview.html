@@ -17,7 +17,7 @@
         static _rdfs_label = 'ClaimReview'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('claimReviewed')
+            return Array.from(new Set((super.observedAttributes || []).concat((['claimReviewed']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

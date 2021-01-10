@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthPlanCostSharingSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory')
+            return Array.from(new Set((super.observedAttributes || []).concat((['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

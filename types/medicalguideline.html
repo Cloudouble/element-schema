@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalGuideline'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject')
+            return Array.from(new Set((super.observedAttributes || []).concat((['evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

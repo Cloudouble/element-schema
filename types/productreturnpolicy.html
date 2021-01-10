@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductReturnPolicy'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('productReturnDays', 'productReturnLink')
+            return Array.from(new Set((super.observedAttributes || []).concat((['productReturnDays', 'productReturnLink']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

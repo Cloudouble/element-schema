@@ -17,7 +17,7 @@
         static _rdfs_label = 'BorrowAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('lender')
+            return Array.from(new Set((super.observedAttributes || []).concat((['lender']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

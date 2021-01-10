@@ -17,7 +17,7 @@
         static _rdfs_label = 'LoanOrCredit'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral')
+            return Array.from(new Set((super.observedAttributes || []).concat((['amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

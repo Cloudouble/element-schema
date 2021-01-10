@@ -17,7 +17,7 @@
         static _rdfs_label = 'WebApplication'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('browserRequirements')
+            return Array.from(new Set((super.observedAttributes || []).concat((['browserRequirements']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

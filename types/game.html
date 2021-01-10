@@ -17,7 +17,7 @@
         static _rdfs_label = 'Game'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest')
+            return Array.from(new Set((super.observedAttributes || []).concat((['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

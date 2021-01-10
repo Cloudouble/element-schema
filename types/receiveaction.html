@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReceiveAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('deliveryMethod', 'sender')
+            return Array.from(new Set((super.observedAttributes || []).concat((['deliveryMethod', 'sender']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

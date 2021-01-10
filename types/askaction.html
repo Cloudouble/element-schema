@@ -17,7 +17,7 @@
         static _rdfs_label = 'AskAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('question')
+            return Array.from(new Set((super.observedAttributes || []).concat((['question']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

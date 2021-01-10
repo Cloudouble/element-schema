@@ -17,7 +17,7 @@
         static _rdfs_label = 'TrackAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('deliveryMethod')
+            return Array.from(new Set((super.observedAttributes || []).concat((['deliveryMethod']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

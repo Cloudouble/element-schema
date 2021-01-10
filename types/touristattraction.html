@@ -17,7 +17,7 @@
         static _rdfs_label = 'TouristAttraction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('availableLanguage', 'touristType')
+            return Array.from(new Set((super.observedAttributes || []).concat((['availableLanguage', 'touristType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

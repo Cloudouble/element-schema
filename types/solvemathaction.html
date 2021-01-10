@@ -17,7 +17,7 @@
         static _rdfs_label = 'SolveMathAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('eduQuestionType')
+            return Array.from(new Set((super.observedAttributes || []).concat((['eduQuestionType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Corporation'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('tickerSymbol')
+            return Array.from(new Set((super.observedAttributes || []).concat((['tickerSymbol']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

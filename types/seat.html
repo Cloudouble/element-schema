@@ -17,7 +17,7 @@
         static _rdfs_label = 'Seat'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('seatNumber', 'seatRow', 'seatSection', 'seatingType')
+            return Array.from(new Set((super.observedAttributes || []).concat((['seatNumber', 'seatRow', 'seatSection', 'seatingType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

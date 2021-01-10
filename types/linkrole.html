@@ -17,7 +17,7 @@
         static _rdfs_label = 'LinkRole'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('inLanguage', 'linkRelationship')
+            return Array.from(new Set((super.observedAttributes || []).concat((['inLanguage', 'linkRelationship']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

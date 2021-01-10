@@ -17,7 +17,7 @@
         static _rdfs_label = 'PhysicalActivity'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('associatedAnatomy', 'category', 'epidemiology', 'pathophysiology')
+            return Array.from(new Set((super.observedAttributes || []).concat((['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthInsurancePlan'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard')
+            return Array.from(new Set((super.observedAttributes || []).concat((['benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'LymphaticVessel'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('originatesFrom', 'regionDrained', 'runsTo')
+            return Array.from(new Set((super.observedAttributes || []).concat((['originatesFrom', 'regionDrained', 'runsTo']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

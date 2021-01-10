@@ -17,7 +17,7 @@
         static _rdfs_label = 'LiveBlogPosting'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('coverageEndTime', 'coverageStartTime', 'liveBlogUpdate')
+            return Array.from(new Set((super.observedAttributes || []).concat((['coverageEndTime', 'coverageStartTime', 'liveBlogUpdate']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

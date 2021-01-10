@@ -17,7 +17,7 @@
         static _rdfs_label = 'WorkBasedProgram'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('occupationalCategory', 'trainingSalary')
+            return Array.from(new Set((super.observedAttributes || []).concat((['occupationalCategory', 'trainingSalary']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

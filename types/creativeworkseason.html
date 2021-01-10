@@ -17,7 +17,7 @@
         static _rdfs_label = 'CreativeWorkSeason'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('actor', 'director', 'endDate', 'episode', 'episodes', 'numberOfEpisodes', 'partOfSeries', 'productionCompany', 'seasonNumber', 'startDate', 'trailer')
+            return Array.from(new Set((super.observedAttributes || []).concat((['actor', 'director', 'endDate', 'episode', 'episodes', 'numberOfEpisodes', 'partOfSeries', 'productionCompany', 'seasonNumber', 'startDate', 'trailer']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

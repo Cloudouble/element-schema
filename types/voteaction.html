@@ -17,7 +17,7 @@
         static _rdfs_label = 'VoteAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('candidate')
+            return Array.from(new Set((super.observedAttributes || []).concat((['candidate']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

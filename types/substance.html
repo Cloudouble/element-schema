@@ -17,7 +17,7 @@
         static _rdfs_label = 'Substance'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('activeIngredient', 'maximumIntake')
+            return Array.from(new Set((super.observedAttributes || []).concat((['activeIngredient', 'maximumIntake']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

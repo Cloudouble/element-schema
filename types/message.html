@@ -17,7 +17,7 @@
         static _rdfs_label = 'Message'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient')
+            return Array.from(new Set((super.observedAttributes || []).concat((['bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

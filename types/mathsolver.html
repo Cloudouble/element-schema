@@ -17,7 +17,7 @@
         static _rdfs_label = 'MathSolver'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('mathExpression')
+            return Array.from(new Set((super.observedAttributes || []).concat((['mathExpression']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Role'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('endDate', 'namedPosition', 'roleName', 'startDate')
+            return Array.from(new Set((super.observedAttributes || []).concat((['endDate', 'namedPosition', 'roleName', 'startDate']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

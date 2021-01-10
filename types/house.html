@@ -17,7 +17,7 @@
         static _rdfs_label = 'House'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('numberOfRooms')
+            return Array.from(new Set((super.observedAttributes || []).concat((['numberOfRooms']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

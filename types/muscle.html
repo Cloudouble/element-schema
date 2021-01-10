@@ -17,7 +17,7 @@
         static _rdfs_label = 'Muscle'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve')
+            return Array.from(new Set((super.observedAttributes || []).concat((['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

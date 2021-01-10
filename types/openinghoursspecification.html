@@ -17,7 +17,7 @@
         static _rdfs_label = 'OpeningHoursSpecification'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('closes', 'dayOfWeek', 'opens', 'validFrom', 'validThrough')
+            return Array.from(new Set((super.observedAttributes || []).concat((['closes', 'dayOfWeek', 'opens', 'validFrom', 'validThrough']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PronounceableText'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('inLanguage', 'phoneticText', 'speechToTextMarkup', 'textValue')
+            return Array.from(new Set((super.observedAttributes || []).concat((['inLanguage', 'phoneticText', 'speechToTextMarkup', 'textValue']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

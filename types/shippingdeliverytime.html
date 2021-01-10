@@ -17,7 +17,7 @@
         static _rdfs_label = 'ShippingDeliveryTime'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('businessDays', 'cutoffTime', 'handlingTime', 'transitTime')
+            return Array.from(new Set((super.observedAttributes || []).concat((['businessDays', 'cutoffTime', 'handlingTime', 'transitTime']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Diet'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('dietFeatures', 'endorsers', 'expertConsiderations', 'physiologicalBenefits', 'risks')
+            return Array.from(new Set((super.observedAttributes || []).concat((['dietFeatures', 'endorsers', 'expertConsiderations', 'physiologicalBenefits', 'risks']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

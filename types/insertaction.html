@@ -17,7 +17,7 @@
         static _rdfs_label = 'InsertAction'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('toLocation')
+            return Array.from(new Set((super.observedAttributes || []).concat((['toLocation']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

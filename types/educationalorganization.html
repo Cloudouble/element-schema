@@ -17,7 +17,7 @@
         static _rdfs_label = 'EducationalOrganization'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('alumni')
+            return Array.from(new Set((super.observedAttributes || []).concat((['alumni']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

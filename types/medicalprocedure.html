@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalProcedure'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat('bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status')
+            return Array.from(new Set((super.observedAttributes || []).concat((['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

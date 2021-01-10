@@ -50,8 +50,158 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         })
     }, 
     Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
-            Schema: {configurable: false, enumerable: true, writable: false, value: function(value, propertyMap={}) {
-                return true
+            True: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                result.valid = window.LiveElement.Schema.Options.True && typeof window.LiveElement.Schema.Options.True == 'object' 
+                    && window.LiveElement.Schema.Options.True.constructor.name == 'Array' ? window.LiveElement.Schema.Options.True.includes(input) : !!input
+                result.value = true
+                if (!result.valid) {
+                    result.error = `True values with an allow list must have an input matching an option in the allow list`
+                }
+                return result
+            }}, 
+            False: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                result.valid = window.LiveElement.Schema.Options.False && typeof window.LiveElement.Schema.Options.False == 'object' 
+                    && window.LiveElement.Schema.Options.False.constructor.name == 'Array' ? window.LiveElement.Schema.Options.False.includes(input) : !!input
+                result.value = false
+                if (!result.valid) {
+                    result.error = `False values with an allow list must have an input matching an option in the allow list`
+                }
+                return result
+            }}, 
+            Boolean: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var trueList = window.LiveElement.Schema.Options.True || []
+                var falseList = window.LiveElement.Schema.Options.False || []
+                var allowList = trueList.concat(falseList)
+                result.valid = allowList.length ? allowList.includes(input) : !!input
+                result.value = allowList.length && result.valid ? trueList.includes(input) : !!input
+                if (!result.valid) {
+                    result.error = `Boolean values with an allow list must have an input matching an option in the allow list`
+                }
+                return result
+            }}, 
+            DateTime: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
+                result.valid = regex.test(String(input))
+                result.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
+                if (!result.valid) {
+                    result.error = `DateTime input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]`
+                }
+                return result
+            }}, 
+            Date: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])$/
+                result.valid = regex.test(String(input))
+                result.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
+                if (result.value) {
+                    result.value = result.value.split('T').shift()
+                }
+                if (!result.valid) {
+                    result.error = `Date input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DD`
+                }
+                return result
+            }}, 
+            Time: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var regex = /^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
+                result.valid = regex.test(String(input))
+                result.value = result.valid ? input : String(input).toLowerCase().replace(/[^0-9\:apmz]/g, '')
+                if (!result.valid) {
+                    var d = new Date()
+                    var valueSplit = result.value.split(':')
+                    var hours = valueSplit.shift()
+                    hours = result.value.indexOf('pm') > -1 ? hours + 12 : hours + 0
+                    hours = hours > 23 ? 0 : hours
+                    d.setHours(hours)
+                    var minutes = valueSplit.shift()
+                    d.setMinutes(minutes ? parseInt(minutes, 10) || 0 : 0)
+                    var seconds = valueSplit.shift()
+                    d.setMinutes(seconds ? parseInt(seconds, 10) || 0 : 0)
+                    var millseconds = parseInt(result.value.split(':').pop(), 10) || 0
+                    d.setMilliseconds(millseconds ? parseInt(millseconds, 10) || 0 : 0)
+                    result.value = d.toJSON().split('T').pop() 
+                    result.error = `Time input must be a parseable time string ideally in ISO8601 DateTime format hh:mm:ss[Z|(+|-)hh:mm]`
+                }
+                return result
+            }}, 
+            Integer: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var floatVal = parseFloat(input)
+                var intVal = parseInt(input, 10)
+                result.valid = !Number.isNaN(floatVal) && (intVal == floatVal)
+                if (result.valid) {
+                    result.value = intVal
+                } else {
+                    result.error = `Integer input must be able to be cast to a Integer without a change in their value`
+                }
+                return result
+            }}, 
+            Float: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var floatVal = parseFloat(input)
+                result.valid = !Number.isNaN(floatVal)
+                if (result.valid) {
+                    result.value = floatVal
+                } else {
+                    result.error = `Float input must be able to be cast to a Float`
+                }
+                return result
+            }}, 
+            Number: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var floatVal = parseFloat(input)
+                result.valid = !Number.isNaN(floatVal)
+                if (result.valid) {
+                    var intVal = parseInt(input, 10)
+                    result.value = floatVal == intVal ? intVal : floatVal
+                } else {
+                    result.error = `Number input must be able to be cast to a Float or Integer number`
+                }
+                return result
+            }}, 
+            XPathType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                result.value = String(input)
+                result.valid = typeof value == 'string'
+                if (!result.valid) {
+                    result.error = `XPathType input must be strings not ${typeof input}`
+                }
+                return result
+            }}, 
+            CssSelectorType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                result.value = String(input)
+                result.valid = typeof value == 'string'
+                if (!result.valid) {
+                    result.error = `CssSelectorType input must be strings not ${typeof input}`
+                }
+                return result
+            }}, 
+            URL: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                var string_input = String(input)
+                result.valid = (new RegExp('^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?')).test(string_input)
+                result.value = result.valid ? string_input : `https:\/\/${string_input.replace('https:\/\/', '').replace('http:\/\/', '')}`
+                if (!result.valid) {
+                    result.error = `URL input should conform to the Regular Expression ${'^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?'}`
+                }
+                return result
+            }}, 
+            Text: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
+                result.value = String(input)
+                result.valid = typeof value == 'string'
+                if (!result.valid) {
+                    result.error = `Text input must be strings not ${typeof input}`
+                }
+                return result
+            }},         
+            Schema: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                return {input: input, value: input, valid: true, error: undefined}
             }}
         })
     }, 
@@ -94,177 +244,3 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     }}
 })
 
-/*
-window.LiveElement.Schema.DataTypes = window.LiveElement.Schema.DataTypes || Object.defineProperties({}, {
-    True: {configurable: false, enumerable: true, writable: false, value: class True extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(input) : !!input
-            this.value = true
-            if (!this.valid) {
-                this.message = `True values with an allow list must have an input matching an option in the allow list`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    False: {configurable: false, enumerable: true, writable: false, value: class False extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(input) : !input
-            this.value = false
-            if (!this.valid) {
-                this.message = `False values with an allow list must have an input matching an option in the allow list`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Boolean: {configurable: false, enumerable: true, writable: false, value: class Boolean extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.valid = allow && typeof allow == 'object' && allow.constructor.name == 'Array' ? allow.includes(this) : true
-            this.value = !!input
-            if (!this.valid) {
-                this.message = `Boolean values with an allow list must have an input matching an option in the allow list`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    DateTime: {configurable: false, enumerable: true, writable: false, value: class DateTime extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
-            this.valid = regex.test(String(input))
-            this.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
-            if (!this.valid) {
-                this.message = `DateTime input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Date: {configurable: false, enumerable: true, writable: false, value: class Date extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])$/
-            this.valid = regex.test(String(input))
-            this.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
-            if (this.value) {
-                this.value = this.value.split('T').shift()
-            }
-            if (!this.valid) {
-                this.message = `Date input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DD`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Time: {configurable: false, enumerable: true, writable: false, value: class Time extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var regex = /^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
-            this.valid = regex.test(String(input))
-            this.value = this.valid ? input : String(input).toLowerCase().replace(/[^0-9\:apmz]/g, '')
-            if (!this.valid) {
-                var d = new Date()
-                var valueSplit = this.value.split(':')
-                var hours = valueSplit.shift()
-                hours = this.value.indexOf('pm') > -1 ? hours + 12 : hours + 0
-                hours = hours > 23 ? 0 : hours
-                d.setHours(hours)
-                var minutes = valueSplit.shift()
-                d.setMinutes(minutes ? parseInt(minutes, 10) || 0 : 0)
-                var seconds = valueSplit.shift()
-                d.setMinutes(seconds ? parseInt(seconds, 10) || 0 : 0)
-                var millseconds = parseInt(this.value.split(':').pop()) || 0
-                d.setMilliseconds(millseconds ? parseInt(millseconds, 10) || 0 : 0)
-                this.value = d.toJSON().split('T').pop() 
-                this.message = `Time input must be a parseable time string ideally in ISO8601 DateTime format hh:mm:ss[Z|(+|-)hh:mm]`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Integer: {configurable: false, enumerable: true, writable: false, value: class Integer extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var floatVal = parseFloat(input)
-            var intVal = parseInt(input)
-            this.valid = !Number.isNaN(floatVal) && (intVal == floatVal)
-            if (this.valid) {
-                this.value = intVal
-            } else {
-                this.message = `Integer input must be able to be cast to a Integer without a change in their value`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Float: {configurable: false, enumerable: true, writable: false, value: class Float extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var floatVal = parseFloat(input)
-            this.valid = !Number.isNaN(floatVal)
-            if (this.valid) {
-                this.value = floatVal
-            } else {
-                this.message = `Float input must be able to be cast to a Float`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    Number: {configurable: false, enumerable: true, writable: false, value: class Number extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var floatVal = parseFloat(input)
-            this.valid = !Number.isNaN(floatVal)
-            if (this.valid) {
-                var intVal = parseInt(input)
-                this.value = floatVal == intVal ? intVal : floatVal
-            } else {
-                this.message = `Number input must be able to be cast to a Float or Integer number`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    XPathType: {configurable: false, enumerable: true, writable: false, value: class XPathType extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.value = String(input)
-            this.valid = typeof value == 'string'
-            if (!this.valid) {
-                this.message = `XPathType input must be strings not ${typeof input}`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    CssSelectorType: {configurable: false, enumerable: true, writable: false, value: class CssSelectorType extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.value = String(input)
-            this.valid = typeof value == 'string'
-            if (!this.valid) {
-                this.message = `CssSelectorType input must be strings not ${typeof input}`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    URL: {configurable: false, enumerable: true, writable: false, value: class URL extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            var string_input = String(input)
-            this.valid = (new RegExp('^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?')).test(string_input)
-            this.value = this.valid ? string_input : `https:\/\/${string_input.replace('https:\/\/', '').replace('http:\/\/', '')}`
-            if (!this.valid) {
-                this.message = `URL input should conform to the Regular Expression ${'^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?'}`
-            }
-            Object.freeze(this)
-        }
-    }}, 
-    CssSelectorType: {configurable: false, enumerable: true, writable: false, value: class CssSelectorType extends window.LiveElement.Schema.DataType {
-        constructor(input, allow) {
-            super(input, allow)
-            this.value = String(input)
-            this.valid = typeof value == 'string'
-            if (!this.valid) {
-                this.message = `Text input must be strings not ${typeof input}`
-            }
-            Object.freeze(this)
-        }
-    }}
-})*/

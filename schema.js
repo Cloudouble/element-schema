@@ -216,6 +216,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         })
     }, 
     renderProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
+        console.log('line 219', propertyMap)
         if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.parent == 'object' && propertyMap.parent._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
             var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
             var typeSpecificity = window.LiveElement.Element.getTypeSpecificity(propertyMap.types)
@@ -234,9 +235,10 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 }
             })
             var renderer = window.LiveElement.Schema.getRenderer(propertyMap.propertyName, window.LiveElement.Element.getInheritance(window.LiveElement.Element.elements[thisType]), containerInheritance, propertyMap)
-            var propertyTag = window.LiveElement.Element.tags[renderer]
+            var propertyTag = window.LiveElement.Element.tags[renderer] || window.LiveElement.Element.tags[thisType] || window.LiveElement.Element.tags.Schema
             var propertyElement = propertyTag && window.LiveElement.Element.tags[propertyTag] ? document.createElement(window.LiveElement.Element.tags[propertyTag]) : undefined
             propertyElement.__load(propertyMap.value, thisType, propertyMap, validationResults)
+            console.log('line 240', propertyMap)
             if (propertyMap.parent && typeof propertyMap.parent.__renderProperty == 'function') {
                 propertyMap.parent.__renderProperty(propertyElement, propertyMap.propertyName, propertyMap)
             }

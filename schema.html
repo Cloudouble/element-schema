@@ -29,25 +29,24 @@
             return true
         }
         
-        constructor(input, property=undefined) {
+        constructor() {
             super()
             var $this = this
-            var validation = $this.__validate(input)
-            
-            
-
-            //Object.entries({...$this.__validate($this.__input), ...{input: input}}).forEach(entry => $this[`__${entry[0]}`] = entry[1])
-            if (property && typeof property == 'object' && typeof property.property == 'string' && typeof property.parent == 'object' && typeof property.parent.dispatchEvent == 'function') {
+            /*if (property && typeof property == 'object' && typeof property.property == 'string' && typeof property.parent == 'object' && typeof property.parent.dispatchEvent == 'function') {
                 var detailProperty = {...property, ...{input: $this.__input, value: $this.__value, error: $this.__error}}
                 property.parent.dispatchEvent(new CustomEvent('schema-propertyset', {detail: detailProperty}))
                 if ($this.__error) {
                     property.parent.dispatchEvent(new CustomEvent('schema-propertyerror', {detail: detailProperty}))
                 }
-            }
+            }*/
         }
         
         connectedCallback() {
             var $this = this
+            var observer = new window.MutationObserver(function(record) {
+                console.log('line 47', record)
+            })
+            observer.observe($this, {attributes: true, /*attributeFilter: this.constructor.observedAttributes, */attributeOldValue: true})            
             //console.log('line 47', this.constructor.observedAttributes)
         }
         
@@ -77,7 +76,7 @@
         }
         
         __renderProperty(propertyElement, propertyName, propertyMap) {
-            
+            console.log('line 75')
         }
         
 

@@ -248,15 +248,23 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 propertyMap.container.__input = propertyMap.container.__input || {}
                 if (propertyMap.container.__input[propertyMap.propertyName] != propertyMap.value) {
                     propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
+                    var containerValidator
+                    var containerContainerInheritance
                     if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
-                        var containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
-                        var containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
+                        containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
+                        containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
                         if (typeof containerValidator == 'function') {
                             propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
                             propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
                         }
-                    } 
-                    
+                    } else {
+                        containerContainerInheritance = [propertyMap.container.constructor._rdfs_label]
+                        containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.constructor._rdfs_label)
+                        if (typeof containerValidator == 'function') {
+                            propertyMap.container.__validation = containerValidator(propertyMap.container.__input)
+                            propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
+                        }
+                    }
                 }
                 
                 

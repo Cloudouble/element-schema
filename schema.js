@@ -3,20 +3,21 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
     Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}, 
-    parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, ownInheritance, containerInheritance, propertyMap){
+    parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, containerInheritance, propertyMap){
+        console.log('line 7', mapObject)
         var t
-        var target = mapObject.Schema
+        var target
         if (containerInheritance && containerInheritance.some(containerClassName => {
             t = containerClassName
             return mapObject[containerClassName] && typeof mapObject[containerClassName] == 'object' && mapObject[containerClassName][ownPropertyName]
         })) {
             // this propertyName can be found as a propertyName in any ancestor container class
             target = mapObject[t][ownPropertyName]
-        } else if (ownInheritance && containerInheritance) {
-            ownInheritance.some(ot => {
+        } else if (propertyMap.types.length == 1 && containerInheritance) {
+            propertyMap.types.some(ot => {
                 return containerInheritance.some(ct => {
                     if (mapObject[ct] && typeof mapObject[ct] == 'object' && mapObject[ct][ot]) {
-                        // this type or one of it's ancestors can be found in any ancestor container class
+                        // one of the types can be found in any ancestor container class
                         target = mapObject[ct][ot]
                         return true
                     }
@@ -26,24 +27,32 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         if (!target && mapObject[ownPropertyName]) {
             // the propertyName is directly under the root
             target = mapObject[ownPropertyName]
-        } else if (!target && ownInheritance && ownInheritance.some(ot => { 
+        } else if (!target && propertyMap.types && propertyMap.types.some(ot => { 
             t = ot
             return mapObject[ot]
         })) {
-            // the type or one of it's ancestors is directly under the root
+            // one of the types is directly under the root
             target = mapObject[t]
         }
-        return target || mapObject.Schema
+        return target
     }}, 
-    getValidator: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
-        var validatorName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.ValidatorMap, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
-        return validatorName ? window.LiveElement.Schema.Validators[validatorName] : window.LiveElement.Schema.Validators.Schema
+    getValidator: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+        var validatorName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.ValidatorMap, ownPropertyName, containerInheritance, propertyMap)
+        validatorName = validatorName || window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Validators, ownPropertyName, containerInheritance, propertyMap)
+        if (typeof validatorName == 'function') {
+            return validatorName
+        } else if (typeof validatorName == 'string' && window.LiveElement.Schema.Validators[validatorName]) {
+            window.LiveElement.Schema.Validators[validatorName]
+        } else {
+            window.LiveElement.Schema.Validators.Schema
+        }
     }}, 
-    getRenderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
-        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
+    getRenderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+        var rendererName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, containerInheritance, propertyMap)
+        return rendererName || 'Schema'
     }}, 
-    getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, ownInheritance, containerInheritance, propertyMap){
-        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, ownInheritance, containerInheritance, propertyMap)
+    getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, containerInheritance, propertyMap)
     }}, 
     Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             True: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
@@ -201,14 +210,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}
         })
     }, 
-    ValidatorMap: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
-            Schema: {configurable: false, enumerable: true, writable: false, value: 'Schema'}
-        })
-    }, 
-    RenderMap: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
-            Schema: {configurable: false, enumerable: true, writable: false, value: 'Schema'}
-        })
-    }, 
+    ValidatorMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    RenderMap: {}, 
     Errors: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
                 return true
@@ -218,26 +221,14 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     renderProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
         if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
             var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
-            var typeSpecificity = window.LiveElement.Element.getTypeSpecificity(propertyMap.types)
-            var validators = Object.assign({}, propertyMap.types.map(t => ({[t]: window.LiveElement.Schema.getValidator(
-                propertyMap.propertyName, window.LiveElement.Element.getInheritance(window.LiveElement.Element.elements[t]), containerInheritance, propertyMap
-            )})))
-            var thisType = 'Schema'
-            var validationResults = {}
-            var validationResult = {}
-            typeSpecificity.some(t => {
-                if (typeof validators[t] == 'function') {
-                    validationResults[t] = validators[t](propertyMap.value, propertyMap)
-                    validationResult = validationResults[t]
-                    if (validationResults[t] && validationResults[t].valid) {
-                        thisType = t
-                        return true
-                    }
-                }
-            })
-            var renderer = window.LiveElement.Schema.getRenderer(propertyMap.propertyName, window.LiveElement.Element.getInheritance(window.LiveElement.Element.elements[thisType]), containerInheritance, propertyMap)
-            var propertyTag = window.LiveElement.Element.tags[renderer] || window.LiveElement.Element.tags[thisType] || window.LiveElement.Element.tags.Schema
-            var propertyElement = propertyTag && window.LiveElement.Element.classes[propertyTag] ? document.createElement(propertyTag) : undefined
+            var validator = window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap)
+            var renderer = window.LiveElement.Schema.getRenderer(propertyMap.propertyName, containerInheritance, propertyMap)
+            
+            console.log('line 223', renderer)
+
+            
+            var propertyTag = window.LiveElement.Element.tags[renderer] || window.LiveElement.Element.tags.Schema
+            var propertyElement = document.createElement(propertyTag)
             if (propertyMap.container) {
                 propertyMap.container.__input = propertyMap.container.__input || {}
                 propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value

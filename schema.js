@@ -238,21 +238,24 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                         propertyElement.__load(propertyMap.value, propertyTag, propertyMap, validationResult)
                     }
                 })
-                propertyElement.__container = propertyMap.container
             }
             if (propertyMap.container) {
                 if (propertyElement) {
+                    propertyElement.__container = propertyMap.container
                     propertyElement.__containerPropertyName = propertyMap.propertyName
+                    propertyElement.__propertyMap = propertyMap
                 }
                 propertyMap.container.__input = propertyMap.container.__input || {}
                 if (propertyMap.container.__input[propertyMap.propertyName] != propertyMap.value) {
                     propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
-                    
-                    if (propertyMap.container.__container && propertyMap.container.__containerPropertyName) {
-                        
+                    if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
+                        var containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
+                        var containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
+                        if (typeof containerValidator == 'function') {
+                            propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
+                            propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
+                        }
                     } 
-                    var containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
-                    var containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap)
                     
                 }
                 

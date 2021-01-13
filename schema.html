@@ -32,27 +32,14 @@
         constructor() {
             super()
             var $this = this
-            /*if (property && typeof property == 'object' && typeof property.property == 'string' && typeof property.parent == 'object' && typeof property.parent.dispatchEvent == 'function') {
-                var detailProperty = {...property, ...{input: $this.__input, value: $this.__value, error: $this.__error}}
-                property.parent.dispatchEvent(new CustomEvent('schema-propertyset', {detail: detailProperty}))
-                if ($this.__error) {
-                    property.parent.dispatchEvent(new CustomEvent('schema-propertyerror', {detail: detailProperty}))
-                }
-            }*/
+            //ensure the following line always goes at the end of the constructor function 
+            $this.__render()
         }
         
         connectedCallback() {
             var $this = this
-            /*var observer = new window.MutationObserver(function(record) {
-                if (record.attributeName) {
-                    if ($this.getAttribute(record.attributeName) != record.oldValue) {
-                        
-                    }
-                }
-                
-                console.log('line 47', record)
-            })
-            observer.observe($this, {childList: true, characterData: true, characterDataOldValue: true, attributes: true, attributeOldValue: true, attributeFilter: this.constructor.observedAttributes})*/
+            //ensure the following line always goes at the end of the connectedCallback function 
+            $this.__render(true)
         }
         
         toString() {
@@ -70,24 +57,17 @@
         __container = undefined
         __containerPropertyName = undefined
         
-        __load(input, thisType, propertyMap, validationResults) { 
+        __load(input, tagName, propertyMap, validation) {
             var $this = this
             $this.__input = input
-            $this.__validation = validationResults
-            $this.__value = $this.__validation[thisType] && typeof $this.__validation[thisType] == 'object' ? $this.__validation[thisType].value : undefined 
-            if (input && typeof input == 'object') {
-                Object.keys(input).forEach(propertyName => {
-                    $this[propertyName] = input[propertyName]
+            $this.__validation = validation
+            $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
+            if ($this.__input && typeof $this.__input == 'object') {
+                Object.keys($this.__input).forEach(propertyName => {
+                    $this[propertyName] = $this.__input[propertyName]
                 })
             }
         }
         
-        __renderProperty(propertyElement, propertyName, container, propertyMap) {
-            //propertyElement.setAttribute('itemprop', propertyName)
-            //propertyElement.innerHTML = propertyMap.value
-            //container.append(propertyElement)
-        }
-        
-
     }
 </script>

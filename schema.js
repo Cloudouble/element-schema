@@ -241,6 +241,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }
             if (propertyMap.container) {
                 if (propertyElement) {
+                    propertyMap.container.__map[propertyMap.propertyName] = propertyElement
                     propertyElement.__container = propertyMap.container
                     propertyElement.__containerPropertyName = propertyMap.propertyName
                     propertyElement.__propertyMap = propertyMap
@@ -274,9 +275,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                         }
                     }
                 }
-                propertyMap.container.__map[propertyMap.propertyName] = propertyElement
-                if (typeof propertyMap.container.__renderProperty == 'function') {
-                    propertyMap.container.__renderProperty(propertyElement, propertyMap.propertyName, propertyMap.container, propertyMap)
+                if (typeof propertyMap.container.__renderOwnProperty == 'function') {
+                    propertyMap.container.__renderOwnProperty(propertyElement, propertyMap.propertyName, propertyMap)
                 }
                 var eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: renderer}}
                 propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))

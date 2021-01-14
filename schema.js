@@ -46,9 +46,13 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             window.LiveElement.Schema.Validators.Schema
         }
     }}, 
-    getRenderer: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
-        var rendererName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, containerInheritance, propertyMap)
-        return rendererName || 'Schema'
+    getClass: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+        var className = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.ClassMap, ownPropertyName, containerInheritance, propertyMap)
+        return className || 'Schema'
+    }}, 
+    getRender: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+        var renderName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, containerInheritance, propertyMap)
+        return renderName
     }}, 
     getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, containerInheritance, propertyMap)
@@ -210,6 +214,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         })
     }, 
     ValidatorMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    ClassMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
     RenderMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
     Errors: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
@@ -221,14 +226,14 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
             var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
             var validator = window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap)
-            if (!window.LiveElement.Schema._RenderMapBackFilled) {
-                window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes).forEach(t => window.LiveElement.Schema.RenderMap[t] = window.LiveElement.Schema.RenderMap[t] || t)
-                window.LiveElement.Schema._RenderMapBackFilled = true
+            if (!window.LiveElement.Schema._ClassMapBackFilled) {
+                window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
+                window.LiveElement.Schema._ClassMapBackFilled = true
             }
-            if (Object.keys(window.LiveElement.Schema.RenderMap).length < Object.keys(window.LiveElement.Element.tags).length) {
-                Object.keys(window.LiveElement.Element.tags).forEach(t => window.LiveElement.Schema.RenderMap[t] = window.LiveElement.Schema.RenderMap[t] || t)
+            if (Object.keys(window.LiveElement.Schema.ClassMap).length < Object.keys(window.LiveElement.Element.tags).length) {
+                Object.keys(window.LiveElement.Element.tags).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
             }
-            var renderer = window.LiveElement.Schema.getRenderer(propertyMap.propertyName, containerInheritance, propertyMap)
+            var renderer = window.LiveElement.Schema.getClass(propertyMap.propertyName, containerInheritance, propertyMap)
             var propertyTag = window.LiveElement.Element.tags[renderer] || `${window.LiveElement.Element.prefix}-${renderer}`.toLowerCase()
             var propertyElement = document.createElement(propertyTag)
             var validationResult = validator(propertyMap.value, propertyMap)
@@ -240,6 +245,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 })
             }
             if (propertyMap.container) {
+                var eventPropertyMap = {}
                 if (propertyElement) {
                     propertyMap.container.__map[propertyMap.propertyName] = propertyElement
                     propertyElement.__container = propertyMap.container
@@ -255,8 +261,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                     if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
                         containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
                         containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                        containerRenderer = window.LiveElement.Schema.getRenderer(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                        var eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: containerRenderer}}
+                        containerRenderer = window.LiveElement.Schema.getClass(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
+                        eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: containerRenderer}}
                         propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
                         if (validationResult.error) {
                             propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
@@ -268,17 +274,14 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                     } else {
                         containerContainerInheritance = [propertyMap.container.constructor._rdfs_label]
                         containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.constructor._rdfs_label)
-                        containerRenderer = window.LiveElement.Schema.getRenderer(propertyMap.container.constructor._rdfs_label)
+                        containerRenderer = window.LiveElement.Schema.getClass(propertyMap.container.constructor._rdfs_label)
                         if (typeof containerValidator == 'function') {
                             propertyMap.container.__validation = containerValidator(propertyMap.container.__input)
                             propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
                         }
                     }
                 }
-                if (typeof propertyMap.container.__renderOwnProperty == 'function') {
-                    propertyMap.container.__renderOwnProperty(propertyElement, propertyMap.propertyName, propertyMap)
-                }
-                var eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: renderer}}
+                eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: renderer}}
                 propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
                 if (validationResult.error) {
                     propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))

@@ -39,7 +39,7 @@
         connectedCallback() {
             var $this = this
             //ensure the following line always goes at the end of the connectedCallback function 
-            $this.__render(true)
+            $this.__render($this.__isConnected = true)
         }
         
         toString() {
@@ -56,6 +56,8 @@
         __map = {}
         __container = undefined
         __containerPropertyName = undefined
+        __propertyMap = undefined
+        __isConnected = false
         
         __load(input, tagName, propertyMap, validation) {
             var $this = this
@@ -66,6 +68,21 @@
                 Object.keys($this.__input).forEach(propertyName => {
                     $this[propertyName] = $this.__input[propertyName]
                 })
+            }
+        }
+        
+        __render() {
+            var $this = this
+            var render
+            if ($this.__container && $this.__containerPropertyName && $this.__propertyMap) {
+                render = window.LiveElement.Schema.getRender($this.__containerPropertyName, window.LiveElement.Element.getInheritance($this.__container.constructor), $this.__propertyMap)
+            } else {
+                render = window.LiveElement.Schema.getRender($this.constructor._rdfs_label)
+            }
+            if (typeof render == 'function') {
+                render($this)
+            } else if (render && typeof render == 'object') {
+                render($this, render.asClass, render.renderFunction, render.style, render.template)
             }
         }
         

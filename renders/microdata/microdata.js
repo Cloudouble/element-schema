@@ -31,7 +31,12 @@ window.LiveElement.Schema.RenderMap = {...window.LiveElement.Schema.RenderMap, .
     Number: 'scalar', 
     Float: 'scalar', 
     Integer: 'scalar', 
-    Time: 'scalar'
+    Time: 'scalar', 
+    Date: 'scalar', 
+    DateTime: 'scalar', 
+    Boolean: 'scalar', 
+    False: 'scalar', 
+    True: 'scalar'
 }}
 
 window.LiveElement.Schema.Errors = {...window.LiveElement.Schema.Errors, ...{
@@ -39,6 +44,6 @@ window.LiveElement.Schema.Errors = {...window.LiveElement.Schema.Errors, ...{
 }}
 
 window.LiveElement.Schema.Options = {...window.LiveElement.Schema.Options, ...{
-    
+    True: ['True', 'Yes']
 }}
 

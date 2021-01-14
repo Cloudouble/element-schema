@@ -1,34 +1,34 @@
 <style>
-:host {
-    contain: content;
-}
 </style>
 <template>
     <slot></slot>
 </template>
 <script>
     /* global */
-    class True extends window.Cloudouble.Element.elements.Boolean {
+    class True extends window.LiveElement.Element.elements.Schema {
 
-        static __prefix = window.Cloudouble.Element.prefix
+        static __prefix = window.LiveElement.Element.prefix
         
+        static __release = '11.01'
         static __id = 'schema:True'
         static __type = 'schema:Boolean'
+        static __extends = 'Schema'
         static _rdfs_comment = 'The boolean value true.'
         static _rdfs_label = 'True'
 
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat()
+            return Array.from(new Set((super.observedAttributes || []).concat(([]).map(v => v.toLowerCase()))))
         }
         
         constructor() {
             super()
-            this.__setRenderer('True')
         }
         
         connectedCallback() {
             super.connectedCallback()
         }
+        
+        
         
     }
 </script>

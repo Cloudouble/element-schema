@@ -34,6 +34,7 @@ for prop in properties_list:
     
 for index, datatype in enumerate([d for d in graph if (
         (d.get('@type') and type(d['@type']) is str and d['@type'] == 'rdfs:Class') or 
+        (d.get('@type') and type(d['@type']) is str and d['@type'] == 'schema:Boolean') or 
         (d.get('@type') and type(d['@type']) is list and 'rdfs:Class' in d['@type'])
     )]):
     print('{}: {}'.format(index, datatype.get('@id')))

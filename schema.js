@@ -65,9 +65,12 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             True: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                result.valid = window.LiveElement.Schema.Options.True && typeof window.LiveElement.Schema.Options.True == 'object' 
-                    && window.LiveElement.Schema.Options.True.constructor.name == 'Array' ? window.LiveElement.Schema.Options.True.includes(input) : !!input
-                result.value = true
+                if (window.LiveElement.Schema.Options.True && typeof window.LiveElement.Schema.Options.True == 'object' && window.LiveElement.Schema.Options.True.constructor.name == 'Array') {
+                    result.valid =  window.LiveElement.Schema.Options.True.map(v => v.toLowerCase()).includes(String(input).toLowerCase())
+                } else {
+                    result.valid = true
+                }
+                result.value = result.valid ? true : undefined
                 if (!result.valid) {
                     result.error = `True values with an allow list must have an input matching an option in the allow list`
                 }
@@ -75,9 +78,12 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             False: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                result.valid = window.LiveElement.Schema.Options.False && typeof window.LiveElement.Schema.Options.False == 'object' 
-                    && window.LiveElement.Schema.Options.False.constructor.name == 'Array' ? window.LiveElement.Schema.Options.False.includes(input) : !!input
-                result.value = false
+                if (window.LiveElement.Schema.Options.False && typeof window.LiveElement.Schema.Options.False == 'object' && window.LiveElement.Schema.Options.False.constructor.name == 'Array') {
+                    result.valid =  window.LiveElement.Schema.Options.False.map(v => v.toLowerCase()).includes(String(input).toLowerCase())
+                } else {
+                    result.valid = true
+                }
+                result.value = result.valid ? false : undefined
                 if (!result.valid) {
                     result.error = `False values with an allow list must have an input matching an option in the allow list`
                 }
@@ -88,7 +94,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var trueList = window.LiveElement.Schema.Options.True || []
                 var falseList = window.LiveElement.Schema.Options.False || []
                 var allowList = trueList.concat(falseList)
-                result.valid = allowList.length ? allowList.includes(input) : !!input
+                result.valid = allowList.length ? allowList.includes(input) : true
                 result.value = allowList.length && result.valid ? trueList.includes(input) : !!input
                 if (!result.valid) {
                     result.error = `Boolean values with an allow list must have an input matching an option in the allow list`
@@ -99,7 +105,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
                 result.valid = regex.test(String(input))
-                result.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
+                result.value = (new Date(Date.parse(String(input)))) || undefined
                 if (!result.valid) {
                     result.error = `DateTime input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]`
                 }
@@ -107,37 +113,21 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             Date: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])$/
+                var regex = /^-?[0-9]{4}-(01|02|03|04|05|06|07|08|09|10|11|12)-([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])$/
                 result.valid = regex.test(String(input))
-                result.value = (new Date(Date.parse(String(input)))).toJSON() || undefined
-                if (result.value) {
-                    result.value = result.value.split('T').shift()
-                }
+                result.value = (new Date(Date.parse(String(input)))) || undefined
                 if (!result.valid) {
-                    result.error = `Date input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DD`
+                    result.error = `Date input must be a parseable date string in ISO8601 DateTime format [-]CCYY-MM-DD`
                 }
                 return result
             }}, 
             Time: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var regex = /^(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
-                result.valid = regex.test(String(input))
-                result.value = result.valid ? input : String(input).toLowerCase().replace(/[^0-9\:apmz]/g, '')
+                var rx = /^[0-1][0-9]:[0-5][0-9]:[0-5][0-9](Z|([+\-][0-5][0-9]:[0-5][0-9]))?$/
+                result.valid = rx.test(String(input))
+                result.value = result.valid ? input : undefined
                 if (!result.valid) {
-                    var d = new Date()
-                    var valueSplit = result.value.split(':')
-                    var hours = valueSplit.shift()
-                    hours = result.value.indexOf('pm') > -1 ? hours + 12 : hours + 0
-                    hours = hours > 23 ? 0 : hours
-                    d.setHours(hours)
-                    var minutes = valueSplit.shift()
-                    d.setMinutes(minutes ? parseInt(minutes, 10) || 0 : 0)
-                    var seconds = valueSplit.shift()
-                    d.setMinutes(seconds ? parseInt(seconds, 10) || 0 : 0)
-                    var millseconds = parseInt(result.value.split(':').pop(), 10) || 0
-                    d.setMilliseconds(millseconds ? parseInt(millseconds, 10) || 0 : 0)
-                    result.value = d.toJSON().split('T').pop() 
-                    result.error = `Time input must be a parseable time string ideally in ISO8601 DateTime format hh:mm:ss[Z|(+|-)hh:mm]`
+                    result.error = `Time input must be a parseable time string in ISO8601 DateTime format ${String(rx)}`
                 }
                 return result
             }}, 
@@ -166,13 +156,12 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             Number: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var floatVal = parseFloat(input)
-                result.valid = !Number.isNaN(floatVal)
+                result.valid = !window.Number.isNaN(window.Number(input))
                 if (result.valid) {
-                    var intVal = parseInt(input, 10)
-                    result.value = floatVal == intVal ? intVal : floatVal
-                } else {
-                    result.error = `Number input must be able to be cast to a Float or Integer`
+                    result.value = Number(input)
+                }
+                if (!result.valid) {
+                    result.error = `Number input must be a valid number`
                 }
                 return result
             }}, 
@@ -195,14 +184,14 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 return result
             }}, 
             URL: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
-                console.log('line 198: URL')
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var string_input = String(input)
-                var rx = new RegExp('^[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?$')
-                result.valid = rx.test(string_input)
-                result.value = result.valid ? string_input : `https:\/\/${string_input.replace('https:\/\/', '').replace('http:\/\/', '')}`
+                var checkElement = document.createElement('input')
+                checkElement.setAttribute('type', 'url')
+                checkElement.value = String(input)
+                result.valid = checkElement.reportValidity()
+                result.value = result.valid ? checkElement.value : undefined
                 if (!result.valid) {
-                    result.error = `URL input should conform to the Regular Expression ${String(rx)}`
+                    result.error = `URL input should be a valid url`
                 }
                 return result
             }}, 

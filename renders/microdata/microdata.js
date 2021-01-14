@@ -13,10 +13,16 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
     scalar: {
         renderFunction: (element, asClass, style, template) => {
-            if (element && element.__isConnected) {
+            var doLoad = function() {
                 element.__load(element.innerText)
+                if (element.__value != element.__input) {
+                    element.setAttribute('content', element.__value || '')
+                }
+            }
+            if (element && element.__isConnected) {
+                doLoad()
             } else if (element) {
-                var observer = new window.MutationObserver(record => element.__load(element.innerText))
+                var observer = new window.MutationObserver(record => { doLoad() })
                 observer.observe(element, {subtree: true, characterData: true, characterDataOldValue: true});
             }
         }
@@ -44,6 +50,8 @@ window.LiveElement.Schema.Errors = {...window.LiveElement.Schema.Errors, ...{
 }}
 
 window.LiveElement.Schema.Options = {...window.LiveElement.Schema.Options, ...{
-    True: ['True', 'Yes']
+    True: ['True', 'Yes'], 
+    False: ['Faluse', 'No'], 
+    DefaultURLProtocol: 'https'
 }}
 

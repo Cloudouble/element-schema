@@ -103,31 +103,44 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             DateTime: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var regex = /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]{3})?(Z)?$/
-                result.valid = regex.test(String(input))
-                result.value = (new Date(Date.parse(String(input)))) || undefined
-                if (!result.valid) {
-                    result.error = `DateTime input must be a parseable date string ideally in ISO8601 DateTime format [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]`
+                var checkDateTimestamp = Date.parse(String(input).trim())
+                var checkDate = checkDateTimestamp ? (new Date(checkDateTimestamp)) : undefined
+                if (checkDate) {
+                    result.valid = true
+                    result.value = checkDate.toISOString()
+                } else {
+                    result.valid = false
+                    result.value = undefined
+                    result.error = `DateTime input must be a parseable datetime string`
                 }
                 return result
             }}, 
             Date: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var regex = /^-?[0-9]{4}-(01|02|03|04|05|06|07|08|09|10|11|12)-([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])$/
-                result.valid = regex.test(String(input))
-                result.value = (new Date(Date.parse(String(input)))) || undefined
-                if (!result.valid) {
-                    result.error = `Date input must be a parseable date string in ISO8601 DateTime format [-]CCYY-MM-DD`
+                var checkDateTimestamp = Date.parse(`${String(input).trim()}  00:00:00`)
+                var checkDate = checkDateTimestamp ? (new Date(checkDateTimestamp)) : undefined
+                if (checkDate) {
+                    result.valid = true
+                    result.value = checkDate.toDateString()
+                } else {
+                    result.valid = false
+                    result.value = undefined
+                    result.error = `Date input must be a parseable date string`
                 }
                 return result
             }}, 
             Time: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                var rx = /^[0-1][0-9]:[0-5][0-9]:[0-5][0-9](Z|([+\-][0-5][0-9]:[0-5][0-9]))?$/
-                result.valid = rx.test(String(input))
-                result.value = result.valid ? input : undefined
-                if (!result.valid) {
-                    result.error = `Time input must be a parseable time string in ISO8601 DateTime format ${String(rx)}`
+                var checkDateTimestamp = Date.parse(`2000-01-01 ${String(input).trim()}`)
+                var checkDate = checkDateTimestamp ? (new Date(checkDateTimestamp)) : undefined
+                console.log('line 133', checkDate)
+                if (checkDate) {
+                    result.valid = true
+                    result.value = checkDate.toTimeString()
+                } else {
+                    result.valid = false
+                    result.value = undefined
+                    result.error = `Time input must be a parseable time string`
                 }
                 return result
             }}, 
@@ -167,7 +180,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             XPathType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                result.value = String(input)
+                result.value = input ? String(input) : ''
                 result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `XPathType input must be strings not ${typeof input}`
@@ -176,7 +189,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             CssSelectorType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                result.value = String(input)
+                result.value = input ? String(input) : ''
                 result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `CssSelectorType input must be strings not ${typeof input}`
@@ -188,8 +201,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var checkElement = document.createElement('input')
                 checkElement.setAttribute('type', 'url')
                 checkElement.value = String(input)
-                result.valid = checkElement.reportValidity()
-                result.value = result.valid ? checkElement.value : undefined
+                result.valid = checkElement.reportValidity()  //DefaultURLProtocol
+                result.value = result.valid ? checkElement.value : ( checkElement.value.indexOf('://') == -1 ? `${window.LiveElement.Schema.Options.DefaultURLProtocol}://${checkElement.value}` : undefined)
                 if (!result.valid) {
                     result.error = `URL input should be a valid url`
                 }
@@ -197,7 +210,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}, 
             Text: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
-                result.value = String(input)
+                result.value = input ? String(input) : ''
                 result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `Text input must be strings not ${typeof input}`

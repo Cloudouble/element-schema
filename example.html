@@ -15,13 +15,14 @@
   <!--<element-button icon="home">Click Here!</element-button>-->
   
   <!--<element-thing alternatename="The thing" description="the description" additionalType="myAdditionalType">Thing</element-thing>-->
-  <element-thing additionalType="myAdditionalType">Thing</element-thing>
+  <!--<element-thing additionalType="myAdditionalType">Thing</element-thing>-->
   
-  <!--<element-text>The text</element-text>-->
+  <element-url id="test">The text</element-url>
   
   <!--<script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.5.0/element.min.js"></script>-->
   <script src="/_static/element/element.js"></script>
   <script src="schema.js"></script>
+  <script src="renders/microdata/microdata.js"></script>
   <script>
       window.LiveElement.Element.load('example-build.json').then(() => {
         window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema`
@@ -34,11 +35,11 @@
               
             console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
             
-            window.t = document.querySelector('element-thing')
-            window.t.addEventListener('schema-setproperty', event => {
+            window.test = document.getElementById('test')
+            window.test.addEventListener('schema-setproperty', event => {
               console.log('example.html: line 38: ', event)
             })
-            window.t.addEventListener('schema-setproperty-error', event => {
+            window.test.addEventListener('schema-setproperty-error', event => {
               console.log('example.html: line 41: ', event)
             })
             

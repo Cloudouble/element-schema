@@ -2,7 +2,7 @@ window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
-    Options: {configurable: false, enumerable: true, writable: true, value: {UseShadow: false, MarkDownConvert: undefined}}, 
+    Options: {configurable: false, enumerable: true, writable: true, value: {}}, 
     parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, containerInheritance, propertyMap){
         var t
         var target
@@ -52,7 +52,12 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     }}, 
     getRender: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         var renderName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, containerInheritance, propertyMap)
-        return renderName
+        renderName = renderName || window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Renders, ownPropertyName, containerInheritance, propertyMap)
+        if (typeof renderName == 'function' || typeof renderName == 'object') {
+            return renderName
+        } else if (typeof renderName == 'string' && window.LiveElement.Schema.Renders[renderName]) {
+            return window.LiveElement.Schema.Renders[renderName]
+        }
     }}, 
     getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, containerInheritance, propertyMap)
@@ -174,7 +179,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             XPathType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 result.value = String(input)
-                result.valid = typeof value == 'string'
+                result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `XPathType input must be strings not ${typeof input}`
                 }
@@ -183,26 +188,28 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             CssSelectorType: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 result.value = String(input)
-                result.valid = typeof value == 'string'
+                result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `CssSelectorType input must be strings not ${typeof input}`
                 }
                 return result
             }}, 
             URL: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
+                console.log('line 198: URL')
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 var string_input = String(input)
-                result.valid = (new RegExp('^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?')).test(string_input)
+                var rx = new RegExp('^[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?$')
+                result.valid = rx.test(string_input)
                 result.value = result.valid ? string_input : `https:\/\/${string_input.replace('https:\/\/', '').replace('http:\/\/', '')}`
                 if (!result.valid) {
-                    result.error = `URL input should conform to the Regular Expression ${'^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?'}`
+                    result.error = `URL input should conform to the Regular Expression ${String(rx)}`
                 }
                 return result
             }}, 
             Text: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 result.value = String(input)
-                result.valid = typeof value == 'string'
+                result.valid = typeof result.value == 'string'
                 if (!result.valid) {
                     result.error = `Text input must be strings not ${typeof input}`
                 }
@@ -215,6 +222,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     }, 
     ValidatorMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
     ClassMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
+    Renders: {configurable: false, enumerable: true, writable: true, value: {}}, 
     RenderMap: {configurable: false, enumerable: true, writable: true, value: {}}, 
     Errors: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             Schema: {configurable: false, enumerable: true, writable: false, value: function(value) {
@@ -240,7 +248,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             if (propertyElement) {
                 window.customElements.whenDefined(propertyTag).then(() => {
                     if (typeof propertyElement.__load == 'function') {
-                        propertyElement.__load(propertyMap.value, propertyTag, propertyMap, validationResult)
+                        propertyElement.__load(propertyMap.value, validationResult, propertyMap)
                     }
                 })
             }

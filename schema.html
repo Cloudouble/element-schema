@@ -59,10 +59,18 @@
         __propertyMap = undefined
         __isConnected = false
         
-        __load(input, tagName, propertyMap, validation) {
+        __load(input, validation, propertyMap) {
             var $this = this
             $this.__input = input
-            $this.__validation = validation
+            if (!validation) {
+                var validator
+                if ($this.__container && $this.__containerPropertyName && $this.__propertyMap) {
+                    validator = window.LiveElement.Schema.getValidator($this.__propertyMap.propertyName, window.LiveElement.Element.getInheritance($this.__container.constructor), $this.__propertyMap)
+                } else {
+                    validator = window.LiveElement.Schema.getValidator($this.constructor._rdfs_label)
+                }
+                $this.__validation = validator && typeof validator == 'function' ? validator($this.__input, propertyMap) : {}
+            }
             $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
             if ($this.__input && typeof $this.__input == 'object') {
                 Object.keys($this.__input).forEach(propertyName => {
@@ -82,7 +90,7 @@
             if (typeof render == 'function') {
                 render($this)
             } else if (render && typeof render == 'object') {
-                render($this, render.asClass, render.renderFunction, render.style, render.template)
+                window.LiveElement.Element.render($this, render.asClass, render.renderFunction, render.style, render.template)
             }
         }
         

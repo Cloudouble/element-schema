@@ -25,7 +25,13 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
 
 window.LiveElement.Schema.RenderMap = {...window.LiveElement.Schema.RenderMap, ...{
     Text: 'scalar', 
-    URL: 'scalar' 
+    URL: 'scalar', 
+    CssSelectorType: 'scalar', 
+    XPathType: 'scalar', 
+    Number: 'scalar', 
+    Float: 'scalar', 
+    Integer: 'scalar', 
+    Time: 'scalar'
 }}
 
 window.LiveElement.Schema.Errors = {...window.LiveElement.Schema.Errors, ...{

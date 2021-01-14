@@ -149,7 +149,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 if (result.valid) {
                     result.value = intVal
                 } else {
-                    result.error = `Integer input must be able to be cast to a Integer without a change in their value`
+                    result.error = `Integer input must be able to be cast to a Integer without a change in value`
                 }
                 return result
             }}, 
@@ -172,7 +172,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                     var intVal = parseInt(input, 10)
                     result.value = floatVal == intVal ? intVal : floatVal
                 } else {
-                    result.error = `Number input must be able to be cast to a Float or Integer number`
+                    result.error = `Number input must be able to be cast to a Float or Integer`
                 }
                 return result
             }}, 

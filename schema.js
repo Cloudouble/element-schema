@@ -201,8 +201,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var checkElement = document.createElement('input')
                 checkElement.setAttribute('type', 'url')
                 checkElement.value = String(input)
-                result.valid = checkElement.reportValidity()  //DefaultURLProtocol
-                result.value = result.valid ? checkElement.value : ( checkElement.value.indexOf('://') == -1 ? `${window.LiveElement.Schema.Options.DefaultURLProtocol}://${checkElement.value}` : undefined)
+                result.valid = checkElement.reportValidity()
+                result.value = result.valid ? checkElement.value : ( checkElement.value.indexOf('://') == -1 ? `${window.LiveElement.Schema.Options.DefaultURLProtocol || 'https'}://${checkElement.value}` : undefined)
                 if (!result.valid) {
                     result.error = `URL input should be a valid url`
                 }
@@ -257,6 +257,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             if (propertyMap.container) {
                 var eventPropertyMap = {}
                 if (propertyElement) {
+                    propertyMap.container.__map = propertyMap.container.__map || {}
                     propertyMap.container.__map[propertyMap.propertyName] = propertyElement
                     propertyElement.__container = propertyMap.container
                     propertyElement.__containerPropertyName = propertyMap.propertyName

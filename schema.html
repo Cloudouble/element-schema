@@ -50,14 +50,14 @@
             return this.__value
         }
         
-        __input = undefined
-        __value = undefined
-        __validation = {}
-        __map = {}
-        __container = undefined
-        __containerPropertyName = undefined
-        __propertyMap = undefined
-        __isConnected = false
+        __input = this.__input === undefined ? undefined : this.__input
+        __value = this.__value === undefined ? undefined : this.__value
+        __validation = {...(this.__validation || {}), ...{}}
+        __map = {...(this.__map || {}), ...{}}
+        __container = this.__container === undefined ? undefined : this.__container
+        __containerPropertyName = this.__containerPropertyName === undefined ? undefined : this.__containerPropertyName
+        __propertyMap = this.__propertyMap === undefined ? undefined : this.__propertyMap
+        __isConnected = this.__isConnected || false
         
         __load(input, validation, propertyMap) {
             var $this = this
@@ -70,6 +70,8 @@
                     validator = window.LiveElement.Schema.getValidator($this.constructor._rdfs_label)
                 }
                 $this.__validation = validator && typeof validator == 'function' ? validator($this.__input, propertyMap) : {}
+            } else {
+                $this.__validation = validation
             }
             $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
             if ($this.__input && typeof $this.__input == 'object') {
@@ -77,7 +79,7 @@
                     $this[propertyName] = $this.__input[propertyName]
                 })
             }
-            $this.dispatchEvent(new window.CustomEvent('schema-load', {detail: {input: input, validation: validation, propertyMap: propertyMap}}))
+            $this.dispatchEvent(new window.CustomEvent('schema-load', {detail: {input: input, validation: $this.__validation, propertyMap: propertyMap}}))
         }
         
         __render() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'SoftwareSourceCode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']).concat((['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

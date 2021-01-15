@@ -17,7 +17,7 @@
         static _rdfs_label = 'BusTrip'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop']).concat((['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

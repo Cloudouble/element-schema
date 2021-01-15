@@ -17,7 +17,7 @@
         static _rdfs_label = 'FinancialService'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['feesAndCommissionsSpecification']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['feesAndCommissionsSpecification']).concat((['feesAndCommissionsSpecification']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

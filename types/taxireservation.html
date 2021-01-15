@@ -17,7 +17,7 @@
         static _rdfs_label = 'TaxiReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['partySize', 'pickupLocation', 'pickupTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['partySize', 'pickupLocation', 'pickupTime']).concat((['partySize', 'pickupLocation', 'pickupTime']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

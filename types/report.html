@@ -17,7 +17,7 @@
         static _rdfs_label = 'Report'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['reportNumber']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['reportNumber']).concat((['reportNumber']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

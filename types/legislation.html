@@ -17,7 +17,7 @@
         static _rdfs_label = 'Legislation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType']).concat((['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

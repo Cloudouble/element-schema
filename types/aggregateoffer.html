@@ -17,7 +17,7 @@
         static _rdfs_label = 'AggregateOffer'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['highPrice', 'lowPrice', 'offerCount', 'offers']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['highPrice', 'lowPrice', 'offerCount', 'offers']).concat((['highPrice', 'lowPrice', 'offerCount', 'offers']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Recipe'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']).concat((['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

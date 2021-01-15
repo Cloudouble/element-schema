@@ -17,7 +17,7 @@
         static _rdfs_label = 'MonetaryAmount'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['currency', 'maxValue', 'minValue', 'validFrom', 'validThrough', 'value']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['currency', 'maxValue', 'minValue', 'validFrom', 'validThrough', 'value']).concat((['currency', 'maxValue', 'minValue', 'validFrom', 'validThrough', 'value']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

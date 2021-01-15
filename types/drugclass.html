@@ -17,7 +17,7 @@
         static _rdfs_label = 'DrugClass'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['drug']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['drug']).concat((['drug']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

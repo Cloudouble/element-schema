@@ -17,7 +17,7 @@
         static _rdfs_label = 'OfferShippingDetails'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']).concat((['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

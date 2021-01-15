@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalRiskEstimator'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['estimatesRiskOf', 'includedRiskFactor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['estimatesRiskOf', 'includedRiskFactor']).concat((['estimatesRiskOf', 'includedRiskFactor']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

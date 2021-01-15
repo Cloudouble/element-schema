@@ -17,7 +17,7 @@
         static _rdfs_label = 'NutritionInformation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent']).concat((['calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

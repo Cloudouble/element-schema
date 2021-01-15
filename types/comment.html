@@ -17,7 +17,7 @@
         static _rdfs_label = 'Comment'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['downvoteCount', 'parentItem', 'upvoteCount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['downvoteCount', 'parentItem', 'upvoteCount']).concat((['downvoteCount', 'parentItem', 'upvoteCount']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

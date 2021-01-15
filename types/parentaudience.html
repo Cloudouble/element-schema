@@ -17,7 +17,7 @@
         static _rdfs_label = 'ParentAudience'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['childMaxAge', 'childMinAge']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['childMaxAge', 'childMinAge']).concat((['childMaxAge', 'childMinAge']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

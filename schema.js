@@ -272,11 +272,6 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                         containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
                         containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
                         containerRenderer = window.LiveElement.Schema.getClass(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                        eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: containerRenderer}}
-                        propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
-                        if (validationResult.error) {
-                            propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
-                        }
                         if (typeof containerValidator == 'function') {
                             propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
                             propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 

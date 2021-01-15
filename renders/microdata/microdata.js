@@ -12,10 +12,10 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
     schema: (element, asClass, style, template) => {
-        if (!element.hasAttribute('itemscope')) {
+        if (element.__isConnected &&!element.hasAttribute('itemscope')) {
             element.setAttribute('itemscope', '')
         }
-        if (!element.hasAttribute('itemtype')) {
+        if (element.__isConnected &&!!element.hasAttribute('itemtype')) {
             element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
         }
     }, 
@@ -60,9 +60,12 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
             window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
             Object.keys(element.__map).forEach(attributeName => {
                 if (element.__map[attributeName] && typeof element.__map[attributeName].setAttribute == 'function') {
-                    element.__map[attributeName].setAttribute('itemprop', attributeName)
-                    if (!element.shadowRoot.querySelector(`[itemprop="${attributeName}"]`)) {
+                    var attributeElement = element.shadowRoot.querySelector(`[itemprop="${attributeName}"]`)
+                    if (!attributeElement) {
                         element.shadowRoot.append(element.__map[attributeName])
+                        element.__map[attributeName].setAttribute('itemprop', attributeName)
+                    } else {
+                        attributeElement.replaceWith(element.__map[attributeName])
                     }
                 }
             })
@@ -94,7 +97,7 @@ window.LiveElement.Schema.Errors = {...window.LiveElement.Schema.Errors, ...{
 
 window.LiveElement.Schema.Options = {...window.LiveElement.Schema.Options, ...{
     True: ['True', 'Yes'], 
-    False: ['Faluse', 'No'], 
+    False: ['False', 'No'], 
     DefaultURLProtocol: 'https'
 }}
 

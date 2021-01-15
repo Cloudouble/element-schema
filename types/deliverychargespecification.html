@@ -17,7 +17,7 @@
         static _rdfs_label = 'DeliveryChargeSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion']).concat((['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

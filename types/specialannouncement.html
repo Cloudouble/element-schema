@@ -17,7 +17,7 @@
         static _rdfs_label = 'SpecialAnnouncement'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed']).concat((['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

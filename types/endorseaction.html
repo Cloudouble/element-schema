@@ -17,7 +17,7 @@
         static _rdfs_label = 'EndorseAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['endorsee']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['endorsee']).concat((['endorsee']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

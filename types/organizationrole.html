@@ -17,7 +17,7 @@
         static _rdfs_label = 'OrganizationRole'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['numberedPosition']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['numberedPosition']).concat((['numberedPosition']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

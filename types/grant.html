@@ -17,7 +17,7 @@
         static _rdfs_label = 'Grant'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['fundedItem', 'sponsor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['fundedItem', 'sponsor']).concat((['fundedItem', 'sponsor']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

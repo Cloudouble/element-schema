@@ -17,7 +17,7 @@
         static _rdfs_label = 'CDCPMDRecord'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted']).concat((['cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

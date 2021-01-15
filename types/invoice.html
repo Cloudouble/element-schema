@@ -17,7 +17,7 @@
         static _rdfs_label = 'Invoice'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']).concat((['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

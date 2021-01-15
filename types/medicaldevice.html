@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalDevice'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome']).concat((['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

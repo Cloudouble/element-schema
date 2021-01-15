@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowToSupply'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['estimatedCost']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['estimatedCost']).concat((['estimatedCost']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

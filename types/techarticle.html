@@ -17,7 +17,7 @@
         static _rdfs_label = 'TechArticle'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['dependencies', 'proficiencyLevel']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dependencies', 'proficiencyLevel']).concat((['dependencies', 'proficiencyLevel']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

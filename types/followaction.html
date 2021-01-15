@@ -17,7 +17,7 @@
         static _rdfs_label = 'FollowAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['followee']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['followee']).concat((['followee']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

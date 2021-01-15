@@ -17,7 +17,7 @@
         static _rdfs_label = 'DrugCost'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit']).concat((['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

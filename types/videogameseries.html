@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoGameSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer']).concat((['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

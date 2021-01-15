@@ -17,7 +17,7 @@
         static _rdfs_label = '{rdfslabel}'
 
         static get observedAttributes() {{
-            return Array.from(new Set((super.observedAttributes || []).concat(([{properties_list_comma}]).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat([{properties_list_comma}]).concat(([{properties_list_comma}]).map(v => v.toLowerCase()))))
         }}
         
         constructor() {{

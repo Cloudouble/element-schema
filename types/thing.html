@@ -17,7 +17,7 @@
         static _rdfs_label = 'Thing'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']).concat((['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

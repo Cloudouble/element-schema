@@ -17,7 +17,7 @@
         static _rdfs_label = 'Book'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages']).concat((['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

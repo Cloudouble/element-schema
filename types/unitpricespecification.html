@@ -17,7 +17,7 @@
         static _rdfs_label = 'UnitPriceSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText']).concat((['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

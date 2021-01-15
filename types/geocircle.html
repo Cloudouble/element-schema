@@ -17,7 +17,7 @@
         static _rdfs_label = 'GeoCircle'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['geoMidpoint', 'geoRadius']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['geoMidpoint', 'geoRadius']).concat((['geoMidpoint', 'geoRadius']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

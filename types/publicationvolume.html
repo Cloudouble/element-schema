@@ -17,7 +17,7 @@
         static _rdfs_label = 'PublicationVolume'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['pageEnd', 'pageStart', 'pagination', 'volumeNumber']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['pageEnd', 'pageStart', 'pagination', 'volumeNumber']).concat((['pageEnd', 'pageStart', 'pagination', 'volumeNumber']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

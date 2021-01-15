@@ -17,7 +17,7 @@
         static _rdfs_label = 'ActionAccessSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']).concat((['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

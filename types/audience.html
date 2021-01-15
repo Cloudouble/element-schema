@@ -17,7 +17,7 @@
         static _rdfs_label = 'Audience'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['audienceType', 'geographicArea']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['audienceType', 'geographicArea']).concat((['audienceType', 'geographicArea']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

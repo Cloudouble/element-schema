@@ -17,7 +17,7 @@
         static _rdfs_label = 'WarrantyPromise'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['durationOfWarranty', 'warrantyScope']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['durationOfWarranty', 'warrantyScope']).concat((['durationOfWarranty', 'warrantyScope']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

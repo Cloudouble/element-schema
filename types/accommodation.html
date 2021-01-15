@@ -17,7 +17,7 @@
         static _rdfs_label = 'Accommodation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['accommodationCategory', 'accommodationFloorPlan', 'amenityFeature', 'floorLevel', 'floorSize', 'leaseLength', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'permittedUsage', 'petsAllowed', 'tourBookingPage', 'yearBuilt']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accommodationCategory', 'accommodationFloorPlan', 'amenityFeature', 'floorLevel', 'floorSize', 'leaseLength', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'permittedUsage', 'petsAllowed', 'tourBookingPage', 'yearBuilt']).concat((['accommodationCategory', 'accommodationFloorPlan', 'amenityFeature', 'floorLevel', 'floorSize', 'leaseLength', 'numberOfBathroomsTotal', 'numberOfBedrooms', 'numberOfFullBathrooms', 'numberOfPartialBathrooms', 'numberOfRooms', 'permittedUsage', 'petsAllowed', 'tourBookingPage', 'yearBuilt']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

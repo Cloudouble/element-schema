@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalScholarlyArticle'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['publicationType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['publicationType']).concat((['publicationType']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

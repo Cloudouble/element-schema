@@ -17,7 +17,7 @@
         static _rdfs_label = 'RsvpAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['additionalNumberOfGuests', 'comment', 'rsvpResponse']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalNumberOfGuests', 'comment', 'rsvpResponse']).concat((['additionalNumberOfGuests', 'comment', 'rsvpResponse']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

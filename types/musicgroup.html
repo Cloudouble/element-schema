@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicGroup'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']).concat((['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

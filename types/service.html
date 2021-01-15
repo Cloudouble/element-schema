@@ -17,7 +17,7 @@
         static _rdfs_label = 'Service'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService']).concat((['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

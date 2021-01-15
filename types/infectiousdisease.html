@@ -17,7 +17,7 @@
         static _rdfs_label = 'InfectiousDisease'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['infectiousAgent', 'infectiousAgentClass', 'transmissionMethod']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['infectiousAgent', 'infectiousAgentClass', 'transmissionMethod']).concat((['infectiousAgent', 'infectiousAgentClass', 'transmissionMethod']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

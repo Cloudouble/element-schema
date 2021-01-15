@@ -17,7 +17,7 @@
         static _rdfs_label = 'MediaObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']).concat((['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

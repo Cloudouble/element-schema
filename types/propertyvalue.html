@@ -17,7 +17,7 @@
         static _rdfs_label = 'PropertyValue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']).concat((['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

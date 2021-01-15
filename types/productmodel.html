@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductModel'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['isVariantOf', 'predecessorOf', 'successorOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['isVariantOf', 'predecessorOf', 'successorOf']).concat((['isVariantOf', 'predecessorOf', 'successorOf']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

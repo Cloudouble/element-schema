@@ -17,7 +17,7 @@
         static _rdfs_label = 'LoseAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['winner']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['winner']).concat((['winner']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

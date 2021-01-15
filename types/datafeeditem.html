@@ -17,7 +17,7 @@
         static _rdfs_label = 'DataFeedItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['dateCreated', 'dateDeleted', 'dateModified', 'item']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dateCreated', 'dateDeleted', 'dateModified', 'item']).concat((['dateCreated', 'dateDeleted', 'dateModified', 'item']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

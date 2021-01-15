@@ -17,7 +17,7 @@
         static _rdfs_label = 'GovernmentService'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['jurisdiction', 'serviceOperator']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'serviceOperator']).concat((['jurisdiction', 'serviceOperator']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'DefinedTermSet'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['hasDefinedTerm']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasDefinedTerm']).concat((['hasDefinedTerm']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

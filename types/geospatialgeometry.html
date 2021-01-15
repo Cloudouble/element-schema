@@ -17,7 +17,7 @@
         static _rdfs_label = 'GeospatialGeometry'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']).concat((['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

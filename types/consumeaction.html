@@ -17,7 +17,7 @@
         static _rdfs_label = 'ConsumeAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['actionAccessibilityRequirement', 'expectsAcceptanceOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionAccessibilityRequirement', 'expectsAcceptanceOf']).concat((['actionAccessibilityRequirement', 'expectsAcceptanceOf']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalCondition'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']).concat((['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

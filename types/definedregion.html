@@ -17,7 +17,7 @@
         static _rdfs_label = 'DefinedRegion'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['addressCountry', 'addressRegion', 'postalCode', 'postalCodePrefix', 'postalCodeRange']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['addressCountry', 'addressRegion', 'postalCode', 'postalCodePrefix', 'postalCodeRange']).concat((['addressCountry', 'addressRegion', 'postalCode', 'postalCodePrefix', 'postalCodeRange']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'AlignmentObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']).concat((['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

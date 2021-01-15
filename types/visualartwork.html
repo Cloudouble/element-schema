@@ -17,7 +17,7 @@
         static _rdfs_label = 'VisualArtwork'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']).concat((['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

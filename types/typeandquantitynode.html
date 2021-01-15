@@ -17,7 +17,7 @@
         static _rdfs_label = 'TypeAndQuantityNode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText']).concat((['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

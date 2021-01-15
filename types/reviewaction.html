@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReviewAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['resultReview']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['resultReview']).concat((['resultReview']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

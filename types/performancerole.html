@@ -17,7 +17,7 @@
         static _rdfs_label = 'PerformanceRole'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['characterName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['characterName']).concat((['characterName']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

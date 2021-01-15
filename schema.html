@@ -76,7 +76,7 @@
             $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
             if ($this.__input && typeof $this.__input == 'object') {
                 Object.keys($this.__input).forEach(propertyName => {
-                    $this[propertyName] = $this.__input[propertyName]
+                    $this[propertyName.toLowerCase()] = $this.__input[propertyName]
                 })
             }
             $this.dispatchEvent(new window.CustomEvent('schema-load', {detail: {input: input, validation: $this.__validation, propertyMap: propertyMap}}))

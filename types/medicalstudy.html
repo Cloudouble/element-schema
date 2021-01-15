@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalStudy'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['healthCondition', 'sponsor', 'status', 'studyLocation', 'studySubject']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthCondition', 'sponsor', 'status', 'studyLocation', 'studySubject']).concat((['healthCondition', 'sponsor', 'status', 'studyLocation', 'studySubject']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

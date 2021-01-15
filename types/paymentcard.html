@@ -17,7 +17,7 @@
         static _rdfs_label = 'PaymentCard'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']).concat((['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

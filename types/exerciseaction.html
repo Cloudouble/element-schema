@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExerciseAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation']).concat((['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ParcelDelivery'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']).concat((['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

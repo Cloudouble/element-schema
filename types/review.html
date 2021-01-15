@@ -17,7 +17,7 @@
         static _rdfs_label = 'Review'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['itemReviewed', 'reviewAspect', 'reviewBody', 'reviewRating']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['itemReviewed', 'reviewAspect', 'reviewBody', 'reviewRating']).concat((['itemReviewed', 'reviewAspect', 'reviewBody', 'reviewRating']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

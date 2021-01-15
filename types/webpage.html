@@ -17,7 +17,7 @@
         static _rdfs_label = 'WebPage'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']).concat((['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

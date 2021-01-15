@@ -17,7 +17,7 @@
         static _rdfs_label = 'LendAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['borrower']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['borrower']).concat((['borrower']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

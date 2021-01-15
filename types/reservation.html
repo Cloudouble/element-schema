@@ -17,7 +17,7 @@
         static _rdfs_label = 'Reservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']).concat((['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

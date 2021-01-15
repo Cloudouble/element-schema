@@ -17,7 +17,7 @@
         static _rdfs_label = 'QuantitativeValueDistribution'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90']).concat((['duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Guide'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['reviewAspect']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['reviewAspect']).concat((['reviewAspect']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'TVEpisode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR']).concat((['countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ImageObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['caption', 'exifData', 'representativeOfPage', 'thumbnail']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['caption', 'exifData', 'representativeOfPage', 'thumbnail']).concat((['caption', 'exifData', 'representativeOfPage', 'thumbnail']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

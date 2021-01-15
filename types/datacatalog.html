@@ -17,7 +17,7 @@
         static _rdfs_label = 'DataCatalog'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['dataset', 'measurementTechnique']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dataset', 'measurementTechnique']).concat((['dataset', 'measurementTechnique']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

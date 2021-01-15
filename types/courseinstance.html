@@ -17,7 +17,7 @@
         static _rdfs_label = 'CourseInstance'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['courseMode', 'courseWorkload', 'instructor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['courseMode', 'courseWorkload', 'instructor']).concat((['courseMode', 'courseWorkload', 'instructor']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

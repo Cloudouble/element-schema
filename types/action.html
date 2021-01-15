@@ -17,7 +17,7 @@
         static _rdfs_label = 'Action'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat((['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']).concat((['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']).map(v => v.toLowerCase()))))
         }
         
         constructor() {

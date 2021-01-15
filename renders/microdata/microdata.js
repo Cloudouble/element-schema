@@ -11,6 +11,14 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 }}
 
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
+    schema: (element, asClass, style, template) => {
+        if (!element.hasAttribute('itemscope')) {
+            element.setAttribute('itemscope', '')
+        }
+        if (!element.hasAttribute('itemtype')) {
+            element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
+        }
+    }, 
     scalar: (element, asClass, style, template) => {
         var doLoad = function() {
             window.customElements.whenDefined(element.tagName.toLowerCase()).then(() => {
@@ -20,18 +28,34 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
             })
         }
         var observer = new window.MutationObserver(record => { doLoad() })
-        observer.observe(element, {subtree: true, characterData: true, characterDataOldValue: true});
+        observer.observe(element, {subtree: true, characterData: true, characterDataOldValue: true})
         element.addEventListener('schema-load', event => {
             if (element.__input != element.innerText) {
                 element.innerText = element.__input
             }
-            if (element.__value != element.__input) {
-                element.setAttribute('content', element.__value === undefined ? '' : element.__value)
-            }
+            element.setAttribute('content', element.__value === undefined ? '' : element.__value)
         })
+        if (!element.__propertyMap) {
+            window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
+        }
+    }, 
+    time: {
+        renderFunction: (element, asClass, style, template) => {
+            window.LiveElement.Schema.Renders.scalar(element, asClass, style, template)
+            if (!element.__isConnected) {
+                var observer = new window.MutationObserver(record => { 
+                    var contentValue = element.getAttribute('content')
+                    if (contentValue != element.getAttribute('datetime')) {
+                        element.setAttribute('datetime', contentValue)
+                    }
+                })
+                observer.observe(element, {attributeFilter: ['content']})
+            }
+        }
     }, 
     object: (element, asClass, style, template) => {
         if (element.__isConnected && element.__map && typeof element.__map == 'object') {
+            window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
             Object.keys(element.__map).forEach(attributeName => {
                 if (element.__map[attributeName] && typeof element.__map[attributeName].setAttribute == 'function') {
                     element.__map[attributeName].setAttribute('itemprop', attributeName)
@@ -53,7 +77,7 @@ window.LiveElement.Schema.RenderMap = {...window.LiveElement.Schema.RenderMap, .
     Number: 'scalar', 
     Float: 'scalar', 
     Integer: 'scalar', 
-    Time: 'scalar', 
+    Time: 'time', 
     Date: 'scalar', 
     DateTime: 'scalar', 
     Boolean: 'scalar', 

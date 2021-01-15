@@ -121,7 +121,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var checkDate = checkDateTimestamp ? (new Date(checkDateTimestamp)) : undefined
                 if (checkDate) {
                     result.valid = true
-                    result.value = checkDate.toDateString()
+                    result.value = checkDate.toISOString().split('T').shift()
                 } else {
                     result.valid = false
                     result.value = undefined
@@ -133,7 +133,6 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var result = window.LiveElement.Schema.Validators.Schema(input, propertyMap)
                 var checkDateTimestamp = Date.parse(`2000-01-01 ${String(input).trim()}`)
                 var checkDate = checkDateTimestamp ? (new Date(checkDateTimestamp)) : undefined
-                console.log('line 133', checkDate)
                 if (checkDate) {
                     result.valid = true
                     result.value = checkDate.toTimeString()

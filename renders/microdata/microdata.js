@@ -33,7 +33,9 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
             if (element.__input != element.innerText) {
                 element.innerText = element.__input
             }
-            element.setAttribute('content', element.__value === undefined ? '' : element.__value)
+            if (element.__value != element.innerText) {
+                element.setAttribute('content', element.__value === undefined ? '' : element.__value)
+            }
         })
         if (!element.__propertyMap) {
             window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
@@ -78,8 +80,8 @@ window.LiveElement.Schema.RenderMap = {...window.LiveElement.Schema.RenderMap, .
     Float: 'scalar', 
     Integer: 'scalar', 
     Time: 'time', 
-    Date: 'scalar', 
-    DateTime: 'scalar', 
+    Date: 'time', 
+    DateTime: 'time', 
     Boolean: 'scalar', 
     False: 'scalar', 
     True: 'scalar', 

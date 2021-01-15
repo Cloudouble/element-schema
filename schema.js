@@ -1,7 +1,7 @@
 window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
-    DataTypes: {configurable: false, enumerable: true, writable: true, value: ['True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
+    DataTypes: {configurable: false, enumerable: true, writable: true, value: ['Text', 'True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
     Options: {configurable: false, enumerable: true, writable: true, value: {}}, 
     parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, containerInheritance, propertyMap){
         var t

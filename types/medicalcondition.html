@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalCondition'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']).concat((['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedanatomy() { return this.associatedAnatomy }
-        set associatedanatomy(value) { this.associatedAnatomy = value }
 
         differentialDiagnosis($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get differentialdiagnosis() { return this.differentialDiagnosis }
-        set differentialdiagnosis(value) { this.differentialDiagnosis = value }
 
         drug($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectedprognosis() { return this.expectedPrognosis }
-        set expectedprognosis(value) { this.expectedPrognosis = value }
 
         naturalProgression($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -126,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get naturalprogression() { return this.naturalProgression }
-        set naturalprogression(value) { this.naturalProgression = value }
 
         pathophysiology($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -158,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get possiblecomplication() { return this.possibleComplication }
-        set possiblecomplication(value) { this.possibleComplication = value }
 
         possibleTreatment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -175,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get possibletreatment() { return this.possibleTreatment }
-        set possibletreatment(value) { this.possibleTreatment = value }
 
         primaryPrevention($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -192,8 +180,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get primaryprevention() { return this.primaryPrevention }
-        set primaryprevention(value) { this.primaryPrevention = value }
 
         riskFactor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -209,8 +195,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get riskfactor() { return this.riskFactor }
-        set riskfactor(value) { this.riskFactor = value }
 
         secondaryPrevention($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -226,8 +210,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get secondaryprevention() { return this.secondaryPrevention }
-        set secondaryprevention(value) { this.secondaryPrevention = value }
 
         signOrSymptom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -243,8 +225,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get signorsymptom() { return this.signOrSymptom }
-        set signorsymptom(value) { this.signOrSymptom = value }
 
         stage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -292,8 +272,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typicaltest() { return this.typicalTest }
-        set typicaltest(value) { this.typicalTest = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'DoseSchedule'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['doseUnit', 'doseValue', 'frequency', 'targetPopulation']).concat((['doseUnit', 'doseValue', 'frequency', 'targetPopulation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['doseUnit', 'doseValue', 'frequency', 'targetPopulation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doseunit() { return this.doseUnit }
-        set doseunit(value) { this.doseUnit = value }
 
         doseValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dosevalue() { return this.doseValue }
-        set dosevalue(value) { this.doseValue = value }
 
         frequency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetpopulation() { return this.targetPopulation }
-        set targetpopulation(value) { this.targetPopulation = value }
         
     }
 </script>

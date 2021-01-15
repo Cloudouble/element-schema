@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalSign'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['identifyingExam', 'identifyingTest']).concat((['identifyingExam', 'identifyingTest']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['identifyingExam', 'identifyingTest'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get identifyingexam() { return this.identifyingExam }
-        set identifyingexam(value) { this.identifyingExam = value }
 
         identifyingTest($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get identifyingtest() { return this.identifyingTest }
-        set identifyingtest(value) { this.identifyingTest = value }
         
     }
 </script>

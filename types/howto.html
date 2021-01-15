@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowTo'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['estimatedCost', 'performTime', 'prepTime', 'step', 'steps', 'supply', 'tool', 'totalTime', 'yield']).concat((['estimatedCost', 'performTime', 'prepTime', 'step', 'steps', 'supply', 'tool', 'totalTime', 'yield']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['estimatedCost', 'performTime', 'prepTime', 'step', 'steps', 'supply', 'tool', 'totalTime', 'yield'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get estimatedcost() { return this.estimatedCost }
-        set estimatedcost(value) { this.estimatedCost = value }
 
         performTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get performtime() { return this.performTime }
-        set performtime(value) { this.performTime = value }
 
         prepTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get preptime() { return this.prepTime }
-        set preptime(value) { this.prepTime = value }
 
         step($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +156,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totaltime() { return this.totalTime }
-        set totaltime(value) { this.totalTime = value }
 
         yield($this, value) {
 			window.LiveElement.Schema.renderProperty({

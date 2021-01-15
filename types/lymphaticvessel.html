@@ -17,7 +17,7 @@
         static _rdfs_label = 'LymphaticVessel'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['originatesFrom', 'regionDrained', 'runsTo']).concat((['originatesFrom', 'regionDrained', 'runsTo']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['originatesFrom', 'regionDrained', 'runsTo'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get originatesfrom() { return this.originatesFrom }
-        set originatesfrom(value) { this.originatesFrom = value }
 
         regionDrained($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get regiondrained() { return this.regionDrained }
-        set regiondrained(value) { this.regionDrained = value }
 
         runsTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get runsto() { return this.runsTo }
-        set runsto(value) { this.runsTo = value }
         
     }
 </script>

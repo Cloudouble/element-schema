@@ -17,7 +17,7 @@
         static _rdfs_label = 'BoatTrip'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBoatTerminal', 'departureBoatTerminal']).concat((['arrivalBoatTerminal', 'departureBoatTerminal']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBoatTerminal', 'departureBoatTerminal'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalboatterminal() { return this.arrivalBoatTerminal }
-        set arrivalboatterminal(value) { this.arrivalBoatTerminal = value }
 
         departureBoatTerminal($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departureboatterminal() { return this.departureBoatTerminal }
-        set departureboatterminal(value) { this.departureBoatTerminal = value }
         
     }
 </script>

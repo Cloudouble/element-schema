@@ -17,7 +17,7 @@
         static _rdfs_label = 'Suite'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bed', 'numberOfRooms', 'occupancy']).concat((['bed', 'numberOfRooms', 'occupancy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bed', 'numberOfRooms', 'occupancy'])))
         }
         
         constructor() {
@@ -61,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofrooms() { return this.numberOfRooms }
-        set numberofrooms(value) { this.numberOfRooms = value }
 
         occupancy($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -71,13 +71,10 @@ for index, datatype in enumerate([d for d in graph if (
             'properties_list_comma': json.dumps(properties_list)[1:-1].replace('"', "'"), 
             'properties_list_getters': '''
 '''.join(['''
-        {property_name}($this, value) {{\n\t\t\twindow.LiveElement.Schema.renderProperty({property_map})\n\t\t\treturn value && typeof value == 'object' ? undefined : value\n\t\t}}{getters}'''.format(
+        {property_name}($this, value) {{\n\t\t\twindow.LiveElement.Schema.renderProperty({property_map})\n\t\t\treturn value && typeof value == 'object' ? undefined : value\n\t\t}}'''.format(
                 property_map=re.sub('"([^"]+)":', r"\1:", json.dumps(properties_dict.get(property_name, {}), sort_keys=True, indent="\t\t\t\t")).replace('"$this"', '$this').replace('"value"', 'value').replace("\n}", "\n\t\t\t}"), 
                 property_name=property_name, 
-                property_name_lower=property_name.lower(), 
-                getters='''
-        get {property_name_lower}() {{ return this.{property_name} }}
-        set {property_name_lower}(value) {{ this.{property_name} = value }}'''.format(property_name_lower=property_name.lower(), property_name=property_name) if property_name.lower() != property_name else ''
+                property_name_lower=property_name.lower()
             ).replace("\n};", "\n\t\t\t};").replace("\n\t\t\t\t\t\t\t\t", "\n\t\t\t\t\t") for property_name in properties_list])
         }
         class_file_text = class_template.format(**class_file_properties)

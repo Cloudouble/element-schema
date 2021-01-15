@@ -17,7 +17,7 @@
         static _rdfs_label = 'Book'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages']).concat((['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['abridged', 'bookEdition', 'bookFormat', 'illustrator', 'isbn', 'numberOfPages'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bookedition() { return this.bookEdition }
-        set bookedition(value) { this.bookEdition = value }
 
         bookFormat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bookformat() { return this.bookFormat }
-        set bookformat(value) { this.bookFormat = value }
 
         illustrator($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -122,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofpages() { return this.numberOfPages }
-        set numberofpages(value) { this.numberOfPages = value }
         
     }
 </script>

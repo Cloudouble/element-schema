@@ -17,7 +17,7 @@
         static _rdfs_label = 'Vein'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['drainsTo', 'regionDrained', 'tributary']).concat((['drainsTo', 'regionDrained', 'tributary']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['drainsTo', 'regionDrained', 'tributary'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get drainsto() { return this.drainsTo }
-        set drainsto(value) { this.drainsTo = value }
 
         regionDrained($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get regiondrained() { return this.regionDrained }
-        set regiondrained(value) { this.regionDrained = value }
 
         tributary($this, value) {
 			window.LiveElement.Schema.renderProperty({

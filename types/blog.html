@@ -17,7 +17,7 @@
         static _rdfs_label = 'Blog'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['blogPost', 'blogPosts', 'issn']).concat((['blogPost', 'blogPosts', 'issn']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['blogPost', 'blogPosts', 'issn'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get blogpost() { return this.blogPost }
-        set blogpost(value) { this.blogPost = value }
 
         blogPosts($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get blogposts() { return this.blogPosts }
-        set blogposts(value) { this.blogPosts = value }
 
         issn($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MovieSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer']).concat((['actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer'])))
         }
         
         constructor() {
@@ -104,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -121,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         trailer($this, value) {
 			window.LiveElement.Schema.renderProperty({

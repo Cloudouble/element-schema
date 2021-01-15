@@ -17,7 +17,7 @@
         static _rdfs_label = 'AnatomicalStructure'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedPathophysiology', 'bodyLocation', 'connectedTo', 'diagram', 'partOfSystem', 'relatedCondition', 'relatedTherapy', 'subStructure']).concat((['associatedPathophysiology', 'bodyLocation', 'connectedTo', 'diagram', 'partOfSystem', 'relatedCondition', 'relatedTherapy', 'subStructure']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedPathophysiology', 'bodyLocation', 'connectedTo', 'diagram', 'partOfSystem', 'relatedCondition', 'relatedTherapy', 'subStructure'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedpathophysiology() { return this.associatedPathophysiology }
-        set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
         bodyLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bodylocation() { return this.bodyLocation }
-        set bodylocation(value) { this.bodyLocation = value }
 
         connectedTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get connectedto() { return this.connectedTo }
-        set connectedto(value) { this.connectedTo = value }
 
         diagram($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partofsystem() { return this.partOfSystem }
-        set partofsystem(value) { this.partOfSystem = value }
 
         relatedCondition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -126,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedcondition() { return this.relatedCondition }
-        set relatedcondition(value) { this.relatedCondition = value }
 
         relatedTherapy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -143,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedtherapy() { return this.relatedTherapy }
-        set relatedtherapy(value) { this.relatedTherapy = value }
 
         subStructure($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -160,8 +148,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get substructure() { return this.subStructure }
-        set substructure(value) { this.subStructure = value }
         
     }
 </script>

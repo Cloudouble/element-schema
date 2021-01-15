@@ -17,7 +17,7 @@
         static _rdfs_label = 'MediaSubscription'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['authenticator', 'expectsAcceptanceOf']).concat((['authenticator', 'expectsAcceptanceOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['authenticator', 'expectsAcceptanceOf'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectsacceptanceof() { return this.expectsAcceptanceOf }
-        set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
         
     }
 </script>

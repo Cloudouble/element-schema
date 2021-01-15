@@ -17,7 +17,7 @@
         static _rdfs_label = 'FoodEstablishment'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating']).concat((['acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['acceptsReservations', 'hasMenu', 'menu', 'servesCuisine', 'starRating'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get acceptsreservations() { return this.acceptsReservations }
-        set acceptsreservations(value) { this.acceptsReservations = value }
 
         hasMenu($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -64,8 +62,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmenu() { return this.hasMenu }
-        set hasmenu(value) { this.hasMenu = value }
 
         menu($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +94,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servescuisine() { return this.servesCuisine }
-        set servescuisine(value) { this.servesCuisine = value }
 
         starRating($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -115,8 +109,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get starrating() { return this.starRating }
-        set starrating(value) { this.starRating = value }
         
     }
 </script>

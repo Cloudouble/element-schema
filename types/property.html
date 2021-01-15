@@ -17,7 +17,7 @@
         static _rdfs_label = 'Property'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['domainIncludes', 'inverseOf', 'rangeIncludes', 'supersededBy']).concat((['domainIncludes', 'inverseOf', 'rangeIncludes', 'supersededBy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['domainIncludes', 'inverseOf', 'rangeIncludes', 'supersededBy'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get domainincludes() { return this.domainIncludes }
-        set domainincludes(value) { this.domainIncludes = value }
 
         inverseOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inverseof() { return this.inverseOf }
-        set inverseof(value) { this.inverseOf = value }
 
         rangeIncludes($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get rangeincludes() { return this.rangeIncludes }
-        set rangeincludes(value) { this.rangeIncludes = value }
 
         supersededBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get supersededby() { return this.supersededBy }
-        set supersededby(value) { this.supersededBy = value }
         
     }
 </script>

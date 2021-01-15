@@ -17,7 +17,7 @@
         static _rdfs_label = 'Brand'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['aggregateRating', 'logo', 'review', 'slogan']).concat((['aggregateRating', 'logo', 'review', 'slogan']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['aggregateRating', 'logo', 'review', 'slogan'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         logo($this, value) {
 			window.LiveElement.Schema.renderProperty({

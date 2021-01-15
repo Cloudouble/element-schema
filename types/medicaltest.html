@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalTest'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice']).concat((['affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get affectedby() { return this.affectedBy }
-        set affectedby(value) { this.affectedBy = value }
 
         normalRange($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get normalrange() { return this.normalRange }
-        set normalrange(value) { this.normalRange = value }
 
         signDetected($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get signdetected() { return this.signDetected }
-        set signdetected(value) { this.signDetected = value }
 
         usedToDiagnose($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get usedtodiagnose() { return this.usedToDiagnose }
-        set usedtodiagnose(value) { this.usedToDiagnose = value }
 
         usesDevice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get usesdevice() { return this.usesDevice }
-        set usesdevice(value) { this.usesDevice = value }
         
     }
 </script>

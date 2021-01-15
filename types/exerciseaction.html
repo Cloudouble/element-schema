@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExerciseAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation']).concat((['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['course', 'diet', 'distance', 'exerciseCourse', 'exercisePlan', 'exerciseRelatedDiet', 'exerciseType', 'fromLocation', 'opponent', 'sportsActivityLocation', 'sportsEvent', 'sportsTeam', 'toLocation'])))
         }
         
         constructor() {
@@ -88,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exercisecourse() { return this.exerciseCourse }
-        set exercisecourse(value) { this.exerciseCourse = value }
 
         exercisePlan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -105,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exerciseplan() { return this.exercisePlan }
-        set exerciseplan(value) { this.exercisePlan = value }
 
         exerciseRelatedDiet($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -122,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exerciserelateddiet() { return this.exerciseRelatedDiet }
-        set exerciserelateddiet(value) { this.exerciseRelatedDiet = value }
 
         exerciseType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -139,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exercisetype() { return this.exerciseType }
-        set exercisetype(value) { this.exerciseType = value }
 
         fromLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -156,8 +148,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get fromlocation() { return this.fromLocation }
-        set fromlocation(value) { this.fromLocation = value }
 
         opponent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -188,8 +178,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sportsactivitylocation() { return this.sportsActivityLocation }
-        set sportsactivitylocation(value) { this.sportsActivityLocation = value }
 
         sportsEvent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -205,8 +193,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sportsevent() { return this.sportsEvent }
-        set sportsevent(value) { this.sportsEvent = value }
 
         sportsTeam($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -222,8 +208,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sportsteam() { return this.sportsTeam }
-        set sportsteam(value) { this.sportsTeam = value }
 
         toLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -239,8 +223,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tolocation() { return this.toLocation }
-        set tolocation(value) { this.toLocation = value }
         
     }
 </script>

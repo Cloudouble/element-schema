@@ -17,7 +17,7 @@
         static _rdfs_label = 'CategoryCode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['codeValue', 'inCodeSet']).concat((['codeValue', 'inCodeSet']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['codeValue', 'inCodeSet'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get codevalue() { return this.codeValue }
-        set codevalue(value) { this.codeValue = value }
 
         inCodeSet($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get incodeset() { return this.inCodeSet }
-        set incodeset(value) { this.inCodeSet = value }
         
     }
 </script>

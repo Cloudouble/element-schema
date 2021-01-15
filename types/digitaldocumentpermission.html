@@ -17,7 +17,7 @@
         static _rdfs_label = 'DigitalDocumentPermission'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['grantee', 'permissionType']).concat((['grantee', 'permissionType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['grantee', 'permissionType'])))
         }
         
         constructor() {
@@ -61,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get permissiontype() { return this.permissionType }
-        set permissiontype(value) { this.permissionType = value }
         
     }
 </script>

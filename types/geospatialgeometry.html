@@ -17,7 +17,7 @@
         static _rdfs_label = 'GeospatialGeometry'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']).concat((['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocontains() { return this.geoContains }
-        set geocontains(value) { this.geoContains = value }
 
         geoCoveredBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocoveredby() { return this.geoCoveredBy }
-        set geocoveredby(value) { this.geoCoveredBy = value }
 
         geoCovers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocovers() { return this.geoCovers }
-        set geocovers(value) { this.geoCovers = value }
 
         geoCrosses($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +92,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocrosses() { return this.geoCrosses }
-        set geocrosses(value) { this.geoCrosses = value }
 
         geoDisjoint($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -116,8 +108,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geodisjoint() { return this.geoDisjoint }
-        set geodisjoint(value) { this.geoDisjoint = value }
 
         geoEquals($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -134,8 +124,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geoequals() { return this.geoEquals }
-        set geoequals(value) { this.geoEquals = value }
 
         geoIntersects($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -152,8 +140,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geointersects() { return this.geoIntersects }
-        set geointersects(value) { this.geoIntersects = value }
 
         geoOverlaps($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -170,8 +156,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geooverlaps() { return this.geoOverlaps }
-        set geooverlaps(value) { this.geoOverlaps = value }
 
         geoTouches($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -188,8 +172,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geotouches() { return this.geoTouches }
-        set geotouches(value) { this.geoTouches = value }
 
         geoWithin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -206,8 +188,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geowithin() { return this.geoWithin }
-        set geowithin(value) { this.geoWithin = value }
         
     }
 </script>

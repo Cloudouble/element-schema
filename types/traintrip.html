@@ -17,7 +17,7 @@
         static _rdfs_label = 'TrainTrip'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalPlatform', 'arrivalStation', 'departurePlatform', 'departureStation', 'trainName', 'trainNumber']).concat((['arrivalPlatform', 'arrivalStation', 'departurePlatform', 'departureStation', 'trainName', 'trainNumber']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalPlatform', 'arrivalStation', 'departurePlatform', 'departureStation', 'trainName', 'trainNumber'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalplatform() { return this.arrivalPlatform }
-        set arrivalplatform(value) { this.arrivalPlatform = value }
 
         arrivalStation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalstation() { return this.arrivalStation }
-        set arrivalstation(value) { this.arrivalStation = value }
 
         departurePlatform($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departureplatform() { return this.departurePlatform }
-        set departureplatform(value) { this.departurePlatform = value }
 
         departureStation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departurestation() { return this.departureStation }
-        set departurestation(value) { this.departureStation = value }
 
         trainName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trainname() { return this.trainName }
-        set trainname(value) { this.trainName = value }
 
         trainNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trainnumber() { return this.trainNumber }
-        set trainnumber(value) { this.trainNumber = value }
         
     }
 </script>

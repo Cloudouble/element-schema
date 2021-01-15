@@ -17,7 +17,7 @@
         static _rdfs_label = 'AlignmentObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']).concat((['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get alignmenttype() { return this.alignmentType }
-        set alignmenttype(value) { this.alignmentType = value }
 
         educationalFramework($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalframework() { return this.educationalFramework }
-        set educationalframework(value) { this.educationalFramework = value }
 
         targetDescription($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetdescription() { return this.targetDescription }
-        set targetdescription(value) { this.targetDescription = value }
 
         targetName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetname() { return this.targetName }
-        set targetname(value) { this.targetName = value }
 
         targetUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targeturl() { return this.targetUrl }
-        set targeturl(value) { this.targetUrl = value }
         
     }
 </script>

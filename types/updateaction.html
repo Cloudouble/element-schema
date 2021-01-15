@@ -17,7 +17,7 @@
         static _rdfs_label = 'UpdateAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['collection', 'targetCollection']).concat((['collection', 'targetCollection']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['collection', 'targetCollection'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetcollection() { return this.targetCollection }
-        set targetcollection(value) { this.targetCollection = value }
         
     }
 </script>

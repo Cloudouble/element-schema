@@ -17,7 +17,7 @@
         static _rdfs_label = 'DefinedTerm'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inDefinedTermSet', 'termCode']).concat((['inDefinedTermSet', 'termCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['inDefinedTermSet', 'termCode'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get indefinedtermset() { return this.inDefinedTermSet }
-        set indefinedtermset(value) { this.inDefinedTermSet = value }
 
         termCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get termcode() { return this.termCode }
-        set termcode(value) { this.termCode = value }
         
     }
 </script>

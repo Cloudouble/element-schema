@@ -17,7 +17,7 @@
         static _rdfs_label = 'ParentAudience'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['childMaxAge', 'childMinAge']).concat((['childMaxAge', 'childMinAge']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['childMaxAge', 'childMinAge'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get childmaxage() { return this.childMaxAge }
-        set childmaxage(value) { this.childMaxAge = value }
 
         childMinAge($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get childminage() { return this.childMinAge }
-        set childminage(value) { this.childMinAge = value }
         
     }
 </script>

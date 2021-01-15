@@ -17,7 +17,7 @@
         static _rdfs_label = 'OrderItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem']).concat((['orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get orderdelivery() { return this.orderDelivery }
-        set orderdelivery(value) { this.orderDelivery = value }
 
         orderItemNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get orderitemnumber() { return this.orderItemNumber }
-        set orderitemnumber(value) { this.orderItemNumber = value }
 
         orderItemStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get orderitemstatus() { return this.orderItemStatus }
-        set orderitemstatus(value) { this.orderItemStatus = value }
 
         orderQuantity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get orderquantity() { return this.orderQuantity }
-        set orderquantity(value) { this.orderQuantity = value }
 
         orderedItem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -113,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ordereditem() { return this.orderedItem }
-        set ordereditem(value) { this.orderedItem = value }
         
     }
 </script>

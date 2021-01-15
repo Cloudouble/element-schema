@@ -17,7 +17,7 @@
         static _rdfs_label = 'CreativeWork'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'abstract', 'accessMode', 'accessModeSufficient', 'accessibilityAPI', 'accessibilityControl', 'accessibilityFeature', 'accessibilityHazard', 'accessibilitySummary', 'accountablePerson', 'acquireLicensePage', 'aggregateRating', 'alternativeHeadline', 'assesses', 'associatedMedia', 'audience', 'audio', 'author', 'award', 'awards', 'character', 'citation', 'comment', 'commentCount', 'conditionsOfAccess', 'contentLocation', 'contentRating', 'contentReferenceTime', 'contributor', 'copyrightHolder', 'copyrightNotice', 'copyrightYear', 'correction', 'creativeWorkStatus', 'creator', 'creditText', 'dateCreated', 'dateModified', 'datePublished', 'discussionUrl', 'editEIDR', 'editor', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'encoding', 'encodingFormat', 'encodings', 'exampleOfWork', 'expires', 'fileFormat', 'funder', 'genre', 'hasPart', 'headline', 'inLanguage', 'interactionStatistic', 'interactivityType', 'isAccessibleForFree', 'isBasedOn', 'isBasedOnUrl', 'isFamilyFriendly', 'isPartOf', 'keywords', 'learningResourceType', 'license', 'locationCreated', 'mainEntity', 'maintainer', 'material', 'materialExtent', 'mentions', 'offers', 'pattern', 'position', 'producer', 'provider', 'publication', 'publisher', 'publisherImprint', 'publishingPrinciples', 'recordedAt', 'releasedEvent', 'review', 'reviews', 'schemaVersion', 'sdDatePublished', 'sdLicense', 'sdPublisher', 'size', 'sourceOrganization', 'spatial', 'spatialCoverage', 'sponsor', 'teaches', 'temporal', 'temporalCoverage', 'text', 'thumbnailUrl', 'timeRequired', 'translationOfWork', 'translator', 'typicalAgeRange', 'usageInfo', 'version', 'video', 'workExample', 'workTranslation']).concat((['about', 'abstract', 'accessMode', 'accessModeSufficient', 'accessibilityAPI', 'accessibilityControl', 'accessibilityFeature', 'accessibilityHazard', 'accessibilitySummary', 'accountablePerson', 'acquireLicensePage', 'aggregateRating', 'alternativeHeadline', 'assesses', 'associatedMedia', 'audience', 'audio', 'author', 'award', 'awards', 'character', 'citation', 'comment', 'commentCount', 'conditionsOfAccess', 'contentLocation', 'contentRating', 'contentReferenceTime', 'contributor', 'copyrightHolder', 'copyrightNotice', 'copyrightYear', 'correction', 'creativeWorkStatus', 'creator', 'creditText', 'dateCreated', 'dateModified', 'datePublished', 'discussionUrl', 'editEIDR', 'editor', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'encoding', 'encodingFormat', 'encodings', 'exampleOfWork', 'expires', 'fileFormat', 'funder', 'genre', 'hasPart', 'headline', 'inLanguage', 'interactionStatistic', 'interactivityType', 'isAccessibleForFree', 'isBasedOn', 'isBasedOnUrl', 'isFamilyFriendly', 'isPartOf', 'keywords', 'learningResourceType', 'license', 'locationCreated', 'mainEntity', 'maintainer', 'material', 'materialExtent', 'mentions', 'offers', 'pattern', 'position', 'producer', 'provider', 'publication', 'publisher', 'publisherImprint', 'publishingPrinciples', 'recordedAt', 'releasedEvent', 'review', 'reviews', 'schemaVersion', 'sdDatePublished', 'sdLicense', 'sdPublisher', 'size', 'sourceOrganization', 'spatial', 'spatialCoverage', 'sponsor', 'teaches', 'temporal', 'temporalCoverage', 'text', 'thumbnailUrl', 'timeRequired', 'translationOfWork', 'translator', 'typicalAgeRange', 'usageInfo', 'version', 'video', 'workExample', 'workTranslation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'abstract', 'accessMode', 'accessModeSufficient', 'accessibilityAPI', 'accessibilityControl', 'accessibilityFeature', 'accessibilityHazard', 'accessibilitySummary', 'accountablePerson', 'acquireLicensePage', 'aggregateRating', 'alternativeHeadline', 'assesses', 'associatedMedia', 'audience', 'audio', 'author', 'award', 'awards', 'character', 'citation', 'comment', 'commentCount', 'conditionsOfAccess', 'contentLocation', 'contentRating', 'contentReferenceTime', 'contributor', 'copyrightHolder', 'copyrightNotice', 'copyrightYear', 'correction', 'creativeWorkStatus', 'creator', 'creditText', 'dateCreated', 'dateModified', 'datePublished', 'discussionUrl', 'editEIDR', 'editor', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'encoding', 'encodingFormat', 'encodings', 'exampleOfWork', 'expires', 'fileFormat', 'funder', 'genre', 'hasPart', 'headline', 'inLanguage', 'interactionStatistic', 'interactivityType', 'isAccessibleForFree', 'isBasedOn', 'isBasedOnUrl', 'isFamilyFriendly', 'isPartOf', 'keywords', 'learningResourceType', 'license', 'locationCreated', 'mainEntity', 'maintainer', 'material', 'materialExtent', 'mentions', 'offers', 'pattern', 'position', 'producer', 'provider', 'publication', 'publisher', 'publisherImprint', 'publishingPrinciples', 'recordedAt', 'releasedEvent', 'review', 'reviews', 'schemaVersion', 'sdDatePublished', 'sdLicense', 'sdPublisher', 'size', 'sourceOrganization', 'spatial', 'spatialCoverage', 'sponsor', 'teaches', 'temporal', 'temporalCoverage', 'text', 'thumbnailUrl', 'timeRequired', 'translationOfWork', 'translator', 'typicalAgeRange', 'usageInfo', 'version', 'video', 'workExample', 'workTranslation'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessmode() { return this.accessMode }
-        set accessmode(value) { this.accessMode = value }
 
         accessModeSufficient($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessmodesufficient() { return this.accessModeSufficient }
-        set accessmodesufficient(value) { this.accessModeSufficient = value }
 
         accessibilityAPI($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -107,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessibilityapi() { return this.accessibilityAPI }
-        set accessibilityapi(value) { this.accessibilityAPI = value }
 
         accessibilityControl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -124,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessibilitycontrol() { return this.accessibilityControl }
-        set accessibilitycontrol(value) { this.accessibilityControl = value }
 
         accessibilityFeature($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -141,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessibilityfeature() { return this.accessibilityFeature }
-        set accessibilityfeature(value) { this.accessibilityFeature = value }
 
         accessibilityHazard($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -158,8 +148,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessibilityhazard() { return this.accessibilityHazard }
-        set accessibilityhazard(value) { this.accessibilityHazard = value }
 
         accessibilitySummary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -175,8 +163,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accessibilitysummary() { return this.accessibilitySummary }
-        set accessibilitysummary(value) { this.accessibilitySummary = value }
 
         accountablePerson($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -192,8 +178,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accountableperson() { return this.accountablePerson }
-        set accountableperson(value) { this.accountablePerson = value }
 
         acquireLicensePage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -210,8 +194,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get acquirelicensepage() { return this.acquireLicensePage }
-        set acquirelicensepage(value) { this.acquireLicensePage = value }
 
         aggregateRating($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -227,8 +209,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         alternativeHeadline($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -244,8 +224,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get alternativeheadline() { return this.alternativeHeadline }
-        set alternativeheadline(value) { this.alternativeHeadline = value }
 
         assesses($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -277,8 +255,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedmedia() { return this.associatedMedia }
-        set associatedmedia(value) { this.associatedMedia = value }
 
         audience($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -418,8 +394,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get commentcount() { return this.commentCount }
-        set commentcount(value) { this.commentCount = value }
 
         conditionsOfAccess($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -435,8 +409,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get conditionsofaccess() { return this.conditionsOfAccess }
-        set conditionsofaccess(value) { this.conditionsOfAccess = value }
 
         contentLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -452,8 +424,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contentlocation() { return this.contentLocation }
-        set contentlocation(value) { this.contentLocation = value }
 
         contentRating($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -470,8 +440,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contentrating() { return this.contentRating }
-        set contentrating(value) { this.contentRating = value }
 
         contentReferenceTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -487,8 +455,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contentreferencetime() { return this.contentReferenceTime }
-        set contentreferencetime(value) { this.contentReferenceTime = value }
 
         contributor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -521,8 +487,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get copyrightholder() { return this.copyrightHolder }
-        set copyrightholder(value) { this.copyrightHolder = value }
 
         copyrightNotice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -538,8 +502,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get copyrightnotice() { return this.copyrightNotice }
-        set copyrightnotice(value) { this.copyrightNotice = value }
 
         copyrightYear($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -555,8 +517,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get copyrightyear() { return this.copyrightYear }
-        set copyrightyear(value) { this.copyrightYear = value }
 
         correction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -590,8 +550,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get creativeworkstatus() { return this.creativeWorkStatus }
-        set creativeworkstatus(value) { this.creativeWorkStatus = value }
 
         creator($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -623,8 +581,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get credittext() { return this.creditText }
-        set credittext(value) { this.creditText = value }
 
         dateCreated($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -641,8 +597,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datecreated() { return this.dateCreated }
-        set datecreated(value) { this.dateCreated = value }
 
         dateModified($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -659,8 +613,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datemodified() { return this.dateModified }
-        set datemodified(value) { this.dateModified = value }
 
         datePublished($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -677,8 +629,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datepublished() { return this.datePublished }
-        set datepublished(value) { this.datePublished = value }
 
         discussionUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -694,8 +644,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get discussionurl() { return this.discussionUrl }
-        set discussionurl(value) { this.discussionUrl = value }
 
         editEIDR($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -712,8 +660,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get editeidr() { return this.editEIDR }
-        set editeidr(value) { this.editEIDR = value }
 
         editor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -744,8 +690,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalalignment() { return this.educationalAlignment }
-        set educationalalignment(value) { this.educationalAlignment = value }
 
         educationalLevel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -763,8 +707,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationallevel() { return this.educationalLevel }
-        set educationallevel(value) { this.educationalLevel = value }
 
         educationalUse($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -781,8 +723,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationaluse() { return this.educationalUse }
-        set educationaluse(value) { this.educationalUse = value }
 
         encoding($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -814,8 +754,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get encodingformat() { return this.encodingFormat }
-        set encodingformat(value) { this.encodingFormat = value }
 
         encodings($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -846,8 +784,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exampleofwork() { return this.exampleOfWork }
-        set exampleofwork(value) { this.exampleOfWork = value }
 
         expires($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -879,8 +815,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get fileformat() { return this.fileFormat }
-        set fileformat(value) { this.fileFormat = value }
 
         funder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -928,8 +862,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get haspart() { return this.hasPart }
-        set haspart(value) { this.hasPart = value }
 
         headline($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -961,8 +893,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         interactionStatistic($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -978,8 +908,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get interactionstatistic() { return this.interactionStatistic }
-        set interactionstatistic(value) { this.interactionStatistic = value }
 
         interactivityType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -995,8 +923,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get interactivitytype() { return this.interactivityType }
-        set interactivitytype(value) { this.interactivityType = value }
 
         isAccessibleForFree($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1012,8 +938,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isaccessibleforfree() { return this.isAccessibleForFree }
-        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
 
         isBasedOn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1031,8 +955,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isbasedon() { return this.isBasedOn }
-        set isbasedon(value) { this.isBasedOn = value }
 
         isBasedOnUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1050,8 +972,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isbasedonurl() { return this.isBasedOnUrl }
-        set isbasedonurl(value) { this.isBasedOnUrl = value }
 
         isFamilyFriendly($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1067,8 +987,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isfamilyfriendly() { return this.isFamilyFriendly }
-        set isfamilyfriendly(value) { this.isFamilyFriendly = value }
 
         isPartOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1085,8 +1003,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ispartof() { return this.isPartOf }
-        set ispartof(value) { this.isPartOf = value }
 
         keywords($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1120,8 +1036,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get learningresourcetype() { return this.learningResourceType }
-        set learningresourcetype(value) { this.learningResourceType = value }
 
         license($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1153,8 +1067,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get locationcreated() { return this.locationCreated }
-        set locationcreated(value) { this.locationCreated = value }
 
         mainEntity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1170,8 +1082,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mainentity() { return this.mainEntity }
-        set mainentity(value) { this.mainEntity = value }
 
         maintainer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1221,8 +1131,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get materialextent() { return this.materialExtent }
-        set materialextent(value) { this.materialExtent = value }
 
         mentions($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1364,8 +1272,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publisherimprint() { return this.publisherImprint }
-        set publisherimprint(value) { this.publisherImprint = value }
 
         publishingPrinciples($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1382,8 +1288,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publishingprinciples() { return this.publishingPrinciples }
-        set publishingprinciples(value) { this.publishingPrinciples = value }
 
         recordedAt($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1399,8 +1303,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recordedat() { return this.recordedAt }
-        set recordedat(value) { this.recordedAt = value }
 
         releasedEvent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1416,8 +1318,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get releasedevent() { return this.releasedEvent }
-        set releasedevent(value) { this.releasedEvent = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1464,8 +1364,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get schemaversion() { return this.schemaVersion }
-        set schemaversion(value) { this.schemaVersion = value }
 
         sdDatePublished($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1481,8 +1379,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sddatepublished() { return this.sdDatePublished }
-        set sddatepublished(value) { this.sdDatePublished = value }
 
         sdLicense($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1499,8 +1395,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sdlicense() { return this.sdLicense }
-        set sdlicense(value) { this.sdLicense = value }
 
         sdPublisher($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1517,8 +1411,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sdpublisher() { return this.sdPublisher }
-        set sdpublisher(value) { this.sdPublisher = value }
 
         size($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1551,8 +1443,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sourceorganization() { return this.sourceOrganization }
-        set sourceorganization(value) { this.sourceOrganization = value }
 
         spatial($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1583,8 +1473,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get spatialcoverage() { return this.spatialCoverage }
-        set spatialcoverage(value) { this.spatialCoverage = value }
 
         sponsor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1650,8 +1538,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get temporalcoverage() { return this.temporalCoverage }
-        set temporalcoverage(value) { this.temporalCoverage = value }
 
         text($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1682,8 +1568,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get thumbnailurl() { return this.thumbnailUrl }
-        set thumbnailurl(value) { this.thumbnailUrl = value }
 
         timeRequired($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1699,8 +1583,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get timerequired() { return this.timeRequired }
-        set timerequired(value) { this.timeRequired = value }
 
         translationOfWork($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1716,8 +1598,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get translationofwork() { return this.translationOfWork }
-        set translationofwork(value) { this.translationOfWork = value }
 
         translator($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1749,8 +1629,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typicalagerange() { return this.typicalAgeRange }
-        set typicalagerange(value) { this.typicalAgeRange = value }
 
         usageInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1767,8 +1645,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get usageinfo() { return this.usageInfo }
-        set usageinfo(value) { this.usageInfo = value }
 
         version($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1816,8 +1692,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get workexample() { return this.workExample }
-        set workexample(value) { this.workExample = value }
 
         workTranslation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1833,8 +1707,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get worktranslation() { return this.workTranslation }
-        set worktranslation(value) { this.workTranslation = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Ticket'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dateIssued', 'issuedBy', 'priceCurrency', 'ticketNumber', 'ticketToken', 'ticketedSeat', 'totalPrice', 'underName']).concat((['dateIssued', 'issuedBy', 'priceCurrency', 'ticketNumber', 'ticketToken', 'ticketedSeat', 'totalPrice', 'underName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dateIssued', 'issuedBy', 'priceCurrency', 'ticketNumber', 'ticketToken', 'ticketedSeat', 'totalPrice', 'underName'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dateissued() { return this.dateIssued }
-        set dateissued(value) { this.dateIssued = value }
 
         issuedBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get issuedby() { return this.issuedBy }
-        set issuedby(value) { this.issuedBy = value }
 
         priceCurrency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecurrency() { return this.priceCurrency }
-        set pricecurrency(value) { this.priceCurrency = value }
 
         ticketNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ticketnumber() { return this.ticketNumber }
-        set ticketnumber(value) { this.ticketNumber = value }
 
         ticketToken($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -113,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tickettoken() { return this.ticketToken }
-        set tickettoken(value) { this.ticketToken = value }
 
         ticketedSeat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -130,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ticketedseat() { return this.ticketedSeat }
-        set ticketedseat(value) { this.ticketedSeat = value }
 
         totalPrice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -149,8 +137,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totalprice() { return this.totalPrice }
-        set totalprice(value) { this.totalPrice = value }
 
         underName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -167,8 +153,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get undername() { return this.underName }
-        set undername(value) { this.underName = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Invoice'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']).concat((['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accountid() { return this.accountId }
-        set accountid(value) { this.accountId = value }
 
         billingPeriod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get billingperiod() { return this.billingPeriod }
-        set billingperiod(value) { this.billingPeriod = value }
 
         broker($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +107,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get confirmationnumber() { return this.confirmationNumber }
-        set confirmationnumber(value) { this.confirmationNumber = value }
 
         customer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +139,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get minimumpaymentdue() { return this.minimumPaymentDue }
-        set minimumpaymentdue(value) { this.minimumPaymentDue = value }
 
         paymentDue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +154,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentdue() { return this.paymentDue }
-        set paymentdue(value) { this.paymentDue = value }
 
         paymentDueDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -180,8 +170,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentduedate() { return this.paymentDueDate }
-        set paymentduedate(value) { this.paymentDueDate = value }
 
         paymentMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -197,8 +185,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentmethod() { return this.paymentMethod }
-        set paymentmethod(value) { this.paymentMethod = value }
 
         paymentMethodId($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -214,8 +200,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentmethodid() { return this.paymentMethodId }
-        set paymentmethodid(value) { this.paymentMethodId = value }
 
         paymentStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -232,8 +216,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentstatus() { return this.paymentStatus }
-        set paymentstatus(value) { this.paymentStatus = value }
 
         provider($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -265,8 +247,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get referencesorder() { return this.referencesOrder }
-        set referencesorder(value) { this.referencesOrder = value }
 
         scheduledPaymentDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -282,8 +262,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get scheduledpaymentdate() { return this.scheduledPaymentDate }
-        set scheduledpaymentdate(value) { this.scheduledPaymentDate = value }
 
         totalPaymentDue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -300,8 +278,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totalpaymentdue() { return this.totalPaymentDue }
-        set totalpaymentdue(value) { this.totalPaymentDue = value }
         
     }
 </script>

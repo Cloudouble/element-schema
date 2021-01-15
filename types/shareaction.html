@@ -17,7 +17,7 @@
         static _rdfs_label = 'ShareAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([]).concat(([]).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat([])))
         }
         
         constructor() {

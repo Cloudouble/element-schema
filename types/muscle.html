@@ -17,7 +17,7 @@
         static _rdfs_label = 'Muscle'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve']).concat((['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bloodsupply() { return this.bloodSupply }
-        set bloodsupply(value) { this.bloodSupply = value }
 
         insertion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get muscleaction() { return this.muscleAction }
-        set muscleaction(value) { this.muscleAction = value }
 
         nerve($this, value) {
 			window.LiveElement.Schema.renderProperty({

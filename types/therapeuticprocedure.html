@@ -17,7 +17,7 @@
         static _rdfs_label = 'TherapeuticProcedure'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['adverseOutcome', 'doseSchedule', 'drug']).concat((['adverseOutcome', 'doseSchedule', 'drug']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['adverseOutcome', 'doseSchedule', 'drug'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get adverseoutcome() { return this.adverseOutcome }
-        set adverseoutcome(value) { this.adverseOutcome = value }
 
         doseSchedule($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doseschedule() { return this.doseSchedule }
-        set doseschedule(value) { this.doseSchedule = value }
 
         drug($this, value) {
 			window.LiveElement.Schema.renderProperty({

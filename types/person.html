@@ -17,7 +17,7 @@
         static _rdfs_label = 'Person'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalName', 'address', 'affiliation', 'alumniOf', 'award', 'awards', 'birthDate', 'birthPlace', 'brand', 'callSign', 'children', 'colleague', 'colleagues', 'contactPoint', 'contactPoints', 'deathDate', 'deathPlace', 'duns', 'email', 'familyName', 'faxNumber', 'follows', 'funder', 'gender', 'givenName', 'globalLocationNumber', 'hasCredential', 'hasOccupation', 'hasOfferCatalog', 'hasPOS', 'height', 'homeLocation', 'honorificPrefix', 'honorificSuffix', 'interactionStatistic', 'isicV4', 'jobTitle', 'knows', 'knowsAbout', 'knowsLanguage', 'makesOffer', 'memberOf', 'naics', 'nationality', 'netWorth', 'owns', 'parent', 'parents', 'performerIn', 'publishingPrinciples', 'relatedTo', 'seeks', 'sibling', 'siblings', 'sponsor', 'spouse', 'taxID', 'telephone', 'vatID', 'weight', 'workLocation', 'worksFor']).concat((['additionalName', 'address', 'affiliation', 'alumniOf', 'award', 'awards', 'birthDate', 'birthPlace', 'brand', 'callSign', 'children', 'colleague', 'colleagues', 'contactPoint', 'contactPoints', 'deathDate', 'deathPlace', 'duns', 'email', 'familyName', 'faxNumber', 'follows', 'funder', 'gender', 'givenName', 'globalLocationNumber', 'hasCredential', 'hasOccupation', 'hasOfferCatalog', 'hasPOS', 'height', 'homeLocation', 'honorificPrefix', 'honorificSuffix', 'interactionStatistic', 'isicV4', 'jobTitle', 'knows', 'knowsAbout', 'knowsLanguage', 'makesOffer', 'memberOf', 'naics', 'nationality', 'netWorth', 'owns', 'parent', 'parents', 'performerIn', 'publishingPrinciples', 'relatedTo', 'seeks', 'sibling', 'siblings', 'sponsor', 'spouse', 'taxID', 'telephone', 'vatID', 'weight', 'workLocation', 'worksFor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalName', 'address', 'affiliation', 'alumniOf', 'award', 'awards', 'birthDate', 'birthPlace', 'brand', 'callSign', 'children', 'colleague', 'colleagues', 'contactPoint', 'contactPoints', 'deathDate', 'deathPlace', 'duns', 'email', 'familyName', 'faxNumber', 'follows', 'funder', 'gender', 'givenName', 'globalLocationNumber', 'hasCredential', 'hasOccupation', 'hasOfferCatalog', 'hasPOS', 'height', 'homeLocation', 'honorificPrefix', 'honorificSuffix', 'interactionStatistic', 'isicV4', 'jobTitle', 'knows', 'knowsAbout', 'knowsLanguage', 'makesOffer', 'memberOf', 'naics', 'nationality', 'netWorth', 'owns', 'parent', 'parents', 'performerIn', 'publishingPrinciples', 'relatedTo', 'seeks', 'sibling', 'siblings', 'sponsor', 'spouse', 'taxID', 'telephone', 'vatID', 'weight', 'workLocation', 'worksFor'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalname() { return this.additionalName }
-        set additionalname(value) { this.additionalName = value }
 
         address($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get alumniof() { return this.alumniOf }
-        set alumniof(value) { this.alumniOf = value }
 
         award($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -139,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get birthdate() { return this.birthDate }
-        set birthdate(value) { this.birthDate = value }
 
         birthPlace($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -156,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get birthplace() { return this.birthPlace }
-        set birthplace(value) { this.birthPlace = value }
 
         brand($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -189,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get callsign() { return this.callSign }
-        set callsign(value) { this.callSign = value }
 
         children($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -252,8 +242,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactpoint() { return this.contactPoint }
-        set contactpoint(value) { this.contactPoint = value }
 
         contactPoints($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -269,8 +257,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactpoints() { return this.contactPoints }
-        set contactpoints(value) { this.contactPoints = value }
 
         deathDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -286,8 +272,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deathdate() { return this.deathDate }
-        set deathdate(value) { this.deathDate = value }
 
         deathPlace($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -303,8 +287,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deathplace() { return this.deathPlace }
-        set deathplace(value) { this.deathPlace = value }
 
         duns($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -350,8 +332,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get familyname() { return this.familyName }
-        set familyname(value) { this.familyName = value }
 
         faxNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -367,8 +347,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get faxnumber() { return this.faxNumber }
-        set faxnumber(value) { this.faxNumber = value }
 
         follows($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -431,8 +409,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get givenname() { return this.givenName }
-        set givenname(value) { this.givenName = value }
 
         globalLocationNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -448,8 +424,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get globallocationnumber() { return this.globalLocationNumber }
-        set globallocationnumber(value) { this.globalLocationNumber = value }
 
         hasCredential($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -465,8 +439,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hascredential() { return this.hasCredential }
-        set hascredential(value) { this.hasCredential = value }
 
         hasOccupation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -482,8 +454,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasoccupation() { return this.hasOccupation }
-        set hasoccupation(value) { this.hasOccupation = value }
 
         hasOfferCatalog($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -499,8 +469,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasoffercatalog() { return this.hasOfferCatalog }
-        set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
         hasPOS($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -516,8 +484,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get haspos() { return this.hasPOS }
-        set haspos(value) { this.hasPOS = value }
 
         height($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -550,8 +516,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get homelocation() { return this.homeLocation }
-        set homelocation(value) { this.homeLocation = value }
 
         honorificPrefix($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -567,8 +531,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get honorificprefix() { return this.honorificPrefix }
-        set honorificprefix(value) { this.honorificPrefix = value }
 
         honorificSuffix($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -584,8 +546,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get honorificsuffix() { return this.honorificSuffix }
-        set honorificsuffix(value) { this.honorificSuffix = value }
 
         interactionStatistic($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -601,8 +561,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get interactionstatistic() { return this.interactionStatistic }
-        set interactionstatistic(value) { this.interactionStatistic = value }
 
         isicV4($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -618,8 +576,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isicv4() { return this.isicV4 }
-        set isicv4(value) { this.isicV4 = value }
 
         jobTitle($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -636,8 +592,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get jobtitle() { return this.jobTitle }
-        set jobtitle(value) { this.jobTitle = value }
 
         knows($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -670,8 +624,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get knowsabout() { return this.knowsAbout }
-        set knowsabout(value) { this.knowsAbout = value }
 
         knowsLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -688,8 +640,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get knowslanguage() { return this.knowsLanguage }
-        set knowslanguage(value) { this.knowsLanguage = value }
 
         makesOffer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -705,8 +655,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get makesoffer() { return this.makesOffer }
-        set makesoffer(value) { this.makesOffer = value }
 
         memberOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -723,8 +671,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get memberof() { return this.memberOf }
-        set memberof(value) { this.memberOf = value }
 
         naics($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -771,8 +717,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get networth() { return this.netWorth }
-        set networth(value) { this.netWorth = value }
 
         owns($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -834,8 +778,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get performerin() { return this.performerIn }
-        set performerin(value) { this.performerIn = value }
 
         publishingPrinciples($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -852,8 +794,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publishingprinciples() { return this.publishingPrinciples }
-        set publishingprinciples(value) { this.publishingPrinciples = value }
 
         relatedTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -869,8 +809,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedto() { return this.relatedTo }
-        set relatedto(value) { this.relatedTo = value }
 
         seeks($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -962,8 +900,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get taxid() { return this.taxID }
-        set taxid(value) { this.taxID = value }
 
         telephone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -994,8 +930,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get vatid() { return this.vatID }
-        set vatid(value) { this.vatID = value }
 
         weight($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1027,8 +961,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get worklocation() { return this.workLocation }
-        set worklocation(value) { this.workLocation = value }
 
         worksFor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1044,8 +976,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get worksfor() { return this.worksFor }
-        set worksfor(value) { this.worksFor = value }
         
     }
 </script>

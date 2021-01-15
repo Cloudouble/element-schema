@@ -17,7 +17,7 @@
         static _rdfs_label = 'ChooseAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionOption', 'option']).concat((['actionOption', 'option']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionOption', 'option'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionoption() { return this.actionOption }
-        set actionoption(value) { this.actionOption = value }
 
         option($this, value) {
 			window.LiveElement.Schema.renderProperty({

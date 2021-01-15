@@ -17,7 +17,7 @@
         static _rdfs_label = 'MenuItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['menuAddOn', 'nutrition', 'offers', 'suitableForDiet']).concat((['menuAddOn', 'nutrition', 'offers', 'suitableForDiet']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['menuAddOn', 'nutrition', 'offers', 'suitableForDiet'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get menuaddon() { return this.menuAddOn }
-        set menuaddon(value) { this.menuAddOn = value }
 
         nutrition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suitablefordiet() { return this.suitableForDiet }
-        set suitablefordiet(value) { this.suitableForDiet = value }
         
     }
 </script>

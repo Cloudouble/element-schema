@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReplaceAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['replacee', 'replacer']).concat((['replacee', 'replacer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['replacee', 'replacer'])))
         }
         
         constructor() {

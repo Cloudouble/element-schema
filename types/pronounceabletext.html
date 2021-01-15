@@ -17,7 +17,7 @@
         static _rdfs_label = 'PronounceableText'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inLanguage', 'phoneticText', 'speechToTextMarkup', 'textValue']).concat((['inLanguage', 'phoneticText', 'speechToTextMarkup', 'textValue']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['inLanguage', 'phoneticText', 'speechToTextMarkup', 'textValue'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         phoneticText($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get phonetictext() { return this.phoneticText }
-        set phonetictext(value) { this.phoneticText = value }
 
         speechToTextMarkup($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get speechtotextmarkup() { return this.speechToTextMarkup }
-        set speechtotextmarkup(value) { this.speechToTextMarkup = value }
 
         textValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get textvalue() { return this.textValue }
-        set textvalue(value) { this.textValue = value }
         
     }
 </script>

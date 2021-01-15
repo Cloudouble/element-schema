@@ -17,7 +17,7 @@
         static _rdfs_label = 'LinkRole'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inLanguage', 'linkRelationship']).concat((['inLanguage', 'linkRelationship']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['inLanguage', 'linkRelationship'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         linkRelationship($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get linkrelationship() { return this.linkRelationship }
-        set linkrelationship(value) { this.linkRelationship = value }
         
     }
 </script>

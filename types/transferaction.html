@@ -17,7 +17,7 @@
         static _rdfs_label = 'TransferAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['fromLocation', 'toLocation']).concat((['fromLocation', 'toLocation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['fromLocation', 'toLocation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get fromlocation() { return this.fromLocation }
-        set fromlocation(value) { this.fromLocation = value }
 
         toLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tolocation() { return this.toLocation }
-        set tolocation(value) { this.toLocation = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ListItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['item', 'nextItem', 'position', 'previousItem']).concat((['item', 'nextItem', 'position', 'previousItem']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['item', 'nextItem', 'position', 'previousItem'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nextitem() { return this.nextItem }
-        set nextitem(value) { this.nextItem = value }
 
         position($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -91,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get previousitem() { return this.previousItem }
-        set previousitem(value) { this.previousItem = value }
         
     }
 </script>

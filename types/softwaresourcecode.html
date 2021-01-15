@@ -17,7 +17,7 @@
         static _rdfs_label = 'SoftwareSourceCode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']).concat((['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get coderepository() { return this.codeRepository }
-        set coderepository(value) { this.codeRepository = value }
 
         codeSampleType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get codesampletype() { return this.codeSampleType }
-        set codesampletype(value) { this.codeSampleType = value }
 
         programmingLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programminglanguage() { return this.programmingLanguage }
-        set programminglanguage(value) { this.programmingLanguage = value }
 
         runtime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get runtimeplatform() { return this.runtimePlatform }
-        set runtimeplatform(value) { this.runtimePlatform = value }
 
         sampleType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sampletype() { return this.sampleType }
-        set sampletype(value) { this.sampleType = value }
 
         targetProduct($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -144,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetproduct() { return this.targetProduct }
-        set targetproduct(value) { this.targetProduct = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicGroup'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']).concat((['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks'])))
         }
         
         constructor() {
@@ -89,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicgroupmember() { return this.musicGroupMember }
-        set musicgroupmember(value) { this.musicGroupMember = value }
 
         track($this, value) {
 			window.LiveElement.Schema.renderProperty({

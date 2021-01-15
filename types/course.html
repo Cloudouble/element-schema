@@ -17,7 +17,7 @@
         static _rdfs_label = 'Course'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['courseCode', 'coursePrerequisites', 'educationalCredentialAwarded', 'hasCourseInstance', 'numberOfCredits', 'occupationalCredentialAwarded']).concat((['courseCode', 'coursePrerequisites', 'educationalCredentialAwarded', 'hasCourseInstance', 'numberOfCredits', 'occupationalCredentialAwarded']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['courseCode', 'coursePrerequisites', 'educationalCredentialAwarded', 'hasCourseInstance', 'numberOfCredits', 'occupationalCredentialAwarded'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get coursecode() { return this.courseCode }
-        set coursecode(value) { this.courseCode = value }
 
         coursePrerequisites($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get courseprerequisites() { return this.coursePrerequisites }
-        set courseprerequisites(value) { this.coursePrerequisites = value }
 
         educationalCredentialAwarded($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -81,8 +77,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalcredentialawarded() { return this.educationalCredentialAwarded }
-        set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
 
         hasCourseInstance($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +92,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hascourseinstance() { return this.hasCourseInstance }
-        set hascourseinstance(value) { this.hasCourseInstance = value }
 
         numberOfCredits($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -116,8 +108,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofcredits() { return this.numberOfCredits }
-        set numberofcredits(value) { this.numberOfCredits = value }
 
         occupationalCredentialAwarded($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -135,8 +125,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
-        set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
         
     }
 </script>

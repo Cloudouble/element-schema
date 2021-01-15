@@ -17,7 +17,7 @@
         static _rdfs_label = 'Airport'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['iataCode', 'icaoCode']).concat((['iataCode', 'icaoCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['iataCode', 'icaoCode'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get iatacode() { return this.iataCode }
-        set iatacode(value) { this.iataCode = value }
 
         icaoCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get icaocode() { return this.icaoCode }
-        set icaocode(value) { this.icaoCode = value }
         
     }
 </script>

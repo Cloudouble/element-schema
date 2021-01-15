@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProgramMembership'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName']).concat((['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hostingorganization() { return this.hostingOrganization }
-        set hostingorganization(value) { this.hostingOrganization = value }
 
         member($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get membershipnumber() { return this.membershipNumber }
-        set membershipnumber(value) { this.membershipNumber = value }
 
         membershipPointsEarned($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get membershippointsearned() { return this.membershipPointsEarned }
-        set membershippointsearned(value) { this.membershipPointsEarned = value }
 
         programName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +121,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programname() { return this.programName }
-        set programname(value) { this.programName = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicComposition'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs']).concat((['composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get firstperformance() { return this.firstPerformance }
-        set firstperformance(value) { this.firstPerformance = value }
 
         includedComposition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includedcomposition() { return this.includedComposition }
-        set includedcomposition(value) { this.includedComposition = value }
 
         iswcCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get iswccode() { return this.iswcCode }
-        set iswccode(value) { this.iswcCode = value }
 
         lyricist($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -140,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicarrangement() { return this.musicArrangement }
-        set musicarrangement(value) { this.musicArrangement = value }
 
         musicCompositionForm($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -157,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musiccompositionform() { return this.musicCompositionForm }
-        set musiccompositionform(value) { this.musicCompositionForm = value }
 
         musicalKey($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -174,8 +164,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicalkey() { return this.musicalKey }
-        set musicalkey(value) { this.musicalKey = value }
 
         recordedAs($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -191,8 +179,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recordedas() { return this.recordedAs }
-        set recordedas(value) { this.recordedAs = value }
         
     }
 </script>

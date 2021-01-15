@@ -17,7 +17,7 @@
         static _rdfs_label = 'Movie'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'countryOfOrigin', 'director', 'directors', 'duration', 'musicBy', 'productionCompany', 'subtitleLanguage', 'titleEIDR', 'trailer']).concat((['actor', 'actors', 'countryOfOrigin', 'director', 'directors', 'duration', 'musicBy', 'productionCompany', 'subtitleLanguage', 'titleEIDR', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'countryOfOrigin', 'director', 'directors', 'duration', 'musicBy', 'productionCompany', 'subtitleLanguage', 'titleEIDR', 'trailer'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get countryoforigin() { return this.countryOfOrigin }
-        set countryoforigin(value) { this.countryOfOrigin = value }
 
         director($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -136,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -153,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         subtitleLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -171,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subtitlelanguage() { return this.subtitleLanguage }
-        set subtitlelanguage(value) { this.subtitleLanguage = value }
 
         titleEIDR($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -189,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get titleeidr() { return this.titleEIDR }
-        set titleeidr(value) { this.titleEIDR = value }
 
         trailer($this, value) {
 			window.LiveElement.Schema.renderProperty({

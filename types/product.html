@@ -17,7 +17,7 @@
         static _rdfs_label = 'Product'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'aggregateRating', 'audience', 'award', 'awards', 'brand', 'category', 'color', 'depth', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'hasEnergyConsumptionDetails', 'hasMerchantReturnPolicy', 'hasProductReturnPolicy', 'height', 'inProductGroupWithID', 'isAccessoryOrSparePartFor', 'isConsumableFor', 'isRelatedTo', 'isSimilarTo', 'isVariantOf', 'itemCondition', 'logo', 'manufacturer', 'material', 'model', 'mpn', 'nsn', 'offers', 'pattern', 'productID', 'productionDate', 'purchaseDate', 'releaseDate', 'review', 'reviews', 'size', 'sku', 'slogan', 'weight', 'width']).concat((['additionalProperty', 'aggregateRating', 'audience', 'award', 'awards', 'brand', 'category', 'color', 'depth', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'hasEnergyConsumptionDetails', 'hasMerchantReturnPolicy', 'hasProductReturnPolicy', 'height', 'inProductGroupWithID', 'isAccessoryOrSparePartFor', 'isConsumableFor', 'isRelatedTo', 'isSimilarTo', 'isVariantOf', 'itemCondition', 'logo', 'manufacturer', 'material', 'model', 'mpn', 'nsn', 'offers', 'pattern', 'productID', 'productionDate', 'purchaseDate', 'releaseDate', 'review', 'reviews', 'size', 'sku', 'slogan', 'weight', 'width']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'aggregateRating', 'audience', 'award', 'awards', 'brand', 'category', 'color', 'depth', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'hasEnergyConsumptionDetails', 'hasMerchantReturnPolicy', 'hasProductReturnPolicy', 'height', 'inProductGroupWithID', 'isAccessoryOrSparePartFor', 'isConsumableFor', 'isRelatedTo', 'isSimilarTo', 'isVariantOf', 'itemCondition', 'logo', 'manufacturer', 'material', 'model', 'mpn', 'nsn', 'offers', 'pattern', 'productID', 'productionDate', 'purchaseDate', 'releaseDate', 'review', 'reviews', 'size', 'sku', 'slogan', 'weight', 'width'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalproperty() { return this.additionalProperty }
-        set additionalproperty(value) { this.additionalProperty = value }
 
         aggregateRating($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         audience($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -262,8 +258,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasenergyconsumptiondetails() { return this.hasEnergyConsumptionDetails }
-        set hasenergyconsumptiondetails(value) { this.hasEnergyConsumptionDetails = value }
 
         hasMerchantReturnPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -279,8 +273,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
-        set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
 
         hasProductReturnPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -296,8 +288,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
-        set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
 
         height($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -329,8 +319,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inproductgroupwithid() { return this.inProductGroupWithID }
-        set inproductgroupwithid(value) { this.inProductGroupWithID = value }
 
         isAccessoryOrSparePartFor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -346,8 +334,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isaccessoryorsparepartfor() { return this.isAccessoryOrSparePartFor }
-        set isaccessoryorsparepartfor(value) { this.isAccessoryOrSparePartFor = value }
 
         isConsumableFor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -363,8 +349,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isconsumablefor() { return this.isConsumableFor }
-        set isconsumablefor(value) { this.isConsumableFor = value }
 
         isRelatedTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -381,8 +365,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isrelatedto() { return this.isRelatedTo }
-        set isrelatedto(value) { this.isRelatedTo = value }
 
         isSimilarTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -399,8 +381,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get issimilarto() { return this.isSimilarTo }
-        set issimilarto(value) { this.isSimilarTo = value }
 
         isVariantOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -417,8 +397,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isvariantof() { return this.isVariantOf }
-        set isvariantof(value) { this.isVariantOf = value }
 
         itemCondition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -434,8 +412,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemcondition() { return this.itemCondition }
-        set itemcondition(value) { this.itemCondition = value }
 
         logo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -577,8 +553,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productid() { return this.productID }
-        set productid(value) { this.productID = value }
 
         productionDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -594,8 +568,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productiondate() { return this.productionDate }
-        set productiondate(value) { this.productionDate = value }
 
         purchaseDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -611,8 +583,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get purchasedate() { return this.purchaseDate }
-        set purchasedate(value) { this.purchaseDate = value }
 
         releaseDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -628,8 +598,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get releasedate() { return this.releaseDate }
-        set releasedate(value) { this.releaseDate = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({

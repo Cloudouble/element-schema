@@ -17,7 +17,7 @@
         static _rdfs_label = 'TradeAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['price', 'priceCurrency', 'priceSpecification']).concat((['price', 'priceCurrency', 'priceSpecification']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['price', 'priceCurrency', 'priceSpecification'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecurrency() { return this.priceCurrency }
-        set pricecurrency(value) { this.priceCurrency = value }
 
         priceSpecification($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricespecification() { return this.priceSpecification }
-        set pricespecification(value) { this.priceSpecification = value }
         
     }
 </script>

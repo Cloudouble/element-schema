@@ -17,7 +17,7 @@
         static _rdfs_label = 'Audiobook'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['duration', 'readBy']).concat((['duration', 'readBy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['duration', 'readBy'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get readby() { return this.readBy }
-        set readby(value) { this.readBy = value }
         
     }
 </script>

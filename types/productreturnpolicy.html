@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductReturnPolicy'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['productReturnDays', 'productReturnLink']).concat((['productReturnDays', 'productReturnLink']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['productReturnDays', 'productReturnLink'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productreturndays() { return this.productReturnDays }
-        set productreturndays(value) { this.productReturnDays = value }
 
         productReturnLink($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productreturnlink() { return this.productReturnLink }
-        set productreturnlink(value) { this.productReturnLink = value }
         
     }
 </script>

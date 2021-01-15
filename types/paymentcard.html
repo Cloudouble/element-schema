@@ -17,7 +17,7 @@
         static _rdfs_label = 'PaymentCard'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']).concat((['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get cashback() { return this.cashBack }
-        set cashback(value) { this.cashBack = value }
 
         contactlessPayment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactlesspayment() { return this.contactlessPayment }
-        set contactlesspayment(value) { this.contactlessPayment = value }
 
         floorLimit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get floorlimit() { return this.floorLimit }
-        set floorlimit(value) { this.floorLimit = value }
 
         monthlyMinimumRepaymentAmount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get monthlyminimumrepaymentamount() { return this.monthlyMinimumRepaymentAmount }
-        set monthlyminimumrepaymentamount(value) { this.monthlyMinimumRepaymentAmount = value }
         
     }
 </script>

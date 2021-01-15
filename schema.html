@@ -50,7 +50,7 @@
             return this.__value
         }
         
-        __input = this.__input === undefined ? undefined : this.__input
+        Object.defineProperty($this, '__input', {configurable: false, enumerable: true, value: this.__input === undefined ? undefined : this.__input})
         __value = this.__value === undefined ? undefined : this.__value
         __validation = {...(this.__validation || {}), ...{}}
         __map = {...(this.__map || {}), ...{}}

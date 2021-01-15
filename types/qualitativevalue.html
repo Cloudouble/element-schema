@@ -17,7 +17,7 @@
         static _rdfs_label = 'QualitativeValue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'equal', 'greater', 'greaterOrEqual', 'lesser', 'lesserOrEqual', 'nonEqual', 'valueReference']).concat((['additionalProperty', 'equal', 'greater', 'greaterOrEqual', 'lesser', 'lesserOrEqual', 'nonEqual', 'valueReference']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'equal', 'greater', 'greaterOrEqual', 'lesser', 'lesserOrEqual', 'nonEqual', 'valueReference'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalproperty() { return this.additionalProperty }
-        set additionalproperty(value) { this.additionalProperty = value }
 
         equal($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get greaterorequal() { return this.greaterOrEqual }
-        set greaterorequal(value) { this.greaterOrEqual = value }
 
         lesser($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -122,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get lesserorequal() { return this.lesserOrEqual }
-        set lesserorequal(value) { this.lesserOrEqual = value }
 
         nonEqual($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -139,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nonequal() { return this.nonEqual }
-        set nonequal(value) { this.nonEqual = value }
 
         valueReference($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -160,8 +152,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get valuereference() { return this.valueReference }
-        set valuereference(value) { this.valueReference = value }
         
     }
 </script>

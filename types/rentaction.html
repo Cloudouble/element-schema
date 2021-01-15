@@ -17,7 +17,7 @@
         static _rdfs_label = 'RentAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['landlord', 'realEstateAgent']).concat((['landlord', 'realEstateAgent']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['landlord', 'realEstateAgent'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get realestateagent() { return this.realEstateAgent }
-        set realestateagent(value) { this.realEstateAgent = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'DefinedTermSet'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasDefinedTerm']).concat((['hasDefinedTerm']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasDefinedTerm'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasdefinedterm() { return this.hasDefinedTerm }
-        set hasdefinedterm(value) { this.hasDefinedTerm = value }
         
     }
 </script>

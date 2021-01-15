@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductCollection'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['includesObject']).concat((['includesObject']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['includesObject'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includesobject() { return this.includesObject }
-        set includesobject(value) { this.includesObject = value }
         
     }
 </script>

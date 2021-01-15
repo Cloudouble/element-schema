@@ -17,7 +17,7 @@
         static _rdfs_label = 'NewsArticle'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dateline', 'printColumn', 'printEdition', 'printPage', 'printSection']).concat((['dateline', 'printColumn', 'printEdition', 'printPage', 'printSection']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dateline', 'printColumn', 'printEdition', 'printPage', 'printSection'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get printcolumn() { return this.printColumn }
-        set printcolumn(value) { this.printColumn = value }
 
         printEdition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get printedition() { return this.printEdition }
-        set printedition(value) { this.printEdition = value }
 
         printPage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get printpage() { return this.printPage }
-        set printpage(value) { this.printPage = value }
 
         printSection($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get printsection() { return this.printSection }
-        set printsection(value) { this.printSection = value }
         
     }
 </script>

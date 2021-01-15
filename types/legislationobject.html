@@ -17,7 +17,7 @@
         static _rdfs_label = 'LegislationObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['legislationLegalValue']).concat((['legislationLegalValue']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['legislationLegalValue'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationlegalvalue() { return this.legislationLegalValue }
-        set legislationlegalvalue(value) { this.legislationLegalValue = value }
         
     }
 </script>

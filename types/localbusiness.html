@@ -17,7 +17,7 @@
         static _rdfs_label = 'LocalBusiness'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange']).concat((['branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get branchof() { return this.branchOf }
-        set branchof(value) { this.branchOf = value }
 
         currenciesAccepted($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get currenciesaccepted() { return this.currenciesAccepted }
-        set currenciesaccepted(value) { this.currenciesAccepted = value }
 
         openingHours($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get openinghours() { return this.openingHours }
-        set openinghours(value) { this.openingHours = value }
 
         paymentAccepted($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get paymentaccepted() { return this.paymentAccepted }
-        set paymentaccepted(value) { this.paymentAccepted = value }
 
         priceRange($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricerange() { return this.priceRange }
-        set pricerange(value) { this.priceRange = value }
         
     }
 </script>

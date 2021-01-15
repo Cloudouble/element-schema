@@ -17,7 +17,7 @@
         static _rdfs_label = 'Action'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']).concat((['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionstatus() { return this.actionStatus }
-        set actionstatus(value) { this.actionStatus = value }
 
         agent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get endtime() { return this.endTime }
-        set endtime(value) { this.endTime = value }
 
         error($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -189,8 +185,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get starttime() { return this.startTime }
-        set starttime(value) { this.startTime = value }
 
         target($this, value) {
 			window.LiveElement.Schema.renderProperty({

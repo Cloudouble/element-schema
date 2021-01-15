@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthInsurancePlan'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard']).concat((['benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['benefitsSummaryUrl', 'contactPoint', 'healthPlanDrugOption', 'healthPlanDrugTier', 'healthPlanId', 'healthPlanMarketingUrl', 'includesHealthPlanFormulary', 'includesHealthPlanNetwork', 'usesHealthPlanIdStandard'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get benefitssummaryurl() { return this.benefitsSummaryUrl }
-        set benefitssummaryurl(value) { this.benefitsSummaryUrl = value }
 
         contactPoint($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactpoint() { return this.contactPoint }
-        set contactpoint(value) { this.contactPoint = value }
 
         healthPlanDrugOption($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplandrugoption() { return this.healthPlanDrugOption }
-        set healthplandrugoption(value) { this.healthPlanDrugOption = value }
 
         healthPlanDrugTier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplandrugtier() { return this.healthPlanDrugTier }
-        set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
         healthPlanId($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplanid() { return this.healthPlanId }
-        set healthplanid(value) { this.healthPlanId = value }
 
         healthPlanMarketingUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplanmarketingurl() { return this.healthPlanMarketingUrl }
-        set healthplanmarketingurl(value) { this.healthPlanMarketingUrl = value }
 
         includesHealthPlanFormulary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includeshealthplanformulary() { return this.includesHealthPlanFormulary }
-        set includeshealthplanformulary(value) { this.includesHealthPlanFormulary = value }
 
         includesHealthPlanNetwork($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +148,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includeshealthplannetwork() { return this.includesHealthPlanNetwork }
-        set includeshealthplannetwork(value) { this.includesHealthPlanNetwork = value }
 
         usesHealthPlanIdStandard($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -180,8 +164,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get useshealthplanidstandard() { return this.usesHealthPlanIdStandard }
-        set useshealthplanidstandard(value) { this.usesHealthPlanIdStandard = value }
         
     }
 </script>

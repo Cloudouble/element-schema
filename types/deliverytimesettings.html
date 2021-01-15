@@ -17,7 +17,7 @@
         static _rdfs_label = 'DeliveryTimeSettings'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'isUnlabelledFallback', 'shippingDestination', 'transitTimeLabel']).concat((['deliveryTime', 'isUnlabelledFallback', 'shippingDestination', 'transitTimeLabel']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'isUnlabelledFallback', 'shippingDestination', 'transitTimeLabel'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliverytime() { return this.deliveryTime }
-        set deliverytime(value) { this.deliveryTime = value }
 
         isUnlabelledFallback($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isunlabelledfallback() { return this.isUnlabelledFallback }
-        set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
 
         shippingDestination($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingdestination() { return this.shippingDestination }
-        set shippingdestination(value) { this.shippingDestination = value }
 
         transitTimeLabel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get transittimelabel() { return this.transitTimeLabel }
-        set transittimelabel(value) { this.transitTimeLabel = value }
         
     }
 </script>

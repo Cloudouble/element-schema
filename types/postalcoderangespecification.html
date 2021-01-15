@@ -17,7 +17,7 @@
         static _rdfs_label = 'PostalCodeRangeSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['postalCodeBegin', 'postalCodeEnd']).concat((['postalCodeBegin', 'postalCodeEnd']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['postalCodeBegin', 'postalCodeEnd'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get postalcodebegin() { return this.postalCodeBegin }
-        set postalcodebegin(value) { this.postalCodeBegin = value }
 
         postalCodeEnd($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get postalcodeend() { return this.postalCodeEnd }
-        set postalcodeend(value) { this.postalCodeEnd = value }
         
     }
 </script>

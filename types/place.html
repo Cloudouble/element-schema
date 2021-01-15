@@ -17,7 +17,7 @@
         static _rdfs_label = 'Place'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage']).concat((['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalproperty() { return this.additionalProperty }
-        set additionalproperty(value) { this.additionalProperty = value }
 
         address($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         amenityFeature($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get amenityfeature() { return this.amenityFeature }
-        set amenityfeature(value) { this.amenityFeature = value }
 
         branchCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get branchcode() { return this.branchCode }
-        set branchcode(value) { this.branchCode = value }
 
         containedIn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get containedin() { return this.containedIn }
-        set containedin(value) { this.containedIn = value }
 
         containedInPlace($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -144,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get containedinplace() { return this.containedInPlace }
-        set containedinplace(value) { this.containedInPlace = value }
 
         containsPlace($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -161,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get containsplace() { return this.containsPlace }
-        set containsplace(value) { this.containsPlace = value }
 
         event($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -208,8 +194,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get faxnumber() { return this.faxNumber }
-        set faxnumber(value) { this.faxNumber = value }
 
         geo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -242,8 +226,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocontains() { return this.geoContains }
-        set geocontains(value) { this.geoContains = value }
 
         geoCoveredBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -260,8 +242,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocoveredby() { return this.geoCoveredBy }
-        set geocoveredby(value) { this.geoCoveredBy = value }
 
         geoCovers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -278,8 +258,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocovers() { return this.geoCovers }
-        set geocovers(value) { this.geoCovers = value }
 
         geoCrosses($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -296,8 +274,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geocrosses() { return this.geoCrosses }
-        set geocrosses(value) { this.geoCrosses = value }
 
         geoDisjoint($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -314,8 +290,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geodisjoint() { return this.geoDisjoint }
-        set geodisjoint(value) { this.geoDisjoint = value }
 
         geoEquals($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -332,8 +306,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geoequals() { return this.geoEquals }
-        set geoequals(value) { this.geoEquals = value }
 
         geoIntersects($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -350,8 +322,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geointersects() { return this.geoIntersects }
-        set geointersects(value) { this.geoIntersects = value }
 
         geoOverlaps($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -368,8 +338,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geooverlaps() { return this.geoOverlaps }
-        set geooverlaps(value) { this.geoOverlaps = value }
 
         geoTouches($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -386,8 +354,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geotouches() { return this.geoTouches }
-        set geotouches(value) { this.geoTouches = value }
 
         geoWithin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -404,8 +370,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get geowithin() { return this.geoWithin }
-        set geowithin(value) { this.geoWithin = value }
 
         globalLocationNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -421,8 +385,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get globallocationnumber() { return this.globalLocationNumber }
-        set globallocationnumber(value) { this.globalLocationNumber = value }
 
         hasDriveThroughService($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -438,8 +400,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasdrivethroughservice() { return this.hasDriveThroughService }
-        set hasdrivethroughservice(value) { this.hasDriveThroughService = value }
 
         hasMap($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -456,8 +416,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmap() { return this.hasMap }
-        set hasmap(value) { this.hasMap = value }
 
         isAccessibleForFree($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -473,8 +431,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isaccessibleforfree() { return this.isAccessibleForFree }
-        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
 
         isicV4($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -490,8 +446,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isicv4() { return this.isicV4 }
-        set isicv4(value) { this.isicV4 = value }
 
         latitude($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -585,8 +539,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
-        set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
 
         openingHoursSpecification($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -602,8 +554,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get openinghoursspecification() { return this.openingHoursSpecification }
-        set openinghoursspecification(value) { this.openingHoursSpecification = value }
 
         photo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -651,8 +601,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publicaccess() { return this.publicAccess }
-        set publicaccess(value) { this.publicAccess = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -713,8 +661,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get smokingallowed() { return this.smokingAllowed }
-        set smokingallowed(value) { this.smokingAllowed = value }
 
         specialOpeningHoursSpecification($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -730,8 +676,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get specialopeninghoursspecification() { return this.specialOpeningHoursSpecification }
-        set specialopeninghoursspecification(value) { this.specialOpeningHoursSpecification = value }
 
         telephone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -762,8 +706,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tourbookingpage() { return this.tourBookingPage }
-        set tourbookingpage(value) { this.tourBookingPage = value }
         
     }
 </script>

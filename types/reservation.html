@@ -17,7 +17,7 @@
         static _rdfs_label = 'Reservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']).concat((['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bookingagent() { return this.bookingAgent }
-        set bookingagent(value) { this.bookingAgent = value }
 
         bookingTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bookingtime() { return this.bookingTime }
-        set bookingtime(value) { this.bookingTime = value }
 
         broker($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get modifiedtime() { return this.modifiedTime }
-        set modifiedtime(value) { this.modifiedTime = value }
 
         priceCurrency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecurrency() { return this.priceCurrency }
-        set pricecurrency(value) { this.priceCurrency = value }
 
         programMembershipUsed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programmembershipused() { return this.programMembershipUsed }
-        set programmembershipused(value) { this.programMembershipUsed = value }
 
         provider($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -161,8 +151,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reservationfor() { return this.reservationFor }
-        set reservationfor(value) { this.reservationFor = value }
 
         reservationId($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -178,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reservationid() { return this.reservationId }
-        set reservationid(value) { this.reservationId = value }
 
         reservationStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -195,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reservationstatus() { return this.reservationStatus }
-        set reservationstatus(value) { this.reservationStatus = value }
 
         reservedTicket($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -212,8 +196,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reservedticket() { return this.reservedTicket }
-        set reservedticket(value) { this.reservedTicket = value }
 
         totalPrice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -231,8 +213,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totalprice() { return this.totalPrice }
-        set totalprice(value) { this.totalPrice = value }
 
         underName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -249,8 +229,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get undername() { return this.underName }
-        set undername(value) { this.underName = value }
         
     }
 </script>

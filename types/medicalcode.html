@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalCode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['codeValue', 'codingSystem']).concat((['codeValue', 'codingSystem']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['codeValue', 'codingSystem'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get codevalue() { return this.codeValue }
-        set codevalue(value) { this.codeValue = value }
 
         codingSystem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get codingsystem() { return this.codingSystem }
-        set codingsystem(value) { this.codingSystem = value }
         
     }
 </script>

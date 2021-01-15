@@ -17,7 +17,7 @@
         static _rdfs_label = 'BroadcastFrequencySpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['broadcastFrequencyValue', 'broadcastSignalModulation', 'broadcastSubChannel']).concat((['broadcastFrequencyValue', 'broadcastSignalModulation', 'broadcastSubChannel']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['broadcastFrequencyValue', 'broadcastSignalModulation', 'broadcastSubChannel'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastfrequencyvalue() { return this.broadcastFrequencyValue }
-        set broadcastfrequencyvalue(value) { this.broadcastFrequencyValue = value }
 
         broadcastSignalModulation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastsignalmodulation() { return this.broadcastSignalModulation }
-        set broadcastsignalmodulation(value) { this.broadcastSignalModulation = value }
 
         broadcastSubChannel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastsubchannel() { return this.broadcastSubChannel }
-        set broadcastsubchannel(value) { this.broadcastSubChannel = value }
         
     }
 </script>

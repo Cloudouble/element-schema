@@ -17,7 +17,7 @@
         static _rdfs_label = 'BroadcastService'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['area', 'broadcastAffiliateOf', 'broadcastDisplayName', 'broadcastFrequency', 'broadcastTimezone', 'broadcaster', 'callSign', 'hasBroadcastChannel', 'inLanguage', 'parentService', 'videoFormat']).concat((['area', 'broadcastAffiliateOf', 'broadcastDisplayName', 'broadcastFrequency', 'broadcastTimezone', 'broadcaster', 'callSign', 'hasBroadcastChannel', 'inLanguage', 'parentService', 'videoFormat']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['area', 'broadcastAffiliateOf', 'broadcastDisplayName', 'broadcastFrequency', 'broadcastTimezone', 'broadcaster', 'callSign', 'hasBroadcastChannel', 'inLanguage', 'parentService', 'videoFormat'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastaffiliateof() { return this.broadcastAffiliateOf }
-        set broadcastaffiliateof(value) { this.broadcastAffiliateOf = value }
 
         broadcastDisplayName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastdisplayname() { return this.broadcastDisplayName }
-        set broadcastdisplayname(value) { this.broadcastDisplayName = value }
 
         broadcastFrequency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastfrequency() { return this.broadcastFrequency }
-        set broadcastfrequency(value) { this.broadcastFrequency = value }
 
         broadcastTimezone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcasttimezone() { return this.broadcastTimezone }
-        set broadcasttimezone(value) { this.broadcastTimezone = value }
 
         broadcaster($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -142,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get callsign() { return this.callSign }
-        set callsign(value) { this.callSign = value }
 
         hasBroadcastChannel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -159,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasbroadcastchannel() { return this.hasBroadcastChannel }
-        set hasbroadcastchannel(value) { this.hasBroadcastChannel = value }
 
         inLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -177,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         parentService($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -194,8 +180,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get parentservice() { return this.parentService }
-        set parentservice(value) { this.parentService = value }
 
         videoFormat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -211,8 +195,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get videoformat() { return this.videoFormat }
-        set videoformat(value) { this.videoFormat = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'JobPosting'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours']).concat((['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicantlocationrequirements() { return this.applicantLocationRequirements }
-        set applicantlocationrequirements(value) { this.applicantLocationRequirements = value }
 
         applicationContact($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationcontact() { return this.applicationContact }
-        set applicationcontact(value) { this.applicationContact = value }
 
         baseSalary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get basesalary() { return this.baseSalary }
-        set basesalary(value) { this.baseSalary = value }
 
         benefits($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dateposted() { return this.datePosted }
-        set dateposted(value) { this.datePosted = value }
 
         educationRequirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -130,8 +122,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationrequirements() { return this.educationRequirements }
-        set educationrequirements(value) { this.educationRequirements = value }
 
         eligibilityToWorkRequirement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -147,8 +137,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibilitytoworkrequirement() { return this.eligibilityToWorkRequirement }
-        set eligibilitytoworkrequirement(value) { this.eligibilityToWorkRequirement = value }
 
         employerOverview($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -164,8 +152,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get employeroverview() { return this.employerOverview }
-        set employeroverview(value) { this.employerOverview = value }
 
         employmentType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -181,8 +167,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get employmenttype() { return this.employmentType }
-        set employmenttype(value) { this.employmentType = value }
 
         employmentUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -198,8 +182,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get employmentunit() { return this.employmentUnit }
-        set employmentunit(value) { this.employmentUnit = value }
 
         estimatedSalary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -217,8 +199,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get estimatedsalary() { return this.estimatedSalary }
-        set estimatedsalary(value) { this.estimatedSalary = value }
 
         experienceRequirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -234,8 +214,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get experiencerequirements() { return this.experienceRequirements }
-        set experiencerequirements(value) { this.experienceRequirements = value }
 
         hiringOrganization($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -251,8 +229,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hiringorganization() { return this.hiringOrganization }
-        set hiringorganization(value) { this.hiringOrganization = value }
 
         incentiveCompensation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -268,8 +244,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get incentivecompensation() { return this.incentiveCompensation }
-        set incentivecompensation(value) { this.incentiveCompensation = value }
 
         incentives($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -316,8 +290,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get jobbenefits() { return this.jobBenefits }
-        set jobbenefits(value) { this.jobBenefits = value }
 
         jobImmediateStart($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -333,8 +305,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get jobimmediatestart() { return this.jobImmediateStart }
-        set jobimmediatestart(value) { this.jobImmediateStart = value }
 
         jobLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -350,8 +320,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get joblocation() { return this.jobLocation }
-        set joblocation(value) { this.jobLocation = value }
 
         jobLocationType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -367,8 +335,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get joblocationtype() { return this.jobLocationType }
-        set joblocationtype(value) { this.jobLocationType = value }
 
         jobStartDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -385,8 +351,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get jobstartdate() { return this.jobStartDate }
-        set jobstartdate(value) { this.jobStartDate = value }
 
         occupationalCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -403,8 +367,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get occupationalcategory() { return this.occupationalCategory }
-        set occupationalcategory(value) { this.occupationalCategory = value }
 
         physicalRequirement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -422,8 +384,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get physicalrequirement() { return this.physicalRequirement }
-        set physicalrequirement(value) { this.physicalRequirement = value }
 
         qualifications($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -455,8 +415,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relevantoccupation() { return this.relevantOccupation }
-        set relevantoccupation(value) { this.relevantOccupation = value }
 
         responsibilities($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -487,8 +445,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get salarycurrency() { return this.salaryCurrency }
-        set salarycurrency(value) { this.salaryCurrency = value }
 
         securityClearanceRequirement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -505,8 +461,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get securityclearancerequirement() { return this.securityClearanceRequirement }
-        set securityclearancerequirement(value) { this.securityClearanceRequirement = value }
 
         sensoryRequirement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -524,8 +478,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sensoryrequirement() { return this.sensoryRequirement }
-        set sensoryrequirement(value) { this.sensoryRequirement = value }
 
         skills($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -557,8 +509,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get specialcommitments() { return this.specialCommitments }
-        set specialcommitments(value) { this.specialCommitments = value }
 
         title($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -589,8 +539,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totaljobopenings() { return this.totalJobOpenings }
-        set totaljobopenings(value) { this.totalJobOpenings = value }
 
         validThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -607,8 +555,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validthrough() { return this.validThrough }
-        set validthrough(value) { this.validThrough = value }
 
         workHours($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -624,8 +570,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get workhours() { return this.workHours }
-        set workhours(value) { this.workHours = value }
         
     }
 </script>

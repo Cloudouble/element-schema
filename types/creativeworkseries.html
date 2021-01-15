@@ -17,7 +17,7 @@
         static _rdfs_label = 'CreativeWorkSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['endDate', 'issn', 'startDate']).concat((['endDate', 'issn', 'startDate']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['endDate', 'issn', 'startDate'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enddate() { return this.endDate }
-        set enddate(value) { this.endDate = value }
 
         issn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get startdate() { return this.startDate }
-        set startdate(value) { this.startDate = value }
         
     }
 </script>

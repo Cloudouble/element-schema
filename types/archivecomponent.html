@@ -17,7 +17,7 @@
         static _rdfs_label = 'ArchiveComponent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['holdingArchive', 'itemLocation']).concat((['holdingArchive', 'itemLocation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['holdingArchive', 'itemLocation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get holdingarchive() { return this.holdingArchive }
-        set holdingarchive(value) { this.holdingArchive = value }
 
         itemLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemlocation() { return this.itemLocation }
-        set itemlocation(value) { this.itemLocation = value }
         
     }
 </script>

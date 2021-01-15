@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthPlanFormulary'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail']).concat((['healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancostsharing() { return this.healthPlanCostSharing }
-        set healthplancostsharing(value) { this.healthPlanCostSharing = value }
 
         healthPlanDrugTier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplandrugtier() { return this.healthPlanDrugTier }
-        set healthplandrugtier(value) { this.healthPlanDrugTier = value }
 
         offersPrescriptionByMail($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get offersprescriptionbymail() { return this.offersPrescriptionByMail }
-        set offersprescriptionbymail(value) { this.offersPrescriptionByMail = value }
         
     }
 </script>

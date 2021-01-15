@@ -17,7 +17,7 @@
         static _rdfs_label = 'PublicationIssue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['issueNumber', 'pageEnd', 'pageStart', 'pagination']).concat((['issueNumber', 'pageEnd', 'pageStart', 'pagination']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['issueNumber', 'pageEnd', 'pageStart', 'pagination'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get issuenumber() { return this.issueNumber }
-        set issuenumber(value) { this.issueNumber = value }
 
         pageEnd($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pageend() { return this.pageEnd }
-        set pageend(value) { this.pageEnd = value }
 
         pageStart($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pagestart() { return this.pageStart }
-        set pagestart(value) { this.pageStart = value }
 
         pagination($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PhysicalActivity'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology']).concat((['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedanatomy() { return this.associatedAnatomy }
-        set associatedanatomy(value) { this.associatedAnatomy = value }
 
         category($this, value) {
 			window.LiveElement.Schema.renderProperty({

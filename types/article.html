@@ -17,7 +17,7 @@
         static _rdfs_label = 'Article'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['articleBody', 'articleSection', 'backstory', 'pageEnd', 'pageStart', 'pagination', 'speakable', 'wordCount']).concat((['articleBody', 'articleSection', 'backstory', 'pageEnd', 'pageStart', 'pagination', 'speakable', 'wordCount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['articleBody', 'articleSection', 'backstory', 'pageEnd', 'pageStart', 'pagination', 'speakable', 'wordCount'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get articlebody() { return this.articleBody }
-        set articlebody(value) { this.articleBody = value }
 
         articleSection($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get articlesection() { return this.articleSection }
-        set articlesection(value) { this.articleSection = value }
 
         backstory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pageend() { return this.pageEnd }
-        set pageend(value) { this.pageEnd = value }
 
         pageStart($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pagestart() { return this.pageStart }
-        set pagestart(value) { this.pageStart = value }
 
         pagination($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -160,8 +152,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get wordcount() { return this.wordCount }
-        set wordcount(value) { this.wordCount = value }
         
     }
 </script>

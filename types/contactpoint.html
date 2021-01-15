@@ -17,7 +17,7 @@
         static _rdfs_label = 'ContactPoint'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone']).concat((['areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone'])))
         }
         
         constructor() {
@@ -46,8 +46,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get areaserved() { return this.areaServed }
-        set areaserved(value) { this.areaServed = value }
 
         availableLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -64,8 +62,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablelanguage() { return this.availableLanguage }
-        set availablelanguage(value) { this.availableLanguage = value }
 
         contactOption($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -81,8 +77,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactoption() { return this.contactOption }
-        set contactoption(value) { this.contactOption = value }
 
         contactType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +92,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contacttype() { return this.contactType }
-        set contacttype(value) { this.contactType = value }
 
         email($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -130,8 +122,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get faxnumber() { return this.faxNumber }
-        set faxnumber(value) { this.faxNumber = value }
 
         hoursAvailable($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -147,8 +137,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hoursavailable() { return this.hoursAvailable }
-        set hoursavailable(value) { this.hoursAvailable = value }
 
         productSupported($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -165,8 +153,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productsupported() { return this.productSupported }
-        set productsupported(value) { this.productSupported = value }
 
         serviceArea($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -184,8 +170,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicearea() { return this.serviceArea }
-        set servicearea(value) { this.serviceArea = value }
 
         telephone($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalGuideline'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject']).concat((['evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['evidenceLevel', 'evidenceOrigin', 'guidelineDate', 'guidelineSubject'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get evidencelevel() { return this.evidenceLevel }
-        set evidencelevel(value) { this.evidenceLevel = value }
 
         evidenceOrigin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get evidenceorigin() { return this.evidenceOrigin }
-        set evidenceorigin(value) { this.evidenceOrigin = value }
 
         guidelineDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get guidelinedate() { return this.guidelineDate }
-        set guidelinedate(value) { this.guidelineDate = value }
 
         guidelineSubject($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get guidelinesubject() { return this.guidelineSubject }
-        set guidelinesubject(value) { this.guidelineSubject = value }
         
     }
 </script>

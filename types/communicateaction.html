@@ -17,7 +17,7 @@
         static _rdfs_label = 'CommunicateAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'inLanguage', 'language', 'recipient']).concat((['about', 'inLanguage', 'language', 'recipient']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'inLanguage', 'language', 'recipient'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         language($this, value) {
 			window.LiveElement.Schema.renderProperty({

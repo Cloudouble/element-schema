@@ -17,7 +17,7 @@
         static _rdfs_label = 'GeoShape'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode']).concat((['address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode'])))
         }
         
         constructor() {
@@ -60,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get addresscountry() { return this.addressCountry }
-        set addresscountry(value) { this.addressCountry = value }
 
         box($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -153,8 +151,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get postalcode() { return this.postalCode }
-        set postalcode(value) { this.postalCode = value }
         
     }
 </script>

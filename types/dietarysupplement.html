@@ -17,7 +17,7 @@
         static _rdfs_label = 'DietarySupplement'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation']).concat((['activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get activeingredient() { return this.activeIngredient }
-        set activeingredient(value) { this.activeIngredient = value }
 
         isProprietary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isproprietary() { return this.isProprietary }
-        set isproprietary(value) { this.isProprietary = value }
 
         legalStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legalstatus() { return this.legalStatus }
-        set legalstatus(value) { this.legalStatus = value }
 
         manufacturer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumintake() { return this.maximumIntake }
-        set maximumintake(value) { this.maximumIntake = value }
 
         mechanismOfAction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mechanismofaction() { return this.mechanismOfAction }
-        set mechanismofaction(value) { this.mechanismOfAction = value }
 
         nonProprietaryName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nonproprietaryname() { return this.nonProprietaryName }
-        set nonproprietaryname(value) { this.nonProprietaryName = value }
 
         proprietaryName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get proprietaryname() { return this.proprietaryName }
-        set proprietaryname(value) { this.proprietaryName = value }
 
         recommendedIntake($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -179,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recommendedintake() { return this.recommendedIntake }
-        set recommendedintake(value) { this.recommendedIntake = value }
 
         safetyConsideration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -196,8 +180,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get safetyconsideration() { return this.safetyConsideration }
-        set safetyconsideration(value) { this.safetyConsideration = value }
 
         targetPopulation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -213,8 +195,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetpopulation() { return this.targetPopulation }
-        set targetpopulation(value) { this.targetPopulation = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'BroadcastEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat']).concat((['broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get broadcastofevent() { return this.broadcastOfEvent }
-        set broadcastofevent(value) { this.broadcastOfEvent = value }
 
         isLiveBroadcast($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get islivebroadcast() { return this.isLiveBroadcast }
-        set islivebroadcast(value) { this.isLiveBroadcast = value }
 
         subtitleLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subtitlelanguage() { return this.subtitleLanguage }
-        set subtitlelanguage(value) { this.subtitleLanguage = value }
 
         videoFormat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get videoformat() { return this.videoFormat }
-        set videoformat(value) { this.videoFormat = value }
         
     }
 </script>

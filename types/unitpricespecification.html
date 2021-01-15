@@ -17,7 +17,7 @@
         static _rdfs_label = 'UnitPriceSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText']).concat((['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['billingDuration', 'billingIncrement', 'billingStart', 'priceComponentType', 'priceType', 'referenceQuantity', 'unitCode', 'unitText'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get billingduration() { return this.billingDuration }
-        set billingduration(value) { this.billingDuration = value }
 
         billingIncrement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get billingincrement() { return this.billingIncrement }
-        set billingincrement(value) { this.billingIncrement = value }
 
         billingStart($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get billingstart() { return this.billingStart }
-        set billingstart(value) { this.billingStart = value }
 
         priceComponentType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecomponenttype() { return this.priceComponentType }
-        set pricecomponenttype(value) { this.priceComponentType = value }
 
         priceType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -114,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricetype() { return this.priceType }
-        set pricetype(value) { this.priceType = value }
 
         referenceQuantity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -131,8 +121,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get referencequantity() { return this.referenceQuantity }
-        set referencequantity(value) { this.referenceQuantity = value }
 
         unitCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -149,8 +137,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unitcode() { return this.unitCode }
-        set unitcode(value) { this.unitCode = value }
 
         unitText($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -166,8 +152,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unittext() { return this.unitText }
-        set unittext(value) { this.unitText = value }
         
     }
 </script>

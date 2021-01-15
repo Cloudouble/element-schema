@@ -17,7 +17,7 @@
         static _rdfs_label = 'RepaymentSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['downPayment', 'earlyPrepaymentPenalty', 'loanPaymentAmount', 'loanPaymentFrequency', 'numberOfLoanPayments']).concat((['downPayment', 'earlyPrepaymentPenalty', 'loanPaymentAmount', 'loanPaymentFrequency', 'numberOfLoanPayments']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['downPayment', 'earlyPrepaymentPenalty', 'loanPaymentAmount', 'loanPaymentFrequency', 'numberOfLoanPayments'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get downpayment() { return this.downPayment }
-        set downpayment(value) { this.downPayment = value }
 
         earlyPrepaymentPenalty($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get earlyprepaymentpenalty() { return this.earlyPrepaymentPenalty }
-        set earlyprepaymentpenalty(value) { this.earlyPrepaymentPenalty = value }
 
         loanPaymentAmount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loanpaymentamount() { return this.loanPaymentAmount }
-        set loanpaymentamount(value) { this.loanPaymentAmount = value }
 
         loanPaymentFrequency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loanpaymentfrequency() { return this.loanPaymentFrequency }
-        set loanpaymentfrequency(value) { this.loanPaymentFrequency = value }
 
         numberOfLoanPayments($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofloanpayments() { return this.numberOfLoanPayments }
-        set numberofloanpayments(value) { this.numberOfLoanPayments = value }
         
     }
 </script>

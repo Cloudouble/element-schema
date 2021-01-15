@@ -17,7 +17,7 @@
         static _rdfs_label = 'ParcelDelivery'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']).concat((['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliveryaddress() { return this.deliveryAddress }
-        set deliveryaddress(value) { this.deliveryAddress = value }
 
         deliveryStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliverystatus() { return this.deliveryStatus }
-        set deliverystatus(value) { this.deliveryStatus = value }
 
         expectedArrivalFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectedarrivalfrom() { return this.expectedArrivalFrom }
-        set expectedarrivalfrom(value) { this.expectedArrivalFrom = value }
 
         expectedArrivalUntil($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectedarrivaluntil() { return this.expectedArrivalUntil }
-        set expectedarrivaluntil(value) { this.expectedArrivalUntil = value }
 
         hasDeliveryMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasdeliverymethod() { return this.hasDeliveryMethod }
-        set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
 
         itemShipped($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemshipped() { return this.itemShipped }
-        set itemshipped(value) { this.itemShipped = value }
 
         originAddress($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get originaddress() { return this.originAddress }
-        set originaddress(value) { this.originAddress = value }
 
         partOfOrder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -179,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partoforder() { return this.partOfOrder }
-        set partoforder(value) { this.partOfOrder = value }
 
         provider($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -212,8 +196,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trackingnumber() { return this.trackingNumber }
-        set trackingnumber(value) { this.trackingNumber = value }
 
         trackingUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -229,8 +211,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trackingurl() { return this.trackingUrl }
-        set trackingurl(value) { this.trackingUrl = value }
         
     }
 </script>

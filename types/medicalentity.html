@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalEntity'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study']).concat((['code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study'])))
         }
         
         constructor() {
@@ -75,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legalstatus() { return this.legalStatus }
-        set legalstatus(value) { this.legalStatus = value }
 
         medicineSystem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get medicinesystem() { return this.medicineSystem }
-        set medicinesystem(value) { this.medicineSystem = value }
 
         recognizingAuthority($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recognizingauthority() { return this.recognizingAuthority }
-        set recognizingauthority(value) { this.recognizingAuthority = value }
 
         relevantSpecialty($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -126,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relevantspecialty() { return this.relevantSpecialty }
-        set relevantspecialty(value) { this.relevantSpecialty = value }
 
         study($this, value) {
 			window.LiveElement.Schema.renderProperty({

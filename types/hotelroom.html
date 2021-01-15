@@ -17,7 +17,7 @@
         static _rdfs_label = 'HotelRoom'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bed', 'occupancy']).concat((['bed', 'occupancy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bed', 'occupancy'])))
         }
         
         constructor() {

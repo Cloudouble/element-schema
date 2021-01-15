@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReviewAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['resultReview']).concat((['resultReview']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['resultReview'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get resultreview() { return this.resultReview }
-        set resultreview(value) { this.resultReview = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ItemList'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['itemListElement', 'itemListOrder', 'numberOfItems']).concat((['itemListElement', 'itemListOrder', 'numberOfItems']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['itemListElement', 'itemListOrder', 'numberOfItems'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemlistelement() { return this.itemListElement }
-        set itemlistelement(value) { this.itemListElement = value }
 
         itemListOrder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -63,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemlistorder() { return this.itemListOrder }
-        set itemlistorder(value) { this.itemListOrder = value }
 
         numberOfItems($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofitems() { return this.numberOfItems }
-        set numberofitems(value) { this.numberOfItems = value }
         
     }
 </script>

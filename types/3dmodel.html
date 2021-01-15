@@ -17,7 +17,7 @@
         static _rdfs_label = '3DModel'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['isResizable']).concat((['isResizable']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['isResizable'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isresizable() { return this.isResizable }
-        set isresizable(value) { this.isResizable = value }
         
     }
 </script>

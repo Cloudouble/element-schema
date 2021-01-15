@@ -17,7 +17,7 @@
         static _rdfs_label = 'CompoundPriceSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['priceComponent', 'priceType']).concat((['priceComponent', 'priceType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['priceComponent', 'priceType'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecomponent() { return this.priceComponent }
-        set pricecomponent(value) { this.priceComponent = value }
 
         priceType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricetype() { return this.priceType }
-        set pricetype(value) { this.priceType = value }
         
     }
 </script>

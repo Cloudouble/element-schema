@@ -17,7 +17,7 @@
         static _rdfs_label = 'Legislation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType']).concat((['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'legislationApplies', 'legislationChanges', 'legislationConsolidates', 'legislationDate', 'legislationDateVersion', 'legislationIdentifier', 'legislationJurisdiction', 'legislationLegalForce', 'legislationPassedBy', 'legislationResponsible', 'legislationTransposes', 'legislationType'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationapplies() { return this.legislationApplies }
-        set legislationapplies(value) { this.legislationApplies = value }
 
         legislationChanges($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationchanges() { return this.legislationChanges }
-        set legislationchanges(value) { this.legislationChanges = value }
 
         legislationConsolidates($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationconsolidates() { return this.legislationConsolidates }
-        set legislationconsolidates(value) { this.legislationConsolidates = value }
 
         legislationDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationdate() { return this.legislationDate }
-        set legislationdate(value) { this.legislationDate = value }
 
         legislationDateVersion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationdateversion() { return this.legislationDateVersion }
-        set legislationdateversion(value) { this.legislationDateVersion = value }
 
         legislationIdentifier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationidentifier() { return this.legislationIdentifier }
-        set legislationidentifier(value) { this.legislationIdentifier = value }
 
         legislationJurisdiction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -163,8 +151,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationjurisdiction() { return this.legislationJurisdiction }
-        set legislationjurisdiction(value) { this.legislationJurisdiction = value }
 
         legislationLegalForce($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -180,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationlegalforce() { return this.legislationLegalForce }
-        set legislationlegalforce(value) { this.legislationLegalForce = value }
 
         legislationPassedBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -198,8 +182,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationpassedby() { return this.legislationPassedBy }
-        set legislationpassedby(value) { this.legislationPassedBy = value }
 
         legislationResponsible($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -216,8 +198,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationresponsible() { return this.legislationResponsible }
-        set legislationresponsible(value) { this.legislationResponsible = value }
 
         legislationTransposes($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -233,8 +213,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationtransposes() { return this.legislationTransposes }
-        set legislationtransposes(value) { this.legislationTransposes = value }
 
         legislationType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -251,8 +229,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legislationtype() { return this.legislationType }
-        set legislationtype(value) { this.legislationType = value }
         
     }
 </script>

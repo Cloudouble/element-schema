@@ -17,7 +17,7 @@
         static _rdfs_label = 'ActionAccessSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']).concat((['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availabilityends() { return this.availabilityEnds }
-        set availabilityends(value) { this.availabilityEnds = value }
 
         availabilityStarts($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -64,8 +62,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availabilitystarts() { return this.availabilityStarts }
-        set availabilitystarts(value) { this.availabilityStarts = value }
 
         category($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -101,8 +97,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibleregion() { return this.eligibleRegion }
-        set eligibleregion(value) { this.eligibleRegion = value }
 
         expectsAcceptanceOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -118,8 +112,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectsacceptanceof() { return this.expectsAcceptanceOf }
-        set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
 
         ineligibleRegion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -137,8 +129,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ineligibleregion() { return this.ineligibleRegion }
-        set ineligibleregion(value) { this.ineligibleRegion = value }
 
         requiresSubscription($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -155,8 +145,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiressubscription() { return this.requiresSubscription }
-        set requiressubscription(value) { this.requiresSubscription = value }
         
     }
 </script>

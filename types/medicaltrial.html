@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalTrial'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['trialDesign']).concat((['trialDesign']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['trialDesign'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trialdesign() { return this.trialDesign }
-        set trialdesign(value) { this.trialDesign = value }
         
     }
 </script>

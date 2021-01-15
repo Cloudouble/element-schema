@@ -17,7 +17,7 @@
         static _rdfs_label = 'DigitalDocument'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasDigitalDocumentPermission']).concat((['hasDigitalDocumentPermission']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasDigitalDocumentPermission'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasdigitaldocumentpermission() { return this.hasDigitalDocumentPermission }
-        set hasdigitaldocumentpermission(value) { this.hasDigitalDocumentPermission = value }
         
     }
 </script>

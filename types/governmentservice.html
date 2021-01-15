@@ -17,7 +17,7 @@
         static _rdfs_label = 'GovernmentService'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'serviceOperator']).concat((['jurisdiction', 'serviceOperator']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'serviceOperator'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serviceoperator() { return this.serviceOperator }
-        set serviceoperator(value) { this.serviceOperator = value }
         
     }
 </script>

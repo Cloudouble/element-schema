@@ -17,7 +17,7 @@
         static _rdfs_label = 'Guide'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['reviewAspect']).concat((['reviewAspect']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['reviewAspect'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reviewaspect() { return this.reviewAspect }
-        set reviewaspect(value) { this.reviewAspect = value }
         
     }
 </script>

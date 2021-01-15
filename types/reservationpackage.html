@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReservationPackage'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['subReservation']).concat((['subReservation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['subReservation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subreservation() { return this.subReservation }
-        set subreservation(value) { this.subReservation = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MathSolver'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['mathExpression']).concat((['mathExpression']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['mathExpression'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mathexpression() { return this.mathExpression }
-        set mathexpression(value) { this.mathExpression = value }
         
     }
 </script>

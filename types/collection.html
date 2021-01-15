@@ -17,7 +17,7 @@
         static _rdfs_label = 'Collection'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['collectionSize']).concat((['collectionSize']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['collectionSize'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get collectionsize() { return this.collectionSize }
-        set collectionsize(value) { this.collectionSize = value }
         
     }
 </script>

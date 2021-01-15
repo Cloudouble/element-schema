@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalProcedure'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status']).concat((['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bodylocation() { return this.bodyLocation }
-        set bodylocation(value) { this.bodyLocation = value }
 
         followup($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get howperformed() { return this.howPerformed }
-        set howperformed(value) { this.howPerformed = value }
 
         preparation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -108,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get proceduretype() { return this.procedureType }
-        set proceduretype(value) { this.procedureType = value }
 
         status($this, value) {
 			window.LiveElement.Schema.renderProperty({

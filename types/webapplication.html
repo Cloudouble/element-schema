@@ -17,7 +17,7 @@
         static _rdfs_label = 'WebApplication'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['browserRequirements']).concat((['browserRequirements']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['browserRequirements'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get browserrequirements() { return this.browserRequirements }
-        set browserrequirements(value) { this.browserRequirements = value }
         
     }
 </script>

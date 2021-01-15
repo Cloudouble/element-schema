@@ -17,7 +17,7 @@
         static _rdfs_label = 'APIReference'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['assembly', 'assemblyVersion', 'executableLibraryName', 'programmingModel', 'targetPlatform']).concat((['assembly', 'assemblyVersion', 'executableLibraryName', 'programmingModel', 'targetPlatform']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['assembly', 'assemblyVersion', 'executableLibraryName', 'programmingModel', 'targetPlatform'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get assemblyversion() { return this.assemblyVersion }
-        set assemblyversion(value) { this.assemblyVersion = value }
 
         executableLibraryName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get executablelibraryname() { return this.executableLibraryName }
-        set executablelibraryname(value) { this.executableLibraryName = value }
 
         programmingModel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programmingmodel() { return this.programmingModel }
-        set programmingmodel(value) { this.programmingModel = value }
 
         targetPlatform($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get targetplatform() { return this.targetPlatform }
-        set targetplatform(value) { this.targetPlatform = value }
         
     }
 </script>

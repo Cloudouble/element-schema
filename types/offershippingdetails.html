@@ -17,7 +17,7 @@
         static _rdfs_label = 'OfferShippingDetails'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']).concat((['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliverytime() { return this.deliveryTime }
-        set deliverytime(value) { this.deliveryTime = value }
 
         doesNotShip($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doesnotship() { return this.doesNotShip }
-        set doesnotship(value) { this.doesNotShip = value }
 
         shippingDestination($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingdestination() { return this.shippingDestination }
-        set shippingdestination(value) { this.shippingDestination = value }
 
         shippingLabel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippinglabel() { return this.shippingLabel }
-        set shippinglabel(value) { this.shippingLabel = value }
 
         shippingRate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingrate() { return this.shippingRate }
-        set shippingrate(value) { this.shippingRate = value }
 
         shippingSettingsLink($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingsettingslink() { return this.shippingSettingsLink }
-        set shippingsettingslink(value) { this.shippingSettingsLink = value }
 
         transitTimeLabel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get transittimelabel() { return this.transitTimeLabel }
-        set transittimelabel(value) { this.transitTimeLabel = value }
         
     }
 </script>

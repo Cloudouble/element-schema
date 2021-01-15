@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthPlanCostSharingSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory']).concat((['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancoinsuranceoption() { return this.healthPlanCoinsuranceOption }
-        set healthplancoinsuranceoption(value) { this.healthPlanCoinsuranceOption = value }
 
         healthPlanCoinsuranceRate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancoinsurancerate() { return this.healthPlanCoinsuranceRate }
-        set healthplancoinsurancerate(value) { this.healthPlanCoinsuranceRate = value }
 
         healthPlanCopay($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancopay() { return this.healthPlanCopay }
-        set healthplancopay(value) { this.healthPlanCopay = value }
 
         healthPlanCopayOption($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancopayoption() { return this.healthPlanCopayOption }
-        set healthplancopayoption(value) { this.healthPlanCopayOption = value }
 
         healthPlanPharmacyCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplanpharmacycategory() { return this.healthPlanPharmacyCategory }
-        set healthplanpharmacycategory(value) { this.healthPlanPharmacyCategory = value }
         
     }
 </script>

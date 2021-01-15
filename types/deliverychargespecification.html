@@ -17,7 +17,7 @@
         static _rdfs_label = 'DeliveryChargeSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion']).concat((['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['appliesToDeliveryMethod', 'areaServed', 'eligibleRegion', 'ineligibleRegion'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
-        set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
 
         areaServed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -63,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get areaserved() { return this.areaServed }
-        set areaserved(value) { this.areaServed = value }
 
         eligibleRegion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -82,8 +78,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibleregion() { return this.eligibleRegion }
-        set eligibleregion(value) { this.eligibleRegion = value }
 
         ineligibleRegion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -101,8 +95,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ineligibleregion() { return this.ineligibleRegion }
-        set ineligibleregion(value) { this.ineligibleRegion = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'Game'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest']).concat((['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get characterattribute() { return this.characterAttribute }
-        set characterattribute(value) { this.characterAttribute = value }
 
         gameItem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gameitem() { return this.gameItem }
-        set gameitem(value) { this.gameItem = value }
 
         gameLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gamelocation() { return this.gameLocation }
-        set gamelocation(value) { this.gameLocation = value }
 
         numberOfPlayers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofplayers() { return this.numberOfPlayers }
-        set numberofplayers(value) { this.numberOfPlayers = value }
 
         quest($this, value) {
 			window.LiveElement.Schema.renderProperty({

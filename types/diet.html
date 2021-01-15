@@ -17,7 +17,7 @@
         static _rdfs_label = 'Diet'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dietFeatures', 'endorsers', 'expertConsiderations', 'physiologicalBenefits', 'risks']).concat((['dietFeatures', 'endorsers', 'expertConsiderations', 'physiologicalBenefits', 'risks']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dietFeatures', 'endorsers', 'expertConsiderations', 'physiologicalBenefits', 'risks'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dietfeatures() { return this.dietFeatures }
-        set dietfeatures(value) { this.dietFeatures = value }
 
         endorsers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expertconsiderations() { return this.expertConsiderations }
-        set expertconsiderations(value) { this.expertConsiderations = value }
 
         physiologicalBenefits($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get physiologicalbenefits() { return this.physiologicalBenefits }
-        set physiologicalbenefits(value) { this.physiologicalBenefits = value }
 
         risks($this, value) {
 			window.LiveElement.Schema.renderProperty({

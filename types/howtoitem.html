@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowToItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['requiredQuantity']).concat((['requiredQuantity']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['requiredQuantity'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiredquantity() { return this.requiredQuantity }
-        set requiredquantity(value) { this.requiredQuantity = value }
         
     }
 </script>

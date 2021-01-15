@@ -17,7 +17,7 @@
         static _rdfs_label = 'BuyAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['seller', 'vendor', 'warrantyPromise']).concat((['seller', 'vendor', 'warrantyPromise']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['seller', 'vendor', 'warrantyPromise'])))
         }
         
         constructor() {
@@ -75,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get warrantypromise() { return this.warrantyPromise }
-        set warrantypromise(value) { this.warrantyPromise = value }
         
     }
 </script>

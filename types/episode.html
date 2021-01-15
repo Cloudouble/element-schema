@@ -17,7 +17,7 @@
         static _rdfs_label = 'Episode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'director', 'directors', 'episodeNumber', 'musicBy', 'partOfSeason', 'partOfSeries', 'productionCompany', 'trailer']).concat((['actor', 'actors', 'director', 'directors', 'episodeNumber', 'musicBy', 'partOfSeason', 'partOfSeries', 'productionCompany', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'director', 'directors', 'episodeNumber', 'musicBy', 'partOfSeason', 'partOfSeries', 'productionCompany', 'trailer'])))
         }
         
         constructor() {
@@ -104,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get episodenumber() { return this.episodeNumber }
-        set episodenumber(value) { this.episodeNumber = value }
 
         musicBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -122,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         partOfSeason($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -139,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partofseason() { return this.partOfSeason }
-        set partofseason(value) { this.partOfSeason = value }
 
         partOfSeries($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -156,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partofseries() { return this.partOfSeries }
-        set partofseries(value) { this.partOfSeries = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -173,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         trailer($this, value) {
 			window.LiveElement.Schema.renderProperty({

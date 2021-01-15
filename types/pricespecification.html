@@ -17,7 +17,7 @@
         static _rdfs_label = 'PriceSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded']).concat((['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligiblequantity() { return this.eligibleQuantity }
-        set eligiblequantity(value) { this.eligibleQuantity = value }
 
         eligibleTransactionVolume($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibletransactionvolume() { return this.eligibleTransactionVolume }
-        set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
 
         maxPrice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maxprice() { return this.maxPrice }
-        set maxprice(value) { this.maxPrice = value }
 
         minPrice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get minprice() { return this.minPrice }
-        set minprice(value) { this.minPrice = value }
 
         price($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricecurrency() { return this.priceCurrency }
-        set pricecurrency(value) { this.priceCurrency = value }
 
         validFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validfrom() { return this.validFrom }
-        set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -163,8 +151,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validthrough() { return this.validThrough }
-        set validthrough(value) { this.validThrough = value }
 
         valueAddedTaxIncluded($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -180,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get valueaddedtaxincluded() { return this.valueAddedTaxIncluded }
-        set valueaddedtaxincluded(value) { this.valueAddedTaxIncluded = value }
         
     }
 </script>

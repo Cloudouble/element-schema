@@ -17,7 +17,7 @@
         static _rdfs_label = 'LearningResource'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches']).concat((['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches'])))
         }
         
         constructor() {
@@ -61,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get competencyrequired() { return this.competencyRequired }
-        set competencyrequired(value) { this.competencyRequired = value }
 
         educationalAlignment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalalignment() { return this.educationalAlignment }
-        set educationalalignment(value) { this.educationalAlignment = value }
 
         educationalLevel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -97,8 +93,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationallevel() { return this.educationalLevel }
-        set educationallevel(value) { this.educationalLevel = value }
 
         educationalUse($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -115,8 +109,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationaluse() { return this.educationalUse }
-        set educationaluse(value) { this.educationalUse = value }
 
         learningResourceType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -133,8 +125,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get learningresourcetype() { return this.learningResourceType }
-        set learningresourcetype(value) { this.learningResourceType = value }
 
         teaches($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ServiceChannel'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['availableLanguage', 'processingTime', 'providesService', 'serviceLocation', 'servicePhone', 'servicePostalAddress', 'serviceSmsNumber', 'serviceUrl']).concat((['availableLanguage', 'processingTime', 'providesService', 'serviceLocation', 'servicePhone', 'servicePostalAddress', 'serviceSmsNumber', 'serviceUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['availableLanguage', 'processingTime', 'providesService', 'serviceLocation', 'servicePhone', 'servicePostalAddress', 'serviceSmsNumber', 'serviceUrl'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablelanguage() { return this.availableLanguage }
-        set availablelanguage(value) { this.availableLanguage = value }
 
         processingTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get processingtime() { return this.processingTime }
-        set processingtime(value) { this.processingTime = value }
 
         providesService($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get providesservice() { return this.providesService }
-        set providesservice(value) { this.providesService = value }
 
         serviceLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicelocation() { return this.serviceLocation }
-        set servicelocation(value) { this.serviceLocation = value }
 
         servicePhone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicephone() { return this.servicePhone }
-        set servicephone(value) { this.servicePhone = value }
 
         servicePostalAddress($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -129,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicepostaladdress() { return this.servicePostalAddress }
-        set servicepostaladdress(value) { this.servicePostalAddress = value }
 
         serviceSmsNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -146,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicesmsnumber() { return this.serviceSmsNumber }
-        set servicesmsnumber(value) { this.serviceSmsNumber = value }
 
         serviceUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -163,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serviceurl() { return this.serviceUrl }
-        set serviceurl(value) { this.serviceUrl = value }
         
     }
 </script>

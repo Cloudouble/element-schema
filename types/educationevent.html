@@ -17,7 +17,7 @@
         static _rdfs_label = 'EducationEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['assesses', 'educationalLevel', 'teaches']).concat((['assesses', 'educationalLevel', 'teaches']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['assesses', 'educationalLevel', 'teaches'])))
         }
         
         constructor() {
@@ -61,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationallevel() { return this.educationalLevel }
-        set educationallevel(value) { this.educationalLevel = value }
 
         teaches($this, value) {
 			window.LiveElement.Schema.renderProperty({

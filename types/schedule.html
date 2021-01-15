@@ -17,7 +17,7 @@
         static _rdfs_label = 'Schedule'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime']).concat((['byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get byday() { return this.byDay }
-        set byday(value) { this.byDay = value }
 
         byMonth($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bymonth() { return this.byMonth }
-        set bymonth(value) { this.byMonth = value }
 
         byMonthDay($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bymonthday() { return this.byMonthDay }
-        set bymonthday(value) { this.byMonthDay = value }
 
         byMonthWeek($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bymonthweek() { return this.byMonthWeek }
-        set bymonthweek(value) { this.byMonthWeek = value }
 
         duration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enddate() { return this.endDate }
-        set enddate(value) { this.endDate = value }
 
         endTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -146,8 +136,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get endtime() { return this.endTime }
-        set endtime(value) { this.endTime = value }
 
         exceptDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -164,8 +152,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exceptdate() { return this.exceptDate }
-        set exceptdate(value) { this.exceptDate = value }
 
         repeatCount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -181,8 +167,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get repeatcount() { return this.repeatCount }
-        set repeatcount(value) { this.repeatCount = value }
 
         repeatFrequency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -199,8 +183,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get repeatfrequency() { return this.repeatFrequency }
-        set repeatfrequency(value) { this.repeatFrequency = value }
 
         scheduleTimezone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -216,8 +198,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get scheduletimezone() { return this.scheduleTimezone }
-        set scheduletimezone(value) { this.scheduleTimezone = value }
 
         startDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -234,8 +214,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get startdate() { return this.startDate }
-        set startdate(value) { this.startDate = value }
 
         startTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -252,8 +230,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get starttime() { return this.startTime }
-        set starttime(value) { this.startTime = value }
         
     }
 </script>

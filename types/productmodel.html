@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductModel'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['isVariantOf', 'predecessorOf', 'successorOf']).concat((['isVariantOf', 'predecessorOf', 'successorOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['isVariantOf', 'predecessorOf', 'successorOf'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isvariantof() { return this.isVariantOf }
-        set isvariantof(value) { this.isVariantOf = value }
 
         predecessorOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get predecessorof() { return this.predecessorOf }
-        set predecessorof(value) { this.predecessorOf = value }
 
         successorOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get successorof() { return this.successorOf }
-        set successorof(value) { this.successorOf = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'SoftwareApplication'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicationCategory', 'applicationSubCategory', 'applicationSuite', 'availableOnDevice', 'countriesNotSupported', 'countriesSupported', 'device', 'downloadUrl', 'featureList', 'fileSize', 'installUrl', 'memoryRequirements', 'operatingSystem', 'permissions', 'processorRequirements', 'releaseNotes', 'requirements', 'screenshot', 'softwareAddOn', 'softwareHelp', 'softwareRequirements', 'softwareVersion', 'storageRequirements', 'supportingData']).concat((['applicationCategory', 'applicationSubCategory', 'applicationSuite', 'availableOnDevice', 'countriesNotSupported', 'countriesSupported', 'device', 'downloadUrl', 'featureList', 'fileSize', 'installUrl', 'memoryRequirements', 'operatingSystem', 'permissions', 'processorRequirements', 'releaseNotes', 'requirements', 'screenshot', 'softwareAddOn', 'softwareHelp', 'softwareRequirements', 'softwareVersion', 'storageRequirements', 'supportingData']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['applicationCategory', 'applicationSubCategory', 'applicationSuite', 'availableOnDevice', 'countriesNotSupported', 'countriesSupported', 'device', 'downloadUrl', 'featureList', 'fileSize', 'installUrl', 'memoryRequirements', 'operatingSystem', 'permissions', 'processorRequirements', 'releaseNotes', 'requirements', 'screenshot', 'softwareAddOn', 'softwareHelp', 'softwareRequirements', 'softwareVersion', 'storageRequirements', 'supportingData'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationcategory() { return this.applicationCategory }
-        set applicationcategory(value) { this.applicationCategory = value }
 
         applicationSubCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationsubcategory() { return this.applicationSubCategory }
-        set applicationsubcategory(value) { this.applicationSubCategory = value }
 
         applicationSuite($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationsuite() { return this.applicationSuite }
-        set applicationsuite(value) { this.applicationSuite = value }
 
         availableOnDevice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availableondevice() { return this.availableOnDevice }
-        set availableondevice(value) { this.availableOnDevice = value }
 
         countriesNotSupported($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -113,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get countriesnotsupported() { return this.countriesNotSupported }
-        set countriesnotsupported(value) { this.countriesNotSupported = value }
 
         countriesSupported($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -130,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get countriessupported() { return this.countriesSupported }
-        set countriessupported(value) { this.countriesSupported = value }
 
         device($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get downloadurl() { return this.downloadUrl }
-        set downloadurl(value) { this.downloadUrl = value }
 
         featureList($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -180,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get featurelist() { return this.featureList }
-        set featurelist(value) { this.featureList = value }
 
         fileSize($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -197,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get filesize() { return this.fileSize }
-        set filesize(value) { this.fileSize = value }
 
         installUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -214,8 +196,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get installurl() { return this.installUrl }
-        set installurl(value) { this.installUrl = value }
 
         memoryRequirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -232,8 +212,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get memoryrequirements() { return this.memoryRequirements }
-        set memoryrequirements(value) { this.memoryRequirements = value }
 
         operatingSystem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -249,8 +227,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get operatingsystem() { return this.operatingSystem }
-        set operatingsystem(value) { this.operatingSystem = value }
 
         permissions($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -281,8 +257,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get processorrequirements() { return this.processorRequirements }
-        set processorrequirements(value) { this.processorRequirements = value }
 
         releaseNotes($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -299,8 +273,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get releasenotes() { return this.releaseNotes }
-        set releasenotes(value) { this.releaseNotes = value }
 
         requirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -348,8 +320,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get softwareaddon() { return this.softwareAddOn }
-        set softwareaddon(value) { this.softwareAddOn = value }
 
         softwareHelp($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -365,8 +335,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get softwarehelp() { return this.softwareHelp }
-        set softwarehelp(value) { this.softwareHelp = value }
 
         softwareRequirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -383,8 +351,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get softwarerequirements() { return this.softwareRequirements }
-        set softwarerequirements(value) { this.softwareRequirements = value }
 
         softwareVersion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -400,8 +366,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get softwareversion() { return this.softwareVersion }
-        set softwareversion(value) { this.softwareVersion = value }
 
         storageRequirements($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -418,8 +382,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get storagerequirements() { return this.storageRequirements }
-        set storagerequirements(value) { this.storageRequirements = value }
 
         supportingData($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -435,8 +397,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get supportingdata() { return this.supportingData }
-        set supportingdata(value) { this.supportingData = value }
         
     }
 </script>

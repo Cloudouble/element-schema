@@ -17,7 +17,7 @@
         static _rdfs_label = 'CourseInstance'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['courseMode', 'courseWorkload', 'instructor']).concat((['courseMode', 'courseWorkload', 'instructor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['courseMode', 'courseWorkload', 'instructor'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get coursemode() { return this.courseMode }
-        set coursemode(value) { this.courseMode = value }
 
         courseWorkload($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get courseworkload() { return this.courseWorkload }
-        set courseworkload(value) { this.courseWorkload = value }
 
         instructor($this, value) {
 			window.LiveElement.Schema.renderProperty({

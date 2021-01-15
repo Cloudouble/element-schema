@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalDevice'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome']).concat((['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['adverseOutcome', 'contraindication', 'postOp', 'preOp', 'procedure', 'seriousAdverseOutcome'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get adverseoutcome() { return this.adverseOutcome }
-        set adverseoutcome(value) { this.adverseOutcome = value }
 
         contraindication($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get postop() { return this.postOp }
-        set postop(value) { this.postOp = value }
 
         preOp($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get preop() { return this.preOp }
-        set preop(value) { this.preOp = value }
 
         procedure($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -125,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seriousadverseoutcome() { return this.seriousAdverseOutcome }
-        set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }
         
     }
 </script>

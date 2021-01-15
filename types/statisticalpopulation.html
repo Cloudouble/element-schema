@@ -17,7 +17,7 @@
         static _rdfs_label = 'StatisticalPopulation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['constrainingProperty', 'numConstraints', 'populationType']).concat((['constrainingProperty', 'numConstraints', 'populationType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['constrainingProperty', 'numConstraints', 'populationType'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get constrainingproperty() { return this.constrainingProperty }
-        set constrainingproperty(value) { this.constrainingProperty = value }
 
         numConstraints($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numconstraints() { return this.numConstraints }
-        set numconstraints(value) { this.numConstraints = value }
 
         populationType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get populationtype() { return this.populationType }
-        set populationtype(value) { this.populationType = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'GeoCoordinates'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['address', 'addressCountry', 'elevation', 'latitude', 'longitude', 'postalCode']).concat((['address', 'addressCountry', 'elevation', 'latitude', 'longitude', 'postalCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['address', 'addressCountry', 'elevation', 'latitude', 'longitude', 'postalCode'])))
         }
         
         constructor() {
@@ -60,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get addresscountry() { return this.addressCountry }
-        set addresscountry(value) { this.addressCountry = value }
 
         elevation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -125,8 +123,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get postalcode() { return this.postalCode }
-        set postalcode(value) { this.postalCode = value }
         
     }
 </script>

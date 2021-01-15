@@ -17,7 +17,7 @@
         static _rdfs_label = 'PublicationEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['free', 'publishedBy', 'publishedOn']).concat((['free', 'publishedBy', 'publishedOn']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['free', 'publishedBy', 'publishedOn'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publishedby() { return this.publishedBy }
-        set publishedby(value) { this.publishedBy = value }
 
         publishedOn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publishedon() { return this.publishedOn }
-        set publishedon(value) { this.publishedOn = value }
         
     }
 </script>

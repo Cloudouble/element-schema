@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalOrganization'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty']).concat((['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplannetworkid() { return this.healthPlanNetworkId }
-        set healthplannetworkid(value) { this.healthPlanNetworkId = value }
 
         isAcceptingNewPatients($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isacceptingnewpatients() { return this.isAcceptingNewPatients }
-        set isacceptingnewpatients(value) { this.isAcceptingNewPatients = value }
 
         medicalSpecialty($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get medicalspecialty() { return this.medicalSpecialty }
-        set medicalspecialty(value) { this.medicalSpecialty = value }
         
     }
 </script>

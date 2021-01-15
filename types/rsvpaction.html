@@ -17,7 +17,7 @@
         static _rdfs_label = 'RsvpAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalNumberOfGuests', 'comment', 'rsvpResponse']).concat((['additionalNumberOfGuests', 'comment', 'rsvpResponse']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalNumberOfGuests', 'comment', 'rsvpResponse'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalnumberofguests() { return this.additionalNumberOfGuests }
-        set additionalnumberofguests(value) { this.additionalNumberOfGuests = value }
 
         comment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get rsvpresponse() { return this.rsvpResponse }
-        set rsvpresponse(value) { this.rsvpResponse = value }
         
     }
 </script>

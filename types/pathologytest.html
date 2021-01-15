@@ -17,7 +17,7 @@
         static _rdfs_label = 'PathologyTest'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['tissueSample']).concat((['tissueSample']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['tissueSample'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tissuesample() { return this.tissueSample }
-        set tissuesample(value) { this.tissueSample = value }
         
     }
 </script>

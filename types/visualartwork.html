@@ -17,7 +17,7 @@
         static _rdfs_label = 'VisualArtwork'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']).concat((['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get artedition() { return this.artEdition }
-        set artedition(value) { this.artEdition = value }
 
         artMedium($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get artmedium() { return this.artMedium }
-        set artmedium(value) { this.artMedium = value }
 
         artform($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +107,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get artworksurface() { return this.artworkSurface }
-        set artworksurface(value) { this.artworkSurface = value }
 
         colorist($this, value) {
 			window.LiveElement.Schema.renderProperty({

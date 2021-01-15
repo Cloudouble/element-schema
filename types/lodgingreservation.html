@@ -17,7 +17,7 @@
         static _rdfs_label = 'LodgingReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['checkinTime', 'checkoutTime', 'lodgingUnitDescription', 'lodgingUnitType', 'numAdults', 'numChildren']).concat((['checkinTime', 'checkoutTime', 'lodgingUnitDescription', 'lodgingUnitType', 'numAdults', 'numChildren']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['checkinTime', 'checkoutTime', 'lodgingUnitDescription', 'lodgingUnitType', 'numAdults', 'numChildren'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get checkintime() { return this.checkinTime }
-        set checkintime(value) { this.checkinTime = value }
 
         checkoutTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get checkouttime() { return this.checkoutTime }
-        set checkouttime(value) { this.checkoutTime = value }
 
         lodgingUnitDescription($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get lodgingunitdescription() { return this.lodgingUnitDescription }
-        set lodgingunitdescription(value) { this.lodgingUnitDescription = value }
 
         lodgingUnitType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -97,8 +91,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get lodgingunittype() { return this.lodgingUnitType }
-        set lodgingunittype(value) { this.lodgingUnitType = value }
 
         numAdults($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -115,8 +107,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numadults() { return this.numAdults }
-        set numadults(value) { this.numAdults = value }
 
         numChildren($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -133,8 +123,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numchildren() { return this.numChildren }
-        set numchildren(value) { this.numChildren = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'FlightReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['boardingGroup', 'passengerPriorityStatus', 'passengerSequenceNumber', 'securityScreening']).concat((['boardingGroup', 'passengerPriorityStatus', 'passengerSequenceNumber', 'securityScreening']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['boardingGroup', 'passengerPriorityStatus', 'passengerSequenceNumber', 'securityScreening'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get boardinggroup() { return this.boardingGroup }
-        set boardinggroup(value) { this.boardingGroup = value }
 
         passengerPriorityStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get passengerprioritystatus() { return this.passengerPriorityStatus }
-        set passengerprioritystatus(value) { this.passengerPriorityStatus = value }
 
         passengerSequenceNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get passengersequencenumber() { return this.passengerSequenceNumber }
-        set passengersequencenumber(value) { this.passengerSequenceNumber = value }
 
         securityScreening($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get securityscreening() { return this.securityScreening }
-        set securityscreening(value) { this.securityScreening = value }
         
     }
 </script>

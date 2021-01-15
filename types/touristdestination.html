@@ -17,7 +17,7 @@
         static _rdfs_label = 'TouristDestination'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['includesAttraction', 'touristType']).concat((['includesAttraction', 'touristType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['includesAttraction', 'touristType'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includesattraction() { return this.includesAttraction }
-        set includesattraction(value) { this.includesAttraction = value }
 
         touristType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get touristtype() { return this.touristType }
-        set touristtype(value) { this.touristType = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'BusTrip'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop']).concat((['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBusStop', 'busName', 'busNumber', 'departureBusStop'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalbusstop() { return this.arrivalBusStop }
-        set arrivalbusstop(value) { this.arrivalBusStop = value }
 
         busName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get busname() { return this.busName }
-        set busname(value) { this.busName = value }
 
         busNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get busnumber() { return this.busNumber }
-        set busnumber(value) { this.busNumber = value }
 
         departureBusStop($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departurebusstop() { return this.departureBusStop }
-        set departurebusstop(value) { this.departureBusStop = value }
         
     }
 </script>

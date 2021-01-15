@@ -17,7 +17,7 @@
         static _rdfs_label = 'MerchantReturnPolicy'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory']).concat((['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get instorereturnsoffered() { return this.inStoreReturnsOffered }
-        set instorereturnsoffered(value) { this.inStoreReturnsOffered = value }
 
         merchantReturnDays($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get merchantreturndays() { return this.merchantReturnDays }
-        set merchantreturndays(value) { this.merchantReturnDays = value }
 
         merchantReturnLink($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get merchantreturnlink() { return this.merchantReturnLink }
-        set merchantreturnlink(value) { this.merchantReturnLink = value }
 
         refundType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get refundtype() { return this.refundType }
-        set refundtype(value) { this.refundType = value }
 
         returnFees($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get returnfees() { return this.returnFees }
-        set returnfees(value) { this.returnFees = value }
 
         returnPolicyCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get returnpolicycategory() { return this.returnPolicyCategory }
-        set returnpolicycategory(value) { this.returnPolicyCategory = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'BankAccount'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accountMinimumInflow', 'accountOverdraftLimit', 'bankAccountType']).concat((['accountMinimumInflow', 'accountOverdraftLimit', 'bankAccountType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accountMinimumInflow', 'accountOverdraftLimit', 'bankAccountType'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accountminimuminflow() { return this.accountMinimumInflow }
-        set accountminimuminflow(value) { this.accountMinimumInflow = value }
 
         accountOverdraftLimit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accountoverdraftlimit() { return this.accountOverdraftLimit }
-        set accountoverdraftlimit(value) { this.accountOverdraftLimit = value }
 
         bankAccountType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bankaccounttype() { return this.bankAccountType }
-        set bankaccounttype(value) { this.bankAccountType = value }
         
     }
 </script>

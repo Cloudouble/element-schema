@@ -17,7 +17,7 @@
         static _rdfs_label = 'HyperToc'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedMedia', 'tocEntry']).concat((['associatedMedia', 'tocEntry']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedMedia', 'tocEntry'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedmedia() { return this.associatedMedia }
-        set associatedmedia(value) { this.associatedMedia = value }
 
         tocEntry($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get tocentry() { return this.tocEntry }
-        set tocentry(value) { this.tocEntry = value }
         
     }
 </script>

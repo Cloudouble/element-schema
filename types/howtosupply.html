@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowToSupply'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['estimatedCost']).concat((['estimatedCost']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['estimatedCost'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get estimatedcost() { return this.estimatedCost }
-        set estimatedcost(value) { this.estimatedCost = value }
         
     }
 </script>

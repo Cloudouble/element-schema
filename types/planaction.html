@@ -17,7 +17,7 @@
         static _rdfs_label = 'PlanAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['scheduledTime']).concat((['scheduledTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['scheduledTime'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get scheduledtime() { return this.scheduledTime }
-        set scheduledtime(value) { this.scheduledTime = value }
         
     }
 </script>

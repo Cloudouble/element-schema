@@ -17,7 +17,7 @@
         static _rdfs_label = 'LoanOrCredit'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral']).concat((['amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['amount', 'currency', 'gracePeriod', 'loanRepaymentForm', 'loanTerm', 'loanType', 'recourseLoan', 'renegotiableLoan', 'requiredCollateral'])))
         }
         
         constructor() {
@@ -74,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get graceperiod() { return this.gracePeriod }
-        set graceperiod(value) { this.gracePeriod = value }
 
         loanRepaymentForm($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -91,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loanrepaymentform() { return this.loanRepaymentForm }
-        set loanrepaymentform(value) { this.loanRepaymentForm = value }
 
         loanTerm($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -108,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loanterm() { return this.loanTerm }
-        set loanterm(value) { this.loanTerm = value }
 
         loanType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -126,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loantype() { return this.loanType }
-        set loantype(value) { this.loanType = value }
 
         recourseLoan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -143,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recourseloan() { return this.recourseLoan }
-        set recourseloan(value) { this.recourseLoan = value }
 
         renegotiableLoan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -160,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get renegotiableloan() { return this.renegotiableLoan }
-        set renegotiableloan(value) { this.renegotiableLoan = value }
 
         requiredCollateral($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -178,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiredcollateral() { return this.requiredCollateral }
-        set requiredcollateral(value) { this.requiredCollateral = value }
         
     }
 </script>

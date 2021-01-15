@@ -17,7 +17,7 @@
         static _rdfs_label = 'Airline'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['boardingPolicy', 'iataCode']).concat((['boardingPolicy', 'iataCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['boardingPolicy', 'iataCode'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get boardingpolicy() { return this.boardingPolicy }
-        set boardingpolicy(value) { this.boardingPolicy = value }
 
         iataCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get iatacode() { return this.iataCode }
-        set iatacode(value) { this.iataCode = value }
         
     }
 </script>

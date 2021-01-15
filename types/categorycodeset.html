@@ -17,7 +17,7 @@
         static _rdfs_label = 'CategoryCodeSet'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasCategoryCode']).concat((['hasCategoryCode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasCategoryCode'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hascategorycode() { return this.hasCategoryCode }
-        set hascategorycode(value) { this.hasCategoryCode = value }
         
     }
 </script>

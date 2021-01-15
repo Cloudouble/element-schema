@@ -17,7 +17,7 @@
         static _rdfs_label = 'EntryPoint'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionApplication', 'actionPlatform', 'application', 'contentType', 'encodingType', 'httpMethod', 'urlTemplate']).concat((['actionApplication', 'actionPlatform', 'application', 'contentType', 'encodingType', 'httpMethod', 'urlTemplate']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionApplication', 'actionPlatform', 'application', 'contentType', 'encodingType', 'httpMethod', 'urlTemplate'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionapplication() { return this.actionApplication }
-        set actionapplication(value) { this.actionApplication = value }
 
         actionPlatform($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionplatform() { return this.actionPlatform }
-        set actionplatform(value) { this.actionPlatform = value }
 
         application($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contenttype() { return this.contentType }
-        set contenttype(value) { this.contentType = value }
 
         encodingType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get encodingtype() { return this.encodingType }
-        set encodingtype(value) { this.encodingType = value }
 
         httpMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get httpmethod() { return this.httpMethod }
-        set httpmethod(value) { this.httpMethod = value }
 
         urlTemplate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -144,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get urltemplate() { return this.urlTemplate }
-        set urltemplate(value) { this.urlTemplate = value }
         
     }
 </script>

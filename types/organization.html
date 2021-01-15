@@ -17,7 +17,7 @@
         static _rdfs_label = 'Organization'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID']).concat((['actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
-        set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
 
         address($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         alumni($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +108,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get areaserved() { return this.areaServed }
-        set areaserved(value) { this.areaServed = value }
 
         award($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -175,8 +169,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactpoint() { return this.contactPoint }
-        set contactpoint(value) { this.contactPoint = value }
 
         contactPoints($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -192,8 +184,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contactpoints() { return this.contactPoints }
-        set contactpoints(value) { this.contactPoints = value }
 
         correctionsPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -210,8 +200,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get correctionspolicy() { return this.correctionsPolicy }
-        set correctionspolicy(value) { this.correctionsPolicy = value }
 
         department($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -242,8 +230,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dissolutiondate() { return this.dissolutionDate }
-        set dissolutiondate(value) { this.dissolutionDate = value }
 
         diversityPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -260,8 +246,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diversitypolicy() { return this.diversityPolicy }
-        set diversitypolicy(value) { this.diversityPolicy = value }
 
         diversityStaffingReport($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -278,8 +262,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diversitystaffingreport() { return this.diversityStaffingReport }
-        set diversitystaffingreport(value) { this.diversityStaffingReport = value }
 
         duns($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -356,8 +338,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ethicspolicy() { return this.ethicsPolicy }
-        set ethicspolicy(value) { this.ethicsPolicy = value }
 
         event($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -403,8 +383,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get faxnumber() { return this.faxNumber }
-        set faxnumber(value) { this.faxNumber = value }
 
         founder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -450,8 +428,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get foundingdate() { return this.foundingDate }
-        set foundingdate(value) { this.foundingDate = value }
 
         foundingLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -467,8 +443,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get foundinglocation() { return this.foundingLocation }
-        set foundinglocation(value) { this.foundingLocation = value }
 
         funder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -500,8 +474,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get globallocationnumber() { return this.globalLocationNumber }
-        set globallocationnumber(value) { this.globalLocationNumber = value }
 
         hasCredential($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -517,8 +489,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hascredential() { return this.hasCredential }
-        set hascredential(value) { this.hasCredential = value }
 
         hasMerchantReturnPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -534,8 +504,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmerchantreturnpolicy() { return this.hasMerchantReturnPolicy }
-        set hasmerchantreturnpolicy(value) { this.hasMerchantReturnPolicy = value }
 
         hasOfferCatalog($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -551,8 +519,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasoffercatalog() { return this.hasOfferCatalog }
-        set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
         hasPOS($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -568,8 +534,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get haspos() { return this.hasPOS }
-        set haspos(value) { this.hasPOS = value }
 
         hasProductReturnPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -585,8 +549,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasproductreturnpolicy() { return this.hasProductReturnPolicy }
-        set hasproductreturnpolicy(value) { this.hasProductReturnPolicy = value }
 
         interactionStatistic($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -602,8 +564,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get interactionstatistic() { return this.interactionStatistic }
-        set interactionstatistic(value) { this.interactionStatistic = value }
 
         isicV4($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -619,8 +579,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isicv4() { return this.isicV4 }
-        set isicv4(value) { this.isicV4 = value }
 
         knowsAbout($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -638,8 +596,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get knowsabout() { return this.knowsAbout }
-        set knowsabout(value) { this.knowsAbout = value }
 
         knowsLanguage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -656,8 +612,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get knowslanguage() { return this.knowsLanguage }
-        set knowslanguage(value) { this.knowsLanguage = value }
 
         legalName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -673,8 +627,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legalname() { return this.legalName }
-        set legalname(value) { this.legalName = value }
 
         leiCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -690,8 +642,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get leicode() { return this.leiCode }
-        set leicode(value) { this.leiCode = value }
 
         location($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -741,8 +691,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get makesoffer() { return this.makesOffer }
-        set makesoffer(value) { this.makesOffer = value }
 
         member($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -775,8 +723,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get memberof() { return this.memberOf }
-        set memberof(value) { this.memberOf = value }
 
         members($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -823,8 +769,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nonprofitstatus() { return this.nonprofitStatus }
-        set nonprofitstatus(value) { this.nonprofitStatus = value }
 
         numberOfEmployees($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -840,8 +784,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofemployees() { return this.numberOfEmployees }
-        set numberofemployees(value) { this.numberOfEmployees = value }
 
         ownershipFundingInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -860,8 +802,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ownershipfundinginfo() { return this.ownershipFundingInfo }
-        set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
 
         owns($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -893,8 +833,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get parentorganization() { return this.parentOrganization }
-        set parentorganization(value) { this.parentOrganization = value }
 
         publishingPrinciples($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -911,8 +849,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publishingprinciples() { return this.publishingPrinciples }
-        set publishingprinciples(value) { this.publishingPrinciples = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -975,8 +911,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicearea() { return this.serviceArea }
-        set servicearea(value) { this.serviceArea = value }
 
         slogan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1023,8 +957,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suborganization() { return this.subOrganization }
-        set suborganization(value) { this.subOrganization = value }
 
         taxID($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1040,8 +972,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get taxid() { return this.taxID }
-        set taxid(value) { this.taxID = value }
 
         telephone($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1073,8 +1003,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
-        set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
 
         vatID($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -1090,8 +1018,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get vatid() { return this.vatID }
-        set vatid(value) { this.vatID = value }
         
     }
 </script>

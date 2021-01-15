@@ -17,7 +17,7 @@
         static _rdfs_label = 'Event'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed']).concat((['about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         attendee($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -185,8 +183,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doortime() { return this.doorTime }
-        set doortime(value) { this.doorTime = value }
 
         duration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -218,8 +214,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enddate() { return this.endDate }
-        set enddate(value) { this.endDate = value }
 
         eventAttendanceMode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -235,8 +229,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eventattendancemode() { return this.eventAttendanceMode }
-        set eventattendancemode(value) { this.eventAttendanceMode = value }
 
         eventSchedule($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -252,8 +244,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eventschedule() { return this.eventSchedule }
-        set eventschedule(value) { this.eventSchedule = value }
 
         eventStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -269,8 +259,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eventstatus() { return this.eventStatus }
-        set eventstatus(value) { this.eventStatus = value }
 
         funder($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -303,8 +291,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inlanguage() { return this.inLanguage }
-        set inlanguage(value) { this.inLanguage = value }
 
         isAccessibleForFree($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -320,8 +306,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isaccessibleforfree() { return this.isAccessibleForFree }
-        set isaccessibleforfree(value) { this.isAccessibleForFree = value }
 
         location($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -355,8 +339,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumattendeecapacity() { return this.maximumAttendeeCapacity }
-        set maximumattendeecapacity(value) { this.maximumAttendeeCapacity = value }
 
         maximumPhysicalAttendeeCapacity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -372,8 +354,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumphysicalattendeecapacity() { return this.maximumPhysicalAttendeeCapacity }
-        set maximumphysicalattendeecapacity(value) { this.maximumPhysicalAttendeeCapacity = value }
 
         maximumVirtualAttendeeCapacity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -389,8 +369,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumvirtualattendeecapacity() { return this.maximumVirtualAttendeeCapacity }
-        set maximumvirtualattendeecapacity(value) { this.maximumVirtualAttendeeCapacity = value }
 
         offers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -470,8 +448,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get previousstartdate() { return this.previousStartDate }
-        set previousstartdate(value) { this.previousStartDate = value }
 
         recordedIn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -487,8 +463,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recordedin() { return this.recordedIn }
-        set recordedin(value) { this.recordedIn = value }
 
         remainingAttendeeCapacity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -504,8 +478,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get remainingattendeecapacity() { return this.remainingAttendeeCapacity }
-        set remainingattendeecapacity(value) { this.remainingAttendeeCapacity = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -553,8 +525,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get startdate() { return this.startDate }
-        set startdate(value) { this.startDate = value }
 
         subEvent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -570,8 +540,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subevent() { return this.subEvent }
-        set subevent(value) { this.subEvent = value }
 
         subEvents($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -587,8 +555,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subevents() { return this.subEvents }
-        set subevents(value) { this.subEvents = value }
 
         superEvent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -604,8 +570,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get superevent() { return this.superEvent }
-        set superevent(value) { this.superEvent = value }
 
         translator($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -637,8 +601,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typicalagerange() { return this.typicalAgeRange }
-        set typicalagerange(value) { this.typicalAgeRange = value }
 
         workFeatured($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -654,8 +616,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get workfeatured() { return this.workFeatured }
-        set workfeatured(value) { this.workFeatured = value }
 
         workPerformed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -671,8 +631,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get workperformed() { return this.workPerformed }
-        set workperformed(value) { this.workPerformed = value }
         
     }
 </script>

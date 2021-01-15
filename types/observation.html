@@ -17,7 +17,7 @@
         static _rdfs_label = 'Observation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['marginOfError', 'measuredProperty', 'measuredValue', 'observationDate', 'observedNode']).concat((['marginOfError', 'measuredProperty', 'measuredValue', 'observationDate', 'observedNode']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['marginOfError', 'measuredProperty', 'measuredValue', 'observationDate', 'observedNode'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get marginoferror() { return this.marginOfError }
-        set marginoferror(value) { this.marginOfError = value }
 
         measuredProperty($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get measuredproperty() { return this.measuredProperty }
-        set measuredproperty(value) { this.measuredProperty = value }
 
         measuredValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get measuredvalue() { return this.measuredValue }
-        set measuredvalue(value) { this.measuredValue = value }
 
         observationDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get observationdate() { return this.observationDate }
-        set observationdate(value) { this.observationDate = value }
 
         observedNode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get observednode() { return this.observedNode }
-        set observednode(value) { this.observedNode = value }
         
     }
 </script>

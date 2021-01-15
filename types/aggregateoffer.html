@@ -17,7 +17,7 @@
         static _rdfs_label = 'AggregateOffer'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['highPrice', 'lowPrice', 'offerCount', 'offers']).concat((['highPrice', 'lowPrice', 'offerCount', 'offers']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['highPrice', 'lowPrice', 'offerCount', 'offers'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get highprice() { return this.highPrice }
-        set highprice(value) { this.highPrice = value }
 
         lowPrice($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get lowprice() { return this.lowPrice }
-        set lowprice(value) { this.lowPrice = value }
 
         offerCount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get offercount() { return this.offerCount }
-        set offercount(value) { this.offerCount = value }
 
         offers($this, value) {
 			window.LiveElement.Schema.renderProperty({

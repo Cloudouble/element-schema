@@ -17,7 +17,7 @@
         static _rdfs_label = 'EnergyConsumptionDetails'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['energyEfficiencyScaleMax', 'energyEfficiencyScaleMin', 'hasEnergyEfficiencyCategory']).concat((['energyEfficiencyScaleMax', 'energyEfficiencyScaleMin', 'hasEnergyEfficiencyCategory']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['energyEfficiencyScaleMax', 'energyEfficiencyScaleMin', 'hasEnergyEfficiencyCategory'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get energyefficiencyscalemax() { return this.energyEfficiencyScaleMax }
-        set energyefficiencyscalemax(value) { this.energyEfficiencyScaleMax = value }
 
         energyEfficiencyScaleMin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get energyefficiencyscalemin() { return this.energyEfficiencyScaleMin }
-        set energyefficiencyscalemin(value) { this.energyEfficiencyScaleMin = value }
 
         hasEnergyEfficiencyCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasenergyefficiencycategory() { return this.hasEnergyEfficiencyCategory }
-        set hasenergyefficiencycategory(value) { this.hasEnergyEfficiencyCategory = value }
         
     }
 </script>

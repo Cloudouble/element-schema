@@ -17,7 +17,7 @@
         static _rdfs_label = 'Grant'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['fundedItem', 'sponsor']).concat((['fundedItem', 'sponsor']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['fundedItem', 'sponsor'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get fundeditem() { return this.fundedItem }
-        set fundeditem(value) { this.fundedItem = value }
 
         sponsor($this, value) {
 			window.LiveElement.Schema.renderProperty({

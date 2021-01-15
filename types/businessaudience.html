@@ -17,7 +17,7 @@
         static _rdfs_label = 'BusinessAudience'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['numberOfEmployees', 'yearlyRevenue', 'yearsInOperation']).concat((['numberOfEmployees', 'yearlyRevenue', 'yearsInOperation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['numberOfEmployees', 'yearlyRevenue', 'yearsInOperation'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofemployees() { return this.numberOfEmployees }
-        set numberofemployees(value) { this.numberOfEmployees = value }
 
         yearlyRevenue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get yearlyrevenue() { return this.yearlyRevenue }
-        set yearlyrevenue(value) { this.yearlyRevenue = value }
 
         yearsInOperation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get yearsinoperation() { return this.yearsInOperation }
-        set yearsinoperation(value) { this.yearsInOperation = value }
         
     }
 </script>

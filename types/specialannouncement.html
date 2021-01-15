@@ -17,7 +17,7 @@
         static _rdfs_label = 'SpecialAnnouncement'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed']).concat((['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['announcementLocation', 'category', 'datePosted', 'diseasePreventionInfo', 'diseaseSpreadStatistics', 'gettingTestedInfo', 'governmentBenefitsInfo', 'newsUpdatesAndGuidelines', 'publicTransportClosuresInfo', 'quarantineGuidelines', 'schoolClosuresInfo', 'travelBans', 'webFeed'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get announcementlocation() { return this.announcementLocation }
-        set announcementlocation(value) { this.announcementLocation = value }
 
         category($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +78,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dateposted() { return this.datePosted }
-        set dateposted(value) { this.datePosted = value }
 
         diseasePreventionInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +94,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diseasepreventioninfo() { return this.diseasePreventionInfo }
-        set diseasepreventioninfo(value) { this.diseasePreventionInfo = value }
 
         diseaseSpreadStatistics($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -118,8 +112,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diseasespreadstatistics() { return this.diseaseSpreadStatistics }
-        set diseasespreadstatistics(value) { this.diseaseSpreadStatistics = value }
 
         gettingTestedInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -136,8 +128,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gettingtestedinfo() { return this.gettingTestedInfo }
-        set gettingtestedinfo(value) { this.gettingTestedInfo = value }
 
         governmentBenefitsInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -153,8 +143,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get governmentbenefitsinfo() { return this.governmentBenefitsInfo }
-        set governmentbenefitsinfo(value) { this.governmentBenefitsInfo = value }
 
         newsUpdatesAndGuidelines($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -171,8 +159,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get newsupdatesandguidelines() { return this.newsUpdatesAndGuidelines }
-        set newsupdatesandguidelines(value) { this.newsUpdatesAndGuidelines = value }
 
         publicTransportClosuresInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -189,8 +175,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get publictransportclosuresinfo() { return this.publicTransportClosuresInfo }
-        set publictransportclosuresinfo(value) { this.publicTransportClosuresInfo = value }
 
         quarantineGuidelines($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -207,8 +191,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get quarantineguidelines() { return this.quarantineGuidelines }
-        set quarantineguidelines(value) { this.quarantineGuidelines = value }
 
         schoolClosuresInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -225,8 +207,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get schoolclosuresinfo() { return this.schoolClosuresInfo }
-        set schoolclosuresinfo(value) { this.schoolClosuresInfo = value }
 
         travelBans($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -243,8 +223,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get travelbans() { return this.travelBans }
-        set travelbans(value) { this.travelBans = value }
 
         webFeed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -261,8 +239,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get webfeed() { return this.webFeed }
-        set webfeed(value) { this.webFeed = value }
         
     }
 </script>

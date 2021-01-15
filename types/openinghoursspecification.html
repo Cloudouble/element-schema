@@ -17,7 +17,7 @@
         static _rdfs_label = 'OpeningHoursSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['closes', 'dayOfWeek', 'opens', 'validFrom', 'validThrough']).concat((['closes', 'dayOfWeek', 'opens', 'validFrom', 'validThrough']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['closes', 'dayOfWeek', 'opens', 'validFrom', 'validThrough'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dayofweek() { return this.dayOfWeek }
-        set dayofweek(value) { this.dayOfWeek = value }
 
         opens($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -91,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validfrom() { return this.validFrom }
-        set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validthrough() { return this.validThrough }
-        set validthrough(value) { this.validThrough = value }
         
     }
 </script>

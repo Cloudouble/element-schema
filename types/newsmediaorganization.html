@@ -17,7 +17,7 @@
         static _rdfs_label = 'NewsMediaOrganization'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionableFeedbackPolicy', 'correctionsPolicy', 'diversityPolicy', 'diversityStaffingReport', 'ethicsPolicy', 'masthead', 'missionCoveragePrioritiesPolicy', 'noBylinesPolicy', 'ownershipFundingInfo', 'unnamedSourcesPolicy', 'verificationFactCheckingPolicy']).concat((['actionableFeedbackPolicy', 'correctionsPolicy', 'diversityPolicy', 'diversityStaffingReport', 'ethicsPolicy', 'masthead', 'missionCoveragePrioritiesPolicy', 'noBylinesPolicy', 'ownershipFundingInfo', 'unnamedSourcesPolicy', 'verificationFactCheckingPolicy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionableFeedbackPolicy', 'correctionsPolicy', 'diversityPolicy', 'diversityStaffingReport', 'ethicsPolicy', 'masthead', 'missionCoveragePrioritiesPolicy', 'noBylinesPolicy', 'ownershipFundingInfo', 'unnamedSourcesPolicy', 'verificationFactCheckingPolicy'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionablefeedbackpolicy() { return this.actionableFeedbackPolicy }
-        set actionablefeedbackpolicy(value) { this.actionableFeedbackPolicy = value }
 
         correctionsPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get correctionspolicy() { return this.correctionsPolicy }
-        set correctionspolicy(value) { this.correctionsPolicy = value }
 
         diversityPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diversitypolicy() { return this.diversityPolicy }
-        set diversitypolicy(value) { this.diversityPolicy = value }
 
         diversityStaffingReport($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +92,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get diversitystaffingreport() { return this.diversityStaffingReport }
-        set diversitystaffingreport(value) { this.diversityStaffingReport = value }
 
         ethicsPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -116,8 +108,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ethicspolicy() { return this.ethicsPolicy }
-        set ethicspolicy(value) { this.ethicsPolicy = value }
 
         masthead($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -150,8 +140,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get missioncoverageprioritiespolicy() { return this.missionCoveragePrioritiesPolicy }
-        set missioncoverageprioritiespolicy(value) { this.missionCoveragePrioritiesPolicy = value }
 
         noBylinesPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -168,8 +156,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nobylinespolicy() { return this.noBylinesPolicy }
-        set nobylinespolicy(value) { this.noBylinesPolicy = value }
 
         ownershipFundingInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -188,8 +174,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ownershipfundinginfo() { return this.ownershipFundingInfo }
-        set ownershipfundinginfo(value) { this.ownershipFundingInfo = value }
 
         unnamedSourcesPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -206,8 +190,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unnamedsourcespolicy() { return this.unnamedSourcesPolicy }
-        set unnamedsourcespolicy(value) { this.unnamedSourcesPolicy = value }
 
         verificationFactCheckingPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -224,8 +206,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get verificationfactcheckingpolicy() { return this.verificationFactCheckingPolicy }
-        set verificationfactcheckingpolicy(value) { this.verificationFactCheckingPolicy = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ConsumeAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionAccessibilityRequirement', 'expectsAcceptanceOf']).concat((['actionAccessibilityRequirement', 'expectsAcceptanceOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actionAccessibilityRequirement', 'expectsAcceptanceOf'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get actionaccessibilityrequirement() { return this.actionAccessibilityRequirement }
-        set actionaccessibilityrequirement(value) { this.actionAccessibilityRequirement = value }
 
         expectsAcceptanceOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get expectsacceptanceof() { return this.expectsAcceptanceOf }
-        set expectsacceptanceof(value) { this.expectsAcceptanceOf = value }
         
     }
 </script>

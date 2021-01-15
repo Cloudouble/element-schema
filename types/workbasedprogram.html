@@ -17,7 +17,7 @@
         static _rdfs_label = 'WorkBasedProgram'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['occupationalCategory', 'trainingSalary']).concat((['occupationalCategory', 'trainingSalary']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['occupationalCategory', 'trainingSalary'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get occupationalcategory() { return this.occupationalCategory }
-        set occupationalcategory(value) { this.occupationalCategory = value }
 
         trainingSalary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trainingsalary() { return this.trainingSalary }
-        set trainingsalary(value) { this.trainingSalary = value }
         
     }
 </script>

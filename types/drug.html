@@ -17,7 +17,7 @@
         static _rdfs_label = 'Drug'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning']).concat((['activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get activeingredient() { return this.activeIngredient }
-        set activeingredient(value) { this.activeIngredient = value }
 
         administrationRoute($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get administrationroute() { return this.administrationRoute }
-        set administrationroute(value) { this.administrationRoute = value }
 
         alcoholWarning($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get alcoholwarning() { return this.alcoholWarning }
-        set alcoholwarning(value) { this.alcoholWarning = value }
 
         availableStrength($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablestrength() { return this.availableStrength }
-        set availablestrength(value) { this.availableStrength = value }
 
         breastfeedingWarning($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get breastfeedingwarning() { return this.breastfeedingWarning }
-        set breastfeedingwarning(value) { this.breastfeedingWarning = value }
 
         clincalPharmacology($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get clincalpharmacology() { return this.clincalPharmacology }
-        set clincalpharmacology(value) { this.clincalPharmacology = value }
 
         clinicalPharmacology($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get clinicalpharmacology() { return this.clinicalPharmacology }
-        set clinicalpharmacology(value) { this.clinicalPharmacology = value }
 
         dosageForm($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +148,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dosageform() { return this.dosageForm }
-        set dosageform(value) { this.dosageForm = value }
 
         doseSchedule($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -179,8 +163,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doseschedule() { return this.doseSchedule }
-        set doseschedule(value) { this.doseSchedule = value }
 
         drugClass($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -196,8 +178,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get drugclass() { return this.drugClass }
-        set drugclass(value) { this.drugClass = value }
 
         drugUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -213,8 +193,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get drugunit() { return this.drugUnit }
-        set drugunit(value) { this.drugUnit = value }
 
         foodWarning($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -230,8 +208,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get foodwarning() { return this.foodWarning }
-        set foodwarning(value) { this.foodWarning = value }
 
         includedInHealthInsurancePlan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -247,8 +223,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includedinhealthinsuranceplan() { return this.includedInHealthInsurancePlan }
-        set includedinhealthinsuranceplan(value) { this.includedInHealthInsurancePlan = value }
 
         interactingDrug($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -264,8 +238,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get interactingdrug() { return this.interactingDrug }
-        set interactingdrug(value) { this.interactingDrug = value }
 
         isAvailableGenerically($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -281,8 +253,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isavailablegenerically() { return this.isAvailableGenerically }
-        set isavailablegenerically(value) { this.isAvailableGenerically = value }
 
         isProprietary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -298,8 +268,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isproprietary() { return this.isProprietary }
-        set isproprietary(value) { this.isProprietary = value }
 
         labelDetails($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -315,8 +283,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get labeldetails() { return this.labelDetails }
-        set labeldetails(value) { this.labelDetails = value }
 
         legalStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -334,8 +300,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get legalstatus() { return this.legalStatus }
-        set legalstatus(value) { this.legalStatus = value }
 
         manufacturer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -366,8 +330,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumintake() { return this.maximumIntake }
-        set maximumintake(value) { this.maximumIntake = value }
 
         mechanismOfAction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -383,8 +345,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mechanismofaction() { return this.mechanismOfAction }
-        set mechanismofaction(value) { this.mechanismOfAction = value }
 
         nonProprietaryName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -400,8 +360,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nonproprietaryname() { return this.nonProprietaryName }
-        set nonproprietaryname(value) { this.nonProprietaryName = value }
 
         overdosage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -432,8 +390,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pregnancycategory() { return this.pregnancyCategory }
-        set pregnancycategory(value) { this.pregnancyCategory = value }
 
         pregnancyWarning($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -449,8 +405,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pregnancywarning() { return this.pregnancyWarning }
-        set pregnancywarning(value) { this.pregnancyWarning = value }
 
         prescribingInfo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -466,8 +420,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get prescribinginfo() { return this.prescribingInfo }
-        set prescribinginfo(value) { this.prescribingInfo = value }
 
         prescriptionStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -484,8 +436,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get prescriptionstatus() { return this.prescriptionStatus }
-        set prescriptionstatus(value) { this.prescriptionStatus = value }
 
         proprietaryName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -501,8 +451,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get proprietaryname() { return this.proprietaryName }
-        set proprietaryname(value) { this.proprietaryName = value }
 
         relatedDrug($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -518,8 +466,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relateddrug() { return this.relatedDrug }
-        set relateddrug(value) { this.relatedDrug = value }
 
         rxcui($this, value) {
 			window.LiveElement.Schema.renderProperty({

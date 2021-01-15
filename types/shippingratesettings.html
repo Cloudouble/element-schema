@@ -17,7 +17,7 @@
         static _rdfs_label = 'ShippingRateSettings'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate']).concat((['doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get doesnotship() { return this.doesNotShip }
-        set doesnotship(value) { this.doesNotShip = value }
 
         freeShippingThreshold($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get freeshippingthreshold() { return this.freeShippingThreshold }
-        set freeshippingthreshold(value) { this.freeShippingThreshold = value }
 
         isUnlabelledFallback($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isunlabelledfallback() { return this.isUnlabelledFallback }
-        set isunlabelledfallback(value) { this.isUnlabelledFallback = value }
 
         shippingDestination($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingdestination() { return this.shippingDestination }
-        set shippingdestination(value) { this.shippingDestination = value }
 
         shippingLabel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippinglabel() { return this.shippingLabel }
-        set shippinglabel(value) { this.shippingLabel = value }
 
         shippingRate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -129,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get shippingrate() { return this.shippingRate }
-        set shippingrate(value) { this.shippingRate = value }
         
     }
 </script>

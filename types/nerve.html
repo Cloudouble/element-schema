@@ -17,7 +17,7 @@
         static _rdfs_label = 'Nerve'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['branch', 'nerveMotor', 'sensoryUnit', 'sourcedFrom']).concat((['branch', 'nerveMotor', 'sensoryUnit', 'sourcedFrom']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['branch', 'nerveMotor', 'sensoryUnit', 'sourcedFrom'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get nervemotor() { return this.nerveMotor }
-        set nervemotor(value) { this.nerveMotor = value }
 
         sensoryUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sensoryunit() { return this.sensoryUnit }
-        set sensoryunit(value) { this.sensoryUnit = value }
 
         sourcedFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sourcedfrom() { return this.sourcedFrom }
-        set sourcedfrom(value) { this.sourcedFrom = value }
         
     }
 </script>

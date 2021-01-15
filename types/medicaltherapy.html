@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalTherapy'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['contraindication', 'duplicateTherapy', 'seriousAdverseOutcome']).concat((['contraindication', 'duplicateTherapy', 'seriousAdverseOutcome']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['contraindication', 'duplicateTherapy', 'seriousAdverseOutcome'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get duplicatetherapy() { return this.duplicateTherapy }
-        set duplicatetherapy(value) { this.duplicateTherapy = value }
 
         seriousAdverseOutcome($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seriousadverseoutcome() { return this.seriousAdverseOutcome }
-        set seriousadverseoutcome(value) { this.seriousAdverseOutcome = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'DataFeedItem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dateCreated', 'dateDeleted', 'dateModified', 'item']).concat((['dateCreated', 'dateDeleted', 'dateModified', 'item']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dateCreated', 'dateDeleted', 'dateModified', 'item'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datecreated() { return this.dateCreated }
-        set datecreated(value) { this.dateCreated = value }
 
         dateDeleted($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datedeleted() { return this.dateDeleted }
-        set datedeleted(value) { this.dateDeleted = value }
 
         dateModified($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datemodified() { return this.dateModified }
-        set datemodified(value) { this.dateModified = value }
 
         item($this, value) {
 			window.LiveElement.Schema.renderProperty({

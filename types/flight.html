@@ -17,7 +17,7 @@
         static _rdfs_label = 'Flight'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime']).concat((['aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalairport() { return this.arrivalAirport }
-        set arrivalairport(value) { this.arrivalAirport = value }
 
         arrivalGate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalgate() { return this.arrivalGate }
-        set arrivalgate(value) { this.arrivalGate = value }
 
         arrivalTerminal($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivalterminal() { return this.arrivalTerminal }
-        set arrivalterminal(value) { this.arrivalTerminal = value }
 
         boardingPolicy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get boardingpolicy() { return this.boardingPolicy }
-        set boardingpolicy(value) { this.boardingPolicy = value }
 
         carrier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -142,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departureairport() { return this.departureAirport }
-        set departureairport(value) { this.departureAirport = value }
 
         departureGate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -159,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departuregate() { return this.departureGate }
-        set departuregate(value) { this.departureGate = value }
 
         departureTerminal($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -176,8 +164,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departureterminal() { return this.departureTerminal }
-        set departureterminal(value) { this.departureTerminal = value }
 
         estimatedFlightDuration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -194,8 +180,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get estimatedflightduration() { return this.estimatedFlightDuration }
-        set estimatedflightduration(value) { this.estimatedFlightDuration = value }
 
         flightDistance($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -212,8 +196,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get flightdistance() { return this.flightDistance }
-        set flightdistance(value) { this.flightDistance = value }
 
         flightNumber($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -229,8 +211,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get flightnumber() { return this.flightNumber }
-        set flightnumber(value) { this.flightNumber = value }
 
         mealService($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -246,8 +226,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mealservice() { return this.mealService }
-        set mealservice(value) { this.mealService = value }
 
         seller($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -279,8 +257,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get webcheckintime() { return this.webCheckinTime }
-        set webcheckintime(value) { this.webCheckinTime = value }
         
     }
 </script>

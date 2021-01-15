@@ -17,7 +17,7 @@
         static _rdfs_label = 'MortgageLoan'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['domiciledMortgage', 'loanMortgageMandateAmount']).concat((['domiciledMortgage', 'loanMortgageMandateAmount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['domiciledMortgage', 'loanMortgageMandateAmount'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get domiciledmortgage() { return this.domiciledMortgage }
-        set domiciledmortgage(value) { this.domiciledMortgage = value }
 
         loanMortgageMandateAmount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get loanmortgagemandateamount() { return this.loanMortgageMandateAmount }
-        set loanmortgagemandateamount(value) { this.loanMortgageMandateAmount = value }
         
     }
 </script>

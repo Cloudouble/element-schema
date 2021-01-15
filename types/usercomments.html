@@ -17,7 +17,7 @@
         static _rdfs_label = 'UserComments'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl']).concat((['commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['commentText', 'commentTime', 'creator', 'discusses', 'replyToUrl'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get commenttext() { return this.commentText }
-        set commenttext(value) { this.commentText = value }
 
         commentTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get commenttime() { return this.commentTime }
-        set commenttime(value) { this.commentTime = value }
 
         creator($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -109,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get replytourl() { return this.replyToUrl }
-        set replytourl(value) { this.replyToUrl = value }
         
     }
 </script>

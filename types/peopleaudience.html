@@ -17,7 +17,7 @@
         static _rdfs_label = 'PeopleAudience'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthCondition', 'requiredGender', 'requiredMaxAge', 'requiredMinAge', 'suggestedGender', 'suggestedMaxAge', 'suggestedMinAge']).concat((['healthCondition', 'requiredGender', 'requiredMaxAge', 'requiredMinAge', 'suggestedGender', 'suggestedMaxAge', 'suggestedMinAge']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthCondition', 'requiredGender', 'requiredMaxAge', 'requiredMinAge', 'suggestedGender', 'suggestedMaxAge', 'suggestedMinAge'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthcondition() { return this.healthCondition }
-        set healthcondition(value) { this.healthCondition = value }
 
         requiredGender($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiredgender() { return this.requiredGender }
-        set requiredgender(value) { this.requiredGender = value }
 
         requiredMaxAge($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiredmaxage() { return this.requiredMaxAge }
-        set requiredmaxage(value) { this.requiredMaxAge = value }
 
         requiredMinAge($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiredminage() { return this.requiredMinAge }
-        set requiredminage(value) { this.requiredMinAge = value }
 
         suggestedGender($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suggestedgender() { return this.suggestedGender }
-        set suggestedgender(value) { this.suggestedGender = value }
 
         suggestedMaxAge($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suggestedmaxage() { return this.suggestedMaxAge }
-        set suggestedmaxage(value) { this.suggestedMaxAge = value }
 
         suggestedMinAge($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suggestedminage() { return this.suggestedMinAge }
-        set suggestedminage(value) { this.suggestedMinAge = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'ComicIssue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['artist', 'colorist', 'inker', 'letterer', 'penciler', 'variantCover']).concat((['artist', 'colorist', 'inker', 'letterer', 'penciler', 'variantCover']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['artist', 'colorist', 'inker', 'letterer', 'penciler', 'variantCover'])))
         }
         
         constructor() {
@@ -118,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get variantcover() { return this.variantCover }
-        set variantcover(value) { this.variantCover = value }
         
     }
 </script>

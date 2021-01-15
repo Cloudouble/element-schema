@@ -17,7 +17,7 @@
         static _rdfs_label = 'CivicStructure'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['openingHours']).concat((['openingHours']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['openingHours'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get openinghours() { return this.openingHours }
-        set openinghours(value) { this.openingHours = value }
         
     }
 </script>

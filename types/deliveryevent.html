@@ -17,7 +17,7 @@
         static _rdfs_label = 'DeliveryEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accessCode', 'availableFrom', 'availableThrough', 'hasDeliveryMethod']).concat((['accessCode', 'availableFrom', 'availableThrough', 'hasDeliveryMethod']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accessCode', 'availableFrom', 'availableThrough', 'hasDeliveryMethod'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accesscode() { return this.accessCode }
-        set accesscode(value) { this.accessCode = value }
 
         availableFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablefrom() { return this.availableFrom }
-        set availablefrom(value) { this.availableFrom = value }
 
         availableThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablethrough() { return this.availableThrough }
-        set availablethrough(value) { this.availableThrough = value }
 
         hasDeliveryMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasdeliverymethod() { return this.hasDeliveryMethod }
-        set hasdeliverymethod(value) { this.hasDeliveryMethod = value }
         
     }
 </script>

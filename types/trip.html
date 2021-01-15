@@ -17,7 +17,7 @@
         static _rdfs_label = 'Trip'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalTime', 'departureTime', 'itinerary', 'offers', 'partOfTrip', 'provider', 'subTrip']).concat((['arrivalTime', 'departureTime', 'itinerary', 'offers', 'partOfTrip', 'provider', 'subTrip']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalTime', 'departureTime', 'itinerary', 'offers', 'partOfTrip', 'provider', 'subTrip'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get arrivaltime() { return this.arrivalTime }
-        set arrivaltime(value) { this.arrivalTime = value }
 
         departureTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get departuretime() { return this.departureTime }
-        set departuretime(value) { this.departureTime = value }
 
         itinerary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +107,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partoftrip() { return this.partOfTrip }
-        set partoftrip(value) { this.partOfTrip = value }
 
         provider($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -144,8 +138,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subtrip() { return this.subTrip }
-        set subtrip(value) { this.subTrip = value }
         
     }
 </script>

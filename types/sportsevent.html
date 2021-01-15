@@ -17,7 +17,7 @@
         static _rdfs_label = 'SportsEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['awayTeam', 'competitor', 'homeTeam', 'sport']).concat((['awayTeam', 'competitor', 'homeTeam', 'sport']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['awayTeam', 'competitor', 'homeTeam', 'sport'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get awayteam() { return this.awayTeam }
-        set awayteam(value) { this.awayTeam = value }
 
         competitor($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hometeam() { return this.homeTeam }
-        set hometeam(value) { this.homeTeam = value }
 
         sport($this, value) {
 			window.LiveElement.Schema.renderProperty({

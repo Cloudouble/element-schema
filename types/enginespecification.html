@@ -17,7 +17,7 @@
         static _rdfs_label = 'EngineSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque']).concat((['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enginedisplacement() { return this.engineDisplacement }
-        set enginedisplacement(value) { this.engineDisplacement = value }
 
         enginePower($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enginepower() { return this.enginePower }
-        set enginepower(value) { this.enginePower = value }
 
         engineType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enginetype() { return this.engineType }
-        set enginetype(value) { this.engineType = value }
 
         fuelType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -98,8 +92,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get fueltype() { return this.fuelType }
-        set fueltype(value) { this.fuelType = value }
 
         torque($this, value) {
 			window.LiveElement.Schema.renderProperty({

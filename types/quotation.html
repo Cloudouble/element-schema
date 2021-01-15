@@ -17,7 +17,7 @@
         static _rdfs_label = 'Quotation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['spokenByCharacter']).concat((['spokenByCharacter']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['spokenByCharacter'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get spokenbycharacter() { return this.spokenByCharacter }
-        set spokenbycharacter(value) { this.spokenByCharacter = value }
         
     }
 </script>

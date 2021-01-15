@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoGame'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer']).concat((['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get cheatcode() { return this.cheatCode }
-        set cheatcode(value) { this.cheatCode = value }
 
         director($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -122,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gameplatform() { return this.gamePlatform }
-        set gameplatform(value) { this.gamePlatform = value }
 
         gameServer($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -139,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gameserver() { return this.gameServer }
-        set gameserver(value) { this.gameServer = value }
 
         gameTip($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -156,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gametip() { return this.gameTip }
-        set gametip(value) { this.gameTip = value }
 
         musicBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -174,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         playMode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -191,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get playmode() { return this.playMode }
-        set playmode(value) { this.playMode = value }
 
         trailer($this, value) {
 			window.LiveElement.Schema.renderProperty({

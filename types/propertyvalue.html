@@ -17,7 +17,7 @@
         static _rdfs_label = 'PropertyValue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']).concat((['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maxvalue() { return this.maxValue }
-        set maxvalue(value) { this.maxValue = value }
 
         measurementTechnique($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get measurementtechnique() { return this.measurementTechnique }
-        set measurementtechnique(value) { this.measurementTechnique = value }
 
         minValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get minvalue() { return this.minValue }
-        set minvalue(value) { this.minValue = value }
 
         propertyID($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get propertyid() { return this.propertyID }
-        set propertyid(value) { this.propertyID = value }
 
         unitCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -114,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unitcode() { return this.unitCode }
-        set unitcode(value) { this.unitCode = value }
 
         unitText($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -131,8 +121,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unittext() { return this.unitText }
-        set unittext(value) { this.unitText = value }
 
         value($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -170,8 +158,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get valuereference() { return this.valueReference }
-        set valuereference(value) { this.valueReference = value }
         
     }
 </script>

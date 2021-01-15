@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicRelease'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['catalogNumber', 'creditedTo', 'duration', 'musicReleaseFormat', 'recordLabel', 'releaseOf']).concat((['catalogNumber', 'creditedTo', 'duration', 'musicReleaseFormat', 'recordLabel', 'releaseOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['catalogNumber', 'creditedTo', 'duration', 'musicReleaseFormat', 'recordLabel', 'releaseOf'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get catalognumber() { return this.catalogNumber }
-        set catalognumber(value) { this.catalogNumber = value }
 
         creditedTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get creditedto() { return this.creditedTo }
-        set creditedto(value) { this.creditedTo = value }
 
         duration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicreleaseformat() { return this.musicReleaseFormat }
-        set musicreleaseformat(value) { this.musicReleaseFormat = value }
 
         recordLabel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recordlabel() { return this.recordLabel }
-        set recordlabel(value) { this.recordLabel = value }
 
         releaseOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get releaseof() { return this.releaseOf }
-        set releaseof(value) { this.releaseOf = value }
         
     }
 </script>

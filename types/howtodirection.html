@@ -17,7 +17,7 @@
         static _rdfs_label = 'HowToDirection'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['afterMedia', 'beforeMedia', 'duringMedia', 'performTime', 'prepTime', 'supply', 'tool', 'totalTime']).concat((['afterMedia', 'beforeMedia', 'duringMedia', 'performTime', 'prepTime', 'supply', 'tool', 'totalTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['afterMedia', 'beforeMedia', 'duringMedia', 'performTime', 'prepTime', 'supply', 'tool', 'totalTime'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aftermedia() { return this.afterMedia }
-        set aftermedia(value) { this.afterMedia = value }
 
         beforeMedia($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get beforemedia() { return this.beforeMedia }
-        set beforemedia(value) { this.beforeMedia = value }
 
         duringMedia($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get duringmedia() { return this.duringMedia }
-        set duringmedia(value) { this.duringMedia = value }
 
         performTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -97,8 +91,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get performtime() { return this.performTime }
-        set performtime(value) { this.performTime = value }
 
         prepTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -114,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get preptime() { return this.prepTime }
-        set preptime(value) { this.prepTime = value }
 
         supply($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -163,8 +153,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get totaltime() { return this.totalTime }
-        set totaltime(value) { this.totalTime = value }
         
     }
 </script>

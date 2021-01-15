@@ -17,7 +17,7 @@
         static _rdfs_label = 'GameServer'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['game', 'playersOnline', 'serverStatus']).concat((['game', 'playersOnline', 'serverStatus']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['game', 'playersOnline', 'serverStatus'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get playersonline() { return this.playersOnline }
-        set playersonline(value) { this.playersOnline = value }
 
         serverStatus($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serverstatus() { return this.serverStatus }
-        set serverstatus(value) { this.serverStatus = value }
         
     }
 </script>

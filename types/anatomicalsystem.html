@@ -17,7 +17,7 @@
         static _rdfs_label = 'AnatomicalSystem'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedPathophysiology', 'comprisedOf', 'relatedCondition', 'relatedStructure', 'relatedTherapy']).concat((['associatedPathophysiology', 'comprisedOf', 'relatedCondition', 'relatedStructure', 'relatedTherapy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedPathophysiology', 'comprisedOf', 'relatedCondition', 'relatedStructure', 'relatedTherapy'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedpathophysiology() { return this.associatedPathophysiology }
-        set associatedpathophysiology(value) { this.associatedPathophysiology = value }
 
         comprisedOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get comprisedof() { return this.comprisedOf }
-        set comprisedof(value) { this.comprisedOf = value }
 
         relatedCondition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedcondition() { return this.relatedCondition }
-        set relatedcondition(value) { this.relatedCondition = value }
 
         relatedStructure($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedstructure() { return this.relatedStructure }
-        set relatedstructure(value) { this.relatedStructure = value }
 
         relatedTherapy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedtherapy() { return this.relatedTherapy }
-        set relatedtherapy(value) { this.relatedTherapy = value }
         
     }
 </script>

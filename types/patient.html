@@ -17,7 +17,7 @@
         static _rdfs_label = 'Patient'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['diagnosis', 'drug', 'healthCondition']).concat((['diagnosis', 'drug', 'healthCondition']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['diagnosis', 'drug', 'healthCondition'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthcondition() { return this.healthCondition }
-        set healthcondition(value) { this.healthCondition = value }
         
     }
 </script>

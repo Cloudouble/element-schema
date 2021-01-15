@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExercisePlan'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload']).concat((['activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['activityDuration', 'activityFrequency', 'additionalVariable', 'exerciseType', 'intensity', 'repetitions', 'restPeriods', 'workload'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get activityduration() { return this.activityDuration }
-        set activityduration(value) { this.activityDuration = value }
 
         activityFrequency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get activityfrequency() { return this.activityFrequency }
-        set activityfrequency(value) { this.activityFrequency = value }
 
         additionalVariable($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalvariable() { return this.additionalVariable }
-        set additionalvariable(value) { this.additionalVariable = value }
 
         exerciseType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exercisetype() { return this.exerciseType }
-        set exercisetype(value) { this.exerciseType = value }
 
         intensity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -146,8 +138,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get restperiods() { return this.restPeriods }
-        set restperiods(value) { this.restPeriods = value }
 
         workload($this, value) {
 			window.LiveElement.Schema.renderProperty({

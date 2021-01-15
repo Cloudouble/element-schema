@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicPlaylist'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['numTracks', 'track', 'tracks']).concat((['numTracks', 'track', 'tracks']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['numTracks', 'track', 'tracks'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numtracks() { return this.numTracks }
-        set numtracks(value) { this.numTracks = value }
 
         track($this, value) {
 			window.LiveElement.Schema.renderProperty({

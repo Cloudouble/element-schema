@@ -17,7 +17,7 @@
         static _rdfs_label = 'Service'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService']).concat((['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['aggregateRating', 'areaServed', 'audience', 'availableChannel', 'award', 'brand', 'broker', 'category', 'hasOfferCatalog', 'hoursAvailable', 'isRelatedTo', 'isSimilarTo', 'logo', 'offers', 'produces', 'provider', 'providerMobility', 'review', 'serviceArea', 'serviceAudience', 'serviceOutput', 'serviceType', 'slogan', 'termsOfService'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get aggregaterating() { return this.aggregateRating }
-        set aggregaterating(value) { this.aggregateRating = value }
 
         areaServed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -63,8 +61,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get areaserved() { return this.areaServed }
-        set areaserved(value) { this.areaServed = value }
 
         audience($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +91,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablechannel() { return this.availableChannel }
-        set availablechannel(value) { this.availableChannel = value }
 
         award($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -177,8 +171,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasoffercatalog() { return this.hasOfferCatalog }
-        set hasoffercatalog(value) { this.hasOfferCatalog = value }
 
         hoursAvailable($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -194,8 +186,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hoursavailable() { return this.hoursAvailable }
-        set hoursavailable(value) { this.hoursAvailable = value }
 
         isRelatedTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -212,8 +202,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isrelatedto() { return this.isRelatedTo }
-        set isrelatedto(value) { this.isRelatedTo = value }
 
         isSimilarTo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -230,8 +218,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get issimilarto() { return this.isSimilarTo }
-        set issimilarto(value) { this.isSimilarTo = value }
 
         logo($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -310,8 +296,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get providermobility() { return this.providerMobility }
-        set providermobility(value) { this.providerMobility = value }
 
         review($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -344,8 +328,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicearea() { return this.serviceArea }
-        set servicearea(value) { this.serviceArea = value }
 
         serviceAudience($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -361,8 +343,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serviceaudience() { return this.serviceAudience }
-        set serviceaudience(value) { this.serviceAudience = value }
 
         serviceOutput($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -378,8 +358,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serviceoutput() { return this.serviceOutput }
-        set serviceoutput(value) { this.serviceOutput = value }
 
         serviceType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -396,8 +374,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get servicetype() { return this.serviceType }
-        set servicetype(value) { this.serviceType = value }
 
         slogan($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -429,8 +405,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get termsofservice() { return this.termsOfService }
-        set termsofservice(value) { this.termsOfService = value }
         
     }
 </script>

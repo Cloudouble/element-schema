@@ -17,7 +17,7 @@
         static _rdfs_label = 'Message'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient']).concat((['bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['bccRecipient', 'ccRecipient', 'dateRead', 'dateReceived', 'dateSent', 'messageAttachment', 'recipient', 'sender', 'toRecipient'])))
         }
         
         constructor() {
@@ -45,8 +45,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get bccrecipient() { return this.bccRecipient }
-        set bccrecipient(value) { this.bccRecipient = value }
 
         ccRecipient($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -64,8 +62,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ccrecipient() { return this.ccRecipient }
-        set ccrecipient(value) { this.ccRecipient = value }
 
         dateRead($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -82,8 +78,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dateread() { return this.dateRead }
-        set dateread(value) { this.dateRead = value }
 
         dateReceived($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -99,8 +93,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datereceived() { return this.dateReceived }
-        set datereceived(value) { this.dateReceived = value }
 
         dateSent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -116,8 +108,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datesent() { return this.dateSent }
-        set datesent(value) { this.dateSent = value }
 
         messageAttachment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -133,8 +123,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get messageattachment() { return this.messageAttachment }
-        set messageattachment(value) { this.messageAttachment = value }
 
         recipient($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -188,8 +176,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get torecipient() { return this.toRecipient }
-        set torecipient(value) { this.toRecipient = value }
         
     }
 </script>

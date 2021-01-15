@@ -17,7 +17,7 @@
         static _rdfs_label = 'Comment'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['downvoteCount', 'parentItem', 'upvoteCount']).concat((['downvoteCount', 'parentItem', 'upvoteCount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['downvoteCount', 'parentItem', 'upvoteCount'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get downvotecount() { return this.downvoteCount }
-        set downvotecount(value) { this.downvoteCount = value }
 
         parentItem($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get parentitem() { return this.parentItem }
-        set parentitem(value) { this.parentItem = value }
 
         upvoteCount($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get upvotecount() { return this.upvoteCount }
-        set upvotecount(value) { this.upvoteCount = value }
         
     }
 </script>

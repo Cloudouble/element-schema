@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality']).concat((['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality'])))
         }
         
         constructor() {
@@ -120,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         thumbnail($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -167,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get videoframesize() { return this.videoFrameSize }
-        set videoframesize(value) { this.videoFrameSize = value }
 
         videoQuality($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -184,8 +180,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get videoquality() { return this.videoQuality }
-        set videoquality(value) { this.videoQuality = value }
         
     }
 </script>

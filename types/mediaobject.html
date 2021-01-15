@@ -17,7 +17,7 @@
         static _rdfs_label = 'MediaObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']).concat((['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get associatedarticle() { return this.associatedArticle }
-        set associatedarticle(value) { this.associatedArticle = value }
 
         bitrate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -75,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contentsize() { return this.contentSize }
-        set contentsize(value) { this.contentSize = value }
 
         contentUrl($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get contenturl() { return this.contentUrl }
-        set contenturl(value) { this.contentUrl = value }
 
         duration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -124,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get embedurl() { return this.embedUrl }
-        set embedurl(value) { this.embedUrl = value }
 
         encodesCreativeWork($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -141,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get encodescreativework() { return this.encodesCreativeWork }
-        set encodescreativework(value) { this.encodesCreativeWork = value }
 
         encodingFormat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -159,8 +149,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get encodingformat() { return this.encodingFormat }
-        set encodingformat(value) { this.encodingFormat = value }
 
         endTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -177,8 +165,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get endtime() { return this.endTime }
-        set endtime(value) { this.endTime = value }
 
         height($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -210,8 +196,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get playertype() { return this.playerType }
-        set playertype(value) { this.playerType = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -227,8 +211,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         regionsAllowed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -244,8 +226,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get regionsallowed() { return this.regionsAllowed }
-        set regionsallowed(value) { this.regionsAllowed = value }
 
         requiresSubscription($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -262,8 +242,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get requiressubscription() { return this.requiresSubscription }
-        set requiressubscription(value) { this.requiresSubscription = value }
 
         startTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -280,8 +258,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get starttime() { return this.startTime }
-        set starttime(value) { this.startTime = value }
 
         uploadDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -297,8 +273,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get uploaddate() { return this.uploadDate }
-        set uploaddate(value) { this.uploadDate = value }
 
         width($this, value) {
 			window.LiveElement.Schema.renderProperty({

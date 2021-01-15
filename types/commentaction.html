@@ -17,7 +17,7 @@
         static _rdfs_label = 'CommentAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['resultComment']).concat((['resultComment']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['resultComment'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get resultcomment() { return this.resultComment }
-        set resultcomment(value) { this.resultComment = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PerformanceRole'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['characterName']).concat((['characterName']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['characterName'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get charactername() { return this.characterName }
-        set charactername(value) { this.characterName = value }
         
     }
 </script>

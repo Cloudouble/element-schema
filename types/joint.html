@@ -17,7 +17,7 @@
         static _rdfs_label = 'Joint'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['biomechnicalClass', 'functionalClass', 'structuralClass']).concat((['biomechnicalClass', 'functionalClass', 'structuralClass']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['biomechnicalClass', 'functionalClass', 'structuralClass'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get biomechnicalclass() { return this.biomechnicalClass }
-        set biomechnicalclass(value) { this.biomechnicalClass = value }
 
         functionalClass($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get functionalclass() { return this.functionalClass }
-        set functionalclass(value) { this.functionalClass = value }
 
         structuralClass($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get structuralclass() { return this.structuralClass }
-        set structuralclass(value) { this.structuralClass = value }
         
     }
 </script>

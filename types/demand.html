@@ -17,7 +17,7 @@
         static _rdfs_label = 'Demand'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty']).concat((['acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get acceptedpaymentmethod() { return this.acceptedPaymentMethod }
-        set acceptedpaymentmethod(value) { this.acceptedPaymentMethod = value }
 
         advanceBookingRequirement($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get advancebookingrequirement() { return this.advanceBookingRequirement }
-        set advancebookingrequirement(value) { this.advanceBookingRequirement = value }
 
         areaServed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -81,8 +77,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get areaserved() { return this.areaServed }
-        set areaserved(value) { this.areaServed = value }
 
         availability($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -115,8 +109,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availabilityends() { return this.availabilityEnds }
-        set availabilityends(value) { this.availabilityEnds = value }
 
         availabilityStarts($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -134,8 +126,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availabilitystarts() { return this.availabilityStarts }
-        set availabilitystarts(value) { this.availabilityStarts = value }
 
         availableAtOrFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -151,8 +141,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availableatorfrom() { return this.availableAtOrFrom }
-        set availableatorfrom(value) { this.availableAtOrFrom = value }
 
         availableDeliveryMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -168,8 +156,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availabledeliverymethod() { return this.availableDeliveryMethod }
-        set availabledeliverymethod(value) { this.availableDeliveryMethod = value }
 
         businessFunction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -185,8 +171,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get businessfunction() { return this.businessFunction }
-        set businessfunction(value) { this.businessFunction = value }
 
         deliveryLeadTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -202,8 +186,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliveryleadtime() { return this.deliveryLeadTime }
-        set deliveryleadtime(value) { this.deliveryLeadTime = value }
 
         eligibleCustomerType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -219,8 +201,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligiblecustomertype() { return this.eligibleCustomerType }
-        set eligiblecustomertype(value) { this.eligibleCustomerType = value }
 
         eligibleDuration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -236,8 +216,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibleduration() { return this.eligibleDuration }
-        set eligibleduration(value) { this.eligibleDuration = value }
 
         eligibleQuantity($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -253,8 +231,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligiblequantity() { return this.eligibleQuantity }
-        set eligiblequantity(value) { this.eligibleQuantity = value }
 
         eligibleRegion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -272,8 +248,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibleregion() { return this.eligibleRegion }
-        set eligibleregion(value) { this.eligibleRegion = value }
 
         eligibleTransactionVolume($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -289,8 +263,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get eligibletransactionvolume() { return this.eligibleTransactionVolume }
-        set eligibletransactionvolume(value) { this.eligibleTransactionVolume = value }
 
         gtin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -381,8 +353,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includesobject() { return this.includesObject }
-        set includesobject(value) { this.includesObject = value }
 
         ineligibleRegion($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -400,8 +370,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ineligibleregion() { return this.ineligibleRegion }
-        set ineligibleregion(value) { this.ineligibleRegion = value }
 
         inventoryLevel($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -417,8 +385,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inventorylevel() { return this.inventoryLevel }
-        set inventorylevel(value) { this.inventoryLevel = value }
 
         itemCondition($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -434,8 +400,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemcondition() { return this.itemCondition }
-        set itemcondition(value) { this.itemCondition = value }
 
         itemOffered($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -457,8 +421,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get itemoffered() { return this.itemOffered }
-        set itemoffered(value) { this.itemOffered = value }
 
         mpn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -489,8 +451,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pricespecification() { return this.priceSpecification }
-        set pricespecification(value) { this.priceSpecification = value }
 
         seller($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -522,8 +482,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get serialnumber() { return this.serialNumber }
-        set serialnumber(value) { this.serialNumber = value }
 
         sku($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -555,8 +513,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validfrom() { return this.validFrom }
-        set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -573,8 +529,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validthrough() { return this.validThrough }
-        set validthrough(value) { this.validThrough = value }
 
         warranty($this, value) {
 			window.LiveElement.Schema.renderProperty({

@@ -17,7 +17,7 @@
         static _rdfs_label = 'EducationalOccupationalProgram'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm']).concat((['applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationdeadline() { return this.applicationDeadline }
-        set applicationdeadline(value) { this.applicationDeadline = value }
 
         applicationStartDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicationstartdate() { return this.applicationStartDate }
-        set applicationstartdate(value) { this.applicationStartDate = value }
 
         dayOfWeek($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dayofweek() { return this.dayOfWeek }
-        set dayofweek(value) { this.dayOfWeek = value }
 
         educationalCredentialAwarded($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalcredentialawarded() { return this.educationalCredentialAwarded }
-        set educationalcredentialawarded(value) { this.educationalCredentialAwarded = value }
 
         educationalProgramMode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -114,8 +106,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get educationalprogrammode() { return this.educationalProgramMode }
-        set educationalprogrammode(value) { this.educationalProgramMode = value }
 
         endDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -132,8 +122,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get enddate() { return this.endDate }
-        set enddate(value) { this.endDate = value }
 
         financialAidEligible($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -150,8 +138,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get financialaideligible() { return this.financialAidEligible }
-        set financialaideligible(value) { this.financialAidEligible = value }
 
         hasCourse($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -167,8 +153,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hascourse() { return this.hasCourse }
-        set hascourse(value) { this.hasCourse = value }
 
         maximumEnrollment($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -184,8 +168,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumenrollment() { return this.maximumEnrollment }
-        set maximumenrollment(value) { this.maximumEnrollment = value }
 
         numberOfCredits($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -202,8 +184,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofcredits() { return this.numberOfCredits }
-        set numberofcredits(value) { this.numberOfCredits = value }
 
         occupationalCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -220,8 +200,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get occupationalcategory() { return this.occupationalCategory }
-        set occupationalcategory(value) { this.occupationalCategory = value }
 
         occupationalCredentialAwarded($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -239,8 +217,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get occupationalcredentialawarded() { return this.occupationalCredentialAwarded }
-        set occupationalcredentialawarded(value) { this.occupationalCredentialAwarded = value }
 
         offers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -275,8 +251,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programprerequisites() { return this.programPrerequisites }
-        set programprerequisites(value) { this.programPrerequisites = value }
 
         programType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -293,8 +267,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get programtype() { return this.programType }
-        set programtype(value) { this.programType = value }
 
         provider($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -326,8 +298,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get salaryuponcompletion() { return this.salaryUponCompletion }
-        set salaryuponcompletion(value) { this.salaryUponCompletion = value }
 
         startDate($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -344,8 +314,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get startdate() { return this.startDate }
-        set startdate(value) { this.startDate = value }
 
         termDuration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -361,8 +329,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get termduration() { return this.termDuration }
-        set termduration(value) { this.termDuration = value }
 
         termsPerYear($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -378,8 +344,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get termsperyear() { return this.termsPerYear }
-        set termsperyear(value) { this.termsPerYear = value }
 
         timeOfDay($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -395,8 +359,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get timeofday() { return this.timeOfDay }
-        set timeofday(value) { this.timeOfDay = value }
 
         timeToComplete($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -412,8 +374,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get timetocomplete() { return this.timeToComplete }
-        set timetocomplete(value) { this.timeToComplete = value }
 
         trainingSalary($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -429,8 +389,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get trainingsalary() { return this.trainingSalary }
-        set trainingsalary(value) { this.trainingSalary = value }
 
         typicalCreditsPerTerm($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -447,8 +405,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typicalcreditsperterm() { return this.typicalCreditsPerTerm }
-        set typicalcreditsperterm(value) { this.typicalCreditsPerTerm = value }
         
     }
 </script>

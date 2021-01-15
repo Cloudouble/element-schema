@@ -17,7 +17,7 @@
         static _rdfs_label = 'MedicalCause'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['causeOf']).concat((['causeOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['causeOf'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get causeof() { return this.causeOf }
-        set causeof(value) { this.causeOf = value }
         
     }
 </script>

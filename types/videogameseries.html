@@ -17,7 +17,7 @@
         static _rdfs_label = 'VideoGameSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer']).concat((['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'characterAttribute', 'cheatCode', 'containsSeason', 'director', 'directors', 'episode', 'episodes', 'gameItem', 'gameLocation', 'gamePlatform', 'musicBy', 'numberOfEpisodes', 'numberOfPlayers', 'numberOfSeasons', 'playMode', 'productionCompany', 'quest', 'season', 'seasons', 'trailer'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get characterattribute() { return this.characterAttribute }
-        set characterattribute(value) { this.characterAttribute = value }
 
         cheatCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get cheatcode() { return this.cheatCode }
-        set cheatcode(value) { this.cheatCode = value }
 
         containsSeason($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -107,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get containsseason() { return this.containsSeason }
-        set containsseason(value) { this.containsSeason = value }
 
         director($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -184,8 +178,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gameitem() { return this.gameItem }
-        set gameitem(value) { this.gameItem = value }
 
         gameLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -203,8 +195,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gamelocation() { return this.gameLocation }
-        set gamelocation(value) { this.gameLocation = value }
 
         gamePlatform($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -222,8 +212,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get gameplatform() { return this.gamePlatform }
-        set gameplatform(value) { this.gamePlatform = value }
 
         musicBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -240,8 +228,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         numberOfEpisodes($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -257,8 +243,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofepisodes() { return this.numberOfEpisodes }
-        set numberofepisodes(value) { this.numberOfEpisodes = value }
 
         numberOfPlayers($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -274,8 +258,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofplayers() { return this.numberOfPlayers }
-        set numberofplayers(value) { this.numberOfPlayers = value }
 
         numberOfSeasons($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -291,8 +273,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofseasons() { return this.numberOfSeasons }
-        set numberofseasons(value) { this.numberOfSeasons = value }
 
         playMode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -308,8 +288,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get playmode() { return this.playMode }
-        set playmode(value) { this.playMode = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -325,8 +303,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         quest($this, value) {
 			window.LiveElement.Schema.renderProperty({

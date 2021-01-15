@@ -17,7 +17,7 @@
         static _rdfs_label = 'QuantitativeValue'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference']).concat((['additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'maxValue', 'minValue', 'unitCode', 'unitText', 'value', 'valueReference'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionalproperty() { return this.additionalProperty }
-        set additionalproperty(value) { this.additionalProperty = value }
 
         maxValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maxvalue() { return this.maxValue }
-        set maxvalue(value) { this.maxValue = value }
 
         minValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get minvalue() { return this.minValue }
-        set minvalue(value) { this.minValue = value }
 
         unitCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unitcode() { return this.unitCode }
-        set unitcode(value) { this.unitCode = value }
 
         unitText($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -112,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unittext() { return this.unitText }
-        set unittext(value) { this.unitText = value }
 
         value($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -151,8 +141,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get valuereference() { return this.valueReference }
-        set valuereference(value) { this.valueReference = value }
         
     }
 </script>

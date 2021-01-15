@@ -17,7 +17,7 @@
         static _rdfs_label = 'Answer'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['answerExplanation']).concat((['answerExplanation']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['answerExplanation'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get answerexplanation() { return this.answerExplanation }
-        set answerexplanation(value) { this.answerExplanation = value }
         
     }
 </script>

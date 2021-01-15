@@ -17,7 +17,7 @@
         static _rdfs_label = 'BedDetails'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['numberOfBeds', 'typeOfBed']).concat((['numberOfBeds', 'typeOfBed']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['numberOfBeds', 'typeOfBed'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofbeds() { return this.numberOfBeds }
-        set numberofbeds(value) { this.numberOfBeds = value }
 
         typeOfBed($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typeofbed() { return this.typeOfBed }
-        set typeofbed(value) { this.typeOfBed = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'MusicRecording'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['byArtist', 'duration', 'inAlbum', 'inPlaylist', 'isrcCode', 'recordingOf']).concat((['byArtist', 'duration', 'inAlbum', 'inPlaylist', 'isrcCode', 'recordingOf']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['byArtist', 'duration', 'inAlbum', 'inPlaylist', 'isrcCode', 'recordingOf'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get byartist() { return this.byArtist }
-        set byartist(value) { this.byArtist = value }
 
         duration($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inalbum() { return this.inAlbum }
-        set inalbum(value) { this.inAlbum = value }
 
         inPlaylist($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get inplaylist() { return this.inPlaylist }
-        set inplaylist(value) { this.inPlaylist = value }
 
         isrcCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get isrccode() { return this.isrcCode }
-        set isrccode(value) { this.isrcCode = value }
 
         recordingOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -127,8 +119,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recordingof() { return this.recordingOf }
-        set recordingof(value) { this.recordingOf = value }
         
     }
 </script>

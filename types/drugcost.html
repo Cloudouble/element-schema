@@ -17,7 +17,7 @@
         static _rdfs_label = 'DrugCost'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit']).concat((['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['applicableLocation', 'costCategory', 'costCurrency', 'costOrigin', 'costPerUnit', 'drugUnit'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get applicablelocation() { return this.applicableLocation }
-        set applicablelocation(value) { this.applicableLocation = value }
 
         costCategory($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get costcategory() { return this.costCategory }
-        set costcategory(value) { this.costCategory = value }
 
         costCurrency($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get costcurrency() { return this.costCurrency }
-        set costcurrency(value) { this.costCurrency = value }
 
         costOrigin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get costorigin() { return this.costOrigin }
-        set costorigin(value) { this.costOrigin = value }
 
         costPerUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -113,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get costperunit() { return this.costPerUnit }
-        set costperunit(value) { this.costPerUnit = value }
 
         drugUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -130,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get drugunit() { return this.drugUnit }
-        set drugunit(value) { this.drugUnit = value }
         
     }
 </script>

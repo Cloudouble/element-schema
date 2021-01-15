@@ -17,7 +17,7 @@
         static _rdfs_label = 'DrugStrength'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue']).concat((['activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get activeingredient() { return this.activeIngredient }
-        set activeingredient(value) { this.activeIngredient = value }
 
         availableIn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get availablein() { return this.availableIn }
-        set availablein(value) { this.availableIn = value }
 
         maximumIntake($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maximumintake() { return this.maximumIntake }
-        set maximumintake(value) { this.maximumIntake = value }
 
         strengthUnit($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get strengthunit() { return this.strengthUnit }
-        set strengthunit(value) { this.strengthUnit = value }
 
         strengthValue($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -111,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get strengthvalue() { return this.strengthValue }
-        set strengthvalue(value) { this.strengthValue = value }
         
     }
 </script>

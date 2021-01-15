@@ -17,7 +17,7 @@
         static _rdfs_label = 'Menu'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasMenuItem', 'hasMenuSection']).concat((['hasMenuItem', 'hasMenuSection']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasMenuItem', 'hasMenuSection'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmenuitem() { return this.hasMenuItem }
-        set hasmenuitem(value) { this.hasMenuItem = value }
 
         hasMenuSection($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasmenusection() { return this.hasMenuSection }
-        set hasmenusection(value) { this.hasMenuSection = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'InvestmentOrDeposit'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['amount']).concat((['amount']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['amount'])))
         }
         
         constructor() {

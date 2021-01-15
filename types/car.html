@@ -17,7 +17,7 @@
         static _rdfs_label = 'Car'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acrissCode', 'roofLoad']).concat((['acrissCode', 'roofLoad']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['acrissCode', 'roofLoad'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get acrisscode() { return this.acrissCode }
-        set acrisscode(value) { this.acrissCode = value }
 
         roofLoad($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get roofload() { return this.roofLoad }
-        set roofload(value) { this.roofLoad = value }
         
     }
 </script>

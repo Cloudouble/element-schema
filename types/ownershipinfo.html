@@ -17,7 +17,7 @@
         static _rdfs_label = 'OwnershipInfo'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acquiredFrom', 'ownedFrom', 'ownedThrough', 'typeOfGood']).concat((['acquiredFrom', 'ownedFrom', 'ownedThrough', 'typeOfGood']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['acquiredFrom', 'ownedFrom', 'ownedThrough', 'typeOfGood'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get acquiredfrom() { return this.acquiredFrom }
-        set acquiredfrom(value) { this.acquiredFrom = value }
 
         ownedFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ownedfrom() { return this.ownedFrom }
-        set ownedfrom(value) { this.ownedFrom = value }
 
         ownedThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get ownedthrough() { return this.ownedThrough }
-        set ownedthrough(value) { this.ownedThrough = value }
 
         typeOfGood($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typeofgood() { return this.typeOfGood }
-        set typeofgood(value) { this.typeOfGood = value }
         
     }
 </script>

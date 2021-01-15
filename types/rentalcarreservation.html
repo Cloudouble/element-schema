@@ -17,7 +17,7 @@
         static _rdfs_label = 'RentalCarReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dropoffLocation', 'dropoffTime', 'pickupLocation', 'pickupTime']).concat((['dropoffLocation', 'dropoffTime', 'pickupLocation', 'pickupTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['dropoffLocation', 'dropoffTime', 'pickupLocation', 'pickupTime'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dropofflocation() { return this.dropoffLocation }
-        set dropofflocation(value) { this.dropoffLocation = value }
 
         dropoffTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get dropofftime() { return this.dropoffTime }
-        set dropofftime(value) { this.dropoffTime = value }
 
         pickupLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pickuplocation() { return this.pickupLocation }
-        set pickuplocation(value) { this.pickupLocation = value }
 
         pickupTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -94,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pickuptime() { return this.pickupTime }
-        set pickuptime(value) { this.pickupTime = value }
         
     }
 </script>

@@ -17,7 +17,7 @@
         static _rdfs_label = 'PodcastSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['webFeed']).concat((['webFeed']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['webFeed'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get webfeed() { return this.webFeed }
-        set webfeed(value) { this.webFeed = value }
         
     }
 </script>

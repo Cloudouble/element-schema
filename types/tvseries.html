@@ -17,7 +17,7 @@
         static _rdfs_label = 'TVSeries'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'containsSeason', 'countryOfOrigin', 'director', 'directors', 'episode', 'episodes', 'musicBy', 'numberOfEpisodes', 'numberOfSeasons', 'productionCompany', 'season', 'seasons', 'trailer']).concat((['actor', 'actors', 'containsSeason', 'countryOfOrigin', 'director', 'directors', 'episode', 'episodes', 'musicBy', 'numberOfEpisodes', 'numberOfSeasons', 'productionCompany', 'season', 'seasons', 'trailer']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'containsSeason', 'countryOfOrigin', 'director', 'directors', 'episode', 'episodes', 'musicBy', 'numberOfEpisodes', 'numberOfSeasons', 'productionCompany', 'season', 'seasons', 'trailer'])))
         }
         
         constructor() {
@@ -73,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get containsseason() { return this.containsSeason }
-        set containsseason(value) { this.containsSeason = value }
 
         countryOfOrigin($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get countryoforigin() { return this.countryOfOrigin }
-        set countryoforigin(value) { this.countryOfOrigin = value }
 
         director($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -168,8 +164,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get musicby() { return this.musicBy }
-        set musicby(value) { this.musicBy = value }
 
         numberOfEpisodes($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -185,8 +179,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofepisodes() { return this.numberOfEpisodes }
-        set numberofepisodes(value) { this.numberOfEpisodes = value }
 
         numberOfSeasons($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -202,8 +194,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get numberofseasons() { return this.numberOfSeasons }
-        set numberofseasons(value) { this.numberOfSeasons = value }
 
         productionCompany($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -219,8 +209,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productioncompany() { return this.productionCompany }
-        set productioncompany(value) { this.productionCompany = value }
 
         season($this, value) {
 			window.LiveElement.Schema.renderProperty({

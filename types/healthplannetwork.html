@@ -17,7 +17,7 @@
         static _rdfs_label = 'HealthPlanNetwork'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCostSharing', 'healthPlanNetworkId', 'healthPlanNetworkTier']).concat((['healthPlanCostSharing', 'healthPlanNetworkId', 'healthPlanNetworkTier']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCostSharing', 'healthPlanNetworkId', 'healthPlanNetworkTier'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplancostsharing() { return this.healthPlanCostSharing }
-        set healthplancostsharing(value) { this.healthPlanCostSharing = value }
 
         healthPlanNetworkId($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplannetworkid() { return this.healthPlanNetworkId }
-        set healthplannetworkid(value) { this.healthPlanNetworkId = value }
 
         healthPlanNetworkTier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get healthplannetworktier() { return this.healthPlanNetworkTier }
-        set healthplannetworktier(value) { this.healthPlanNetworkTier = value }
         
     }
 </script>

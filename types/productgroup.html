@@ -17,7 +17,7 @@
         static _rdfs_label = 'ProductGroup'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasVariant', 'productGroupID', 'variesBy']).concat((['hasVariant', 'productGroupID', 'variesBy']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hasVariant', 'productGroupID', 'variesBy'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hasvariant() { return this.hasVariant }
-        set hasvariant(value) { this.hasVariant = value }
 
         productGroupID($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get productgroupid() { return this.productGroupID }
-        set productgroupid(value) { this.productGroupID = value }
 
         variesBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get variesby() { return this.variesBy }
-        set variesby(value) { this.variesBy = value }
         
     }
 </script>

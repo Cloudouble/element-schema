@@ -17,7 +17,7 @@
         static _rdfs_label = 'TaxiReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['partySize', 'pickupLocation', 'pickupTime']).concat((['partySize', 'pickupLocation', 'pickupTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['partySize', 'pickupLocation', 'pickupTime'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partysize() { return this.partySize }
-        set partysize(value) { this.partySize = value }
 
         pickupLocation($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pickuplocation() { return this.pickupLocation }
-        set pickuplocation(value) { this.pickupLocation = value }
 
         pickupTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get pickuptime() { return this.pickupTime }
-        set pickuptime(value) { this.pickupTime = value }
         
     }
 </script>

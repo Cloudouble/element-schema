@@ -17,7 +17,7 @@
         static _rdfs_label = 'ReceiveAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryMethod', 'sender']).concat((['deliveryMethod', 'sender']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryMethod', 'sender'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get deliverymethod() { return this.deliveryMethod }
-        set deliverymethod(value) { this.deliveryMethod = value }
 
         sender($this, value) {
 			window.LiveElement.Schema.renderProperty({

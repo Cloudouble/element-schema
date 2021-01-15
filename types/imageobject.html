@@ -17,7 +17,7 @@
         static _rdfs_label = 'ImageObject'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['caption', 'exifData', 'representativeOfPage', 'thumbnail']).concat((['caption', 'exifData', 'representativeOfPage', 'thumbnail']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['caption', 'exifData', 'representativeOfPage', 'thumbnail'])))
         }
         
         constructor() {
@@ -60,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exifdata() { return this.exifData }
-        set exifdata(value) { this.exifData = value }
 
         representativeOfPage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get representativeofpage() { return this.representativeOfPage }
-        set representativeofpage(value) { this.representativeOfPage = value }
 
         thumbnail($this, value) {
 			window.LiveElement.Schema.renderProperty({

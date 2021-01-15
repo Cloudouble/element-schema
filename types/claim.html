@@ -17,7 +17,7 @@
         static _rdfs_label = 'Claim'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['appearance', 'firstAppearance']).concat((['appearance', 'firstAppearance']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['appearance', 'firstAppearance'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get firstappearance() { return this.firstAppearance }
-        set firstappearance(value) { this.firstAppearance = value }
         
     }
 </script>

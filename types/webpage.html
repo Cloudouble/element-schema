@@ -17,7 +17,7 @@
         static _rdfs_label = 'WebPage'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']).concat((['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty'])))
         }
         
         constructor() {
@@ -59,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get lastreviewed() { return this.lastReviewed }
-        set lastreviewed(value) { this.lastReviewed = value }
 
         mainContentOfPage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get maincontentofpage() { return this.mainContentOfPage }
-        set maincontentofpage(value) { this.mainContentOfPage = value }
 
         primaryImageOfPage($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -93,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get primaryimageofpage() { return this.primaryImageOfPage }
-        set primaryimageofpage(value) { this.primaryImageOfPage = value }
 
         relatedLink($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -110,8 +104,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get relatedlink() { return this.relatedLink }
-        set relatedlink(value) { this.relatedLink = value }
 
         reviewedBy($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -128,8 +120,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get reviewedby() { return this.reviewedBy }
-        set reviewedby(value) { this.reviewedBy = value }
 
         significantLink($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -145,8 +135,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get significantlink() { return this.significantLink }
-        set significantlink(value) { this.significantLink = value }
 
         significantLinks($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -162,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get significantlinks() { return this.significantLinks }
-        set significantlinks(value) { this.significantLinks = value }
 
         speakable($this, value) {
 			window.LiveElement.Schema.renderProperty({

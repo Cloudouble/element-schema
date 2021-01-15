@@ -17,7 +17,7 @@
         static _rdfs_label = 'Residence'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accommodationFloorPlan']).concat((['accommodationFloorPlan']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['accommodationFloorPlan'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get accommodationfloorplan() { return this.accommodationFloorPlan }
-        set accommodationfloorplan(value) { this.accommodationFloorPlan = value }
         
     }
 </script>

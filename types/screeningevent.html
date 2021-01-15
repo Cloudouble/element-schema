@@ -17,7 +17,7 @@
         static _rdfs_label = 'ScreeningEvent'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['subtitleLanguage', 'videoFormat', 'workPresented']).concat((['subtitleLanguage', 'videoFormat', 'workPresented']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['subtitleLanguage', 'videoFormat', 'workPresented'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subtitlelanguage() { return this.subtitleLanguage }
-        set subtitlelanguage(value) { this.subtitleLanguage = value }
 
         videoFormat($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get videoformat() { return this.videoFormat }
-        set videoformat(value) { this.videoFormat = value }
 
         workPresented($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get workpresented() { return this.workPresented }
-        set workpresented(value) { this.workPresented = value }
         
     }
 </script>

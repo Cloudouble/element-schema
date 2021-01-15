@@ -17,7 +17,7 @@
         static _rdfs_label = 'Thing'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']).concat((['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get additionaltype() { return this.additionalType }
-        set additionaltype(value) { this.additionalType = value }
 
         alternateName($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get alternatename() { return this.alternateName }
-        set alternatename(value) { this.alternateName = value }
 
         description($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -92,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get disambiguatingdescription() { return this.disambiguatingDescription }
-        set disambiguatingdescription(value) { this.disambiguatingDescription = value }
 
         identifier($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -143,8 +137,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get mainentityofpage() { return this.mainEntityOfPage }
-        set mainentityofpage(value) { this.mainEntityOfPage = value }
 
         name($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -175,8 +167,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get potentialaction() { return this.potentialAction }
-        set potentialaction(value) { this.potentialAction = value }
 
         sameAs($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -192,8 +182,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get sameas() { return this.sameAs }
-        set sameas(value) { this.sameAs = value }
 
         subjectOf($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -210,8 +198,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get subjectof() { return this.subjectOf }
-        set subjectof(value) { this.subjectOf = value }
 
         url($this, value) {
 			window.LiveElement.Schema.renderProperty({

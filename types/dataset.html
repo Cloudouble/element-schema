@@ -17,7 +17,7 @@
         static _rdfs_label = 'Dataset'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured']).concat((['catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get datasettimeinterval() { return this.datasetTimeInterval }
-        set datasettimeinterval(value) { this.datasetTimeInterval = value }
 
         distribution($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -90,8 +88,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includeddatacatalog() { return this.includedDataCatalog }
-        set includeddatacatalog(value) { this.includedDataCatalog = value }
 
         includedInDataCatalog($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -107,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get includedindatacatalog() { return this.includedInDataCatalog }
-        set includedindatacatalog(value) { this.includedInDataCatalog = value }
 
         issn($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -140,8 +134,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get measurementtechnique() { return this.measurementTechnique }
-        set measurementtechnique(value) { this.measurementTechnique = value }
 
         variableMeasured($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -158,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get variablemeasured() { return this.variableMeasured }
-        set variablemeasured(value) { this.variableMeasured = value }
 
         variablesMeasured($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -176,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get variablesmeasured() { return this.variablesMeasured }
-        set variablesmeasured(value) { this.variablesMeasured = value }
         
     }
 </script>

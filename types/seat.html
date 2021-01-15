@@ -17,7 +17,7 @@
         static _rdfs_label = 'Seat'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['seatNumber', 'seatRow', 'seatSection', 'seatingType']).concat((['seatNumber', 'seatRow', 'seatSection', 'seatingType']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['seatNumber', 'seatRow', 'seatSection', 'seatingType'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seatnumber() { return this.seatNumber }
-        set seatnumber(value) { this.seatNumber = value }
 
         seatRow($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seatrow() { return this.seatRow }
-        set seatrow(value) { this.seatRow = value }
 
         seatSection($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -77,8 +73,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seatsection() { return this.seatSection }
-        set seatsection(value) { this.seatSection = value }
 
         seatingType($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -95,8 +89,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get seatingtype() { return this.seatingType }
-        set seatingtype(value) { this.seatingType = value }
         
     }
 </script>

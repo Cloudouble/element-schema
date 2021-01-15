@@ -17,7 +17,7 @@
         static _rdfs_label = 'ExchangeRateSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['currency', 'currentExchangeRate', 'exchangeRateSpread']).concat((['currency', 'currentExchangeRate', 'exchangeRateSpread']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['currency', 'currentExchangeRate', 'exchangeRateSpread'])))
         }
         
         constructor() {
@@ -58,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get currentexchangerate() { return this.currentExchangeRate }
-        set currentexchangerate(value) { this.currentExchangeRate = value }
 
         exchangeRateSpread($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -76,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get exchangeratespread() { return this.exchangeRateSpread }
-        set exchangeratespread(value) { this.exchangeRateSpread = value }
         
     }
 </script>

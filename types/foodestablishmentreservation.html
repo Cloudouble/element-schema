@@ -17,7 +17,7 @@
         static _rdfs_label = 'FoodEstablishmentReservation'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['endTime', 'partySize', 'startTime']).concat((['endTime', 'partySize', 'startTime']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['endTime', 'partySize', 'startTime'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get endtime() { return this.endTime }
-        set endtime(value) { this.endTime = value }
 
         partySize($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -62,8 +60,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partysize() { return this.partySize }
-        set partysize(value) { this.partySize = value }
 
         startTime($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -80,8 +76,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get starttime() { return this.startTime }
-        set starttime(value) { this.startTime = value }
         
     }
 </script>

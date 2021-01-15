@@ -17,7 +17,7 @@
         static _rdfs_label = 'PaymentChargeSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['appliesToDeliveryMethod', 'appliesToPaymentMethod']).concat((['appliesToDeliveryMethod', 'appliesToPaymentMethod']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['appliesToDeliveryMethod', 'appliesToPaymentMethod'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get appliestodeliverymethod() { return this.appliesToDeliveryMethod }
-        set appliestodeliverymethod(value) { this.appliesToDeliveryMethod = value }
 
         appliesToPaymentMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get appliestopaymentmethod() { return this.appliesToPaymentMethod }
-        set appliestopaymentmethod(value) { this.appliesToPaymentMethod = value }
         
     }
 </script>

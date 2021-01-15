@@ -17,7 +17,7 @@
         static _rdfs_label = 'Recipe'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']).concat((['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get cooktime() { return this.cookTime }
-        set cooktime(value) { this.cookTime = value }
 
         cookingMethod($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get cookingmethod() { return this.cookingMethod }
-        set cookingmethod(value) { this.cookingMethod = value }
 
         ingredients($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -107,8 +103,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recipecategory() { return this.recipeCategory }
-        set recipecategory(value) { this.recipeCategory = value }
 
         recipeCuisine($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -124,8 +118,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recipecuisine() { return this.recipeCuisine }
-        set recipecuisine(value) { this.recipeCuisine = value }
 
         recipeIngredient($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -141,8 +133,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recipeingredient() { return this.recipeIngredient }
-        set recipeingredient(value) { this.recipeIngredient = value }
 
         recipeInstructions($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -160,8 +150,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recipeinstructions() { return this.recipeInstructions }
-        set recipeinstructions(value) { this.recipeInstructions = value }
 
         recipeYield($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -178,8 +166,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get recipeyield() { return this.recipeYield }
-        set recipeyield(value) { this.recipeYield = value }
 
         suitableForDiet($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -195,8 +181,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get suitablefordiet() { return this.suitableForDiet }
-        set suitablefordiet(value) { this.suitableForDiet = value }
         
     }
 </script>

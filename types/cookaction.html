@@ -17,7 +17,7 @@
         static _rdfs_label = 'CookAction'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['foodEstablishment', 'foodEvent', 'recipe']).concat((['foodEstablishment', 'foodEvent', 'recipe']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['foodEstablishment', 'foodEvent', 'recipe'])))
         }
         
         constructor() {
@@ -44,8 +44,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get foodestablishment() { return this.foodEstablishment }
-        set foodestablishment(value) { this.foodEstablishment = value }
 
         foodEvent($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get foodevent() { return this.foodEvent }
-        set foodevent(value) { this.foodEvent = value }
 
         recipe($this, value) {
 			window.LiveElement.Schema.renderProperty({

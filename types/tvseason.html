@@ -17,7 +17,7 @@
         static _rdfs_label = 'TVSeason'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['countryOfOrigin', 'partOfTVSeries']).concat((['countryOfOrigin', 'partOfTVSeries']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['countryOfOrigin', 'partOfTVSeries'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get countryoforigin() { return this.countryOfOrigin }
-        set countryoforigin(value) { this.countryOfOrigin = value }
 
         partOfTVSeries($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get partoftvseries() { return this.partOfTVSeries }
-        set partoftvseries(value) { this.partOfTVSeries = value }
         
     }
 </script>

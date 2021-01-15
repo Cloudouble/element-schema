@@ -17,7 +17,7 @@
         static _rdfs_label = 'LocationFeatureSpecification'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hoursAvailable', 'validFrom', 'validThrough']).concat((['hoursAvailable', 'validFrom', 'validThrough']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['hoursAvailable', 'validFrom', 'validThrough'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get hoursavailable() { return this.hoursAvailable }
-        set hoursavailable(value) { this.hoursAvailable = value }
 
         validFrom($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -61,8 +59,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validfrom() { return this.validFrom }
-        set validfrom(value) { this.validFrom = value }
 
         validThrough($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -79,8 +75,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get validthrough() { return this.validThrough }
-        set validthrough(value) { this.validThrough = value }
         
     }
 </script>

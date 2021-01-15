@@ -17,7 +17,7 @@
         static _rdfs_label = 'TypeAndQuantityNode'
 
         static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText']).concat((['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText']).map(v => v.toLowerCase()))))
+            return Array.from(new Set((super.observedAttributes || []).concat(['amountOfThisGood', 'businessFunction', 'typeOfGood', 'unitCode', 'unitText'])))
         }
         
         constructor() {
@@ -43,8 +43,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get amountofthisgood() { return this.amountOfThisGood }
-        set amountofthisgood(value) { this.amountOfThisGood = value }
 
         businessFunction($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -60,8 +58,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get businessfunction() { return this.businessFunction }
-        set businessfunction(value) { this.businessFunction = value }
 
         typeOfGood($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -78,8 +74,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get typeofgood() { return this.typeOfGood }
-        set typeofgood(value) { this.typeOfGood = value }
 
         unitCode($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -96,8 +90,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unitcode() { return this.unitCode }
-        set unitcode(value) { this.unitCode = value }
 
         unitText($this, value) {
 			window.LiveElement.Schema.renderProperty({
@@ -113,8 +105,6 @@
 			})
 			return value && typeof value == 'object' ? undefined : value
 		}
-        get unittext() { return this.unitText }
-        set unittext(value) { this.unitText = value }
         
     }
 </script>

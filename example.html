@@ -14,7 +14,7 @@
   
   <element-thing id="test" alternatename="The thing" description="the description" additionalType="myAdditionalType">Thing</element-thing>
   
-  <!--<script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.5.0/element.min.js"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.7.1/element.min.js"></script>-->
   <script src="/_static/element/element.js"></script>
   <script src="schema.js"></script>
   <script src="renders/microdata/microdata.js"></script>
@@ -32,9 +32,12 @@
             
             window.test = document.getElementById('test')
             window.test.addEventListener('schema-setproperty', event => {
-              console.log('example.html: line 38: ', event)
+              console.log('example.html: line 35: ', event)
             })
             window.test.addEventListener('schema-setproperty-error', event => {
+              console.log('example.html: line 38: ', event)
+            })
+            window.test.addEventListener('schema-load', event => {
               console.log('example.html: line 41: ', event)
             })
             

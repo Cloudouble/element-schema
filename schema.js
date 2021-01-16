@@ -3,7 +3,16 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['Text', 'True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
     Options: {configurable: false, enumerable: true, writable: true, value: {}}, 
-    parseMap: {configurable: false, enumerable: true, writable: true, value: function(mapObject, ownPropertyName, containerInheritance, propertyMap){
+    backFillClassMap: {configurable: false, enumerable: false, writable: true, value: function(element) {
+        if (!window.LiveElement.Schema._ClassMapBackFilled) {
+            window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
+            window.LiveElement.Schema._ClassMapBackFilled = true
+        }
+        if (Object.keys(window.LiveElement.Schema.ClassMap).length < Object.keys(window.LiveElement.Element.tags).length) {
+            Object.keys(window.LiveElement.Element.tags).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
+        }
+    }}, 
+    parseMap: {configurable: false, enumerable: false, writable: true, value: function(mapObject, ownPropertyName, containerInheritance, propertyMap){
         var t
         var target
         if (containerInheritance && containerInheritance.some(containerClassName => {
@@ -231,8 +240,9 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}
         })
     }, 
-    runRender: {configurable: false, enumerable: true, writable: true, value: function(element) {
+    renderSelf: {configurable: false, enumerable: true, writable: true, value: function(element) {
         var render
+        window.LiveElement.Schema.backFillClassMap()
         if (element.__container && element.__containerPropertyName && element.__propertyMap) {
             render = window.LiveElement.Schema.getRender(element.__containerPropertyName, window.LiveElement.Element.getInheritance(element.__container.constructor), element.__propertyMap)
         } else {
@@ -246,65 +256,58 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
     }}, 
     renderProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
         if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
+            window.LiveElement.Schema.backFillClassMap()
             var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
             var validator = window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap)
-            if (!window.LiveElement.Schema._ClassMapBackFilled) {
-                window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
-                window.LiveElement.Schema._ClassMapBackFilled = true
-            }
-            if (Object.keys(window.LiveElement.Schema.ClassMap).length < Object.keys(window.LiveElement.Element.tags).length) {
-                Object.keys(window.LiveElement.Element.tags).forEach(t => window.LiveElement.Schema.ClassMap[t] = window.LiveElement.Schema.ClassMap[t] || t)
-            }
-            var renderer = window.LiveElement.Schema.getClass(propertyMap.propertyName, containerInheritance, propertyMap)
-            var propertyTag = window.LiveElement.Element.tags[renderer] || `${window.LiveElement.Element.prefix}-${renderer}`.toLowerCase()
-            var propertyElement = document.createElement(propertyTag)
-            var validationResult = validator(propertyMap.value, propertyMap)
-            if (propertyElement) {
-                window.customElements.whenDefined(propertyTag).then(() => {
-                    if (typeof propertyElement.__load == 'function') {
-                        propertyElement.__load(propertyMap.value, validationResult, propertyMap)
+            var renderClass = window.LiveElement.Schema.getClass(propertyMap.propertyName, containerInheritance, propertyMap)
+            var propertyTag = window.LiveElement.Element.tags[renderClass] || `${window.LiveElement.Element.prefix}-${renderClass}`.toLowerCase()
+            window.customElements.whenDefined(propertyTag).then(() => {
+                var validation = validator(propertyMap.value, propertyMap)
+                var propertyElement = document.createElement(propertyTag)
+                propertyElement.__validation = validation
+                propertyElement.__propertyMap = propertyMap
+                propertyElement.__input = propertyMap.value
+                
+                if (propertyMap.container) {
+                    if (propertyElement) {
+                        propertyMap.container.__map = propertyMap.container.__map || {}
+                        propertyMap.container.__map[propertyMap.propertyName] = propertyElement
+                        propertyElement.__container = propertyMap.container
+                        propertyElement.__containerPropertyName = propertyMap.propertyName
+                        propertyElement.__propertyMap = propertyMap
                     }
-                })
-            }
-            if (propertyMap.container) {
-                var eventPropertyMap = {}
-                if (propertyElement) {
-                    propertyMap.container.__map = propertyMap.container.__map || {}
-                    propertyMap.container.__map[propertyMap.propertyName] = propertyElement
-                    propertyElement.__container = propertyMap.container
-                    propertyElement.__containerPropertyName = propertyMap.propertyName
-                    propertyElement.__propertyMap = propertyMap
-                }
-                propertyMap.container.__input = propertyMap.container.__input || {}
-                if (propertyMap.container.__input[propertyMap.propertyName] != propertyMap.value) {
-                    propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
-                    var containerValidator
-                    var containerRenderer
-                    var containerContainerInheritance
-                    if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
-                        containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
-                        containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                        containerRenderer = window.LiveElement.Schema.getClass(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                        if (typeof containerValidator == 'function') {
-                            propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
-                            propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
-                        }
-                    } else {
-                        containerContainerInheritance = [propertyMap.container.constructor._rdfs_label]
-                        containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.constructor._rdfs_label)
-                        containerRenderer = window.LiveElement.Schema.getClass(propertyMap.container.constructor._rdfs_label)
-                        if (typeof containerValidator == 'function') {
-                            propertyMap.container.__validation = containerValidator(propertyMap.container.__input)
-                            propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
+                    propertyMap.container.__input = propertyMap.container.__input || {}
+                    if (propertyMap.container.__input[propertyMap.propertyName] != propertyMap.value) {
+                        propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
+                        var containerValidator
+                        var containerRenderClass
+                        var containerContainerInheritance
+                        if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
+                            containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
+                            containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
+                            containerRenderClass = window.LiveElement.Schema.getClass(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
+                            if (typeof containerValidator == 'function') {
+                                propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
+                                propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
+                            }
+                        } else {
+                            containerContainerInheritance = [propertyMap.container.constructor._rdfs_label]
+                            containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.constructor._rdfs_label)
+                            containerRenderClass = window.LiveElement.Schema.getClass(propertyMap.container.constructor._rdfs_label)
+                            if (typeof containerValidator == 'function') {
+                                propertyMap.container.__validation = containerValidator(propertyMap.container.__input)
+                                propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
+                            }
                         }
                     }
+                    var eventPropertyMap = {...propertyMap, ...{validation: validation, renderClass: renderClass}}
+                    propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
+                    if (validation.error) {
+                        propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
+                    }
                 }
-                eventPropertyMap = {...propertyMap, ...{validation: validationResult, renderer: renderer}}
-                propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
-                if (validationResult.error) {
-                    propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
-                }
-            }
+                
+            })
         }
     }}
 })

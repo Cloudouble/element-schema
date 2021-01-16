@@ -37,8 +37,8 @@
         constructor() {
             super()
             var $this = this
+            $this.__isConnected = false
             Object.keys($this).forEach(k => k.slice(0,2) == '__' ? Object.defineProperty($this, k, {configurable: false, enumerable: false}) : null ) 
-            //ensure the following line always goes at the end of the constructor function 
         }
         
         connectedCallback() {
@@ -54,7 +54,6 @@
             return this.__value
         }
         
-        __input = this.__input === undefined ? undefined : this.__input
         __value = this.__value === undefined ? undefined : this.__value
         __validation = {...(this.__validation || {}), ...{}}
         __map = {...(this.__map || {}), ...{}}
@@ -63,27 +62,28 @@
         __propertyMap = this.__propertyMap === undefined ? undefined : this.__propertyMap
         __isConnected = this.__isConnected || false
         
-        __load(input, validation, propertyMap) {
+        set __input(value) {
             var $this = this
-            $this.__input = input
-            if (!validation) {
+            Object.defineProperty($this, '__input_value', {configurable: false, enumerable: false, value: value})
+            if (!$this.__validation) {
                 var validator
                 if ($this.__container && $this.__containerPropertyName && $this.__propertyMap) {
                     validator = window.LiveElement.Schema.getValidator($this.__propertyMap.propertyName, window.LiveElement.Element.getInheritance($this.__container.constructor), $this.__propertyMap)
                 } else {
                     validator = window.LiveElement.Schema.getValidator($this.constructor._rdfs_label)
                 }
-                $this.__validation = validator && typeof validator == 'function' ? validator($this.__input, propertyMap) : {}
-            } else {
-                $this.__validation = validation
+                $this.__validation = validator && typeof validator == 'function' ? validator(value, $this.__propertyMap) : {}
             }
             $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
-            if ($this.__input && typeof $this.__input == 'object') {
-                Object.keys($this.__input).forEach(propertyName => {
-                    $this[propertyName.toLowerCase()] = $this.__input[propertyName]
+            if (value && typeof value == 'object') {
+                Object.keys(value).forEach(propertyName => {
+                    $this[propertyName.toLowerCase()] = value[propertyName]
                 })
             }
-            $this.dispatchEvent(new window.CustomEvent('schema-load', {detail: {input: input, validation: $this.__validation, propertyMap: propertyMap}}))
+            $this.dispatchEvent(new window.CustomEvent('schema-input'))
+        }
+        get __input() {
+            return this.__input_value
         }
         
     }

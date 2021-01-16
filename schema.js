@@ -266,47 +266,12 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 var propertyElement = document.createElement(propertyTag)
                 propertyElement.__validation = validation
                 propertyElement.__propertyMap = propertyMap
-                propertyElement.__input = propertyMap.value
-                
-                if (propertyMap.container) {
-                    if (propertyElement) {
-                        propertyMap.container.__map = propertyMap.container.__map || {}
-                        propertyMap.container.__map[propertyMap.propertyName] = propertyElement
-                        propertyElement.__container = propertyMap.container
-                        propertyElement.__containerPropertyName = propertyMap.propertyName
-                        propertyElement.__propertyMap = propertyMap
-                    }
-                    propertyMap.container.__input = propertyMap.container.__input || {}
-                    if (propertyMap.container.__input[propertyMap.propertyName] != propertyMap.value) {
-                        propertyMap.container.__input[propertyMap.propertyName] = propertyMap.value
-                        var containerValidator
-                        var containerRenderClass
-                        var containerContainerInheritance
-                        if (propertyMap.container.__container && propertyMap.container.__containerPropertyName && propertyMap.container.__propertyMap) {
-                            containerContainerInheritance = propertyMap.container.__container ? window.LiveElement.Element.getInheritance(propertyMap.container.__container.constructor) : []
-                            containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                            containerRenderClass = window.LiveElement.Schema.getClass(propertyMap.container.__containerPropertyName, containerContainerInheritance, propertyMap.container.__propertyMap)
-                            if (typeof containerValidator == 'function') {
-                                propertyMap.container.__validation = containerValidator(propertyMap.container.__input, propertyMap.container.__propertyMap)
-                                propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
-                            }
-                        } else {
-                            containerContainerInheritance = [propertyMap.container.constructor._rdfs_label]
-                            containerValidator = window.LiveElement.Schema.getValidator(propertyMap.container.constructor._rdfs_label)
-                            containerRenderClass = window.LiveElement.Schema.getClass(propertyMap.container.constructor._rdfs_label)
-                            if (typeof containerValidator == 'function') {
-                                propertyMap.container.__validation = containerValidator(propertyMap.container.__input)
-                                propertyMap.container.__value = propertyMap.container.__validation && typeof propertyMap.container.__validation == 'object' ? propertyMap.container.__validation.value : undefined 
-                            }
-                        }
-                    }
-                    var eventPropertyMap = {...propertyMap, ...{validation: validation, renderClass: renderClass}}
-                    propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty', {detail: eventPropertyMap}))
-                    if (validation.error) {
-                        propertyMap.container.dispatchEvent(new window.CustomEvent('schema-setproperty-error', {detail: eventPropertyMap}))
-                    }
+                if (propertyMap && typeof propertyMap == 'object' && propertyMap.container) {
+                    propertyElement.__container = propertyMap.container
+                    propertyElement.__containerPropertyName = propertyMap.propertyName
+                    propertyElement.__container.__map[propertyElement.__containerPropertyName] = propertyElement
                 }
-                
+                propertyElement.__input = propertyMap.value
             })
         }
     }}

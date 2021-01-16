@@ -13,13 +13,10 @@
         static __id = 'schema:NonprofitType'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be.'
         static _rdfs_label = 'NonprofitType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

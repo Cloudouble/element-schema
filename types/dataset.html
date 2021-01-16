@@ -13,13 +13,10 @@
         static __id = 'schema:Dataset'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured']
         static _rdfs_comment = 'A body of structured information describing some topic(s) of interest.'
         static _rdfs_label = 'Dataset'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['catalog', 'datasetTimeInterval', 'distribution', 'includedDataCatalog', 'includedInDataCatalog', 'issn', 'measurementTechnique', 'variableMeasured', 'variablesMeasured'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:WebPageElement'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['cssSelector', 'xpath']
         static _rdfs_comment = 'A web page element, like a table or an image.'
         static _rdfs_label = 'WebPageElement'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cssSelector', 'xpath'])))
-        }
-        
         constructor() {
             super()
         }

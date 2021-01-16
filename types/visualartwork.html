@@ -13,13 +13,10 @@
         static __id = 'schema:VisualArtwork'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width']
         static _rdfs_comment = 'A work of art that is primarily visual in character.'
         static _rdfs_label = 'VisualArtwork'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['artEdition', 'artMedium', 'artform', 'artist', 'artworkSurface', 'colorist', 'depth', 'height', 'inker', 'letterer', 'penciler', 'surface', 'width'])))
-        }
-        
         constructor() {
             super()
         }

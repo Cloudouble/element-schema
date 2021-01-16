@@ -13,13 +13,10 @@
         static __id = 'schema:Reservation'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName']
         static _rdfs_comment = 'Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].'
         static _rdfs_label = 'Reservation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bookingAgent', 'bookingTime', 'broker', 'modifiedTime', 'priceCurrency', 'programMembershipUsed', 'provider', 'reservationFor', 'reservationId', 'reservationStatus', 'reservedTicket', 'totalPrice', 'underName'])))
-        }
-        
         constructor() {
             super()
         }

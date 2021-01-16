@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalImagingTechnique'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Any medical imaging modality typically used for diagnostic purposes. Enumerated type.'
         static _rdfs_label = 'MedicalImagingTechnique'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

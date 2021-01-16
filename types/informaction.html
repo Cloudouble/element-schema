@@ -13,13 +13,10 @@
         static __id = 'schema:InformAction'
         static __type = 'rdfs:Class'
         static __extends = 'CommunicateAction'
+        static __properties = ['event']
         static _rdfs_comment = 'The act of notifying someone of information pertinent to them, with no expectation of a response.'
         static _rdfs_label = 'InformAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['event'])))
-        }
-        
         constructor() {
             super()
         }

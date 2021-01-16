@@ -13,13 +13,10 @@
         static __id = 'schema:Muscle'
         static __type = 'rdfs:Class'
         static __extends = 'AnatomicalStructure'
+        static __properties = ['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve']
         static _rdfs_comment = 'A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.'
         static _rdfs_label = 'Muscle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['antagonist', 'bloodSupply', 'insertion', 'muscleAction', 'nerve'])))
-        }
-        
         constructor() {
             super()
         }

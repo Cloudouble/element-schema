@@ -13,13 +13,10 @@
         static __id = 'schema:AlignmentObject'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl']
         static _rdfs_comment = 'An intangible item that describes an alignment between a learning resource and a node in an educational framework.  Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.'
         static _rdfs_label = 'AlignmentObject'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['alignmentType', 'educationalFramework', 'targetDescription', 'targetName', 'targetUrl'])))
-        }
-        
         constructor() {
             super()
         }

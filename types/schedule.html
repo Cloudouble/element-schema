@@ -13,13 +13,10 @@
         static __id = 'schema:Schedule'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime']
         static _rdfs_comment = 'A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.'
         static _rdfs_label = 'Schedule'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['byDay', 'byMonth', 'byMonthDay', 'byMonthWeek', 'duration', 'endDate', 'endTime', 'exceptDate', 'repeatCount', 'repeatFrequency', 'scheduleTimezone', 'startDate', 'startTime'])))
-        }
-        
         constructor() {
             super()
         }

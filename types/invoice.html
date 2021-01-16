@@ -13,13 +13,10 @@
         static __id = 'schema:Invoice'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue']
         static _rdfs_comment = 'A statement of the money due for goods or services; a bill.'
         static _rdfs_label = 'Invoice'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accountId', 'billingPeriod', 'broker', 'category', 'confirmationNumber', 'customer', 'minimumPaymentDue', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentStatus', 'provider', 'referencesOrder', 'scheduledPaymentDate', 'totalPaymentDue'])))
-        }
-        
         constructor() {
             super()
         }

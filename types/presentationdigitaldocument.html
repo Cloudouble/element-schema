@@ -13,13 +13,10 @@
         static __id = 'schema:PresentationDigitalDocument'
         static __type = 'rdfs:Class'
         static __extends = 'DigitalDocument'
+        static __properties = []
         static _rdfs_comment = 'A file containing slides or used for a presentation.'
         static _rdfs_label = 'PresentationDigitalDocument'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

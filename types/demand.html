@@ -13,13 +13,10 @@
         static __id = 'schema:Demand'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty']
         static _rdfs_comment = 'A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.'
         static _rdfs_label = 'Demand'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acceptedPaymentMethod', 'advanceBookingRequirement', 'areaServed', 'availability', 'availabilityEnds', 'availabilityStarts', 'availableAtOrFrom', 'availableDeliveryMethod', 'businessFunction', 'deliveryLeadTime', 'eligibleCustomerType', 'eligibleDuration', 'eligibleQuantity', 'eligibleRegion', 'eligibleTransactionVolume', 'gtin', 'gtin12', 'gtin13', 'gtin14', 'gtin8', 'includesObject', 'ineligibleRegion', 'inventoryLevel', 'itemCondition', 'itemOffered', 'mpn', 'priceSpecification', 'seller', 'serialNumber', 'sku', 'validFrom', 'validThrough', 'warranty'])))
-        }
-        
         constructor() {
             super()
         }

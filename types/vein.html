@@ -13,13 +13,10 @@
         static __id = 'schema:Vein'
         static __type = 'rdfs:Class'
         static __extends = 'Vessel'
+        static __properties = ['drainsTo', 'regionDrained', 'tributary']
         static _rdfs_comment = 'A type of blood vessel that specifically carries blood to the heart.'
         static _rdfs_label = 'Vein'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['drainsTo', 'regionDrained', 'tributary'])))
-        }
-        
         constructor() {
             super()
         }

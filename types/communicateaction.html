@@ -13,13 +13,10 @@
         static __id = 'schema:CommunicateAction'
         static __type = 'rdfs:Class'
         static __extends = 'InteractAction'
+        static __properties = ['about', 'inLanguage', 'language', 'recipient']
         static _rdfs_comment = 'The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.'
         static _rdfs_label = 'CommunicateAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'inLanguage', 'language', 'recipient'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:Class'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['supersededBy']
         static _rdfs_comment = 'A class, also often called a \'Type\'; equivalent to rdfs:Class.'
         static _rdfs_label = 'Class'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['supersededBy'])))
-        }
-        
         constructor() {
             super()
         }

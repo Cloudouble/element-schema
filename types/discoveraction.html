@@ -13,13 +13,10 @@
         static __id = 'schema:DiscoverAction'
         static __type = 'rdfs:Class'
         static __extends = 'FindAction'
+        static __properties = []
         static _rdfs_comment = 'The act of discovering\/finding an object.'
         static _rdfs_label = 'DiscoverAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

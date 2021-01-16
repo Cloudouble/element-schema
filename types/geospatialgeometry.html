@@ -13,13 +13,10 @@
         static __id = 'schema:GeospatialGeometry'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin']
         static _rdfs_comment = '(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.'
         static _rdfs_label = 'GeospatialGeometry'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin'])))
-        }
-        
         constructor() {
             super()
         }

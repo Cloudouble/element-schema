@@ -13,13 +13,10 @@
         static __id = 'schema:SportsOrganization'
         static __type = 'rdfs:Class'
         static __extends = 'Organization'
+        static __properties = ['sport']
         static _rdfs_comment = 'Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.'
         static _rdfs_label = 'SportsOrganization'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['sport'])))
-        }
-        
         constructor() {
             super()
         }

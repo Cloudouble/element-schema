@@ -13,13 +13,10 @@
         static __id = 'schema:WorkersUnion'
         static __type = 'rdfs:Class'
         static __extends = 'Organization'
+        static __properties = []
         static _rdfs_comment = 'A Workers Union (also known as a Labor Union, Labour Union, or Trade Union) is an organization that promotes the interests of its worker members by collectively bargaining with management, organizing, and political lobbying.'
         static _rdfs_label = 'WorkersUnion'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

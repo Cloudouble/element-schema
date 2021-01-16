@@ -13,13 +13,10 @@
         static __id = 'schema:PaymentCard'
         static __type = 'rdfs:Class'
         static __extends = 'PaymentMethod'
+        static __properties = ['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount']
         static _rdfs_comment = 'A payment method using a credit, debit, store or other card to associate the payment with an account.'
         static _rdfs_label = 'PaymentCard'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cashBack', 'contactlessPayment', 'floorLimit', 'monthlyMinimumRepaymentAmount'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:UserReview'
         static __type = 'rdfs:Class'
         static __extends = 'Review'
+        static __properties = []
         static _rdfs_comment = 'A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]].'
         static _rdfs_label = 'UserReview'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

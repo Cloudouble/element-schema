@@ -13,13 +13,10 @@
         static __id = 'schema:HotelRoom'
         static __type = 'rdfs:Class'
         static __extends = 'Room'
+        static __properties = ['bed', 'occupancy']
         static _rdfs_comment = 'A hotel room is a single room in a hotel. <br \/><br \/> See also the <a href="\/docs\/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations<\/a>. '
         static _rdfs_label = 'HotelRoom'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bed', 'occupancy'])))
-        }
-        
         constructor() {
             super()
         }

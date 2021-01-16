@@ -13,13 +13,10 @@
         static __id = 'schema:ItemListOrderType'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized.'
         static _rdfs_label = 'ItemListOrderType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

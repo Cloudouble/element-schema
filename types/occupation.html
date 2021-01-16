@@ -13,13 +13,10 @@
         static __id = 'schema:Occupation'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['educationRequirements', 'estimatedSalary', 'experienceRequirements', 'occupationLocation', 'occupationalCategory', 'qualifications', 'responsibilities', 'skills']
         static _rdfs_comment = 'A profession, may involve prolonged training and\/or a formal qualification.'
         static _rdfs_label = 'Occupation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['educationRequirements', 'estimatedSalary', 'experienceRequirements', 'occupationLocation', 'occupationalCategory', 'qualifications', 'responsibilities', 'skills'])))
-        }
-        
         constructor() {
             super()
         }

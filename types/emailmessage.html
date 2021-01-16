@@ -13,13 +13,10 @@
         static __id = 'schema:EmailMessage'
         static __type = 'rdfs:Class'
         static __extends = 'Message'
+        static __properties = []
         static _rdfs_comment = 'An email message.'
         static _rdfs_label = 'EmailMessage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

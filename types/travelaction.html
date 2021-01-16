@@ -13,13 +13,10 @@
         static __id = 'schema:TravelAction'
         static __type = 'rdfs:Class'
         static __extends = 'MoveAction'
+        static __properties = ['distance']
         static _rdfs_comment = 'The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.'
         static _rdfs_label = 'TravelAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['distance'])))
-        }
-        
         constructor() {
             super()
         }

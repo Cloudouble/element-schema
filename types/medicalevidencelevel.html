@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalEvidenceLevel'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Level of evidence for a medical guideline. Enumerated type.'
         static _rdfs_label = 'MedicalEvidenceLevel'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

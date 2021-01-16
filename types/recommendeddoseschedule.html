@@ -13,13 +13,10 @@
         static __id = 'schema:RecommendedDoseSchedule'
         static __type = 'rdfs:Class'
         static __extends = 'DoseSchedule'
+        static __properties = []
         static _rdfs_comment = 'A recommended dosing schedule for a drug or supplement as prescribed or recommended by an authority or by the drug\/supplement\'s manufacturer. Capture the recommending authority in the recognizingAuthority property of MedicalEntity.'
         static _rdfs_label = 'RecommendedDoseSchedule'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

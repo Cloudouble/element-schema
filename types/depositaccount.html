@@ -13,13 +13,10 @@
         static __id = 'schema:DepositAccount'
         static __type = 'rdfs:Class'
         static __extends = 'InvestmentOrDeposit'
+        static __properties = []
         static _rdfs_comment = 'A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.'
         static _rdfs_label = 'DepositAccount'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

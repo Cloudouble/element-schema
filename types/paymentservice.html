@@ -13,13 +13,10 @@
         static __id = 'schema:PaymentService'
         static __type = 'rdfs:Class'
         static __extends = 'FinancialProduct'
+        static __properties = []
         static _rdfs_comment = 'A Service to transfer funds from a person or organization to a beneficiary person or organization.'
         static _rdfs_label = 'PaymentService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

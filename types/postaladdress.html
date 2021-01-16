@@ -13,13 +13,10 @@
         static __id = 'schema:PostalAddress'
         static __type = 'rdfs:Class'
         static __extends = 'ContactPoint'
+        static __properties = ['addressCountry', 'addressLocality', 'addressRegion', 'postOfficeBoxNumber', 'postalCode', 'streetAddress']
         static _rdfs_comment = 'The mailing address.'
         static _rdfs_label = 'PostalAddress'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['addressCountry', 'addressLocality', 'addressRegion', 'postOfficeBoxNumber', 'postalCode', 'streetAddress'])))
-        }
-        
         constructor() {
             super()
         }

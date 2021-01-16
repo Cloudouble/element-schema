@@ -13,13 +13,10 @@
         static __id = 'schema:OfferShippingDetails'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel']
         static _rdfs_comment = 'OfferShippingDetails represents information about shipping destinations.  Multiple of these entities can be used to represent different shipping rates for different destinations:  One entity for Alaska\/Hawaii. A different one for continental US.A different one for all France.  Multiple of these entities can be used to represent different shipping costs and delivery times.  Two entities that are identical but differ in rate and time:  e.g. Cheaper and slower: $5 in 5-7days or Fast and expensive: $15 in 1-2 days '
         static _rdfs_label = 'OfferShippingDetails'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'doesNotShip', 'shippingDestination', 'shippingLabel', 'shippingRate', 'shippingSettingsLink', 'transitTimeLabel'])))
-        }
-        
         constructor() {
             super()
         }

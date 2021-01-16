@@ -13,13 +13,10 @@
         static __id = 'schema:ActionAccessSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription']
         static _rdfs_comment = 'A set of requirements that a must be fulfilled in order to perform an Action.'
         static _rdfs_label = 'ActionAccessSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['availabilityEnds', 'availabilityStarts', 'category', 'eligibleRegion', 'expectsAcceptanceOf', 'ineligibleRegion', 'requiresSubscription'])))
-        }
-        
         constructor() {
             super()
         }

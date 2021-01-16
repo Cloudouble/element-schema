@@ -13,13 +13,10 @@
         static __id = 'schema:PlayAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = ['audience', 'event']
         static _rdfs_comment = 'The act of playing\/exercising\/training\/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing\/displaying for an audience or at an event, rather than consuming visual content.'
         static _rdfs_label = 'PlayAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['audience', 'event'])))
-        }
-        
         constructor() {
             super()
         }

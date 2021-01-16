@@ -13,13 +13,10 @@
         static __id = 'schema:PriceSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded']
         static _rdfs_comment = 'A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.'
         static _rdfs_label = 'PriceSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['eligibleQuantity', 'eligibleTransactionVolume', 'maxPrice', 'minPrice', 'price', 'priceCurrency', 'validFrom', 'validThrough', 'valueAddedTaxIncluded'])))
-        }
-        
         constructor() {
             super()
         }

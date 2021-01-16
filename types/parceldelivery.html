@@ -13,13 +13,10 @@
         static __id = 'schema:ParcelDelivery'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl']
         static _rdfs_comment = 'The delivery of a parcel either via the postal service or a commercial service.'
         static _rdfs_label = 'ParcelDelivery'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['carrier', 'deliveryAddress', 'deliveryStatus', 'expectedArrivalFrom', 'expectedArrivalUntil', 'hasDeliveryMethod', 'itemShipped', 'originAddress', 'partOfOrder', 'provider', 'trackingNumber', 'trackingUrl'])))
-        }
-        
         constructor() {
             super()
         }

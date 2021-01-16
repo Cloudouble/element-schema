@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalDevicePurpose'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Categories of medical devices, organized by the purpose or intended use of the device.'
         static _rdfs_label = 'MedicalDevicePurpose'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

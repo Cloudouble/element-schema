@@ -13,13 +13,10 @@
         static __id = 'schema:StatisticalPopulation'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['constrainingProperty', 'numConstraints', 'populationType']
         static _rdfs_comment = 'A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people. The properties [[numConstraints]] and [[constrainingProperties]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](\/docs\/data-and-datasets.html) overview for more details.   '
         static _rdfs_label = 'StatisticalPopulation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['constrainingProperty', 'numConstraints', 'populationType'])))
-        }
-        
         constructor() {
             super()
         }

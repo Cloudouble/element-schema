@@ -13,13 +13,10 @@
         static __id = 'schema:MusicAlbumProductionType'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'Classification of the album by it\'s type of content: soundtrack, live album, studio album, etc.'
         static _rdfs_label = 'MusicAlbumProductionType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

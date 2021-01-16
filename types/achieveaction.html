@@ -13,13 +13,10 @@
         static __id = 'schema:AchieveAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = []
         static _rdfs_comment = 'The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.'
         static _rdfs_label = 'AchieveAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:GenderType'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'An enumeration of genders.'
         static _rdfs_label = 'GenderType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

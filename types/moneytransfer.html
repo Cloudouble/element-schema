@@ -13,13 +13,10 @@
         static __id = 'schema:MoneyTransfer'
         static __type = 'rdfs:Class'
         static __extends = 'TransferAction'
+        static __properties = ['amount', 'beneficiaryBank']
         static _rdfs_comment = 'The act of transferring money from one place to another place. This may occur electronically or physically.'
         static _rdfs_label = 'MoneyTransfer'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['amount', 'beneficiaryBank'])))
-        }
-        
         constructor() {
             super()
         }

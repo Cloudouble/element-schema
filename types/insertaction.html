@@ -13,13 +13,10 @@
         static __id = 'schema:InsertAction'
         static __type = 'rdfs:Class'
         static __extends = 'AddAction'
+        static __properties = ['toLocation']
         static _rdfs_comment = 'The act of adding at a specific location in an ordered collection.'
         static _rdfs_label = 'InsertAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['toLocation'])))
-        }
-        
         constructor() {
             super()
         }

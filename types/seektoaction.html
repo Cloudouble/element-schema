@@ -13,13 +13,10 @@
         static __id = 'schema:SeekToAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = []
         static _rdfs_comment = 'This is the [[Action]] of navigating to a specific [[startOffset]] timestamp within a [[VideoObject]], typically represented with a URL template structure.'
         static _rdfs_label = 'SeekToAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

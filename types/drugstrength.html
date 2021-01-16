@@ -13,13 +13,10 @@
         static __id = 'schema:DrugStrength'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalIntangible'
+        static __properties = ['activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue']
         static _rdfs_comment = 'A specific strength in which a medical drug is available in a specific country.'
         static _rdfs_label = 'DrugStrength'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'availableIn', 'maximumIntake', 'strengthUnit', 'strengthValue'])))
-        }
-        
         constructor() {
             super()
         }

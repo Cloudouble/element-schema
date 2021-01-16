@@ -13,13 +13,10 @@
         static __id = 'schema:CreativeWorkSeason'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['actor', 'director', 'endDate', 'episode', 'episodes', 'numberOfEpisodes', 'partOfSeries', 'productionCompany', 'seasonNumber', 'startDate', 'trailer']
         static _rdfs_comment = 'A media season e.g. tv, radio, video game etc.'
         static _rdfs_label = 'CreativeWorkSeason'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'director', 'endDate', 'episode', 'episodes', 'numberOfEpisodes', 'partOfSeries', 'productionCompany', 'seasonNumber', 'startDate', 'trailer'])))
-        }
-        
         constructor() {
             super()
         }

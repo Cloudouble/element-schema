@@ -13,13 +13,10 @@
         static __id = 'schema:AskAction'
         static __type = 'rdfs:Class'
         static __extends = 'CommunicateAction'
+        static __properties = ['question']
         static _rdfs_comment = 'The act of posing a question \/ favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.'
         static _rdfs_label = 'AskAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['question'])))
-        }
-        
         constructor() {
             super()
         }

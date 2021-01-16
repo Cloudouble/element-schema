@@ -13,13 +13,10 @@
         static __id = 'schema:Game'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest']
         static _rdfs_comment = 'The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.'
         static _rdfs_label = 'Game'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['characterAttribute', 'gameItem', 'gameLocation', 'numberOfPlayers', 'quest'])))
-        }
-        
         constructor() {
             super()
         }

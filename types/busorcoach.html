@@ -13,13 +13,10 @@
         static __id = 'schema:BusOrCoach'
         static __type = 'rdfs:Class'
         static __extends = 'Vehicle'
+        static __properties = ['acrissCode', 'roofLoad']
         static _rdfs_comment = 'A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury busses, usually in service for long distance travel.'
         static _rdfs_label = 'BusOrCoach'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acrissCode', 'roofLoad'])))
-        }
-        
         constructor() {
             super()
         }

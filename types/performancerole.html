@@ -13,13 +13,10 @@
         static __id = 'schema:PerformanceRole'
         static __type = 'rdfs:Class'
         static __extends = 'Role'
+        static __properties = ['characterName']
         static _rdfs_comment = 'A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.'
         static _rdfs_label = 'PerformanceRole'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['characterName'])))
-        }
-        
         constructor() {
             super()
         }

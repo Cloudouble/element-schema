@@ -231,6 +231,19 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}
         })
     }, 
+    runRender: {configurable: false, enumerable: true, writable: true, value: function(element) {
+        var render
+        if (element.__container && element.__containerPropertyName && element.__propertyMap) {
+            render = window.LiveElement.Schema.getRender(element.__containerPropertyName, window.LiveElement.Element.getInheritance(element.__container.constructor), element.__propertyMap)
+        } else {
+            render = window.LiveElement.Schema.getRender(element.constructor._rdfs_label)
+        }
+        if (typeof render == 'function') {
+            render(element)
+        } else if (render && typeof render == 'object') {
+            window.LiveElement.Element.render(element, render.asClass, render.renderFunction, render.style, render.template)
+        }
+    }}, 
     renderProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
         if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
             var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)

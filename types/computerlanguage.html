@@ -13,13 +13,10 @@
         static __id = 'schema:ComputerLanguage'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = []
         static _rdfs_comment = 'This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.'
         static _rdfs_label = 'ComputerLanguage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

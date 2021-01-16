@@ -13,13 +13,10 @@
         static __id = 'schema:Recipe'
         static __type = 'rdfs:Class'
         static __extends = 'HowTo'
+        static __properties = ['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet']
         static _rdfs_comment = 'A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.'
         static _rdfs_label = 'Recipe'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cookTime', 'cookingMethod', 'ingredients', 'nutrition', 'recipeCategory', 'recipeCuisine', 'recipeIngredient', 'recipeInstructions', 'recipeYield', 'suitableForDiet'])))
-        }
-        
         constructor() {
             super()
         }

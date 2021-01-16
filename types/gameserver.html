@@ -13,13 +13,10 @@
         static __id = 'schema:GameServer'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['game', 'playersOnline', 'serverStatus']
         static _rdfs_comment = 'Server that provides game interaction in a multiplayer game.'
         static _rdfs_label = 'GameServer'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['game', 'playersOnline', 'serverStatus'])))
-        }
-        
         constructor() {
             super()
         }

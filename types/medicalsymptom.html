@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalSymptom'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalSignOrSymptom'
+        static __properties = []
         static _rdfs_comment = 'Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue.'
         static _rdfs_label = 'MedicalSymptom'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

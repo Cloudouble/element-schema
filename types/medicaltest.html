@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalTest'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = ['affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice']
         static _rdfs_comment = 'Any medical test, typically performed for diagnostic purposes.'
         static _rdfs_label = 'MedicalTest'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['affectedBy', 'normalRange', 'signDetected', 'usedToDiagnose', 'usesDevice'])))
-        }
-        
         constructor() {
             super()
         }

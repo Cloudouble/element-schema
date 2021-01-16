@@ -13,13 +13,10 @@
         static __id = 'schema:IgnoreAction'
         static __type = 'rdfs:Class'
         static __extends = 'AssessAction'
+        static __properties = []
         static _rdfs_comment = 'The act of intentionally disregarding the object. An agent ignores an object.'
         static _rdfs_label = 'IgnoreAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

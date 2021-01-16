@@ -13,13 +13,10 @@
         static __id = 'schema:MenuItem'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['menuAddOn', 'nutrition', 'offers', 'suitableForDiet']
         static _rdfs_comment = 'A food or drink item listed in a menu or menu section.'
         static _rdfs_label = 'MenuItem'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['menuAddOn', 'nutrition', 'offers', 'suitableForDiet'])))
-        }
-        
         constructor() {
             super()
         }

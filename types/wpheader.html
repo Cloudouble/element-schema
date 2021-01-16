@@ -13,13 +13,10 @@
         static __id = 'schema:WPHeader'
         static __type = 'rdfs:Class'
         static __extends = 'WebPageElement'
+        static __properties = []
         static _rdfs_comment = 'The header section of the page.'
         static _rdfs_label = 'WPHeader'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

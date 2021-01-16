@@ -13,13 +13,10 @@
         static __id = 'schema:ReservationPackage'
         static __type = 'rdfs:Class'
         static __extends = 'Reservation'
+        static __properties = ['subReservation']
         static _rdfs_comment = 'A group of multiple reservations with common values for all sub-reservations.'
         static _rdfs_label = 'ReservationPackage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['subReservation'])))
-        }
-        
         constructor() {
             super()
         }

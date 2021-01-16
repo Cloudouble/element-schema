@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalRiskScore'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalRiskEstimator'
+        static __properties = ['algorithm']
         static _rdfs_comment = 'A simple system that adds up the number of risk factors to yield a score that is associated with prognosis, e.g. CHAD score, TIMI risk score.'
         static _rdfs_label = 'MedicalRiskScore'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['algorithm'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:DoseSchedule'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalIntangible'
+        static __properties = ['doseUnit', 'doseValue', 'frequency', 'targetPopulation']
         static _rdfs_comment = 'A specific dosing schedule for a drug or supplement.'
         static _rdfs_label = 'DoseSchedule'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['doseUnit', 'doseValue', 'frequency', 'targetPopulation'])))
-        }
-        
         constructor() {
             super()
         }

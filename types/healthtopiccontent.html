@@ -13,13 +13,10 @@
         static __id = 'schema:HealthTopicContent'
         static __type = 'rdfs:Class'
         static __extends = 'WebContent'
+        static __properties = ['hasHealthAspect']
         static _rdfs_comment = '[[HealthTopicContent]] is [[WebContent]] that is about some aspect of a health topic, e.g. a condition, its symptoms or treatments. Such content may be comprised of several parts or sections and use different types of media. Multiple instances of [[WebContent]] (and hence [[HealthTopicContent]]) can be related using [[hasPart]] \/ [[isPartOf]] where there is some kind of content hierarchy, and their content described with [[about]] and [[mentions]] e.g. building upon the existing [[MedicalCondition]] vocabulary.   '
         static _rdfs_label = 'HealthTopicContent'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasHealthAspect'])))
-        }
-        
         constructor() {
             super()
         }

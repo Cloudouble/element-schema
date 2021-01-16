@@ -13,13 +13,10 @@
         static __id = 'schema:NewsArticle'
         static __type = 'rdfs:Class'
         static __extends = 'Article'
+        static __properties = ['dateline', 'printColumn', 'printEdition', 'printPage', 'printSection']
         static _rdfs_comment = 'A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.  A more detailed overview of [schema.org News markup](\/docs\/news.html) is also available. '
         static _rdfs_label = 'NewsArticle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dateline', 'printColumn', 'printEdition', 'printPage', 'printSection'])))
-        }
-        
         constructor() {
             super()
         }

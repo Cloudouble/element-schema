@@ -13,13 +13,10 @@
         static __id = 'schema:PeopleAudience'
         static __type = 'rdfs:Class'
         static __extends = 'Audience'
+        static __properties = ['healthCondition', 'requiredGender', 'requiredMaxAge', 'requiredMinAge', 'suggestedGender', 'suggestedMaxAge', 'suggestedMinAge']
         static _rdfs_comment = 'A set of characteristics belonging to people, e.g. who compose an item\'s target audience.'
         static _rdfs_label = 'PeopleAudience'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthCondition', 'requiredGender', 'requiredMaxAge', 'requiredMinAge', 'suggestedGender', 'suggestedMaxAge', 'suggestedMinAge'])))
-        }
-        
         constructor() {
             super()
         }

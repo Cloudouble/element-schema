@@ -13,13 +13,10 @@
         static __id = 'schema:QuantitativeValueDistribution'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90']
         static _rdfs_comment = 'A statistical distribution of values.'
         static _rdfs_label = 'QuantitativeValueDistribution'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['duration', 'median', 'percentile10', 'percentile25', 'percentile75', 'percentile90'])))
-        }
-        
         constructor() {
             super()
         }

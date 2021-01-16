@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalOrganization'
         static __type = 'rdfs:Class'
         static __extends = 'Organization'
+        static __properties = ['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty']
         static _rdfs_comment = 'A medical organization (physical or not), such as hospital, institution or clinic.'
         static _rdfs_label = 'MedicalOrganization'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanNetworkId', 'isAcceptingNewPatients', 'medicalSpecialty'])))
-        }
-        
         constructor() {
             super()
         }

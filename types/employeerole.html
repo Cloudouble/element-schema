@@ -13,13 +13,10 @@
         static __id = 'schema:EmployeeRole'
         static __type = 'rdfs:Class'
         static __extends = 'OrganizationRole'
+        static __properties = ['baseSalary', 'salaryCurrency']
         static _rdfs_comment = 'A subclass of OrganizationRole used to describe employee relationships.'
         static _rdfs_label = 'EmployeeRole'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['baseSalary', 'salaryCurrency'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:LinkRole'
         static __type = 'rdfs:Class'
         static __extends = 'Role'
+        static __properties = ['inLanguage', 'linkRelationship']
         static _rdfs_comment = 'A Role that represents a Web link e.g. as expressed via the \'url\' property. Its linkRelationship property can indicate URL-based and plain textual link types e.g. those in IANA link registry or others such as \'amphtml\'. This structure provides a placeholder where details from HTML\'s link element can be represented outside of HTML, e.g. in JSON-LD feeds.'
         static _rdfs_label = 'LinkRole'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inLanguage', 'linkRelationship'])))
-        }
-        
         constructor() {
             super()
         }

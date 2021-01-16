@@ -13,13 +13,10 @@
         static __id = 'schema:GeoShape'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode']
         static _rdfs_comment = 'The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude\/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.'
         static _rdfs_label = 'GeoShape'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['address', 'addressCountry', 'box', 'circle', 'elevation', 'line', 'polygon', 'postalCode'])))
-        }
-        
         constructor() {
             super()
         }

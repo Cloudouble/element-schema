@@ -13,13 +13,10 @@
         static __id = 'schema:Drug'
         static __type = 'rdfs:Class'
         static __extends = 'Substance'
+        static __properties = ['activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning']
         static _rdfs_comment = 'A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them.'
         static _rdfs_label = 'Drug'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'administrationRoute', 'alcoholWarning', 'availableStrength', 'breastfeedingWarning', 'clincalPharmacology', 'clinicalPharmacology', 'dosageForm', 'doseSchedule', 'drugClass', 'drugUnit', 'foodWarning', 'includedInHealthInsurancePlan', 'interactingDrug', 'isAvailableGenerically', 'isProprietary', 'labelDetails', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'overdosage', 'pregnancyCategory', 'pregnancyWarning', 'prescribingInfo', 'prescriptionStatus', 'proprietaryName', 'relatedDrug', 'rxcui', 'warning'])))
-        }
-        
         constructor() {
             super()
         }

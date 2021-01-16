@@ -13,13 +13,10 @@
         static __id = 'schema:Event'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = ['about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed']
         static _rdfs_comment = 'An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.'
         static _rdfs_label = 'Event'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['about', 'actor', 'aggregateRating', 'attendee', 'attendees', 'audience', 'composer', 'contributor', 'director', 'doorTime', 'duration', 'endDate', 'eventAttendanceMode', 'eventSchedule', 'eventStatus', 'funder', 'inLanguage', 'isAccessibleForFree', 'location', 'maximumAttendeeCapacity', 'maximumPhysicalAttendeeCapacity', 'maximumVirtualAttendeeCapacity', 'offers', 'organizer', 'performer', 'performers', 'previousStartDate', 'recordedIn', 'remainingAttendeeCapacity', 'review', 'sponsor', 'startDate', 'subEvent', 'subEvents', 'superEvent', 'translator', 'typicalAgeRange', 'workFeatured', 'workPerformed'])))
-        }
-        
         constructor() {
             super()
         }

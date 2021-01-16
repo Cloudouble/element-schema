@@ -13,13 +13,10 @@
         static __id = 'schema:IndividualProduct'
         static __type = 'rdfs:Class'
         static __extends = 'Product'
+        static __properties = ['serialNumber']
         static _rdfs_comment = 'A single, identifiable product instance (e.g. a laptop with a particular serial number).'
         static _rdfs_label = 'IndividualProduct'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['serialNumber'])))
-        }
-        
         constructor() {
             super()
         }

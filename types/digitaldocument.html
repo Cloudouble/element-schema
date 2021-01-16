@@ -13,13 +13,10 @@
         static __id = 'schema:DigitalDocument'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['hasDigitalDocumentPermission']
         static _rdfs_comment = 'An electronic file or document.'
         static _rdfs_label = 'DigitalDocument'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasDigitalDocumentPermission'])))
-        }
-        
         constructor() {
             super()
         }

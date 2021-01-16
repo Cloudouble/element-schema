@@ -13,13 +13,10 @@
         static __id = 'schema:InstallAction'
         static __type = 'rdfs:Class'
         static __extends = 'ConsumeAction'
+        static __properties = []
         static _rdfs_comment = 'The act of installing an application.'
         static _rdfs_label = 'InstallAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:ListItem'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['item', 'nextItem', 'position', 'previousItem']
         static _rdfs_comment = 'An list item, e.g. a step in a checklist or how-to description.'
         static _rdfs_label = 'ListItem'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['item', 'nextItem', 'position', 'previousItem'])))
-        }
-        
         constructor() {
             super()
         }

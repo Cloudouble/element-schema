@@ -13,13 +13,10 @@
         static __id = 'schema:CDCPMDRecord'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted']
         static _rdfs_comment = 'A CDCPMDRecord is a data structure representing a record in a CDC tabular data format       used for hospital data reporting. See [documentation](\/docs\/cdc-covid.html) for details, and the linked CDC materials for authoritative       definitions used as the source here.       '
         static _rdfs_label = 'CDCPMDRecord'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['cvdCollectionDate', 'cvdFacilityCounty', 'cvdFacilityId', 'cvdNumBeds', 'cvdNumBedsOcc', 'cvdNumC19Died', 'cvdNumC19HOPats', 'cvdNumC19HospPats', 'cvdNumC19MechVentPats', 'cvdNumC19OFMechVentPats', 'cvdNumC19OverflowPats', 'cvdNumICUBeds', 'cvdNumICUBedsOcc', 'cvdNumTotBeds', 'cvdNumVent', 'cvdNumVentUse', 'datePosted'])))
-        }
-        
         constructor() {
             super()
         }

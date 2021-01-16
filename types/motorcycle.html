@@ -13,13 +13,10 @@
         static __id = 'schema:Motorcycle'
         static __type = 'rdfs:Class'
         static __extends = 'Vehicle'
+        static __properties = []
         static _rdfs_comment = 'A motorcycle or motorbike is a single-track, two-wheeled motor vehicle.'
         static _rdfs_label = 'Motorcycle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

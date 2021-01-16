@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalRiskCalculator'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalRiskEstimator'
+        static __properties = []
         static _rdfs_comment = 'A complex mathematical calculation requiring an online calculator, used to assess prognosis. Note: use the url property of Thing to record any URLs for online calculators.'
         static _rdfs_label = 'MedicalRiskCalculator'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

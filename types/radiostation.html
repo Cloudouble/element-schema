@@ -13,13 +13,10 @@
         static __id = 'schema:RadioStation'
         static __type = 'rdfs:Class'
         static __extends = 'LocalBusiness'
+        static __properties = []
         static _rdfs_comment = 'A radio station.'
         static _rdfs_label = 'RadioStation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

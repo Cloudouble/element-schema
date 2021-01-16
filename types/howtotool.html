@@ -13,13 +13,10 @@
         static __id = 'schema:HowToTool'
         static __type = 'rdfs:Class'
         static __extends = 'HowToItem'
+        static __properties = []
         static _rdfs_comment = 'A tool used (but not consumed) when performing instructions for how to achieve a result.'
         static _rdfs_label = 'HowToTool'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

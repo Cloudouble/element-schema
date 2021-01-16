@@ -13,13 +13,10 @@
         static __id = 'schema:CivicStructure'
         static __type = 'rdfs:Class'
         static __extends = 'Place'
+        static __properties = ['openingHours']
         static _rdfs_comment = 'A public structure, such as a town hall or concert hall.'
         static _rdfs_label = 'CivicStructure'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['openingHours'])))
-        }
-        
         constructor() {
             super()
         }

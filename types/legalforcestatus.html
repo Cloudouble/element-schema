@@ -13,13 +13,10 @@
         static __id = 'schema:LegalForceStatus'
         static __type = 'rdfs:Class'
         static __extends = 'StatusEnumeration'
+        static __properties = []
         static _rdfs_comment = 'A list of possible statuses for the legal force of a legislation.'
         static _rdfs_label = 'LegalForceStatus'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:DateTime'
         static __type = 'schema:DataType'
         static __extends = 'DataType'
+        static __properties = []
         static _rdfs_comment = 'A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601).'
         static _rdfs_label = 'DateTime'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

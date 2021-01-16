@@ -13,13 +13,10 @@
         static __id = 'schema:AggregateOffer'
         static __type = 'rdfs:Class'
         static __extends = 'Offer'
+        static __properties = ['highPrice', 'lowPrice', 'offerCount', 'offers']
         static _rdfs_comment = 'When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http:\/\/purl.org\/goodrelations\/v1#Sell if businessFunction is not explicitly defined.'
         static _rdfs_label = 'AggregateOffer'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['highPrice', 'lowPrice', 'offerCount', 'offers'])))
-        }
-        
         constructor() {
             super()
         }

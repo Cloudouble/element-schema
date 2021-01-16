@@ -13,13 +13,10 @@
         static __id = 'schema:PublicSwimmingPool'
         static __type = 'rdfs:Class'
         static __extends = 'SportsActivityLocation'
+        static __properties = []
         static _rdfs_comment = 'A public swimming pool.'
         static _rdfs_label = 'PublicSwimmingPool'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

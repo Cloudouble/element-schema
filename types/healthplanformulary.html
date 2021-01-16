@@ -13,13 +13,10 @@
         static __id = 'schema:HealthPlanFormulary'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail']
         static _rdfs_comment = 'For a given health insurance plan, the specification for costs and coverage of prescription drugs. '
         static _rdfs_label = 'HealthPlanFormulary'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCostSharing', 'healthPlanDrugTier', 'offersPrescriptionByMail'])))
-        }
-        
         constructor() {
             super()
         }

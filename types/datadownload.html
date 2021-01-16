@@ -13,13 +13,10 @@
         static __id = 'schema:DataDownload'
         static __type = 'rdfs:Class'
         static __extends = 'MediaObject'
+        static __properties = ['measurementTechnique']
         static _rdfs_comment = 'A dataset in downloadable form.'
         static _rdfs_label = 'DataDownload'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['measurementTechnique'])))
-        }
-        
         constructor() {
             super()
         }

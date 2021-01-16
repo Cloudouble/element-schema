@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalEntity'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = ['code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study']
         static _rdfs_comment = 'The most generic type of entity related to health and the practice of medicine.'
         static _rdfs_label = 'MedicalEntity'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['code', 'guideline', 'legalStatus', 'medicineSystem', 'recognizingAuthority', 'relevantSpecialty', 'study'])))
-        }
-        
         constructor() {
             super()
         }

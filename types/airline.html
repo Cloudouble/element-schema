@@ -13,13 +13,10 @@
         static __id = 'schema:Airline'
         static __type = 'rdfs:Class'
         static __extends = 'Organization'
+        static __properties = ['boardingPolicy', 'iataCode']
         static _rdfs_comment = 'An organization that provides flights for passengers.'
         static _rdfs_label = 'Airline'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['boardingPolicy', 'iataCode'])))
-        }
-        
         constructor() {
             super()
         }

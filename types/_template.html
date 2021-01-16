@@ -13,13 +13,10 @@
         static __id = '{_id}'
         static __type = '{_type}'
         static __extends = '{rdfssubclassof_id_safe_no_schemaprefix}'
+        static __properties = [{properties_list_comma}]
         static _rdfs_comment = '{rdfscomment}'
         static _rdfs_label = '{rdfslabel}'
 
-        static get observedAttributes() {{
-            return Array.from(new Set((super.observedAttributes || []).concat([{properties_list_comma}])))
-        }}
-        
         constructor() {{
             super()
         }}

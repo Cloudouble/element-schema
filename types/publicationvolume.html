@@ -13,13 +13,10 @@
         static __id = 'schema:PublicationVolume'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['pageEnd', 'pageStart', 'pagination', 'volumeNumber']
         static _rdfs_comment = 'A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/09\/schemaorg-support-for-bibliographic_2.html).'
         static _rdfs_label = 'PublicationVolume'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['pageEnd', 'pageStart', 'pagination', 'volumeNumber'])))
-        }
-        
         constructor() {
             super()
         }

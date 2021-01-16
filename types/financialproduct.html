@@ -13,13 +13,10 @@
         static __id = 'schema:FinancialProduct'
         static __type = 'rdfs:Class'
         static __extends = 'Service'
+        static __properties = ['annualPercentageRate', 'feesAndCommissionsSpecification', 'interestRate']
         static _rdfs_comment = 'A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.'
         static _rdfs_label = 'FinancialProduct'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['annualPercentageRate', 'feesAndCommissionsSpecification', 'interestRate'])))
-        }
-        
         constructor() {
             super()
         }

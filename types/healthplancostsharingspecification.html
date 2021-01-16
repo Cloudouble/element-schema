@@ -13,13 +13,10 @@
         static __id = 'schema:HealthPlanCostSharingSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory']
         static _rdfs_comment = 'A description of costs to the patient under a given network or formulary.'
         static _rdfs_label = 'HealthPlanCostSharingSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['healthPlanCoinsuranceOption', 'healthPlanCoinsuranceRate', 'healthPlanCopay', 'healthPlanCopayOption', 'healthPlanPharmacyCategory'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:HowToSection'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['steps']
         static _rdfs_comment = 'A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).'
         static _rdfs_label = 'HowToSection'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['steps'])))
-        }
-        
         constructor() {
             super()
         }

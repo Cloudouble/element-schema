@@ -13,13 +13,10 @@
         static __id = 'schema:OrderAction'
         static __type = 'rdfs:Class'
         static __extends = 'TradeAction'
+        static __properties = ['deliveryMethod']
         static _rdfs_comment = 'An agent orders an object\/product\/service to be delivered\/sent.'
         static _rdfs_label = 'OrderAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryMethod'])))
-        }
-        
         constructor() {
             super()
         }

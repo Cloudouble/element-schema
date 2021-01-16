@@ -13,13 +13,10 @@
         static __id = 'schema:PhysicalActivity'
         static __type = 'rdfs:Class'
         static __extends = 'LifestyleModification'
+        static __properties = ['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology']
         static _rdfs_comment = 'Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.'
         static _rdfs_label = 'PhysicalActivity'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'category', 'epidemiology', 'pathophysiology'])))
-        }
-        
         constructor() {
             super()
         }

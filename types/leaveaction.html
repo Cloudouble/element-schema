@@ -13,13 +13,10 @@
         static __id = 'schema:LeaveAction'
         static __type = 'rdfs:Class'
         static __extends = 'InteractAction'
+        static __properties = ['event']
         static _rdfs_comment = 'An agent leaves an event \/ group with participants\/friends at a location.\n\nRelated actions:\n\n* [[JoinAction]]: The antonym of LeaveAction.\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group\/team of people rather than a service.'
         static _rdfs_label = 'LeaveAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['event'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:NutritionInformation'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent']
         static _rdfs_comment = 'Nutritional information about the recipe.'
         static _rdfs_label = 'NutritionInformation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['calories', 'carbohydrateContent', 'cholesterolContent', 'fatContent', 'fiberContent', 'proteinContent', 'saturatedFatContent', 'servingSize', 'sodiumContent', 'sugarContent', 'transFatContent', 'unsaturatedFatContent'])))
-        }
-        
         constructor() {
             super()
         }

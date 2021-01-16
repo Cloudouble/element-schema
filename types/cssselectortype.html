@@ -13,13 +13,10 @@
         static __id = 'schema:CssSelectorType'
         static __type = 'rdfs:Class'
         static __extends = 'Text'
+        static __properties = []
         static _rdfs_comment = 'Text representing a CSS selector.'
         static _rdfs_label = 'CssSelectorType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:Volcano'
         static __type = 'rdfs:Class'
         static __extends = 'Landform'
+        static __properties = []
         static _rdfs_comment = 'A volcano, like Fuji san.'
         static _rdfs_label = 'Volcano'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

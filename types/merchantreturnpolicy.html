@@ -13,13 +13,10 @@
         static __id = 'schema:MerchantReturnPolicy'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory']
         static _rdfs_comment = 'A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]].'
         static _rdfs_label = 'MerchantReturnPolicy'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['inStoreReturnsOffered', 'merchantReturnDays', 'merchantReturnLink', 'refundType', 'returnFees', 'returnPolicyCategory'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:EducationalOccupationalProgram'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm']
         static _rdfs_comment = 'A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).'
         static _rdfs_label = 'EducationalOccupationalProgram'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicationDeadline', 'applicationStartDate', 'dayOfWeek', 'educationalCredentialAwarded', 'educationalProgramMode', 'endDate', 'financialAidEligible', 'hasCourse', 'maximumEnrollment', 'numberOfCredits', 'occupationalCategory', 'occupationalCredentialAwarded', 'offers', 'programPrerequisites', 'programType', 'provider', 'salaryUponCompletion', 'startDate', 'termDuration', 'termsPerYear', 'timeOfDay', 'timeToComplete', 'trainingSalary', 'typicalCreditsPerTerm'])))
-        }
-        
         constructor() {
             super()
         }

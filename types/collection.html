@@ -13,13 +13,10 @@
         static __id = 'schema:Collection'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['collectionSize']
         static _rdfs_comment = 'A collection of items e.g. creative works or products.'
         static _rdfs_label = 'Collection'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['collectionSize'])))
-        }
-        
         constructor() {
             super()
         }

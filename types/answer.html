@@ -13,13 +13,10 @@
         static __id = 'schema:Answer'
         static __type = 'rdfs:Class'
         static __extends = 'Comment'
+        static __properties = ['answerExplanation']
         static _rdfs_comment = 'An answer offered to a question; perhaps correct, perhaps opinionated or wrong.'
         static _rdfs_label = 'Answer'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['answerExplanation'])))
-        }
-        
         constructor() {
             super()
         }

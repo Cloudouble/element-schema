@@ -13,13 +13,10 @@
         static __id = 'schema:PerformAction'
         static __type = 'rdfs:Class'
         static __extends = 'PlayAction'
+        static __properties = ['entertainmentBusiness']
         static _rdfs_comment = 'The act of participating in performance arts.'
         static _rdfs_label = 'PerformAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['entertainmentBusiness'])))
-        }
-        
         constructor() {
             super()
         }

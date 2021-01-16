@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalCondition'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = ['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest']
         static _rdfs_comment = 'Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.'
         static _rdfs_label = 'MedicalCondition'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedAnatomy', 'differentialDiagnosis', 'drug', 'epidemiology', 'expectedPrognosis', 'naturalProgression', 'pathophysiology', 'possibleComplication', 'possibleTreatment', 'primaryPrevention', 'riskFactor', 'secondaryPrevention', 'signOrSymptom', 'stage', 'status', 'typicalTest'])))
-        }
-        
         constructor() {
             super()
         }

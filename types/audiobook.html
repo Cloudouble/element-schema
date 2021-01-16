@@ -13,13 +13,10 @@
         static __id = 'schema:Audiobook'
         static __type = 'rdfs:Class'
         static __extends = 'AudioObject'
+        static __properties = ['duration', 'readBy']
         static _rdfs_comment = 'An audiobook.'
         static _rdfs_label = 'Audiobook'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['duration', 'readBy'])))
-        }
-        
         constructor() {
             super()
         }

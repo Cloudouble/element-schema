@@ -13,13 +13,10 @@
         static __id = 'schema:QAPage'
         static __type = 'rdfs:Class'
         static __extends = 'WebPage'
+        static __properties = []
         static _rdfs_comment = 'A QAPage is a WebPage focussed on a specific Question and its Answer(s), e.g. in a question answering site or documenting Frequently Asked Questions (FAQs).'
         static _rdfs_label = 'QAPage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

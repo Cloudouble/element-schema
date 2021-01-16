@@ -13,13 +13,10 @@
         static __id = 'schema:Airport'
         static __type = 'rdfs:Class'
         static __extends = 'CivicStructure'
+        static __properties = ['iataCode', 'icaoCode']
         static _rdfs_comment = 'An airport.'
         static _rdfs_label = 'Airport'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['iataCode', 'icaoCode'])))
-        }
-        
         constructor() {
             super()
         }

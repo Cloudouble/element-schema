@@ -13,13 +13,10 @@
         static __id = 'schema:SearchAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = ['query']
         static _rdfs_comment = 'The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.'
         static _rdfs_label = 'SearchAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['query'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:MusicGroup'
         static __type = 'rdfs:Class'
         static __extends = 'PerformingGroup'
+        static __properties = ['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks']
         static _rdfs_comment = 'A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.'
         static _rdfs_label = 'MusicGroup'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['album', 'albums', 'genre', 'musicGroupMember', 'track', 'tracks'])))
-        }
-        
         constructor() {
             super()
         }

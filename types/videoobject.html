@@ -13,13 +13,10 @@
         static __id = 'schema:VideoObject'
         static __type = 'rdfs:Class'
         static __extends = 'MediaObject'
+        static __properties = ['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality']
         static _rdfs_comment = 'A video file.'
         static _rdfs_label = 'VideoObject'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'caption', 'director', 'directors', 'musicBy', 'thumbnail', 'transcript', 'videoFrameSize', 'videoQuality'])))
-        }
-        
         constructor() {
             super()
         }

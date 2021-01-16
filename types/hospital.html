@@ -13,13 +13,10 @@
         static __id = 'schema:Hospital'
         static __type = 'rdfs:Class'
         static __extends = 'EmergencyService'
+        static __properties = ['availableService', 'healthcareReportingData', 'medicalSpecialty']
         static _rdfs_comment = 'A hospital.'
         static _rdfs_label = 'Hospital'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['availableService', 'healthcareReportingData', 'medicalSpecialty'])))
-        }
-        
         constructor() {
             super()
         }

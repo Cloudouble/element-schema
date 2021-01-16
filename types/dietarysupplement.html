@@ -13,13 +13,10 @@
         static __id = 'schema:DietarySupplement'
         static __type = 'rdfs:Class'
         static __extends = 'Substance'
+        static __properties = ['activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation']
         static _rdfs_comment = 'A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites.'
         static _rdfs_label = 'DietarySupplement'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'isProprietary', 'legalStatus', 'manufacturer', 'maximumIntake', 'mechanismOfAction', 'nonProprietaryName', 'proprietaryName', 'recommendedIntake', 'safetyConsideration', 'targetPopulation'])))
-        }
-        
         constructor() {
             super()
         }

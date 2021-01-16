@@ -13,13 +13,10 @@
         static __id = 'schema:FinancialService'
         static __type = 'rdfs:Class'
         static __extends = 'LocalBusiness'
+        static __properties = ['feesAndCommissionsSpecification']
         static _rdfs_comment = 'Financial services business.'
         static _rdfs_label = 'FinancialService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['feesAndCommissionsSpecification'])))
-        }
-        
         constructor() {
             super()
         }

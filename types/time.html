@@ -13,13 +13,10 @@
         static __id = 'schema:Time'
         static __type = 'schema:DataType'
         static __extends = 'DataType'
+        static __properties = []
         static _rdfs_comment = 'A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see [XML schema for details](http:\/\/www.w3.org\/TR\/xmlschema-2\/#time)).'
         static _rdfs_label = 'Time'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

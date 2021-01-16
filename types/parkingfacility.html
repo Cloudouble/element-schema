@@ -13,13 +13,10 @@
         static __id = 'schema:ParkingFacility'
         static __type = 'rdfs:Class'
         static __extends = 'CivicStructure'
+        static __properties = []
         static _rdfs_comment = 'A parking lot or other parking facility.'
         static _rdfs_label = 'ParkingFacility'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

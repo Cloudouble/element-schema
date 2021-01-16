@@ -13,13 +13,10 @@
         static __id = 'schema:LymphaticVessel'
         static __type = 'rdfs:Class'
         static __extends = 'Vessel'
+        static __properties = ['originatesFrom', 'regionDrained', 'runsTo']
         static _rdfs_comment = 'A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.'
         static _rdfs_label = 'LymphaticVessel'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['originatesFrom', 'regionDrained', 'runsTo'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:MediaObject'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width']
         static _rdfs_comment = 'A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject\'s).'
         static _rdfs_label = 'MediaObject'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['associatedArticle', 'bitrate', 'contentSize', 'contentUrl', 'duration', 'embedUrl', 'encodesCreativeWork', 'encodingFormat', 'endTime', 'height', 'playerType', 'productionCompany', 'regionsAllowed', 'requiresSubscription', 'startTime', 'uploadDate', 'width'])))
-        }
-        
         constructor() {
             super()
         }

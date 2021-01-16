@@ -13,13 +13,10 @@
         static __id = 'schema:ContactPoint'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone']
         static _rdfs_comment = 'A contact point&#x2014;for example, a Customer Complaints department.'
         static _rdfs_label = 'ContactPoint'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['areaServed', 'availableLanguage', 'contactOption', 'contactType', 'email', 'faxNumber', 'hoursAvailable', 'productSupported', 'serviceArea', 'telephone'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:Comment'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['downvoteCount', 'parentItem', 'upvoteCount']
         static _rdfs_comment = 'A comment on an item - for example, a comment on a blog post. The comment\'s content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.'
         static _rdfs_label = 'Comment'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['downvoteCount', 'parentItem', 'upvoteCount'])))
-        }
-        
         constructor() {
             super()
         }

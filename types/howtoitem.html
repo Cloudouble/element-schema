@@ -13,13 +13,10 @@
         static __id = 'schema:HowToItem'
         static __type = 'rdfs:Class'
         static __extends = 'ListItem'
+        static __properties = ['requiredQuantity']
         static _rdfs_comment = 'An item used as either a tool or supply when performing the instructions for how to to achieve a result.'
         static _rdfs_label = 'HowToItem'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['requiredQuantity'])))
-        }
-        
         constructor() {
             super()
         }

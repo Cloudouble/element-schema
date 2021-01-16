@@ -13,13 +13,10 @@
         static __id = 'schema:TouristAttraction'
         static __type = 'rdfs:Class'
         static __extends = 'Place'
+        static __properties = ['availableLanguage', 'touristType']
         static _rdfs_comment = 'A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)'
         static _rdfs_label = 'TouristAttraction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['availableLanguage', 'touristType'])))
-        }
-        
         constructor() {
             super()
         }

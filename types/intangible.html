@@ -13,13 +13,10 @@
         static __id = 'schema:Intangible'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = []
         static _rdfs_comment = 'A utility class that serves as the umbrella for a number of \'intangible\' things such as quantities, structured values, etc.'
         static _rdfs_label = 'Intangible'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

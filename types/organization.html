@@ -13,13 +13,10 @@
         static __id = 'schema:Organization'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = ['actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID']
         static _rdfs_comment = 'An organization such as a school, NGO, corporation, club, etc.'
         static _rdfs_label = 'Organization'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionableFeedbackPolicy', 'address', 'aggregateRating', 'alumni', 'areaServed', 'award', 'awards', 'brand', 'contactPoint', 'contactPoints', 'correctionsPolicy', 'department', 'dissolutionDate', 'diversityPolicy', 'diversityStaffingReport', 'duns', 'email', 'employee', 'employees', 'ethicsPolicy', 'event', 'events', 'faxNumber', 'founder', 'founders', 'foundingDate', 'foundingLocation', 'funder', 'globalLocationNumber', 'hasCredential', 'hasMerchantReturnPolicy', 'hasOfferCatalog', 'hasPOS', 'hasProductReturnPolicy', 'interactionStatistic', 'isicV4', 'knowsAbout', 'knowsLanguage', 'legalName', 'leiCode', 'location', 'logo', 'makesOffer', 'member', 'memberOf', 'members', 'naics', 'nonprofitStatus', 'numberOfEmployees', 'ownershipFundingInfo', 'owns', 'parentOrganization', 'publishingPrinciples', 'review', 'reviews', 'seeks', 'serviceArea', 'slogan', 'sponsor', 'subOrganization', 'taxID', 'telephone', 'unnamedSourcesPolicy', 'vatID'])))
-        }
-        
         constructor() {
             super()
         }

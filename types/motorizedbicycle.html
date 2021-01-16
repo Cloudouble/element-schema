@@ -13,13 +13,10 @@
         static __id = 'schema:MotorizedBicycle'
         static __type = 'rdfs:Class'
         static __extends = 'Vehicle'
+        static __properties = []
         static _rdfs_comment = 'A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.'
         static _rdfs_label = 'MotorizedBicycle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

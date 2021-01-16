@@ -13,13 +13,10 @@
         static __id = 'schema:ComicCoverArt'
         static __type = 'rdfs:Class'
         static __extends = 'ComicStory'
+        static __properties = []
         static _rdfs_comment = 'The artwork on the cover of a comic.'
         static _rdfs_label = 'ComicCoverArt'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

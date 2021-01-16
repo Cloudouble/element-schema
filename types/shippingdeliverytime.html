@@ -13,13 +13,10 @@
         static __id = 'schema:ShippingDeliveryTime'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['businessDays', 'cutoffTime', 'handlingTime', 'transitTime']
         static _rdfs_comment = 'ShippingDeliveryTime provides various pieces of information about delivery times for shipping.'
         static _rdfs_label = 'ShippingDeliveryTime'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['businessDays', 'cutoffTime', 'handlingTime', 'transitTime'])))
-        }
-        
         constructor() {
             super()
         }

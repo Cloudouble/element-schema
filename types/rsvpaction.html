@@ -13,13 +13,10 @@
         static __id = 'schema:RsvpAction'
         static __type = 'rdfs:Class'
         static __extends = 'InformAction'
+        static __properties = ['additionalNumberOfGuests', 'comment', 'rsvpResponse']
         static _rdfs_comment = 'The act of notifying an event organizer as to whether you expect to attend the event.'
         static _rdfs_label = 'RsvpAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalNumberOfGuests', 'comment', 'rsvpResponse'])))
-        }
-        
         constructor() {
             super()
         }

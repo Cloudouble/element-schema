@@ -13,13 +13,10 @@
         static __id = 'schema:TieAction'
         static __type = 'rdfs:Class'
         static __extends = 'AchieveAction'
+        static __properties = []
         static _rdfs_comment = 'The act of reaching a draw in a competitive activity.'
         static _rdfs_label = 'TieAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

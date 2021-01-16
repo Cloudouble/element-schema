@@ -13,13 +13,10 @@
         static __id = 'schema:MusicPlaylist'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['numTracks', 'track', 'tracks']
         static _rdfs_comment = 'A collection of music tracks in playlist form.'
         static _rdfs_label = 'MusicPlaylist'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['numTracks', 'track', 'tracks'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:MovieSeries'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWorkSeries'
+        static __properties = ['actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer']
         static _rdfs_comment = 'A series of movies. Included movies can be indicated with the hasPart property.'
         static _rdfs_label = 'MovieSeries'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'director', 'directors', 'musicBy', 'productionCompany', 'trailer'])))
-        }
-        
         constructor() {
             super()
         }

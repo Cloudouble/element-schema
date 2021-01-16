@@ -13,13 +13,10 @@
         static __id = 'schema:ProductCollection'
         static __type = 'rdfs:Class'
         static __extends = 'Product'
+        static __properties = ['includesObject']
         static _rdfs_comment = 'A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]].'
         static _rdfs_label = 'ProductCollection'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['includesObject'])))
-        }
-        
         constructor() {
             super()
         }

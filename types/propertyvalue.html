@@ -13,13 +13,10 @@
         static __id = 'schema:PropertyValue'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference']
         static _rdfs_comment = 'A property-value pair, e.g. representing a feature of a product or place. Use the \'name\' property for the name of the property. If there is an additional human-readable version of the value, put that into the \'description\' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.     '
         static _rdfs_label = 'PropertyValue'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['maxValue', 'measurementTechnique', 'minValue', 'propertyID', 'unitCode', 'unitText', 'value', 'valueReference'])))
-        }
-        
         constructor() {
             super()
         }

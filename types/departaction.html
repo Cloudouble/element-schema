@@ -13,13 +13,10 @@
         static __id = 'schema:DepartAction'
         static __type = 'rdfs:Class'
         static __extends = 'MoveAction'
+        static __properties = []
         static _rdfs_comment = 'The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.'
         static _rdfs_label = 'DepartAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

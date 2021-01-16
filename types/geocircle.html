@@ -13,13 +13,10 @@
         static __id = 'schema:GeoCircle'
         static __type = 'rdfs:Class'
         static __extends = 'GeoShape'
+        static __properties = ['geoMidpoint', 'geoRadius']
         static _rdfs_comment = 'A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape           it provides the simple textual property \'circle\', but also allows the combination of postalCode alongside geoRadius.           The center of the circle can be indicated via the \'geoMidpoint\' property, or more approximately using \'address\', \'postalCode\'.        '
         static _rdfs_label = 'GeoCircle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['geoMidpoint', 'geoRadius'])))
-        }
-        
         constructor() {
             super()
         }

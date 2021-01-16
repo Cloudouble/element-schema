@@ -13,13 +13,10 @@
         static __id = 'schema:VoteAction'
         static __type = 'rdfs:Class'
         static __extends = 'ChooseAction'
+        static __properties = ['candidate']
         static _rdfs_comment = 'The act of expressing a preference from a fixed\/finite\/structured set of choices\/options.'
         static _rdfs_label = 'VoteAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['candidate'])))
-        }
-        
         constructor() {
             super()
         }

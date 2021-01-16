@@ -13,13 +13,10 @@
         static __id = 'schema:ReceiveAction'
         static __type = 'rdfs:Class'
         static __extends = 'TransferAction'
+        static __properties = ['deliveryMethod', 'sender']
         static _rdfs_comment = 'The act of physically\/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).'
         static _rdfs_label = 'ReceiveAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryMethod', 'sender'])))
-        }
-        
         constructor() {
             super()
         }

@@ -19,12 +19,17 @@
         static __release
         static __prefix = window.LiveElement.Element.prefix
         static __context = 'https:\/\/schema.org\/'
+        static __properties = []
         static _rdfs_label = 'Schema'
-        
+
+        static get __allProperties() {
+            return Array.from(new Set((this.__extends && typeof window.LiveElement.Element.elements[this.__extends] == 'function' ? (window.LiveElement.Element.elements[this.__extends].__allProperties || []).concat(this.__properties || []) : (this.__properties || []))))
+        } 
+
         static get observedAttributes() {
-            return (super.observedAttributes || []).concat()
+            return (this.__allProperties || []).map(v => v.toLowerCase())
         }
-        
+
         static __valid(input) {
             return true
         }
@@ -32,14 +37,13 @@
         constructor() {
             super()
             var $this = this
+            Object.keys($this).forEach(k => k.slice(0,2) == '__' ? Object.defineProperty($this, k, {configurable: false, enumerable: false}) : null ) 
             //ensure the following line always goes at the end of the constructor function 
-            $this.__render()
         }
         
         connectedCallback() {
             var $this = this
-            //ensure the following line always goes at the end of the connectedCallback function 
-            $this.__render($this.__isConnected = true)
+            $this.__isConnected = true
         }
         
         toString() {
@@ -50,7 +54,7 @@
             return this.__value
         }
         
-        Object.defineProperty($this, '__input', {configurable: false, enumerable: true, value: this.__input === undefined ? undefined : this.__input})
+        __input = this.__input === undefined ? undefined : this.__input
         __value = this.__value === undefined ? undefined : this.__value
         __validation = {...(this.__validation || {}), ...{}}
         __map = {...(this.__map || {}), ...{}}
@@ -80,21 +84,6 @@
                 })
             }
             $this.dispatchEvent(new window.CustomEvent('schema-load', {detail: {input: input, validation: $this.__validation, propertyMap: propertyMap}}))
-        }
-        
-        __render() {
-            var $this = this
-            var render
-            if ($this.__container && $this.__containerPropertyName && $this.__propertyMap) {
-                render = window.LiveElement.Schema.getRender($this.__containerPropertyName, window.LiveElement.Element.getInheritance($this.__container.constructor), $this.__propertyMap)
-            } else {
-                render = window.LiveElement.Schema.getRender($this.constructor._rdfs_label)
-            }
-            if (typeof render == 'function') {
-                render($this)
-            } else if (render && typeof render == 'object') {
-                window.LiveElement.Element.render($this, render.asClass, render.renderFunction, render.style, render.template)
-            }
         }
         
     }

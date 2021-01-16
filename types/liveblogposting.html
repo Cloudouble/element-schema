@@ -13,13 +13,10 @@
         static __id = 'schema:LiveBlogPosting'
         static __type = 'rdfs:Class'
         static __extends = 'BlogPosting'
+        static __properties = ['coverageEndTime', 'coverageStartTime', 'liveBlogUpdate']
         static _rdfs_comment = 'A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.'
         static _rdfs_label = 'LiveBlogPosting'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['coverageEndTime', 'coverageStartTime', 'liveBlogUpdate'])))
-        }
-        
         constructor() {
             super()
         }

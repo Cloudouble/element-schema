@@ -13,13 +13,10 @@
         static __id = 'schema:CompoundPriceSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'PriceSpecification'
+        static __properties = ['priceComponent', 'priceType']
         static _rdfs_comment = 'A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").'
         static _rdfs_label = 'CompoundPriceSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['priceComponent', 'priceType'])))
-        }
-        
         constructor() {
             super()
         }

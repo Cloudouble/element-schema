@@ -13,13 +13,10 @@
         static __id = 'schema:FoodService'
         static __type = 'rdfs:Class'
         static __extends = 'Service'
+        static __properties = []
         static _rdfs_comment = 'A food service, like breakfast, lunch, or dinner.'
         static _rdfs_label = 'FoodService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

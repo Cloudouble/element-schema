@@ -13,13 +13,10 @@
         static __id = 'schema:DatedMoneySpecification'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['amount', 'currency', 'endDate', 'startDate']
         static _rdfs_comment = 'A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee\'s salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended'
         static _rdfs_label = 'DatedMoneySpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['amount', 'currency', 'endDate', 'startDate'])))
-        }
-        
         constructor() {
             super()
         }

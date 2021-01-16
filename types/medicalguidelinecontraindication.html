@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalGuidelineContraindication'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalGuideline'
+        static __properties = []
         static _rdfs_comment = 'A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.'
         static _rdfs_label = 'MedicalGuidelineContraindication'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:Residence'
         static __type = 'rdfs:Class'
         static __extends = 'Place'
+        static __properties = ['accommodationFloorPlan']
         static _rdfs_comment = 'The place where a person lives.'
         static _rdfs_label = 'Residence'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['accommodationFloorPlan'])))
-        }
-        
         constructor() {
             super()
         }

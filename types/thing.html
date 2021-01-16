@@ -13,13 +13,10 @@
         static __id = 'schema:Thing'
         static __type = 'rdfs:Class'
         static __extends = 'Schema'
+        static __properties = ['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url']
         static _rdfs_comment = 'The most generic type of item.'
         static _rdfs_label = 'Thing'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalType', 'alternateName', 'description', 'disambiguatingDescription', 'identifier', 'image', 'mainEntityOfPage', 'name', 'potentialAction', 'sameAs', 'subjectOf', 'url'])))
-        }
-        
         constructor() {
             super()
         }

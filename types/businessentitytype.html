@@ -13,13 +13,10 @@
         static __id = 'schema:BusinessEntityType'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'A business entity type is a conceptual entity representing the legal form, the size, the main line of business, the position in the value chain, or any combination thereof, of an organization or business person.\n\nCommonly used values:\n\n* http:\/\/purl.org\/goodrelations\/v1#Business\n* http:\/\/purl.org\/goodrelations\/v1#Enduser\n* http:\/\/purl.org\/goodrelations\/v1#PublicInstitution\n* http:\/\/purl.org\/goodrelations\/v1#Reseller 	  '
         static _rdfs_label = 'BusinessEntityType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

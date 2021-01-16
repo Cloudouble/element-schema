@@ -13,13 +13,10 @@
         static __id = 'schema:WantAction'
         static __type = 'rdfs:Class'
         static __extends = 'ReactAction'
+        static __properties = []
         static _rdfs_comment = 'The act of expressing a desire about the object. An agent wants an object.'
         static _rdfs_label = 'WantAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

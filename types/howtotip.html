@@ -13,13 +13,10 @@
         static __id = 'schema:HowToTip'
         static __type = 'rdfs:Class'
         static __extends = 'ListItem'
+        static __properties = []
         static _rdfs_comment = 'An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author\'s preference, etc. It can explain what could be done, or what should not be done, but doesn\'t specify what should be done (see HowToDirection).'
         static _rdfs_label = 'HowToTip'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

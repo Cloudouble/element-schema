@@ -13,13 +13,10 @@
         static __id = 'schema:ExchangeRateSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['currency', 'currentExchangeRate', 'exchangeRateSpread']
         static _rdfs_comment = 'A structured value representing exchange rate.'
         static _rdfs_label = 'ExchangeRateSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['currency', 'currentExchangeRate', 'exchangeRateSpread'])))
-        }
-        
         constructor() {
             super()
         }

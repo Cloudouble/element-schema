@@ -13,13 +13,10 @@
         static __id = 'schema:HighSchool'
         static __type = 'rdfs:Class'
         static __extends = 'EducationalOrganization'
+        static __properties = []
         static _rdfs_comment = 'A high school.'
         static _rdfs_label = 'HighSchool'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

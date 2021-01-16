@@ -13,13 +13,10 @@
         static __id = 'schema:DataFeedItem'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['dateCreated', 'dateDeleted', 'dateModified', 'item']
         static _rdfs_comment = 'A single item within a larger data feed.'
         static _rdfs_label = 'DataFeedItem'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['dateCreated', 'dateDeleted', 'dateModified', 'item'])))
-        }
-        
         constructor() {
             super()
         }

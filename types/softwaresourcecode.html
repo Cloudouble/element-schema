@@ -13,13 +13,10 @@
         static __id = 'schema:SoftwareSourceCode'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct']
         static _rdfs_comment = 'Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.'
         static _rdfs_label = 'SoftwareSourceCode'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['codeRepository', 'codeSampleType', 'programmingLanguage', 'runtime', 'runtimePlatform', 'sampleType', 'targetProduct'])))
-        }
-        
         constructor() {
             super()
         }

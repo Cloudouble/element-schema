@@ -13,13 +13,10 @@
         static __id = 'schema:DonateAction'
         static __type = 'rdfs:Class'
         static __extends = 'TradeAction'
+        static __properties = ['recipient']
         static _rdfs_comment = 'The act of providing goods, services, or money without compensation, often for philanthropic reasons.'
         static _rdfs_label = 'DonateAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['recipient'])))
-        }
-        
         constructor() {
             super()
         }

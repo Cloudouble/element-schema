@@ -13,13 +13,10 @@
         static __id = 'schema:DeliveryTimeSettings'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['deliveryTime', 'isUnlabelledFallback', 'shippingDestination', 'transitTimeLabel']
         static _rdfs_comment = 'A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of a [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified\/referenced) by their different values for [[transitTimeLabel]].'
         static _rdfs_label = 'DeliveryTimeSettings'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['deliveryTime', 'isUnlabelledFallback', 'shippingDestination', 'transitTimeLabel'])))
-        }
-        
         constructor() {
             super()
         }

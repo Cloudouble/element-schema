@@ -13,13 +13,10 @@
         static __id = 'schema:QuoteAction'
         static __type = 'rdfs:Class'
         static __extends = 'TradeAction'
+        static __properties = []
         static _rdfs_comment = 'An agent quotes\/estimates\/appraises an object\/product\/service with a price at a location\/store.'
         static _rdfs_label = 'QuoteAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

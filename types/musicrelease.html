@@ -13,13 +13,10 @@
         static __id = 'schema:MusicRelease'
         static __type = 'rdfs:Class'
         static __extends = 'MusicPlaylist'
+        static __properties = ['catalogNumber', 'creditedTo', 'duration', 'musicReleaseFormat', 'recordLabel', 'releaseOf']
         static _rdfs_comment = 'A MusicRelease is a specific release of a music album.'
         static _rdfs_label = 'MusicRelease'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['catalogNumber', 'creditedTo', 'duration', 'musicReleaseFormat', 'recordLabel', 'releaseOf'])))
-        }
-        
         constructor() {
             super()
         }

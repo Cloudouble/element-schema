@@ -13,13 +13,10 @@
         static __id = 'schema:OfferCatalog'
         static __type = 'rdfs:Class'
         static __extends = 'ItemList'
+        static __properties = []
         static _rdfs_comment = 'An OfferCatalog is an ItemList that contains related Offers and\/or further OfferCatalogs that are offeredBy the same provider.'
         static _rdfs_label = 'OfferCatalog'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

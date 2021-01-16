@@ -13,13 +13,10 @@
         static __id = 'schema:Action'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = ['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target']
         static _rdfs_comment = 'An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument\/role.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/04\/announcing-schemaorg-actions.html) and [Actions overview document](https:\/\/schema.org\/docs\/actions.html).'
         static _rdfs_label = 'Action'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actionStatus', 'agent', 'endTime', 'error', 'instrument', 'location', 'object', 'participant', 'result', 'startTime', 'target'])))
-        }
-        
         constructor() {
             super()
         }

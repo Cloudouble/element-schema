@@ -13,13 +13,10 @@
         static __id = 'schema:GameServerStatus'
         static __type = 'rdfs:Class'
         static __extends = 'StatusEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Status of a game server.'
         static _rdfs_label = 'GameServerStatus'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

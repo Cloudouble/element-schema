@@ -13,13 +13,10 @@
         static __id = 'schema:OnDemandEvent'
         static __type = 'rdfs:Class'
         static __extends = 'PublicationEvent'
+        static __properties = []
         static _rdfs_comment = 'A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.'
         static _rdfs_label = 'OnDemandEvent'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:SocialMediaPosting'
         static __type = 'rdfs:Class'
         static __extends = 'Article'
+        static __properties = ['sharedContent']
         static _rdfs_comment = 'A post to a social media platform, including blog posts, tweets, Facebook posts, etc.'
         static _rdfs_label = 'SocialMediaPosting'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['sharedContent'])))
-        }
-        
         constructor() {
             super()
         }

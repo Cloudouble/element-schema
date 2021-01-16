@@ -13,13 +13,10 @@
         static __id = 'schema:CatholicChurch'
         static __type = 'rdfs:Class'
         static __extends = 'Church'
+        static __properties = []
         static _rdfs_comment = 'A Catholic church.'
         static _rdfs_label = 'CatholicChurch'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

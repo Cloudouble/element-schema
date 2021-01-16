@@ -13,13 +13,10 @@
         static __id = 'schema:Substance'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = ['activeIngredient', 'maximumIntake']
         static _rdfs_comment = 'Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical.'
         static _rdfs_label = 'Substance'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['activeIngredient', 'maximumIntake'])))
-        }
-        
         constructor() {
             super()
         }

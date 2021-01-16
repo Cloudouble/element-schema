@@ -13,13 +13,10 @@
         static __id = 'schema:MenuSection'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['hasMenuItem', 'hasMenuSection']
         static _rdfs_comment = 'A sub-grouping of food or drink items in a menu. E.g. courses (such as \'Dinner\', \'Breakfast\', etc.), specific type of dishes (such as \'Meat\', \'Vegan\', \'Drinks\', etc.), or some other classification made by the menu provider.'
         static _rdfs_label = 'MenuSection'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasMenuItem', 'hasMenuSection'])))
-        }
-        
         constructor() {
             super()
         }

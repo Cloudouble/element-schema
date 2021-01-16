@@ -12,11 +12,14 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
     schema: (element, asClass, style, template) => {
-        if (element.__isConnected &&!element.hasAttribute('itemscope')) {
-            element.setAttribute('itemscope', '')
-        }
-        if (element.__isConnected &&!!element.hasAttribute('itemtype')) {
-            element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
+        //console.log('line 15', element.__input, element, element.__container)
+        if (!element.__propertyMap) {
+            if (element.__isConnected &&!element.hasAttribute('itemscope')) {
+                element.setAttribute('itemscope', '')
+            }
+            if (element.__isConnected &&!!element.hasAttribute('itemtype')) {
+                element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
+            }
         }
     }, 
     scalar: (element, asClass, style, template) => {
@@ -37,9 +40,7 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
                 element.setAttribute('content', element.__value === undefined ? '' : element.__value)
             }
         })
-        if (!element.__propertyMap) {
-            window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
-        }
+        window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
     }, 
     time: {
         renderFunction: (element, asClass, style, template) => {
@@ -64,8 +65,10 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
                     if (!attributeElement) {
                         element.shadowRoot.append(element.__map[attributeName])
                         element.__map[attributeName].setAttribute('itemprop', attributeName)
+                        window.LiveElement.Schema.runRender(element.__map[attributeName])
                     } else {
                         attributeElement.replaceWith(element.__map[attributeName])
+                        window.LiveElement.Schema.runRender(element.__map[attributeName])
                     }
                 }
             })

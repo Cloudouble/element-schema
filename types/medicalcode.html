@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalCode'
         static __type = 'rdfs:Class'
         static __extends = 'CategoryCode'
+        static __properties = ['codeValue', 'codingSystem']
         static _rdfs_comment = 'A code for a medical entity.'
         static _rdfs_label = 'MedicalCode'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['codeValue', 'codingSystem'])))
-        }
-        
         constructor() {
             super()
         }

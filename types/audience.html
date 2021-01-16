@@ -13,13 +13,10 @@
         static __id = 'schema:Audience'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['audienceType', 'geographicArea']
         static _rdfs_comment = 'Intended audience for an item, i.e. the group for whom the item was created.'
         static _rdfs_label = 'Audience'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['audienceType', 'geographicArea'])))
-        }
-        
         constructor() {
             super()
         }

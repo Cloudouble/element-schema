@@ -13,13 +13,10 @@
         static __id = 'schema:WebPage'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty']
         static _rdfs_comment = 'A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb<\/code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.'
         static _rdfs_label = 'WebPage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['breadcrumb', 'lastReviewed', 'mainContentOfPage', 'primaryImageOfPage', 'relatedLink', 'reviewedBy', 'significantLink', 'significantLinks', 'speakable', 'specialty'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:EngineSpecification'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque']
         static _rdfs_comment = 'Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.'
         static _rdfs_label = 'EngineSpecification'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['engineDisplacement', 'enginePower', 'engineType', 'fuelType', 'torque'])))
-        }
-        
         constructor() {
             super()
         }

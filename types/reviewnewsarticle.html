@@ -13,13 +13,10 @@
         static __id = 'schema:ReviewNewsArticle'
         static __type = 'rdfs:Class'
         static __extends = 'NewsArticle'
+        static __properties = []
         static _rdfs_comment = 'A [[NewsArticle]] and [[CriticReview]] providing a professional critic\'s assessment of a service, product, performance, or artistic or literary work.'
         static _rdfs_label = 'ReviewNewsArticle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

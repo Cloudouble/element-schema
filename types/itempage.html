@@ -13,13 +13,10 @@
         static __id = 'schema:ItemPage'
         static __type = 'rdfs:Class'
         static __extends = 'WebPage'
+        static __properties = []
         static _rdfs_comment = 'A page devoted to a single item, such as a particular product or hotel.'
         static _rdfs_label = 'ItemPage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

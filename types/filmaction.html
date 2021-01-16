@@ -13,13 +13,10 @@
         static __id = 'schema:FilmAction'
         static __type = 'rdfs:Class'
         static __extends = 'CreateAction'
+        static __properties = []
         static _rdfs_comment = 'The act of capturing sound and moving images on film, video, or digitally.'
         static _rdfs_label = 'FilmAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

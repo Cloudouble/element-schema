@@ -13,13 +13,10 @@
         static __id = 'schema:CurrencyConversionService'
         static __type = 'rdfs:Class'
         static __extends = 'FinancialProduct'
+        static __properties = []
         static _rdfs_comment = 'A service to convert funds from one currency to another currency.'
         static _rdfs_label = 'CurrencyConversionService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

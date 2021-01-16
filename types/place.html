@@ -13,13 +13,10 @@
         static __id = 'schema:Place'
         static __type = 'rdfs:Class'
         static __extends = 'Thing'
+        static __properties = ['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage']
         static _rdfs_comment = 'Entities that have a somewhat fixed, physical extension.'
         static _rdfs_label = 'Place'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['additionalProperty', 'address', 'aggregateRating', 'amenityFeature', 'branchCode', 'containedIn', 'containedInPlace', 'containsPlace', 'event', 'events', 'faxNumber', 'geo', 'geoContains', 'geoCoveredBy', 'geoCovers', 'geoCrosses', 'geoDisjoint', 'geoEquals', 'geoIntersects', 'geoOverlaps', 'geoTouches', 'geoWithin', 'globalLocationNumber', 'hasDriveThroughService', 'hasMap', 'isAccessibleForFree', 'isicV4', 'latitude', 'logo', 'longitude', 'map', 'maps', 'maximumAttendeeCapacity', 'openingHoursSpecification', 'photo', 'photos', 'publicAccess', 'review', 'reviews', 'slogan', 'smokingAllowed', 'specialOpeningHoursSpecification', 'telephone', 'tourBookingPage'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:TouristInformationCenter'
         static __type = 'rdfs:Class'
         static __extends = 'LocalBusiness'
+        static __properties = []
         static _rdfs_comment = 'A tourist information center.'
         static _rdfs_label = 'TouristInformationCenter'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

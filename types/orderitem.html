@@ -13,13 +13,10 @@
         static __id = 'schema:OrderItem'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem']
         static _rdfs_comment = 'An order item is a line of an order. It includes the quantity and shipping details of a bought offer.'
         static _rdfs_label = 'OrderItem'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['orderDelivery', 'orderItemNumber', 'orderItemStatus', 'orderQuantity', 'orderedItem'])))
-        }
-        
         constructor() {
             super()
         }

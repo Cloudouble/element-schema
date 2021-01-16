@@ -13,13 +13,10 @@
         static __id = 'schema:AskPublicNewsArticle'
         static __type = 'rdfs:Class'
         static __extends = 'NewsArticle'
+        static __properties = []
         static _rdfs_comment = 'A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes.'
         static _rdfs_label = 'AskPublicNewsArticle'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

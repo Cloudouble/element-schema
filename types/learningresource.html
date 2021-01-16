@@ -13,13 +13,10 @@
         static __id = 'schema:LearningResource'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches']
         static _rdfs_comment = 'The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.  [[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[Video]], [[Product]] etc.  [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.'
         static _rdfs_label = 'LearningResource'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['assesses', 'competencyRequired', 'educationalAlignment', 'educationalLevel', 'educationalUse', 'learningResourceType', 'teaches'])))
-        }
-        
         constructor() {
             super()
         }

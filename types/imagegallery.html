@@ -13,13 +13,10 @@
         static __id = 'schema:ImageGallery'
         static __type = 'rdfs:Class'
         static __extends = 'MediaGallery'
+        static __properties = []
         static _rdfs_comment = 'Web page type: Image gallery page.'
         static _rdfs_label = 'ImageGallery'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

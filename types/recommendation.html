@@ -13,13 +13,10 @@
         static __id = 'schema:Recommendation'
         static __type = 'rdfs:Class'
         static __extends = 'Review'
+        static __properties = ['category']
         static _rdfs_comment = '[[Recommendation]] is a type of [[Review]] that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A [[Guide]] may list multiple recommendations for different categories. For example, in a [[Guide]] about which TVs to buy, the author may have several [[Recommendation]]s.'
         static _rdfs_label = 'Recommendation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['category'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:ArchiveComponent'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['holdingArchive', 'itemLocation']
         static _rdfs_comment = 'An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections.'
         static _rdfs_label = 'ArchiveComponent'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['holdingArchive', 'itemLocation'])))
-        }
-        
         constructor() {
             super()
         }

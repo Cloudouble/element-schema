@@ -13,13 +13,10 @@
         static __id = 'schema:BorrowAction'
         static __type = 'rdfs:Class'
         static __extends = 'TransferAction'
+        static __properties = ['lender']
         static _rdfs_comment = 'The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.'
         static _rdfs_label = 'BorrowAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['lender'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:JobPosting'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours']
         static _rdfs_comment = 'A listing that describes a job opening in a certain organization.'
         static _rdfs_label = 'JobPosting'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['applicantLocationRequirements', 'applicationContact', 'baseSalary', 'benefits', 'datePosted', 'educationRequirements', 'eligibilityToWorkRequirement', 'employerOverview', 'employmentType', 'employmentUnit', 'estimatedSalary', 'experienceRequirements', 'hiringOrganization', 'incentiveCompensation', 'incentives', 'industry', 'jobBenefits', 'jobImmediateStart', 'jobLocation', 'jobLocationType', 'jobStartDate', 'occupationalCategory', 'physicalRequirement', 'qualifications', 'relevantOccupation', 'responsibilities', 'salaryCurrency', 'securityClearanceRequirement', 'sensoryRequirement', 'skills', 'specialCommitments', 'title', 'totalJobOpenings', 'validThrough', 'workHours'])))
-        }
-        
         constructor() {
             super()
         }

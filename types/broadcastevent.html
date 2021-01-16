@@ -13,13 +13,10 @@
         static __id = 'schema:BroadcastEvent'
         static __type = 'rdfs:Class'
         static __extends = 'PublicationEvent'
+        static __properties = ['broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat']
         static _rdfs_comment = 'An over the air or online broadcast event.'
         static _rdfs_label = 'BroadcastEvent'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['broadcastOfEvent', 'isLiveBroadcast', 'subtitleLanguage', 'videoFormat'])))
-        }
-        
         constructor() {
             super()
         }

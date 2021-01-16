@@ -13,13 +13,10 @@
         static __id = 'schema:AutoDealer'
         static __type = 'rdfs:Class'
         static __extends = 'AutomotiveBusiness'
+        static __properties = []
         static _rdfs_comment = 'An car dealership.'
         static _rdfs_label = 'AutoDealer'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:ApplyAction'
         static __type = 'rdfs:Class'
         static __extends = 'OrganizeAction'
+        static __properties = []
         static _rdfs_comment = 'The act of registering to an organization\/service without the guarantee to receive it.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.'
         static _rdfs_label = 'ApplyAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

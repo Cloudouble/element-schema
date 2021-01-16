@@ -13,13 +13,10 @@
         static __id = 'schema:CookAction'
         static __type = 'rdfs:Class'
         static __extends = 'CreateAction'
+        static __properties = ['foodEstablishment', 'foodEvent', 'recipe']
         static _rdfs_comment = 'The act of producing\/preparing food.'
         static _rdfs_label = 'CookAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['foodEstablishment', 'foodEvent', 'recipe'])))
-        }
-        
         constructor() {
             super()
         }

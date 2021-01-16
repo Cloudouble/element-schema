@@ -13,13 +13,10 @@
         static __id = 'schema:EducationalOrganization'
         static __type = 'rdfs:Class'
         static __extends = 'CivicStructure'
+        static __properties = ['alumni']
         static _rdfs_comment = 'An educational organization.'
         static _rdfs_label = 'EducationalOrganization'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['alumni'])))
-        }
-        
         constructor() {
             super()
         }

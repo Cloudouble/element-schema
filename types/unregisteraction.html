@@ -13,13 +13,10 @@
         static __id = 'schema:UnRegisterAction'
         static __type = 'rdfs:Class'
         static __extends = 'InteractAction'
+        static __properties = []
         static _rdfs_comment = 'The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team\/group of people.'
         static _rdfs_label = 'UnRegisterAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

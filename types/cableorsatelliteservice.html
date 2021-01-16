@@ -13,13 +13,10 @@
         static __id = 'schema:CableOrSatelliteService'
         static __type = 'rdfs:Class'
         static __extends = 'Service'
+        static __properties = []
         static _rdfs_comment = 'A service which provides access to media programming like TV or radio. Access may be via cable or satellite.'
         static _rdfs_label = 'CableOrSatelliteService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

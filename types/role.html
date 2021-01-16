@@ -13,13 +13,10 @@
         static __id = 'schema:Role'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['endDate', 'namedPosition', 'roleName', 'startDate']
         static _rdfs_comment = 'Represents additional information about a relationship or property. For example a Role can be used to say that a \'member\' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person\'s \'actor\' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like \'member\' or \'actor\'.\n\nSee also [blog post](http:\/\/blog.schema.org\/2014\/06\/introducing-role.html).'
         static _rdfs_label = 'Role'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['endDate', 'namedPosition', 'roleName', 'startDate'])))
-        }
-        
         constructor() {
             super()
         }

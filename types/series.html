@@ -13,13 +13,10 @@
         static __id = 'schema:Series'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = []
         static _rdfs_comment = 'A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].'
         static _rdfs_label = 'Series'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

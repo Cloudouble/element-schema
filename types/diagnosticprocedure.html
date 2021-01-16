@@ -13,13 +13,10 @@
         static __id = 'schema:DiagnosticProcedure'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalProcedure'
+        static __properties = []
         static _rdfs_comment = 'A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes.'
         static _rdfs_label = 'DiagnosticProcedure'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

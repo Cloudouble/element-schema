@@ -13,13 +13,10 @@
         static __id = 'schema:MediaReview'
         static __type = 'rdfs:Class'
         static __extends = 'Review'
+        static __properties = ['mediaAuthenticityCategory']
         static _rdfs_comment = '(editorial work in progress, this definition is incomplete and unreviewed)     A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.     For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types.'
         static _rdfs_label = 'MediaReview'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['mediaAuthenticityCategory'])))
-        }
-        
         constructor() {
             super()
         }

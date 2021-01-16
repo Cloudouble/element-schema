@@ -13,13 +13,10 @@
         static __id = 'schema:ApprovedIndication'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalIndication'
+        static __properties = []
         static _rdfs_comment = 'An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US.'
         static _rdfs_label = 'ApprovedIndication'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

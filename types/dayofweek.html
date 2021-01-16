@@ -13,13 +13,10 @@
         static __id = 'schema:DayOfWeek'
         static __type = 'rdfs:Class'
         static __extends = 'Enumeration'
+        static __properties = []
         static _rdfs_comment = 'The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.  Originally, URLs from [GoodRelations](http:\/\/purl.org\/goodrelations\/v1) were used (for [[Monday]], [[Tuesday]], [[Wednesday]], [[Thursday]], [[Friday]], [[Saturday]], [[Sunday]] plus a special entry for [[PublicHolidays]]); these have now been integrated directly into schema.org.       '
         static _rdfs_label = 'DayOfWeek'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

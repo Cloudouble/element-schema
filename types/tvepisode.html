@@ -13,13 +13,10 @@
         static __id = 'schema:TVEpisode'
         static __type = 'rdfs:Class'
         static __extends = 'Episode'
+        static __properties = ['countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR']
         static _rdfs_comment = 'A TV episode which can be part of a series or season.'
         static _rdfs_label = 'TVEpisode'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['countryOfOrigin', 'partOfTVSeries', 'subtitleLanguage', 'titleEIDR'])))
-        }
-        
         constructor() {
             super()
         }

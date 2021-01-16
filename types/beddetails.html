@@ -13,13 +13,10 @@
         static __id = 'schema:BedDetails'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['numberOfBeds', 'typeOfBed']
         static _rdfs_comment = 'An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development).'
         static _rdfs_label = 'BedDetails'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['numberOfBeds', 'typeOfBed'])))
-        }
-        
         constructor() {
             super()
         }

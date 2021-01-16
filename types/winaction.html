@@ -13,13 +13,10 @@
         static __id = 'schema:WinAction'
         static __type = 'rdfs:Class'
         static __extends = 'AchieveAction'
+        static __properties = ['loser']
         static _rdfs_comment = 'The act of achieving victory in a competitive activity.'
         static _rdfs_label = 'WinAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['loser'])))
-        }
-        
         constructor() {
             super()
         }

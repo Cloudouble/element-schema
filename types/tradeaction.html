@@ -13,13 +13,10 @@
         static __id = 'schema:TradeAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = ['price', 'priceCurrency', 'priceSpecification']
         static _rdfs_comment = 'The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.'
         static _rdfs_label = 'TradeAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['price', 'priceCurrency', 'priceSpecification'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:WorkBasedProgram'
         static __type = 'rdfs:Class'
         static __extends = 'EducationalOccupationalProgram'
+        static __properties = ['occupationalCategory', 'trainingSalary']
         static _rdfs_comment = 'A program with both an educational and employment component. Typically based at a workplace and structured around work-based learning, with the aim of instilling competencies related to an occupation. WorkBasedProgram is used to distinguish programs such as apprenticeships from school, college or other classroom based educational programs.'
         static _rdfs_label = 'WorkBasedProgram'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['occupationalCategory', 'trainingSalary'])))
-        }
-        
         constructor() {
             super()
         }

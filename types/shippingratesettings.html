@@ -13,13 +13,10 @@
         static __id = 'schema:ShippingRateSettings'
         static __type = 'rdfs:Class'
         static __extends = 'StructuredValue'
+        static __properties = ['doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate']
         static _rdfs_comment = 'A ShippingRateSettings represents re-usable pieces of shipping information. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished and matched (i.e. identified\/referenced) by their different values for [[shippingLabel]].'
         static _rdfs_label = 'ShippingRateSettings'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['doesNotShip', 'freeShippingThreshold', 'isUnlabelledFallback', 'shippingDestination', 'shippingLabel', 'shippingRate'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:FoodEvent'
         static __type = 'rdfs:Class'
         static __extends = 'Event'
+        static __properties = []
         static _rdfs_comment = 'Event type: Food event.'
         static _rdfs_label = 'FoodEvent'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

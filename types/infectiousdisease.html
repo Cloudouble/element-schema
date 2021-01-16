@@ -13,13 +13,10 @@
         static __id = 'schema:InfectiousDisease'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalCondition'
+        static __properties = ['infectiousAgent', 'infectiousAgentClass', 'transmissionMethod']
         static _rdfs_comment = 'An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease.'
         static _rdfs_label = 'InfectiousDisease'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['infectiousAgent', 'infectiousAgentClass', 'transmissionMethod'])))
-        }
-        
         constructor() {
             super()
         }

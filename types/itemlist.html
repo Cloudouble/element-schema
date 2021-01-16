@@ -13,13 +13,10 @@
         static __id = 'schema:ItemList'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['itemListElement', 'itemListOrder', 'numberOfItems']
         static _rdfs_comment = 'A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.'
         static _rdfs_label = 'ItemList'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['itemListElement', 'itemListOrder', 'numberOfItems'])))
-        }
-        
         constructor() {
             super()
         }

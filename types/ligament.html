@@ -13,13 +13,10 @@
         static __id = 'schema:Ligament'
         static __type = 'rdfs:Class'
         static __extends = 'AnatomicalStructure'
+        static __properties = []
         static _rdfs_comment = 'A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints.'
         static _rdfs_label = 'Ligament'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

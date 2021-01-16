@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalRiskEstimator'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = ['estimatesRiskOf', 'includedRiskFactor']
         static _rdfs_comment = 'Any rule set or interactive tool for estimating the risk of developing a complication or condition.'
         static _rdfs_label = 'MedicalRiskEstimator'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['estimatesRiskOf', 'includedRiskFactor'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalConditionStage'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalIntangible'
+        static __properties = ['stageAsNumber', 'subStageSuffix']
         static _rdfs_comment = 'A stage of a medical condition, such as \'Stage IIIa\'.'
         static _rdfs_label = 'MedicalConditionStage'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['stageAsNumber', 'subStageSuffix'])))
-        }
-        
         constructor() {
             super()
         }

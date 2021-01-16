@@ -13,13 +13,10 @@
         static __id = 'schema:UpdateAction'
         static __type = 'rdfs:Class'
         static __extends = 'Action'
+        static __properties = ['collection', 'targetCollection']
         static _rdfs_comment = 'The act of managing by changing\/editing the state of the object.'
         static _rdfs_label = 'UpdateAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['collection', 'targetCollection'])))
-        }
-        
         constructor() {
             super()
         }

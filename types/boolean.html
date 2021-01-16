@@ -13,13 +13,10 @@
         static __id = 'schema:Boolean'
         static __type = 'schema:DataType'
         static __extends = 'DataType'
+        static __properties = []
         static _rdfs_comment = 'Boolean: True or False.'
         static _rdfs_label = 'Boolean'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

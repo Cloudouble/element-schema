@@ -13,13 +13,10 @@
         static __id = 'schema:GovernmentPermit'
         static __type = 'rdfs:Class'
         static __extends = 'Permit'
+        static __properties = []
         static _rdfs_comment = 'A permit issued by a government agency.'
         static _rdfs_label = 'GovernmentPermit'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

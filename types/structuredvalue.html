@@ -13,13 +13,10 @@
         static __id = 'schema:StructuredValue'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = []
         static _rdfs_comment = 'Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.'
         static _rdfs_label = 'StructuredValue'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

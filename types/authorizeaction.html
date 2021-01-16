@@ -13,13 +13,10 @@
         static __id = 'schema:AuthorizeAction'
         static __type = 'rdfs:Class'
         static __extends = 'AllocateAction'
+        static __properties = ['recipient']
         static _rdfs_comment = 'The act of granting permission to an object.'
         static _rdfs_label = 'AuthorizeAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['recipient'])))
-        }
-        
         constructor() {
             super()
         }

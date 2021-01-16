@@ -13,13 +13,10 @@
         static __id = 'schema:LocalBusiness'
         static __type = 'rdfs:Class'
         static __extends = 'Organization'
+        static __properties = ['branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange']
         static _rdfs_comment = 'A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.'
         static _rdfs_label = 'LocalBusiness'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['branchOf', 'currenciesAccepted', 'openingHours', 'paymentAccepted', 'priceRange'])))
-        }
-        
         constructor() {
             super()
         }

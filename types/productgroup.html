@@ -13,13 +13,10 @@
         static __id = 'schema:ProductGroup'
         static __type = 'rdfs:Class'
         static __extends = 'Product'
+        static __properties = ['hasVariant', 'productGroupID', 'variesBy']
         static _rdfs_comment = 'A ProductGroup represents a group of [[Product]]s that vary only in certain well-described ways, such as by [[size]], [[color]], [[material]] etc.  While a ProductGroup itself is not directly offered for sale, the various varying products that it represents can be. The ProductGroup serves as a prototype or template, standing in for all of the products who have an [[isVariantOf]] relationship to it. As such, properties (including additional types) can be applied to the ProductGroup to represent characteristics shared by each of the (possibly very many) variants. Properties that reference a ProductGroup are not included in this mechanism; neither are the following specific properties [[variesBy]], [[hasVariant]], [[url]]. '
         static _rdfs_label = 'ProductGroup'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hasVariant', 'productGroupID', 'variesBy'])))
-        }
-        
         constructor() {
             super()
         }

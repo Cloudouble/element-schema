@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalIntangible'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = []
         static _rdfs_comment = 'A utility class that serves as the umbrella for a number of \'intangible\' things in the medical space.'
         static _rdfs_label = 'MedicalIntangible'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

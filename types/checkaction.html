@@ -13,13 +13,10 @@
         static __id = 'schema:CheckAction'
         static __type = 'rdfs:Class'
         static __extends = 'FindAction'
+        static __properties = []
         static _rdfs_comment = 'An agent inspects, determines, investigates, inquires, or examines an object\'s accuracy, quality, condition, or state.'
         static _rdfs_label = 'CheckAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

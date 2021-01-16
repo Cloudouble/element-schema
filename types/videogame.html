@@ -13,13 +13,10 @@
         static __id = 'schema:VideoGame'
         static __type = 'rdfs:Class'
         static __extends = 'SoftwareApplication'
+        static __properties = ['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer']
         static _rdfs_comment = 'A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.'
         static _rdfs_label = 'VideoGame'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['actor', 'actors', 'cheatCode', 'director', 'directors', 'gamePlatform', 'gameServer', 'gameTip', 'musicBy', 'playMode', 'trailer'])))
-        }
-        
         constructor() {
             super()
         }

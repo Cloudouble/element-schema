@@ -13,13 +13,10 @@
         static __id = 'schema:ReactAction'
         static __type = 'rdfs:Class'
         static __extends = 'AssessAction'
+        static __properties = []
         static _rdfs_comment = 'The act of responding instinctively and emotionally to an object, expressing a sentiment.'
         static _rdfs_label = 'ReactAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:ArtGallery'
         static __type = 'rdfs:Class'
         static __extends = 'EntertainmentBusiness'
+        static __properties = []
         static _rdfs_comment = 'An art gallery.'
         static _rdfs_label = 'ArtGallery'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

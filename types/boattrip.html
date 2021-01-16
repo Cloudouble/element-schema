@@ -13,13 +13,10 @@
         static __id = 'schema:BoatTrip'
         static __type = 'rdfs:Class'
         static __extends = 'Trip'
+        static __properties = ['arrivalBoatTerminal', 'departureBoatTerminal']
         static _rdfs_comment = 'A trip on a commercial ferry line.'
         static _rdfs_label = 'BoatTrip'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['arrivalBoatTerminal', 'departureBoatTerminal'])))
-        }
-        
         constructor() {
             super()
         }

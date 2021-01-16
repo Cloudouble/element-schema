@@ -13,13 +13,10 @@
         static __id = 'schema:ReservationStatusType'
         static __type = 'rdfs:Class'
         static __extends = 'StatusEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Enumerated status values for Reservation.'
         static _rdfs_label = 'ReservationStatusType'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

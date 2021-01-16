@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalTrialDesign'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEnumeration'
+        static __properties = []
         static _rdfs_comment = 'Design models for medical trials. Enumerated type.'
         static _rdfs_label = 'MedicalTrialDesign'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

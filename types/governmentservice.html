@@ -13,13 +13,10 @@
         static __id = 'schema:GovernmentService'
         static __type = 'rdfs:Class'
         static __extends = 'Service'
+        static __properties = ['jurisdiction', 'serviceOperator']
         static _rdfs_comment = 'A service provided by a government organization, e.g. food stamps, veterans benefits, etc.'
         static _rdfs_label = 'GovernmentService'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['jurisdiction', 'serviceOperator'])))
-        }
-        
         constructor() {
             super()
         }

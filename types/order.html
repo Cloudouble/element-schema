@@ -13,13 +13,10 @@
         static __id = 'schema:Order'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['acceptedOffer', 'billingAddress', 'broker', 'confirmationNumber', 'customer', 'discount', 'discountCode', 'discountCurrency', 'isGift', 'merchant', 'orderDate', 'orderDelivery', 'orderNumber', 'orderStatus', 'orderedItem', 'partOfInvoice', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentUrl', 'seller']
         static _rdfs_comment = 'An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.'
         static _rdfs_label = 'Order'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['acceptedOffer', 'billingAddress', 'broker', 'confirmationNumber', 'customer', 'discount', 'discountCode', 'discountCurrency', 'isGift', 'merchant', 'orderDate', 'orderDelivery', 'orderNumber', 'orderStatus', 'orderedItem', 'partOfInvoice', 'paymentDue', 'paymentDueDate', 'paymentMethod', 'paymentMethodId', 'paymentUrl', 'seller'])))
-        }
-        
         constructor() {
             super()
         }

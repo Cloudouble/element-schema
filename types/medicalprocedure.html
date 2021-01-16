@@ -13,13 +13,10 @@
         static __id = 'schema:MedicalProcedure'
         static __type = 'rdfs:Class'
         static __extends = 'MedicalEntity'
+        static __properties = ['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status']
         static _rdfs_comment = 'A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.'
         static _rdfs_label = 'MedicalProcedure'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['bodyLocation', 'followup', 'howPerformed', 'preparation', 'procedureType', 'status'])))
-        }
-        
         constructor() {
             super()
         }

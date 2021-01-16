@@ -13,13 +13,10 @@
         static __id = 'schema:ProgramMembership'
         static __type = 'rdfs:Class'
         static __extends = 'Intangible'
+        static __properties = ['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName']
         static _rdfs_comment = 'Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.'
         static _rdfs_label = 'ProgramMembership'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['hostingOrganization', 'member', 'members', 'membershipNumber', 'membershipPointsEarned', 'programName'])))
-        }
-        
         constructor() {
             super()
         }

@@ -13,13 +13,10 @@
         static __id = 'schema:BusReservation'
         static __type = 'rdfs:Class'
         static __extends = 'Reservation'
+        static __properties = []
         static _rdfs_comment = 'A reservation for bus travel. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].'
         static _rdfs_label = 'BusReservation'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

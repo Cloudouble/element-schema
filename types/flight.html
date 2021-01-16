@@ -13,13 +13,10 @@
         static __id = 'schema:Flight'
         static __type = 'rdfs:Class'
         static __extends = 'Trip'
+        static __properties = ['aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime']
         static _rdfs_comment = 'An airline flight.'
         static _rdfs_label = 'Flight'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['aircraft', 'arrivalAirport', 'arrivalGate', 'arrivalTerminal', 'boardingPolicy', 'carrier', 'departureAirport', 'departureGate', 'departureTerminal', 'estimatedFlightDuration', 'flightDistance', 'flightNumber', 'mealService', 'seller', 'webCheckinTime'])))
-        }
-        
         constructor() {
             super()
         }

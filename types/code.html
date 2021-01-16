@@ -13,13 +13,10 @@
         static __id = 'schema:Code'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = []
         static _rdfs_comment = 'Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.'
         static _rdfs_label = 'Code'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

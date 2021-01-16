@@ -13,13 +13,10 @@
         static __id = 'schema:MusicComposition'
         static __type = 'rdfs:Class'
         static __extends = 'CreativeWork'
+        static __properties = ['composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs']
         static _rdfs_comment = 'A musical composition.'
         static _rdfs_label = 'MusicComposition'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat(['composer', 'firstPerformance', 'includedComposition', 'iswcCode', 'lyricist', 'lyrics', 'musicArrangement', 'musicCompositionForm', 'musicalKey', 'recordedAs'])))
-        }
-        
         constructor() {
             super()
         }

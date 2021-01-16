@@ -13,13 +13,10 @@
         static __id = 'schema:WearAction'
         static __type = 'rdfs:Class'
         static __extends = 'UseAction'
+        static __properties = []
         static _rdfs_comment = 'The act of dressing oneself in clothing.'
         static _rdfs_label = 'WearAction'
 
-        static get observedAttributes() {
-            return Array.from(new Set((super.observedAttributes || []).concat([])))
-        }
-        
         constructor() {
             super()
         }

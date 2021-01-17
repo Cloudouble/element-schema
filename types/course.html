@@ -27,7 +27,7 @@
         
         
         courseCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).",
 				container: $this,
 				propertyName: "courseCode",
@@ -42,7 +42,7 @@
 		}
 
         coursePrerequisites($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Requirements for taking the Course. May be completion of another [[Course]] or a textual description like \"permission of instructor\". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].",
 				container: $this,
 				propertyName: "coursePrerequisites",
@@ -59,7 +59,7 @@
 		}
 
         educationalCredentialAwarded($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.",
 				container: $this,
 				propertyName: "educationalCredentialAwarded",
@@ -76,7 +76,7 @@
 		}
 
         hasCourseInstance($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.",
 				container: $this,
 				propertyName: "hasCourseInstance",
@@ -91,7 +91,7 @@
 		}
 
         numberOfCredits($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.",
 				container: $this,
 				propertyName: "numberOfCredits",
@@ -107,7 +107,7 @@
 		}
 
         occupationalCredentialAwarded($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.",
 				container: $this,
 				propertyName: "occupationalCredentialAwarded",

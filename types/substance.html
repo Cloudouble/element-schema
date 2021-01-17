@@ -27,7 +27,7 @@
         
         
         activeIngredient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				container: $this,
 				propertyName: "activeIngredient",
@@ -42,7 +42,7 @@
 		}
 
         maximumIntake($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
 				container: $this,
 				propertyName: "maximumIntake",

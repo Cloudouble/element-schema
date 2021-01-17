@@ -27,7 +27,7 @@
         
         
         dateCreated($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date on which the CreativeWork was created or the item was added to a DataFeed.",
 				container: $this,
 				propertyName: "dateCreated",
@@ -43,7 +43,7 @@
 		}
 
         dateDeleted($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The datetime the item was removed from the DataFeed.",
 				container: $this,
 				propertyName: "dateDeleted",
@@ -59,7 +59,7 @@
 		}
 
         dateModified($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
 				container: $this,
 				propertyName: "dateModified",
@@ -75,7 +75,7 @@
 		}
 
         item($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')\u2019.",
 				container: $this,
 				propertyName: "item",

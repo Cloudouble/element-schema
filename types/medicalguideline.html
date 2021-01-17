@@ -27,7 +27,7 @@
         
         
         evidenceLevel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Strength of evidence of the data used to formulate the guideline (enumerated).",
 				container: $this,
 				propertyName: "evidenceLevel",
@@ -42,7 +42,7 @@
 		}
 
         evidenceOrigin($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.",
 				container: $this,
 				propertyName: "evidenceOrigin",
@@ -57,7 +57,7 @@
 		}
 
         guidelineDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Date on which this guideline's recommendation was made.",
 				container: $this,
 				propertyName: "guidelineDate",
@@ -72,7 +72,7 @@
 		}
 
         guidelineSubject($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The medical conditions, treatments, etc. that are the subject of the guideline.",
 				container: $this,
 				propertyName: "guidelineSubject",

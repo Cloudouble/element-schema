@@ -27,7 +27,7 @@
         
         
         dateIssued($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date the ticket was issued.",
 				container: $this,
 				propertyName: "dateIssued",
@@ -43,7 +43,7 @@
 		}
 
         issuedBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The organization issuing the ticket or permit.",
 				container: $this,
 				propertyName: "issuedBy",
@@ -58,7 +58,7 @@
 		}
 
         priceCurrency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
 				container: $this,
 				propertyName: "priceCurrency",
@@ -73,7 +73,7 @@
 		}
 
         ticketNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unique identifier for the ticket.",
 				container: $this,
 				propertyName: "ticketNumber",
@@ -88,7 +88,7 @@
 		}
 
         ticketToken($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
 				container: $this,
 				propertyName: "ticketToken",
@@ -104,7 +104,7 @@
 		}
 
         ticketedSeat($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The seat associated with the ticket.",
 				container: $this,
 				propertyName: "ticketedSeat",
@@ -119,7 +119,7 @@
 		}
 
         totalPrice($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The total price for the reservation or ticket, including applicable taxes, shipping, etc.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
 				container: $this,
 				propertyName: "totalPrice",
@@ -136,7 +136,7 @@
 		}
 
         underName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The person or organization the reservation or ticket is for.",
 				container: $this,
 				propertyName: "underName",

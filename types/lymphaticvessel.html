@@ -27,7 +27,7 @@
         
         
         originatesFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The vasculature the lymphatic structure originates, or afferents, from.",
 				container: $this,
 				propertyName: "originatesFrom",
@@ -42,7 +42,7 @@
 		}
 
         regionDrained($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
 				container: $this,
 				propertyName: "regionDrained",
@@ -58,7 +58,7 @@
 		}
 
         runsTo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The vasculature the lymphatic structure runs, or efferents, to.",
 				container: $this,
 				propertyName: "runsTo",

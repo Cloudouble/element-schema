@@ -27,7 +27,7 @@
         
         
         diagnosis($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
 				container: $this,
 				propertyName: "diagnosis",
@@ -42,7 +42,7 @@
 		}
 
         distinguishingSign($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.",
 				container: $this,
 				propertyName: "distinguishingSign",

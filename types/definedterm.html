@@ -27,7 +27,7 @@
         
         
         inDefinedTermSet($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A [[DefinedTermSet]] that contains this term.",
 				container: $this,
 				propertyName: "inDefinedTermSet",
@@ -43,7 +43,7 @@
 		}
 
         termCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]",
 				container: $this,
 				propertyName: "termCode",

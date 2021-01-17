@@ -27,7 +27,7 @@
         
         
         seatNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The location of the reserved seat (e.g., 27).",
 				container: $this,
 				propertyName: "seatNumber",
@@ -42,7 +42,7 @@
 		}
 
         seatRow($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The row location of the reserved seat (e.g., B).",
 				container: $this,
 				propertyName: "seatRow",
@@ -57,7 +57,7 @@
 		}
 
         seatSection($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The section location of the reserved seat (e.g. Orchestra).",
 				container: $this,
 				propertyName: "seatSection",
@@ -72,7 +72,7 @@
 		}
 
         seatingType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type\\/class of the seat.",
 				container: $this,
 				propertyName: "seatingType",

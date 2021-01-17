@@ -27,7 +27,7 @@
         
         
         addressCountry($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_3166-1).",
 				container: $this,
 				propertyName: "addressCountry",
@@ -43,7 +43,7 @@
 		}
 
         addressLocality($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The locality in which the street address is, and which is in the region. For example, Mountain View.",
 				container: $this,
 				propertyName: "addressLocality",
@@ -58,7 +58,7 @@
 		}
 
         addressRegion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_administrative_divisions_by_country) ",
 				container: $this,
 				propertyName: "addressRegion",
@@ -73,7 +73,7 @@
 		}
 
         postOfficeBoxNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The post office box number for PO box addresses.",
 				container: $this,
 				propertyName: "postOfficeBoxNumber",
@@ -88,7 +88,7 @@
 		}
 
         postalCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The postal code. For example, 94043.",
 				container: $this,
 				propertyName: "postalCode",
@@ -103,7 +103,7 @@
 		}
 
         streetAddress($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The street address. For example, 1600 Amphitheatre Pkwy.",
 				container: $this,
 				propertyName: "streetAddress",

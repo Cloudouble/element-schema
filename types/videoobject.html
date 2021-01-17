@@ -27,7 +27,7 @@
         
         
         actor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "actor",
@@ -42,7 +42,7 @@
 		}
 
         actors($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "actors",
@@ -57,7 +57,7 @@
 		}
 
         caption($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
 				container: $this,
 				propertyName: "caption",
@@ -73,7 +73,7 @@
 		}
 
         director($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "director",
@@ -88,7 +88,7 @@
 		}
 
         directors($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "directors",
@@ -103,7 +103,7 @@
 		}
 
         musicBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The composer of the soundtrack.",
 				container: $this,
 				propertyName: "musicBy",
@@ -119,7 +119,7 @@
 		}
 
         thumbnail($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Thumbnail image for an image or video.",
 				container: $this,
 				propertyName: "thumbnail",
@@ -134,7 +134,7 @@
 		}
 
         transcript($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
 				container: $this,
 				propertyName: "transcript",
@@ -149,7 +149,7 @@
 		}
 
         videoFrameSize($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The frame size of the video.",
 				container: $this,
 				propertyName: "videoFrameSize",
@@ -164,7 +164,7 @@
 		}
 
         videoQuality($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The quality of the video.",
 				container: $this,
 				propertyName: "videoQuality",

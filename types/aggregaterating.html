@@ -27,7 +27,7 @@
         
         
         itemReviewed($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The item that is being reviewed\\/rated.",
 				container: $this,
 				propertyName: "itemReviewed",
@@ -42,7 +42,7 @@
 		}
 
         ratingCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The count of total number of ratings.",
 				container: $this,
 				propertyName: "ratingCount",
@@ -57,7 +57,7 @@
 		}
 
         reviewCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The count of total number of reviews.",
 				container: $this,
 				propertyName: "reviewCount",

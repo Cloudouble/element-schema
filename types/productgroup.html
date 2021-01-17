@@ -27,7 +27,7 @@
         
         
         hasVariant($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).",
 				container: $this,
 				propertyName: "hasVariant",
@@ -42,7 +42,7 @@
 		}
 
         productGroupID($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates a textual identifier for a ProductGroup.",
 				container: $this,
 				propertyName: "productGroupID",
@@ -57,7 +57,7 @@
 		}
 
         variesBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. \"color\"; terms defined elsewhere can be referenced with their URIs.",
 				container: $this,
 				propertyName: "variesBy",

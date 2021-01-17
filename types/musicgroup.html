@@ -27,7 +27,7 @@
         
         
         album($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A music album.",
 				container: $this,
 				propertyName: "album",
@@ -42,7 +42,7 @@
 		}
 
         albums($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A collection of music albums.",
 				container: $this,
 				propertyName: "albums",
@@ -57,7 +57,7 @@
 		}
 
         genre($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Genre of the creative work, broadcast channel or group.",
 				container: $this,
 				propertyName: "genre",
@@ -73,7 +73,7 @@
 		}
 
         musicGroupMember($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A member of a music group&#x2014;for example, John, Paul, George, or Ringo.",
 				container: $this,
 				propertyName: "musicGroupMember",
@@ -88,7 +88,7 @@
 		}
 
         track($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
 				container: $this,
 				propertyName: "track",
@@ -104,7 +104,7 @@
 		}
 
         tracks($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A music recording (track)&#x2014;usually a single song.",
 				container: $this,
 				propertyName: "tracks",

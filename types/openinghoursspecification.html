@@ -27,7 +27,7 @@
         
         
         closes($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The closing hour of the place or service on the given day(s) of the week.",
 				container: $this,
 				propertyName: "closes",
@@ -42,7 +42,7 @@
 		}
 
         dayOfWeek($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The day of the week for which these opening hours are valid.",
 				container: $this,
 				propertyName: "dayOfWeek",
@@ -57,7 +57,7 @@
 		}
 
         opens($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The opening hour of the place or service on the given day(s) of the week.",
 				container: $this,
 				propertyName: "opens",
@@ -72,7 +72,7 @@
 		}
 
         validFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date when the item becomes valid.",
 				container: $this,
 				propertyName: "validFrom",
@@ -88,7 +88,7 @@
 		}
 
         validThrough($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
 				container: $this,
 				propertyName: "validThrough",

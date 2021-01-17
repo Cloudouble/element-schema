@@ -27,7 +27,7 @@
         
         
         additionalNumberOfGuests($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If responding yes, the number of guests who will attend in addition to the invitee.",
 				container: $this,
 				propertyName: "additionalNumberOfGuests",
@@ -42,7 +42,7 @@
 		}
 
         comment($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Comments, typically from users.",
 				container: $this,
 				propertyName: "comment",
@@ -57,7 +57,7 @@
 		}
 
         rsvpResponse($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The response (yes, no, maybe) to the RSVP.",
 				container: $this,
 				propertyName: "rsvpResponse",

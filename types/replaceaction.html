@@ -27,7 +27,7 @@
         
         
         replacee($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of object. The object that is being replaced.",
 				container: $this,
 				propertyName: "replacee",
@@ -42,7 +42,7 @@
 		}
 
         replacer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of object. The object that replaces.",
 				container: $this,
 				propertyName: "replacer",

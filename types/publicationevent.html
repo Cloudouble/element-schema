@@ -27,7 +27,7 @@
         
         
         free($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A flag to signal that the item, event, or place is accessible for free.",
 				container: $this,
 				propertyName: "free",
@@ -42,7 +42,7 @@
 		}
 
         publishedBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An agent associated with the publication event.",
 				container: $this,
 				propertyName: "publishedBy",
@@ -58,7 +58,7 @@
 		}
 
         publishedOn($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A broadcast service associated with the publication event.",
 				container: $this,
 				propertyName: "publishedOn",

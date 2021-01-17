@@ -27,7 +27,7 @@
         
         
         acceptedOffer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
 				container: $this,
 				propertyName: "acceptedOffer",
@@ -42,7 +42,7 @@
 		}
 
         billingAddress($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The billing address for the order.",
 				container: $this,
 				propertyName: "billingAddress",
@@ -57,7 +57,7 @@
 		}
 
         broker($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
 				container: $this,
 				propertyName: "broker",
@@ -73,7 +73,7 @@
 		}
 
         confirmationNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A number that confirms the given order or payment has been received.",
 				container: $this,
 				propertyName: "confirmationNumber",
@@ -88,7 +88,7 @@
 		}
 
         customer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Party placing the order or paying the invoice.",
 				container: $this,
 				propertyName: "customer",
@@ -104,7 +104,7 @@
 		}
 
         discount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any discount applied (to an Order).",
 				container: $this,
 				propertyName: "discount",
@@ -120,7 +120,7 @@
 		}
 
         discountCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Code used to redeem a discount.",
 				container: $this,
 				propertyName: "discountCode",
@@ -135,7 +135,7 @@
 		}
 
         discountCurrency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The currency of the discount.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
 				container: $this,
 				propertyName: "discountCurrency",
@@ -150,7 +150,7 @@
 		}
 
         isGift($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Was the offer accepted as a gift for someone other than the buyer.",
 				container: $this,
 				propertyName: "isGift",
@@ -165,7 +165,7 @@
 		}
 
         merchant($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "'merchant' is an out-dated term for 'seller'.",
 				container: $this,
 				propertyName: "merchant",
@@ -181,7 +181,7 @@
 		}
 
         orderDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Date order was placed.",
 				container: $this,
 				propertyName: "orderDate",
@@ -197,7 +197,7 @@
 		}
 
         orderDelivery($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The delivery of the parcel related to this order or order item.",
 				container: $this,
 				propertyName: "orderDelivery",
@@ -212,7 +212,7 @@
 		}
 
         orderNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The identifier of the transaction.",
 				container: $this,
 				propertyName: "orderNumber",
@@ -227,7 +227,7 @@
 		}
 
         orderStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The current status of the order.",
 				container: $this,
 				propertyName: "orderStatus",
@@ -242,7 +242,7 @@
 		}
 
         orderedItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The item ordered.",
 				container: $this,
 				propertyName: "orderedItem",
@@ -259,7 +259,7 @@
 		}
 
         partOfInvoice($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The order is being paid as part of the referenced Invoice.",
 				container: $this,
 				propertyName: "partOfInvoice",
@@ -274,7 +274,7 @@
 		}
 
         paymentDue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date that payment is due.",
 				container: $this,
 				propertyName: "paymentDue",
@@ -289,7 +289,7 @@
 		}
 
         paymentDueDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date that payment is due.",
 				container: $this,
 				propertyName: "paymentDueDate",
@@ -305,7 +305,7 @@
 		}
 
         paymentMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of the credit card or other method of payment for the order.",
 				container: $this,
 				propertyName: "paymentMethod",
@@ -320,7 +320,7 @@
 		}
 
         paymentMethodId($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
 				container: $this,
 				propertyName: "paymentMethodId",
@@ -335,7 +335,7 @@
 		}
 
         paymentUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The URL for sending a payment.",
 				container: $this,
 				propertyName: "paymentUrl",
@@ -350,7 +350,7 @@
 		}
 
         seller($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				container: $this,
 				propertyName: "seller",

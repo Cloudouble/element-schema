@@ -27,7 +27,7 @@
         
         
         dietFeatures($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations\\/deviations from the USDA or other regulatory body's approved dietary guidelines.",
 				container: $this,
 				propertyName: "dietFeatures",
@@ -42,7 +42,7 @@
 		}
 
         endorsers($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "People or organizations that endorse the plan.",
 				container: $this,
 				propertyName: "endorsers",
@@ -58,7 +58,7 @@
 		}
 
         expertConsiderations($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Medical expert advice related to the plan.",
 				container: $this,
 				propertyName: "expertConsiderations",
@@ -73,7 +73,7 @@
 		}
 
         physiologicalBenefits($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specific physiologic benefits associated to the plan.",
 				container: $this,
 				propertyName: "physiologicalBenefits",
@@ -88,7 +88,7 @@
 		}
 
         risks($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specific physiologic risks associated to the diet plan.",
 				container: $this,
 				propertyName: "risks",

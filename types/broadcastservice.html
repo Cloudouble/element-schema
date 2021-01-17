@@ -27,7 +27,7 @@
         
         
         area($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The area within which users can expect to reach the broadcast service.",
 				container: $this,
 				propertyName: "area",
@@ -42,7 +42,7 @@
 		}
 
         broadcastAffiliateOf($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The media network(s) whose content is broadcast on this station.",
 				container: $this,
 				propertyName: "broadcastAffiliateOf",
@@ -57,7 +57,7 @@
 		}
 
         broadcastDisplayName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name displayed in the channel guide. For many US affiliates, it is the network name.",
 				container: $this,
 				propertyName: "broadcastDisplayName",
@@ -72,7 +72,7 @@
 		}
 
         broadcastFrequency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. \"87 FM\".",
 				container: $this,
 				propertyName: "broadcastFrequency",
@@ -88,7 +88,7 @@
 		}
 
         broadcastTimezone($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The timezone in [ISO 8601 format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601) for which the service bases its broadcasts",
 				container: $this,
 				propertyName: "broadcastTimezone",
@@ -103,7 +103,7 @@
 		}
 
         broadcaster($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The organization owning or operating the broadcast service.",
 				container: $this,
 				propertyName: "broadcaster",
@@ -118,7 +118,7 @@
 		}
 
         callSign($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A [callsign](https:\\/\\/en.wikipedia.org\\/wiki\\/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.",
 				container: $this,
 				propertyName: "callSign",
@@ -133,7 +133,7 @@
 		}
 
         hasBroadcastChannel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A broadcast channel of a broadcast service.",
 				container: $this,
 				propertyName: "hasBroadcastChannel",
@@ -148,7 +148,7 @@
 		}
 
         inLanguage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[availableLanguage]].",
 				container: $this,
 				propertyName: "inLanguage",
@@ -164,7 +164,7 @@
 		}
 
         parentService($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.",
 				container: $this,
 				propertyName: "parentService",
@@ -179,7 +179,7 @@
 		}
 
         videoFormat($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
 				container: $this,
 				propertyName: "videoFormat",

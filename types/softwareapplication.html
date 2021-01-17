@@ -27,7 +27,7 @@
         
         
         applicationCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Type of software application, e.g. 'Game, Multimedia'.",
 				container: $this,
 				propertyName: "applicationCategory",
@@ -43,7 +43,7 @@
 		}
 
         applicationSubCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Subcategory of the application, e.g. 'Arcade Game'.",
 				container: $this,
 				propertyName: "applicationSubCategory",
@@ -59,7 +59,7 @@
 		}
 
         applicationSuite($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of the application suite to which the application belongs (e.g. Excel belongs to Office).",
 				container: $this,
 				propertyName: "applicationSuite",
@@ -74,7 +74,7 @@
 		}
 
         availableOnDevice($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
 				container: $this,
 				propertyName: "availableOnDevice",
@@ -89,7 +89,7 @@
 		}
 
         countriesNotSupported($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
 				container: $this,
 				propertyName: "countriesNotSupported",
@@ -104,7 +104,7 @@
 		}
 
         countriesSupported($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
 				container: $this,
 				propertyName: "countriesSupported",
@@ -119,7 +119,7 @@
 		}
 
         device($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Device required to run the application. Used in cases where a specific make\\/model is required to run the application.",
 				container: $this,
 				propertyName: "device",
@@ -134,7 +134,7 @@
 		}
 
         downloadUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If the file can be downloaded, URL to download the binary.",
 				container: $this,
 				propertyName: "downloadUrl",
@@ -149,7 +149,7 @@
 		}
 
         featureList($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Features or modules provided by this application (and possibly required by other applications).",
 				container: $this,
 				propertyName: "featureList",
@@ -165,7 +165,7 @@
 		}
 
         fileSize($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Size of the application \\/ package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.",
 				container: $this,
 				propertyName: "fileSize",
@@ -180,7 +180,7 @@
 		}
 
         installUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "URL at which the app may be installed, if different from the URL of the item.",
 				container: $this,
 				propertyName: "installUrl",
@@ -195,7 +195,7 @@
 		}
 
         memoryRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Minimum memory requirements.",
 				container: $this,
 				propertyName: "memoryRequirements",
@@ -211,7 +211,7 @@
 		}
 
         operatingSystem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Operating systems supported (Windows 7, OSX 10.6, Android 1.6).",
 				container: $this,
 				propertyName: "operatingSystem",
@@ -226,7 +226,7 @@
 		}
 
         permissions($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).",
 				container: $this,
 				propertyName: "permissions",
@@ -241,7 +241,7 @@
 		}
 
         processorRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Processor architecture required to run the application (e.g. IA64).",
 				container: $this,
 				propertyName: "processorRequirements",
@@ -256,7 +256,7 @@
 		}
 
         releaseNotes($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Description of what changed in this version.",
 				container: $this,
 				propertyName: "releaseNotes",
@@ -272,7 +272,7 @@
 		}
 
         requirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
 				container: $this,
 				propertyName: "requirements",
@@ -288,7 +288,7 @@
 		}
 
         screenshot($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A link to a screenshot image of the app.",
 				container: $this,
 				propertyName: "screenshot",
@@ -304,7 +304,7 @@
 		}
 
         softwareAddOn($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Additional content for a software application.",
 				container: $this,
 				propertyName: "softwareAddOn",
@@ -319,7 +319,7 @@
 		}
 
         softwareHelp($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Software application help.",
 				container: $this,
 				propertyName: "softwareHelp",
@@ -334,7 +334,7 @@
 		}
 
         softwareRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).",
 				container: $this,
 				propertyName: "softwareRequirements",
@@ -350,7 +350,7 @@
 		}
 
         softwareVersion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Version of the software instance.",
 				container: $this,
 				propertyName: "softwareVersion",
@@ -365,7 +365,7 @@
 		}
 
         storageRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Storage requirements (free space required).",
 				container: $this,
 				propertyName: "storageRequirements",
@@ -381,7 +381,7 @@
 		}
 
         supportingData($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Supporting data for a SoftwareApplication.",
 				container: $this,
 				propertyName: "supportingData",

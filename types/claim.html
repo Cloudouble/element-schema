@@ -27,7 +27,7 @@
         
         
         appearance($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates an occurence of a [[Claim]] in some [[CreativeWork]].",
 				container: $this,
 				propertyName: "appearance",
@@ -42,7 +42,7 @@
 		}
 
         firstAppearance($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].",
 				container: $this,
 				propertyName: "firstAppearance",

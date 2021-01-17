@@ -27,7 +27,7 @@
         
         
         alignmentType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.",
 				container: $this,
 				propertyName: "alignmentType",
@@ -42,7 +42,7 @@
 		}
 
         educationalFramework($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The framework to which the resource being described is aligned.",
 				container: $this,
 				propertyName: "educationalFramework",
@@ -57,7 +57,7 @@
 		}
 
         targetDescription($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The description of a node in an established educational framework.",
 				container: $this,
 				propertyName: "targetDescription",
@@ -72,7 +72,7 @@
 		}
 
         targetName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of a node in an established educational framework.",
 				container: $this,
 				propertyName: "targetName",
@@ -87,7 +87,7 @@
 		}
 
         targetUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The URL of a node in an established educational framework.",
 				container: $this,
 				propertyName: "targetUrl",

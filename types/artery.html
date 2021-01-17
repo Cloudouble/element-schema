@@ -27,7 +27,7 @@
         
         
         arterialBranch($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The branches that comprise the arterial structure.",
 				container: $this,
 				propertyName: "arterialBranch",
@@ -42,7 +42,7 @@
 		}
 
         supplyTo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The area to which the artery supplies blood.",
 				container: $this,
 				propertyName: "supplyTo",

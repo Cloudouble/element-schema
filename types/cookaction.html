@@ -27,7 +27,7 @@
         
         
         foodEstablishment($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of location. The specific food establishment where the action occurred.",
 				container: $this,
 				propertyName: "foodEstablishment",
@@ -43,7 +43,7 @@
 		}
 
         foodEvent($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of location. The specific food event where the action occurred.",
 				container: $this,
 				propertyName: "foodEvent",
@@ -58,7 +58,7 @@
 		}
 
         recipe($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of instrument. The recipe\\/instructions used to perform the action.",
 				container: $this,
 				propertyName: "recipe",

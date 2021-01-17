@@ -27,7 +27,7 @@
         
         
         boardingPolicy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
 				container: $this,
 				propertyName: "boardingPolicy",
@@ -42,7 +42,7 @@
 		}
 
         iataCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "IATA identifier for an airline or airport.",
 				container: $this,
 				propertyName: "iataCode",

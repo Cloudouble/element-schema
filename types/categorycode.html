@@ -27,7 +27,7 @@
         
         
         codeValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A short textual code that uniquely identifies the value.",
 				container: $this,
 				propertyName: "codeValue",
@@ -42,7 +42,7 @@
 		}
 
         inCodeSet($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A [[CategoryCodeSet]] that contains this category code.",
 				container: $this,
 				propertyName: "inCodeSet",

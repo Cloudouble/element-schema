@@ -27,7 +27,7 @@
         
         
         doseUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unit of the dose, e.g. 'mg'.",
 				container: $this,
 				propertyName: "doseUnit",
@@ -42,7 +42,7 @@
 		}
 
         doseValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The value of the dose, e.g. 500.",
 				container: $this,
 				propertyName: "doseValue",
@@ -58,7 +58,7 @@
 		}
 
         frequency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "How often the dose is taken, e.g. 'daily'.",
 				container: $this,
 				propertyName: "frequency",
@@ -73,7 +73,7 @@
 		}
 
         targetPopulation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
 				container: $this,
 				propertyName: "targetPopulation",

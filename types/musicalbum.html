@@ -27,7 +27,7 @@
         
         
         albumProductionType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
 				container: $this,
 				propertyName: "albumProductionType",
@@ -42,7 +42,7 @@
 		}
 
         albumRelease($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A release of this album.",
 				container: $this,
 				propertyName: "albumRelease",
@@ -57,7 +57,7 @@
 		}
 
         albumReleaseType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The kind of release which this album is: single, EP or album.",
 				container: $this,
 				propertyName: "albumReleaseType",
@@ -72,7 +72,7 @@
 		}
 
         byArtist($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The artist that performed this album or recording.",
 				container: $this,
 				propertyName: "byArtist",

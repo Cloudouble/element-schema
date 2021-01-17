@@ -27,7 +27,7 @@
         
         
         audience($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An intended audience, i.e. a group for whom something was created.",
 				container: $this,
 				propertyName: "audience",
@@ -42,7 +42,7 @@
 		}
 
         event($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Upcoming or past event associated with this place, organization, or action.",
 				container: $this,
 				propertyName: "event",

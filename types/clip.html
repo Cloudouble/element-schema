@@ -27,7 +27,7 @@
         
         
         actor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "actor",
@@ -42,7 +42,7 @@
 		}
 
         actors($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "actors",
@@ -57,7 +57,7 @@
 		}
 
         clipNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Position of the clip within an ordered group of clips.",
 				container: $this,
 				propertyName: "clipNumber",
@@ -73,7 +73,7 @@
 		}
 
         director($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "director",
@@ -88,7 +88,7 @@
 		}
 
         directors($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.",
 				container: $this,
 				propertyName: "directors",
@@ -103,7 +103,7 @@
 		}
 
         endOffset($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The end time of the clip expressed as the number of seconds from the beginning of the work.",
 				container: $this,
 				propertyName: "endOffset",
@@ -119,7 +119,7 @@
 		}
 
         musicBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The composer of the soundtrack.",
 				container: $this,
 				propertyName: "musicBy",
@@ -135,7 +135,7 @@
 		}
 
         partOfEpisode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The episode to which this clip belongs.",
 				container: $this,
 				propertyName: "partOfEpisode",
@@ -150,7 +150,7 @@
 		}
 
         partOfSeason($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The season to which this episode belongs.",
 				container: $this,
 				propertyName: "partOfSeason",
@@ -165,7 +165,7 @@
 		}
 
         partOfSeries($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The series to which this episode or season belongs.",
 				container: $this,
 				propertyName: "partOfSeries",
@@ -180,7 +180,7 @@
 		}
 
         startOffset($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The start time of the clip expressed as the number of seconds from the beginning of the work.",
 				container: $this,
 				propertyName: "startOffset",

@@ -27,7 +27,7 @@
         
         
         arrivalBoatTerminal($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The terminal or port from which the boat arrives.",
 				container: $this,
 				propertyName: "arrivalBoatTerminal",
@@ -42,7 +42,7 @@
 		}
 
         departureBoatTerminal($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The terminal or port from which the boat departs.",
 				container: $this,
 				propertyName: "departureBoatTerminal",

@@ -27,7 +27,7 @@
         
         
         stageAsNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The stage represented as a number, e.g. 3.",
 				container: $this,
 				propertyName: "stageAsNumber",
@@ -42,7 +42,7 @@
 		}
 
         subStageSuffix($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The substage, e.g. 'a' for Stage IIIa.",
 				container: $this,
 				propertyName: "subStageSuffix",

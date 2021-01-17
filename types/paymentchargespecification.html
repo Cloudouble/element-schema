@@ -27,7 +27,7 @@
         
         
         appliesToDeliveryMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The delivery method(s) to which the delivery charge or payment charge specification applies.",
 				container: $this,
 				propertyName: "appliesToDeliveryMethod",
@@ -42,7 +42,7 @@
 		}
 
         appliesToPaymentMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The payment method(s) to which the payment charge specification applies.",
 				container: $this,
 				propertyName: "appliesToPaymentMethod",

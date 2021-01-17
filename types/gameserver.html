@@ -27,7 +27,7 @@
         
         
         game($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Video game which is played on this server.",
 				container: $this,
 				propertyName: "game",
@@ -42,7 +42,7 @@
 		}
 
         playersOnline($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Number of players on the server.",
 				container: $this,
 				propertyName: "playersOnline",
@@ -57,7 +57,7 @@
 		}
 
         serverStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Status of a game server.",
 				container: $this,
 				propertyName: "serverStatus",

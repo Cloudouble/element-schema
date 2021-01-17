@@ -27,7 +27,7 @@
         
         
         postalCodeBegin($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "First postal code in a range (included).",
 				container: $this,
 				propertyName: "postalCodeBegin",
@@ -42,7 +42,7 @@
 		}
 
         postalCodeEnd($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Last postal code in the range (included). Needs to be after [[postalCodeBegin]].",
 				container: $this,
 				propertyName: "postalCodeEnd",

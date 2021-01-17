@@ -27,7 +27,7 @@
         
         
         duration($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
 				propertyName: "duration",
@@ -42,7 +42,7 @@
 		}
 
         median($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The median value.",
 				container: $this,
 				propertyName: "median",
@@ -57,7 +57,7 @@
 		}
 
         percentile10($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The 10th percentile value.",
 				container: $this,
 				propertyName: "percentile10",
@@ -72,7 +72,7 @@
 		}
 
         percentile25($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The 25th percentile value.",
 				container: $this,
 				propertyName: "percentile25",
@@ -87,7 +87,7 @@
 		}
 
         percentile75($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The 75th percentile value.",
 				container: $this,
 				propertyName: "percentile75",
@@ -102,7 +102,7 @@
 		}
 
         percentile90($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The 90th percentile value.",
 				container: $this,
 				propertyName: "percentile90",

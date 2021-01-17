@@ -27,7 +27,7 @@
         
         
         pageEnd($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The page on which the work ends; for example \"138\" or \"xvi\".",
 				container: $this,
 				propertyName: "pageEnd",
@@ -43,7 +43,7 @@
 		}
 
         pageStart($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The page on which the work starts; for example \"135\" or \"xiii\".",
 				container: $this,
 				propertyName: "pageStart",
@@ -59,7 +59,7 @@
 		}
 
         pagination($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
 				container: $this,
 				propertyName: "pagination",
@@ -74,7 +74,7 @@
 		}
 
         volumeNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Identifies the volume of publication or multi-part work; for example, \"iii\" or \"2\".",
 				container: $this,
 				propertyName: "volumeNumber",

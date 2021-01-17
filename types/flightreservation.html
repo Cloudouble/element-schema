@@ -27,7 +27,7 @@
         
         
         boardingGroup($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The airline-specific indicator of boarding order \\/ preference.",
 				container: $this,
 				propertyName: "boardingGroup",
@@ -42,7 +42,7 @@
 		}
 
         passengerPriorityStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).",
 				container: $this,
 				propertyName: "passengerPriorityStatus",
@@ -58,7 +58,7 @@
 		}
 
         passengerSequenceNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The passenger's sequence number as assigned by the airline.",
 				container: $this,
 				propertyName: "passengerSequenceNumber",
@@ -73,7 +73,7 @@
 		}
 
         securityScreening($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of security screening the passenger is subject to.",
 				container: $this,
 				propertyName: "securityScreening",

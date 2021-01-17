@@ -27,7 +27,7 @@
         
         
         commentText($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The text of the UserComment.",
 				container: $this,
 				propertyName: "commentText",
@@ -42,7 +42,7 @@
 		}
 
         commentTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The time at which the UserComment was made.",
 				container: $this,
 				propertyName: "commentTime",
@@ -58,7 +58,7 @@
 		}
 
         creator($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The creator\\/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
 				container: $this,
 				propertyName: "creator",
@@ -74,7 +74,7 @@
 		}
 
         discusses($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifies the CreativeWork associated with the UserComment.",
 				container: $this,
 				propertyName: "discusses",
@@ -89,7 +89,7 @@
 		}
 
         replyToUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The URL at which a reply may be posted to the specified UserComment.",
 				container: $this,
 				propertyName: "replyToUrl",

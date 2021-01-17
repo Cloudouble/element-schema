@@ -27,7 +27,7 @@
         
         
         cookTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The time it takes to actually cook the dish, in [ISO 8601 duration format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
 				propertyName: "cookTime",
@@ -42,7 +42,7 @@
 		}
 
         cookingMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The method of cooking, such as Frying, Steaming, ...",
 				container: $this,
 				propertyName: "cookingMethod",
@@ -57,7 +57,7 @@
 		}
 
         ingredients($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
 				container: $this,
 				propertyName: "ingredients",
@@ -72,7 +72,7 @@
 		}
 
         nutrition($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Nutrition information about the recipe or menu item.",
 				container: $this,
 				propertyName: "nutrition",
@@ -87,7 +87,7 @@
 		}
 
         recipeCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The category of the recipe\u2014for example, appetizer, entree, etc.",
 				container: $this,
 				propertyName: "recipeCategory",
@@ -102,7 +102,7 @@
 		}
 
         recipeCuisine($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The cuisine of the recipe (for example, French or Ethiopian).",
 				container: $this,
 				propertyName: "recipeCuisine",
@@ -117,7 +117,7 @@
 		}
 
         recipeIngredient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
 				container: $this,
 				propertyName: "recipeIngredient",
@@ -132,7 +132,7 @@
 		}
 
         recipeInstructions($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and\\/or HowToSection items.",
 				container: $this,
 				propertyName: "recipeInstructions",
@@ -149,7 +149,7 @@
 		}
 
         recipeYield($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
 				container: $this,
 				propertyName: "recipeYield",
@@ -165,7 +165,7 @@
 		}
 
         suitableForDiet($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
 				container: $this,
 				propertyName: "suitableForDiet",

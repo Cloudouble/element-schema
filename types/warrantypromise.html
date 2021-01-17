@@ -27,7 +27,7 @@
         
         
         durationOfWarranty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
 				container: $this,
 				propertyName: "durationOfWarranty",
@@ -42,7 +42,7 @@
 		}
 
         warrantyScope($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The scope of the warranty promise.",
 				container: $this,
 				propertyName: "warrantyScope",

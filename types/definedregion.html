@@ -27,7 +27,7 @@
         
         
         addressCountry($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_3166-1).",
 				container: $this,
 				propertyName: "addressCountry",
@@ -43,7 +43,7 @@
 		}
 
         addressRegion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_administrative_divisions_by_country) ",
 				container: $this,
 				propertyName: "addressRegion",
@@ -58,7 +58,7 @@
 		}
 
         postalCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The postal code. For example, 94043.",
 				container: $this,
 				propertyName: "postalCode",
@@ -73,7 +73,7 @@
 		}
 
         postalCodePrefix($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.",
 				container: $this,
 				propertyName: "postalCodePrefix",
@@ -88,7 +88,7 @@
 		}
 
         postalCodeRange($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A defined range of postal codes.",
 				container: $this,
 				propertyName: "postalCodeRange",

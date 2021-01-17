@@ -27,7 +27,7 @@
         
         
         datePosted($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Publication date of an online listing.",
 				container: $this,
 				propertyName: "datePosted",
@@ -43,7 +43,7 @@
 		}
 
         leaseLength($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.",
 				container: $this,
 				propertyName: "leaseLength",

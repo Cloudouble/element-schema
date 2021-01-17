@@ -27,7 +27,7 @@
         
         
         coverageEndTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.",
 				container: $this,
 				propertyName: "coverageEndTime",
@@ -42,7 +42,7 @@
 		}
 
         coverageStartTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.",
 				container: $this,
 				propertyName: "coverageStartTime",
@@ -57,7 +57,7 @@
 		}
 
         liveBlogUpdate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An update to the LiveBlog.",
 				container: $this,
 				propertyName: "liveBlogUpdate",

@@ -27,7 +27,7 @@
         
         
         marginOfError($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A marginOfError for an [[Observation]].",
 				container: $this,
 				propertyName: "marginOfError",
@@ -42,7 +42,7 @@
 		}
 
         measuredProperty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https:\\/\\/www.gs1.org\\/voc\\/?show=properties).",
 				container: $this,
 				propertyName: "measuredProperty",
@@ -57,7 +57,7 @@
 		}
 
         measuredValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The measuredValue of an [[Observation]].",
 				container: $this,
 				propertyName: "measuredValue",
@@ -72,7 +72,7 @@
 		}
 
         observationDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The observationDate of an [[Observation]].",
 				container: $this,
 				propertyName: "observationDate",
@@ -87,7 +87,7 @@
 		}
 
         observedNode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The observedNode of an [[Observation]], often a [[StatisticalPopulation]].",
 				container: $this,
 				propertyName: "observedNode",

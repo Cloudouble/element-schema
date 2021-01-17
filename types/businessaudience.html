@@ -27,7 +27,7 @@
         
         
         numberOfEmployees($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of employees in an organization e.g. business.",
 				container: $this,
 				propertyName: "numberOfEmployees",
@@ -42,7 +42,7 @@
 		}
 
         yearlyRevenue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The size of the business in annual revenue.",
 				container: $this,
 				propertyName: "yearlyRevenue",
@@ -57,7 +57,7 @@
 		}
 
         yearsInOperation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The age of the business.",
 				container: $this,
 				propertyName: "yearsInOperation",

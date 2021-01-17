@@ -27,7 +27,7 @@
         
         
         educationRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Educational background needed for the position or Occupation.",
 				container: $this,
 				propertyName: "educationRequirements",
@@ -43,7 +43,7 @@
 		}
 
         estimatedSalary($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.",
 				container: $this,
 				propertyName: "estimatedSalary",
@@ -60,7 +60,7 @@
 		}
 
         experienceRequirements($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Description of skills and experience needed for the position or Occupation.",
 				container: $this,
 				propertyName: "experienceRequirements",
@@ -75,7 +75,7 @@
 		}
 
         occupationLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: " The region\\/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.",
 				container: $this,
 				propertyName: "occupationLocation",
@@ -90,7 +90,7 @@
 		}
 
         occupationalCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http:\\/\\/www.onetcenter.org\\/taxonomy.html), [ISCO-08](https:\\/\\/www.ilo.org\\/public\\/english\\/bureau\\/stat\\/isco\\/isco08\\/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n\nNote: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.",
 				container: $this,
 				propertyName: "occupationalCategory",
@@ -106,7 +106,7 @@
 		}
 
         qualifications($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specific qualifications required for this role or Occupation.",
 				container: $this,
 				propertyName: "qualifications",
@@ -122,7 +122,7 @@
 		}
 
         responsibilities($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Responsibilities associated with this role or Occupation.",
 				container: $this,
 				propertyName: "responsibilities",
@@ -137,7 +137,7 @@
 		}
 
         skills($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.",
 				container: $this,
 				propertyName: "skills",

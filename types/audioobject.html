@@ -27,7 +27,7 @@
         
         
         caption($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
 				container: $this,
 				propertyName: "caption",
@@ -43,7 +43,7 @@
 		}
 
         transcript($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If this MediaObject is an AudioObject or VideoObject, the transcript of that object.",
 				container: $this,
 				propertyName: "transcript",

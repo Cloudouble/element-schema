@@ -27,7 +27,7 @@
         
         
         aggregateRating($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The overall rating, based on a collection of reviews or ratings, of the item.",
 				container: $this,
 				propertyName: "aggregateRating",
@@ -42,7 +42,7 @@
 		}
 
         logo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An associated logo.",
 				container: $this,
 				propertyName: "logo",
@@ -58,7 +58,7 @@
 		}
 
         review($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A review of the item.",
 				container: $this,
 				propertyName: "review",
@@ -73,7 +73,7 @@
 		}
 
         slogan($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A slogan or motto associated with the item.",
 				container: $this,
 				propertyName: "slogan",

@@ -27,7 +27,7 @@
         
         
         catalogNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The catalog number for the release.",
 				container: $this,
 				propertyName: "catalogNumber",
@@ -42,7 +42,7 @@
 		}
 
         creditedTo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
 				container: $this,
 				propertyName: "creditedTo",
@@ -58,7 +58,7 @@
 		}
 
         duration($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
 				propertyName: "duration",
@@ -73,7 +73,7 @@
 		}
 
         musicReleaseFormat($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
 				container: $this,
 				propertyName: "musicReleaseFormat",
@@ -88,7 +88,7 @@
 		}
 
         recordLabel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The label that issued the release.",
 				container: $this,
 				propertyName: "recordLabel",
@@ -103,7 +103,7 @@
 		}
 
         releaseOf($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The album this is a release of.",
 				container: $this,
 				propertyName: "releaseOf",

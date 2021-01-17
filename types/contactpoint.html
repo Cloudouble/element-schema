@@ -27,7 +27,7 @@
         
         
         areaServed($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The geographic area where a service or offered item is provided.",
 				container: $this,
 				propertyName: "areaServed",
@@ -45,7 +45,7 @@
 		}
 
         availableLanguage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
 				container: $this,
 				propertyName: "availableLanguage",
@@ -61,7 +61,7 @@
 		}
 
         contactOption($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
 				container: $this,
 				propertyName: "contactOption",
@@ -76,7 +76,7 @@
 		}
 
         contactType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
 				container: $this,
 				propertyName: "contactType",
@@ -91,7 +91,7 @@
 		}
 
         email($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Email address.",
 				container: $this,
 				propertyName: "email",
@@ -106,7 +106,7 @@
 		}
 
         faxNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The fax number.",
 				container: $this,
 				propertyName: "faxNumber",
@@ -121,7 +121,7 @@
 		}
 
         hoursAvailable($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The hours during which this service or contact is available.",
 				container: $this,
 				propertyName: "hoursAvailable",
@@ -136,7 +136,7 @@
 		}
 
         productSupported($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
 				container: $this,
 				propertyName: "productSupported",
@@ -152,7 +152,7 @@
 		}
 
         serviceArea($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The geographic area where the service is provided.",
 				container: $this,
 				propertyName: "serviceArea",
@@ -169,7 +169,7 @@
 		}
 
         telephone($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The telephone number.",
 				container: $this,
 				propertyName: "telephone",

@@ -27,7 +27,7 @@
         
         
         hoursAvailable($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The hours during which this service or contact is available.",
 				container: $this,
 				propertyName: "hoursAvailable",
@@ -42,7 +42,7 @@
 		}
 
         validFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date when the item becomes valid.",
 				container: $this,
 				propertyName: "validFrom",
@@ -58,7 +58,7 @@
 		}
 
         validThrough($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
 				container: $this,
 				propertyName: "validThrough",

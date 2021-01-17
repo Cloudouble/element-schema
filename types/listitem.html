@@ -27,7 +27,7 @@
         
         
         item($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')\u2019.",
 				container: $this,
 				propertyName: "item",
@@ -42,7 +42,7 @@
 		}
 
         nextItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A link to the ListItem that follows the current one.",
 				container: $this,
 				propertyName: "nextItem",
@@ -57,7 +57,7 @@
 		}
 
         position($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The position of an item in a series or sequence of items.",
 				container: $this,
 				propertyName: "position",
@@ -73,7 +73,7 @@
 		}
 
         previousItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A link to the ListItem that preceeds the current one.",
 				container: $this,
 				propertyName: "previousItem",

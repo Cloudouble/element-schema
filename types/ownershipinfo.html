@@ -27,7 +27,7 @@
         
         
         acquiredFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The organization or person from which the product was acquired.",
 				container: $this,
 				propertyName: "acquiredFrom",
@@ -43,7 +43,7 @@
 		}
 
         ownedFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date and time of obtaining the product.",
 				container: $this,
 				propertyName: "ownedFrom",
@@ -58,7 +58,7 @@
 		}
 
         ownedThrough($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date and time of giving up ownership on the product.",
 				container: $this,
 				propertyName: "ownedThrough",
@@ -73,7 +73,7 @@
 		}
 
         typeOfGood($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The product that this structured value is referring to.",
 				container: $this,
 				propertyName: "typeOfGood",

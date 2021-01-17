@@ -27,7 +27,7 @@
         
         
         orderDelivery($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The delivery of the parcel related to this order or order item.",
 				container: $this,
 				propertyName: "orderDelivery",
@@ -42,7 +42,7 @@
 		}
 
         orderItemNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The identifier of the order item.",
 				container: $this,
 				propertyName: "orderItemNumber",
@@ -57,7 +57,7 @@
 		}
 
         orderItemStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The current status of the order item.",
 				container: $this,
 				propertyName: "orderItemStatus",
@@ -72,7 +72,7 @@
 		}
 
         orderQuantity($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of the item ordered. If the property is not set, assume the quantity is one.",
 				container: $this,
 				propertyName: "orderQuantity",
@@ -87,7 +87,7 @@
 		}
 
         orderedItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The item ordered.",
 				container: $this,
 				propertyName: "orderedItem",

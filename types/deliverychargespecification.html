@@ -27,7 +27,7 @@
         
         
         appliesToDeliveryMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The delivery method(s) to which the delivery charge or payment charge specification applies.",
 				container: $this,
 				propertyName: "appliesToDeliveryMethod",
@@ -42,7 +42,7 @@
 		}
 
         areaServed($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The geographic area where a service or offered item is provided.",
 				container: $this,
 				propertyName: "areaServed",
@@ -60,7 +60,7 @@
 		}
 
         eligibleRegion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also [[ineligibleRegion]].\n    ",
 				container: $this,
 				propertyName: "eligibleRegion",
@@ -77,7 +77,7 @@
 		}
 
         ineligibleRegion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also [[eligibleRegion]].\n      ",
 				container: $this,
 				propertyName: "ineligibleRegion",

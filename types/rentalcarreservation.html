@@ -27,7 +27,7 @@
         
         
         dropoffLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Where a rental car can be dropped off.",
 				container: $this,
 				propertyName: "dropoffLocation",
@@ -42,7 +42,7 @@
 		}
 
         dropoffTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "When a rental car can be dropped off.",
 				container: $this,
 				propertyName: "dropoffTime",
@@ -57,7 +57,7 @@
 		}
 
         pickupLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Where a taxi will pick up a passenger or a rental car can be picked up.",
 				container: $this,
 				propertyName: "pickupLocation",
@@ -72,7 +72,7 @@
 		}
 
         pickupTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "When a taxi will pickup a passenger or a rental car can be picked up.",
 				container: $this,
 				propertyName: "pickupTime",

@@ -27,7 +27,7 @@
         
         
         seller($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity which offers (sells \\/ leases \\/ lends \\/ loans) the services \\/ goods.  A seller may also be a provider.",
 				container: $this,
 				propertyName: "seller",
@@ -43,7 +43,7 @@
 		}
 
         vendor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "'vendor' is an earlier term for 'seller'.",
 				container: $this,
 				propertyName: "vendor",
@@ -59,7 +59,7 @@
 		}
 
         warrantyPromise($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The warranty promise(s) included in the offer.",
 				container: $this,
 				propertyName: "warrantyPromise",

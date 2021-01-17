@@ -27,7 +27,7 @@
         
         
         broadcastFrequencyValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The frequency in MHz for a particular broadcast.",
 				container: $this,
 				propertyName: "broadcastFrequencyValue",
@@ -43,7 +43,7 @@
 		}
 
         broadcastSignalModulation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The modulation (e.g. FM, AM, etc) used by a particular broadcast service",
 				container: $this,
 				propertyName: "broadcastSignalModulation",
@@ -59,7 +59,7 @@
 		}
 
         broadcastSubChannel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The subchannel used for the broadcast.",
 				container: $this,
 				propertyName: "broadcastSubChannel",

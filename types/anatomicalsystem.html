@@ -27,7 +27,7 @@
         
         
         associatedPathophysiology($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
 				container: $this,
 				propertyName: "associatedPathophysiology",
@@ -42,7 +42,7 @@
 		}
 
         comprisedOf($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.",
 				container: $this,
 				propertyName: "comprisedOf",
@@ -58,7 +58,7 @@
 		}
 
         relatedCondition($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical condition associated with this anatomy.",
 				container: $this,
 				propertyName: "relatedCondition",
@@ -73,7 +73,7 @@
 		}
 
         relatedStructure($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.",
 				container: $this,
 				propertyName: "relatedStructure",
@@ -88,7 +88,7 @@
 		}
 
         relatedTherapy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical therapy related to this anatomy.",
 				container: $this,
 				propertyName: "relatedTherapy",

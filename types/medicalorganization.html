@@ -27,7 +27,7 @@
         
         
         healthPlanNetworkId($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Name or unique ID of network. (Networks are often reused across different insurance plans).",
 				container: $this,
 				propertyName: "healthPlanNetworkId",
@@ -42,7 +42,7 @@
 		}
 
         isAcceptingNewPatients($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Whether the provider is accepting new patients.",
 				container: $this,
 				propertyName: "isAcceptingNewPatients",
@@ -57,7 +57,7 @@
 		}
 
         medicalSpecialty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical specialty of the provider.",
 				container: $this,
 				propertyName: "medicalSpecialty",

@@ -27,7 +27,7 @@
         
         
         codeRepository($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).",
 				container: $this,
 				propertyName: "codeRepository",
@@ -42,7 +42,7 @@
 		}
 
         codeSampleType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
 				container: $this,
 				propertyName: "codeSampleType",
@@ -57,7 +57,7 @@
 		}
 
         programmingLanguage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The computer programming language.",
 				container: $this,
 				propertyName: "programmingLanguage",
@@ -73,7 +73,7 @@
 		}
 
         runtime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
 				container: $this,
 				propertyName: "runtime",
@@ -88,7 +88,7 @@
 		}
 
         runtimePlatform($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).",
 				container: $this,
 				propertyName: "runtimePlatform",
@@ -103,7 +103,7 @@
 		}
 
         sampleType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.",
 				container: $this,
 				propertyName: "sampleType",
@@ -118,7 +118,7 @@
 		}
 
         targetProduct($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Target Operating System \\/ Product to which the code applies.  If applies to several versions, just the product name can be used.",
 				container: $this,
 				propertyName: "targetProduct",

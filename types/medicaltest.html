@@ -27,7 +27,7 @@
         
         
         affectedBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Drugs that affect the test's results.",
 				container: $this,
 				propertyName: "affectedBy",
@@ -42,7 +42,7 @@
 		}
 
         normalRange($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Range of acceptable values for a typical patient, when applicable.",
 				container: $this,
 				propertyName: "normalRange",
@@ -58,7 +58,7 @@
 		}
 
         signDetected($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sign detected by the test.",
 				container: $this,
 				propertyName: "signDetected",
@@ -73,7 +73,7 @@
 		}
 
         usedToDiagnose($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A condition the test is used to diagnose.",
 				container: $this,
 				propertyName: "usedToDiagnose",
@@ -88,7 +88,7 @@
 		}
 
         usesDevice($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Device used to perform the test.",
 				container: $this,
 				propertyName: "usesDevice",

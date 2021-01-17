@@ -27,7 +27,7 @@
         
         
         duration($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
 				propertyName: "duration",
@@ -42,7 +42,7 @@
 		}
 
         readBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A person who reads (performs) the audiobook.",
 				container: $this,
 				propertyName: "readBy",

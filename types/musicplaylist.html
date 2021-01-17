@@ -27,7 +27,7 @@
         
         
         numTracks($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of tracks in this album or playlist.",
 				container: $this,
 				propertyName: "numTracks",
@@ -42,7 +42,7 @@
 		}
 
         track($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.",
 				container: $this,
 				propertyName: "track",
@@ -58,7 +58,7 @@
 		}
 
         tracks($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A music recording (track)&#x2014;usually a single song.",
 				container: $this,
 				propertyName: "tracks",

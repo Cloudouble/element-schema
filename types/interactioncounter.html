@@ -27,7 +27,7 @@
         
         
         interactionService($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The WebSite or SoftwareApplication where the interactions took place.",
 				container: $this,
 				propertyName: "interactionService",
@@ -43,7 +43,7 @@
 		}
 
         interactionType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.",
 				container: $this,
 				propertyName: "interactionType",
@@ -58,7 +58,7 @@
 		}
 
         userInteractionCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.",
 				container: $this,
 				propertyName: "userInteractionCount",

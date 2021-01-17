@@ -27,7 +27,7 @@
         
         
         activeIngredient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				container: $this,
 				propertyName: "activeIngredient",
@@ -42,7 +42,7 @@
 		}
 
         isProprietary($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "True if this item's name is a proprietary\\/brand name (vs. generic name).",
 				container: $this,
 				propertyName: "isProprietary",
@@ -57,7 +57,7 @@
 		}
 
         legalStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
 				container: $this,
 				propertyName: "legalStatus",
@@ -74,7 +74,7 @@
 		}
 
         manufacturer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The manufacturer of the product.",
 				container: $this,
 				propertyName: "manufacturer",
@@ -89,7 +89,7 @@
 		}
 
         maximumIntake($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
 				container: $this,
 				propertyName: "maximumIntake",
@@ -104,7 +104,7 @@
 		}
 
         mechanismOfAction($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
 				container: $this,
 				propertyName: "mechanismOfAction",
@@ -119,7 +119,7 @@
 		}
 
         nonProprietaryName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The generic name of this drug or supplement.",
 				container: $this,
 				propertyName: "nonProprietaryName",
@@ -134,7 +134,7 @@
 		}
 
         proprietaryName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Proprietary name given to the diet plan, typically by its originator or creator.",
 				container: $this,
 				propertyName: "proprietaryName",
@@ -149,7 +149,7 @@
 		}
 
         recommendedIntake($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
 				container: $this,
 				propertyName: "recommendedIntake",
@@ -164,7 +164,7 @@
 		}
 
         safetyConsideration($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.",
 				container: $this,
 				propertyName: "safetyConsideration",
@@ -179,7 +179,7 @@
 		}
 
         targetPopulation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.",
 				container: $this,
 				propertyName: "targetPopulation",

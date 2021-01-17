@@ -27,7 +27,7 @@
         
         
         applicableLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The location in which the status applies.",
 				container: $this,
 				propertyName: "applicableLocation",
@@ -42,7 +42,7 @@
 		}
 
         costCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The category of cost, such as wholesale, retail, reimbursement cap, etc.",
 				container: $this,
 				propertyName: "costCategory",
@@ -57,7 +57,7 @@
 		}
 
         costCurrency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The currency (in 3-letter of the drug cost. See: http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217 ",
 				container: $this,
 				propertyName: "costCurrency",
@@ -72,7 +72,7 @@
 		}
 
         costOrigin($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.",
 				container: $this,
 				propertyName: "costOrigin",
@@ -87,7 +87,7 @@
 		}
 
         costPerUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The cost per unit of the drug.",
 				container: $this,
 				propertyName: "costPerUnit",
@@ -104,7 +104,7 @@
 		}
 
         drugUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unit in which the drug is measured, e.g. '5 mg tablet'.",
 				container: $this,
 				propertyName: "drugUnit",

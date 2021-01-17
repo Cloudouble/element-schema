@@ -27,7 +27,7 @@
         
         
         partySize($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Number of people the reservation should accommodate.",
 				container: $this,
 				propertyName: "partySize",
@@ -43,7 +43,7 @@
 		}
 
         pickupLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Where a taxi will pick up a passenger or a rental car can be picked up.",
 				container: $this,
 				propertyName: "pickupLocation",
@@ -58,7 +58,7 @@
 		}
 
         pickupTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "When a taxi will pickup a passenger or a rental car can be picked up.",
 				container: $this,
 				propertyName: "pickupTime",

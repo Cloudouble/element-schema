@@ -27,7 +27,7 @@
         
         
         identifyingExam($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A physical examination that can identify this sign.",
 				container: $this,
 				propertyName: "identifyingExam",
@@ -42,7 +42,7 @@
 		}
 
         identifyingTest($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A diagnostic test that can identify this sign.",
 				container: $this,
 				propertyName: "identifyingTest",

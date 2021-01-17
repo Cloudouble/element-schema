@@ -240,7 +240,50 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             }}
         })
     }, 
-    renderSelf: {configurable: false, enumerable: true, writable: true, value: function(element) {
+    setElementInput: {configurable: false, enumerable: true, writable: true, value: function(element, input, propertyMap=undefined, containerInheritance=undefined) {
+        window.LiveElement.Schema.backFillClassMap()
+        propertyMap = propertyMap || element.__propertyMap
+        if (!containerInheritance && propertyMap && typeof propertyMap == 'object' && propertyMap.container) {
+            containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)            
+        }
+        var validator = containerInheritance && propertyMap 
+            ? window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap) 
+            : window.LiveElement.Schema.getValidator(element.constructor._rdfs_label)
+        element.__validation = validator && typeof validator == 'function' ? {...(element.__validation || {}), ...validator(input, propertyMap)} : element.__validation
+        element.__input = typeof element.__validation == 'object' ? element.__validation.input : undefined 
+        element.__value = typeof element.__validation == 'object' ? element.__validation.value : undefined 
+        element.dispatchEvent(new window.CustomEvent('schema-input'))
+        if (element.__input && typeof element.__input == 'object') {
+            Object.keys(element.__input).forEach(propertyName => {
+                if (element[propertyName] != element.__input[propertyName]) {
+                    element[propertyName] = element.__input[propertyName]
+                }
+            })
+        }
+        window.LiveElement.Schema.runRender(element)
+    }}, 
+    setProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
+        if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
+            window.LiveElement.Schema.backFillClassMap()
+            var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
+            var renderClass = window.LiveElement.Schema.getClass(propertyMap.propertyName, containerInheritance, propertyMap)
+            var propertyTag = window.LiveElement.Element.tags[renderClass] || `${window.LiveElement.Element.prefix}-${renderClass}`.toLowerCase()
+            window.customElements.whenDefined(propertyTag).then(() => {
+                var propertyElement = document.createElement(propertyTag)
+                propertyElement.__propertyMap = propertyMap
+                if (propertyMap && typeof propertyMap == 'object' && propertyMap.container) {
+                    propertyElement.__container = propertyMap.container
+                    propertyElement.__containerPropertyName = propertyMap.propertyName
+                    propertyElement.__container.__map[propertyElement.__containerPropertyName] = propertyElement
+                    propertyElement.addEventListener('schema-input', event => {
+                        window.LiveElement.Schema.setElementInput(propertyElement.__container, Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__input}))))
+                    })
+                }
+                window.LiveElement.Schema.setElementInput(propertyElement, propertyMap.value, propertyMap, containerInheritance)
+            })
+        }
+    }}, 
+    runRender: {configurable: false, enumerable: true, writable: true, value: function(element) {
         var render
         window.LiveElement.Schema.backFillClassMap()
         if (element.__container && element.__containerPropertyName && element.__propertyMap) {
@@ -252,40 +295,6 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             render(element)
         } else if (render && typeof render == 'object') {
             window.LiveElement.Element.render(element, render.asClass, render.renderFunction, render.style, render.template)
-        }
-    }}, 
-    renderProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {
-        if (propertyMap && typeof propertyMap == 'object' && typeof propertyMap.container == 'object' && propertyMap.container.constructor._rdfs_label && typeof propertyMap.types == 'object' && typeof propertyMap.types.some == 'function') {
-            window.LiveElement.Schema.backFillClassMap()
-            var containerInheritance = window.LiveElement.Element.getInheritance(propertyMap.container.constructor)
-            var validator = window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap)
-            var renderClass = window.LiveElement.Schema.getClass(propertyMap.propertyName, containerInheritance, propertyMap)
-            var propertyTag = window.LiveElement.Element.tags[renderClass] || `${window.LiveElement.Element.prefix}-${renderClass}`.toLowerCase()
-            window.customElements.whenDefined(propertyTag).then(() => {
-                var validation = validator(propertyMap.value, propertyMap)
-                var propertyElement = document.createElement(propertyTag)
-                propertyElement.__validation = validation
-                propertyElement.__propertyMap = propertyMap
-                if (propertyMap && typeof propertyMap == 'object' && propertyMap.container) {
-                    propertyElement.__container = propertyMap.container
-                    propertyElement.__containerPropertyName = propertyMap.propertyName
-                    propertyElement.__container.__map[propertyElement.__containerPropertyName] = propertyElement
-                    propertyElement.addEventListener('schema-input', event => {
-                        propertyElement.__container.__input = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__input})))
-                        propertyElement.__container.__value = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__value})))
-                        propertyElement.__container.__validation = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__validation})))
-                        propertyElement.__container.dispatchEvent(new window.CustomEvent('schema-input'))
-                    })
-                }
-                propertyElement.__input = typeof propertyElement.__validation == 'object' ? propertyElement.__validation.input : undefined 
-                propertyElement.__value = typeof propertyElement.__validation == 'object' ? propertyElement.__validation.value : undefined 
-                propertyElement.dispatchEvent(new window.CustomEvent('schema-input'))
-                if (propertyElement.__validation.input && typeof propertyElement.__validation.input == 'object') {
-                    Object.keys(propertyElement.__validation.input).forEach(propertyName => {
-                        propertyElement[propertyName] = propertyElement.__validation.input[propertyName]
-                    })
-                }
-            })
         }
     }}
 })

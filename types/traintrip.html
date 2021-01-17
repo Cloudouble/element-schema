@@ -27,7 +27,7 @@
         
         
         arrivalPlatform($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The platform where the train arrives.",
 				container: $this,
 				propertyName: "arrivalPlatform",
@@ -42,7 +42,7 @@
 		}
 
         arrivalStation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The station where the train trip ends.",
 				container: $this,
 				propertyName: "arrivalStation",
@@ -57,7 +57,7 @@
 		}
 
         departurePlatform($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The platform from which the train departs.",
 				container: $this,
 				propertyName: "departurePlatform",
@@ -72,7 +72,7 @@
 		}
 
         departureStation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The station from which the train departs.",
 				container: $this,
 				propertyName: "departureStation",
@@ -87,7 +87,7 @@
 		}
 
         trainName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of the train (e.g. The Orient Express).",
 				container: $this,
 				propertyName: "trainName",
@@ -102,7 +102,7 @@
 		}
 
         trainNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unique identifier for the train.",
 				container: $this,
 				propertyName: "trainNumber",

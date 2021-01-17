@@ -27,7 +27,7 @@
         
         
         holdingArchive($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].",
 				container: $this,
 				propertyName: "holdingArchive",
@@ -42,7 +42,7 @@
 		}
 
         itemLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Current location of the item.",
 				container: $this,
 				propertyName: "itemLocation",

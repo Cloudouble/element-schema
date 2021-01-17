@@ -27,7 +27,7 @@
         
         
         acceptedAnswer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The answer(s) that has been accepted as best, typically on a Question\\/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and\\/or the view of the Question author.",
 				container: $this,
 				propertyName: "acceptedAnswer",
@@ -43,7 +43,7 @@
 		}
 
         answerCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of answers this question has received.",
 				container: $this,
 				propertyName: "answerCount",
@@ -58,7 +58,7 @@
 		}
 
         eduQuestionType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: \"Multiple choice\", \"Open ended\", \"Flashcard\".",
 				container: $this,
 				propertyName: "eduQuestionType",
@@ -73,7 +73,7 @@
 		}
 
         suggestedAnswer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question\\/Answer site.",
 				container: $this,
 				propertyName: "suggestedAnswer",

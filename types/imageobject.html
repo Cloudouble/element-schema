@@ -27,7 +27,7 @@
         
         
         caption($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].",
 				container: $this,
 				propertyName: "caption",
@@ -43,7 +43,7 @@
 		}
 
         exifData($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "exif data for this object.",
 				container: $this,
 				propertyName: "exifData",
@@ -59,7 +59,7 @@
 		}
 
         representativeOfPage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates whether this image is representative of the content of the page.",
 				container: $this,
 				propertyName: "representativeOfPage",
@@ -74,7 +74,7 @@
 		}
 
         thumbnail($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Thumbnail image for an image or video.",
 				container: $this,
 				propertyName: "thumbnail",

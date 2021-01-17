@@ -27,7 +27,7 @@
         
         
         cvdCollectionDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "collectiondate - Date for which patient counts are reported.",
 				container: $this,
 				propertyName: "cvdCollectionDate",
@@ -43,7 +43,7 @@
 		}
 
         cvdFacilityCounty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
 				container: $this,
 				propertyName: "cvdFacilityCounty",
@@ -58,7 +58,7 @@
 		}
 
         cvdFacilityId($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.",
 				container: $this,
 				propertyName: "cvdFacilityId",
@@ -73,7 +73,7 @@
 		}
 
         cvdNumBeds($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.",
 				container: $this,
 				propertyName: "cvdNumBeds",
@@ -88,7 +88,7 @@
 		}
 
         cvdNumBedsOcc($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
 				container: $this,
 				propertyName: "cvdNumBedsOcc",
@@ -103,7 +103,7 @@
 		}
 
         cvdNumC19Died($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
 				container: $this,
 				propertyName: "cvdNumC19Died",
@@ -118,7 +118,7 @@
 		}
 
         cvdNumC19HOPats($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.",
 				container: $this,
 				propertyName: "cvdNumC19HOPats",
@@ -133,7 +133,7 @@
 		}
 
         cvdNumC19HospPats($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
 				container: $this,
 				propertyName: "cvdNumC19HospPats",
@@ -148,7 +148,7 @@
 		}
 
         cvdNumC19MechVentPats($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
 				container: $this,
 				propertyName: "cvdNumC19MechVentPats",
@@ -163,7 +163,7 @@
 		}
 
         cvdNumC19OFMechVentPats($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19ofmechventpats - ED\\/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
 				container: $this,
 				propertyName: "cvdNumC19OFMechVentPats",
@@ -178,7 +178,7 @@
 		}
 
         cvdNumC19OverflowPats($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numc19overflowpats - ED\\/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
 				container: $this,
 				propertyName: "cvdNumC19OverflowPats",
@@ -193,7 +193,7 @@
 		}
 
         cvdNumICUBeds($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
 				container: $this,
 				propertyName: "cvdNumICUBeds",
@@ -208,7 +208,7 @@
 		}
 
         cvdNumICUBedsOcc($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
 				container: $this,
 				propertyName: "cvdNumICUBedsOcc",
@@ -223,7 +223,7 @@
 		}
 
         cvdNumTotBeds($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.",
 				container: $this,
 				propertyName: "cvdNumTotBeds",
@@ -238,7 +238,7 @@
 		}
 
         cvdNumVent($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numvent - MECHANICAL VENTILATORS: Total number of ventilators available.",
 				container: $this,
 				propertyName: "cvdNumVent",
@@ -253,7 +253,7 @@
 		}
 
         cvdNumVentUse($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
 				container: $this,
 				propertyName: "cvdNumVentUse",
@@ -268,7 +268,7 @@
 		}
 
         datePosted($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Publication date of an online listing.",
 				container: $this,
 				propertyName: "datePosted",

@@ -27,7 +27,7 @@
         
         
         associatedMedia($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
 				container: $this,
 				propertyName: "associatedMedia",
@@ -42,7 +42,7 @@
 		}
 
         tocEntry($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates a [[HyperTocEntry]] in a [[HyperToc]].",
 				container: $this,
 				propertyName: "tocEntry",

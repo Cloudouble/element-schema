@@ -27,7 +27,7 @@
         
         
         activeIngredient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				container: $this,
 				propertyName: "activeIngredient",
@@ -42,7 +42,7 @@
 		}
 
         availableIn($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The location in which the strength is available.",
 				container: $this,
 				propertyName: "availableIn",
@@ -57,7 +57,7 @@
 		}
 
         maximumIntake($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
 				container: $this,
 				propertyName: "maximumIntake",
@@ -72,7 +72,7 @@
 		}
 
         strengthUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The units of an active ingredient's strength, e.g. mg.",
 				container: $this,
 				propertyName: "strengthUnit",
@@ -87,7 +87,7 @@
 		}
 
         strengthValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The value of an active ingredient's strength, e.g. 325.",
 				container: $this,
 				propertyName: "strengthValue",

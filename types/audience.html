@@ -27,7 +27,7 @@
         
         
         audienceType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
 				container: $this,
 				propertyName: "audienceType",
@@ -42,7 +42,7 @@
 		}
 
         geographicArea($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The geographic area associated with the audience.",
 				container: $this,
 				propertyName: "geographicArea",

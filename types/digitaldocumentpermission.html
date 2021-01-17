@@ -27,7 +27,7 @@
         
         
         grantee($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The person, organization, contact point, or audience that has been granted this permission.",
 				container: $this,
 				propertyName: "grantee",
@@ -45,7 +45,7 @@
 		}
 
         permissionType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of permission granted the person, organization, or audience.",
 				container: $this,
 				propertyName: "permissionType",

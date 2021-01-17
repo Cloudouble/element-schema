@@ -27,7 +27,7 @@
         
         
         domiciledMortgage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Whether borrower is a resident of the jurisdiction where the property is located.",
 				container: $this,
 				propertyName: "domiciledMortgage",
@@ -42,7 +42,7 @@
 		}
 
         loanMortgageMandateAmount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.",
 				container: $this,
 				propertyName: "loanMortgageMandateAmount",

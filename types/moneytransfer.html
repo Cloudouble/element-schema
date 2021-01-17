@@ -27,7 +27,7 @@
         
         
         amount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The amount of money.",
 				container: $this,
 				propertyName: "amount",
@@ -43,7 +43,7 @@
 		}
 
         beneficiaryBank($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A bank or bank\u2019s branch, financial institution or international financial institution operating the beneficiary\u2019s bank account or releasing funds for the beneficiary",
 				container: $this,
 				propertyName: "beneficiaryBank",

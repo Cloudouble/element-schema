@@ -27,7 +27,7 @@
         
         
         healthPlanCostSharing($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Whether The costs to the patient for services under this network or formulary.",
 				container: $this,
 				propertyName: "healthPlanCostSharing",
@@ -42,7 +42,7 @@
 		}
 
         healthPlanDrugTier($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The tier(s) of drugs offered by this formulary or insurance plan.",
 				container: $this,
 				propertyName: "healthPlanDrugTier",
@@ -57,7 +57,7 @@
 		}
 
         offersPrescriptionByMail($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Whether prescriptions can be delivered by mail.",
 				container: $this,
 				propertyName: "offersPrescriptionByMail",

@@ -27,7 +27,7 @@
         
         
         downvoteCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of downvotes this question, answer or comment has received from the community.",
 				container: $this,
 				propertyName: "downvoteCount",
@@ -42,7 +42,7 @@
 		}
 
         parentItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The parent of a question, answer or item in general.",
 				container: $this,
 				propertyName: "parentItem",
@@ -57,7 +57,7 @@
 		}
 
         upvoteCount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number of upvotes this question, answer or comment has received from the community.",
 				container: $this,
 				propertyName: "upvoteCount",

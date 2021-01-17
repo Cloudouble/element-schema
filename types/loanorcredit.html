@@ -27,7 +27,7 @@
         
         
         amount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The amount of money.",
 				container: $this,
 				propertyName: "amount",
@@ -43,7 +43,7 @@
 		}
 
         currency($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_4217) e.g. \"USD\"; [Ticker symbol](https:\\/\\/en.wikipedia.org\\/wiki\\/List_of_cryptocurrencies) for cryptocurrencies e.g. \"BTC\"; well known names for [Local Exchange Tradings Systems](https:\\/\\/en.wikipedia.org\\/wiki\\/Local_exchange_trading_system) (LETS) and other currency types e.g. \"Ithaca HOUR\".",
 				container: $this,
 				propertyName: "currency",
@@ -58,7 +58,7 @@
 		}
 
         gracePeriod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
 				container: $this,
 				propertyName: "gracePeriod",
@@ -73,7 +73,7 @@
 		}
 
         loanRepaymentForm($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
 				container: $this,
 				propertyName: "loanRepaymentForm",
@@ -88,7 +88,7 @@
 		}
 
         loanTerm($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the loan or credit agreement.",
 				container: $this,
 				propertyName: "loanTerm",
@@ -103,7 +103,7 @@
 		}
 
         loanType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of a loan or credit.",
 				container: $this,
 				propertyName: "loanType",
@@ -119,7 +119,7 @@
 		}
 
         recourseLoan($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
 				container: $this,
 				propertyName: "recourseLoan",
@@ -134,7 +134,7 @@
 		}
 
         renegotiableLoan($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
 				container: $this,
 				propertyName: "renegotiableLoan",
@@ -149,7 +149,7 @@
 		}
 
         requiredCollateral($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
 				container: $this,
 				propertyName: "requiredCollateral",

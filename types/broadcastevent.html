@@ -27,7 +27,7 @@
         
         
         broadcastOfEvent($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The event being broadcast such as a sporting event or awards ceremony.",
 				container: $this,
 				propertyName: "broadcastOfEvent",
@@ -42,7 +42,7 @@
 		}
 
         isLiveBroadcast($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "True is the broadcast is of a live event.",
 				container: $this,
 				propertyName: "isLiveBroadcast",
@@ -57,7 +57,7 @@
 		}
 
         subtitleLanguage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Languages in which subtitles\\/captions are available, in [IETF BCP 47 standard format](http:\\/\\/tools.ietf.org\\/html\\/bcp47).",
 				container: $this,
 				propertyName: "subtitleLanguage",
@@ -73,7 +73,7 @@
 		}
 
         videoFormat($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
 				container: $this,
 				propertyName: "videoFormat",

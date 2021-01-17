@@ -27,7 +27,7 @@
         
         
         healthCondition($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
 				container: $this,
 				propertyName: "healthCondition",
@@ -42,7 +42,7 @@
 		}
 
         sponsor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
 				container: $this,
 				propertyName: "sponsor",
@@ -58,7 +58,7 @@
 		}
 
         status($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The status of the study (enumerated).",
 				container: $this,
 				propertyName: "status",
@@ -75,7 +75,7 @@
 		}
 
         studyLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The location in which the study is taking\\/took place.",
 				container: $this,
 				propertyName: "studyLocation",
@@ -90,7 +90,7 @@
 		}
 
         studySubject($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
 				container: $this,
 				propertyName: "studySubject",

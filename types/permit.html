@@ -27,7 +27,7 @@
         
         
         issuedBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The organization issuing the ticket or permit.",
 				container: $this,
 				propertyName: "issuedBy",
@@ -42,7 +42,7 @@
 		}
 
         issuedThrough($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The service through with the permit was granted.",
 				container: $this,
 				propertyName: "issuedThrough",
@@ -57,7 +57,7 @@
 		}
 
         permitAudience($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The target audience for this permit.",
 				container: $this,
 				propertyName: "permitAudience",
@@ -72,7 +72,7 @@
 		}
 
         validFor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of validity of a permit or similar thing.",
 				container: $this,
 				propertyName: "validFor",
@@ -87,7 +87,7 @@
 		}
 
         validFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date when the item becomes valid.",
 				container: $this,
 				propertyName: "validFrom",
@@ -103,7 +103,7 @@
 		}
 
         validIn($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The geographic area where a permit or similar thing is valid.",
 				container: $this,
 				propertyName: "validIn",
@@ -118,7 +118,7 @@
 		}
 
         validUntil($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date when the item is no longer valid.",
 				container: $this,
 				propertyName: "validUntil",

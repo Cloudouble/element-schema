@@ -27,7 +27,7 @@
         
         
         breadcrumb($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A set of links that can help a user understand and navigate a website hierarchy.",
 				container: $this,
 				propertyName: "breadcrumb",
@@ -43,7 +43,7 @@
 		}
 
         lastReviewed($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Date on which the content on this web page was last reviewed for accuracy and\\/or completeness.",
 				container: $this,
 				propertyName: "lastReviewed",
@@ -58,7 +58,7 @@
 		}
 
         mainContentOfPage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates if this web page element is the main subject of the page.",
 				container: $this,
 				propertyName: "mainContentOfPage",
@@ -73,7 +73,7 @@
 		}
 
         primaryImageOfPage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates the main image on the page.",
 				container: $this,
 				propertyName: "primaryImageOfPage",
@@ -88,7 +88,7 @@
 		}
 
         relatedLink($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A link related to this web page, for example to other related web pages.",
 				container: $this,
 				propertyName: "relatedLink",
@@ -103,7 +103,7 @@
 		}
 
         reviewedBy($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "People or organizations that have reviewed the content on this web page for accuracy and\\/or completeness.",
 				container: $this,
 				propertyName: "reviewedBy",
@@ -119,7 +119,7 @@
 		}
 
         significantLink($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
 				container: $this,
 				propertyName: "significantLink",
@@ -134,7 +134,7 @@
 		}
 
         significantLinks($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.",
 				container: $this,
 				propertyName: "significantLinks",
@@ -149,7 +149,7 @@
 		}
 
         speakable($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.\n\nThe *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:\n\n1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.\n\n2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.\n\n3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.\n\n\nFor more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this\nwe define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.\n         ",
 				container: $this,
 				propertyName: "speakable",
@@ -165,7 +165,7 @@
 		}
 
         specialty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "One of the domain specialities to which this web page's content applies.",
 				container: $this,
 				propertyName: "specialty",

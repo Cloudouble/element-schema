@@ -27,7 +27,7 @@
         
         
         collection($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of object. The collection target of the action.",
 				container: $this,
 				propertyName: "collection",
@@ -42,7 +42,7 @@
 		}
 
         targetCollection($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of object. The collection target of the action.",
 				container: $this,
 				propertyName: "targetCollection",

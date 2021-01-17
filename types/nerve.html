@@ -27,7 +27,7 @@
         
         
         branch($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].",
 				container: $this,
 				propertyName: "branch",
@@ -42,7 +42,7 @@
 		}
 
         nerveMotor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The neurological pathway extension that involves muscle control.",
 				container: $this,
 				propertyName: "nerveMotor",
@@ -57,7 +57,7 @@
 		}
 
         sensoryUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The neurological pathway extension that inputs and sends information to the brain or spinal cord.",
 				container: $this,
 				propertyName: "sensoryUnit",
@@ -73,7 +73,7 @@
 		}
 
         sourcedFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The neurological pathway that originates the neurons.",
 				container: $this,
 				propertyName: "sourcedFrom",

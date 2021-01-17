@@ -27,7 +27,7 @@
         
         
         cashBack($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
 				container: $this,
 				propertyName: "cashBack",
@@ -43,7 +43,7 @@
 		}
 
         contactlessPayment($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
 				container: $this,
 				propertyName: "contactlessPayment",
@@ -58,7 +58,7 @@
 		}
 
         floorLimit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A floor limit is the amount of money above which credit card transactions must be authorized.",
 				container: $this,
 				propertyName: "floorLimit",
@@ -73,7 +73,7 @@
 		}
 
         monthlyMinimumRepaymentAmount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.",
 				container: $this,
 				propertyName: "monthlyMinimumRepaymentAmount",

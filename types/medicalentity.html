@@ -27,7 +27,7 @@
         
         
         code($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
 				container: $this,
 				propertyName: "code",
@@ -42,7 +42,7 @@
 		}
 
         guideline($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical guideline related to this entity.",
 				container: $this,
 				propertyName: "guideline",
@@ -57,7 +57,7 @@
 		}
 
         legalStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
 				container: $this,
 				propertyName: "legalStatus",
@@ -74,7 +74,7 @@
 		}
 
         medicineSystem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
 				container: $this,
 				propertyName: "medicineSystem",
@@ -89,7 +89,7 @@
 		}
 
         recognizingAuthority($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
 				container: $this,
 				propertyName: "recognizingAuthority",
@@ -104,7 +104,7 @@
 		}
 
         relevantSpecialty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "If applicable, a medical specialty in which this entity is relevant.",
 				container: $this,
 				propertyName: "relevantSpecialty",
@@ -119,7 +119,7 @@
 		}
 
         study($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical study or trial related to this entity.",
 				container: $this,
 				propertyName: "study",

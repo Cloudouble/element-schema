@@ -27,7 +27,7 @@
         
         
         aspect($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.",
 				container: $this,
 				propertyName: "aspect",
@@ -42,7 +42,7 @@
 		}
 
         medicalAudience($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Medical audience for page.",
 				container: $this,
 				propertyName: "medicalAudience",

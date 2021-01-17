@@ -27,7 +27,7 @@
         
         
         associatedMedia($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A media object that encodes this CreativeWork. This property is a synonym for encoding.",
 				container: $this,
 				propertyName: "associatedMedia",
@@ -42,7 +42,7 @@
 		}
 
         tocContinuation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.",
 				container: $this,
 				propertyName: "tocContinuation",
@@ -57,7 +57,7 @@
 		}
 
         utterances($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].",
 				container: $this,
 				propertyName: "utterances",

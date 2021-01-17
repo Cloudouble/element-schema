@@ -27,7 +27,7 @@
         
         
         availableService($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical service available from this provider.",
 				container: $this,
 				propertyName: "availableService",
@@ -44,7 +44,7 @@
 		}
 
         healthcareReportingData($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].",
 				container: $this,
 				propertyName: "healthcareReportingData",
@@ -60,7 +60,7 @@
 		}
 
         medicalSpecialty($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A medical specialty of the provider.",
 				container: $this,
 				propertyName: "medicalSpecialty",

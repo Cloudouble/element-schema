@@ -27,7 +27,7 @@
         
         
         healthCondition($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
 				container: $this,
 				propertyName: "healthCondition",
@@ -42,7 +42,7 @@
 		}
 
         requiredGender($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Audiences defined by a person's gender.",
 				container: $this,
 				propertyName: "requiredGender",
@@ -57,7 +57,7 @@
 		}
 
         requiredMaxAge($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Audiences defined by a person's maximum age.",
 				container: $this,
 				propertyName: "requiredMaxAge",
@@ -72,7 +72,7 @@
 		}
 
         requiredMinAge($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Audiences defined by a person's minimum age.",
 				container: $this,
 				propertyName: "requiredMinAge",
@@ -87,7 +87,7 @@
 		}
 
         suggestedGender($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The gender of the person or audience.",
 				container: $this,
 				propertyName: "suggestedGender",
@@ -102,7 +102,7 @@
 		}
 
         suggestedMaxAge($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Maximal age recommended for viewing content.",
 				container: $this,
 				propertyName: "suggestedMaxAge",
@@ -117,7 +117,7 @@
 		}
 
         suggestedMinAge($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Minimal age recommended for viewing content.",
 				container: $this,
 				propertyName: "suggestedMinAge",

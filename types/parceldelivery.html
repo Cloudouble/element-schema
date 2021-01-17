@@ -27,7 +27,7 @@
         
         
         carrier($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
 				container: $this,
 				propertyName: "carrier",
@@ -42,7 +42,7 @@
 		}
 
         deliveryAddress($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Destination address.",
 				container: $this,
 				propertyName: "deliveryAddress",
@@ -57,7 +57,7 @@
 		}
 
         deliveryStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "New entry added as the package passes through each leg of its journey (from shipment to final delivery).",
 				container: $this,
 				propertyName: "deliveryStatus",
@@ -72,7 +72,7 @@
 		}
 
         expectedArrivalFrom($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The earliest date the package may arrive.",
 				container: $this,
 				propertyName: "expectedArrivalFrom",
@@ -88,7 +88,7 @@
 		}
 
         expectedArrivalUntil($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The latest date the package may arrive.",
 				container: $this,
 				propertyName: "expectedArrivalUntil",
@@ -104,7 +104,7 @@
 		}
 
         hasDeliveryMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Method used for delivery or shipping.",
 				container: $this,
 				propertyName: "hasDeliveryMethod",
@@ -119,7 +119,7 @@
 		}
 
         itemShipped($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Item(s) being shipped.",
 				container: $this,
 				propertyName: "itemShipped",
@@ -134,7 +134,7 @@
 		}
 
         originAddress($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Shipper's address.",
 				container: $this,
 				propertyName: "originAddress",
@@ -149,7 +149,7 @@
 		}
 
         partOfOrder($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The overall order the items in this delivery were included in.",
 				container: $this,
 				propertyName: "partOfOrder",
@@ -164,7 +164,7 @@
 		}
 
         provider($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
 				container: $this,
 				propertyName: "provider",
@@ -180,7 +180,7 @@
 		}
 
         trackingNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Shipper tracking number.",
 				container: $this,
 				propertyName: "trackingNumber",
@@ -195,7 +195,7 @@
 		}
 
         trackingUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Tracking url for the parcel delivery.",
 				container: $this,
 				propertyName: "trackingUrl",

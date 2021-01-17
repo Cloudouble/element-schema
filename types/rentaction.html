@@ -27,7 +27,7 @@
         
         
         landlord($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of participant. The owner of the real estate property.",
 				container: $this,
 				propertyName: "landlord",
@@ -43,7 +43,7 @@
 		}
 
         realEstateAgent($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of participant. The real estate agent involved in the action.",
 				container: $this,
 				propertyName: "realEstateAgent",

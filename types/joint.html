@@ -27,7 +27,7 @@
         
         
         biomechnicalClass($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The biomechanical properties of the bone.",
 				container: $this,
 				propertyName: "biomechnicalClass",
@@ -42,7 +42,7 @@
 		}
 
         functionalClass($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The degree of mobility the joint allows.",
 				container: $this,
 				propertyName: "functionalClass",
@@ -58,7 +58,7 @@
 		}
 
         structuralClass($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name given to how bone physically connects to each other.",
 				container: $this,
 				propertyName: "structuralClass",

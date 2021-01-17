@@ -27,7 +27,7 @@
         
         
         hasMenuItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A food or drink item contained in a menu or menu section.",
 				container: $this,
 				propertyName: "hasMenuItem",
@@ -42,7 +42,7 @@
 		}
 
         hasMenuSection($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A subgrouping of the menu (by dishes, course, serving time period, etc.).",
 				container: $this,
 				propertyName: "hasMenuSection",

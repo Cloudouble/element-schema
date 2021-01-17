@@ -27,7 +27,7 @@
         
         
         numberOfBeds($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.",
 				container: $this,
 				propertyName: "numberOfBeds",
@@ -42,7 +42,7 @@
 		}
 
         typeOfBed($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.",
 				container: $this,
 				propertyName: "typeOfBed",

@@ -27,7 +27,7 @@
         
         
         amount($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The amount of money.",
 				container: $this,
 				propertyName: "amount",
@@ -43,7 +43,7 @@
 		}
 
         funder($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A person or organization that supports (sponsors) something through some kind of financial contribution.",
 				container: $this,
 				propertyName: "funder",

@@ -27,7 +27,7 @@
         
         
         drainsTo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The vasculature that the vein drains into.",
 				container: $this,
 				propertyName: "drainsTo",
@@ -42,7 +42,7 @@
 		}
 
         regionDrained($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.",
 				container: $this,
 				propertyName: "regionDrained",
@@ -58,7 +58,7 @@
 		}
 
         tributary($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.",
 				container: $this,
 				propertyName: "tributary",

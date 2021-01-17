@@ -27,7 +27,7 @@
         
         
         bccRecipient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of recipient. The recipient blind copied on a message.",
 				container: $this,
 				propertyName: "bccRecipient",
@@ -44,7 +44,7 @@
 		}
 
         ccRecipient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of recipient. The recipient copied on a message.",
 				container: $this,
 				propertyName: "ccRecipient",
@@ -61,7 +61,7 @@
 		}
 
         dateRead($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date\\/time at which the message has been read by the recipient if a single recipient exists.",
 				container: $this,
 				propertyName: "dateRead",
@@ -77,7 +77,7 @@
 		}
 
         dateReceived($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date\\/time the message was received if a single recipient exists.",
 				container: $this,
 				propertyName: "dateReceived",
@@ -92,7 +92,7 @@
 		}
 
         dateSent($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date\\/time at which the message was sent.",
 				container: $this,
 				propertyName: "dateSent",
@@ -107,7 +107,7 @@
 		}
 
         messageAttachment($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A CreativeWork attached to the message.",
 				container: $this,
 				propertyName: "messageAttachment",
@@ -122,7 +122,7 @@
 		}
 
         recipient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of participant. The participant who is at the receiving end of the action.",
 				container: $this,
 				propertyName: "recipient",
@@ -140,7 +140,7 @@
 		}
 
         sender($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of participant. The participant who is at the sending end of the action.",
 				container: $this,
 				propertyName: "sender",
@@ -157,7 +157,7 @@
 		}
 
         toRecipient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A sub property of recipient. The recipient who was directly sent the message.",
 				container: $this,
 				propertyName: "toRecipient",

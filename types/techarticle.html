@@ -27,7 +27,7 @@
         
         
         dependencies($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Prerequisites needed to fulfill steps in article.",
 				container: $this,
 				propertyName: "dependencies",
@@ -42,7 +42,7 @@
 		}
 
         proficiencyLevel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Proficiency needed for this content; expected values: 'Beginner', 'Expert'.",
 				container: $this,
 				propertyName: "proficiencyLevel",

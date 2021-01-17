@@ -27,7 +27,7 @@
         
         
         availableLanguage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http:\\/\\/tools.ietf.org\\/html\\/bcp47). See also [[inLanguage]]",
 				container: $this,
 				propertyName: "availableLanguage",
@@ -43,7 +43,7 @@
 		}
 
         processingTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Estimated processing time for the service using this channel.",
 				container: $this,
 				propertyName: "processingTime",
@@ -58,7 +58,7 @@
 		}
 
         providesService($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The service provided by this channel.",
 				container: $this,
 				propertyName: "providesService",
@@ -73,7 +73,7 @@
 		}
 
         serviceLocation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The location (e.g. civic structure, local business, etc.) where a person can go to access the service.",
 				container: $this,
 				propertyName: "serviceLocation",
@@ -88,7 +88,7 @@
 		}
 
         servicePhone($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The phone number to use to access the service.",
 				container: $this,
 				propertyName: "servicePhone",
@@ -103,7 +103,7 @@
 		}
 
         servicePostalAddress($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The address for accessing the service by mail.",
 				container: $this,
 				propertyName: "servicePostalAddress",
@@ -118,7 +118,7 @@
 		}
 
         serviceSmsNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The number to access the service by text message.",
 				container: $this,
 				propertyName: "serviceSmsNumber",
@@ -133,7 +133,7 @@
 		}
 
         serviceUrl($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The website to access the service.",
 				container: $this,
 				propertyName: "serviceUrl",

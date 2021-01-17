@@ -27,7 +27,7 @@
         
         
         byArtist($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The artist that performed this album or recording.",
 				container: $this,
 				propertyName: "byArtist",
@@ -43,7 +43,7 @@
 		}
 
         duration($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http:\\/\\/en.wikipedia.org\\/wiki\\/ISO_8601).",
 				container: $this,
 				propertyName: "duration",
@@ -58,7 +58,7 @@
 		}
 
         inAlbum($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The album to which this recording belongs.",
 				container: $this,
 				propertyName: "inAlbum",
@@ -73,7 +73,7 @@
 		}
 
         inPlaylist($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The playlist to which this recording belongs.",
 				container: $this,
 				propertyName: "inPlaylist",
@@ -88,7 +88,7 @@
 		}
 
         isrcCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The International Standard Recording Code for the recording.",
 				container: $this,
 				propertyName: "isrcCode",
@@ -103,7 +103,7 @@
 		}
 
         recordingOf($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The composition this track is a recording of.",
 				container: $this,
 				propertyName: "recordingOf",

@@ -27,7 +27,7 @@
         
         
         fundedItem($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates an item funded or sponsored through a [[Grant]].",
 				container: $this,
 				propertyName: "fundedItem",
@@ -42,7 +42,7 @@
 		}
 
         sponsor($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
 				container: $this,
 				propertyName: "sponsor",

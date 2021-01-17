@@ -27,7 +27,7 @@
         
         
         accountMinimumInflow($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A minimum amount that has to be paid in every month.",
 				container: $this,
 				propertyName: "accountMinimumInflow",
@@ -42,7 +42,7 @@
 		}
 
         accountOverdraftLimit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.",
 				container: $this,
 				propertyName: "accountOverdraftLimit",
@@ -57,7 +57,7 @@
 		}
 
         bankAccountType($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The type of a bank account.",
 				container: $this,
 				propertyName: "bankAccountType",

@@ -27,7 +27,7 @@
         
         
         deliveryTime($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The total delay between the receipt of the order and the goods reaching the final customer.",
 				container: $this,
 				propertyName: "deliveryTime",
@@ -42,7 +42,7 @@
 		}
 
         isUnlabelledFallback($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.",
 				container: $this,
 				propertyName: "isUnlabelledFallback",
@@ -57,7 +57,7 @@
 		}
 
         shippingDestination($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.",
 				container: $this,
 				propertyName: "shippingDestination",
@@ -72,7 +72,7 @@
 		}
 
         transitTimeLabel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).",
 				container: $this,
 				propertyName: "transitTimeLabel",

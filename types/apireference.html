@@ -27,7 +27,7 @@
         
         
         assembly($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
 				container: $this,
 				propertyName: "assembly",
@@ -42,7 +42,7 @@
 		}
 
         assemblyVersion($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Associated product\\/technology version. e.g., .NET Framework 4.5.",
 				container: $this,
 				propertyName: "assemblyVersion",
@@ -57,7 +57,7 @@
 		}
 
         executableLibraryName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Library file name e.g., mscorlib.dll, system.web.dll.",
 				container: $this,
 				propertyName: "executableLibraryName",
@@ -72,7 +72,7 @@
 		}
 
         programmingModel($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates whether API is managed or unmanaged.",
 				container: $this,
 				propertyName: "programmingModel",
@@ -87,7 +87,7 @@
 		}
 
         targetPlatform($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Type of app development: phone, Metro style, desktop, XBox, etc.",
 				container: $this,
 				propertyName: "targetPlatform",

@@ -27,7 +27,7 @@
         
         
         author($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
 				container: $this,
 				propertyName: "author",
@@ -43,7 +43,7 @@
 		}
 
         bestRating($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.",
 				container: $this,
 				propertyName: "bestRating",
@@ -59,7 +59,7 @@
 		}
 
         ratingExplanation($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with \"fact check\" markup using [[ClaimReview]].",
 				container: $this,
 				propertyName: "ratingExplanation",
@@ -74,7 +74,7 @@
 		}
 
         ratingValue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The rating for the content.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.",
 				container: $this,
 				propertyName: "ratingValue",
@@ -90,7 +90,7 @@
 		}
 
         reviewAspect($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "This Review or Rating is relevant to this part or facet of the itemReviewed.",
 				container: $this,
 				propertyName: "reviewAspect",
@@ -105,7 +105,7 @@
 		}
 
         worstRating($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.",
 				container: $this,
 				propertyName: "worstRating",

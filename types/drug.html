@@ -27,7 +27,7 @@
         
         
         activeIngredient($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An active ingredient, typically chemical compounds and\\/or biologic substances.",
 				container: $this,
 				propertyName: "activeIngredient",
@@ -42,7 +42,7 @@
 		}
 
         administrationRoute($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A route by which this drug may be administered, e.g. 'oral'.",
 				container: $this,
 				propertyName: "administrationRoute",
@@ -57,7 +57,7 @@
 		}
 
         alcoholWarning($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.",
 				container: $this,
 				propertyName: "alcoholWarning",
@@ -72,7 +72,7 @@
 		}
 
         availableStrength($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An available dosage strength for the drug.",
 				container: $this,
 				propertyName: "availableStrength",
@@ -87,7 +87,7 @@
 		}
 
         breastfeedingWarning($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.",
 				container: $this,
 				propertyName: "breastfeedingWarning",
@@ -102,7 +102,7 @@
 		}
 
         clincalPharmacology($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
 				container: $this,
 				propertyName: "clincalPharmacology",
@@ -117,7 +117,7 @@
 		}
 
         clinicalPharmacology($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).",
 				container: $this,
 				propertyName: "clinicalPharmacology",
@@ -132,7 +132,7 @@
 		}
 
         dosageForm($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A dosage form in which this drug\\/supplement is available, e.g. 'tablet', 'suspension', 'injection'.",
 				container: $this,
 				propertyName: "dosageForm",
@@ -147,7 +147,7 @@
 		}
 
         doseSchedule($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.",
 				container: $this,
 				propertyName: "doseSchedule",
@@ -162,7 +162,7 @@
 		}
 
         drugClass($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The class of drug this belongs to (e.g., statins).",
 				container: $this,
 				propertyName: "drugClass",
@@ -177,7 +177,7 @@
 		}
 
         drugUnit($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unit in which the drug is measured, e.g. '5 mg tablet'.",
 				container: $this,
 				propertyName: "drugUnit",
@@ -192,7 +192,7 @@
 		}
 
         foodWarning($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.",
 				container: $this,
 				propertyName: "foodWarning",
@@ -207,7 +207,7 @@
 		}
 
         includedInHealthInsurancePlan($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The insurance plans that cover this drug.",
 				container: $this,
 				propertyName: "includedInHealthInsurancePlan",
@@ -222,7 +222,7 @@
 		}
 
         interactingDrug($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.",
 				container: $this,
 				propertyName: "interactingDrug",
@@ -237,7 +237,7 @@
 		}
 
         isAvailableGenerically($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "True if the drug is available in a generic form (regardless of name).",
 				container: $this,
 				propertyName: "isAvailableGenerically",
@@ -252,7 +252,7 @@
 		}
 
         isProprietary($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "True if this item's name is a proprietary\\/brand name (vs. generic name).",
 				container: $this,
 				propertyName: "isProprietary",
@@ -267,7 +267,7 @@
 		}
 
         labelDetails($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Link to the drug's label details.",
 				container: $this,
 				propertyName: "labelDetails",
@@ -282,7 +282,7 @@
 		}
 
         legalStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The drug or supplement's legal status, including any controlled substance schedules that apply.",
 				container: $this,
 				propertyName: "legalStatus",
@@ -299,7 +299,7 @@
 		}
 
         manufacturer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The manufacturer of the product.",
 				container: $this,
 				propertyName: "manufacturer",
@@ -314,7 +314,7 @@
 		}
 
         maximumIntake($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Recommended intake of this supplement for a given population as defined by a specific recommending authority.",
 				container: $this,
 				propertyName: "maximumIntake",
@@ -329,7 +329,7 @@
 		}
 
         mechanismOfAction($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.",
 				container: $this,
 				propertyName: "mechanismOfAction",
@@ -344,7 +344,7 @@
 		}
 
         nonProprietaryName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The generic name of this drug or supplement.",
 				container: $this,
 				propertyName: "nonProprietaryName",
@@ -359,7 +359,7 @@
 		}
 
         overdosage($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.",
 				container: $this,
 				propertyName: "overdosage",
@@ -374,7 +374,7 @@
 		}
 
         pregnancyCategory($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Pregnancy category of this drug.",
 				container: $this,
 				propertyName: "pregnancyCategory",
@@ -389,7 +389,7 @@
 		}
 
         pregnancyWarning($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.",
 				container: $this,
 				propertyName: "pregnancyWarning",
@@ -404,7 +404,7 @@
 		}
 
         prescribingInfo($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Link to prescribing information for the drug.",
 				container: $this,
 				propertyName: "prescribingInfo",
@@ -419,7 +419,7 @@
 		}
 
         prescriptionStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.",
 				container: $this,
 				propertyName: "prescriptionStatus",
@@ -435,7 +435,7 @@
 		}
 
         proprietaryName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Proprietary name given to the diet plan, typically by its originator or creator.",
 				container: $this,
 				propertyName: "proprietaryName",
@@ -450,7 +450,7 @@
 		}
 
         relatedDrug($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any other drug related to this one, for example commonly-prescribed alternatives.",
 				container: $this,
 				propertyName: "relatedDrug",
@@ -465,7 +465,7 @@
 		}
 
         rxcui($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The RxCUI drug identifier from RXNORM.",
 				container: $this,
 				propertyName: "rxcui",
@@ -480,7 +480,7 @@
 		}
 
         warning($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Any FDA or other warnings about the drug (text or URL).",
 				container: $this,
 				propertyName: "warning",

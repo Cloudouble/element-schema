@@ -27,7 +27,7 @@
         
         
         accountId($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The identifier for the account the payment will be applied to.",
 				container: $this,
 				propertyName: "accountId",
@@ -42,7 +42,7 @@
 		}
 
         billingPeriod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The time interval used to compute the invoice.",
 				container: $this,
 				propertyName: "billingPeriod",
@@ -57,7 +57,7 @@
 		}
 
         broker($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
 				container: $this,
 				propertyName: "broker",
@@ -73,7 +73,7 @@
 		}
 
         category($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
 				container: $this,
 				propertyName: "category",
@@ -91,7 +91,7 @@
 		}
 
         confirmationNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "A number that confirms the given order or payment has been received.",
 				container: $this,
 				propertyName: "confirmationNumber",
@@ -106,7 +106,7 @@
 		}
 
         customer($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Party placing the order or paying the invoice.",
 				container: $this,
 				propertyName: "customer",
@@ -122,7 +122,7 @@
 		}
 
         minimumPaymentDue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The minimum payment required at this time.",
 				container: $this,
 				propertyName: "minimumPaymentDue",
@@ -138,7 +138,7 @@
 		}
 
         paymentDue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date that payment is due.",
 				container: $this,
 				propertyName: "paymentDue",
@@ -153,7 +153,7 @@
 		}
 
         paymentDueDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date that payment is due.",
 				container: $this,
 				propertyName: "paymentDueDate",
@@ -169,7 +169,7 @@
 		}
 
         paymentMethod($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of the credit card or other method of payment for the order.",
 				container: $this,
 				propertyName: "paymentMethod",
@@ -184,7 +184,7 @@
 		}
 
         paymentMethodId($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
 				container: $this,
 				propertyName: "paymentMethodId",
@@ -199,7 +199,7 @@
 		}
 
         paymentStatus($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The status of payment; whether the invoice has been paid or not.",
 				container: $this,
 				propertyName: "paymentStatus",
@@ -215,7 +215,7 @@
 		}
 
         provider($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
 				container: $this,
 				propertyName: "provider",
@@ -231,7 +231,7 @@
 		}
 
         referencesOrder($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.",
 				container: $this,
 				propertyName: "referencesOrder",
@@ -246,7 +246,7 @@
 		}
 
         scheduledPaymentDate($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The date the invoice is scheduled to be paid.",
 				container: $this,
 				propertyName: "scheduledPaymentDate",
@@ -261,7 +261,7 @@
 		}
 
         totalPaymentDue($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The total amount due.",
 				container: $this,
 				propertyName: "totalPaymentDue",

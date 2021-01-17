@@ -27,7 +27,7 @@
         
         
         iataCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "IATA identifier for an airline or airport.",
 				container: $this,
 				propertyName: "iataCode",
@@ -42,7 +42,7 @@
 		}
 
         icaoCode($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "ICAO identifier for an airport.",
 				container: $this,
 				propertyName: "icaoCode",

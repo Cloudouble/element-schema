@@ -27,7 +27,7 @@
         
         
         arrivalBusStop($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The stop or station from which the bus arrives.",
 				container: $this,
 				propertyName: "arrivalBusStop",
@@ -43,7 +43,7 @@
 		}
 
         busName($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The name of the bus (e.g. Bolt Express).",
 				container: $this,
 				propertyName: "busName",
@@ -58,7 +58,7 @@
 		}
 
         busNumber($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The unique identifier for the bus.",
 				container: $this,
 				propertyName: "busNumber",
@@ -73,7 +73,7 @@
 		}
 
         departureBusStop($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "The stop or station from which the bus departs.",
 				container: $this,
 				propertyName: "departureBusStop",

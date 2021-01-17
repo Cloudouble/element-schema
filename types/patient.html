@@ -27,7 +27,7 @@
         
         
         diagnosis($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
 				container: $this,
 				propertyName: "diagnosis",
@@ -42,7 +42,7 @@
 		}
 
         drug($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifying a drug or medicine used in a medication procedure",
 				container: $this,
 				propertyName: "drug",
@@ -57,7 +57,7 @@
 		}
 
         healthCondition($this, value) {
-			window.LiveElement.Schema.renderProperty({
+			window.LiveElement.Schema.setProperty({
 				comment: "Specifying the health condition(s) of a patient, medical study, or other target audience.",
 				container: $this,
 				propertyName: "healthCondition",

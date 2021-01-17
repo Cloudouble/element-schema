@@ -44,7 +44,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         }
         return target
     }}, 
-    getValidator: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+    getValidator: {configurable: false, enumerable: false, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         var validatorName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.ValidatorMap, ownPropertyName, containerInheritance, propertyMap)
         validatorName = validatorName || window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Validators, ownPropertyName, containerInheritance, propertyMap)
         if (typeof validatorName == 'function') {
@@ -55,11 +55,11 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             return window.LiveElement.Schema.Validators.Schema
         }
     }}, 
-    getClass: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+    getClass: {configurable: false, enumerable: false, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         var className = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.ClassMap, ownPropertyName, containerInheritance, propertyMap)
         return className || 'Schema'
     }}, 
-    getRender: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
+    getRender: {configurable: false, enumerable: false, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
         var renderName = window.LiveElement.Schema.parseMap(window.LiveElement.Schema.RenderMap, ownPropertyName, containerInheritance, propertyMap)
         renderName = renderName || window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Renders, ownPropertyName, containerInheritance, propertyMap)
         if (typeof renderName == 'function' || typeof renderName == 'object') {

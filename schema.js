@@ -270,8 +270,20 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                     propertyElement.__container = propertyMap.container
                     propertyElement.__containerPropertyName = propertyMap.propertyName
                     propertyElement.__container.__map[propertyElement.__containerPropertyName] = propertyElement
+                    propertyElement.addEventListener('schema-input', event => {
+                        propertyElement.__container.__input = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__input})))
+                        propertyElement.__container.__value = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__value})))
+                        propertyElement.__container.__validation = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__validation})))
+                    })
                 }
-                propertyElement.__input = propertyMap.value
+                propertyElement.__input = typeof propertyElement.__validation == 'object' ? propertyElement.__validation.input : undefined 
+                propertyElement.__value = typeof propertyElement.__validation == 'object' ? propertyElement.__validation.value : undefined 
+                propertyElement.dispatchEvent(new window.CustomEvent('schema-input'))
+                if (propertyElement.__validation.input && typeof propertyElement.__validation.input == 'object') {
+                    Object.keys(propertyElement.__validation.input).forEach(propertyName => {
+                        propertyElement[propertyName] = propertyElement.__validation.input[propertyName]
+                    })
+                }
             })
         }
     }}

@@ -31,14 +31,8 @@
             console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
             
             window.test = document.getElementById('test')
-            window.test.addEventListener('schema-setproperty', event => {
+            window.test.addEventListener('schema-input', event => {
               console.log('example.html: line 35: ', event)
-            })
-            window.test.addEventListener('schema-setproperty-error', event => {
-              console.log('example.html: line 38: ', event)
-            })
-            window.test.addEventListener('schema-load', event => {
-              console.log('example.html: line 41: ', event)
             })
             
           })

@@ -54,6 +54,7 @@
             return this.__value
         }
         
+        __input = this.__input === undefined ? undefined : this.__input
         __value = this.__value === undefined ? undefined : this.__value
         __validation = {...(this.__validation || {}), ...{}}
         __map = {...(this.__map || {}), ...{}}
@@ -61,30 +62,6 @@
         __containerPropertyName = this.__containerPropertyName === undefined ? undefined : this.__containerPropertyName
         __propertyMap = this.__propertyMap === undefined ? undefined : this.__propertyMap
         __isConnected = this.__isConnected || false
-        
-        set __input(value) {
-            var $this = this
-            Object.defineProperty($this, '__input_value', {configurable: false, enumerable: false, value: value})
-            if (!$this.__validation) {
-                var validator
-                if ($this.__container && $this.__containerPropertyName && $this.__propertyMap) {
-                    validator = window.LiveElement.Schema.getValidator($this.__propertyMap.propertyName, window.LiveElement.Element.getInheritance($this.__container.constructor), $this.__propertyMap)
-                } else {
-                    validator = window.LiveElement.Schema.getValidator($this.constructor._rdfs_label)
-                }
-                $this.__validation = validator && typeof validator == 'function' ? validator(value, $this.__propertyMap) : {}
-            }
-            $this.__value = typeof $this.__validation == 'object' ? $this.__validation.value : undefined 
-            if (value && typeof value == 'object') {
-                Object.keys(value).forEach(propertyName => {
-                    $this[propertyName.toLowerCase()] = value[propertyName]
-                })
-            }
-            $this.dispatchEvent(new window.CustomEvent('schema-input'))
-        }
-        get __input() {
-            return this.__input_value
-        }
         
     }
 </script>

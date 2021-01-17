@@ -12,7 +12,6 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
     schema: (element, asClass, style, template) => {
-        //console.log('line 15', element.__input, element, element.__container)
         if (!element.__propertyMap) {
             if (element.__isConnected &&!element.hasAttribute('itemscope')) {
                 element.setAttribute('itemscope', '')
@@ -32,14 +31,18 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
         }
         var observer = new window.MutationObserver(record => { doLoad() })
         observer.observe(element, {subtree: true, characterData: true, characterDataOldValue: true})
-        element.addEventListener('schema-load', event => {
-            if (element.__input != element.innerText) {
-                element.innerText = element.__input
-            }
-            if (element.__value != element.innerText) {
-                element.setAttribute('content', element.__value === undefined ? '' : element.__value)
-            }
-        })
+        if ([undefined, null].includes(element.__input)) {
+            element.innerText = ''
+        } else if (element.__input != element.innerText) {
+            element.innerText = element.__input
+        }
+        if ([undefined, null].includes(element.__value)) {
+            element.removeAttribute('content')
+        } else if (element.__value != element.innerText) {
+            element.setAttribute('content', element.__value)
+        } else {
+            element.removeAttribute('content')
+        }
         window.LiveElement.Schema.Renders.schema(element, asClass, style, template)
     }, 
     time: {
@@ -103,4 +106,3 @@ window.LiveElement.Schema.Options = {...window.LiveElement.Schema.Options, ...{
     False: ['False', 'No'], 
     DefaultURLProtocol: 'https'
 }}
-

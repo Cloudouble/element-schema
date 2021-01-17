@@ -66,6 +66,8 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
             return renderName
         } else if (typeof renderName == 'string' && window.LiveElement.Schema.Renders[renderName]) {
             return window.LiveElement.Schema.Renders[renderName]
+        } else if (typeof renderName == 'string' && window.LiveElement.Element.elements[renderName] && typeof window.LiveElement.Element.elements[renderName].__render == 'function') {
+            return {asClass: renderName}
         }
     }}, 
     getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){

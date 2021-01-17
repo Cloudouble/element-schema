@@ -29,11 +29,11 @@
         static get observedAttributes() {
             return (this.__allProperties || []).map(v => v.toLowerCase())
         }
-
-        static __valid(input) {
-            return true
-        }
         
+        static __render(element, asClass, style, template) {
+            //placeholder for render functions if the class is used as a renderer
+        }
+
         constructor() {
             super()
             var $this = this
@@ -47,7 +47,7 @@
         }
         
         toString() {
-            return String(this.__value)
+            return this.__input && typeof this.__input === 'object' ? JSON.stringify(this.__input) : String(this.__input)
         }
         
         valueOf() {

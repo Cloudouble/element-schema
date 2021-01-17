@@ -25,7 +25,7 @@
           
           window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema/types`
           window.LiveElement.Element.load(
-            ['Thing', 'Intangible', 'Class', 'DataType', 'Text', 'True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL', 'PronounceableText'], 
+            window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes), 
             `https://${window.location.hostname}/_static/schema/types`).then(() => {
               
             console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)

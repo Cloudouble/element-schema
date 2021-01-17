@@ -274,6 +274,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                         propertyElement.__container.__input = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__input})))
                         propertyElement.__container.__value = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__value})))
                         propertyElement.__container.__validation = Object.assign({}, ...Object.entries(propertyElement.__container.__map).map(entry => ({[entry[0]]: entry[1].__validation})))
+                        propertyElement.__container.dispatchEvent(new window.CustomEvent('schema-input'))
                     })
                 }
                 propertyElement.__input = typeof propertyElement.__validation == 'object' ? propertyElement.__validation.input : undefined 

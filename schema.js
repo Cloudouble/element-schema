@@ -50,9 +50,9 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         if (typeof validatorName == 'function') {
             return validatorName
         } else if (typeof validatorName == 'string' && window.LiveElement.Schema.Validators[validatorName]) {
-            window.LiveElement.Schema.Validators[validatorName]
+            return window.LiveElement.Schema.Validators[validatorName]
         } else {
-            window.LiveElement.Schema.Validators.Schema
+            return window.LiveElement.Schema.Validators.Schema
         }
     }}, 
     getClass: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
@@ -69,7 +69,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         }
     }}, 
     getError: {configurable: false, enumerable: true, writable: true, value: function(ownPropertyName, containerInheritance, propertyMap){
-        window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, containerInheritance, propertyMap)
+        return window.LiveElement.Schema.parseMap(window.LiveElement.Schema.Errors, ownPropertyName, containerInheritance, propertyMap)
     }}, 
     Validators: {configurable: false, enumerable: true, writable: true, value: Object.defineProperties({}, {
             True: {configurable: false, enumerable: true, writable: false, value: function(input, propertyMap={}) {
@@ -249,10 +249,14 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         var validator = containerInheritance && propertyMap 
             ? window.LiveElement.Schema.getValidator(propertyMap.propertyName, containerInheritance, propertyMap) 
             : window.LiveElement.Schema.getValidator(element.constructor._rdfs_label)
-        element.__validation = validator && typeof validator == 'function' ? {...(element.__validation || {}), ...validator(input, propertyMap)} : element.__validation
-        element.__input = typeof element.__validation == 'object' ? element.__validation.input : undefined 
-        element.__value = typeof element.__validation == 'object' ? element.__validation.value : undefined 
-        element.dispatchEvent(new window.CustomEvent('schema-input'))
+        element.__input = input 
+        if (element.__input && typeof element.__input == 'object') {
+            element.__validation = Object.assign({}, ...Object.entries(element.__map).map(entry => ({[entry[0]]: entry[1].__validation})))
+            element.__value = Object.assign({}, ...Object.entries(element.__map).map(entry => ({[entry[0]]: entry[1].__value})))
+        } else {
+            element.__validation = validator && typeof validator == 'function' ? {...(element.__validation || {}), ...validator(input, propertyMap)} : element.__validation
+            element.__value = typeof element.__validation == 'object' ? element.__validation.value : undefined 
+        }
         if (element.__input && typeof element.__input == 'object') {
             Object.keys(element.__input).forEach(propertyName => {
                 if (element[propertyName] != element.__input[propertyName]) {
@@ -260,6 +264,7 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
                 }
             })
         }
+        element.dispatchEvent(new window.CustomEvent('schema-input'))
         window.LiveElement.Schema.runRender(element)
     }}, 
     setProperty: {configurable: false, enumerable: false, writable: false, value: function(propertyMap) {

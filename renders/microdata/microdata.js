@@ -22,15 +22,6 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
         }
     }, 
     scalar: (element, asClass, style, template) => {
-        var doLoad = function() {
-            window.customElements.whenDefined(element.tagName.toLowerCase()).then(() => {
-                if ((element.__input === undefined) || (element.__input != element.innerText)) {
-                    element.__load(element.innerText)
-                }
-            })
-        }
-        var observer = new window.MutationObserver(record => { doLoad() })
-        observer.observe(element, {subtree: true, characterData: true, characterDataOldValue: true})
         if ([undefined, null].includes(element.__input)) {
             element.innerText = ''
         } else if (element.__input != element.innerText) {
@@ -65,9 +56,11 @@ window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
             Object.keys(element.__map).forEach(attributeName => {
                 if (element.__map[attributeName] && typeof element.__map[attributeName].setAttribute == 'function') {
                     var attributeElement = element.shadowRoot.querySelector(`[itemprop="${attributeName}"]`)
+                    if (!element.__map[attributeName].getAttribute('itemprop') != attributeName) {
+                        element.__map[attributeName].setAttribute('itemprop', attributeName)
+                    }
                     if (!attributeElement) {
                         element.shadowRoot.append(element.__map[attributeName])
-                        element.__map[attributeName].setAttribute('itemprop', attributeName)
                         window.LiveElement.Schema.runRender(element.__map[attributeName])
                     } else {
                         attributeElement.replaceWith(element.__map[attributeName])

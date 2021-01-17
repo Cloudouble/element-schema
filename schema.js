@@ -261,7 +261,11 @@ window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties
         }
         if (element.__input && typeof element.__input == 'object') {
             Object.keys(element.__input).forEach(propertyName => {
-                if (element[propertyName] != element.__input[propertyName]) {
+                var propertyNameLower = propertyName.toLowerCase()
+                if (element.__input[propertyName] && typeof element.__input[propertyName] != 'object' && (element.getAttribute(propertyNameLower) != element.__input[propertyName])) {
+                    element.setAttribute(propertyNameLower, element.__input[propertyName])
+                } else if ((element[propertyName] != element.__input[propertyName]) && (element.__input[propertyName] === null || element.__input[propertyName] == undefined || typeof element.__input[propertyName] != 'object')) {
+                    element.removeAttribute(propertyNameLower)
                     element[propertyName] = element.__input[propertyName]
                 }
             })

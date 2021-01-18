@@ -2,12 +2,6 @@
 :host {
     contain: content;
 }
-:host([__editmode="true"]) slot {
-    display: none;
-}
-:host(:not([__editmode="true"])) .editmode {
-    display: none;
-}
 </style>
 <template>
     <slot></slot>

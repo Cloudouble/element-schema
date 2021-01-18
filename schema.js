@@ -1,5 +1,6 @@
 window.LiveElement = window.LiveElement || {}
 window.LiveElement.Schema = window.LiveElement.Schema || Object.defineProperties({}, {
+    version: {configurable: false, enumerable: true, writable: false, value: '1.0.0'}, 
     CoreTypes: {configurable: false, enumerable: true, writable: true, value: ['Thing', 'Intangible', 'Class', 'DataType', 'PronounceableText']}, 
     DataTypes: {configurable: false, enumerable: true, writable: true, value: ['Text', 'True', 'False', 'Boolean', 'DateTime', 'Date', 'Time', 'Integer', 'Float', 'Number', 'XPathType', 'CssSelectorType', 'URL']}, 
     Options: {configurable: false, enumerable: true, writable: true, value: {}}, 

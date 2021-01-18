@@ -13,10 +13,10 @@ window.LiveElement.Schema.ClassMap = {...window.LiveElement.Schema.ClassMap, ...
 window.LiveElement.Schema.Renders = {...window.LiveElement.Schema.Renders, ...{
     schema: (element, asClass, style, template) => {
         if (!element.__propertyMap) {
-            if (element.__isConnected &&!element.hasAttribute('itemscope')) {
+            if (element.__isConnected && !element.hasAttribute('itemscope')) {
                 element.setAttribute('itemscope', '')
             }
-            if (element.__isConnected &&!!element.hasAttribute('itemtype')) {
+            if (element.__isConnected && !element.hasAttribute('itemtype')) {
                 element.setAttribute('itemtype', `${element.constructor.__context}${element.constructor._rdfs_label}`)
             }
         }

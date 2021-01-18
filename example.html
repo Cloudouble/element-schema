@@ -17,10 +17,10 @@
   <input id="test-input" placeholder="update the additionalType" />
   
   <script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.7.5/element.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.3/schema.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.3/renders/microdata/microdata.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.4/schema.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.4/renders/microdata/microdata.min.js"></script>
   <script>
-  window.LiveElement.Element.root = `https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.3/types`
+  window.LiveElement.Element.root = `https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.4/types`
   window.LiveElement.Element.load(['Schema'].concat(window.LiveElement.Schema.CoreTypes).concat(window.LiveElement.Schema.DataTypes)).then(() => {
     window.test = document.getElementById('test')
     window.testInput = document.getElementById('test-input')

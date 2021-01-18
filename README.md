@@ -51,7 +51,7 @@ It can then be further styled, templated and have it's behaviour customised with
 * install [element](https://github.com/Cloudouble/element) as a prerequisite
 * include the script tag for the ```schema.js``` file, it creates a ```window.LiveElement.Schema``` object
 ```
-<script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.0/schema.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.2/schema.min.js"></script>
 ```
 * as per Element documentation, load all core custom element classes (including the ```Schema``` element class) with ```window.LiveElement.Element.load()``` something like the following example: 
 

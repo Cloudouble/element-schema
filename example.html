@@ -17,45 +17,34 @@
   <input id="test-input" placeholder="update the additionalType" />
   
   <script src="https://cdn.jsdelivr.net/gh/cloudouble/element@1.7.5/element.min.js"></script>
-  <script src="schema.js"></script>
-  <script src="renders/microdata/microdata.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.2/schema.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.2/renders/microdata/microdata.min.js"></script>
   <script>
-      window.LiveElement.Element.load('example-build.json').then(() => {
-        window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema`
-        window.LiveElement.Element.load(['Schema'], `https://${window.location.hostname}/_static/schema`).then(() => {
-          
-          window.LiveElement.Element.root = `https://${window.location.hostname}/_static/schema/types`
-          window.LiveElement.Element.load(
-            window.LiveElement.Schema.CoreTypes.concat(window.LiveElement.Schema.DataTypes), 
-            `https://${window.location.hostname}/_static/schema/types`).then(() => {
-              
-              window.test = document.getElementById('test')
-              window.LiveElement.Element.render(window.test, undefined, false, `
-              [itemprop] {
-                display: block;
-              }
-              slot {
-                font-weight: bold;
-              }
-              `)
-              window.testInput = document.getElementById('test-input')
-              window.test.addEventListener('schema-input', event => {
-                console.log('test input: ', window.test.__input)
-                console.log('test value ', window.test.__value)
-                console.log('test validation ', window.test.__validation)
-              })
-              
-              window.testInput.addEventListener('input', event => {
-                window.test.additionalType = window.testInput.value
-              })
-              
-              console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
-              
-            
-          })
-
-        })
-      })
+  window.LiveElement.Element.root = `https://cdn.jsdelivr.net/gh/cloudouble/schema@1.0.2/types`
+  window.LiveElement.Element.load(['Schema'].concat(window.LiveElement.Schema.CoreTypes).concat(window.LiveElement.Schema.DataTypes)).then(() => {
+    window.test = document.getElementById('test')
+    window.testInput = document.getElementById('test-input')
+    window.LiveElement.Element.render(window.test, undefined, false, `
+    [itemprop] {
+      display: block;
+    }
+    slot {
+      font-weight: bold;
+    }
+    `)
+    
+    window.test.addEventListener('schema-input', event => {
+      console.log('test input: ', window.test.__input)
+      console.log('test value ', window.test.__value)
+      console.log('test validation ', window.test.__validation)
+    })
+    
+    window.testInput.addEventListener('input', event => {
+      window.test.additionalType = window.testInput.value
+    })
+    
+    console.log(`Loaded! \n\nCustom tags available are: \n${Object.keys(window.LiveElement.Element.classes).join(', ')}`)
+  })
   </script>
 </body>
 </html>
